@@ -1,10 +1,10 @@
 ## Descripción
 
-¿Qué hay que hacer?
+¿Qué trabajo hay que realizar?
 
 ## Objetivo
 
-¿Qué se espera obtener al finalizar la tarea?
+¿Qué resultado se espera obtener al finalizar la tarea?
 
 ## Bloqueos (opcional)
 
