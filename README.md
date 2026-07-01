@@ -10,6 +10,7 @@
 
 - Santiago Fleitas
 -Liz Medina 
+-Yeny Gamarra
 
 ## Temas trabajados
 
