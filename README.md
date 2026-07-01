@@ -8,7 +8,8 @@
 
 > Completar: integrantes del equipo y roles asumidos durante la práctica.
 
-- Santiago Fleitas 
+- Santiago Fleitas
+-Liz Medina 
 
 ## Temas trabajados
 
