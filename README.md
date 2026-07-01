@@ -8,6 +8,8 @@
 
 > Completar: integrantes del equipo y roles asumidos durante la práctica.
 
+- Santiago Fleitas 
+
 ## Temas trabajados
 
 * [ ] Accesibilidad web
