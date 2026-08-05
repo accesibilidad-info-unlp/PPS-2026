@@ -6,11 +6,9 @@
 
 ## Participantes
 
-> Completar: integrantes del equipo y roles asumidos durante la práctica.
-
 - Santiago Fleitas
--Liz Medina 
--Yeny Gamarra
+- Liz Medina 
+- Yeny Gamarra
 
 ## Temas trabajados
 
