@@ -1,4 +1,4 @@
-webVTT
+WEBVTT
 
 00:00.000 --> 00:08.940
 Hola, mi nombre es Diego Tarrío, soy docente de la Facultad Informática de la UNLP en las
@@ -284,7 +284,6 @@ ahora pasaríamos a tener
 
 10:01.800 --> 10:04.800
 una serie de números
-
 10:04.800 --> 10:08.800
 positivos que son los que se corresponden
 
@@ -334,7 +333,7 @@ de los números ya son los que comienzan con 1
 van a ser los que consideramos negativos
 
 11:21.800 --> 11:24.800
-tenemos una pirámide análoga
+tendriamos una pirámide análoga
 
 11:24.800 --> 11:28.800
 pero en la cual representamos a los números negativos
@@ -343,10 +342,10 @@ pero en la cual representamos a los números negativos
 ahora, en este caso vamos desde el 0
 
 11:35.800 --> 11:39.800
-dado que este numerito está considerándose como el 0
+dado que este numerito estaba considerándose como el 0
 
 11:40.800 --> 11:44.800
-y si hicimos a nosotros tenemos el 1, el 2, 3, 4, 5, 6
+y si hicimos nosotros no sabemos el 1, el 2, 3, 4, 5, 6
 
 11:44.800 --> 11:46.800
 hasta el 7
@@ -355,7 +354,7 @@ hasta el 7
 siempre en los números positivos
 
 11:48.800 --> 11:50.800
-dado que el bin más significativo está en 0
+dado que el bien más significativo está en 0
 
 11:50.800 --> 11:54.800
 ya ese no forma parte del módulo sino que me indica simplemente el signo
@@ -370,7 +369,7 @@ ya llegó desde 0 hasta 7
 se acotó el rango de representación
 
 12:02.800 --> 12:06.800
-antes llegaba de 0 a 15 en los números posibles
+antes llegaba de 0 a 15 en los digitos en los números posibles
 
 12:06.800 --> 12:08.800
 ahora llegó del 0 al 7 en los positivos
@@ -457,7 +456,7 @@ y en el binario con signo hasta
 de 0 a 7 y de menos 0 a menos 7 en los negativos
 
 13:27.800 --> 13:29.800
-en la recta numerita
+en la recta numerica
 
 13:29.800 --> 13:31.800
 si yo tuviera más dígitos
@@ -475,7 +474,7 @@ y dejar el rango en función de la cantidad de dígitos
 que tenga definidos en mi sistema
 
 13:42.800 --> 13:46.800
-eso después lo vamos a ver un poco en mayor detalle
+eso después lo vamos a ver un poco mas en  mayor detalle
 
 13:47.800 --> 13:49.800
 vamos a seguir
@@ -505,7 +504,7 @@ el binario con signo ya a partir de ahora
 todos los sistemas
 
 14:21.800 --> 14:23.800
-números que vamos a ver
+númericos que vamos a ver
 
 14:23.800 --> 14:25.800
 corresponden a números con signo
@@ -544,7 +543,7 @@ para realizar todas las cuentas consumadores sencillamente
 pero eso es otro tema, no vamos a incursionar ahora
 
 14:55.800 --> 14:57.800
-en el caso del complemento a 1
+en el caso del complemento 1
 
 14:57.800 --> 14:59.800
 lo que vamos a trabajar es
@@ -697,7 +696,7 @@ ya me doy cuenta que es negativo por arrancar en 1
 en su bit más significativo
 
 16:55.800 --> 16:57.800
-que es el bitesigno
+que es el bit de signo
 
 16:57.800 --> 16:59.800
 lo que tengo que hacer es como está expuesto
@@ -757,7 +756,7 @@ hacia el
 menos 7
 
 17:47.800 --> 17:49.800
-vamos a seguir planteando las diferencias
+vamos a seguir planteando las diferencias 
 
 17:49.800 --> 17:51.800
 a medida que vamos
@@ -814,7 +813,7 @@ resolverse con
 la siguiente evolución que seria
 
 18:25.800 --> 18:27.800
-el complemento a2
+complemento a2
 
 18:29.800 --> 18:31.800
 en ese complemento a2 la definición
@@ -880,25 +879,25 @@ desde el 0 hasta el 7
 el gran cambio
 
 19:15.800 --> 19:17.800
-en el complemento a2 se da
+en el complemento 2 se da
 
 19:17.800 --> 19:19.800
 en los negativos, en donde la definición
 
 19:19.800 --> 19:21.800
-del complemento a2 establece que
+del complemento 2 establece que
 
 19:21.800 --> 19:23.800
 para los negativos yo tengo que sacar
 
 19:23.800 --> 19:25.800
-el complemento a1 y sumarle un 1
+el complemento 1 y sumarle un 1
 
 19:27.800 --> 19:29.800
-esa es la definición del complemento a2
+esa es la definición del complemento 2
 
 19:29.800 --> 19:31.800
-complemento a1 más 1
+complemento 1 más 1
 
 19:33.800 --> 19:35.800
 si yo le sumo un 1
@@ -928,7 +927,7 @@ número
 para hacerlo negativo
 
 19:55.800 --> 19:57.800
-en complemento a1
+en complemento 1
 
 19:57.800 --> 19:59.800
 simplemente doy vuelta a todos los bits
@@ -937,7 +936,7 @@ simplemente doy vuelta a todos los bits
 y este pasa a ser el
 
 20:01.800 --> 20:03.800
-menos 3 en complemento a1
+menos 3 en complemento al
 
 20:03.800 --> 20:05.800
 y en complemento a2
