@@ -1,7 +1,7 @@
-WEBVTT
+VTT
 
 00:00.000 --> 00:08.940
-Hola, mi nombre es Diego Tarrío, soy docente de la Facultad Informática del OVP en las
+Hola, mi nombre es Diego Tarrío, soy docente de la Facultad Informática de la UNLP en las
 
 00:08.940 --> 00:12.040
 cáteras de Organización y Arquitectura de Computadoras.
@@ -34,7 +34,7 @@ los siguientes números en los sistemas y ahí indica algunos sistemas que ya va
 en detalle, todos restringidos a 8 bits, consideremos ya, damos por sabido que el concepto
 
 01:03.080 --> 01:08.880
-de bit lo vamos a mapear con el concepto de dígito binario, en todos los casos que no
+de bit lo vamos a mapear con el concepto de dígito binario, bien? en todos los casos que no
 
 01:08.880 --> 01:12.600
 se pueda representar aclarar el porqué, ya vamos a entrar en detalles, pero antes vamos
@@ -55,7 +55,7 @@ que un número está constituido por dígitos, obviamente, en donde a cada dígi
 a representar con el valor, lo vamos a generalizar con una x, el primer dígito lo vamos a dar
 
 01:54.200 --> 02:04.680
-el subíndice 0 dado que es la primer posición, vamos a hacer más prolijo esto porque no
+el subíndice 0 dado que es la primer posición, bien? vamos a hacer más prolijo esto porque no
 
 02:04.680 --> 02:14.160
 está quedando bien, subíndice 0, ahí estamos, el segundo dígito le vamos a dar el subíndice
@@ -97,7 +97,7 @@ multiplicado por la base, la base va a depender de qué sistema estoy, si estuvi
 esta base es 2, si estuviera en decimal, esta base sería 10 elevado a la posición en la que corresponde
 
 03:43.720 --> 03:51.320
-entonces acá sacamos ya esta fórmula, esta ecuación que es el sistema, el teorema fundamental de la
+entonces de acá sacamos ya esta fórmula, esta ecuación que es el sistema, el teorema fundamental de la
 
 03:51.320 --> 03:58.000
 numeración, vamos a insertarlo y acá tenemos el teorema fundamental de la numeración que nos va
@@ -175,7 +175,7 @@ acá tenemos las 16 combinaciones posibles
 vamos a ubicarlo acá
 
 07:15.200 --> 07:19.200
-y ahora vamos a trabajar un poquito para interpretar estas combinaciones
+y ahora vamos a trabajar un poquito para interpretar estas combinaciones, bien?
 
 07:19.200 --> 07:22.200
 el primer sistema que vamos a ver
