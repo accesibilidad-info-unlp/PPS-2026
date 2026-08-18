@@ -939,13 +939,13 @@ y este pasa a ser el
 menos 3 en complemento al
 
 20:03.800 --> 20:05.800
-y en complemento a2
+y en complemento a 2
 
 20:05.800 --> 20:07.800
 ¿cómo sería el menos 3? y simplemente
 
 20:07.800 --> 20:09.800
-tengo que hacer el menos 3 en complemento a1
+tengo que hacer el menos 3 en complemento a 1
 
 20:09.800 --> 20:11.800
 y sumarle un 1
@@ -954,16 +954,16 @@ y sumarle un 1
 1,1,0,1
 
 20:15.800 --> 20:17.800
-y este es el menos 3 en complemento a2
+y este es el menos 3 en complemento a 2
 
 20:23.800 --> 20:25.800
-bueno
+bien,bueno
 
 20:25.800 --> 20:27.800
 en este caso
 
 20:27.800 --> 20:29.800
-esta es la forma, el mecanismo formal
+esta es la forma,digamos  el mecanismo formal
 
 20:29.800 --> 20:31.800
 por definición
@@ -984,7 +984,7 @@ y automatizada
 de pasar cualquier número
 
 20:41.800 --> 20:43.800
-a negativo en complemento a2
+a negativo en complemento a 2 
 
 20:43.800 --> 20:45.800
 y es simplemente dejando igual
@@ -1005,7 +1005,7 @@ o sea, yo tengo el 3 positivo de esta manera
 dejo igual hasta la primera ocurrencia
 
 20:55.800 --> 20:57.800
-de un 1, voy recorriendo
+del 1, voy recorriendo
 
 20:57.800 --> 20:59.800
 desde el menos significativo hasta el más significativo
@@ -1035,7 +1035,7 @@ puedo hacerlo por cualquiera de los mecanismos
 o
 
 21:19.800 --> 21:21.800
-sacando la cuentita matemática
+sacando la cuentita matemáticas
 
 21:21.800 --> 21:23.800
 que simplemente lo paso a complemento a1
@@ -1065,7 +1065,7 @@ el primer bit ya directamente era un 1
 entonces dejo igual hasta ahí simplemente
 
 21:39.800 --> 21:41.800
-y cambio al resto
+y aparte de ahi  cambio al resto, bien
 
 21:41.800 --> 21:43.800
 si quisiéramos hacer un ejemplo adicional
@@ -1083,7 +1083,7 @@ vamos a hacer un ejemplo adicional
 supongamos que quiero
 
 21:59.800 --> 22:01.800
-hacer en complemento a2 al número
+hacer en complemento a 2 al número
 
 22:01.800 --> 22:03.800
 menos 4
@@ -1098,13 +1098,13 @@ es este
 entonces el menos 4
 
 22:17.800 --> 22:19.800
-en complemento a2 como sería?
+en complemento a 2 como sería?
 
 22:19.800 --> 22:21.800
 aplicando la regla
 
 22:21.800 --> 22:23.800
-sin hacer las sumas del complemento a1 más 1
+sin hacer las sumas del complemento del  1 más 1
 
 22:23.800 --> 22:25.800
 directamente dejo igual
@@ -1146,7 +1146,7 @@ prácticamente automática
 el pasaje de cualquier número
 
 22:51.800 --> 22:53.800
-a su representación en complemento a2
+a su representación en complemento a 2
 
 22:53.800 --> 22:55.800
 es muy sencillo
@@ -1173,7 +1173,7 @@ el gráfico de pirámides
 para ver gráficamente la representación
 
 23:13.800 --> 23:15.800
-de los números ahora en complemento a2
+de los números ahora en complemento a 2
 
 23:15.800 --> 23:17.800
 para los negativos
@@ -1188,16 +1188,16 @@ dado que
 vamos a arrancar con el último
 
 23:27.800 --> 23:29.800
-dado que la representación en complemento a2
+dado que la representación en complemento a 2
 
 23:29.800 --> 23:31.800
-es el complemento a1 más 1
+es el complemento a 1 más 1
 
 23:31.800 --> 23:33.800
 o ya sabemos el mecanismo
 
 23:33.800 --> 23:35.800
-automático
+automático para pasar a completar 
 
 23:35.800 --> 23:37.800
 que es dejar igual el primer bit
@@ -1221,7 +1221,7 @@ y a partir de ahí cambio al resto
 en este caso estamos en presencia
 
 23:49.800 --> 23:51.800
-del número menos 1
+de el número menos 1
 
 23:51.800 --> 23:53.800
 y si aplicamos
@@ -1249,7 +1249,7 @@ a partir de cambio al resto
 
 24:09.800 --> 24:11.800
 lo voy a hacer acá
-
+ 
 24:11.800 --> 24:13.800
 brevamente
 
@@ -1263,7 +1263,7 @@ a partir de
 después de que la primera ocurrición 1
 
 24:19.800 --> 24:21.800
-me quedaría este número acá
+me quedaría este número de acá
 
 24:21.800 --> 24:23.800
 este número acá es el número 7
@@ -1320,7 +1320,7 @@ dejo igual hasta el primer número
 hasta el primer dígito en 1
 
 24:59.800 --> 25:01.800
-hasta el primer dígito en 1
+si yo dejo igual hasta el primer digito en 1
 
 25:01.800 --> 25:03.800
 en este caso cuando lo des complemento
@@ -1365,7 +1365,7 @@ bien?
 este es un caso muy particular
 
 25:29.800 --> 25:31.800
-que aparece por mil a veces
+que aparece por primera vez
 
 25:31.800 --> 25:33.800
 en el complemento a 2
@@ -1404,7 +1404,7 @@ entonces el que era el menos 0 pasó a ser el menos 1
 y el que era el menos 7 pasó a ser el menos 8
 
 25:55.800 --> 25:57.800
-la pirámide ahora queda truncada
+por ende la pirámide ahora queda truncada
 
 25:57.800 --> 25:59.800
 la voy a dibujar a mano alzada
@@ -1476,7 +1476,7 @@ hacia menos 8
 este sistema ya resolvió
 
 26:49.800 --> 26:51.800
-el problema que teníamos
+el problema que teníamos acarreando de antes
 
 26:51.800 --> 26:53.800
 que era la doble representación del 0
@@ -1497,5 +1497,5 @@ en los negativos
 ahora vamos de 0 a 7 en los positivos
 
 27:05.800 --> 27:07.800
-y hasta el menos 8 en los negativos
+y hasta el menos 8 en los negativos, bien 
 
