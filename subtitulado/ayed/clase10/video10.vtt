@@ -1,0 +1,689 @@
+WEBVTT
+
+00:00.000 --> 00:23.000
+Bueno, una aclaración que vale la pena hacer es que el código que está puesto en las transparencias no se va a tomar en la práctica, o sea, nosotros vamos a ver cómo se implementa una heap en Java, pero no forma parte de las prácticas y por ende tampoco de la evaluación, ¿cierto?
+
+00:24.000 --> 00:43.000
+La evaluación en el sentido de la práctica, la evaluación teórica sí, no a la implementación, sino todo lo que vieron hasta el momento de heap. No sé si quedó claro, espero que haya quedado claro, pero bueno, cualquier cosa me dice.
+
+00:43.000 --> 01:07.000
+Bien, vamos a hacer un juego de repaso de lo que es una cola de prioridad, que ya lo vieron seguramente con Alejandra. Las colas de prioridad, los elementos se acumulan de acuerdo a su prioridad, digamos, podemos tener elementos que se agrupen en la cabeza de la cola de prioridad,
+
+01:07.000 --> 01:28.000
+por ejemplo, los elementos de menor prioridad son los que tienen que salir primero de la cola de prioridad, entonces van a estar al principio, o de mayor prioridad, en el sentido de mayor o menor, que sea un índice entero, una clave entera, también se podrían ubicar en la cabeza de la cola de prioridad.
+
+01:28.000 --> 01:50.000
+Una forma que presentamos para implementar una cola de prioridad en la materia es usar una heap binaria. La heap binaria lo que garantiza es que tanto la operación de inserción y de recuperación, de evolución y eliminación de la clave de la heap, también es de orden logarítmico.
+
+01:50.000 --> 02:05.000
+Las dos operaciones, la que alimente, la que consume de la cola de prioridad, van a tener orden logarítmico. Para ello, la heap binaria tiene que cumplir dos propiedades.
+
+02:05.000 --> 02:22.000
+La primera es que tiene que ser un árbol binario completo. Un árbol binario completo sabemos que un árbol binario completo de altura H es un árbol binario lleno hasta la altura H-1 y las hojas del nivel H se acomodan de izquierda a derecha.
+
+02:22.000 --> 02:30.000
+Si no cumple alguna de estas dos condiciones, sabemos que no estamos en presencia de un árbol binario completo.
+
+02:30.000 --> 02:42.000
+Y la segunda es una propiedad de orden. Si estamos trabajando con una min heap, el elemento de una clave padre tiene que ser menor que el de los hijos. Menor igual que el de los hijos.
+
+02:42.000 --> 02:50.000
+Y si es una min heap, es la propiedad inversa. El padre tiene que ser mayor o igual que los hijos.
+
+02:50.000 --> 03:02.000
+¿Estamos hasta ahí? Esto es un repaso bien rápido de lo que vieron en clases anteriores. ¿Alguna pregunta?
+
+03:02.000 --> 03:10.000
+¿Estamos bien con Isiom y Martina? ¿El resto?
+
+03:10.000 --> 03:26.000
+¿Por qué podíamos almacenar los elementos de una heap en un arreglo?
+
+03:26.000 --> 03:49.000
+Porque como cumple, que es un árbol binario completo, es una estructura regular. Y al ser una estructura regular, la podemos almacenar en un arreglo y saber identificar dado un elemento y cualquiera, si es una posición y cualquiera en el arreglo, saber cuál es su padre y dónde se ubican sus hijos izquierda y derecha.
+
+03:49.000 --> 04:00.000
+Esto se realiza mediante una simple operación matemática, que es la que está indicada en el recuerdo.
+
+04:00.000 --> 04:11.000
+Entonces, si queremos buscar el padre, estamos parado en una posición y cualquiera dentro del arreglo. En el ejemplo sería entre 1 y 10.
+
+04:11.000 --> 04:30.000
+Si queremos encontrar el hijo izquierdo, tenemos que multiplicar esa posición y por 2. Ahí se encontraría el hijo izquierdo. Por ejemplo, si tomamos el 32 que está en la posición 3, el hijo izquierdo va a estar en la posición 3 por 2, que sería 6.
+
+04:30.000 --> 04:49.000
+Entonces ahí justo coincide que el hijo izquierdo tiene un valor igual al del padre. ¿Y el hijo derecho dónde va a estar? Va a estar en la posición y por 2 más 1. En este caso sería 3 por 2, 6 más 1, 7. Entonces el hijo derecho estaría en la posición 7.
+
+04:49.000 --> 05:04.000
+Si quisiéramos saber dónde está el padre, tenemos que tomar la posición y dividirla por 2 y quedarnos con la parte entera. Entonces 3 divido 2, la parte entera de esa división es 1, con lo cual el 42 sabemos que es su padre.
+
+05:04.000 --> 05:19.000
+Si tomamos un elemento, si tomamos un elemento y la división por 2 da 0, ¿qué significa? ¿Qué elementos tomamos? ¿Cuál es el elemento que tomamos?
+
+05:34.000 --> 05:54.000
+La raíz, exactamente. Y si tomamos un elemento, por ejemplo el 5, y multiplico por 2 y sumo 1, y ese valor es mayor a la cantidad de elementos, ¿qué significa el 5 que no tiene?
+
+05:55.000 --> 06:09.000
+No tiene hijo izquierdo, ¿bien? Para el resto de las posiciones de 6 en adelante sabemos que son hojas, porque no van a tener ni hijo izquierdo ni hijo derecho. Muy bien.
+
+06:09.000 --> 06:36.000
+¿Cómo podemos implementar colas de prioridades? Una manera sería definir una interfaz, que todas las clases que sean colas de prioridades implementen esa interfaz, y cada una de las colas de prioridades particulares tendrán una implementación particular.
+
+06:36.000 --> 06:48.000
+Podríamos tener una cola de prioridades implementada con árboles binarios de búsqueda, una con ABL, una con listas ordenadas, con listas desordenadas, con HIP o alguna variante más.
+
+06:48.000 --> 07:07.000
+Todas van a entender si implementan la interfaz cola de prioridad, que es vacía, que pueden eliminar, pueden agregar y pueden devolver el tope. Lo van a hacer de forma distinta, pero todas van a ser un tipo de cola de prioridad.
+
+07:07.000 --> 07:10.000
+Y eso lo sabemos de cuando vimos interfaz.
+
+07:14.000 --> 07:19.000
+Entonces, en nuestro caso vamos a implementar colas de prioridades con HIP.
+
+07:19.000 --> 07:38.000
+Con lo cual, la clase MadHIP va a implementar la interfaz cola de prioridades. Por ende, le va a tener que dar comportamiento a todos los métodos definidos en la interfaz cola de prioridad.
+
+07:38.000 --> 07:47.000
+Además, ¿qué otra cosa tiene que cumplirse para que pueda funcionar como cola de prioridad? ¿Los elementos cómo tienen que ser?
+
+07:56.000 --> 08:06.000
+Tienen que ser comparables para que puedan ser ordenables, para poder identificar quién es mayor y quién es menor de tal o cual cosa, del elemento que estemos almacenando en su interior.
+
+08:06.000 --> 08:18.000
+Entonces, con esta restricción que vemos en el rectángulo rojo, solamente MadHIP va a aceptar elementos que implementen comparable.
+
+08:19.000 --> 08:30.000
+Poniendo que T estén de comparable, los elementos T van a tener que implementar comparable. Si no, no nos va a dejar instanciar las MadHIP y nos va a tirar un error de compilación.
+
+08:31.000 --> 08:32.000
+¿Estamos?
+
+08:37.000 --> 08:48.000
+Bien. Entonces, ¿qué dos maneras tenemos de construir una HIP a partir de una lista de elementos?
+
+08:49.000 --> 09:02.000
+Una manera es tomar Denali Constructor, tomar la lista de elementos como parámetros e ir agregando uno a uno los elementos de esa lista que nos envías como parámetros a la HIP.
+
+09:03.000 --> 09:04.000
+¿Eso qué orden nos da?
+
+09:04.000 --> 09:05.000
+¿Eso qué orden nos da?
+
+09:19.000 --> 09:20.000
+¿Qué orden nos da hacer eso?
+
+09:26.000 --> 09:28.000
+¿Hola, se me escucha? ¿Se cortó?
+
+09:35.000 --> 09:37.000
+Bien. Bueno.
+
+09:45.000 --> 09:49.000
+¿Por qué nos da orden en el oguene?
+
+09:50.000 --> 09:58.000
+Porque, ¿qué hacemos por cada uno de los elementos de la lista? Una operación que en el peor de los casos, ¿qué va a recorrer?
+
+09:59.000 --> 10:14.000
+Muy bien. O sea, vamos iterando de N veces. Perfecto. Vamos a iterar por todos los elementos de la lista. Y por cada uno de esos elementos de la lista, vamos a hacer una operación que en el peor de los casos, ¿qué recorre del árbol completo?
+
+10:16.000 --> 10:17.000
+¿La qué?
+
+10:18.000 --> 10:21.000
+No, todo no. Todo no. No recorre todo.
+
+10:22.000 --> 10:25.000
+La altura, exactamente. Muy bien, Gonzalo.
+
+10:25.000 --> 10:31.000
+Entonces, como sabemos que la altura de un árbol binario completo
+
+10:34.000 --> 10:47.000
+es proporcional al logaritmo en base 2 de la cantidad de elementos y como por cada uno de los elementos que vamos a insertar de la lista hacemos esa operación, el orden es en el oguene.
+
+10:48.000 --> 10:54.000
+Hago N veces algo de orden logaritmo en base 2 de N. ¿Se entiende de dónde sale ese orden?
+
+10:55.000 --> 10:56.000
+Bien.
+
+10:59.000 --> 11:01.000
+Genial. Genial Martina.
+
+11:02.000 --> 11:03.000
+¿El resto?
+
+11:07.000 --> 11:08.000
+Bien. Muy bien.
+
+11:09.000 --> 11:10.000
+Bueno.
+
+11:11.000 --> 11:16.000
+Alternativamente, lo que se puede hacer es usar el bilgit.
+
+11:17.000 --> 11:27.000
+El bilgit, si mal no recuerdo, creo que lo vieron el martes pasado. Puede ser o el anterior.
+
+11:31.000 --> 11:37.000
+¿Se acuerdan? No, el martes pasado vivieron tiempo de ejecución, el anterior. ¿Se acuerdan?
+
+11:40.000 --> 11:41.000
+Muy bien.
+
+11:45.000 --> 11:49.000
+Muy bien. Ayer no, la semana pasada. Por eso, muy bien.
+
+11:50.000 --> 11:57.000
+¿Se acuerdan que vieron un método que se llamaba bilgit para construir una heap a partir de un arreglo de elementos desordenados?
+
+11:58.000 --> 12:06.000
+Que lo que hacía era, separaba la mitad y hacía un filtrado descendente de ese elemento.
+
+12:06.000 --> 12:12.000
+Después se movía una posición y hacía un filtrado descendente de ese elemento y así sucesivamente.
+
+12:13.000 --> 12:21.000
+Y vieron que el orden de esa operación era la suma de todas las alturas del árbol.
+
+12:22.000 --> 12:30.000
+Y esa suma, mediante un teorema que mostró Alejandra, daba orden lineal.
+
+12:31.000 --> 12:38.000
+Entonces, en el ejemplo vemos que toma un arreglo de elementos, perdón, en el constructor vemos que toma un arreglo de elementos.
+
+12:39.000 --> 12:46.000
+Cada uno de esos elementos los pasa a la variable distancia a datos, que es la que va a almacenar los datos.
+
+12:47.000 --> 12:55.000
+Y después, a partir de la posición de cantidad de elementos dividido 2, va viendo si hay que hacer un filtrado descendente.
+
+12:56.000 --> 12:57.000
+¿Se acuerdan de esto?
+
+13:00.000 --> 13:20.000
+Bien, vayan repasándolo porque probablemente lo vayan a tener que necesitar en el parcial, en la parte teórica.
+
+13:20.000 --> 13:30.000
+Bien, bueno, entonces, ¿cómo se hacía el filtrado ascendente?
+
+13:31.000 --> 13:40.000
+Se tomaba un elemento, supongamos el 31, y el 31 se lo comparaba con su padre.
+
+13:41.000 --> 13:47.000
+Si su padre, en este caso es una Madhip, si su padre era Metonor, se hacía el intercambio.
+
+13:48.000 --> 13:50.000
+El 12 tomaba el lugar del 31, el 31 del 12.
+
+13:51.000 --> 13:55.000
+Bien, otra vez, ahora estamos en la posición que ocupaba antes el padre.
+
+13:56.000 --> 13:59.000
+Comparamos el 31 con su nuevo padre.
+
+14:00.000 --> 14:11.000
+Si otra vez resulta que está desordenado, se hace el intercambio, y esto se sigue haciendo hasta que, o llegamos a la raíz, con lo cual no hay que hacer más intercambios,
+
+14:12.000 --> 14:14.000
+o encontramos un padre que cumpla la propiedad de orden.
+
+14:15.000 --> 14:17.000
+El código para eso es este que estará.
+
+14:17.000 --> 14:26.000
+Acuérdense que esto es para Madhip. Si es para Midhip, hay que comparar al revés, hay que comparar por menor.
+
+14:28.000 --> 14:34.000
+Esto generalmente se hacía cuando insertamos un elemento, insertamos el nuevo elemento en la última posición,
+
+14:35.000 --> 14:40.000
+con lo cual la hip seguía cumpliendo la propiedad estructural, era un arbol binario completo,
+
+14:40.000 --> 14:42.000
+y después para restablecer la condición de orden, la propiedad de orden.
+
+14:43.000 --> 14:49.000
+Si es que fue rota por la inserción de este nuevo elemento, se hace el filtrado ascendente hacia arriba.
+
+14:50.000 --> 14:52.000
+¿Sí? ¿Se ve?
+
+14:59.000 --> 15:01.000
+¿Hay una pregunta?
+
+15:01.000 --> 15:03.000
+Perfecto, continuamos entonces.
+
+15:11.000 --> 15:13.000
+¿No hay más preguntas?
+
+15:14.000 --> 15:16.000
+No, no hay más preguntas.
+
+15:17.000 --> 15:18.000
+¿No?
+
+15:19.000 --> 15:20.000
+No.
+
+15:21.000 --> 15:23.000
+No hay más preguntas.
+
+15:24.000 --> 15:25.000
+No.
+
+15:26.000 --> 15:27.000
+No.
+
+15:28.000 --> 15:29.000
+No.
+
+15:29.000 --> 15:30.000
+No.
+
+15:31.000 --> 15:32.000
+No.
+
+15:33.000 --> 15:34.000
+Exactamente.
+
+15:35.000 --> 15:38.000
+O sea, si cumple, quiere decir que está bien ordenado, no hay que seguir filtrando.
+
+15:39.000 --> 15:42.000
+Y si llegó a la raíz, quiere decir que es el nuevo máximo, insertamos el nuevo máximo,
+
+15:43.000 --> 15:48.000
+entonces no va a estar, al ser el nuevo máximo, tiene que estar en la raíz, en una Madhip,
+
+15:49.000 --> 15:52.000
+siempre hablando en términos de lo que se ve en el código, Madhip.
+
+15:53.000 --> 15:54.000
+Exactamente, Martina, es así.
+
+15:54.000 --> 15:55.000
+Martina, es así.
+
+15:56.000 --> 15:59.000
+Fíjate que la condición es que el índice dividido 2 sea mayor que 0,
+
+16:00.000 --> 16:03.000
+quiere decir que estemos parados en un elemento que no es la raíz,
+
+16:04.000 --> 16:09.000
+y que además la condición no se cumpla.
+
+16:10.000 --> 16:18.000
+Así que el elemento temporal comparado con el elemento padre,
+
+16:18.000 --> 16:30.000
+que sea menor el padre con respecto al elemento temporal,
+
+16:31.000 --> 16:33.000
+el elemento temporal quiere decir que sea mayor,
+
+16:34.000 --> 16:37.000
+entonces ahí lo que hace es el intercambio.
+
+16:48.000 --> 16:52.000
+Ignacio, esta GIP está pensada para que funcionen como cola de prioridad,
+
+16:53.000 --> 17:00.000
+esa sería más que nada, y que tengan operaciones que sean eficientes,
+
+17:01.000 --> 17:02.000
+de orden logaritmo.
+
+17:03.000 --> 17:04.000
+Bien.
+
+17:05.000 --> 17:06.000
+Continuemos.
+
+17:07.000 --> 17:09.000
+La otra operación que vieron en la teoría,
+
+17:09.000 --> 17:12.000
+fue el colado, el filtrado hacia abajo, el pre-collect down.
+
+17:13.000 --> 17:17.000
+Entonces, en este caso, cuando se usaba,
+
+17:18.000 --> 17:20.000
+o cuál era el ejemplo clásico donde se usaba el filtrado hacia abajo,
+
+17:21.000 --> 17:25.000
+era cuando nosotros recuperábamos el máximo, en este caso, porque es una Madhip.
+
+17:26.000 --> 17:30.000
+Entonces, el dato de la raíz se devolvía y quedaba,
+
+17:31.000 --> 17:33.000
+en este caso, el valor de la raíz,
+
+17:33.000 --> 17:40.000
+entonces el dato de la raíz se devolvía y quedaba abierta esa posición,
+
+17:41.000 --> 17:42.000
+libre la posición de la raíz,
+
+17:43.000 --> 17:49.000
+con lo cual se llenaba, o se tomaba como candidato a llenarse,
+
+17:50.000 --> 17:56.000
+la última hoja, para que siga cumpliendo la propiedad de árbol binario completo.
+
+17:57.000 --> 18:02.000
+Una vez que la propiedad de árbol binario completo,
+
+18:03.000 --> 18:06.000
+sabemos que se cumple, hay que hacer el filtrado hacia abajo,
+
+18:07.000 --> 18:10.000
+por lo cual, si es una Madhip, vamos a tomar el máximo,
+
+18:11.000 --> 18:12.000
+lo vamos a comparar contra el padre,
+
+18:13.000 --> 18:18.000
+y si resulta que el padre no cumple la condición,
+
+18:19.000 --> 18:20.000
+hacemos el intercambio con el máximo,
+
+18:21.000 --> 18:24.000
+y eso se hace hasta que lleguemos a una hoja,
+
+18:25.000 --> 18:28.000
+hasta que el elemento se ubique en una hoja.
+
+18:29.000 --> 18:32.000
+Entonces, para eso, tomamos el candidato,
+
+18:33.000 --> 18:37.000
+teníamos un booleano, si había que parar de filtrar,
+
+18:39.000 --> 18:45.000
+y mientras la posición por dos sea menor o igual a la cantidad de elementos,
+
+18:46.000 --> 18:47.000
+¿qué quiere decir esto?
+
+18:48.000 --> 18:50.000
+Que si es menor, tiene hijo izquierdo y hijo derecho,
+
+18:51.000 --> 18:56.000
+si es igual, puede ser que estemos en un elemento que tenga
+
+18:57.000 --> 19:02.000
+el hijo izquierdo igual a la cantidad de elementos,
+
+19:03.000 --> 19:11.000
+y el booleano nos dice que no nos tenemos que detener.
+
+19:12.000 --> 19:13.000
+¿Este cuándo va a cambiar de valor?
+
+19:14.000 --> 19:15.000
+Cuando esté bien ubicado.
+
+19:16.000 --> 19:21.000
+Entonces, en esta parte, lo que hacemos es,
+
+19:22.000 --> 19:25.000
+identificamos cuál de los dos hijos es el mayor,
+
+19:26.000 --> 19:29.000
+y después comparamos el candidato con el padre.
+
+19:29.000 --> 19:40.000
+Si resulta que el candidato es menor que el máximo de los hijos,
+
+19:41.000 --> 19:43.000
+hay que hacer el intercambio.
+
+19:44.000 --> 19:46.000
+Si no, quiere decir que está bien ubicado,
+
+19:47.000 --> 19:51.000
+entonces hay que cortar la iteración del web,
+
+19:52.000 --> 19:54.000
+cambiando el valor del booleano.
+
+19:54.000 --> 19:57.000
+Esa es la forma de implementar el pre-collet down con Java.
+
+19:58.000 --> 19:59.000
+¿Se entiende?
+
+20:06.000 --> 20:07.000
+¿Hay alguna pregunta?
+
+20:11.000 --> 20:13.000
+Este es bastante simple,
+
+20:14.000 --> 20:17.000
+hay que ver si llegué a una hoja,
+
+20:18.000 --> 20:19.000
+si no llegué a una hoja,
+
+20:19.000 --> 20:21.000
+tengo que seguir iterando por este lado,
+
+20:22.000 --> 20:25.000
+y después tengo que seguir iterando si no está bien ubicado.
+
+20:26.000 --> 20:27.000
+O sea, las dos condiciones de corte es,
+
+20:28.000 --> 20:29.000
+o que esté bien ubicado el elemento,
+
+20:30.000 --> 20:31.000
+o que llegué a una hoja,
+
+20:32.000 --> 20:35.000
+y bueno, no puedo seguir filtrando y estaría bien ubicado.
+
+20:36.000 --> 20:37.000
+Entonces, la primera parte del web,
+
+20:38.000 --> 20:40.000
+que es la que estoy marcando con recuadro,
+
+20:41.000 --> 20:43.000
+verifica que tenga dos hijos,
+
+20:44.000 --> 20:45.000
+y si tiene dos hijos,
+
+20:45.000 --> 20:47.000
+verifica que tenga dos hijos,
+
+20:48.000 --> 20:50.000
+y si tiene dos hijos, el mayor.
+
+20:51.000 --> 20:53.000
+Si no tiene dos hijos, se va a quedar con el hijo izquierdo,
+
+20:54.000 --> 20:55.000
+claramente.
+
+20:57.000 --> 20:59.000
+Una vez que se quedó con el candidato para la comparación,
+
+21:00.000 --> 21:02.000
+¿cómo se llama el candidato?
+
+21:03.000 --> 21:04.000
+Me refiero al mayor de los hijos.
+
+21:05.000 --> 21:07.000
+Bueno, va a comparar ese mayor de los hijos,
+
+21:08.000 --> 21:12.000
+con el candidato para ocupar el hueco que se generó al irse la raíz.
+
+21:12.000 --> 21:16.000
+Si resulta que no cumple la condición,
+
+21:17.000 --> 21:20.000
+seguimos filtrando hacia abajo, nos seguimos moviendo hacia abajo.
+
+21:21.000 --> 21:23.000
+Y si resulta que cumple la condición,
+
+21:24.000 --> 21:27.000
+marcamos que se detenga la iteración.
+
+21:28.000 --> 21:29.000
+Cuando se detuvo la iteración,
+
+21:30.000 --> 21:31.000
+en el lugar que marca posición,
+
+21:32.000 --> 21:33.000
+es donde vamos a volver el candidato.
+
+21:42.000 --> 21:43.000
+¿Alguna pregunta?
+
+21:48.000 --> 21:51.000
+El pre-collect app lo usarías cuando se es un agregar,
+
+21:52.000 --> 21:54.000
+y el pre-collect done cuando se es un, en este caso,
+
+21:55.000 --> 21:56.000
+delete más.
+
+21:57.000 --> 21:59.000
+En esos casos lo usarías, elías.
+
+22:09.000 --> 22:10.000
+¿Alguna pregunta?
+
+22:12.000 --> 22:13.000
+Elico.
+
+22:22.000 --> 22:23.000
+Bien.
+
+22:32.000 --> 22:33.000
+Bueno, acá hay un,
+
+22:36.000 --> 22:37.000
+acá hay un ejemplo dónde
+
+22:38.000 --> 22:40.000
+usan el pre-collect done
+
+22:40.000 --> 22:48.880
+para eliminar un elemento. Entonces no perdón, este eliminar no elimina un elemento cualquiera
+
+22:48.880 --> 22:58.020
+sino elimina la raíz. Entonces pregunta si hay elemento, si tiene elemento la hip, si
+
+22:58.060 --> 23:01.300
+hay elemento toma la raíz.
+
+23:08.500 --> 23:16.900
+Toma la raíz, guarda en la raíz el último elemento,
+
+23:17.860 --> 23:24.220
+decrementa la cantidad de elementos y después hace un filtrado hacia abajo de
+
+23:24.300 --> 23:32.740
+la raíz. Cuando termina el filtrado hacia abajo lo que nos asegura es que volvió a ser una hip,
+
+23:32.740 --> 23:39.420
+volvió a tener la estructura, cumplir la propiedad estructural y la propiedad de
+
+23:39.420 --> 23:46.860
+orden. Una vez que termina el filtrado hacia abajo retorna el elemento. ¿Por qué no arranca en cero?
+
+23:47.020 --> 23:55.260
+Porque es más fácil el cálculo de los del padre a hijo, o sea digamos porque, a ver por ejemplo
+
+23:55.260 --> 24:03.140
+qué se yo, si arrancamos en 1 y estamos en la posición 2 y 3, 2 dividido 2 nos da 1 y
+
+24:03.140 --> 24:08.540
+ahí tendríamos el padre del 1, es más fácil para hacer las operaciones, si no habría que hacer
+
+24:08.540 --> 24:15.100
+correcciones sobre el índice para saber dónde están los padres y los hijos. Bien, pero en un
+
+24:15.100 --> 24:18.060
+método claro para eliminar si o si tiene que...
+
+24:26.700 --> 24:29.820
+A ver Martina, cómo
+
+24:32.260 --> 24:36.140
+cómo por ejemplo para eliminar si o si tiene que ser pre-collet down?
+
+24:37.100 --> 24:44.060
+El pre-collet down lo que hace es, te vuelve a ordenar lo que te quedó desordenado por eliminar
+
+24:44.060 --> 24:51.740
+un elemento. Fijémonos en este caso, toma el primer elemento con lo cual cuando hace esto el
+
+24:51.740 --> 25:00.220
+primer elemento ya fue consumido así que hay que eliminarlo. ¿Cómo lo elimina? Poniéndole la última
+
+25:00.220 --> 25:12.820
+hoja y resta la cantidad de elementos. Entonces a este punto queda como árbol binario completo con
+
+25:12.820 --> 25:17.940
+un elemento menos del que tenía antes de hacer la operación. ¿Pero qué no se está cumpliendo acá?
+
+25:26.900 --> 25:36.580
+Exacto, exacto, muy bien Julián. No nos asegura que el orden sea respetado, la propiedad de orden
+
+25:36.580 --> 25:42.220
+sea respetada. Por eso hay que hacer una operación sobre la estructura de datos para volver a
+
+25:42.220 --> 25:52.780
+restablecer la propiedad de orden. ¿Qué operación vamos a hacer? El pre-collet down. ¿Que qué hace?
+
+25:52.780 --> 26:00.100
+En este caso fíjense, en este caso toma el 12, lo pone en la raíz y pregunta de los dos hijos
+
+26:00.100 --> 26:08.020
+cuál es el mayor. El mayor en este caso el 32. El 32 comparado con el 12, sí, es mayor. Entonces
+
+26:08.020 --> 26:15.380
+en 32 va a la posición del 12, el 12 era el 32. Entonces movimos el 12 para abajo. Otra vez,
+
+26:15.380 --> 26:19.700
+volvemos a hacer la misma operación. Tenemos los dos hijos, de los dos hijos nos quedamos el mayor,
+
+26:19.700 --> 26:26.860
+justo es el 32, lo comparamos con el 12 y resulta que el 32 es mayor que el 12. Entonces ponemos
+
+26:26.860 --> 26:35.180
+el 32 en lugar del 12, el 12 en lugar del 32. Ahora el 32 está una hoja con lo cual no hay
+
+26:35.180 --> 26:39.260
+hijos con lo cual es comparado, con lo cual está bien ordenado y ahí terminaría el filtrado
+
+26:39.260 --> 26:48.060
+descendente. ¿Se entendió Martina, que es la que preguntó? El filtrado hacia abajo lo que hace es
+
+26:48.060 --> 26:52.700
+restablecer la propiedad de orden. Genial.
+
+26:52.700 --> 27:07.980
+Bien, hagan las preguntas que tengan que hacer para que no se queden con dudas. Pregunten las
+
+27:07.980 --> 27:16.180
+veces que sean necesarias. Bien, yo voy a aportar acá si le queda la teoría sin la parte de consulta.
+

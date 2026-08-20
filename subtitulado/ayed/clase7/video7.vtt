@@ -1,0 +1,4886 @@
+WEBVTT
+
+00:00.000 --> 00:16.000
+Bueno, hoy vamos a ver interfaces. Primero vamos a definir que son las interfaces, para que sirven, vamos a ver cómo se editan las interfaces en Java
+
+00:16.000 --> 00:21.000
+Vamos a ver un ejemplo de la declaración de interfaces
+
+00:21.000 --> 00:30.000
+Cuando declaramos una interfaz, qué compromiso adquirimos al decir que implementamos una interfaz
+
+00:30.000 --> 00:43.000
+Vamos a ver que podemos implementar múltiples interfaces y qué impacto tiene en nuestra clase, que va a implementar muchas interfaces
+
+00:44.000 --> 00:56.000
+Cuando trabajamos con interfaces, estamos definiendo un nuevo tipo de datos, al definir un nuevo tipo de datos y decir que somos una implementación de ese nuevo tipo de datos
+
+00:56.000 --> 01:02.000
+Estamos diciendo que podemos hacer upcasting a ese tipo de datos. Vamos a ver algunos ejemplos
+
+01:02.000 --> 01:11.000
+Vamos a ver algunos problemas que están asociados con las interfaces, que es cuando tenemos colisiones, pero lo vamos a nombrar
+
+01:11.000 --> 01:20.000
+Y después vamos a hablar sobre comparables
+
+01:20.000 --> 01:28.000
+Y vamos a hacer una pequeña distinción entre interfaces y clases abstractas y ver qué conviene usar en cada escenario
+
+01:28.000 --> 01:36.000
+Tenemos un escenario dado con un requerimiento de abstracción dado
+
+01:36.000 --> 01:44.000
+Entonces, de acuerdo a ese requerimiento de abstracción, vamos a ver si conviene usar interfaces o clases abstractas
+
+01:44.000 --> 01:53.000
+Bien, pregunta. ¿Han usado interfaces? ¿Están familiarizados con el concepto de interfaz?
+
+01:53.000 --> 02:01.000
+Bien, o sea, esta va a ser la primera vez que ven interfaces
+
+02:01.000 --> 02:05.000
+Bien, buenísimo
+
+02:05.000 --> 02:09.000
+Bueno, entonces
+
+02:09.000 --> 02:16.000
+Tenemos en la transparencia, presenta este escenario
+
+02:17.000 --> 02:21.000
+Tenemos en la transparencia, presenta este escenario
+
+02:21.000 --> 02:29.000
+Tenemos una clase que va a modelar a los pájaros
+
+02:29.000 --> 02:40.000
+Y el pájaro se puede ver como si es un animal, como es una mascota o como es un volador
+
+02:40.000 --> 02:50.000
+Entonces, pregunta. ¿El pájaro podría ser su clase de animal, mascota y volador?
+
+02:50.000 --> 02:58.000
+De acuerdo a lo que saben hoy por hoy, el lenguaje o el conocimiento que tienen hoy sobre Java, ¿qué les parece?
+
+02:58.000 --> 03:02.000
+¿Podríamos extender más de una clase?
+
+03:02.000 --> 03:11.000
+¿Existe la posibilidad de ver al pájaro como un animal, como una mascota o como un volador? ¿Qué les parece?
+
+03:11.000 --> 03:36.000
+Vamos a esperar que escriban las respuestas a los que estén escribiendo y vemos
+
+03:41.000 --> 03:56.000
+Ignacio dice, ¿con objetos? En teoría no
+
+03:56.000 --> 04:02.000
+Exactamente, existe herencia simple, muy bien
+
+04:03.000 --> 04:09.000
+Ignacio nos está diciendo que Java solamente permite herencia simple
+
+04:09.000 --> 04:19.000
+Hay otros lenguajes que permiten herencia múltiple, pero este no sería el caso
+
+04:19.000 --> 04:25.000
+Así que bueno, en este escenario
+
+04:25.000 --> 04:28.000
+En este escenario la respuesta es no
+
+04:28.000 --> 04:36.000
+No podemos extender de más de una clase en Java, la herencia es simple
+
+04:36.000 --> 04:44.000
+Para este caso particular, lo que se decide es que el pájaro extienda de animal, que a su vez extiende de objetos
+
+04:44.000 --> 04:56.000
+Y queda pendiente resolver la parte de ver al pájaro como una mascota o ver al pájaro como un volador
+
+04:56.000 --> 05:08.000
+Eso queda en puntos suspensivos hasta que presentemos el tema de hoy y vamos a ver que existe solución para ver a un objeto de distintas maneras
+
+05:08.000 --> 05:21.000
+A extraer el objeto de distintas formas, a extraerlo como un animal, en este caso a pájaro, a extraerlo y verlo como una mascota o a extraerlo y verlo como un volador
+
+05:21.000 --> 05:34.000
+Entonces, lo que va a surgir como herramienta para solucionar este inconveniente son las interfaces
+
+05:34.000 --> 05:44.000
+Entonces una clase va a extender de una sola superclase o clase base, pero va a poder implementar más de una interfaz
+
+05:45.000 --> 05:55.000
+La interfaz nos va a dar un mecanismo similar a la herencia múltiple, donde en particular, vamos a ver más adelante
+
+05:55.000 --> 06:01.000
+Que lo que vamos a heredar va a ser un tipo de dato, pero no vamos a heredar comportamiento
+
+06:01.000 --> 06:11.000
+Lo que vamos a heredar es la posibilidad de ver a ese objeto como una especie de, por ejemplo de mascota, una especie de volador
+
+06:12.000 --> 06:22.000
+Y esa especie de mascota o de volador va a saber responder el método, viéndolo como mascota, el getNombre y el setNombre
+
+06:22.000 --> 06:27.000
+Y viéndolo como volador va a entender el despegar y el aterrizar
+
+06:27.000 --> 06:34.000
+Al ser, claramente, al ser su clase de animal, obviamente tiene disponible el método comar
+
+06:35.000 --> 06:38.000
+¿Hasta ahí venimos? ¿Se va entendiendo?
+
+06:38.000 --> 06:42.000
+Después vamos a ver cómo, pero por lo menos la idea es que se entienda
+
+06:58.000 --> 07:02.000
+Entonces, vamos a empezar a dar las primeras nociones de que es una interfaz
+
+07:02.000 --> 07:10.000
+Una interfaz en Java va a ser una colección de definiciones de métodos y declaraciones de constantes
+
+07:10.000 --> 07:21.000
+O sea, cuando nosotros definimos una interfaz, vamos a decir, vamos a especificar, mejor dicho, una cantidad de firmas de métodos
+
+07:21.000 --> 07:27.000
+Sin cuerpo, nada más la firma, y sin cuerpo, o sea terminando en punto y coma
+
+07:27.000 --> 07:35.000
+Y una declaración de constantes que tienen sentido para esa interfaz
+
+07:40.000 --> 07:50.000
+Las interfaces proporcionan un mecanismo para que una clase defina comportamiento, o sea, la clase va a estar obligada a darle comportamiento
+
+07:51.000 --> 08:02.000
+A los métodos que están definidos en dicha interfaz, y como contra prestación de la interfaz lo que va a ganar es el tipo que define la interfaz
+
+08:02.000 --> 08:09.000
+Entonces, pájaro, en este caso, va a estar obligado a darle comportamiento al getNombre y al setNombre
+
+08:09.000 --> 08:14.000
+Pero al hacer eso, el pájaro gana la posibilidad de ser visto como una mascota
+
+08:14.000 --> 08:29.000
+Y las interfaces, también de la mano de esta misma idea, van a especificar el qué tiene que hacer, pero sin especificar el cómo
+
+08:29.000 --> 08:39.000
+El qué queda circunscrito a la interfaz, y el cómo queda circunscrito a la clase que implementa esa interfaz
+
+08:40.000 --> 08:44.000
+¿Estamos hasta ahí?
+
+08:44.000 --> 09:00.000
+Ahora, cuando veamos el código, si vamos avanzando, va a quedar más claro, pero la idea de qué es una interfaz y qué es lo que tiene adentro
+
+09:00.000 --> 09:08.000
+Ya ahora la tendríamos que tener más o menos en las maneras que podemos imaginar
+
+09:08.000 --> 09:18.000
+Igual, cuando veamos el código, queda claro, pero bueno, si tienen alguna pregunta, háganla, y si no, sigo avanzando
+
+09:18.000 --> 09:25.000
+Otra vez, vuelvo a repetir, las interfaces definen el qué a través de la colección de definiciones de método
+
+09:25.000 --> 09:35.000
+El cómo queda circunscrito a la clase que va a implementar esa firma de métodos, y además también el qué, podríamos decir, la declaración de constante
+
+09:35.000 --> 09:41.000
+Tal constante es ese valor y está definido dentro de la interfaz
+
+09:44.000 --> 09:51.000
+Alejandro dice, o sea, serían los métodos implementados en las clases
+
+09:51.000 --> 09:58.000
+Exactamente, Alejandro, el comportamiento específico queda circunscrito a la clase que implementa la interfaz
+
+09:59.000 --> 10:08.000
+Está obligada esa clase a implementar lo que especifica la interfaz para que no dé un error de compilación
+
+10:08.000 --> 10:18.000
+Porque al decir que yo soy una mascota en este ejemplo particular, la mascota tiene que saber responder el getNombre y el setNombre
+
+10:18.000 --> 10:25.000
+Alan, es la interfaz y queda en la clase definir la implementación concreta
+
+10:25.000 --> 10:31.000
+Exactamente, Alan, la interfaz define el qué, la clase concreta define el cómo
+
+10:37.000 --> 10:41.000
+Bien, perfecto, veo que se va a entender
+
+10:41.000 --> 10:46.000
+Entonces, veamos cómo se definiría una interfaz
+
+10:46.000 --> 10:50.000
+Bien, primeramente la interfaz va a estar dentro de un paquete
+
+10:50.000 --> 10:59.000
+Normalmente vamos a poner la interfaz dentro de un paquete, si de acuerdo al criterio
+
+10:59.000 --> 11:05.000
+No sería recomendable tener una interfaz en el paquete por default, pero bueno
+
+11:05.000 --> 11:10.000
+En definitiva, está en un paquete específico o en el por defecto
+
+11:10.000 --> 11:21.000
+Después vamos a definir el alcance, el alcance público o si no se pone el public
+
+11:21.000 --> 11:30.000
+La interfaz va a ser de paquete, solamente la van a poder ver las clases que están definidas en el paquete de la interfaz
+
+11:30.000 --> 11:34.000
+Entonces una interfaz para que tenga alcance tiene que ser pública
+
+11:34.000 --> 11:39.000
+Después la palabra reservada de interfaz que da a entender que va a ser una interfaz
+
+11:39.000 --> 11:46.000
+El nombre de la interfaz y si la interfaz extiende de otras superinterfaces
+
+11:46.000 --> 11:52.000
+En este caso, fíjense que hay una lista de superinterfaces, en este ejemplo
+
+11:52.000 --> 11:58.000
+Indicando de qué hereda de múltiples superinterfaces
+
+11:58.000 --> 12:05.000
+En este caso, las interfaces admiten herencia múltiple, cosa que no pasa con las clases
+
+12:05.000 --> 12:13.000
+Pero otra vez, ¿qué van a heredar las interfaces? Van a heredar definiciones de métodos
+
+12:13.000 --> 12:23.000
+No heredan comportamiento concreto, entonces en este caso es seguro y no genera ningún tipo de error
+
+12:24.000 --> 12:29.000
+Después dentro del cuerpo de la interfaz, fíjense que vamos a marcarlo con otro color
+
+12:29.000 --> 12:33.000
+La llave de apertura y de cierre define el cuerpo de la interfaz
+
+12:33.000 --> 12:37.000
+Vamos a poder declarar los métodos y las constantes
+
+12:37.000 --> 12:42.000
+Los métodos van a ser implícitamente public y abstractos
+
+12:42.000 --> 12:46.000
+Implicitamente quiere decir que si no lo ponemos va a ser public y abstracto
+
+12:46.000 --> 12:51.000
+Y las constantes van a ser públicas, estáticas y finales
+
+12:51.000 --> 12:59.000
+Lo que definamos dentro de la interfaz, como al estilo de variable like
+
+12:59.000 --> 13:06.000
+Va a ser público, estático y al ser final indica que es una constante, no puede modificarse
+
+13:08.000 --> 13:14.000
+Entonces otra vez, el modificador de acceso público establece que puede ser acceder
+
+13:14.000 --> 13:18.000
+O puede ser visible esta interfaz desde cualquier paquete
+
+13:18.000 --> 13:25.000
+Si no está especificado va a ser nada más accesible desde las clases que estén dentro del mismo paquete
+
+13:25.000 --> 13:29.000
+Las interfaces admiten herencia múltiple
+
+13:31.000 --> 13:37.000
+Y bueno, una interfaz va a heredar todas las constantes y definiciones de métodos de su superclase
+
+13:39.000 --> 13:42.000
+¿Estamos? ¿Tenimos bien hasta ahí?
+
+13:43.000 --> 13:47.000
+Una pregunta
+
+13:51.000 --> 13:54.000
+Las constantes heredan, exactamente
+
+13:54.000 --> 14:04.000
+Por ejemplo, si en superinter1 hay una constante C1
+
+14:04.000 --> 14:08.000
+Esa constante C1 va a estar disponible para esta interfaz
+
+14:08.000 --> 14:15.000
+O sea, el que va a terminar teniéndola como disponible a esa constante 1
+
+14:15.000 --> 14:17.000
+Va a ser la clase que implementa la interfaz
+
+14:17.000 --> 14:23.000
+Y lo mismo sucede, por ejemplo, si tenemos en superinter2 constante C2
+
+14:23.000 --> 14:27.000
+También va a estar disponible para la clase que implementa la interfaz
+
+14:27.000 --> 14:31.000
+Sin necesidad de estar definida específicamente en una interfaz
+
+14:31.000 --> 14:33.000
+¿Se entiende?
+
+14:39.000 --> 14:41.000
+Bien
+
+14:43.000 --> 14:52.000
+Bueno, ahora vamos a ver un ejemplo concreto en código Java de cómo se define una interfaz
+
+14:52.000 --> 14:58.000
+Entonces, para este caso vamos a definir
+
+14:58.000 --> 15:05.000
+No, Alejandro, las interfaces no definen cuerpo a los métodos
+
+15:05.000 --> 15:08.000
+Sólo, como acá, como en este caso, fíjate que define
+
+15:08.000 --> 15:10.000
+Nada más que la firma que va a tener
+
+15:10.000 --> 15:12.000
+Ahí ya, no sé qué pasó
+
+15:12.000 --> 15:14.000
+Un segundito
+
+15:19.000 --> 15:21.000
+Cambió de texto
+
+15:21.000 --> 15:23.000
+Fíjate que acá
+
+15:24.000 --> 15:26.000
+Cambió de texto
+
+15:26.000 --> 15:33.000
+Fíjate que acá, en el despegar, define la firma, no define el cuerpo
+
+15:33.000 --> 15:35.000
+¿Sí?
+
+15:42.000 --> 15:46.000
+Bien, a ver quién está preguntando
+
+15:46.000 --> 15:50.000
+También, Alejandro, después vuelvo a ver si hay alguna pregunta más
+
+15:51.000 --> 15:57.000
+Ok, bien, era más para saber si se resolvió algo como el final
+
+15:57.000 --> 16:00.000
+Algo de una superint
+
+16:00.000 --> 16:09.000
+No, otra vez, como son declaraciones sin comportamiento
+
+16:09.000 --> 16:11.000
+La firma de los métodos
+
+16:12.000 --> 16:20.000
+No hay problema que se le den de múltiples interfaces
+
+16:20.000 --> 16:24.000
+Porque no va a haber colisión de comportamiento
+
+16:30.000 --> 16:33.000
+Si tuvieran implementación ahí sería más complicado
+
+16:33.000 --> 16:36.000
+Pero el que le da la implementación es la clase
+
+16:36.000 --> 16:38.000
+Entonces, la clase elige qué implementación tiene
+
+16:38.000 --> 16:45.000
+Lo que sí puede ser que esté obligada por una genetía de adherencia
+
+16:45.000 --> 16:48.000
+Que, por ejemplo, dos interfaces
+
+16:48.000 --> 16:51.000
+Especifiquen el despegar
+
+16:51.000 --> 16:54.000
+Pero como tienen la misma firma
+
+16:54.000 --> 17:00.000
+El despegar es satisfecho con una sola implementación de ese despegar
+
+17:00.000 --> 17:02.000
+Entonces no hay problema
+
+17:02.000 --> 17:04.000
+¿Se entiende ahora?
+
+17:08.000 --> 17:11.000
+Bien, genial, buenísimo
+
+17:11.000 --> 17:18.000
+Entonces, fíjense que tenemos la definición de la interfaz volador
+
+17:18.000 --> 17:22.000
+Y tenemos la definición de la interfaz volador también
+
+17:22.000 --> 17:26.000
+Estas dos definiciones son equivalentes
+
+17:26.000 --> 17:28.000
+¿Por qué?
+
+17:28.000 --> 17:31.000
+Porque, bueno,
+
+17:31.000 --> 17:35.000
+Inicialmente, las dos son públicas
+
+17:35.000 --> 17:37.000
+Y tienen el mismo nombre
+
+17:37.000 --> 17:40.000
+Las dos son públicas y tienen el mismo nombre
+
+17:40.000 --> 17:43.000
+Acá define public, static, final
+
+17:43.000 --> 17:49.000
+El tipo, el nombre de la variabilidad de un segundo igual a 1000
+
+17:49.000 --> 17:52.000
+Acá define long, un segundo igual a 1000
+
+17:52.000 --> 17:53.000
+¿Qué pasa?
+
+17:53.000 --> 17:57.000
+En la implementación de la izquierda
+
+17:57.000 --> 18:01.000
+Como no se pone public, static, final
+
+18:01.000 --> 18:05.000
+Se pone como...
+
+18:05.000 --> 18:07.000
+¿Cómo se llama?
+
+18:07.000 --> 18:08.000
+Implícito
+
+18:08.000 --> 18:10.000
+O sea, implícitamente
+
+18:10.000 --> 18:13.000
+Más allá de que no lo clasifiquemos explícitamente
+
+18:13.000 --> 18:15.000
+Como en el ejemplo de la derecha
+
+18:15.000 --> 18:17.000
+O sea, implícitamente
+
+18:17.000 --> 18:18.000
+O sea, implícitamente
+
+18:18.000 --> 18:21.000
+Más allá de que no lo clasifiquemos explícitamente
+
+18:21.000 --> 18:24.000
+Como en el ejemplo de la derecha
+
+18:24.000 --> 18:25.000
+En el ejemplo de la izquierda
+
+18:25.000 --> 18:29.000
+Implícitamente es como si tuviera el public, static y final
+
+18:29.000 --> 18:31.000
+Entonces, en este caso es similar
+
+18:31.000 --> 18:33.000
+Y lo mismo pasa con los métodos
+
+18:33.000 --> 18:36.000
+Más allá de que no pongamos public abstract
+
+18:36.000 --> 18:39.000
+Implícitamente son públicos de abstract
+
+18:39.000 --> 18:44.000
+¿Como se pone public?
+
+18:44.000 --> 18:48.000
+No, porque en el constructor por defecto
+
+18:48.000 --> 18:53.000
+Si vos definís un constructor
+
+18:53.000 --> 18:56.000
+Que tiene un parámetro
+
+18:56.000 --> 18:59.000
+El constructor por defecto ya no contás con él
+
+18:59.000 --> 19:03.000
+Chicos, acá
+
+19:03.000 --> 19:05.000
+Acá hay más de una definición
+
+19:05.000 --> 19:08.000
+Y más allá que en una sola definición se ponga o no
+
+19:08.000 --> 19:13.000
+Todos igualmente van a ser implícitamente public y abstract
+
+19:13.000 --> 19:15.000
+No sé si se entiende
+
+19:18.000 --> 19:20.000
+Claro, si no definís ningún constructor
+
+19:20.000 --> 19:23.000
+El compilador te inyecta el por defecto
+
+19:23.000 --> 19:25.000
+Exactamente
+
+19:29.000 --> 19:30.000
+La sobrecarga sí
+
+19:30.000 --> 19:32.000
+La sobrecarga lo podéis llevar
+
+19:32.000 --> 19:36.000
+Siempre y cuando respetes las reglas de la sobrecarga
+
+19:36.000 --> 19:40.000
+Si vos no respetas la regla de la sobrecarga
+
+19:40.000 --> 19:42.000
+Te va a tener un error de compilación
+
+19:44.000 --> 19:46.000
+Bien, entonces
+
+19:46.000 --> 19:48.000
+A ver, ¿dónde estábamos?
+
+19:53.000 --> 19:56.000
+Bien, la interfaz volador establece el que
+
+19:56.000 --> 19:58.000
+Otra vez, veamos
+
+20:01.000 --> 20:04.000
+La interfaz volador establece el que
+
+20:04.000 --> 20:07.000
+La clase que la implementa va a establecer el cómo
+
+20:07.000 --> 20:08.000
+Fíjense
+
+20:08.000 --> 20:12.000
+La interfaz volador especifica qué comportamiento
+
+20:12.000 --> 20:15.000
+Tiene que tener la clase que la implementa
+
+20:15.000 --> 20:18.000
+Tiene que saber aterrizar, despegar y volar
+
+20:18.000 --> 20:19.000
+Y el cómo no lo sabemos
+
+20:19.000 --> 20:22.000
+¿Por qué? Porque queda relegado o delegado
+
+20:22.000 --> 20:24.000
+A la clase que la implementa
+
+20:25.000 --> 20:26.000
+También
+
+20:26.000 --> 20:29.000
+La interfaz nos va a proveer
+
+20:29.000 --> 20:32.000
+Constantes, en este caso un segundo y un minuto
+
+20:32.000 --> 20:33.000
+Que van a ser
+
+20:35.000 --> 20:37.000
+Que van a estar disponibles
+
+20:37.000 --> 20:39.000
+Para la clase que implementa la interfaz
+
+20:39.000 --> 20:42.000
+Y todas las interfaces se guardan en archivos
+
+20:42.000 --> 20:44.000
+Con el nombre de la interfaz
+
+20:44.000 --> 20:46.000
+En este caso va a ser volador.java
+
+20:46.000 --> 20:49.000
+Se aplica la misma regla que con las clases
+
+20:51.000 --> 20:52.000
+¿Se entendió?
+
+20:52.000 --> 20:54.000
+¿Hay alguna pregunta?
+
+21:03.000 --> 21:05.000
+¿Estamos hasta ahí?
+
+21:06.000 --> 21:07.000
+Bien
+
+21:07.000 --> 21:09.000
+Continuemos entonces
+
+21:13.000 --> 21:17.000
+Entonces ahí vemos un ejemplo de cómo implementar la interfaz
+
+21:17.000 --> 21:22.000
+Las interfaces se van a implementar a través de la palabra reservada implement
+
+21:23.000 --> 21:26.000
+Entonces tenemos la clase pájaro
+
+21:26.000 --> 21:29.000
+E implementa la interfaz volador
+
+21:30.000 --> 21:34.000
+Al decir que implementa la interfaz volador
+
+21:34.000 --> 21:39.000
+Se establece como una especie de contrato entre la clase y la interfaz
+
+21:39.000 --> 21:41.000
+Donde la clase
+
+21:41.000 --> 21:45.000
+Se hace responsable de darle comportamiento
+
+21:45.000 --> 21:48.000
+A todos los métodos definidos en la interfaz
+
+21:48.000 --> 21:52.000
+Y la interfaz, vamos a decir como contraprestación
+
+21:52.000 --> 21:54.000
+Le va a proveer su tipo
+
+21:55.000 --> 21:56.000
+Entonces
+
+21:56.000 --> 21:59.000
+Pájaro, fíjense en este ejemplo
+
+22:01.000 --> 22:05.000
+Pájaro va a poder ser visto como volador y mascota
+
+22:05.000 --> 22:08.000
+Vía la implementación de la interfaz
+
+22:08.000 --> 22:10.000
+Y también va a poder ser visto como un animal
+
+22:10.000 --> 22:14.000
+Vía la herencia, haciendo el extend de animal
+
+22:14.000 --> 22:15.000
+¿Sí?
+
+22:15.000 --> 22:16.000
+¿Pero qué sucede?
+
+22:16.000 --> 22:19.000
+Al decir que implementa las interfaces
+
+22:19.000 --> 22:21.000
+Va a estar obligado, como en el ejemplo
+
+22:21.000 --> 22:23.000
+A darle comportamiento
+
+22:23.000 --> 22:26.000
+A los métodos que definen cada una de esas interfaces
+
+22:26.000 --> 22:27.000
+Que dice implementar
+
+22:27.000 --> 22:29.000
+Como por ejemplo el despegar
+
+22:29.000 --> 22:30.000
+El aterrizar
+
+22:30.000 --> 22:31.000
+El volar
+
+22:31.000 --> 22:33.000
+Que corresponden a volador
+
+22:33.000 --> 22:36.000
+Y el getName y el setName que corresponden a mascota
+
+22:36.000 --> 22:38.000
+Así en interfaz mascota
+
+22:38.000 --> 22:41.000
+Entonces de esa manera
+
+22:41.000 --> 22:45.000
+Se implementa como un mecanismo similar a la herencia múltiple
+
+22:45.000 --> 22:50.000
+Donde en realidad no heredamos múltiple comportamientos
+
+22:50.000 --> 22:55.000
+Sino que heredamos múltiples tipos de cosas que queremos hacer
+
+22:57.000 --> 23:02.000
+¿Se ve acá un poquito más claro cómo funciona el tema de las interfaces?
+
+23:08.000 --> 23:10.000
+Si tienen alguna pregunta
+
+23:10.000 --> 23:12.000
+Es el momento de hacerla
+
+23:20.000 --> 23:22.000
+Exactamente Gonzalo
+
+23:22.000 --> 23:24.000
+Cuando vos decís que implementas
+
+23:24.000 --> 23:26.000
+Por ejemplo volador
+
+23:26.000 --> 23:28.000
+Adentro del cuerpo de los métodos
+
+23:28.000 --> 23:31.000
+Podés invocar a un segundo y a un minuto
+
+23:31.000 --> 23:33.000
+Y poder trabajar con ellos
+
+23:33.000 --> 23:34.000
+¿Sí?
+
+23:34.000 --> 23:35.000
+Sí, sí
+
+23:40.000 --> 23:41.000
+Sí, sí
+
+23:41.000 --> 23:42.000
+A ver
+
+23:42.000 --> 23:43.000
+A ver
+
+23:43.000 --> 23:44.000
+A ver
+
+23:44.000 --> 23:45.000
+A ver
+
+23:45.000 --> 23:46.000
+A ver
+
+23:46.000 --> 23:47.000
+A ver
+
+23:48.000 --> 23:49.000
+Sí, sí
+
+23:49.000 --> 23:52.000
+Falta poner string
+
+23:52.000 --> 23:53.000
+Sí, sí
+
+23:54.000 --> 23:55.000
+Falta string
+
+23:55.000 --> 23:56.000
+Y voy
+
+23:56.000 --> 23:57.000
+Otra
+
+24:10.000 --> 24:13.000
+Sí, las clases abstractas pueden implementar interfaz
+
+24:13.000 --> 24:15.000
+Y Julián
+
+24:15.000 --> 24:16.000
+Y
+
+24:17.000 --> 24:18.000
+Bueno
+
+24:18.000 --> 24:19.000
+Ahora
+
+24:19.000 --> 24:20.000
+Ahora lo vamos a ver
+
+24:20.000 --> 24:21.000
+Pero
+
+24:21.000 --> 24:23.000
+En función de lo que
+
+24:23.000 --> 24:24.000
+Preguntas
+
+24:24.000 --> 24:28.000
+Las clases abstractas como son abstractas
+
+24:29.000 --> 24:34.000
+Y no vamos a encontrar instancias de las clases abstractas
+
+24:34.000 --> 24:38.000
+Permite que no se implementen todos los métodos de la interfaz
+
+24:38.000 --> 24:39.000
+¿Sí?
+
+24:39.000 --> 24:42.000
+Las clases abstractas podrían
+
+24:42.000 --> 24:44.000
+Implementar algunos métodos
+
+24:44.000 --> 24:47.000
+O directamente no implementar ninguno
+
+24:47.000 --> 24:50.000
+Y dejar delegado la implementación a la clase
+
+24:50.000 --> 24:52.000
+Que herede de esa clase abstracta
+
+24:52.000 --> 24:54.000
+A la clase concreta
+
+24:54.000 --> 24:55.000
+¿Sí?
+
+24:55.000 --> 24:56.000
+Entonces
+
+24:56.000 --> 24:59.000
+Poner una clase
+
+24:59.000 --> 25:00.000
+Abstracta
+
+25:00.000 --> 25:03.000
+En el medio de la implementación de
+
+25:03.000 --> 25:04.000
+De una interfaz
+
+25:04.000 --> 25:06.000
+La ventaja que tiene es que
+
+25:06.000 --> 25:09.000
+Tenés potencia en cuanto a reutilización del código
+
+25:09.000 --> 25:10.000
+Lo que podés
+
+25:10.000 --> 25:11.000
+Especifico
+
+25:11.000 --> 25:12.000
+Digamos
+
+25:12.000 --> 25:13.000
+Del
+
+25:13.000 --> 25:15.000
+De la definición de la interfaz
+
+25:15.000 --> 25:18.000
+Que sabes que se va a utilizar mucho
+
+25:18.000 --> 25:20.000
+Y no va a variar el comportamiento
+
+25:20.000 --> 25:21.000
+Sería conveniente
+
+25:21.000 --> 25:25.000
+Implementarlo en un método concreto dentro de una clase abstracta
+
+25:25.000 --> 25:26.000
+Y delegar
+
+25:26.000 --> 25:29.000
+El resto a una clase concreta
+
+25:29.000 --> 25:30.000
+¿Sí?
+
+25:30.000 --> 25:32.000
+Es un detalle fino de diseño pero
+
+25:32.000 --> 25:33.000
+Pero bueno ya que
+
+25:33.000 --> 25:35.000
+Que surge la pregunta
+
+25:35.000 --> 25:37.000
+Lo comento
+
+25:37.000 --> 25:41.000
+Vamos, esto estaría como por afuera de lo que sería
+
+25:41.000 --> 25:43.000
+El alcance de la clase
+
+25:49.000 --> 25:50.000
+Genial
+
+25:51.000 --> 25:52.000
+Buenísimo, entonces
+
+25:52.000 --> 25:54.000
+Sigamos avanzando
+
+25:56.000 --> 25:57.000
+Bueno
+
+25:57.000 --> 25:59.000
+Acá
+
+25:59.000 --> 26:01.000
+Digamos en pantalla tenemos
+
+26:01.000 --> 26:04.000
+Un diagrama VML de cosas que vuelan
+
+26:04.000 --> 26:05.000
+¿Sí?
+
+26:05.000 --> 26:07.000
+Como por ejemplo
+
+26:07.000 --> 26:09.000
+El avión
+
+26:11.000 --> 26:12.000
+El helicóptero
+
+26:12.000 --> 26:14.000
+El pájaro
+
+26:14.000 --> 26:16.000
+Y hasta aquí queda
+
+26:17.000 --> 26:19.000
+Entonces estas tres
+
+26:19.000 --> 26:21.000
+Clases
+
+26:21.000 --> 26:22.000
+Avión, pájaro
+
+26:22.000 --> 26:24.000
+Y helicóptero
+
+26:24.000 --> 26:26.000
+Van a implementar la interfaz volador
+
+26:26.000 --> 26:28.000
+En particular
+
+26:28.000 --> 26:30.000
+Pájaro va a extender de animal
+
+26:30.000 --> 26:33.000
+Junto con la araña y el gato
+
+26:33.000 --> 26:34.000
+¿Sí?
+
+26:34.000 --> 26:36.000
+Entonces
+
+26:36.000 --> 26:38.000
+Acá tenemos
+
+26:38.000 --> 26:40.000
+En esta clase en particular
+
+26:40.000 --> 26:41.000
+Tenemos que
+
+26:41.000 --> 26:42.000
+Pájaro
+
+26:42.000 --> 26:43.000
+La clase pájaro
+
+26:43.000 --> 26:44.000
+De la que estamos hablando
+
+26:44.000 --> 26:45.000
+Pájaro
+
+26:45.000 --> 26:46.000
+Tiene dos tipos
+
+26:46.000 --> 26:47.000
+Al cual puede hacer
+
+26:47.000 --> 26:49.000
+Al cual podría llegar a hacer
+
+26:49.000 --> 26:51.000
+Upcasting
+
+26:51.000 --> 26:53.000
+Podría hacer upcasting animal
+
+26:53.000 --> 26:55.000
+O upcasting a volador
+
+26:55.000 --> 26:56.000
+Entonces
+
+26:56.000 --> 26:58.000
+Si hacemos upcasting a volador
+
+26:58.000 --> 27:00.000
+Lo vamos a poder alber al pájaro
+
+27:00.000 --> 27:02.000
+Como un objeto que sabe
+
+27:02.000 --> 27:04.000
+Despegar, aterrizar y volar
+
+27:04.000 --> 27:06.000
+Y efectivamente lo sabe
+
+27:06.000 --> 27:09.000
+Porque implementa esos métodos
+
+27:10.000 --> 27:13.000
+Al decir que implementa la interfaz volador
+
+27:13.000 --> 27:16.000
+Y estar obligado a darle comportamiento concreto
+
+27:16.000 --> 27:18.000
+A esos métodos
+
+27:22.000 --> 27:23.000
+También
+
+27:23.000 --> 27:24.000
+¿Sí?
+
+27:25.000 --> 27:27.000
+Avión y helicóptero
+
+27:27.000 --> 27:29.000
+Son tipo de transportes
+
+27:29.000 --> 27:32.000
+Con lo cual estas
+
+27:32.000 --> 27:34.000
+Dos clases van a heredar
+
+27:34.000 --> 27:36.000
+De la clase transporte
+
+27:37.000 --> 27:38.000
+Otra vez
+
+27:38.000 --> 27:40.000
+Avión y helicóptero
+
+27:40.000 --> 27:42.000
+Vamos a poder hacer upcasting
+
+27:42.000 --> 27:44.000
+A dos tipos distintos
+
+27:44.000 --> 27:46.000
+Al transporte
+
+27:46.000 --> 27:49.000
+Como un upcasting a la superclase
+
+27:49.000 --> 27:51.000
+O un upcasting a la interfaz
+
+27:52.000 --> 27:54.000
+Es seguro hacer el upcasting
+
+27:54.000 --> 27:57.000
+Porque al decir que implementan la interfaz
+
+27:57.000 --> 28:00.000
+Forzosamente le tiene que dar comportamiento
+
+28:00.000 --> 28:02.000
+A los métodos definidos en dicha interfaz
+
+28:02.000 --> 28:03.000
+Otra vez
+
+28:03.000 --> 28:06.000
+A despegar, aterrizar y a volar
+
+28:07.000 --> 28:08.000
+Luego
+
+28:10.000 --> 28:11.000
+Vamos a ver
+
+28:11.000 --> 28:14.000
+Que surge la interfaz mascota
+
+28:14.000 --> 28:16.000
+Y bueno, mascota va
+
+28:17.000 --> 28:20.000
+La interfaz mascota va a ser implementada por el gato
+
+28:20.000 --> 28:22.000
+Y por el pájaro
+
+28:22.000 --> 28:24.000
+Y ya se aplica la misma idea
+
+28:24.000 --> 28:26.000
+Entonces, en definitiva
+
+28:26.000 --> 28:28.000
+Vamos a tener que avión
+
+28:28.000 --> 28:30.000
+Va a tener dos tipos
+
+28:30.000 --> 28:32.000
+O sea, transportes y volador
+
+28:32.000 --> 28:33.000
+Lo mismo para helicóptero
+
+28:33.000 --> 28:35.000
+Pájaro va a tener tres tipos
+
+28:35.000 --> 28:38.000
+Va a poder ser visto como un volador
+
+28:38.000 --> 28:40.000
+Como un animal y como una mascota
+
+28:40.000 --> 28:44.000
+Y bueno, el gato va a tener dos tipos
+
+28:44.000 --> 28:46.000
+Como mascota y animal
+
+28:49.000 --> 28:50.000
+Bien
+
+28:55.000 --> 28:57.000
+Exactamente, en la etapa de diseño
+
+28:57.000 --> 28:59.000
+De acuerdo a lo que estés diseñando
+
+28:59.000 --> 29:01.000
+La problemática en particular
+
+29:01.000 --> 29:03.000
+Que va a ser inclinada por una interfaz
+
+29:03.000 --> 29:06.000
+O por una clase abstracta
+
+29:12.000 --> 29:16.000
+Sí, Alan, está el PDF pero está oculto
+
+29:16.000 --> 29:19.000
+Yo ahora cuando termine lo pongo visible
+
+29:19.000 --> 29:23.000
+Lo que pasa es que estaba procesando el PDF
+
+29:23.000 --> 29:25.000
+Para que se viera bien
+
+29:25.000 --> 29:28.000
+Ustedes van a ver uno más comprimido
+
+29:28.000 --> 29:30.000
+Donde van a tener la información toda en una
+
+29:30.000 --> 29:34.000
+O sea, en lugar de tener estas intermedias
+
+29:34.000 --> 29:38.000
+Van a tener la final
+
+29:38.000 --> 29:40.000
+Pero a mí lo tuve que procesar
+
+29:40.000 --> 29:43.000
+Para poder hacer las animaciones
+
+29:43.000 --> 29:46.000
+Así que ni bien termine se los pongo visible
+
+29:49.000 --> 29:51.000
+Bien, entonces
+
+29:54.000 --> 29:57.000
+Cuando una clase implementa una interfaz
+
+29:57.000 --> 29:59.000
+Se establece un contrato entre la interfaz
+
+29:59.000 --> 30:01.000
+Y la clase que implementa
+
+30:01.000 --> 30:03.000
+El compilador va a ser el encargado
+
+30:03.000 --> 30:05.000
+Va a ser el vedor
+
+30:05.000 --> 30:07.000
+Es decirlo de esa manera
+
+30:07.000 --> 30:11.000
+De que dicho contrato se respete
+
+30:11.000 --> 30:15.000
+Si una clase concreta no implementa
+
+30:15.000 --> 30:17.000
+Todos los métodos de la interfaz
+
+30:17.000 --> 30:19.000
+Genera un error de compilación
+
+30:19.000 --> 30:22.000
+Para salvar ese error de compilación
+
+30:22.000 --> 30:25.000
+Tienen que estar implementados
+
+30:25.000 --> 30:27.000
+Con comportamiento todos los métodos
+
+30:27.000 --> 30:29.000
+Definidos en la interfaz
+
+30:29.000 --> 30:32.000
+Entonces, viendo el ejemplo de pájaro
+
+30:32.000 --> 30:34.000
+De la clase pájaro
+
+30:34.000 --> 30:37.000
+Que implementa mascota y volador
+
+30:37.000 --> 30:40.000
+En el recuadro aparecen
+
+30:40.000 --> 30:43.000
+Los métodos implementados de la clase
+
+30:43.000 --> 30:46.000
+De la interfaz volador
+
+30:46.000 --> 30:48.000
+Pero en la clase pájaro
+
+30:48.000 --> 30:50.000
+Y lo mismo
+
+30:50.000 --> 30:52.000
+Para la interfaz mascota
+
+30:52.000 --> 30:54.000
+Que son los métodos
+
+30:54.000 --> 30:57.000
+GetNombre y SetNombre
+
+30:57.000 --> 30:59.000
+Que están definidos
+
+30:59.000 --> 31:01.000
+En la interfaz mascota
+
+31:04.000 --> 31:07.000
+Bien, acá tenemos otro ejemplo
+
+31:07.000 --> 31:11.000
+En lugar de ver la clase pájaro
+
+31:11.000 --> 31:13.000
+Vamos a la clase avión
+
+31:13.000 --> 31:15.000
+La clase avión
+
+31:15.000 --> 31:17.000
+Implementa volador
+
+31:17.000 --> 31:19.000
+Por ende tiene que darle comportamiento
+
+31:19.000 --> 31:21.000
+A los métodos de esperar
+
+31:21.000 --> 31:23.000
+Aterrizar y volar
+
+31:23.000 --> 31:25.000
+Y el comportamiento que se da
+
+31:25.000 --> 31:27.000
+Entre estas dos clases
+
+31:27.000 --> 31:29.000
+De esos tres métodos particulares
+
+31:29.000 --> 31:31.000
+Es distinto
+
+31:31.000 --> 31:34.000
+En particular, cada uno de esos tres métodos
+
+31:34.000 --> 31:36.000
+Devuelven string distinto
+
+31:36.000 --> 31:38.000
+Por ende tienen comportamiento distinto
+
+31:38.000 --> 31:41.000
+O sea, no todos los que implementen
+
+31:41.000 --> 31:44.000
+La interfaz volador van a volar de la misma manera
+
+31:46.000 --> 31:48.000
+O sea, en que sentido
+
+31:48.000 --> 31:50.000
+No van a despegar de la misma manera
+
+31:50.000 --> 31:52.000
+No van a aterrizar de la misma manera
+
+31:53.000 --> 31:56.000
+Entonces, ahí se ve la potencia
+
+31:56.000 --> 31:58.000
+Del uso de interfaces
+
+31:58.000 --> 32:00.000
+¿Por qué? Porque vamos a ver
+
+32:00.000 --> 32:03.000
+Clases que tienen comportamientos distintos
+
+32:03.000 --> 32:05.000
+Como pájaro y avión
+
+32:05.000 --> 32:08.000
+Agrupados bajo un mismo tipo de datos
+
+32:08.000 --> 32:10.000
+En este caso, el volador
+
+32:12.000 --> 32:14.000
+¿Estamos hasta ahí?
+
+32:23.000 --> 32:25.000
+Ok, ¿Hay alguna pregunta?
+
+32:33.000 --> 32:35.000
+Bueno, avancemos entonces
+
+32:41.000 --> 32:44.000
+Bueno, el mecanismo que permite crear
+
+32:44.000 --> 32:46.000
+Una clase derivada
+
+32:46.000 --> 32:49.000
+De varias clases bases
+
+32:49.000 --> 32:51.000
+Se llama herencia múltiple
+
+32:51.000 --> 32:53.000
+Otra vez
+
+32:53.000 --> 32:55.000
+Java
+
+32:55.000 --> 32:57.000
+No permite herencia múltiple
+
+32:59.000 --> 33:01.000
+Y de esa manera se evita
+
+33:01.000 --> 33:03.000
+Los problemas de ambigüedad
+
+33:03.000 --> 33:05.000
+O sea, de tener
+
+33:05.000 --> 33:07.000
+En más de una superclase
+
+33:07.000 --> 33:11.000
+Una misma idea de método
+
+33:11.000 --> 33:13.000
+Por ejemplo
+
+33:15.000 --> 33:17.000
+El despegar
+
+33:17.000 --> 33:19.000
+Por ejemplo, el despegar
+
+33:19.000 --> 33:21.000
+Si supondamos que en A y en B
+
+33:21.000 --> 33:23.000
+Tienen el método despegar
+
+33:23.000 --> 33:25.000
+Y se implementa de manera distinta
+
+33:25.000 --> 33:27.000
+Cuando la clase X
+
+33:27.000 --> 33:29.000
+Dice que extiende
+
+33:29.000 --> 33:31.000
+De A o B
+
+33:31.000 --> 33:33.000
+Ahí tenemos un problema
+
+33:33.000 --> 33:35.000
+Tenemos una colisión
+
+33:35.000 --> 33:37.000
+Porque tenemos para un mismo comportamiento
+
+33:37.000 --> 33:39.000
+Dos implementaciones distintas
+
+33:39.000 --> 33:41.000
+Entonces, ahí nosotros tendríamos
+
+33:41.000 --> 33:43.000
+Que resolver de alguna manera
+
+33:43.000 --> 33:45.000
+Que comportamiento queremos adoptar
+
+33:45.000 --> 33:47.000
+Y cuál no
+
+33:47.000 --> 33:49.000
+Bien, ya establecimos que
+
+33:51.000 --> 33:53.000
+Java no implementa herencia múltiple
+
+33:53.000 --> 33:55.000
+Pero como las interfaces
+
+33:55.000 --> 33:57.000
+Definen
+
+33:57.000 --> 33:59.000
+El comportamiento
+
+33:59.000 --> 34:01.000
+Que tienen que implementar
+
+34:01.000 --> 34:03.000
+Pero no cómo se implementa
+
+34:03.000 --> 34:05.000
+No hay problemas del tipo anterior
+
+34:05.000 --> 34:07.000
+Del tipo de colisión
+
+34:07.000 --> 34:09.000
+De comportamiento
+
+34:11.000 --> 34:13.000
+Entonces, de esa manera
+
+34:13.000 --> 34:15.000
+Una clase
+
+34:15.000 --> 34:17.000
+Puede extender múltiples interfaces
+
+34:17.000 --> 34:19.000
+Una interface puede
+
+34:19.000 --> 34:21.000
+Perdón
+
+34:21.000 --> 34:23.000
+Una clase puede implementar múltiples interfaces
+
+34:23.000 --> 34:25.000
+Y una interface puede implementar
+
+34:25.000 --> 34:27.000
+Pero puede extender
+
+34:27.000 --> 34:29.000
+Ahí tengo
+
+34:29.000 --> 34:31.000
+Un trabalengo
+
+34:31.000 --> 34:33.000
+Y una interface puede extender muchas
+
+34:33.000 --> 34:35.000
+Super interfaces
+
+34:35.000 --> 34:37.000
+¿Por qué? Porque otra vez
+
+34:37.000 --> 34:39.000
+Con lo que se está trabajando
+
+34:39.000 --> 34:41.000
+Es con definiciones
+
+34:41.000 --> 34:43.000
+Y no con implementación concreta
+
+34:45.000 --> 34:47.000
+Bien
+
+34:47.000 --> 34:49.000
+¿Estamos ahí?
+
+34:49.000 --> 34:51.000
+¿Estamos hasta ahí?
+
+35:11.000 --> 35:13.000
+Bueno
+
+35:13.000 --> 35:15.000
+Continuamos
+
+35:17.000 --> 35:19.000
+Bien, o sea
+
+35:19.000 --> 35:21.000
+Al tener
+
+35:21.000 --> 35:23.000
+La posibilidad de implementar
+
+35:25.000 --> 35:27.000
+Una interface
+
+35:27.000 --> 35:29.000
+Lo que va a surgir
+
+35:29.000 --> 35:31.000
+Es la posibilidad de hacer
+
+35:31.000 --> 35:33.000
+Cutting
+
+35:33.000 --> 35:35.000
+Entonces, fíjense en el ejemplo
+
+35:35.000 --> 35:37.000
+Acá tenemos
+
+35:37.000 --> 35:39.000
+Un arreglo de voladores
+
+35:39.000 --> 35:41.000
+De tres voladores, ¿correcto?
+
+35:47.000 --> 35:49.000
+Bien
+
+35:49.000 --> 35:51.000
+Entonces
+
+35:51.000 --> 35:53.000
+Uno podría llegar
+
+35:53.000 --> 35:55.000
+A preguntar
+
+35:55.000 --> 35:57.000
+Cómo el lenguaje
+
+35:57.000 --> 35:59.000
+Permite hacer eso, porque los voladores son
+
+35:59.000 --> 36:01.000
+Perdón
+
+36:01.000 --> 36:03.000
+El volador es una interfaz
+
+36:03.000 --> 36:05.000
+Las interfaces no permiten instancia
+
+36:05.000 --> 36:07.000
+Entonces, ¿qué se va a guardar
+
+36:07.000 --> 36:09.000
+Dentro del arreglo de volador?
+
+36:09.000 --> 36:11.000
+¿Qué se va a terminar guardando?
+
+36:11.000 --> 36:13.000
+Si no podemos tener
+
+36:13.000 --> 36:15.000
+Distancia de volador
+
+36:15.000 --> 36:17.000
+Solamente null
+
+36:21.000 --> 36:23.000
+Muy bien Alan
+
+36:23.000 --> 36:25.000
+Un objeto que lo implemente
+
+36:25.000 --> 36:27.000
+Y a partir de esa implementación
+
+36:27.000 --> 36:29.000
+¿Qué se permita hacer?
+
+36:29.000 --> 36:31.000
+Claro, exactamente
+
+36:31.000 --> 36:33.000
+Perfecto
+
+36:33.000 --> 36:35.000
+Lo que permite es que se haga
+
+36:35.000 --> 36:37.000
+Cutting y de la mano de la
+
+36:37.000 --> 36:39.000
+Cutting tener el polimorfil
+
+36:39.000 --> 36:41.000
+Muy bien, exactamente
+
+36:41.000 --> 36:43.000
+Entonces, fíjense
+
+36:43.000 --> 36:45.000
+Que tenemos en cada una
+
+36:45.000 --> 36:47.000
+De las posiciones del arreglo
+
+36:47.000 --> 36:49.000
+Tenemos una clase
+
+36:49.000 --> 36:51.000
+Una instancia de una clase
+
+36:51.000 --> 36:53.000
+De una clase que implementa
+
+36:53.000 --> 36:55.000
+Volador
+
+36:55.000 --> 36:57.000
+El casting
+
+36:57.000 --> 36:59.000
+Y después se llama el método partida
+
+36:59.000 --> 37:01.000
+Con cada una de esas instancias
+
+37:01.000 --> 37:03.000
+Fíjense
+
+37:03.000 --> 37:05.000
+Que lo que recibe es un volador
+
+37:07.000 --> 37:09.000
+El método partida
+
+37:09.000 --> 37:11.000
+Y a ese volador
+
+37:13.000 --> 37:15.000
+Le dice despedar
+
+37:15.000 --> 37:17.000
+¿Por qué ese
+
+37:17.000 --> 37:19.000
+Volador?
+
+37:19.000 --> 37:21.000
+¿Por qué?
+
+37:21.000 --> 37:23.000
+Porque el volador
+
+37:23.000 --> 37:25.000
+¿Por qué?
+
+37:25.000 --> 37:27.000
+¿Por qué se produce el polimorfismo?
+
+37:27.000 --> 37:29.000
+Porque cada una de las instancias
+
+37:29.000 --> 37:31.000
+Que se hizo up casting
+
+37:33.000 --> 37:35.000
+Sobre las cuales se hizo up casting
+
+37:35.000 --> 37:37.000
+En este caso particular
+
+37:37.000 --> 37:39.000
+Avión, helicóptero y pájaro
+
+37:39.000 --> 37:41.000
+Implementa a su manera
+
+37:41.000 --> 37:43.000
+El despegar
+
+37:43.000 --> 37:45.000
+Entonces, bajo una misma
+
+37:45.000 --> 37:47.000
+Etiqueta
+
+37:47.000 --> 37:49.000
+Si me permiten
+
+37:49.000 --> 37:51.000
+Decir a esto
+
+37:51.000 --> 37:53.000
+Una etiqueta
+
+37:53.000 --> 37:55.000
+Bajo una misma
+
+37:55.000 --> 37:57.000
+Invocación a un método
+
+37:57.000 --> 37:59.000
+Se van a invocar métodos distintos
+
+37:59.000 --> 38:01.000
+¿Cuándo sabemos qué método
+
+38:01.000 --> 38:03.000
+Se va a invocar?
+
+38:03.000 --> 38:05.000
+Cuando estemos en ejecución
+
+38:05.000 --> 38:07.000
+Cuando esta variable tenga una instancia
+
+38:07.000 --> 38:09.000
+En concreto
+
+38:09.000 --> 38:11.000
+Y cuando se
+
+38:11.000 --> 38:13.000
+Se hace eso
+
+38:13.000 --> 38:15.000
+Obviamente
+
+38:15.000 --> 38:17.000
+Cuando está en ejecución
+
+38:17.000 --> 38:19.000
+Y quién provee ese linkeado
+
+38:19.000 --> 38:21.000
+Entre la invocación y lo que se tiene que invocar
+
+38:21.000 --> 38:23.000
+Es el binding dinámico
+
+38:23.000 --> 38:25.000
+El binding dinámico
+
+38:25.000 --> 38:27.000
+Quiere decir que el linkeo
+
+38:27.000 --> 38:29.000
+Se hace dinamicamente
+
+38:29.000 --> 38:31.000
+Se hace dinamicamente porque se hace
+
+38:31.000 --> 38:33.000
+Cuando se está ejecutando
+
+38:33.000 --> 38:35.000
+También lo pueden encontrar como
+
+38:35.000 --> 38:37.000
+Binding tardío o binding retardado
+
+38:37.000 --> 38:39.000
+¿Por qué? Porque se retarda
+
+38:39.000 --> 38:41.000
+El linkeo entre
+
+38:41.000 --> 38:43.000
+Esa invocación
+
+38:43.000 --> 38:45.000
+Y lo que se va a ejecutar
+
+38:45.000 --> 38:47.000
+Efectivamente al tiempo de ejecución
+
+38:47.000 --> 38:49.000
+No se puede hacer
+
+38:49.000 --> 38:51.000
+El tiempo de compilación
+
+38:51.000 --> 38:53.000
+Y de esa manera Java implementa el polimorgil
+
+38:57.000 --> 38:59.000
+Bien
+
+38:59.000 --> 39:01.000
+A ver, disculpe, el appcasting no se hace
+
+39:01.000 --> 39:03.000
+En el for
+
+39:03.000 --> 39:05.000
+No, el appcasting se hace
+
+39:05.000 --> 39:07.000
+Cuando se hace la asignación
+
+39:07.000 --> 39:09.000
+Cuando tenemos la declaración del arreglo
+
+39:09.000 --> 39:11.000
+Que va a ser
+
+39:11.000 --> 39:13.000
+Un arreglo de voladores
+
+39:13.000 --> 39:15.000
+Se le asigna
+
+39:15.000 --> 39:17.000
+Una estancia de avión
+
+39:17.000 --> 39:19.000
+Que cuando se asigna
+
+39:19.000 --> 39:21.000
+A la posición del arreglo
+
+39:21.000 --> 39:23.000
+Ya deja de verse como un avión
+
+39:23.000 --> 39:25.000
+Y se empieza a ver
+
+39:25.000 --> 39:27.000
+Como un volador
+
+39:27.000 --> 39:29.000
+Lo que está dentro de ese arreglo
+
+39:29.000 --> 39:31.000
+Se restringe
+
+39:31.000 --> 39:33.000
+La visión
+
+39:33.000 --> 39:35.000
+A la parte de volador
+
+39:37.000 --> 39:39.000
+Cuando llamas al método
+
+39:39.000 --> 39:41.000
+Llamas con volador
+
+39:41.000 --> 39:43.000
+Y como llamas con cada una de las posiciones del arreglo
+
+39:43.000 --> 39:45.000
+Estás llamando con
+
+39:45.000 --> 39:47.000
+Un volador
+
+39:47.000 --> 39:49.000
+Y el punto de appcasting es acá
+
+39:49.000 --> 39:51.000
+Es en la asignación
+
+39:51.000 --> 39:53.000
+En la asignación
+
+39:53.000 --> 39:55.000
+Que viene de la mano de la definición
+
+39:55.000 --> 39:57.000
+A lo que le vas a asignar
+
+39:59.000 --> 40:01.000
+Exactamente
+
+40:01.000 --> 40:03.000
+Alan, interesa que sea un volador
+
+40:05.000 --> 40:07.000
+Mariel, ahí donde le decís
+
+40:07.000 --> 40:09.000
+Que implementa volador
+
+40:09.000 --> 40:11.000
+No, o sea, la implementación
+
+40:11.000 --> 40:13.000
+De volador
+
+40:15.000 --> 40:17.000
+Se hizo acá
+
+40:19.000 --> 40:21.000
+Se hizo cuando se definió la clase
+
+40:21.000 --> 40:23.000
+Y se le dijo implement
+
+40:23.000 --> 40:25.000
+Volador
+
+40:25.000 --> 40:27.000
+El avión definió la clase
+
+40:27.000 --> 40:29.000
+Y dijo
+
+40:29.000 --> 40:31.000
+Implement volador
+
+40:31.000 --> 40:33.000
+En ese punto
+
+40:33.000 --> 40:35.000
+El pájaro y el avión van a estar
+
+40:35.000 --> 40:37.000
+Oblidados a darle comportamiento
+
+40:37.000 --> 40:39.000
+A cada uno de los métodos
+
+40:39.000 --> 40:41.000
+En este caso particular
+
+40:41.000 --> 40:43.000
+Volador
+
+40:43.000 --> 40:45.000
+Para que pueda ser considerado
+
+40:45.000 --> 40:47.000
+Como un volador, sino
+
+40:47.000 --> 40:49.000
+Error de compilación
+
+40:55.000 --> 40:57.000
+Bien
+
+40:57.000 --> 40:59.000
+Gonzalo, cuando creas
+
+40:59.000 --> 41:01.000
+Arreglos de voladores
+
+41:01.000 --> 41:03.000
+Creas objetos que implementan
+
+41:03.000 --> 41:05.000
+El comportamiento de volador
+
+41:05.000 --> 41:07.000
+No, lo que
+
+41:07.000 --> 41:09.000
+Es cuando instancio
+
+41:09.000 --> 41:11.000
+El arreglo de volador
+
+41:11.000 --> 41:13.000
+Lo que voy a instanciar va a ser un arreglo
+
+41:13.000 --> 41:15.000
+Que tenga en cada una de esas posiciones
+
+41:15.000 --> 41:17.000
+Null
+
+41:17.000 --> 41:19.000
+Cuando le hago la asignación
+
+41:21.000 --> 41:23.000
+Ahí realmente
+
+41:23.000 --> 41:25.000
+Hago el
+
+41:25.000 --> 41:27.000
+Upcasting de esa clase concreta
+
+41:29.000 --> 41:31.000
+A volador
+
+41:37.000 --> 41:39.000
+Exactamente
+
+41:39.000 --> 41:41.000
+Con el arreglo
+
+41:41.000 --> 41:43.000
+Estoy reservando
+
+41:43.000 --> 41:45.000
+Tres espacios de memoria
+
+41:45.000 --> 41:47.000
+En las líneas subsiguientes
+
+41:47.000 --> 41:49.000
+Estoy ocupando esos espacios de memoria
+
+41:49.000 --> 41:51.000
+Con instancias
+
+41:51.000 --> 41:53.000
+De clase que implementa volador
+
+41:57.000 --> 41:59.000
+Exactamente
+
+41:59.000 --> 42:01.000
+Yo
+
+42:01.000 --> 42:03.000
+Creo el arreglo
+
+42:03.000 --> 42:05.000
+Le asigno una instancia
+
+42:05.000 --> 42:07.000
+En este caso de avión
+
+42:07.000 --> 42:09.000
+El cóptero y pájaro
+
+42:09.000 --> 42:11.000
+Y cada una de esas instancias
+
+42:11.000 --> 42:13.000
+Que dependen de una clase
+
+42:13.000 --> 42:15.000
+Tienen definido el comportamiento
+
+42:15.000 --> 42:17.000
+Para despegar, volar y aterrizar
+
+42:17.000 --> 42:19.000
+Probablemente sean los tres distintos
+
+42:19.000 --> 42:21.000
+Por ende
+
+42:21.000 --> 42:23.000
+Bajo una misma
+
+42:23.000 --> 42:25.000
+Forma de llamar
+
+42:25.000 --> 42:27.000
+A este caso al método despegar
+
+42:27.000 --> 42:29.000
+Voy a tener comportamientos distintos
+
+42:29.000 --> 42:31.000
+Ahí está el polimorfismo
+
+42:31.000 --> 42:33.000
+Una cosa
+
+42:33.000 --> 42:35.000
+Las formas
+
+42:39.000 --> 42:41.000
+¿Se entendió?
+
+42:47.000 --> 42:49.000
+Bien
+
+42:49.000 --> 42:51.000
+Continuemos
+
+42:53.000 --> 42:55.000
+Entonces, ¿Cuándo conviene usar interfaces?
+
+42:55.000 --> 42:57.000
+¿Y cuándo conviene usar clases abstractas?
+
+42:59.000 --> 43:01.000
+Bien
+
+43:01.000 --> 43:03.000
+Primero vamos a empezar
+
+43:03.000 --> 43:05.000
+Por lo que tienen en común
+
+43:05.000 --> 43:07.000
+Las interfaces y clases
+
+43:07.000 --> 43:09.000
+Abstractas
+
+43:09.000 --> 43:11.000
+Proben una interfaz de métodos en común
+
+43:11.000 --> 43:13.000
+Fíjense
+
+43:13.000 --> 43:15.000
+Que el volador definía
+
+43:15.000 --> 43:17.000
+Tres métodos
+
+43:17.000 --> 43:19.000
+Que sí o sí iban a entender
+
+43:19.000 --> 43:21.000
+Quién implementaba
+
+43:21.000 --> 43:23.000
+La interfaz volador
+
+43:23.000 --> 43:25.000
+Las clases abstractas
+
+43:25.000 --> 43:27.000
+Eso mismo lo logran definiendo
+
+43:27.000 --> 43:29.000
+Los métodos abstractos
+
+43:29.000 --> 43:31.000
+Si entro a una clase abstracta
+
+43:31.000 --> 43:33.000
+Si defino métodos abstractos
+
+43:33.000 --> 43:35.000
+Obligo que a las clases que implementan
+
+43:35.000 --> 43:37.000
+Perdón
+
+43:37.000 --> 43:39.000
+Que extienden
+
+43:39.000 --> 43:41.000
+A esa clase abstracta
+
+43:41.000 --> 43:43.000
+Le dé el comportamiento de los métodos abstractos
+
+43:45.000 --> 43:47.000
+Las interfaces son totalmente
+
+43:47.000 --> 43:49.000
+Abstractas, no definen ninguna implementación
+
+43:49.000 --> 43:51.000
+Cosa que no pasa con
+
+43:51.000 --> 43:53.000
+Las clases abstractas
+
+43:53.000 --> 43:55.000
+Las clases abstractas pueden combinar
+
+43:55.000 --> 43:57.000
+Métodos concretos con métodos abstractos
+
+43:59.000 --> 44:01.000
+Con interfaces
+
+44:01.000 --> 44:03.000
+No hay herencia de métodos
+
+44:03.000 --> 44:05.000
+Y con las clases abstractas sí
+
+44:05.000 --> 44:07.000
+Por esto mismo que decía
+
+44:07.000 --> 44:09.000
+Las clases abstractas pueden tener métodos concretos
+
+44:09.000 --> 44:11.000
+Y pueden ser heredados
+
+44:11.000 --> 44:13.000
+Bueno
+
+44:13.000 --> 44:15.000
+Tanto las clases
+
+44:15.000 --> 44:17.000
+Abstractas como las interfaces
+
+44:17.000 --> 44:19.000
+No se permite crear
+
+44:19.000 --> 44:21.000
+Instancias de ellas
+
+44:21.000 --> 44:23.000
+Si no vamos a encontrar una instancia
+
+44:23.000 --> 44:25.000
+De una clase abstracta
+
+44:25.000 --> 44:27.000
+Ni de una interfaz
+
+44:27.000 --> 44:29.000
+Y una cosa que tiene
+
+44:31.000 --> 44:33.000
+Las interfaces
+
+44:33.000 --> 44:35.000
+Es que permite
+
+44:35.000 --> 44:37.000
+Que se implementen muchas
+
+44:37.000 --> 44:39.000
+Una clase puede implementar muchas
+
+44:39.000 --> 44:41.000
+Interfaces y una interfaz
+
+44:41.000 --> 44:43.000
+Puede heredar de muchas super
+
+44:43.000 --> 44:45.000
+Interfaces
+
+44:45.000 --> 44:47.000
+Entonces esto sería como un raconto
+
+44:47.000 --> 44:49.000
+De las características
+
+44:49.000 --> 44:51.000
+Que tienen las interfaces
+
+44:51.000 --> 44:53.000
+Y las clases abstractas
+
+44:53.000 --> 44:55.000
+Ahora
+
+44:57.000 --> 44:59.000
+Ahora
+
+44:59.000 --> 45:01.000
+La pregunta es
+
+45:01.000 --> 45:03.000
+¿Cuándo conviene usar
+
+45:03.000 --> 45:05.000
+Una u otra?
+
+45:05.000 --> 45:07.000
+Entonces si tenemos
+
+45:07.000 --> 45:09.000
+Un comportamiento
+
+45:09.000 --> 45:11.000
+Estrictamente
+
+45:11.000 --> 45:13.000
+Abstracto, o sea métodos
+
+45:13.000 --> 45:15.000
+Sin implementación
+
+45:15.000 --> 45:17.000
+Ni variable distancia
+
+45:17.000 --> 45:19.000
+Es conveniente usar interfaces
+
+45:19.000 --> 45:21.000
+Si estamos forzados
+
+45:21.000 --> 45:23.000
+A combinar comportamiento
+
+45:23.000 --> 45:25.000
+Abstracto con métodos
+
+45:25.000 --> 45:27.000
+Concretos
+
+45:27.000 --> 45:29.000
+Ahí la única salida es tener clases
+
+45:29.000 --> 45:31.000
+Abstractas
+
+45:31.000 --> 45:33.000
+Y si tenemos que proveer
+
+45:33.000 --> 45:35.000
+Algún tipo de mecanismo de herencia
+
+45:35.000 --> 45:37.000
+Múltiple, o necesitamos
+
+45:37.000 --> 45:39.000
+Contar con algún mecanismo de herencia
+
+45:39.000 --> 45:41.000
+Múltiple, la única salida que tenemos
+
+45:41.000 --> 45:43.000
+Es usar interfaces
+
+45:43.000 --> 45:45.000
+No queda otra, porque Java otra vez
+
+45:45.000 --> 45:47.000
+Lo vuelvo a repetir
+
+45:47.000 --> 45:49.000
+Tiene herencia sí
+
+45:49.000 --> 45:51.000
+¿Estamos hasta ahí? ¿Se entendió?
+
+45:55.000 --> 45:57.000
+Estos puntos
+
+45:57.000 --> 45:59.000
+Son bastante intuitivos
+
+45:59.000 --> 46:01.000
+A partir de lo que ya vimos
+
+46:01.000 --> 46:03.000
+De clases abstractas y de interfaces
+
+46:03.000 --> 46:05.000
+No es que estamos
+
+46:05.000 --> 46:07.000
+Redescubriendo la rueda con esto
+
+46:07.000 --> 46:09.000
+Pero queda mejor
+
+46:09.000 --> 46:11.000
+Si los enumeramos
+
+46:11.000 --> 46:13.000
+Bien
+
+46:15.000 --> 46:17.000
+Bueno
+
+46:17.000 --> 46:19.000
+¿Se entendió
+
+46:19.000 --> 46:21.000
+El tema de interfaces?
+
+46:21.000 --> 46:23.000
+Pues ahora vamos a pasar a otra cosa
+
+46:23.000 --> 46:25.000
+Que
+
+46:25.000 --> 46:27.000
+Está asociado con interfaces
+
+46:27.000 --> 46:29.000
+Pero lo que es directamente teórico interfaces
+
+46:29.000 --> 46:31.000
+Terminaría en este punto
+
+46:31.000 --> 46:33.000
+Bien
+
+46:33.000 --> 46:35.000
+No queda ninguna pregunta por hacer
+
+46:35.000 --> 46:37.000
+Yo por ahí a algunas partes
+
+46:37.000 --> 46:39.000
+Fui
+
+46:39.000 --> 46:41.000
+Y vine en el chat y por ahí
+
+46:41.000 --> 46:43.000
+Alguna pregunta se me pasó
+
+46:43.000 --> 46:45.000
+Si es que se me pasó por favor
+
+46:45.000 --> 46:47.000
+Vuelvanla a poner
+
+46:47.000 --> 46:49.000
+Bien
+
+46:49.000 --> 46:51.000
+Continuamos entonces
+
+46:51.000 --> 46:53.000
+Supondamos que tenemos
+
+46:55.000 --> 46:57.000
+Un arreglo de animales
+
+46:57.000 --> 46:59.000
+En este caso los animales
+
+46:59.000 --> 47:01.000
+Toman la forma de string
+
+47:01.000 --> 47:03.000
+Tenemos
+
+47:03.000 --> 47:05.000
+Camello, tigre
+
+47:05.000 --> 47:07.000
+Mono y paja
+
+47:09.000 --> 47:11.000
+Recorremos cada uno de ellos
+
+47:11.000 --> 47:13.000
+Lo imprimimos, esta es la
+
+47:13.000 --> 47:15.000
+Salida
+
+47:15.000 --> 47:17.000
+Y después lo queremos ordenar
+
+47:17.000 --> 47:19.000
+Y para ordenarlo
+
+47:19.000 --> 47:21.000
+Sabemos que la clase de rise
+
+47:23.000 --> 47:25.000
+Implementa un método sort
+
+47:25.000 --> 47:27.000
+Que
+
+47:27.000 --> 47:29.000
+Enviándole
+
+47:29.000 --> 47:31.000
+Como parámetro
+
+47:31.000 --> 47:33.000
+Un arreglo te lo ordena
+
+47:33.000 --> 47:35.000
+Si
+
+47:35.000 --> 47:37.000
+Entonces la salida del sort
+
+47:37.000 --> 47:39.000
+Va a ser, o sea, luego de
+
+47:39.000 --> 47:41.000
+Ejecutado el sort
+
+47:41.000 --> 47:43.000
+El arreglo de animales va a estar ordenado
+
+47:43.000 --> 47:45.000
+Entonces cuando lo volvamos a recorrer
+
+47:45.000 --> 47:47.000
+Vemos que el arreglo está ordenado
+
+47:47.000 --> 47:49.000
+Si
+
+47:49.000 --> 47:51.000
+Se ve eso
+
+48:01.000 --> 48:03.000
+Eso es lo que le iba a preguntar
+
+48:03.000 --> 48:05.000
+Gonzalo, por que ordena
+
+48:07.000 --> 48:09.000
+Por que creen que ordena
+
+48:09.000 --> 48:11.000
+El arreglo de string
+
+48:13.000 --> 48:15.000
+Que les parece
+
+48:17.000 --> 48:19.000
+O sea, si yo tuviera
+
+48:19.000 --> 48:21.000
+Un arreglo de
+
+48:21.000 --> 48:23.000
+Denteros
+
+48:23.000 --> 48:25.000
+Y tengo el 7, el 8
+
+48:25.000 --> 48:27.000
+El 40 y el 1
+
+48:27.000 --> 48:29.000
+Si?
+
+48:29.000 --> 48:31.000
+Por cual
+
+48:31.000 --> 48:33.000
+Empezaría
+
+48:33.000 --> 48:35.000
+Luego de que este ordenado
+
+48:35.000 --> 48:37.000
+Cual sería lo primero
+
+48:37.000 --> 48:39.000
+Que imprimiríamos
+
+48:39.000 --> 48:41.000
+Si fuera de enteros
+
+48:47.000 --> 48:49.000
+El menor
+
+48:53.000 --> 48:55.000
+El menor
+
+48:55.000 --> 48:57.000
+Según el orden de magnitud
+
+48:57.000 --> 48:59.000
+O sea, si tenemos
+
+48:59.000 --> 49:01.000
+Por ejemplo, 7, 8, 40 y 50
+
+49:01.000 --> 49:03.000
+Comparando las magnitudes
+
+49:03.000 --> 49:05.000
+De esos
+
+49:05.000 --> 49:07.000
+De esos elementos
+
+49:07.000 --> 49:09.000
+El que tiene menor magnitud
+
+49:09.000 --> 49:11.000
+Será el 7, después el 8
+
+49:11.000 --> 49:13.000
+Después el 40, después el 100
+
+49:13.000 --> 49:15.000
+En ese
+
+49:15.000 --> 49:17.000
+En ese punto
+
+49:17.000 --> 49:19.000
+Estamos todos de acuerdo, correcto?
+
+49:25.000 --> 49:27.000
+Bien
+
+49:29.000 --> 49:31.000
+Ok, ahora
+
+49:31.000 --> 49:33.000
+Yo cuando
+
+49:33.000 --> 49:35.000
+Tomo un entero
+
+49:35.000 --> 49:37.000
+De ese arreglo
+
+49:37.000 --> 49:39.000
+Para saber si es el mas chico
+
+49:39.000 --> 49:41.000
+De los que tengo ahí
+
+49:41.000 --> 49:43.000
+Que tengo que hacer con todos los demas
+
+49:45.000 --> 49:47.000
+Si
+
+49:55.000 --> 49:57.000
+Los tengo que comparar
+
+49:57.000 --> 49:59.000
+Si? Los tengo que comparar
+
+49:59.000 --> 50:01.000
+Y los enteros
+
+50:01.000 --> 50:03.000
+Permiten compararlos
+
+50:03.000 --> 50:05.000
+Entre sí
+
+50:07.000 --> 50:09.000
+Correcto?
+
+50:09.000 --> 50:11.000
+O sea, yo puedo comparar un entero
+
+50:11.000 --> 50:13.000
+Con otro
+
+50:13.000 --> 50:15.000
+Esa misma idea
+
+50:15.000 --> 50:17.000
+Se puede llevar a los string?
+
+50:17.000 --> 50:19.000
+Hay alguna forma de compararlo
+
+50:19.000 --> 50:21.000
+Y saber si un string
+
+50:21.000 --> 50:23.000
+Debe ir primero que otro?
+
+50:25.000 --> 50:27.000
+Bien, exactamente
+
+50:27.000 --> 50:29.000
+Por el abecedario
+
+50:29.000 --> 50:31.000
+El orden lexicográfico, correcto?
+
+50:31.000 --> 50:33.000
+Entonces
+
+50:33.000 --> 50:35.000
+Según ese orden
+
+50:35.000 --> 50:37.000
+Indica que camello va a ir primero
+
+50:37.000 --> 50:39.000
+Mono en la segunda posición
+
+50:39.000 --> 50:41.000
+Pájaro y tigre
+
+50:41.000 --> 50:43.000
+Con lo cual
+
+50:43.000 --> 50:45.000
+Los tipos string
+
+50:45.000 --> 50:47.000
+O sea, los tipos que están almacenados en el arreglo
+
+50:47.000 --> 50:49.000
+Son comparables
+
+50:49.000 --> 50:51.000
+Y a partir de realizar las comparaciones
+
+50:51.000 --> 50:53.000
+Puedo llegar a ordenarlos
+
+50:53.000 --> 50:55.000
+Estamos en este punto
+
+50:55.000 --> 50:57.000
+Queda claro esto, esto es importante
+
+50:57.000 --> 50:59.000
+Porque después
+
+50:59.000 --> 51:01.000
+Lo van a necesitar más adelante
+
+51:05.000 --> 51:07.000
+Bien, ahora
+
+51:07.000 --> 51:09.000
+Supongamos que tenemos
+
+51:11.000 --> 51:13.000
+Un arreglo de persona
+
+51:13.000 --> 51:15.000
+Sí?
+
+51:15.000 --> 51:17.000
+Tenemos
+
+51:17.000 --> 51:19.000
+Cuatro instancias de persona
+
+51:19.000 --> 51:21.000
+Las imprimo
+
+51:21.000 --> 51:23.000
+Y después le digo que lo arregle
+
+51:23.000 --> 51:25.000
+Que
+
+51:25.000 --> 51:27.000
+¿Cómo se llama?
+
+51:27.000 --> 51:29.000
+Que lo ordene
+
+51:29.000 --> 51:31.000
+Sí?
+
+51:31.000 --> 51:33.000
+Esta es la implementación de la clase
+
+51:33.000 --> 51:35.000
+Persona
+
+51:35.000 --> 51:37.000
+¿Sí?
+
+51:37.000 --> 51:39.000
+Esta es la implementación
+
+51:39.000 --> 51:41.000
+De la clase
+
+51:41.000 --> 51:43.000
+Persona
+
+51:43.000 --> 51:45.000
+Bien
+
+51:45.000 --> 51:47.000
+¿Qué creen?
+
+51:47.000 --> 51:49.000
+¿Se va a poder ordenar o no se va a poder ordenar?
+
+51:53.000 --> 51:55.000
+¿Qué les parece?
+
+52:07.000 --> 52:09.000
+Sí
+
+52:15.000 --> 52:17.000
+Sí, sí
+
+52:17.000 --> 52:19.000
+Hay algunas cosas que están
+
+52:19.000 --> 52:21.000
+Escoliadas Ignacio
+
+52:21.000 --> 52:23.000
+Sí, sí
+
+52:23.000 --> 52:25.000
+Pero bueno
+
+52:25.000 --> 52:27.000
+Volvamos sobre
+
+52:29.000 --> 52:31.000
+La pregunta original
+
+52:31.000 --> 52:33.000
+¿Creen que se pueden ordenar las personas
+
+52:33.000 --> 52:35.000
+Tal cual están
+
+52:37.000 --> 52:39.000
+Codificadas en el ejemplo?
+
+52:39.000 --> 52:41.000
+Bien
+
+52:43.000 --> 52:45.000
+El spoiler está abajo como dijo
+
+52:45.000 --> 52:47.000
+Ignacio
+
+52:47.000 --> 52:49.000
+No, exactamente
+
+52:49.000 --> 52:51.000
+¿Por qué? Porque no se sabe
+
+52:51.000 --> 52:53.000
+No tenemos el mecanismo
+
+52:53.000 --> 52:55.000
+Que teníamos disponible con los enteros
+
+52:55.000 --> 52:57.000
+Y los string
+
+52:57.000 --> 52:59.000
+Que dado uno
+
+52:59.000 --> 53:01.000
+Comparado con los demás
+
+53:01.000 --> 53:03.000
+Podíamos saber
+
+53:03.000 --> 53:05.000
+Si debía ir primero o debía ir después
+
+53:05.000 --> 53:07.000
+Las personas
+
+53:07.000 --> 53:09.000
+Tal cual están definidas
+
+53:09.000 --> 53:11.000
+No se pueden comparar
+
+53:11.000 --> 53:13.000
+Y por ende
+
+53:13.000 --> 53:15.000
+No se pueden ordenar
+
+53:15.000 --> 53:17.000
+Entonces, vamos a ver
+
+53:17.000 --> 53:19.000
+Que tenemos que tomar
+
+53:19.000 --> 53:21.000
+Una decisión
+
+53:21.000 --> 53:23.000
+Si queremos ordenarla
+
+53:23.000 --> 53:25.000
+Y generar alguna forma
+
+53:25.000 --> 53:27.000
+De comparación entre las personas
+
+53:27.000 --> 53:29.000
+Pero bueno
+
+53:29.000 --> 53:31.000
+Estamos todos de acuerdo que
+
+53:31.000 --> 53:33.000
+Tal cual está, no podemos decir
+
+53:33.000 --> 53:35.000
+Tomando el ejemplo
+
+53:35.000 --> 53:37.000
+Si Paula Gómez es menor
+
+53:37.000 --> 53:39.000
+Es más chica
+
+53:39.000 --> 53:41.000
+Que Ana Ríos
+
+53:41.000 --> 53:43.000
+¿Por qué? Porque no sabemos si
+
+53:43.000 --> 53:45.000
+Hay que compararlas por el nombre
+
+53:45.000 --> 53:47.000
+Por el orden
+
+53:47.000 --> 53:49.000
+O ordenarlas por el nombre
+
+53:49.000 --> 53:51.000
+O compararlas por el apellido
+
+53:51.000 --> 53:53.000
+Para dar un orden por apellido
+
+53:53.000 --> 53:55.000
+O compararlas por la edad
+
+53:55.000 --> 53:57.000
+Para dar un orden por edad
+
+53:57.000 --> 53:59.000
+No está definido
+
+53:59.000 --> 54:01.000
+El método sort no puede intuir
+
+54:01.000 --> 54:03.000
+Por ende genera un error de compilación
+
+54:03.000 --> 54:05.000
+¿Estamos hasta ahí?
+
+54:05.000 --> 54:07.000
+Se entiende porque en la primera
+
+54:07.000 --> 54:09.000
+Si y en la segunda no
+
+54:11.000 --> 54:13.000
+Quiero decir
+
+54:13.000 --> 54:15.000
+En la primera forma de ordenar
+
+54:15.000 --> 54:17.000
+Si se podía
+
+54:17.000 --> 54:19.000
+Y en la segunda forma
+
+54:19.000 --> 54:21.000
+De tratar de ordenar personas
+
+54:21.000 --> 54:23.000
+No se puede, eso queda claro
+
+54:23.000 --> 54:25.000
+Yo en estas últimas transparencias
+
+54:25.000 --> 54:27.000
+Voy a ir
+
+54:27.000 --> 54:29.000
+Más lento porque
+
+54:29.000 --> 54:31.000
+Es necesario que se entienda bien
+
+54:31.000 --> 54:33.000
+Porque después esto lo van a necesitar
+
+54:33.000 --> 54:35.000
+Con hip
+
+54:39.000 --> 54:41.000
+Y es crítico que lo entienda
+
+54:49.000 --> 54:51.000
+Después
+
+54:51.000 --> 54:53.000
+Yo después me tomo
+
+54:53.000 --> 54:55.000
+Un ratito cuando termine para hacer
+
+54:55.000 --> 54:57.000
+Todas las preguntas de detalles de implementación
+
+54:57.000 --> 54:59.000
+Porque no me quiero ir
+
+54:59.000 --> 55:01.000
+Por las ramas
+
+55:01.000 --> 55:03.000
+Y por responder una pregunta
+
+55:03.000 --> 55:05.000
+Que es un detalle de implementación
+
+55:05.000 --> 55:07.000
+Pierda el resto
+
+55:07.000 --> 55:09.000
+Yo necesito saber que se entiende bien
+
+55:09.000 --> 55:11.000
+Cuando
+
+55:11.000 --> 55:13.000
+Por qué se pueden ordenar los streams
+
+55:13.000 --> 55:15.000
+Y por qué no se pueden ordenar las personas
+
+55:15.000 --> 55:17.000
+A este punto
+
+55:17.000 --> 55:19.000
+Todos entendieron
+
+55:19.000 --> 55:21.000
+Genial, buenísimo
+
+55:23.000 --> 55:25.000
+Entonces para estos casos
+
+55:25.000 --> 55:27.000
+Lo que va a surgir
+
+55:27.000 --> 55:29.000
+Es la interfaz comparable
+
+55:29.000 --> 55:31.000
+Nosotros habíamos visto
+
+55:31.000 --> 55:33.000
+Que de object
+
+55:33.000 --> 55:35.000
+Heredábamos el equal
+
+55:35.000 --> 55:37.000
+Con el equal, sobrescribiendo
+
+55:37.000 --> 55:39.000
+Ese método
+
+55:39.000 --> 55:41.000
+Podríamos dar
+
+55:41.000 --> 55:43.000
+Un criterio de igualdad
+
+55:43.000 --> 55:45.000
+Cuando por ejemplo dos personas
+
+55:45.000 --> 55:47.000
+Serán iguales
+
+55:47.000 --> 55:49.000
+Extendiendo un poco esa idea
+
+55:49.000 --> 55:51.000
+Y utilizando el concepto de interfaz
+
+55:51.000 --> 55:53.000
+Lo que vamos a poder ahora
+
+55:53.000 --> 55:55.000
+Es ordenar
+
+55:55.000 --> 55:57.000
+Las personas
+
+55:57.000 --> 55:59.000
+¿Cómo la vamos a ordenar?
+
+55:59.000 --> 56:01.000
+Y de acuerdo a cómo implementemos
+
+56:01.000 --> 56:03.000
+El método, el único método
+
+56:03.000 --> 56:05.000
+Que define la interfaz comparable
+
+56:05.000 --> 56:07.000
+Que es el compareTo
+
+56:07.000 --> 56:09.000
+Entonces si luego de la invocación
+
+56:09.000 --> 56:11.000
+Del compareTo
+
+56:11.000 --> 56:13.000
+Devuelve un 0
+
+56:13.000 --> 56:15.000
+Quiere decir que el parámetro
+
+56:15.000 --> 56:17.000
+Comparado contra el que recibe
+
+56:17.000 --> 56:19.000
+El compareTo
+
+56:19.000 --> 56:21.000
+Son iguales
+
+56:21.000 --> 56:23.000
+O sea si devuelve 0
+
+56:23.000 --> 56:25.000
+Quiere decir que son iguales
+
+56:25.000 --> 56:27.000
+Si esa invocación devuelve
+
+56:27.000 --> 56:29.000
+Un valor mayor a 0
+
+56:29.000 --> 56:31.000
+Quiere decir que el receptor
+
+56:31.000 --> 56:33.000
+Es mayor
+
+56:33.000 --> 56:35.000
+Y si devuelve un valor menor a 0
+
+56:35.000 --> 56:37.000
+Quiere decir que el receptor
+
+56:37.000 --> 56:39.000
+Es menor
+
+56:41.000 --> 56:43.000
+Entonces veamos cómo
+
+56:43.000 --> 56:45.000
+Como se resuelve el ejemplo anterior
+
+56:45.000 --> 56:47.000
+Vamos a tener persona
+
+56:47.000 --> 56:49.000
+Que implementa la interfaz
+
+56:49.000 --> 56:51.000
+Comparable y el tipo genérico
+
+56:51.000 --> 56:53.000
+Va a tomar el valor de persona
+
+56:53.000 --> 56:55.000
+Porque la comparación
+
+56:55.000 --> 56:57.000
+Se va a hacer entre personas
+
+56:57.000 --> 56:59.000
+Y en la implementación del compareTo
+
+57:01.000 --> 57:03.000
+El parámetro
+
+57:03.000 --> 57:05.000
+Que eso va a ser
+
+57:05.000 --> 57:07.000
+Una instancia de persona
+
+57:09.000 --> 57:11.000
+Y la regla de la interfaz
+
+57:11.000 --> 57:13.000
+Y la relación de orden
+
+57:13.000 --> 57:15.000
+Se va a hacer en la edad
+
+57:15.000 --> 57:17.000
+Si la edad del que
+
+57:17.000 --> 57:19.000
+Recibe el compareTo
+
+57:19.000 --> 57:21.000
+Es igual
+
+57:21.000 --> 57:23.000
+Que el del parámetro
+
+57:23.000 --> 57:25.000
+Eso va a devuelver 0
+
+57:25.000 --> 57:27.000
+Indicando que son dos valores iguales
+
+57:27.000 --> 57:29.000
+Si esa resta da un valor negativo
+
+57:29.000 --> 57:31.000
+Quiere decir que el que recibe
+
+57:31.000 --> 57:33.000
+El compareTo
+
+57:33.000 --> 57:35.000
+Es menor que el parámetro
+
+57:35.000 --> 57:37.000
+Y si es positivo
+
+57:37.000 --> 57:39.000
+Quiere decir que el que
+
+57:39.000 --> 57:41.000
+Recibe el compareTo
+
+57:41.000 --> 57:43.000
+Es mayor
+
+57:43.000 --> 57:45.000
+De esa manera
+
+57:45.000 --> 57:47.000
+Ya ahora cuando hacemos el sort
+
+57:47.000 --> 57:49.000
+Sobre la raíz de persona
+
+57:49.000 --> 57:51.000
+Tiene un criterio para comparar
+
+57:51.000 --> 57:53.000
+Cada una de esas instancias
+
+57:53.000 --> 57:55.000
+Y lo va a ordenar
+
+57:55.000 --> 57:57.000
+De acuerdo a ese criterio
+
+57:57.000 --> 57:59.000
+Lo va a ordenar en consecuencia
+
+57:59.000 --> 58:01.000
+De ese criterio
+
+58:01.000 --> 58:03.000
+Entonces fíjense
+
+58:03.000 --> 58:05.000
+En el orden va a estar primero
+
+58:05.000 --> 58:07.000
+Como el orden que establecimos
+
+58:07.000 --> 58:09.000
+Primero va a estar Ana Ríos
+
+58:09.000 --> 58:11.000
+Segundo va a estar
+
+58:11.000 --> 58:13.000
+Paula Gómez
+
+58:15.000 --> 58:17.000
+A continuación va a estar
+
+58:17.000 --> 58:19.000
+Juana Araos
+
+58:19.000 --> 58:21.000
+Y en última instancia va a estar María Ferrer
+
+58:21.000 --> 58:23.000
+¿Por qué? Porque lo va a ordenar
+
+58:23.000 --> 58:25.000
+De acuerdo a la edad
+
+58:29.000 --> 58:31.000
+¿Se entiende?
+
+58:31.000 --> 58:33.000
+¿Se entiende cómo le probemos
+
+58:33.000 --> 58:35.000
+Una forma de
+
+58:35.000 --> 58:37.000
+De comparación
+
+58:37.000 --> 58:39.000
+Entre dos instancias
+
+58:39.000 --> 58:41.000
+De una clase que aprione
+
+58:41.000 --> 58:43.000
+Y no se podía comparar como el ejemplo persona
+
+58:45.000 --> 58:47.000
+O sea
+
+58:47.000 --> 58:49.000
+En función de implementar
+
+58:49.000 --> 58:51.000
+La interfaz comparable
+
+58:51.000 --> 58:53.000
+Vamos a decir
+
+58:53.000 --> 58:55.000
+Que esa
+
+58:55.000 --> 58:57.000
+Esa clase va a ser comparable
+
+58:57.000 --> 58:59.000
+Con otras instancias
+
+58:59.000 --> 59:01.000
+Instancias de esa misma clase
+
+59:01.000 --> 59:03.000
+Una instancia de persona
+
+59:03.000 --> 59:05.000
+Va a poder ser comparada
+
+59:05.000 --> 59:07.000
+Con instancias de otras
+
+59:09.000 --> 59:11.000
+Con otras instancias de personas
+
+59:11.000 --> 59:13.000
+A través del método compareTo
+
+59:13.000 --> 59:15.000
+Y acá dentro del método compareTo
+
+59:15.000 --> 59:17.000
+Le podemos dar el comportamiento
+
+59:17.000 --> 59:19.000
+Que nosotros querramos
+
+59:19.000 --> 59:21.000
+En este caso es por edad
+
+59:21.000 --> 59:23.000
+Lo podríamos haber hecho por apellido
+
+59:23.000 --> 59:25.000
+O por nombre
+
+59:25.000 --> 59:27.000
+O por alguna combinación
+
+59:27.000 --> 59:29.000
+De esos valores
+
+59:29.000 --> 59:31.000
+Por ejemplo si el apellido
+
+59:31.000 --> 59:33.000
+Es igual
+
+59:33.000 --> 59:35.000
+El segundo criterio de
+
+59:35.000 --> 59:37.000
+De ordenación es por nombre
+
+59:37.000 --> 59:39.000
+Por decir algo o podría ser por edad
+
+59:39.000 --> 59:41.000
+Por lo que querramos nosotros lo podemos hacer tan complejo
+
+59:41.000 --> 59:43.000
+Como se nos ocurra
+
+59:43.000 --> 59:45.000
+Pero más allá de eso
+
+59:45.000 --> 59:47.000
+Ya dos instancias de personas se pueden comparar
+
+59:47.000 --> 59:49.000
+Y por ende se pueden ordenar
+
+59:51.000 --> 59:53.000
+¿Preguntas?
+
+59:57.000 --> 59:59.000
+Otro ejemplo
+
+59:59.000 --> 01:00:01.000
+De lo mismo es
+
+01:00:01.000 --> 01:00:03.000
+Tenemos un main
+
+01:00:03.000 --> 01:00:05.000
+Instanciamos dos personas
+
+01:00:05.000 --> 01:00:07.000
+Y
+
+01:00:07.000 --> 01:00:09.000
+Con un if
+
+01:00:09.000 --> 01:00:11.000
+Preguntamos si persona 1
+
+01:00:11.000 --> 01:00:13.000
+Es mayor que persona 2
+
+01:00:13.000 --> 01:00:15.000
+¿Por qué?
+
+01:00:15.000 --> 01:00:17.000
+Porque si a persona 1
+
+01:00:17.000 --> 01:00:19.000
+Le digo compareTo con persona 2
+
+01:00:19.000 --> 01:00:21.000
+Y eso me da un valor mayor que 0
+
+01:00:21.000 --> 01:00:23.000
+Quiere decir que
+
+01:00:23.000 --> 01:00:25.000
+Persona 1 es mayor que persona 2
+
+01:00:25.000 --> 01:00:27.000
+Ahí lo vemos
+
+01:00:27.000 --> 01:00:29.000
+Un poco más invocando directamente
+
+01:00:29.000 --> 01:00:31.000
+El método compareTo
+
+01:00:31.000 --> 01:00:33.000
+Y estableciendo
+
+01:00:33.000 --> 01:00:35.000
+¿Cuál es mayor que cuál?
+
+01:00:41.000 --> 01:00:43.000
+¿Estamos?
+
+01:00:45.000 --> 01:00:47.000
+Una pregunta
+
+01:00:47.000 --> 01:00:49.000
+Bien
+
+01:00:49.000 --> 01:00:51.000
+Bueno, vamos a
+
+01:00:51.000 --> 01:00:53.000
+A ver cómo
+
+01:00:53.000 --> 01:00:55.000
+Podemos usar el comparable
+
+01:00:55.000 --> 01:00:57.000
+En árboles binarios de búsqueda
+
+01:00:57.000 --> 01:00:59.000
+Ustedes árboles binarios de búsqueda
+
+01:00:59.000 --> 01:01:01.000
+Lo han usado el año pasado
+
+01:01:01.000 --> 01:01:03.000
+Si no me equivoco
+
+01:01:03.000 --> 01:01:05.000
+Y ahora vamos a
+
+01:01:05.000 --> 01:01:07.000
+A ver cómo
+
+01:01:07.000 --> 01:01:09.000
+Podemos usar el comparable
+
+01:01:09.000 --> 01:01:11.000
+En árboles binarios de búsqueda
+
+01:01:11.000 --> 01:01:13.000
+Ustedes árboles binarios de búsqueda
+
+01:01:13.000 --> 01:01:15.000
+Lo han usado el año pasado
+
+01:01:15.000 --> 01:01:17.000
+Lo han usado el año pasado
+
+01:01:17.000 --> 01:01:19.000
+Si no me equivoco
+
+01:01:23.000 --> 01:01:25.000
+Bien
+
+01:01:25.000 --> 01:01:27.000
+Entonces vamos
+
+01:01:31.000 --> 01:01:33.000
+Entonces vamos a ver
+
+01:01:35.000 --> 01:01:37.000
+La definición de métodos de
+
+01:01:37.000 --> 01:01:39.000
+El árbol binario de búsqueda
+
+01:01:39.000 --> 01:01:41.000
+Bueno, obviamente va a ser
+
+01:01:41.000 --> 01:01:43.000
+Un árbol binario de búsqueda
+
+01:01:43.000 --> 01:01:45.000
+De tipo genérico
+
+01:01:45.000 --> 01:01:47.000
+Como las estructuras que veníamos viendo
+
+01:01:51.000 --> 01:01:53.000
+Y a ver
+
+01:01:53.000 --> 01:01:55.000
+Déjenme que lo sepa
+
+01:01:55.000 --> 01:01:57.000
+Y en este punto
+
+01:01:59.000 --> 01:02:01.000
+Cuando hacemos el agregar
+
+01:02:03.000 --> 01:02:05.000
+¿Qué vamos a tener que poder hacer con los elementos?
+
+01:02:05.000 --> 01:02:07.000
+Cuando hagamos el agregar
+
+01:02:07.000 --> 01:02:09.000
+En un árbol binario de búsqueda
+
+01:02:13.000 --> 01:02:15.000
+Vamos a tener que comparar
+
+01:02:15.000 --> 01:02:17.000
+¿Por qué?
+
+01:02:17.000 --> 01:02:19.000
+Porque si el elemento
+
+01:02:19.000 --> 01:02:21.000
+Que estoy insertando es menor
+
+01:02:21.000 --> 01:02:23.000
+Que el elemento
+
+01:02:23.000 --> 01:02:25.000
+Que me almacena el nodo
+
+01:02:25.000 --> 01:02:27.000
+En el cual estoy parado
+
+01:02:27.000 --> 01:02:29.000
+Lo tengo que insertar en el subárbol izquierdo
+
+01:02:29.000 --> 01:02:31.000
+Si es mayor
+
+01:02:31.000 --> 01:02:33.000
+Que el elemento
+
+01:02:33.000 --> 01:02:35.000
+Que me almacena el nodo
+
+01:02:35.000 --> 01:02:37.000
+En el cual estoy parado
+
+01:02:37.000 --> 01:02:39.000
+Lo tengo que insertar en el subárbol derecho
+
+01:02:39.000 --> 01:02:41.000
+Y si es igual
+
+01:02:41.000 --> 01:02:43.000
+No lo insertaría
+
+01:02:43.000 --> 01:02:45.000
+Por ahí podría llevar
+
+01:02:45.000 --> 01:02:47.000
+Un contador de incidencia
+
+01:02:47.000 --> 01:02:49.000
+Si se quisiera, pero bueno
+
+01:02:49.000 --> 01:02:51.000
+Necesito saber compararlo
+
+01:02:51.000 --> 01:02:53.000
+Si es menor, para ir para el lado izquierdo
+
+01:02:53.000 --> 01:02:55.000
+Y si es mayor, para ir para el lado derecho
+
+01:02:59.000 --> 01:03:01.000
+Entonces
+
+01:03:01.000 --> 01:03:03.000
+Bueno, ¿Cómo está implementada
+
+01:03:03.000 --> 01:03:05.000
+El árbol binario de búsqueda?
+
+01:03:05.000 --> 01:03:07.000
+Va a ser
+
+01:03:07.000 --> 01:03:09.000
+Una clase, que se llama
+
+01:03:09.000 --> 01:03:11.000
+Arbol binario de búsqueda
+
+01:03:11.000 --> 01:03:13.000
+Y que el tipo
+
+01:03:13.000 --> 01:03:15.000
+Que va a almacenar
+
+01:03:15.000 --> 01:03:17.000
+El árbol binario de búsqueda
+
+01:03:17.000 --> 01:03:19.000
+Tiene que implementar comparable
+
+01:03:19.000 --> 01:03:21.000
+De esta manera se dice que T
+
+01:03:21.000 --> 01:03:23.000
+Tiene que implementar
+
+01:03:23.000 --> 01:03:25.000
+La interfaz comparable
+
+01:03:25.000 --> 01:03:27.000
+Esto en el ámbito de genérico
+
+01:03:27.000 --> 01:03:29.000
+Entonces ya una vez acá adentro
+
+01:03:29.000 --> 01:03:31.000
+Nos aseguramos que T
+
+01:03:31.000 --> 01:03:33.000
+Implementa comparable
+
+01:03:33.000 --> 01:03:35.000
+Por ende se puede comparar
+
+01:03:39.000 --> 01:03:41.000
+Alan, justo
+
+01:03:41.000 --> 01:03:43.000
+En este caso para genéricos
+
+01:03:43.000 --> 01:03:45.000
+En lugar de
+
+01:03:45.000 --> 01:03:47.000
+Cuando se hizo el diseño del lenguaje
+
+01:03:47.000 --> 01:03:49.000
+En lugar de usar
+
+01:03:49.000 --> 01:03:51.000
+Implement
+
+01:03:51.000 --> 01:03:53.000
+En la parte de genéricos
+
+01:03:53.000 --> 01:03:55.000
+Usaron stem
+
+01:03:55.000 --> 01:03:57.000
+Como
+
+01:03:57.000 --> 01:03:59.000
+Cuando estamos hablando
+
+01:03:59.000 --> 01:04:01.000
+De adherencia
+
+01:04:01.000 --> 01:04:03.000
+Pero
+
+01:04:03.000 --> 01:04:05.000
+Esta forma si
+
+01:04:05.000 --> 01:04:07.000
+Indica que
+
+01:04:07.000 --> 01:04:09.000
+T
+
+01:04:09.000 --> 01:04:11.000
+Implementa comparable
+
+01:04:11.000 --> 01:04:13.000
+Si lo quieren ver como tipo de datos
+
+01:04:13.000 --> 01:04:15.000
+Quiere decir que T
+
+01:04:15.000 --> 01:04:17.000
+Extiende el tipo de datos
+
+01:04:17.000 --> 01:04:19.000
+Comparable de T
+
+01:04:19.000 --> 01:04:21.000
+Si?
+
+01:04:21.000 --> 01:04:23.000
+Pero
+
+01:04:23.000 --> 01:04:25.000
+Pero bueno, en definitiva
+
+01:04:25.000 --> 01:04:27.000
+T tiene que implementar comparable
+
+01:04:27.000 --> 01:04:29.000
+Si?
+
+01:04:29.000 --> 01:04:31.000
+No, no, no
+
+01:04:31.000 --> 01:04:33.000
+Comparable es
+
+01:04:33.000 --> 01:04:35.000
+Una interfaz de Java
+
+01:04:35.000 --> 01:04:37.000
+Es una interfaz
+
+01:04:37.000 --> 01:04:39.000
+Que nos viene
+
+01:04:39.000 --> 01:04:41.000
+En el lenguaje
+
+01:04:49.000 --> 01:04:51.000
+Se entiende?
+
+01:04:51.000 --> 01:04:53.000
+Para la parte de
+
+01:04:53.000 --> 01:04:55.000
+Genéricos
+
+01:04:55.000 --> 01:04:57.000
+Cuando queremos establecer una
+
+01:04:57.000 --> 01:04:59.000
+Restricción, en este caso
+
+01:04:59.000 --> 01:05:01.000
+Estamos restringiendo
+
+01:05:01.000 --> 01:05:03.000
+El tipo genérico
+
+01:05:03.000 --> 01:05:05.000
+A que sea un tipo genérico
+
+01:05:05.000 --> 01:05:07.000
+Que si o si tenga que implementar la interfaz
+
+01:05:07.000 --> 01:05:09.000
+Comparable
+
+01:05:09.000 --> 01:05:11.000
+Eso es en el ámbito de genérico
+
+01:05:11.000 --> 01:05:13.000
+En el ámbito de cuando estamos definiendo la clase
+
+01:05:13.000 --> 01:05:15.000
+Es implement
+
+01:05:15.000 --> 01:05:17.000
+Y el nombre de la interfaz
+
+01:05:17.000 --> 01:05:19.000
+Como venimos viendo hasta ahora
+
+01:05:19.000 --> 01:05:21.000
+Si?
+
+01:05:25.000 --> 01:05:27.000
+Bien
+
+01:05:27.000 --> 01:05:29.000
+Entonces, fíjense
+
+01:05:29.000 --> 01:05:31.000
+Fíjense que nosotros
+
+01:05:31.000 --> 01:05:33.000
+Instanciamos un árbol binario
+
+01:05:33.000 --> 01:05:35.000
+De búsqueda
+
+01:05:35.000 --> 01:05:37.000
+Y le agregamos
+
+01:05:37.000 --> 01:05:39.000
+Elementos
+
+01:05:39.000 --> 01:05:41.000
+En este caso
+
+01:05:41.000 --> 01:05:43.000
+Le agregamos
+
+01:05:43.000 --> 01:05:45.000
+Enteros
+
+01:05:49.000 --> 01:05:51.000
+El insertar
+
+01:05:51.000 --> 01:05:53.000
+Si?
+
+01:05:53.000 --> 01:05:55.000
+Solamente toma como parámetro
+
+01:05:55.000 --> 01:05:57.000
+El valor a insertar
+
+01:05:57.000 --> 01:05:59.000
+Cosa que no pasaba en los árboles
+
+01:05:59.000 --> 01:06:01.000
+Binarios a seca
+
+01:06:01.000 --> 01:06:03.000
+Se acuerdan que creo que tuvimos esta discusión
+
+01:06:03.000 --> 01:06:05.000
+O esta charla mejor dicho
+
+01:06:05.000 --> 01:06:07.000
+Porque en este caso
+
+01:06:07.000 --> 01:06:09.000
+Cada uno de los
+
+01:06:09.000 --> 01:06:11.000
+Elementos que se va a insertar en un árbol binario
+
+01:06:11.000 --> 01:06:13.000
+Búsqueda
+
+01:06:13.000 --> 01:06:15.000
+Se sabe exactamente donde tiene que estar guardado
+
+01:06:15.000 --> 01:06:17.000
+O hay que indicarle la referencia
+
+01:06:17.000 --> 01:06:19.000
+Al padre
+
+01:06:19.000 --> 01:06:21.000
+De donde queremos que cuelgue
+
+01:06:21.000 --> 01:06:23.000
+Por ejemplo el 1 o el 13
+
+01:06:29.000 --> 01:06:31.000
+Exactamente
+
+01:06:31.000 --> 01:06:33.000
+Exactamente
+
+01:06:33.000 --> 01:06:35.000
+Porque
+
+01:06:35.000 --> 01:06:37.000
+A ver un segundito
+
+01:06:39.000 --> 01:06:41.000
+Porque inicialmente
+
+01:06:41.000 --> 01:06:43.000
+En la raíz va a estar el 2
+
+01:06:43.000 --> 01:06:45.000
+Si?
+
+01:06:45.000 --> 01:06:47.000
+Después insertamos el 6
+
+01:06:47.000 --> 01:06:49.000
+El 6 como es más grande
+
+01:06:49.000 --> 01:06:51.000
+Que el 2 va a ir
+
+01:06:51.000 --> 01:06:53.000
+En el subárbol izquierdo
+
+01:06:53.000 --> 01:06:55.000
+Perdón, el subárbol derecho
+
+01:06:55.000 --> 01:06:57.000
+Como el subárbol derecho es vacío
+
+01:06:57.000 --> 01:06:59.000
+Como el subárbol derecho es vacío
+
+01:06:59.000 --> 01:07:01.000
+Se inserta el 6
+
+01:07:01.000 --> 01:07:03.000
+Si?
+
+01:07:03.000 --> 01:07:05.000
+Con el 1 pasa exactamente lo mismo
+
+01:07:05.000 --> 01:07:07.000
+Se tiene que insertar a la izquierda del 2
+
+01:07:07.000 --> 01:07:09.000
+Como está vacío
+
+01:07:09.000 --> 01:07:11.000
+Se crea una hoja y se inserta el 1
+
+01:07:11.000 --> 01:07:13.000
+El 13 como es el 13
+
+01:07:13.000 --> 01:07:15.000
+El 13 es más grande que el 2
+
+01:07:15.000 --> 01:07:17.000
+Más grande que el 6
+
+01:07:17.000 --> 01:07:19.000
+El 6 no tiene
+
+01:07:19.000 --> 01:07:21.000
+Subárbol derecho se agrega el 13
+
+01:07:21.000 --> 01:07:23.000
+Si?
+
+01:07:23.000 --> 01:07:25.000
+Y ahora tenemos que insertar el 5
+
+01:07:25.000 --> 01:07:27.000
+Como es más grande que el 2
+
+01:07:27.000 --> 01:07:29.000
+Va al subárbol derecho
+
+01:07:29.000 --> 01:07:31.000
+El 5 es más grande que el 6?
+
+01:07:31.000 --> 01:07:33.000
+No, es más chico, entonces va al subárbol izquierdo
+
+01:07:33.000 --> 01:07:35.000
+Y como el subárbol izquierdo del 6
+
+01:07:35.000 --> 01:07:37.000
+Es vacío
+
+01:07:37.000 --> 01:07:39.000
+Ahí se ingresa el 5
+
+01:07:39.000 --> 01:07:41.000
+Si es que me deja
+
+01:07:41.000 --> 01:07:43.000
+Y así quedaría
+
+01:07:43.000 --> 01:07:45.000
+Le hacemos las liñitas
+
+01:07:51.000 --> 01:07:53.000
+Quedaría de esta forma
+
+01:07:53.000 --> 01:07:55.000
+No es necesario indicarle
+
+01:07:55.000 --> 01:07:57.000
+De quién va a ser hijo
+
+01:07:57.000 --> 01:07:59.000
+O quién va a ser padre
+
+01:07:59.000 --> 01:08:01.000
+Si?
+
+01:08:01.000 --> 01:08:03.000
+Porque el árbol tiene un orden
+
+01:08:03.000 --> 01:08:05.000
+Especifica un orden
+
+01:08:05.000 --> 01:08:07.000
+Todo lo que sea menor que el dato de la raíz
+
+01:08:07.000 --> 01:08:09.000
+Va al subárbol izquierdo
+
+01:08:09.000 --> 01:08:11.000
+Y todo lo que sea mayor de la raíz
+
+01:08:11.000 --> 01:08:13.000
+Va al subárbol derecho
+
+01:08:13.000 --> 01:08:15.000
+Y así se construye
+
+01:08:15.000 --> 01:08:17.000
+Y se puede tener tanto
+
+01:08:19.000 --> 01:08:21.000
+Un árbol binario de búsqueda de enteros
+
+01:08:21.000 --> 01:08:23.000
+Porque son comparables
+
+01:08:23.000 --> 01:08:25.000
+O implementan el interfaz comparable
+
+01:08:25.000 --> 01:08:27.000
+Y lo mismo de personas
+
+01:08:27.000 --> 01:08:29.000
+Se puede tener un árbol binario de búsqueda de personas
+
+01:08:29.000 --> 01:08:31.000
+Porque las personas se pueden comparar
+
+01:08:31.000 --> 01:08:33.000
+Como vimos
+
+01:08:33.000 --> 01:08:35.000
+En la transparencia anterior
+
+01:08:35.000 --> 01:08:37.000
+¿Estamos? ¿Se entiende?
+
+01:08:41.000 --> 01:08:43.000
+Hay una pregunta de esta parte
+
+01:08:43.000 --> 01:08:45.000
+De cómo podemos usar
+
+01:08:45.000 --> 01:08:47.000
+Los árboles binarios de búsqueda
+
+01:08:51.000 --> 01:08:53.000
+Por ejemplo
+
+01:08:53.000 --> 01:08:55.000
+Podríamos tener un árbol binario
+
+01:08:55.000 --> 01:08:57.000
+De casas
+
+01:08:57.000 --> 01:08:59.000
+Por ejemplo
+
+01:08:59.000 --> 01:09:01.000
+Un árbol binario de búsqueda de casas
+
+01:09:07.000 --> 01:09:09.000
+Sí, pero ¿qué
+
+01:09:09.000 --> 01:09:11.000
+Restricción puede tener?
+
+01:09:11.000 --> 01:09:13.000
+Claro, exactamente
+
+01:09:13.000 --> 01:09:15.000
+Muy bien Alan
+
+01:09:15.000 --> 01:09:17.000
+Siempre y cuando
+
+01:09:17.000 --> 01:09:19.000
+Se implementa el interfaz comparable
+
+01:09:19.000 --> 01:09:21.000
+Si no, no
+
+01:09:21.000 --> 01:09:23.000
+¿Qué quiere decir?
+
+01:09:23.000 --> 01:09:25.000
+Que se puedan comparar
+
+01:09:25.000 --> 01:09:27.000
+Las instancias de casa
+
+01:09:27.000 --> 01:09:29.000
+Para saber cuál es
+
+01:09:29.000 --> 01:09:31.000
+Mayor y cuál es menor
+
+01:09:31.000 --> 01:09:33.000
+Claro
+
+01:09:33.000 --> 01:09:35.000
+Indicar
+
+01:09:35.000 --> 01:09:37.000
+Cuál es mayor y cuál es menor
+
+01:09:37.000 --> 01:09:39.000
+A partir de la dirección
+
+01:09:39.000 --> 01:09:41.000
+Bien
+
+01:09:41.000 --> 01:09:43.000
+Ahora vamos a ver cómo podemos implementar
+
+01:09:43.000 --> 01:09:45.000
+El insertar
+
+01:09:45.000 --> 01:09:47.000
+En árbol binario de búsqueda
+
+01:09:49.000 --> 01:09:51.000
+Entonces
+
+01:09:51.000 --> 01:09:53.000
+En este caso se llama agregar
+
+01:09:53.000 --> 01:09:55.000
+Pero es el insertar
+
+01:09:57.000 --> 01:09:59.000
+Entonces tenemos
+
+01:10:05.000 --> 01:10:07.000
+Tenemos la firma del método
+
+01:10:07.000 --> 01:10:09.000
+Que es agregar
+
+01:10:09.000 --> 01:10:11.000
+Que va a devolver un void
+
+01:10:11.000 --> 01:10:13.000
+Y que recibe con un parámetro
+
+01:10:13.000 --> 01:10:15.000
+Algo de tipo T
+
+01:10:15.000 --> 01:10:17.000
+Igual a X
+
+01:10:17.000 --> 01:10:19.000
+Bien, entonces
+
+01:10:19.000 --> 01:10:21.000
+Si el dato
+
+01:10:21.000 --> 01:10:23.000
+Es igual a 1
+
+01:10:23.000 --> 01:10:25.000
+Quiere decir que el árbol está vacío
+
+01:10:25.000 --> 01:10:27.000
+La instancia está vacía
+
+01:10:27.000 --> 01:10:29.000
+Entonces le asignamos
+
+01:10:29.000 --> 01:10:31.000
+A dato el valor del parámetro
+
+01:10:33.000 --> 01:10:35.000
+Y ya ahí tendríamos una hoja
+
+01:10:37.000 --> 01:10:39.000
+Si no está vacío
+
+01:10:39.000 --> 01:10:41.000
+El árbol, o sea si el dato es distinto
+
+01:10:41.000 --> 01:10:43.000
+O vacío, tenemos que llamar
+
+01:10:43.000 --> 01:10:45.000
+Al método agregar
+
+01:10:45.000 --> 01:10:47.000
+Donde en el método agregar
+
+01:10:47.000 --> 01:10:49.000
+Tenemos el parámetro
+
+01:10:49.000 --> 01:10:51.000
+Original
+
+01:10:51.000 --> 01:10:53.000
+Y la referencia
+
+01:10:53.000 --> 01:10:55.000
+A la propia instancia, o sea dist
+
+01:10:57.000 --> 01:10:59.000
+Bien, entonces
+
+01:11:05.000 --> 01:11:07.000
+X
+
+01:11:07.000 --> 01:11:09.000
+El parámetro X
+
+01:11:09.000 --> 01:11:11.000
+Se le puede invocar el compareTo
+
+01:11:15.000 --> 01:11:17.000
+¿Por qué?
+
+01:11:27.000 --> 01:11:29.000
+No, que sea tipo genérico no nos quiere
+
+01:11:29.000 --> 01:11:31.000
+El tipo T
+
+01:11:31.000 --> 01:11:33.000
+El tipo T
+
+01:11:33.000 --> 01:11:35.000
+Que indica que es genérico
+
+01:11:35.000 --> 01:11:37.000
+Puede ser cualquier tipo de genérico
+
+01:11:37.000 --> 01:11:39.000
+Podría ser un genérico
+
+01:11:39.000 --> 01:11:41.000
+Que no
+
+01:11:41.000 --> 01:11:43.000
+Que no se pueda comparar
+
+01:11:43.000 --> 01:11:45.000
+¿Qué es lo que me asegura
+
+01:11:45.000 --> 01:11:47.000
+Que se le puede invocar
+
+01:11:47.000 --> 01:11:49.000
+El compareTo?
+
+01:11:55.000 --> 01:11:57.000
+Esto que está acá
+
+01:11:59.000 --> 01:12:01.000
+Esto que está acá arriba
+
+01:12:01.000 --> 01:12:03.000
+Que T
+
+01:12:03.000 --> 01:12:05.000
+Extend de comparable de T
+
+01:12:05.000 --> 01:12:07.000
+¿Qué significa esto? Que T
+
+01:12:07.000 --> 01:12:09.000
+Obligadamente tiene que
+
+01:12:09.000 --> 01:12:11.000
+Implementar
+
+01:12:11.000 --> 01:12:13.000
+Con parámetro
+
+01:12:13.000 --> 01:12:15.000
+Una vez que especificamos esto
+
+01:12:15.000 --> 01:12:17.000
+Podemos hacer el compareTo
+
+01:12:17.000 --> 01:12:19.000
+Invocar el compareTo
+
+01:12:19.000 --> 01:12:21.000
+Sobre el parámetro de tipo T
+
+01:12:21.000 --> 01:12:23.000
+Muy bien
+
+01:12:23.000 --> 01:12:25.000
+Entonces, ¿Qué quiere decir?
+
+01:12:25.000 --> 01:12:27.000
+Que el parámetro
+
+01:12:27.000 --> 01:12:29.000
+Invocado con compareTo
+
+01:12:29.000 --> 01:12:31.000
+De menor que 0
+
+01:12:31.000 --> 01:12:33.000
+¿Cómo es ese parámetro con respecto
+
+01:12:33.000 --> 01:12:35.000
+Al dato de la raíz?
+
+01:12:35.000 --> 01:12:37.000
+Es menor
+
+01:12:37.000 --> 01:12:39.000
+Correcto
+
+01:12:39.000 --> 01:12:41.000
+Si no tiene hijo izquierdo
+
+01:12:41.000 --> 01:12:43.000
+¿Cuál va a ser
+
+01:12:43.000 --> 01:12:45.000
+El nuevo hijo izquierdo?
+
+01:12:47.000 --> 01:12:49.000
+Claro, una instancia
+
+01:12:49.000 --> 01:12:51.000
+De árbol binario de búsqueda
+
+01:12:51.000 --> 01:12:53.000
+Donde esa instancia
+
+01:12:53.000 --> 01:12:55.000
+Tenga como dato X
+
+01:12:55.000 --> 01:12:57.000
+Y eso se asigna como hijo izquierdo
+
+01:12:57.000 --> 01:12:59.000
+Si no
+
+01:12:59.000 --> 01:13:01.000
+Tengo que llamar recursivamente
+
+01:13:01.000 --> 01:13:03.000
+Con
+
+01:13:03.000 --> 01:13:05.000
+X y ahora con el hijo
+
+01:13:05.000 --> 01:13:07.000
+Izquierdo, o sea, me muevo
+
+01:13:07.000 --> 01:13:09.000
+Al hijo izquierdo y vuelvo a hacer
+
+01:13:09.000 --> 01:13:11.000
+La misma
+
+01:13:11.000 --> 01:13:13.000
+Invocar al mismo
+
+01:13:13.000 --> 01:13:15.000
+Método
+
+01:13:15.000 --> 01:13:17.000
+Correcto
+
+01:13:17.000 --> 01:13:19.000
+Si yo tengo que el X
+
+01:13:19.000 --> 01:13:21.000
+Comparado con el dato
+
+01:13:21.000 --> 01:13:23.000
+Es mayor a 0
+
+01:13:23.000 --> 01:13:25.000
+¿Qué quiere decir?
+
+01:13:25.000 --> 01:13:27.000
+Sería, bueno, la condición
+
+01:13:27.000 --> 01:13:29.000
+Opuesta, ¿no?
+
+01:13:29.000 --> 01:13:31.000
+Pero bueno, escríbamelo en el chat
+
+01:13:31.000 --> 01:13:33.000
+Igual, aunque sea trivial la pregunta
+
+01:13:33.000 --> 01:13:35.000
+Así
+
+01:13:35.000 --> 01:13:37.000
+Muy bien, quiere decir que es mayor
+
+01:13:37.000 --> 01:13:39.000
+Y va del lado derecho
+
+01:13:39.000 --> 01:13:41.000
+Entonces, si no tiene
+
+01:13:41.000 --> 01:13:43.000
+Hijo derecho, lo que se hace es
+
+01:13:43.000 --> 01:13:45.000
+Se crea una nueva hoja
+
+01:13:45.000 --> 01:13:47.000
+Con ese valor
+
+01:13:47.000 --> 01:13:49.000
+Y se asigna como hijo derecho
+
+01:13:51.000 --> 01:13:53.000
+Bien
+
+01:13:53.000 --> 01:13:55.000
+Si no
+
+01:13:55.000 --> 01:13:57.000
+Si el hijo derecho no es vacío
+
+01:13:57.000 --> 01:13:59.000
+Se llama
+
+01:13:59.000 --> 01:14:01.000
+Recursivamente
+
+01:14:01.000 --> 01:14:03.000
+Con el parámetro
+
+01:14:03.000 --> 01:14:05.000
+Y esta vez
+
+01:14:05.000 --> 01:14:07.000
+Con el hijo derecho
+
+01:14:07.000 --> 01:14:09.000
+Así hasta que
+
+01:14:11.000 --> 01:14:13.000
+Encuentre un hijo
+
+01:14:13.000 --> 01:14:15.000
+Ya sea por izquierda o derecha
+
+01:14:15.000 --> 01:14:17.000
+Donde esté vacío
+
+01:14:17.000 --> 01:14:19.000
+Y se invoque, por ejemplo
+
+01:14:19.000 --> 01:14:21.000
+Si es del lado izquierdo
+
+01:14:21.000 --> 01:14:23.000
+Esta instrucción
+
+01:14:23.000 --> 01:14:25.000
+O si es por el lado derecho
+
+01:14:25.000 --> 01:14:27.000
+Esta instrucción, y ahí se inserta
+
+01:14:27.000 --> 01:14:29.000
+Y ya queda enganchado
+
+01:14:29.000 --> 01:14:31.000
+Se entiende cómo funciona el agregar
+
+01:14:33.000 --> 01:14:35.000
+¿Quieren que hagamos un ejemplo
+
+01:14:35.000 --> 01:14:37.000
+De cómo
+
+01:14:37.000 --> 01:14:39.000
+O sea
+
+01:14:39.000 --> 01:14:41.000
+¿Quieren que hagamos este ejemplo
+
+01:14:41.000 --> 01:14:43.000
+Y lo seguimos
+
+01:14:43.000 --> 01:14:45.000
+Línea por línea el agregar
+
+01:14:45.000 --> 01:14:47.000
+O no es necesario y se entendió
+
+01:14:47.000 --> 01:14:49.000
+Lo dejo a su criterio
+
+01:14:49.000 --> 01:14:51.000
+Y ustedes
+
+01:14:51.000 --> 01:14:53.000
+Definan qué hacemos
+
+01:14:55.000 --> 01:14:57.000
+El compare-tú siempre
+
+01:14:57.000 --> 01:14:59.000
+Retorna un número
+
+01:14:59.000 --> 01:15:01.000
+Retorna un número
+
+01:15:01.000 --> 01:15:03.000
+Siempre retorna un número
+
+01:15:03.000 --> 01:15:05.000
+Retorna
+
+01:15:09.000 --> 01:15:11.000
+Siempre
+
+01:15:11.000 --> 01:15:13.000
+Acá, siempre retorna un entero
+
+01:15:13.000 --> 01:15:15.000
+Cero para igual
+
+01:15:15.000 --> 01:15:17.000
+Un negativo para menor
+
+01:15:17.000 --> 01:15:19.000
+Y un positivo para mayor
+
+01:15:27.000 --> 01:15:29.000
+Bien
+
+01:15:31.000 --> 01:15:33.000
+Vamos a hacer 3 inserciones
+
+01:15:33.000 --> 01:15:35.000
+Perfecto
+
+01:15:35.000 --> 01:15:37.000
+Volvamos al ejemplo anterior
+
+01:15:41.000 --> 01:15:43.000
+A ver, denme un segundito
+
+01:15:47.000 --> 01:15:49.000
+2
+
+01:15:49.000 --> 01:15:51.000
+2
+
+01:15:51.000 --> 01:15:53.000
+2 6
+
+01:15:53.000 --> 01:15:55.000
+1 3
+
+01:15:55.000 --> 01:15:57.000
+6
+
+01:15:57.000 --> 01:15:59.000
+6
+
+01:16:01.000 --> 01:16:03.000
+13
+
+01:16:03.000 --> 01:16:05.000
+15
+
+01:16:27.000 --> 01:16:29.000
+15
+
+01:16:29.000 --> 01:16:31.000
+15
+
+01:16:39.000 --> 01:16:41.000
+Tenemos un segundo
+
+01:16:41.000 --> 01:16:43.000
+Que estoy acomodando con la cámara
+
+01:16:43.000 --> 01:16:45.000
+Porque se ve un vídeo feo
+
+01:16:45.000 --> 01:17:14.360
+Bien, díganme si, ahí estoy compartiendo, díganme si se ve bien, ¿se ve bien?
+
+01:17:14.360 --> 01:17:33.720
+Bueno, entonces, supongamos que queremos agregar esos números que están ahí, 2, 6, 1, 3, 6, 5.
+
+01:17:33.720 --> 01:17:45.720
+Vamos a comenzar con una instancia vacía. Entonces, cuando yo le digo agregar con el 2, ¿sí?
+
+01:17:45.720 --> 01:17:52.720
+Dato, ¿qué me va a devolver? Acá, esto, cuando pregunte por dato, si es igual a null, ¿qué me va a devolver?
+
+01:17:53.720 --> 01:18:04.720
+Ahora le voy a dar la comparación. Le voy a dar el tru, con lo cual, ¿dato qué valor va a tomar?
+
+01:18:04.720 --> 01:18:17.720
+Va a tomar el dice, en este caso, 2. Bien, este ya lo he insertado. Ahora tengo que insertar este.
+
+01:18:17.720 --> 01:18:25.720
+Bien, ahora cuando pregunte, ¿dato es igual a null? ¿Qué va a suceder?
+
+01:18:33.720 --> 01:18:41.720
+Va a dar falso, y vamos a llamar el método privado. Bien, ahora, tengo que...
+
+01:18:41.720 --> 01:18:50.720
+Acá voy a... Esto va a tomar el valor de dice, y esto va a tomar el valor, en este caso, de 6.
+
+01:18:50.720 --> 01:19:01.720
+Cuando hago 6, compare tú con 2, ¿qué me va a devolver? ¿Me va a devolver un valor menor a 0?
+
+01:19:01.720 --> 01:19:13.720
+No, entonces acá no entra. Pregunta por esto. 6, compare tú con 2, ¿me va a devolver un valor mayor que 1?
+
+01:19:13.720 --> 01:19:21.720
+Sí, bien. Dice, en este caso, donde estoy parado, en 2, ¿tiene hijo derecho?
+
+01:19:21.720 --> 01:19:32.720
+No, entonces lo que hago es, genero una nueva hoja con el 6, y no vale este de dos, y no vale el otro.
+
+01:19:32.720 --> 01:19:42.720
+Genero una nueva hoja con 6, y lo engancho como hijo derecho. Termina ese llamado. Listo.
+
+01:19:43.720 --> 01:20:01.720
+Ahora, insarto el 1. Bien. Dato sigue siendo distinto de null. Volvemos a entrar. 1 comparado con 2. ¿Es menor que 0?
+
+01:20:01.720 --> 01:20:16.720
+Sí. Bien. ¿2 tiene hijo izquierdo? No. Entonces lo que hago es, genero una hoja, asigno el valor 1, y lo engancho en mi lado izquierdo.
+
+01:20:16.720 --> 01:20:22.720
+Perfecto. Terminamos de insertar el 1. Ahora vamos a hacer el 13.
+
+01:20:23.720 --> 01:20:40.720
+Preguntamos. Bueno, dato sigue siendo distinto de null, porque es 2. 13 comparado con 2. ¿Me da un valor menor que 0?
+
+01:20:41.720 --> 01:20:48.720
+No. 13 comparado con 2. ¿Me da un valor mayor que 0?
+
+01:20:49.720 --> 01:20:54.720
+Sí. ¿Tiene hijo derecho el 2?
+
+01:20:55.720 --> 01:21:08.720
+Sí. Entonces, ¿qué hace? Estamos parados acá. Llama recursivamente, en este caso, con el 6 y con el 13.
+
+01:21:08.720 --> 01:21:14.720
+Estamos insertando el 13. No lo podemos insertar acá, entonces llamamos recursivamente ahora con el 6.
+
+01:21:14.720 --> 01:21:24.720
+Bien. Volvemos a preguntar. ¿13 comparado con 6 es menor que 0?
+
+01:21:26.720 --> 01:21:33.720
+No. ¿13 comparado con 6 es mayor que 0?
+
+01:21:33.720 --> 01:21:55.720
+Sí. Bien. Ahora, ¿el 6 tiene hijo derecho? No. Entonces lo que hace va a generar una nueva hoja con el 13 y lo agreda en su parte derecha.
+
+01:21:55.720 --> 01:22:13.720
+Bueno, hace el backtracking y en el backtracking no hace nada. O sea, el control termina de acá, viene acá, viene a la raíz del 2 y de la raíz del 2 no hace nada. Bien.
+
+01:22:13.720 --> 01:22:18.720
+Ahora vamos a insertar el 5. Bien.
+
+01:22:19.720 --> 01:22:28.720
+Bueno, el dato sigue siendo distinto de null. Preguntamos, ¿5 comparado con el 2 es menor que 0?
+
+01:22:33.720 --> 01:22:38.720
+No. Correcto. Vamos al otro if. ¿5 comparado con el 2 es mayor que 0?
+
+01:22:39.720 --> 01:22:54.720
+Sí. ¿Tiene hijo derecho? El 2. Sí. Entonces lo que hacemos es llamamos recursivamente ahora con el hijo derecho y el propio 5.
+
+01:22:55.720 --> 01:23:10.720
+Bien. ¿5 comparado con el 6 es menor que 0? Sí. ¿El 6 tiene hijo izquierdo? No, no tiene hijo izquierdo.
+
+01:23:11.720 --> 01:23:31.720
+Vamos a hacer una hoja y asignamos el valor 5 y lo agregamos como hijo izquierdo del 6. Y ahí otra vez volvemos por backtracking y ya tenemos el arrow con el 5 insertado.
+
+01:23:31.720 --> 01:23:36.720
+¿Se entendió o necesitan que hagamos alguna inserción más de algún otro número?
+
+01:23:37.720 --> 01:23:40.720
+¿Se quedó claro cómo trabaja la recursión?
+
+01:23:40.720 --> 01:24:00.720
+Claro, sí. Por ejemplo, si quisiéramos insertar otra vez el 5, venimos al 5 que es menor que 0.
+
+01:24:00.720 --> 01:24:14.720
+Por ejemplo, si quisiéramos insertar otra vez el 5, venimos por acá. Sabemos que tenemos que ir para acá.
+
+01:24:15.720 --> 01:24:23.720
+Preguntamos, ¿el 5 es menor que el 5 comparado con el 6? ¿Me da un valor menor a 0? Sí.
+
+01:24:23.720 --> 01:24:37.720
+Tiene hijo izquierdo, sí, entonces llama recursivamente con el 5. Cuando llama recursivamente con el 5, queriendo insertar el 5, no va a entrar ni por el menor ni por el mayor.
+
+01:24:38.720 --> 01:24:49.720
+Con lo cual, termina y cuando hace backtracking, devuelve el propio árbol sin esa repetición insertada.
+
+01:24:53.720 --> 01:25:06.720
+Ahí lo que se podría llegar a hacer es, si es igual a 0, tener un contador de la cantidad de ocurrencia incrementado.
+
+01:25:07.720 --> 01:25:13.720
+Pero bueno, eso sería como una modificación a esta estructura en general.
+
+01:25:13.720 --> 01:25:21.720
+El árbol binario de búsqueda sirve para agilizar la búsqueda. En este caso, para saber si está el 5 o no está el 5.
+
+01:25:21.720 --> 01:25:25.720
+Está el 6 y no está el 6, está el 3 y no está el 3.
+
+01:25:29.720 --> 01:25:33.720
+Bien, ¿estamos? ¿Entendió?
+
+01:25:33.720 --> 01:25:45.720
+Bueno, vamos a pausar la grabación.
+

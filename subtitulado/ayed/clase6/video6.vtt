@@ -1,0 +1,4310 @@
+WEBVTT
+
+00:00.000 --> 00:03.000
+y arco de arco.
+
+00:03.000 --> 00:07.000
+Bueno, chicos, buen día.
+
+00:07.000 --> 00:12.000
+Vamos a ir arrancando, pues ya son el 35, somos poquitos,
+
+00:12.000 --> 00:17.000
+me esperaba un poco más, pero me parece que virtual no les gusta a ninguno.
+
+00:17.000 --> 00:20.000
+Así que vamos arrancando.
+
+00:20.000 --> 00:24.000
+Bueno, hoy vamos a ver árboles generales en Java.
+
+00:24.000 --> 00:28.000
+¿Se escucha bien? No pregunte eso, antes de empezar a grabar.
+
+00:29.000 --> 00:32.000
+Bien, bárbaro.
+
+00:32.000 --> 00:36.000
+Bueno, vamos a ver esta estructura, que como ya venimos viendo,
+
+00:36.000 --> 00:40.000
+es una estructura genérica en el árbol general, al igual que en los binarios,
+
+00:40.000 --> 00:43.000
+va a poder guardar elementos de tipo T.
+
+00:43.000 --> 00:47.000
+Y cada árbol general tiene un tipo de datos T,
+
+00:47.000 --> 00:51.000
+y en vez de tener una referencia a un hijo derecho y a un hijo izquierdo,
+
+00:51.000 --> 00:56.000
+lo que tiene es un objeto de tipo list, que es una lista de árboles generales.
+
+00:56.000 --> 00:59.000
+Acá está otra vez una estructura recursiva, es decir,
+
+00:59.000 --> 01:03.000
+que cada nodo tiene su dato y una lista de sus hijos.
+
+01:03.000 --> 01:07.000
+Si bien se representa de esta manera, esto es una lista,
+
+01:07.000 --> 01:12.000
+una linked list, en la que sus elementos son árboles generales.
+
+01:12.000 --> 01:16.000
+Es decir, que es una lista de tres elementos, en donde está este, este y este.
+
+01:16.000 --> 01:20.000
+No es que tenemos así referencias directas en el nodo,
+
+01:20.000 --> 01:23.000
+sino que es una lista que contiene los árboles generales.
+
+01:23.000 --> 01:26.000
+Después tenemos constructores, tenemos los getters, los setters,
+
+01:26.000 --> 01:31.000
+y acá hay algunos algoritmos de recorrido prior, de posorden y posniveles.
+
+01:32.000 --> 01:35.000
+Ya pasamos a la parte de Java.
+
+01:38.000 --> 01:42.000
+Bueno, ahí tenemos entonces que es una clase GeneralTree
+
+01:42.000 --> 01:44.000
+con un tipo de datos T.
+
+01:44.000 --> 01:47.000
+Acuérdense que este tipo de datos T es el que después se usa para insertar,
+
+01:47.000 --> 01:51.000
+borrar, para devolver, si en los métodos que devuelven el tipo de datos.
+
+01:51.000 --> 01:55.000
+Y es una lista, es un list de árboles generales,
+
+01:55.000 --> 01:58.000
+que en este caso lo declaramos como una lista enlazada.
+
+01:58.000 --> 02:01.000
+O sea, que New Linked List de GeneralTree.
+
+02:01.000 --> 02:04.000
+Es una lista enlazada de árboles generales.
+
+02:05.000 --> 02:11.000
+El tema este de que tenemos una lista se entiende bien a partir del dibujo que tenemos,
+
+02:11.000 --> 02:15.000
+porque a veces, a ver si... ¿Cuál es la cámara?
+
+02:16.000 --> 02:18.000
+La cámara.
+
+02:19.000 --> 02:21.000
+Vamos a compartir.
+
+02:23.000 --> 02:25.000
+Una poquitita ahí más cerca.
+
+02:25.000 --> 02:27.000
+A ver si se ve bien.
+
+02:30.000 --> 02:32.000
+Más o menos se ve, ¿no?
+
+02:33.000 --> 02:39.000
+O sea, cuando decimos que un nodo tiene un tipo de datos T
+
+02:39.000 --> 02:43.000
+y nosotros lo representamos así como hijos,
+
+02:43.000 --> 02:48.000
+en realidad esto lo que tiene es una referencia a una lista enlazada
+
+02:48.000 --> 02:54.000
+en donde esta lista tiene un árbol general, otro árbol general y otro árbol general.
+
+02:54.000 --> 02:55.000
+¿Qué serían los hijos?
+
+02:55.000 --> 02:59.000
+En nosotros este como que lo representamos de esta manera.
+
+03:00.000 --> 03:07.000
+Apuntando así, digamos, pero es una lista, es una lista enlazada.
+
+03:08.000 --> 03:15.000
+Bueno, después tenemos acá un constructor que recibe un tipo de datos T
+
+03:15.000 --> 03:20.000
+y que la lista quedaría como una lista vacía porque ya acá en la definición
+
+03:20.000 --> 03:23.000
+se hace un New Linked List de árboles generales.
+
+03:23.000 --> 03:26.000
+Y después tenemos este otro constructor que recibe un dato
+
+03:26.000 --> 03:31.000
+y recibe ya una lista con los subárboles a los que va a quedar enganchado.
+
+03:31.000 --> 03:34.000
+Bueno, después tenemos acá unos setters y unos getters.
+
+03:34.000 --> 03:41.000
+Tenemos el ListLib, es decir, si es hoja, en este caso si no tiene hijos.
+
+03:43.000 --> 03:49.000
+Y después tenemos acá agregar un hijo también que significa agregar un subárbol general.
+
+03:51.000 --> 03:59.000
+Y él es vacío, me da true si el dato de ese nodo está en nulo y sus hijos están vacíos.
+
+04:00.000 --> 04:02.000
+A ver, ¿qué me dice Martín?
+
+04:02.000 --> 04:07.000
+Una consulta, ¿se podría hacer un New Array List en lugar de un Linked List solo para saber?
+
+04:07.000 --> 04:09.000
+Sí, sí, es lo mismo.
+
+04:09.000 --> 04:13.000
+Nosotros en la clase que presentamos la Linked List y Array List
+
+04:13.000 --> 04:19.000
+vimos que algunos tienen o tienen algunos beneficios
+
+04:20.000 --> 04:24.000
+respecto de otros según cómo se va a usar ese árbol.
+
+04:24.000 --> 04:29.000
+Nosotros como acá no sabemos o esa estructura, acá no sabemos si el árbol va a insertar o a borrar mucho.
+
+04:32.000 --> 04:36.000
+Podría ser un Array List también porque no hay muchos corrimientos quizás.
+
+04:36.000 --> 04:42.000
+O sea, si hay muchos corrimientos o muchos digamos borrados y agregados de nodos
+
+04:42.000 --> 04:49.000
+por ahí es conveniente una Linked List porque en el arreglo si no uno tiene que andar haciendo muchos corrimientos.
+
+04:50.000 --> 04:52.000
+Entonces es mejor el Array List.
+
+04:52.000 --> 04:57.000
+El Array List también utiliza menos memoria porque la Linked List es doblemente enlazada.
+
+04:57.000 --> 05:01.000
+Entonces, bueno, eso hace uso de memoria.
+
+05:03.000 --> 05:07.000
+Así que acá pusimos Linked List pero tranquilamente podría ser Array List.
+
+05:15.000 --> 05:20.000
+Acá dice, ¿pensá que el Array List tiene que portar elementos?
+
+05:20.000 --> 05:29.000
+Sí, de todas maneras, Nataly, este no es un arreglo como el Array que nosotros utilizábamos antes de conocer el framework de colecciones.
+
+05:29.000 --> 05:36.000
+Este cuando se crea, se crea ya con un tamaño y se va un poco actualizando cada tanto, constantemente.
+
+05:36.000 --> 05:41.000
+Pero sí, hay que modificar y hay que hacer también por ahí corrimientos.
+
+05:46.000 --> 05:52.000
+Sí, Robertí no se puede pero en esta materia se decidió implementarlo así.
+
+05:52.000 --> 05:57.000
+O sea, vos si querés lo puedes hacer pero para usar acá tienen que usar este.
+
+05:57.000 --> 06:00.000
+Las prácticas en el parcial tienen que usar esta versión.
+
+06:03.000 --> 06:09.000
+Si queremos devolver un hijo particular y sí, tenés que utilizar el método GetChildren.
+
+06:09.000 --> 06:22.000
+Tenés que, con GetChildren y con ese recorrer y ver si vos querés devolvernos que preguntar por el dato de la raíz de ese árbol y devolverlo.
+
+06:28.000 --> 06:35.000
+Bueno, estamos entonces en esta estructura.
+
+06:40.000 --> 06:42.000
+Pasamos a la próxima.
+
+06:42.000 --> 06:52.000
+Bueno, acá tenemos el recorrido preorden de un árbol general, que es un poco una generalización del recorrido de árboles binarios también.
+
+06:52.000 --> 07:04.000
+El preorden se imprime el dato de la raíz y luego se recuperan los ojos y se imprimen los hijos y se recorre, se imprime en preorden cada uno de los hijos.
+
+07:04.000 --> 07:12.000
+Antes teníamos, imprimíamos el dato de la raíz y después en preorden el hijo izquierdo y hijo derecho.
+
+07:12.000 --> 07:21.000
+Ahora lo que cambia es que nosotros imprimimos el dato de la raíz y luego tenemos que obtener con GetChildren la lista de hijos.
+
+07:21.000 --> 07:28.000
+Una vez que tenemos la lista de hijos, ahí entonces si recorremos e imprimimos en preorden cada uno de los hijos.
+
+07:28.000 --> 07:39.000
+Recorrer en preorden significa, como este hijo es un árbol, en este caso por ejemplo el 2 es un árbol, entonces va a imprimir el dato 2 y otra vez va a ser GetChildren para recuperar sus hijos.
+
+07:39.000 --> 07:44.000
+Y ahí cuando recorre, después se imprime en preorden cada uno de sus hijos.
+
+07:44.000 --> 07:52.000
+Bueno acá dice Joaquín, si usar el GetChildren no viola el encapsulamiento.
+
+07:52.000 --> 07:58.000
+Me acuerdo que ayer no nos dejaban implementar Getters para las matrices y esto es parecido.
+
+07:58.000 --> 08:08.000
+Nosotros el año pasado, no hace ya como dos o tres años, teníamos otra clase diferente que era un árbol general y después teníamos el nodo general
+
+08:08.000 --> 08:13.000
+y tratábamos de abstraer bien todas las operaciones de los árboles.
+
+08:13.000 --> 08:20.000
+Pero de todas maneras, acá lo que te está devolviendo el GetChildren no es la lista, la link de list.
+
+08:20.000 --> 08:25.000
+Ahora vamos a volver acá.
+
+08:25.000 --> 08:35.000
+El GetChildren acá te devuelve un list de árboles generales.
+
+08:35.000 --> 08:45.000
+Si vos podrías llevarlo a un problema, si por ejemplo decidimos que Children ya no sea más un list.
+
+08:45.000 --> 08:50.000
+Entonces en ese caso, si romperías los códigos por el que lo usan.
+
+08:50.000 --> 09:01.000
+Pero bueno, en este caso, igual esta variable es privada, pero bueno, si a través de GetChildren
+
+09:01.000 --> 09:05.000
+vos estás obteniendo un objeto Li de árboles generales.
+
+09:06.000 --> 09:11.000
+Igual esta variable es privada, pero bueno, si a través de GetChildren
+
+09:11.000 --> 09:16.000
+vos estás obteniendo un objeto Li de árboles generales.
+
+09:16.000 --> 09:20.000
+No es que obtener, que devolvemos directamente.
+
+09:20.000 --> 09:24.000
+En ese caso sí, porque acá está bien.
+
+09:24.000 --> 09:33.000
+No, no, no está bien. Quizás no está bien en ese sentido como que se está exponiendo un poco la estructura.
+
+09:33.000 --> 09:37.000
+Pero es una lista de árboles que son los hijos de ese árbol.
+
+09:37.000 --> 09:45.000
+Pero es verdad lo que vos decís, si en algún momento decidimos tener en vez de un list otra cosa,
+
+09:45.000 --> 09:48.000
+podrían romperse esos códigos.
+
+09:48.000 --> 09:56.000
+Lo que se suele hacer cuando uno cambia una estructura así, este método dejarlo y por ahí
+
+09:56.000 --> 09:59.000
+tener otro que devuelve los hijos de otra manera.
+
+09:59.000 --> 10:04.000
+Pero sí, no es que estamos dejando acceder directamente al Children
+
+10:04.000 --> 10:07.000
+y que vos puedas poner en el Children cualquier cosa.
+
+10:09.000 --> 10:13.000
+O sea, no es que la variable Children es pública.
+
+10:13.000 --> 10:18.000
+Eso violaría más lo que es el encapsulamiento, porque si Children sería pública,
+
+10:18.000 --> 10:22.000
+vos podrías hacer árbol.Children y poner cualquier cosa ahí.
+
+10:22.000 --> 10:28.000
+Y nosotros no, tenemos el método Children para agregar, por ejemplo, un hijo.
+
+10:29.000 --> 10:32.000
+Pero bueno, lo que sí es cierto acá es que cuando vos decís Get Children
+
+10:32.000 --> 10:35.000
+devolvés la lista de hijos, que es una lista de árboles.
+
+10:36.000 --> 10:39.000
+Uno tiene que mantener ahí una lista. Si yo ahí ahora devuelvo otra cosa,
+
+10:39.000 --> 10:43.000
+no es un set de árboles, por ahí sí se podría romper el código.
+
+10:48.000 --> 10:51.000
+¿Y con la lista podés hacer lo mismo?
+
+10:52.000 --> 10:58.000
+¿Cómo lo mismo? No, vos no le podés decir, por ejemplo,
+
+10:58.000 --> 11:01.000
+Children punto y setearle una lista a cualquier cosa.
+
+11:06.000 --> 11:11.000
+No, para agregar un hijo vos no tenés acceso a Children
+
+11:11.000 --> 11:13.000
+y le agregás un hijo vos desde afuera a Children.
+
+11:13.000 --> 11:18.000
+Sino que vos tenés un método a Children que tenés que mandarle un árbol
+
+11:18.000 --> 11:21.000
+y la estructura se encarga de agregarlo.
+
+11:22.000 --> 11:28.000
+Lo que sí te devuelve es una lista de árboles generales,
+
+11:28.000 --> 11:33.000
+pero vos no tenés acceso a esta variable Children directamente, ¿se entiende?
+
+11:42.000 --> 11:44.000
+No, no se podría, ¿se entiende?
+
+11:44.000 --> 11:50.000
+Vos para agregar un hijo a un árbol lo podés hacer a través del método ArtChild
+
+11:50.000 --> 11:54.000
+y recibís un árbol. ¿Cómo te devuelve los hijos?
+
+11:54.000 --> 11:59.000
+Sí, te los devuelve como un objeto de tipo list, porque es una lista de árboles.
+
+11:59.000 --> 12:03.000
+Mientras se mantenga esta estructura no vas a tener problemas.
+
+12:06.000 --> 12:10.000
+¿Se entiende la diferencia si esta variable Children sería pública?
+
+12:10.000 --> 12:14.000
+Ahí sí podrías decir Children punto algo y cambiar toda la estructura.
+
+12:14.000 --> 12:19.000
+Pero a esta dado un árbol vos le podés agregar un hijo directo a ese árbol
+
+12:19.000 --> 12:22.000
+solamente a través del método ArtChild y tenés que hacerlo a través de un árbol.
+
+12:22.000 --> 12:24.000
+No se te puede romper.
+
+12:28.000 --> 12:29.000
+¿Se entiende?
+
+12:29.000 --> 12:34.000
+¿Es necesario el if Children igual distinto de null del set Children, por qué?
+
+12:41.000 --> 12:51.000
+Set Children recibe un árbol general y set Children distinto de null.
+
+12:54.000 --> 12:58.000
+No, ahí se podría cambiar en el caso de...
+
+12:58.000 --> 13:01.000
+A ver, es la primera vez que hacemos esta estructura.
+
+13:01.000 --> 13:04.000
+A ver qué voy a compartir a través de la pantalla.
+
+13:04.000 --> 13:05.000
+Permitir.
+
+13:06.000 --> 13:10.000
+Ahora acá con lo que está preguntando, creo que es Vicente.
+
+13:14.000 --> 13:16.000
+¿Se está viendo la cámara?
+
+13:23.000 --> 13:26.000
+Claro, lo que vos estás diciendo es dado...
+
+13:26.000 --> 13:29.000
+Yo tengo un árbol que tiene por ahí esto.
+
+13:29.000 --> 13:32.000
+No sé, el 8, el 13, el 11.
+
+13:33.000 --> 13:37.000
+Entonces le queremos agregar un hijo acá.
+
+13:37.000 --> 13:42.000
+No, está bien, porque si no nos va a quedar una lista,
+
+13:42.000 --> 13:49.000
+una lista enlazada en donde tenemos el 13, digamos apunta acá al 13, al 11
+
+13:49.000 --> 13:51.000
+y después acá apunta un null.
+
+13:56.000 --> 13:58.000
+En realidad sí, está bien, ¿se entiende?
+
+13:58.000 --> 14:02.000
+Porque si no nos va a quedar un árbol, ¿qué tiene?
+
+14:05.000 --> 14:07.000
+Este hijo, un hijo con un dato.
+
+14:07.000 --> 14:11.000
+Esto sí podrían tener nulos, no tener hijos, no tener hijos.
+
+14:12.000 --> 14:14.000
+Y acá quedaría medio mal.
+
+14:15.000 --> 14:18.000
+Tendría como que tendría un árbol con el 13, el 11
+
+14:18.000 --> 14:20.000
+y este podría tener sus hijos también, ¿no?
+
+14:20.000 --> 14:23.000
+Y este quedaría un hijo ahí, árbol vacío.
+
+14:28.000 --> 14:31.000
+Queda como para ahí un poco, protege un poco la estructura,
+
+14:31.000 --> 14:34.000
+pero no podés hacer un Get Children Al...
+
+14:35.000 --> 14:38.000
+Get Children Al.
+
+14:46.000 --> 14:48.000
+Sí, ahí también tenés razón.
+
+14:48.000 --> 14:50.000
+Sí, por ahí se podría...
+
+14:50.000 --> 14:53.000
+Sí, esto también Vicente se puede hacer.
+
+14:58.000 --> 15:01.000
+Sí, ese add también se puede hacer.
+
+15:01.000 --> 15:03.000
+Tenés razón.
+
+15:05.000 --> 15:08.000
+Y ahí sí le podrías agregar un null.
+
+15:09.000 --> 15:11.000
+Sí, por ahí se podría también evitar este if.
+
+15:11.000 --> 15:14.000
+Bueno, a ver qué más me preguntan.
+
+15:14.000 --> 15:17.000
+Me puntan tanto, si por eso que no me gustan las clases virtuales,
+
+15:17.000 --> 15:20.000
+porque me la paso leyendo y perdiendo el hilo.
+
+15:20.000 --> 15:22.000
+A ver qué más dicen acá.
+
+15:22.000 --> 15:26.000
+Lista es igual a Get Children y lista add.
+
+15:26.000 --> 15:28.000
+Ahí estaría poniendo un null.
+
+15:28.000 --> 15:30.000
+Sí, podría pasar eso.
+
+15:30.000 --> 15:34.000
+Pero el objetivo de Get Children no sería asignar toda una lista.
+
+15:36.000 --> 15:38.000
+Get Children.
+
+15:41.000 --> 15:43.000
+A ver qué voy a poner acá porque no veo nada.
+
+15:43.000 --> 15:45.000
+Get Children.
+
+15:45.000 --> 15:50.000
+Sí, esa es la idea de pensarlo porque vos tenés un constructor
+
+15:50.000 --> 15:53.000
+que es con un dato solo y la lista vacía.
+
+15:53.000 --> 15:55.000
+Entonces, vos podrías hacer este constructor
+
+15:55.000 --> 15:58.000
+y después decir Get Children y le pones toda la lista.
+
+15:58.000 --> 16:01.000
+Pero bueno, si le mandás una lista nullo,
+
+16:01.000 --> 16:03.000
+lo que nos pasaría es que nos quedaría acá
+
+16:03.000 --> 16:05.000
+el Children igual a null.
+
+16:05.000 --> 16:09.000
+Entonces, por eso es mejor controlar que no sea nullo.
+
+16:10.000 --> 16:13.000
+¿No sería mejor tener un getter?
+
+16:13.000 --> 16:14.000
+A ver qué dice.
+
+16:14.000 --> 16:16.000
+Vamos a ver ahí.
+
+16:16.000 --> 16:18.000
+Ampliar esto.
+
+16:18.000 --> 16:22.000
+¿No sería mejor tener un getter
+
+16:22.000 --> 16:26.000
+que me devuelva una posición en específico?
+
+16:26.000 --> 16:29.000
+Cosa de no exponer a toda la estructura.
+
+16:30.000 --> 16:31.000
+No entiendo acá.
+
+16:31.000 --> 16:32.000
+Nahuel.
+
+16:32.000 --> 16:34.000
+Dice, ¿no sería mejor tener un getter
+
+16:34.000 --> 16:37.000
+que me devuelva una posición en específico?
+
+16:37.000 --> 16:41.000
+En vez de Get Children, ¿tener Get Children de una posición?
+
+16:42.000 --> 16:44.000
+No sé, ahí Nahuel le...
+
+16:50.000 --> 16:51.000
+No sé.
+
+16:51.000 --> 16:53.000
+No sé.
+
+16:53.000 --> 16:54.000
+No sé.
+
+16:54.000 --> 16:55.000
+Sí.
+
+17:05.000 --> 17:08.000
+Sí, se podría mejorar desde el punto de vista
+
+17:08.000 --> 17:10.000
+de la abstracción un poco.
+
+17:10.000 --> 17:12.000
+No es el objetivo el modelado en esta materia,
+
+17:12.000 --> 17:14.000
+sino las estructuras de datos.
+
+17:17.000 --> 17:22.000
+Pero sí, es verdad que se podría acceder
+
+17:22.000 --> 17:25.000
+a la lista internamente un poco.
+
+17:26.000 --> 17:28.000
+Pero bueno, tratemos de enfocarnos
+
+17:28.000 --> 17:32.000
+en la estructura en sí y a lo mismo.
+
+17:32.000 --> 17:34.000
+O sea, este árbol general,
+
+17:34.000 --> 17:36.000
+ustedes no lo van a usar en ningún lado.
+
+17:36.000 --> 17:38.000
+Si van a hacer una aplicación con Java,
+
+17:38.000 --> 17:41.000
+van a usar estas otras estructuras.
+
+17:42.000 --> 17:44.000
+Pero bueno, la idea es que se entienda
+
+17:44.000 --> 17:46.000
+el concepto de un árbol general
+
+17:46.000 --> 17:48.000
+y que aprendan a hacer los algoritmos
+
+17:48.000 --> 17:50.000
+de árboles generales.
+
+17:52.000 --> 17:55.000
+Pero sí, tomo todas estas cosas que me dicen
+
+17:55.000 --> 17:58.000
+para repensar un poquito la estructura
+
+17:58.000 --> 18:00.000
+y seguir trabajándola.
+
+18:03.000 --> 18:07.000
+Bueno, pasamos entonces a la próxima diapo,
+
+18:07.000 --> 18:10.000
+que es el recorrido preorden,
+
+18:10.000 --> 18:12.000
+que un poco ya habíamos charlado.
+
+18:12.000 --> 18:15.000
+Está acá en la parte izquierda hecha con un foreach
+
+18:15.000 --> 18:18.000
+y en la parte derecha hecha con el literator,
+
+18:18.000 --> 18:21.000
+tanto para los recorridos como para los algoritmos.
+
+18:23.000 --> 18:27.000
+En los parciales pueden usar cualquiera de los dos métodos
+
+18:27.000 --> 18:29.000
+si les sirve.
+
+18:29.000 --> 18:32.000
+Es que queda más simple.
+
+18:32.000 --> 18:36.000
+Acá lo que hacemos es imprimimos el dato de la raíz,
+
+18:36.000 --> 18:38.000
+en este caso por ejemplo cero,
+
+18:38.000 --> 18:40.000
+y después decimos thisGetChildren,
+
+18:40.000 --> 18:44.000
+nos daría esta lista con estos tres subárboles generales.
+
+18:44.000 --> 18:47.000
+Y después en el foreach le decimos que nos itere
+
+18:47.000 --> 18:50.000
+esa lista de árboles generales y en cada iteración
+
+18:50.000 --> 18:53.000
+la variable child va a tener uno de esos árboles.
+
+18:53.000 --> 18:57.000
+Entonces en cada iteración llamamos al hijo el preorden.
+
+18:57.000 --> 18:59.000
+Y así, bueno, cuando llamamos el child,
+
+18:59.000 --> 19:01.000
+acá cuando el child es dos,
+
+19:01.000 --> 19:05.000
+otra vez lo mismo, se va a imprimir el dos como el dato
+
+19:05.000 --> 19:07.000
+y después se van a obtener estos tres hijos
+
+19:07.000 --> 19:10.000
+y se va a llamar el preorden con cada uno de estos tres hijos.
+
+19:10.000 --> 19:13.000
+En el caso del de la derecha,
+
+19:13.000 --> 19:15.000
+a ver, me siguen hablando de esto,
+
+19:15.000 --> 19:17.000
+¿puede explicar cómo se usa el literator?
+
+19:17.000 --> 19:20.000
+Ahí veníamos, puede ser que cada hijo de la lista
+
+19:20.000 --> 19:25.000
+sería por cada hijo de la lista hacer el preorden, claro.
+
+19:25.000 --> 19:26.000
+Exacto, lo mismo.
+
+19:26.000 --> 19:30.000
+Y las dos soluciones, las dos soluciones son idénticas.
+
+19:30.000 --> 19:33.000
+En el caso del iterator,
+
+19:33.000 --> 19:36.000
+lo que tenemos es, yo estaba marcando,
+
+19:36.000 --> 19:38.000
+tengo dos pantallas y estaba marcando la otra,
+
+19:38.000 --> 19:40.000
+ahí me doy cuenta que no se veía acá.
+
+19:40.000 --> 19:43.000
+En este caso lo que hacemos es lo mismo,
+
+19:43.000 --> 19:46.000
+imprimimos el dato de la raíz, por ejemplo el cero,
+
+19:46.000 --> 19:49.000
+y después decimos children,
+
+19:49.000 --> 19:51.000
+es una lista de algores generales
+
+19:51.000 --> 19:53.000
+y decimos this getChildren.
+
+19:53.000 --> 19:57.000
+Una vez que tenemos la lista, esta lista ya con los hijos,
+
+19:57.000 --> 20:00.000
+a esa lista children le pedimos el iterator.
+
+20:00.000 --> 20:02.000
+El iterator, acuérdense que es un método
+
+20:02.000 --> 20:05.000
+que está disponible en todas las estructuras de datos
+
+20:05.000 --> 20:07.000
+que tiene el framework de colecciones.
+
+20:07.000 --> 20:10.000
+Linked list, Array list, Tricet, Trimap,
+
+20:10.000 --> 20:13.000
+todos tienen el método iterator.
+
+20:13.000 --> 20:16.000
+¿Qué es lo que nos devuelve? Es un objeto iterator.
+
+20:16.000 --> 20:19.000
+Que si yo no le pongo de qué tipo me va a devolver
+
+20:19.000 --> 20:22.000
+todos los elementos que tiene esa colección,
+
+20:22.000 --> 20:24.000
+cada vez que yo hago next me va a ir devolviendo
+
+20:24.000 --> 20:26.000
+un elemento de esa colección de tipo object.
+
+20:26.000 --> 20:29.000
+Pero si yo ya en el iterador le digo que el iterator
+
+20:29.000 --> 20:31.000
+es de tipo de árboles generales de T,
+
+20:31.000 --> 20:34.000
+entonces cada vez que yo hago un next me va a devolver
+
+20:34.000 --> 20:36.000
+un árbol general de T.
+
+20:36.000 --> 20:39.000
+Entonces le pido, con un iterador y un iterator,
+
+20:39.000 --> 20:42.000
+y después digo, while it, al iterador,
+
+20:42.000 --> 20:44.000
+tenga más elementos, next.
+
+20:44.000 --> 20:46.000
+O sea, un objeto de tipo iterator responde al método
+
+20:46.000 --> 20:48.000
+has next y next.
+
+20:48.000 --> 20:50.000
+Entonces digo, mientras tenga más elementos,
+
+20:50.000 --> 20:54.000
+obtengo el elemento y después se hace chat.
+
+20:59.000 --> 21:01.000
+O podría ser también acá.
+
+21:03.000 --> 21:05.000
+Sería lo mismo.
+
+21:05.000 --> 21:07.000
+¿Te entiende ahí?
+
+21:09.000 --> 21:10.000
+Sí.
+
+21:23.000 --> 21:25.000
+Se me fue la conexión un minutito.
+
+21:25.000 --> 21:27.000
+¿Ahí me están escuchando?
+
+21:29.000 --> 21:30.000
+Ah, perfecto.
+
+21:30.000 --> 21:32.000
+Sí, noté que...
+
+21:32.000 --> 21:34.000
+No sé, ¿querías compartir algo, Nataly,
+
+21:34.000 --> 21:36.000
+que pusiste un link ahí?
+
+21:39.000 --> 21:41.000
+Si quieren agarrar el micrófono, chicos,
+
+21:41.000 --> 21:43.000
+para que sea un poco más entretenido,
+
+21:43.000 --> 21:44.000
+no hay problema ahí.
+
+21:44.000 --> 21:46.000
+O querías compartir lo que es el iterator.
+
+21:46.000 --> 21:49.000
+Igual ya el iterator sí lo habíamos...
+
+21:49.000 --> 21:52.000
+¿Usar el for each implica hacer eso?
+
+21:52.000 --> 21:56.000
+¿O son dos cosas diferentes que hacen lo mismo?
+
+21:58.000 --> 22:01.000
+Son dos maneras de hacer lo mismo.
+
+22:01.000 --> 22:03.000
+Pero uno usa el for each,
+
+22:03.000 --> 22:05.000
+que esto se traduce a un for, digamos,
+
+22:05.000 --> 22:07.000
+cuando compila y esto es un while.
+
+22:07.000 --> 22:10.000
+Pero los dos mecanismos hechos así
+
+22:10.000 --> 22:14.000
+atraviesan o recorren todos los elementos de la estructura.
+
+22:18.000 --> 22:23.000
+¿Ese llamado al final iría por el siguiente hijo de la lista?
+
+22:25.000 --> 22:29.000
+¿El llamado al final iría por el siguiente hijo de la lista?
+
+22:29.000 --> 22:31.000
+¿En dónde me decís?
+
+22:33.000 --> 22:35.000
+¿Este next?
+
+22:38.000 --> 22:42.000
+Martín, a ver si me estás escribiendo.
+
+22:49.000 --> 22:51.000
+¿Dónde dice child pre-order?
+
+22:51.000 --> 22:53.000
+Sí.
+
+22:53.000 --> 22:55.000
+En este caso, en el for,
+
+22:55.000 --> 22:58.000
+la iteración la hace automáticamente el for,
+
+22:58.000 --> 23:01.000
+porque el for hace el for each que me dice
+
+23:01.000 --> 23:03.000
+que itere esta colección for each
+
+23:03.000 --> 23:06.000
+y en cada iteración me devuelvan la variable child
+
+23:06.000 --> 23:07.000
+un árbol.
+
+23:07.000 --> 23:09.000
+Entonces, cuando yo pido al getChildren
+
+23:09.000 --> 23:11.000
+a la altura del cero,
+
+23:11.000 --> 23:13.000
+me va a devolver una lista, o sea,
+
+23:13.000 --> 23:15.000
+children es una lista de tres elementos.
+
+23:15.000 --> 23:17.000
+Entonces, ¿este for qué va a hacer?
+
+23:17.000 --> 23:20.000
+La primera vez el child va a tener el subárbol del uno,
+
+23:20.000 --> 23:24.000
+la segunda vez del for el child va a tener todo este subárbol del dos
+
+23:24.000 --> 23:27.000
+y la tercera vez el child va a tener este subárbol.
+
+23:27.000 --> 23:30.000
+Entonces, el child pre-order lo que hace
+
+23:30.000 --> 23:32.000
+es invocar recursivamente al pre-order
+
+23:32.000 --> 23:35.000
+ahora con este subárbol, con este subárbol, con este y así.
+
+23:35.000 --> 23:37.000
+En el caso del while,
+
+23:37.000 --> 23:39.000
+vos tenés que invocar al iterator
+
+23:39.000 --> 23:41.000
+y tenés que manejar vos el iterator con el next.
+
+23:41.000 --> 23:43.000
+O sea, mientras haya más elementos,
+
+23:43.000 --> 23:45.000
+en el caso del cero,
+
+23:45.000 --> 23:47.000
+si yo le pido a child mientras haya más elementos,
+
+23:47.000 --> 23:49.000
+no va a entrar al while porque no tiene nada el uno.
+
+23:49.000 --> 23:51.000
+Ahora, cuando ya esté parado en el dos
+
+23:51.000 --> 23:53.000
+y yo pedí al getChildren,
+
+23:53.000 --> 23:55.000
+me va a devolver esta lista de tres elementos.
+
+23:55.000 --> 23:58.000
+Entonces, while, haya más elementos y te next.
+
+23:58.000 --> 24:00.000
+El next me va a devolver el 21.
+
+24:00.000 --> 24:02.000
+Lo procesás, llamás al pre-order,
+
+24:02.000 --> 24:05.000
+después el next me va a devolver el 22 y el 23.
+
+24:06.000 --> 24:09.000
+El forage es solo para objetos iterables, ¿no?
+
+24:09.000 --> 24:10.000
+Sí, sí, sí.
+
+24:10.000 --> 24:12.000
+Ahí adentro del forage
+
+24:12.000 --> 24:15.000
+solamente podemos poner objetos iterables.
+
+24:15.000 --> 24:17.000
+Nosotros sabemos que la linked list y la array list
+
+24:17.000 --> 24:19.000
+son iterables y los podemos poner.
+
+24:19.000 --> 24:21.000
+Si ustedes crean su propia estructura
+
+24:21.000 --> 24:23.000
+para poder ponerlo adentro del forage,
+
+24:23.000 --> 24:26.000
+lo que tendrían que hacer es implementar la interfaz iterable.
+
+24:26.000 --> 24:29.000
+Entonces, ahí también podrían poner adentro del forage
+
+24:29.000 --> 24:31.000
+cualquier objeto implementado por ustedes.
+
+24:31.000 --> 24:35.000
+O sea, hay una jerarquía de objetos del framework de colecciones
+
+24:35.000 --> 24:37.000
+que arrancan collection.
+
+24:39.000 --> 24:41.000
+Uf, qué mal que queda esto borrado.
+
+24:42.000 --> 24:44.000
+La interfaz collection
+
+24:45.000 --> 24:48.000
+extiende de la interfaz iterable.
+
+24:49.000 --> 24:51.000
+Y todas las clases del framework de colecciones
+
+24:51.000 --> 24:53.000
+implementan collection.
+
+24:53.000 --> 24:55.000
+Entonces, todos son iterables.
+
+24:55.000 --> 24:58.000
+Pero si no, ustedes podrán hacer su propia estructura
+
+24:58.000 --> 25:00.000
+que implementen la interfaz iterable.
+
+25:01.000 --> 25:03.000
+Oh, esto qué mal me quedó esto.
+
+25:05.000 --> 25:06.000
+Bueno.
+
+25:08.000 --> 25:11.000
+Estamos entonces más o menos con los dos recorridos.
+
+25:11.000 --> 25:13.000
+El forage es solo para objetos iterables,
+
+25:13.000 --> 25:15.000
+para colecciones.
+
+25:16.000 --> 25:18.000
+Sí, hay que ver los maps.
+
+25:18.000 --> 25:20.000
+Hay una excepción que son con los maps,
+
+25:20.000 --> 25:22.000
+que son clave-valor.
+
+25:23.000 --> 25:25.000
+Que en ese caso,
+
+25:25.000 --> 25:26.000
+tiene dos métodos.
+
+25:26.000 --> 25:28.000
+Uno que me devuelve las keys
+
+25:28.000 --> 25:30.000
+y otro que me devuelve los values.
+
+25:30.000 --> 25:32.000
+Y esos también son iterables.
+
+25:32.000 --> 25:34.000
+A excepción de eso, de los maps,
+
+25:34.000 --> 25:36.000
+después todas las demás clases
+
+25:36.000 --> 25:38.000
+implementadas en el framework de colecciones,
+
+25:38.000 --> 25:41.000
+uno le puede ya pedir directamente el iterator.
+
+25:42.000 --> 25:44.000
+En los maps, uno tiene que decir
+
+25:44.000 --> 25:46.000
+get values y después iterator
+
+25:46.000 --> 25:48.000
+o get keys y después iterator.
+
+25:48.000 --> 25:51.000
+Porque los maps en sí no responden al iterator.
+
+25:51.000 --> 25:53.000
+Una duda que me quedó
+
+25:53.000 --> 25:55.000
+del preorden mirando el dibujo.
+
+25:55.000 --> 25:56.000
+Sí.
+
+25:57.000 --> 25:58.000
+Martín.
+
+26:06.000 --> 26:08.000
+En el segundo llamado del preorden
+
+26:08.000 --> 26:10.000
+iría solo por el dos.
+
+26:11.000 --> 26:13.000
+O también por sus hijos.
+
+26:16.000 --> 26:18.000
+Y el segundo llamado del preorden
+
+26:18.000 --> 26:20.000
+iría solo por el dos.
+
+26:21.000 --> 26:23.000
+Acá hagámonos con el forage.
+
+26:23.000 --> 26:25.000
+La primera vez se imprima el dato del cero.
+
+26:26.000 --> 26:29.000
+Pedimos los hijos, me va a devolver esta lista de tres elementos.
+
+26:29.000 --> 26:31.000
+Entonces, el forage este lo va a hacer
+
+26:31.000 --> 26:33.000
+tres veces para esos elementos.
+
+26:33.000 --> 26:35.000
+Pero, la primera vez con el uno,
+
+26:35.000 --> 26:37.000
+sería como al uno,
+
+26:37.000 --> 26:39.000
+llamamos preorden. Venimos acá,
+
+26:39.000 --> 26:41.000
+imprimimos el uno. Obtienemos los hijos del uno,
+
+26:41.000 --> 26:43.000
+no tiene nada. Entonces, yo vuelvo
+
+26:43.000 --> 26:45.000
+acá, a la línea siguiente del llamado.
+
+26:45.000 --> 26:47.000
+Entonces, ¿qué va a hacer el for?
+
+26:47.000 --> 26:49.000
+Me va a devolver el sub hijo dos.
+
+26:49.000 --> 26:51.000
+Entonces, me devuelve el sub hijo dos
+
+26:51.000 --> 26:53.000
+y yo voy a llamar ahora preorden con el dos.
+
+26:53.000 --> 26:55.000
+Con el sub árbol dos, preorden. Vengo acá.
+
+26:55.000 --> 26:57.000
+Imprimo el dato dos.
+
+26:57.000 --> 26:59.000
+Tomo los hijos del dos.
+
+26:59.000 --> 27:01.000
+O sea, sigo para acá ahora.
+
+27:01.000 --> 27:03.000
+Tomo los hijos del dos, que son tres.
+
+27:03.000 --> 27:05.000
+Entonces, la primera vez me va a dar el veintiuno.
+
+27:05.000 --> 27:07.000
+Llamo en preorden con el veintiuno.
+
+27:07.000 --> 27:09.000
+Me va a imprimir el veintiuno.
+
+27:09.000 --> 27:11.000
+No tiene hijos el veintiuno. Entonces, voy a volver acá
+
+27:11.000 --> 27:13.000
+a la siguiente línea de la recursión.
+
+27:13.000 --> 27:15.000
+Me va a devolver el veintiuno.
+
+27:15.000 --> 27:17.000
+Después me va a devolver el veintidós.
+
+27:17.000 --> 27:19.000
+Y después ya terminó esto.
+
+27:19.000 --> 27:21.000
+Va volviendo a la recursión y va a ir al tres.
+
+27:23.000 --> 27:25.000
+Ahí se entiende, Martín.
+
+27:27.000 --> 27:29.000
+Bien.
+
+27:31.000 --> 27:33.000
+Bueno. Y abajo tienen un poco el ejemplo
+
+27:33.000 --> 27:35.000
+de la construcción del árbol general.
+
+27:35.000 --> 27:37.000
+Esto es para que ustedes puedan hacer
+
+27:37.000 --> 27:39.000
+los tests.
+
+27:39.000 --> 27:41.000
+Pero en los parciales no se les toma.
+
+27:41.000 --> 27:43.000
+Así esto que tiene mucho código
+
+27:43.000 --> 27:45.000
+y que no tiene sentido.
+
+27:45.000 --> 27:47.000
+Y aquí, por ejemplo,
+
+27:47.000 --> 27:49.000
+es el parcial de la construcción.
+
+27:49.000 --> 27:51.000
+Fíjense acá, por ejemplo,
+
+27:51.000 --> 27:53.000
+primero se crea el árbol general del uno
+
+27:53.000 --> 27:55.000
+y nada más porque no tiene nada.
+
+27:55.000 --> 27:57.000
+Después todo este pedacito
+
+27:57.000 --> 27:59.000
+que viene acá. Ah, no, acá no lo puedo marcar.
+
+27:59.000 --> 28:01.000
+El uno. Después todo el pedacito
+
+28:01.000 --> 28:03.000
+este del dos que viene acá.
+
+28:03.000 --> 28:05.000
+Lo que está haciendo es creando
+
+28:05.000 --> 28:07.000
+el subárbol dos. Fíjense qué hacen.
+
+28:09.000 --> 28:11.000
+Children dos.
+
+28:11.000 --> 28:13.000
+Children dos.
+
+28:13.000 --> 28:15.000
+Una lista de árboles generales
+
+28:15.000 --> 28:17.000
+de árboles generales.
+
+28:17.000 --> 28:19.000
+Entonces decimos children dos.
+
+28:19.000 --> 28:21.000
+Agregamos un árbol general
+
+28:21.000 --> 28:23.000
+21, un árbol general 22, un árbol general
+
+28:23.000 --> 28:25.000
+23. ¿Qué tenemos acá?
+
+28:25.000 --> 28:27.000
+Tenemos una lista,
+
+28:27.000 --> 28:29.000
+una linked list con
+
+28:29.000 --> 28:31.000
+tres árboles generales. Entonces después
+
+28:31.000 --> 28:33.000
+creamos el subárbol dos
+
+28:33.000 --> 28:35.000
+usando el otro constructor
+
+28:35.000 --> 28:37.000
+que es new general tree
+
+28:37.000 --> 28:39.000
+con el dos como
+
+28:39.000 --> 28:41.000
+dato y le pasamos ahí la lista
+
+28:41.000 --> 28:43.000
+de árboles generales.
+
+28:43.000 --> 28:45.000
+O sea, en este caso usamos el
+
+28:45.000 --> 28:47.000
+constructor con un dato y en este caso
+
+28:47.000 --> 28:49.000
+usamos el constructor con un dato y una lista.
+
+28:49.000 --> 28:51.000
+Acá creamos solo el dato y acá el dato
+
+28:51.000 --> 28:53.000
+con la lista. Si volvemos acá
+
+28:53.000 --> 28:55.000
+a la
+
+28:55.000 --> 28:57.000
+implementación, en el primer caso
+
+28:57.000 --> 28:59.000
+usamos este constructor y en el segundo caso
+
+28:59.000 --> 29:01.000
+usamos este constructor.
+
+29:03.000 --> 29:05.000
+Bueno,
+
+29:05.000 --> 29:07.000
+¿se entiende esto? Esto les decía
+
+29:07.000 --> 29:09.000
+los parciales no se toma porque los parciales
+
+29:09.000 --> 29:11.000
+en general, sobre el final de la clase tenemos
+
+29:11.000 --> 29:13.000
+ejemplos, se les da
+
+29:13.000 --> 29:15.000
+un árbol particular y ustedes tienen
+
+29:15.000 --> 29:17.000
+que hacer algún algoritmo. Básicamente
+
+29:17.000 --> 29:19.000
+eso es la idea de los parciales,
+
+29:19.000 --> 29:21.000
+que ustedes aprendan a hacer los algoritmos.
+
+29:23.000 --> 29:25.000
+Bueno,
+
+29:25.000 --> 29:27.000
+pasamos, a ver que dice
+
+29:27.000 --> 29:29.000
+ahí cuando implementa los
+
+29:29.000 --> 29:31.000
+add, ahí
+
+29:31.000 --> 29:33.000
+cuando implementa los add, ¿cómo se sabe
+
+29:33.000 --> 29:35.000
+si va con el izquierdo o con el derecho?
+
+29:35.000 --> 29:37.000
+A diferencia de los árboles binarios.
+
+29:37.000 --> 29:39.000
+Los add.
+
+29:39.000 --> 29:41.000
+No, acá no hay derecho y izquierdo.
+
+29:41.000 --> 29:43.000
+Acá es una lista de árboles.
+
+29:43.000 --> 29:45.000
+A ver, vuelvo a la diapo anterior. ¿Dónde?
+
+29:45.000 --> 29:47.000
+¿En qué add, Messi? Ah, acá.
+
+29:47.000 --> 29:49.000
+No, los add, estos son
+
+29:49.000 --> 29:51.000
+a la lista. Es una
+
+29:51.000 --> 29:53.000
+lista enlazada, Martín.
+
+29:53.000 --> 29:55.000
+Es una lista enlazada, o sea, es add, add, add,
+
+29:55.000 --> 29:57.000
+uno atrás de otro. Como si harías el add,
+
+29:57.000 --> 29:59.000
+21, 22, 23,
+
+29:59.000 --> 30:01.000
+estos.
+
+30:07.000 --> 30:09.000
+Es una lista, uno atrás de otro.
+
+30:09.000 --> 30:11.000
+¿Ves que hay un caso ahí, el 2, que tiene 3?
+
+30:11.000 --> 30:13.000
+Puedes tener 10, lo que sea.
+
+30:29.000 --> 30:31.000
+Claro, ese es un add. El add de la link de list
+
+30:31.000 --> 30:33.000
+agrega al final, si no le decís nada.
+
+30:33.000 --> 30:35.000
+Así que los voy poniendo, sí, a medida que los
+
+30:35.000 --> 30:37.000
+abrasives.
+
+30:43.000 --> 30:45.000
+Es una lista de izquierda, derecha, el primero
+
+30:45.000 --> 30:47.000
+que añadas siempre va a estar, el primero
+
+30:47.000 --> 30:49.000
+que añadas siempre va a estar
+
+30:49.000 --> 30:51.000
+el izquierdo del segundo.
+
+30:53.000 --> 30:55.000
+El segundo que añadas
+
+30:55.000 --> 30:57.000
+siempre va a estar a la derecha.
+
+30:57.000 --> 30:59.000
+Bueno, está bien. Después que agregaste el segundo.
+
+30:59.000 --> 31:01.000
+Sí.
+
+31:01.000 --> 31:03.000
+O sea, ese siempre agrega al final. He lado,
+
+31:03.000 --> 31:06.160
+al final, y si no, puedes agregar una posición particular.
+
+31:06.160 --> 31:08.640
+Pero acá la cera lo ponemos al final.
+
+31:08.640 --> 31:10.840
+Bueno, estamos entonces.
+
+31:10.840 --> 31:12.040
+¿Esta diapo puedo pasar?
+
+31:15.040 --> 31:17.280
+Acá hay una diferencia.
+
+31:17.280 --> 31:19.600
+Bueno, si se me pasa algo que no leo,
+
+31:19.600 --> 31:21.640
+porque si no, como que estoy todo el tiempo leyendo y me
+
+31:21.640 --> 31:22.640
+distraigo bastante.
+
+31:25.600 --> 31:31.160
+Esta diapo es un ejemplo también del recorrido en pre-orden,
+
+31:31.160 --> 31:33.620
+pero que en vez de ir imprimiendo,
+
+31:33.620 --> 31:39.760
+se pide que devuelva una lista, una lista con los elementos.
+
+31:39.760 --> 31:43.360
+Entonces, bueno, cuando nosotros tenemos este algoritmo
+
+31:43.360 --> 31:49.020
+recursivo, que muchas veces necesitamos, por ejemplo,
+
+31:49.020 --> 31:53.520
+preparar alguna estructura para que se devuelva,
+
+31:53.520 --> 31:56.600
+se suele hacer un método público que crea esas estructuras y
+
+31:56.600 --> 32:00.720
+después internamente se llama al método recursivo.
+
+32:00.720 --> 32:04.240
+Y se devuelve directamente lo que pide el algoritmo.
+
+32:04.240 --> 32:06.600
+En este caso dice que devuelva una lista con los elementos,
+
+32:06.600 --> 32:07.800
+el pre-order.
+
+32:07.800 --> 32:10.960
+Entonces, el pre-order lo que hace es devuelve una lista.
+
+32:10.960 --> 32:13.720
+La lista se crea acá, llamamos al pre-order recursivo que vaya
+
+32:13.720 --> 32:16.440
+armando la lista y después cuando termina devolvemos esa
+
+32:16.440 --> 32:18.520
+lista.
+
+32:18.520 --> 32:21.240
+Acuérdense que acá se pasa una copia de la referencia de la
+
+32:21.240 --> 32:24.280
+lista, la lista es mutable, o sea que cada vez que el algoritmo
+
+32:24.280 --> 32:26.040
+recursivo agregue un elemento en la lista,
+
+32:26.040 --> 32:31.520
+se va a ver reflejado cuando volvamos del algoritmo.
+
+32:31.520 --> 32:35.200
+Bueno, y el algoritmo recursivo, en vez de acá decir imprimir el
+
+32:35.200 --> 32:39.000
+dato, lo único que hace es agregar ese dato a la lista que
+
+32:39.000 --> 32:40.160
+recibió como parámetro.
+
+32:40.160 --> 32:43.720
+L, add, el dato del nodo.
+
+32:43.720 --> 32:46.720
+Y siempre lo mismo, obtenemos los hijos, hacemos el forage y
+
+32:46.720 --> 32:48.920
+para cada uno de los hijos llamamos al pre-order.
+
+32:48.920 --> 32:53.440
+Lo único que cambia acá es el print por el add y la creación
+
+32:53.440 --> 32:56.240
+de la lista.
+
+32:56.240 --> 33:00.600
+Bueno, pasamos a la próxima.
+
+33:00.600 --> 33:04.360
+Esta, a ver qué tiene.
+
+33:04.360 --> 33:07.040
+Bueno, este es el recorrido por niveles.
+
+33:07.040 --> 33:09.320
+¿Se podría evitar la declaración de la lista
+
+33:09.320 --> 33:12.320
+children para el forage?
+
+33:12.320 --> 33:14.840
+La declaración de la lista children para el forage.
+
+33:18.200 --> 33:21.040
+¿Vos decís acá decir, por ejemplo,
+
+33:21.040 --> 33:23.000
+para que vuelva la anterior?
+
+33:23.000 --> 33:24.880
+Sí.
+
+33:24.880 --> 33:30.600
+Acá poder decir, por ejemplo, the children.
+
+33:30.600 --> 33:31.880
+Sí.
+
+33:31.880 --> 33:35.480
+Se podría decir, ¿eso estás diciendo, Nahuel, o quién fue?
+
+33:38.880 --> 33:40.440
+Del pre-order.
+
+33:40.440 --> 33:42.720
+O sea, lo que te entendía acá el forage,
+
+33:42.720 --> 33:44.160
+la lista children para el forage.
+
+33:44.160 --> 33:45.480
+O sea, acá en vez de decir children,
+
+33:45.480 --> 33:46.800
+decir this the children.
+
+33:46.800 --> 33:48.120
+Sí.
+
+33:48.160 --> 33:50.840
+Pero ahí no va a obtener los elementos por cada for.
+
+34:04.080 --> 34:05.200
+A ver, dejadme pensar.
+
+34:09.200 --> 34:11.920
+Sí, los bases por cada, habría que ver cómo funciona este,
+
+34:11.920 --> 34:15.160
+porque este ya tiene ese objeto y lo va iterando.
+
+34:15.160 --> 34:17.960
+Sí, habría que ver qué pasa ahí.
+
+34:18.200 --> 34:19.600
+Es conveniente hacerlo afuera.
+
+34:19.600 --> 34:21.960
+No sé si era igual si era la pregunta.
+
+34:21.960 --> 34:23.720
+Me confundo, no sé.
+
+34:23.720 --> 34:26.520
+Nahuel, ¿me estabas preguntando?
+
+34:26.520 --> 34:27.680
+¿Te añade una llamada?
+
+34:30.680 --> 34:32.840
+Sí.
+
+34:32.840 --> 34:34.360
+Sí, es conveniente hacerlo afuera.
+
+34:37.800 --> 34:41.600
+Porque si no, el get children me va a devolver otra vez la
+
+34:41.600 --> 34:42.100
+lista.
+
+34:43.100 --> 34:47.980
+Tendríamos que probarlo, pero puede que se pierda la
+
+34:47.980 --> 34:49.180
+iteración acá.
+
+34:49.180 --> 34:51.540
+No sé, a ver, voy a darle, pero antes voy a obtener otro
+
+34:51.540 --> 34:52.540
+elemento por cada for.
+
+34:55.180 --> 34:56.340
+O sea, así funciona.
+
+34:56.340 --> 34:58.140
+Habría que ver si lo ponemos adentro,
+
+34:58.140 --> 35:02.940
+si este for es inteligente y ya no lo toma más y va iterando
+
+35:02.940 --> 35:05.300
+sobre la colección que tenía o si la vuelve a poder y vuelve
+
+35:05.300 --> 35:06.260
+en principio.
+
+35:06.260 --> 35:07.420
+Así como está, funciona.
+
+35:08.420 --> 35:12.660
+No tiene sentido que lo esté llamando todas las veces,
+
+35:12.660 --> 35:13.900
+pero te queda más simple el for.
+
+35:13.900 --> 35:16.540
+Por eso supongo que lo habrás preguntado.
+
+35:16.540 --> 35:20.260
+Bueno, pasamos entonces al recorrido por niveles.
+
+35:20.260 --> 35:23.060
+El recorrido por niveles es la generalización también del
+
+35:23.060 --> 35:25.700
+recorrido por niveles de árbol binario que vimos.
+
+35:25.700 --> 35:29.820
+Acá hay un pequeño pseudocódigo que dice que tenemos
+
+35:29.820 --> 35:30.820
+que encolar la raíz.
+
+35:30.820 --> 35:33.580
+Después, mientras la cola no esté vacía,
+
+35:33.580 --> 35:36.140
+desencolamos el subárbol general,
+
+35:36.140 --> 35:39.860
+imprimimos el dato de la raíz y luego encolamos todos los
+
+35:39.860 --> 35:42.340
+fijos, ¿sí?
+
+35:42.340 --> 35:44.340
+Esto sí lo podemos ir haciendo acá.
+
+35:47.780 --> 35:50.700
+Ah, yo hoy limpié esto porque no lo usaba.
+
+35:50.700 --> 35:54.020
+Bueno, lo que tenía todo sucio es lo limpié con CIF y me quedó
+
+35:54.020 --> 35:55.820
+ahora todo manchado.
+
+35:55.820 --> 35:58.820
+Para borrar, se quedó todo manchado.
+
+35:59.340 --> 36:02.580
+Para borrar, se ve todo borroso, pero bueno,
+
+36:02.580 --> 36:04.740
+vamos a intentar verlo esto.
+
+36:08.780 --> 36:13.340
+Bueno, entonces, este algoritmo tiene que usar una cola,
+
+36:13.340 --> 36:16.140
+al igual que lo hacíamos con los árboles binarios.
+
+36:16.140 --> 36:18.780
+Con el árbol binario, nosotros encolábamos todo el árbol y al
+
+36:18.780 --> 36:21.540
+desencolar encolábamos y izquierda y derecha nada más,
+
+36:21.540 --> 36:22.660
+¿sí?
+
+36:22.660 --> 36:23.820
+Y así para todos los hijos.
+
+36:23.820 --> 36:26.380
+Bueno, acá tenemos que recorrer la lista,
+
+36:26.380 --> 36:31.780
+recorrer la lista de hijos e ir encolando cada uno de los hijos.
+
+36:31.780 --> 36:35.980
+Entonces, tenemos una cola, ahora esta Q,
+
+36:35.980 --> 36:42.260
+tenemos esta Q, que es una lista, ¿sí?
+
+36:42.260 --> 36:45.660
+Una lista de árboles generales.
+
+36:45.660 --> 36:55.260
+Entonces, si lo graficamos así, ¿qué dice el algoritmo?
+
+36:55.300 --> 36:58.940
+Arranca entonces diciendo declaramos la cola,
+
+36:58.940 --> 37:00.220
+encolamos todo el árbol.
+
+37:00.220 --> 37:01.620
+O sea, ¿qué vamos a tener acá?
+
+37:01.620 --> 37:04.180
+Esta es una cola de árboles generales.
+
+37:04.180 --> 37:06.780
+O sea, esto va a tener una referencia a ese arbolito que
+
+37:06.780 --> 37:15.380
+vemos ahí, el 1, el 2, el 3 y así con todos los demás.
+
+37:15.380 --> 37:16.380
+Y entramos al while.
+
+37:16.380 --> 37:20.140
+El while dice, mientras la cola no esté vacía, ¿qué hacemos?
+
+37:20.140 --> 37:22.740
+Desencolamos ese árbol, ¿sí?
+
+37:22.740 --> 37:28.140
+Y en resul agregamos el dato de ese árbol.
+
+37:28.140 --> 37:30.980
+O sea, vamos a tener una lista también, entonces acá,
+
+37:30.980 --> 37:34.660
+en la que vamos a agregar, por ejemplo, el 0, ¿sí?
+
+37:34.660 --> 37:38.420
+Agregamos entonces ese dato a la lista y después, ¿qué dice?
+
+37:38.420 --> 37:41.580
+Obtenemos sus hijos y adentro del for, ¿qué decimos?
+
+37:41.580 --> 37:44.180
+Encolamos cada uno de los hijos.
+
+37:44.180 --> 37:48.220
+O sea, que obtendríamos la lista de estos 3 hijos y en la cola
+
+37:48.220 --> 37:50.700
+encolamos cada uno de sus 3 hijos.
+
+37:50.740 --> 37:56.940
+Entonces, desencolamos esto y encolamos acá el subárbol 1,
+
+37:56.940 --> 38:05.580
+el subárbol 2, que tiene el 2, 3 y el subárbol 3, ¿sí?
+
+38:05.580 --> 38:06.980
+Este ya lo desencolamos.
+
+38:06.980 --> 38:10.020
+Y bueno, volvemos entonces ahora acá al while.
+
+38:10.020 --> 38:12.100
+Cuando desencolamos, ¿qué desencolamos?
+
+38:12.100 --> 38:16.780
+Desencolamos el 1 y lo agregamos acá en la lista que estamos
+
+38:16.780 --> 38:17.460
+armando.
+
+38:18.340 --> 38:23.460
+Después, obtenemos los hijos de 1 que no tienen nada.
+
+38:23.460 --> 38:27.140
+Entonces, volvemos acá al while, desencolamos el 2.
+
+38:27.140 --> 38:32.060
+Ahora desencolamos el 2, guardamos el 2 en la lista que
+
+38:32.060 --> 38:36.540
+estamos armando y para cada uno de los hijos del 2,
+
+38:36.540 --> 38:37.620
+encolamos sus datos.
+
+38:37.620 --> 38:41.380
+O sea, que vamos a guardar 21, ¿no quedó 21, 21?
+
+38:41.380 --> 38:44.980
+Vamos a guardar acá 21, 21 y 23, ¿sí?
+
+38:47.780 --> 38:52.780
+Bueno, después desencolamos el 3, vamos a guardar el 3 acá y
+
+38:52.780 --> 38:56.900
+encolamos allá atrás los hijos del 3, que sería el 3, 1 y 3,
+
+38:56.900 --> 38:58.260
+2, ¿sí?
+
+38:58.260 --> 39:01.580
+Y bueno, después vamos desencolando eso.
+
+39:01.580 --> 39:05.300
+Fíjense que este algoritmo de recorrido por niveles no utiliza
+
+39:05.300 --> 39:05.900
+el null.
+
+39:05.900 --> 39:07.740
+¿Se acuerdan para qué se utilizaba el null?
+
+39:07.740 --> 39:11.020
+Bueno, justo ahí Mateo lo pregunta.
+
+39:11.020 --> 39:13.740
+Claro, para saber cuándo se terminó el nivel,
+
+39:13.740 --> 39:16.140
+no es que no ha da falta para esta estructura.
+
+39:16.140 --> 39:20.460
+O sea, si uno tiene que hacer un recorrido preorden y no tiene
+
+39:20.460 --> 39:23.100
+que hacer nada en el cambio de nivel como hicimos acá,
+
+39:23.100 --> 39:25.980
+que sí, no nos importaba porque íbamos guardando en la lista,
+
+39:25.980 --> 39:30.420
+vamos guardando en la lista cada vez que estamos en un nodo,
+
+39:30.420 --> 39:32.180
+no nos importaba porque íbamos guardando en la lista cada vez
+
+39:32.180 --> 39:35.220
+que estamos en un nodo, no nos importaba porque íbamos
+
+39:35.420 --> 39:38.220
+cuando pasamos al 1 o cuando pasamos acá al 21,
+
+39:38.220 --> 39:41.780
+ahí no hace falta tener el null.
+
+39:41.780 --> 39:45.300
+Ahora, si nosotros tenemos que determinar cuándo cambia un
+
+39:45.300 --> 39:48.100
+nivel, ahí sí necesitamos el null.
+
+39:48.100 --> 39:51.460
+Sí, pero tanto en la estructura de binario como árboles
+
+39:51.460 --> 39:54.900
+generales, si ustedes necesitan hacer un recorrido por niveles
+
+39:54.900 --> 39:57.860
+donde tienen que hacer alguna lógica cuando cambian de nivel,
+
+39:57.860 --> 40:01.500
+ahí sí tienen que poner una marca, ¿sí?
+
+40:01.620 --> 40:02.100
+Bueno.
+
+40:08.620 --> 40:12.060
+Bueno, a ver si acá se determina en qué nivel estamos
+
+40:12.060 --> 40:15.020
+utilizando el for.
+
+40:15.020 --> 40:18.340
+Acá se determina en qué nivel estamos utilizando el for.
+
+40:18.340 --> 40:21.220
+¿Cómo sería con null para contar niveles o qué generación?
+
+40:21.220 --> 40:21.980
+Bien, perfecto.
+
+40:21.980 --> 40:24.260
+Ahora yo justo puse un ejemplo atrás de esto.
+
+40:24.260 --> 40:27.700
+¿Cómo sería con null para contar niveles o qué generación?
+
+40:28.700 --> 40:29.580
+Bien, perfecto.
+
+40:29.580 --> 40:32.820
+Ahora yo justo puse un ejemplo atrás de esto que tenemos que
+
+40:32.820 --> 40:34.740
+saber y lo vemos.
+
+40:34.740 --> 40:36.540
+Pero no utilizando el for.
+
+40:36.540 --> 40:43.260
+Acuérdense que cuando uno tiene que tener una marquita,
+
+40:43.260 --> 40:46.180
+o sea, yo acá cuando encolé el árbol tendría que haber puesto
+
+40:46.180 --> 40:47.220
+una marca.
+
+40:47.220 --> 40:50.300
+Así cuando desencolo el 0, me doy cuenta que ya pasó otro
+
+40:50.300 --> 40:50.780
+nivel.
+
+40:50.780 --> 40:53.220
+Cuando termino de encolar los hijos del 0,
+
+40:53.220 --> 40:55.020
+debería poner otra marquita.
+
+40:55.020 --> 40:57.660
+Así cuando yo encuentro el null, me doy cuenta que cambio de
+
+40:57.660 --> 40:58.820
+nivel.
+
+40:58.820 --> 41:02.020
+Pero ahora justo viene un ejemplo en donde vamos a hacer
+
+41:02.020 --> 41:05.060
+una modificación para que vean cómo se usa el null acá
+
+41:05.060 --> 41:06.300
+también.
+
+41:06.300 --> 41:13.700
+Bueno, el ejemplo dice, dado un árbol que representa una
+
+41:13.700 --> 41:16.820
+estructura de directorios como la que muestra la imagen,
+
+41:16.820 --> 41:21.020
+implementar un método que reciba un nivel y retorno una lista de
+
+41:21.020 --> 41:24.020
+todas las imágenes encontradas en ese nivel.
+
+41:24.060 --> 41:26.740
+Modelar el recurso para representar las carpetas y los
+
+41:26.740 --> 41:27.660
+archivos.
+
+41:27.660 --> 41:29.940
+Bueno, esto en los parciales también se les suele dar.
+
+41:29.940 --> 41:33.580
+Por ejemplo, o este, que ustedes además de tener que hacer el
+
+41:33.580 --> 41:36.780
+algoritmo en el árbol general o en el árbol binario,
+
+41:36.780 --> 41:40.100
+tengan que modelar un poquito el dato que es el dato T que se
+
+41:40.100 --> 41:42.620
+guarda en el árbol.
+
+41:42.620 --> 41:45.780
+Entonces, en este caso nos decían que teníamos como una
+
+41:45.780 --> 41:49.780
+estructura de directorios en donde los elementos del árbol
+
+41:49.780 --> 41:52.180
+puede ser una carpeta o puede ser un archivo.
+
+41:52.180 --> 41:54.340
+En el caso de que sea un archivo,
+
+41:54.340 --> 42:00.700
+puede ser una imagen o puede ser un documento de otro tipo.
+
+42:00.700 --> 42:02.660
+Entonces, podríamos modelarlo de esta manera,
+
+42:02.660 --> 42:05.500
+diciendo la clase recursos tiene un nombre y un tipo.
+
+42:05.500 --> 42:09.460
+El tipo puede ser archivo o carpeta.
+
+42:09.460 --> 42:12.020
+Después tenemos un constructor y podríamos tener un método
+
+42:12.020 --> 42:16.100
+auxiliar para no meter todo este código en los algoritmos de
+
+42:16.100 --> 42:17.060
+búsqueda.
+
+42:17.100 --> 42:22.580
+También está bueno que tengan un método que haga el chequeo.
+
+42:22.580 --> 42:24.420
+Porque a nosotros, ¿qué es lo que nos interesa?
+
+42:24.420 --> 42:27.540
+Nos interesa encontrar si alguno de estos elementos o de los
+
+42:27.540 --> 42:29.860
+nodos del árbol es una imagen.
+
+42:29.860 --> 42:32.500
+Entonces, podríamos tener un método que diga es imagen,
+
+42:32.500 --> 42:34.140
+que me devuelva true o false.
+
+42:34.140 --> 42:38.620
+Y que pregunte, si el tipo es equal archivo,
+
+42:38.620 --> 42:40.540
+entonces podríamos, por ejemplo,
+
+42:40.540 --> 42:44.420
+agarrar el nombre del archivo y quedarnos con la extensión y
+
+42:44.420 --> 42:49.780
+ver si es TNG, JPG o JP.
+
+42:49.780 --> 42:54.740
+El nombre del archivo, por ejemplo, si se llama imagen,
+
+42:54.740 --> 43:02.980
+imagen.jpeg, hay un método, o sea, esto es un string.
+
+43:02.980 --> 43:04.620
+Esto es un string.
+
+43:04.620 --> 43:06.140
+Hay un método que es indexOf.
+
+43:06.140 --> 43:06.700
+¿Te acuerdas?
+
+43:06.700 --> 43:08.900
+Justo lo vimos la teoría pasada.
+
+43:08.900 --> 43:12.300
+El indexOf que nos daba la ocurrencia de un carácter en el
+
+43:12.300 --> 43:14.660
+string.
+
+43:14.660 --> 43:17.620
+Entonces, ¿nos quedamos con qué?
+
+43:17.620 --> 43:20.980
+Con un substring a partir de indexOf más 1.
+
+43:20.980 --> 43:23.980
+IndexOf es esta posición, indexOf más 1 es esto.
+
+43:23.980 --> 43:26.180
+Y si no le decimos cuántos elementos atrás,
+
+43:26.180 --> 43:28.020
+se queda con todos los caracteres que están atrás de
+
+43:28.020 --> 43:28.940
+eso.
+
+43:28.940 --> 43:31.340
+Entonces, la extensión, ¿qué va a hacer?
+
+43:31.340 --> 43:35.260
+Al nombre del archivo le hago un substring desde el lugar en
+
+43:35.260 --> 43:38.420
+que encuentre el puntito más 1 y todo lo que esté para atrás.
+
+43:38.420 --> 43:41.180
+En este caso me va a volver 3, en este caso me va a volver 3,
+
+43:41.180 --> 43:45.060
+en este caso me va a devolver 4.
+
+43:45.060 --> 43:49.860
+Bueno, así que esto solamente para modelar el recurso que
+
+43:49.860 --> 43:51.580
+vamos a guardar en el árbol.
+
+43:51.580 --> 43:56.340
+Y aquí estaría el algoritmo.
+
+43:56.340 --> 43:58.340
+Son de este tipo, por ejemplo, los parciales.
+
+43:58.340 --> 44:01.460
+Que ustedes ya el árbol lo tienen, los métodos los tienen,
+
+44:01.460 --> 44:02.900
+ya saben cómo iterar.
+
+44:02.900 --> 44:05.180
+Entonces, lo que tienen que hacer un poco es la lógica y
+
+44:05.180 --> 44:07.700
+modelar lo que se guarda dentro del árbol.
+
+44:07.700 --> 44:12.100
+En este caso, tenemos getImágenes recibe un árbol
+
+44:12.100 --> 44:17.020
+general y recibe un nivel en donde se tiene que encontrar las
+
+44:17.020 --> 44:20.140
+imágenes.
+
+44:20.140 --> 44:21.100
+Bueno, y es lo mismo.
+
+44:21.100 --> 44:25.580
+Creamos una lista enlayada, creamos la cola donde vamos a ir
+
+44:25.580 --> 44:27.860
+guardando los elementos por nivel.
+
+44:27.860 --> 44:29.100
+Y acá lo que cambia es esto.
+
+44:29.100 --> 44:31.500
+Tenemos cola, encolamos todo el árbol.
+
+44:31.500 --> 44:33.420
+Y cola, encolamos el null.
+
+44:33.420 --> 44:36.460
+Entonces, eso es para que ya nos determine cuándo pasamos al
+
+44:36.460 --> 44:37.860
+nivel 2, ¿sí?
+
+44:44.060 --> 44:47.820
+Bueno, a la 1 hago un cortezico de 5 minutos y lo borro bien
+
+44:47.820 --> 44:50.820
+esto, porque está todo negro.
+
+44:50.820 --> 44:54.380
+Entonces, dice nivel en 0 mientras la cola no esté vacía.
+
+44:54.380 --> 44:55.740
+Y acá agregamos esto.
+
+44:55.740 --> 44:59.180
+Y el nivel sea menor o igual que el nivel pedido.
+
+44:59.180 --> 45:01.180
+Porque una vez que ya llegamos al nivel,
+
+45:01.180 --> 45:04.060
+tenemos que recorrer ese nivel, devolver todas las imágenes y
+
+45:04.060 --> 45:04.540
+salir.
+
+45:04.940 --> 45:08.420
+Y nivel menor o igual que el nivel pedido.
+
+45:08.420 --> 45:09.500
+Desencolamos.
+
+45:09.500 --> 45:12.500
+En este caso desencolaríamos la que es una carpeta.
+
+45:15.380 --> 45:19.660
+Tomamos, decimos, get data, nos va a quedar el recurso y ahí
+
+45:19.660 --> 45:26.660
+preguntamos, si el nivel es igual al nivel pedido y el
+
+45:26.660 --> 45:29.820
+recurso es una imagen, este es el caso que a nosotros nos
+
+45:29.820 --> 45:31.100
+interesa, ¿sí?
+
+45:31.100 --> 45:36.660
+Supongamos que tenemos nivel 2, entonces ni entramos al safe.
+
+45:36.660 --> 45:41.660
+Y después preguntamos, si el árbol tiene hijos y el nivel es
+
+45:41.660 --> 45:44.860
+menor al pedido, porque si yo ya llegué al nivel pedido,
+
+45:44.860 --> 45:48.740
+ni entro tampoco a encolar sus hijos.
+
+45:48.740 --> 45:52.580
+Si ya no tengo hijos y ya estoy en el nivel que ya tenía que
+
+45:52.580 --> 45:57.060
+estar y no tiene hijos, ahí también tengo que salir.
+
+45:57.060 --> 46:01.940
+Entonces, si tiene hijos y el nivel en el que estoy aún es
+
+46:01.940 --> 46:04.260
+más chiquitito del nivel que me pidieron,
+
+46:04.260 --> 46:09.620
+entonces ahí sí voy a encolar el B y el C, por ejemplo, ¿sí?
+
+46:09.620 --> 46:10.620
+Y salgo para acá.
+
+46:12.900 --> 46:13.820
+Después, ¿acá qué hago?
+
+46:13.820 --> 46:17.220
+Sí, cuando ya desencolé la A y tengo encolados,
+
+46:17.220 --> 46:18.900
+o sea, ¿cómo estaría esa estructura?
+
+46:18.900 --> 46:22.300
+Tenía la A y el null, ¿sí?
+
+46:22.300 --> 46:24.700
+Desencolé la A, pero no es el nivel pedido.
+
+46:24.780 --> 46:27.500
+Entonces, ahora, cuando encolé acá,
+
+46:27.500 --> 46:33.140
+creo que es el B y el C. El B y el C, ¿sí?
+
+46:33.140 --> 46:35.260
+Ahora desencolo el null, ¿sí?
+
+46:35.260 --> 46:37.580
+Cuando desencolo el null, ¿qué dice?
+
+46:37.580 --> 46:39.780
+Si la cola no estaba así, el nivel, nivel más 1.
+
+46:39.780 --> 46:42.820
+Entonces, ahora yo ya voy a poner acá nivel que lo tenía el
+
+46:42.820 --> 46:45.860
+0 en 1.
+
+46:45.860 --> 46:48.620
+Y vamos a recorrer el nivel 1, ¿sí?
+
+46:49.140 --> 46:55.180
+El nivel, desencolamos el B.
+
+46:55.180 --> 46:59.540
+Venimos acá y preguntamos, ¿si el nivel es igual al nivel
+
+46:59.540 --> 47:00.460
+pedido?
+
+47:00.460 --> 47:01.060
+No.
+
+47:01.060 --> 47:05.500
+Entonces, venimos, el nivel no es el nivel pedido.
+
+47:05.500 --> 47:10.300
+Después, ¿ese árbol tiene hijos?
+
+47:10.300 --> 47:12.220
+Lo pasa con este null.
+
+47:12.220 --> 47:14.540
+Me olvidé de poner este null, ¿no?
+
+47:14.540 --> 47:16.340
+Fíjense que es igual que en binarios.
+
+47:16.340 --> 47:18.540
+Cada vez que encontramos uno nulo,
+
+47:18.540 --> 47:21.980
+cambiamos el nivel y encolamos un null para hacer la marca.
+
+47:21.980 --> 47:24.900
+Porque vamos a empezar a recorrer el otro nivel.
+
+47:24.900 --> 47:27.740
+Entonces, cuando sacamos el B, ¿qué vamos a poner?
+
+47:27.740 --> 47:31.260
+El D y el E y una imagen, ¿sí?
+
+47:31.260 --> 47:36.820
+Vamos a poner el D, el E y la imagen, pongamos, ¿sí?
+
+47:36.820 --> 47:40.700
+Después, sacamos el C. Cuando sacamos el C, ah, no,
+
+47:40.700 --> 47:42.660
+el D y el E.
+
+47:42.660 --> 47:50.740
+Cuando sacamos el C, ponemos la imagen y el F, ¿sí?
+
+47:50.740 --> 47:53.740
+Bueno, venimos acá y sacamos el null ahora.
+
+47:53.740 --> 47:56.420
+Sí, sacamos este null, o sea, que el nivel es 2.
+
+47:56.420 --> 47:58.980
+Supongo que habíamos recibido el nivel 2.
+
+47:58.980 --> 48:03.180
+Entonces, venimos acá y dice, si nivel es igual al nivel pedido
+
+48:03.180 --> 48:06.900
+y el recurso es una imagen, cuando encolamos el D,
+
+48:06.900 --> 48:09.780
+no es una imagen, ¿sí?
+
+48:09.820 --> 48:12.340
+Y después preguntamos, si tiene hijos,
+
+48:12.340 --> 48:14.580
+si el nivel es menor que el pedido, no, es el igual al pedido.
+
+48:14.580 --> 48:18.180
+Entonces, ya los hijos de D ni los encolo, ¿sí?
+
+48:18.180 --> 48:21.300
+Después saco el E, tampoco voy a encolar los hijos del E.
+
+48:21.300 --> 48:25.380
+Y cuando saco la imagen esta, este es el E que se ve ahí,
+
+48:25.380 --> 48:27.300
+voy a entrar entonces a este E.
+
+48:27.300 --> 48:29.340
+Sí, es el nivel pedido y es una imagen.
+
+48:29.340 --> 48:33.740
+Entonces, a la lista agregaría esta imagen, ¿sí?
+
+48:33.740 --> 48:37.020
+En ese caso, acá, cuando decimos recurso,
+
+48:37.060 --> 48:41.780
+esa imagen, lo que se está corriendo es este método que
+
+48:41.780 --> 48:42.660
+está acá.
+
+48:42.660 --> 48:45.180
+Le mandamos un objeto de tipo recurso y nos devuelve true
+
+48:45.180 --> 48:47.060
+false, es una imagen.
+
+48:47.060 --> 48:52.340
+Y el recurso acá se obtiene con el getData, el getData.
+
+48:55.060 --> 48:57.980
+Bueno, ahí, ¿te entiendes?
+
+48:57.980 --> 48:59.780
+Voy a leer un poco si me escribieron algo.
+
+48:59.780 --> 49:03.860
+Creo que yo preguntaron, ¿pero por qué no se usa el getChildren
+
+49:03.900 --> 49:08.060
+directamente en vez de copiar la lista antes de hacer un
+
+49:08.060 --> 49:10.900
+for each?
+
+49:10.900 --> 49:13.220
+Porque si no acá, el getChildren se llamaría en cada
+
+49:13.220 --> 49:14.820
+iteración, ¿sí?
+
+49:14.820 --> 49:15.580
+También.
+
+49:15.580 --> 49:18.700
+Suponete que tiene 100 hijos, hace 100 veces,
+
+49:18.700 --> 49:19.980
+getChildren, getChildren.
+
+49:19.980 --> 49:21.220
+¿Eso están preguntando?
+
+49:28.900 --> 49:31.900
+Joaquín, no sé si era esa la que acá está refiriéndote.
+
+49:34.180 --> 49:36.180
+Bueno, mientras contesta, entonces,
+
+49:36.180 --> 49:40.620
+¿entiende el recorrido por niveles y el uso del null ahora?
+
+49:49.820 --> 49:50.300
+Bien.
+
+49:53.340 --> 49:55.580
+Pero si ahí no estaría mal.
+
+49:55.580 --> 49:58.500
+Pero ahí no estaría mal, ya que estarías en otro nivel al
+
+49:58.500 --> 50:01.380
+llegar a las imágenes.
+
+50:01.380 --> 50:02.420
+Pero ahí no estaría mal.
+
+50:15.340 --> 50:19.260
+No, porque es un objeto de tipo, ahí, Vicentín,
+
+50:19.260 --> 50:21.460
+es un objeto de tipo recurso.
+
+50:21.460 --> 50:23.740
+A ver, ¿qué subió acá?
+
+50:23.740 --> 50:27.180
+La lista es de recurso, ¿ves?
+
+50:27.180 --> 50:29.020
+Y cada son instancias.
+
+50:29.060 --> 50:32.060
+Y el árbol es de tipo T, que es un recurso.
+
+50:32.060 --> 50:36.700
+Entonces, cuando vos haces acá árbol, getData, te da un
+
+50:36.700 --> 50:37.460
+recurso.
+
+50:37.460 --> 50:40.780
+Es una instancia de recurso, no a la clase.
+
+50:40.780 --> 50:41.780
+¿Se entiende, Valentín?
+
+50:49.420 --> 50:49.920
+Bien.
+
+50:50.880 --> 50:52.880
+¿Por qué debería aumentar el nivel?
+
+50:52.880 --> 50:54.480
+Porque estamos contando este nivel.
+
+50:54.480 --> 50:57.240
+O sea, arrancamos con un nivel 0, que es A.
+
+50:57.240 --> 50:59.880
+A pilas A y a pilas el null.
+
+50:59.880 --> 51:02.600
+Cuando des a pilas el null, hay que aumentar el nivel porque
+
+51:02.600 --> 51:04.720
+ahora vamos a trabajar con el nivel 1.
+
+51:04.720 --> 51:09.880
+Una vez que terminaste de apilar A y B y apilas el null,
+
+51:09.880 --> 51:11.880
+empezás a trabajar con el otro nivel.
+
+51:11.880 --> 51:13.680
+O sea, cada vez que encontrás un null,
+
+51:13.680 --> 51:15.640
+te vas a encontrar con el otro nivel.
+
+51:15.640 --> 51:17.400
+O sea, cada vez que encontrás un null,
+
+51:17.400 --> 51:22.080
+tenés que subir el nivel y apilás otro null porque va a ser
+
+51:22.080 --> 51:23.360
+para el próximo nivel.
+
+51:27.240 --> 51:29.600
+O sea, desapilaste A, encontraste un null, bueno,
+
+51:29.600 --> 51:31.440
+ahora vamos a trabajar con el nivel 1.
+
+51:31.440 --> 51:34.800
+Y así terminaste con el, cada vez que encontrás un null,
+
+51:34.800 --> 51:36.640
+ponés también un null atrás de este nivel.
+
+51:36.640 --> 51:37.760
+Entonces, cuando encontrás un null,
+
+51:37.760 --> 51:40.200
+vas a poner uno más porque vas a empezar a trabajar con el otro
+
+51:40.200 --> 51:40.700
+nivel.
+
+51:43.680 --> 51:44.180
+¿Entiendes?
+
+51:44.180 --> 51:44.680
+¿Entiendes?
+
+51:59.180 --> 52:00.660
+Bueno, estoy viendo ahí.
+
+52:09.220 --> 52:10.180
+No entiendo, Cati.
+
+52:10.180 --> 52:16.620
+lo que me decís. Pónganme, si quieren hablen por, porque estoy casi todo el tiempo el 90%
+
+52:16.620 --> 52:23.220
+leyendo y no, no sé. No, nada Laura, una apabada, porque estabas diciendo apilar.
+
+52:23.220 --> 52:29.220
+Ah, está bien. Solo por eso, solo por eso. Sí, sí, bien, bien.
+
+52:29.220 --> 52:34.620
+No es para molestar un poco, ¿no? Pregunté por qué no hacen Ford, Gettys
+
+52:35.620 --> 52:40.940
+porque la invocación al Gettys lo harías en cada iteración del Ford.
+
+52:43.940 --> 52:48.940
+Habría que probar si funciona, porque no sé si se queda, si el iterador le queda con la primera
+
+52:48.940 --> 52:57.060
+vez que hizo el Gettys o no. O sea, hay que ver si da lo mismo o no. O sea, si se ejecuta en cada
+
+52:57.060 --> 53:01.740
+iteración del Ford o se ejecuta la primera vez que entra al Ford, nada más esto. Si esto se ejecuta
+
+53:01.740 --> 53:08.060
+la primera vez que entra al Ford y sería lo mismo. Si se ejecuta cada vez, no. Vos ejecutas y ahí lo
+
+53:08.060 --> 53:15.540
+que vos tenés que mandar ahí es una colección de algo iterable, sí. Pero ahí le estás pidiendo
+
+53:15.540 --> 53:20.540
+cada vez el Get Children. Si se ejecuta en cada iteración, no tiene sentido. Tenés mil hijos,
+
+53:20.540 --> 53:29.260
+entonces mil veces a más al Get Children. Por acá en algún lugar habían dicho algo de la
+
+53:29.260 --> 53:33.420
+imagen. Es como muy complicada, no vamos a llegar a un cuarto de la clase, pero bueno.
+
+53:35.100 --> 53:41.060
+No sé, en algún lado alguien dijo de la imagen algo, pero ahí no estaría mal ya que estarías en
+
+53:41.060 --> 53:47.380
+otro nivel al llegar a las imágenes. No entendía y Robertinho lo que es. Pero ahí no estaría mal,
+
+53:47.380 --> 53:54.820
+ya que estarías en otro nivel al llegar a las imágenes. Yo tengo una imagen en el nivel 2,
+
+53:54.860 --> 53:59.580
+tengo una imagen que podría tener acá en el nivel 3, en el 4. No hay un nivel donde
+
+53:59.580 --> 54:06.580
+estén las imágenes. El ejercicio es lo que te decía que vos parado en un nivel tenías que devolver
+
+54:06.580 --> 54:13.780
+todas las imágenes de ese nivel, sí. No sabés cuántos hijos tenés en cada nivel. No entendí eso.
+
+54:13.780 --> 54:21.580
+Ah, claro, pensé que seguías en el nivel 2, pero que seguías hasta la imagen, gracias. Ah, no, no,
+
+54:21.700 --> 54:26.180
+claro, en cada nivel vos tenés que recorrerlo completo y devolver una lista con todas las
+
+54:26.180 --> 54:30.940
+imágenes que encontraste en ese nivel. Una vez que pasaste ese nivel ya te tenés que ir,
+
+54:30.940 --> 54:35.420
+por eso el Guailacá controla el nivel. Y si yo también ya estoy en el nivel,
+
+54:35.420 --> 54:40.060
+no me conviene seguir apelando a sus hijos porque ya no me interesan. Si no encontré ninguna imagen,
+
+54:40.060 --> 54:48.220
+devolveré la lista vacía, pero ya no tengo que seguir con los hijos. Bueno, ahí más o menos
+
+54:48.220 --> 54:53.300
+quedaron entonces los recorridos en árboles generales, la diferencia entre binarios y
+
+54:53.300 --> 54:59.660
+generales. Vimos el preorden, después si ustedes podrían pensar también el posorden. Igual tenemos
+
+54:59.660 --> 55:05.620
+algunos ejemplos de parciales donde vamos a usar más un poco también los recorridos posorden.
+
+55:07.500 --> 55:15.740
+Así que bueno, si no hay dudas, sigo. Y si me quieren parar con el micrófono y preguntar,
+
+55:16.140 --> 55:21.300
+no hay problema, para mí mejor, porque como tengo el chat abierto para ver lo que dicen,
+
+55:21.300 --> 55:28.540
+la imagen la veo chiquitita acá, entonces si quieren intervenir con micrófono, para mí bárbaro.
+
+55:29.820 --> 55:36.460
+En el parcial puede entrar un tipo de árboles o hay un ejercicio de cada uno. No, hay uno solo,
+
+55:36.460 --> 55:42.340
+puede en alguna fecha entrar el árbol binario y en otra fecha entrar el árbol general. Suele
+
+55:42.340 --> 55:51.460
+variar. Pero es uno de los dos. Si se toma binario, no se toma general y viceversa. Bueno,
+
+55:52.900 --> 56:02.380
+venimos acá, este es un ejemplo de parcial. Este dice, a ver, se lo puedo agrandar un
+
+56:02.380 --> 56:10.620
+poquitito para poder leer. Dice, dado un árbol general compuesto por personajes donde puede
+
+56:10.620 --> 56:16.380
+haber dragones, princesas y otros, se denominan nodos accesibles. Aquellos nodos tales que a lo
+
+56:16.380 --> 56:21.700
+largo del camino, del nodo raíz del árbol hasta un nodo, no se encuentra ningún dragón
+
+56:23.260 --> 56:29.980
+y se llega a una princesa. Ah, acá faltó lo de la princesa. Dice, implementar, bueno, en realidad,
+
+56:29.980 --> 56:36.460
+claro, ahí está, los nodos accesibles son los donde no hay un dragón. Y el parcial pedía
+
+56:36.460 --> 56:43.980
+implementar un método que devuelva una lista con un camino desde la raíz a una princesa. O sea,
+
+56:43.980 --> 56:48.420
+acá está la definición de lo que es accesible. ¿Qué es un nodo accesible? Aquel que se alcanza
+
+56:48.420 --> 56:54.700
+sin llegar por un dragón. Pero después, en el parcial pedía esto, implementar un método que
+
+56:54.700 --> 56:59.940
+devuelva una lista de un camino desde una raíz específicamente a una princesa, sin pasar por un
+
+56:59.940 --> 57:06.420
+dragón, porque tiene que ser todos nodos accesibles. Este camino que devolvamos no necesariamente
+
+57:06.420 --> 57:13.900
+tiene que ser el más cercano a la raíz. Es decir, si yo tengo acá una princesa y tengo acá una
+
+57:13.900 --> 57:17.540
+princesa, yo podría devolver este también. No es que tengo que devolver este porque es el más
+
+57:17.540 --> 57:24.340
+corto. El primero que encuentren ustedes lo tienen que devolver desde la raíz a una princesa sin pasar
+
+57:24.340 --> 57:31.380
+por un dragón. Y además acá les dice, asuma que ya existe al menos un camino accesible. O sea,
+
+57:31.380 --> 57:38.740
+al menos uno en el árbol que se les da existe. ¿Sólo entran árboles binarios y genéricos? ¿No
+
+57:38.740 --> 57:43.820
+entran los árboles de expresión? Bueno, los árboles de expresión son árboles binarios en
+
+57:43.820 --> 57:50.420
+donde se guarda una expresión algebraica adentro. Puede que entre un árbol de expresión, pero no
+
+57:50.420 --> 57:56.180
+implementarlo en Java. Yo decía la implementación en Java. La implementación en Java es o un árbol
+
+57:56.180 --> 58:01.820
+binario o un árbol general. Y después de la parte teórica puede llegar a entrar un árbol binario que
+
+58:01.820 --> 58:07.060
+tenga una expresión adentro. Pero es, por ejemplo, hacer más la lógica del algoritmo en papel pero
+
+58:07.060 --> 58:26.100
+dibujos, no en Java. O preguntas sobre árboles de expresión. Vamos a ver que también entra la
+
+58:26.100 --> 58:41.860
+parte teórica. Bueno, entonces este ejercicio, a ver si alguien agarra el micrófono, ¿qué les
+
+58:56.100 --> 59:14.660
+pasa? En este ejercicio tenemos que recorrer el árbol una sola vez, ¿no? Sí, con una sola vez
+
+59:14.660 --> 59:34.620
+se alcanza. Y finaliza cuando encuentran un camino a una princesa. A ver qué van diciendo
+
+59:34.620 --> 59:41.780
+por acá, si alguien dijo algo más. No entiendo la idea de realizar un camino omitiendo los
+
+59:41.780 --> 59:48.900
+dragones. Claro, ¿cómo sería la idea? A ver, vamos a pensar en este arbolito que está acá. Yo
+
+59:48.900 --> 59:59.740
+tengo que necesito devolver una lista de personajes o de, bueno, digamos que de un camino desde la
+
+59:59.740 --> 01:00:05.060
+raíz a una princesa sin pasar por un dragón. Entonces yo empezaría acá y digo, bueno, ¿esto
+
+01:00:05.060 --> 01:00:11.860
+es una princesa? No, entonces continuo. Lo guardo en mi lista y vengo para acá. Vengo para acá y
+
+01:00:11.860 --> 01:00:18.860
+digo, ¿esto es un dragón? No. ¿Es una princesa? No. ¿Es una hoja? Sí. Entonces acá yo ya tengo
+
+01:00:18.860 --> 01:00:24.780
+que volver. Por ahí ya no encontré un camino. Ahora vengo, tengo en mi lista que estoy recorriendo,
+
+01:00:24.780 --> 01:00:30.260
+ya tengo Coyote. Vengo para acá y digo, ¿esto es un dragón? Es un dragón. Entonces yo no tengo
+
+01:00:30.260 --> 01:00:36.820
+que seguir adelante porque ya no me interesa. Por más que acá haya una princesa, Martín, yo no
+
+01:00:36.820 --> 01:00:43.540
+puedo devolver este camino. Coyote, dragón, princesa. ¿Por qué? Porque pasé por un dragón,
+
+01:00:43.540 --> 01:00:48.500
+no está accesible la princesa. Entonces si yo vengo recursivamente para acá, encuentro un dragón,
+
+01:00:48.500 --> 01:00:52.980
+no me sirve este camino. Entonces yo ya tengo que volver de la recursión. Vuelvo de la recursión y
+
+01:00:52.980 --> 01:00:59.100
+agarro para acá. ¿Es una princesa? No. ¿Es un dragón? No. Entonces me interesa. Sigo. Tengo
+
+01:00:59.100 --> 01:01:04.860
+Coyotes, Azú. Vengo para acá. ¿Es un dragón? No. Entonces me interesa. Lo pongo. ¿Es una princesa?
+
+01:01:04.860 --> 01:01:10.900
+No. Continúo. Pero este no tiene hijos. Entonces tengo que volver. Pero yo ya tengo este caminito.
+
+01:01:10.900 --> 01:01:16.380
+Vuelvo a este paso de la recursión y continúo por acá. ¿Es una princesa? Sí. Entonces ahí ya está.
+
+01:01:16.380 --> 01:01:22.460
+Llegué a una princesa. Este sería el camino de este árbol que encontraría primero y lo devuelvo. Por
+
+01:01:22.460 --> 01:01:27.660
+más que acá haya otra princesa u otra cosa, no tienen que seguir porque les dice, un camino hacia
+
+01:01:27.660 --> 01:01:32.060
+una princesa. Igual, bueno, si devolverían este hasta acá, igual es un camino hacia una princesa
+
+01:01:32.060 --> 01:01:37.220
+si ustedes querían devolver este. Pero ya con encontrar la primera terminaría. Bueno.
+
+01:01:39.420 --> 01:01:46.860
+Bueno, acá Natalia dice, recorre el árbol, es un dragón, no tomo sus hijos, voy haciendo una lista
+
+01:01:46.860 --> 01:01:52.180
+con los nodos de los que voy recondiendo a la princesa y si no encontré ninguna princesa,
+
+01:01:53.180 --> 01:01:59.340
+igual dice acá que asuma que exista al menos un camino accesible. Así que ahí ya estaría.
+
+01:01:59.340 --> 01:02:10.580
+El camino en este caso te lleva a dos princesas. Sí, a la primera. Sí. Una lista. Te hice una
+
+01:02:10.580 --> 01:02:16.900
+lista así que no hay problema. Cuando un dragón se guarda, pero no se sigue avanzando, no retroceda
+
+01:02:17.780 --> 01:02:26.540
+cuando un dragón lo guarda. No, no se guardaría porque no te sirve el dragón ya, Martín. No tiene
+
+01:02:26.540 --> 01:02:34.180
+sentido meterlo en la lista. Ahí ya volverías para atrás en la recursión. Y sí, Tiago, tendríamos el
+
+01:02:34.180 --> 01:02:41.340
+caso de la hoja, el caso del dragón y el caso de la princesa. Exactamente. Como dice, quizás uno que
+
+01:02:41.340 --> 01:02:52.420
+existe no tengo que considerar. Claro, sí, sí. Ahí no lo tendrías ni que considerar porque ya
+
+01:02:52.420 --> 01:02:58.020
+sabes que hay uno, lo vas a encontrar. O sea, no tendrías que poner, sí, la lista está vacía,
+
+01:02:58.020 --> 01:03:04.060
+no se encontró la princesa. No, porque hay uno. Eso no se pide. Bueno, hasta ahí entonces estamos.
+
+01:03:04.060 --> 01:03:08.500
+Entonces, ¿qué les parece? Este es un recorrido de los recorridos que vimos. ¿Qué tipo de recorrido es?
+
+01:03:12.340 --> 01:03:14.300
+En profundidad.
+
+01:03:18.220 --> 01:03:23.780
+¿Se puede crear un primer nodo que diga el final de la lista?
+
+01:03:25.420 --> 01:03:32.700
+A ver, Joaquín, ¿cómo? ¿Se puede crear un primer nodo que diga el final de la lista?
+
+01:03:34.220 --> 01:03:40.940
+Ahí no entendí ahí bien la pregunta. Tiago, preorden. Bien, Tiago, es como un preorden. Bueno,
+
+01:03:40.940 --> 01:03:48.380
+Robertino, posorden, ¿cómo lo pensás? A ver. O sea, si el camino fue exitoso.
+
+01:03:52.180 --> 01:03:57.300
+Sí, igual el camino es exitoso, Joaquín, porque te está diciendo en el parcial que asuma que
+
+01:03:57.300 --> 01:04:02.060
+exista al menos un camino accesible. Así que no tenés que preguntar si la lista es nula,
+
+01:04:02.060 --> 01:04:03.820
+no se encontró la princesa y esa parte.
+
+01:04:10.940 --> 01:04:19.620
+Bueno, bueno, Nataly, no sé si sos recursante o leíste adelantado, pero no lo vimos todavía,
+
+01:04:19.620 --> 01:04:26.660
+el Deferred Search, aunque sí, es en profundidad y es un defese. Sí, se va marcando primero el
+
+01:04:26.660 --> 01:04:34.740
+dato que visitas. No todos lo ven. Joaquín, Tomás, sí, no todos lo ven.
+
+01:04:34.740 --> 01:04:41.940
+Joaquín, no sé, el camino fue exitoso. Ah, no todos lo son. Bueno.
+
+01:04:44.740 --> 01:04:49.300
+No sé, no, no estoy entendiendo ahí la pregunta, Tomás. O sea, si el camino fue exitoso,
+
+01:04:49.300 --> 01:04:54.060
+no todos lo son. No, no son todos exitosos, pero los exitosos, los que no son exitosos,
+
+01:04:54.060 --> 01:04:57.300
+no los tenés que guardar. O sea, yo llego a una hoja que no llega una princesa, vuelvo,
+
+01:04:57.300 --> 01:05:01.300
+no lo guardo. Después vengo acá, llega una hoja que no es princesa. No, vengo acá,
+
+01:05:01.300 --> 01:05:05.540
+es un dragón. No es exitoso, pero no lo guardo. El que yo, el único camino que tengo que devolver
+
+01:05:05.540 --> 01:05:10.300
+es el exitoso, es decir, el que encontré la princesa. Y en el parcial dice que la princesa
+
+01:05:10.300 --> 01:05:15.300
+existe. O sea, el camino a una princesa accesible existe. Así que es para evitarse un poco de código.
+
+01:05:18.100 --> 01:05:24.780
+Creo que por niveles queda bien. Bueno, a ver, Spinelli pos orden podría ser una solución. Es
+
+01:05:25.740 --> 01:05:32.740
+un poco más difícil quizá. No sé si la pensaste, querés comentar. Y si no, por niveles, Juan,
+
+01:05:32.740 --> 01:05:40.020
+esa vez es un poco difícil porque es difícil armar los caminos por niveles. Porque vos tenés este
+
+01:05:40.020 --> 01:05:46.860
+y guardás después en la cola, si es que lo haces con la cola, estos tres. Pero vos después
+
+01:05:46.860 --> 01:05:52.820
+desapilás, por ejemplo, a este Susu cuando vas a apilar princesa. Entonces, ¿cómo te queda esta
+
+01:05:52.820 --> 01:06:01.540
+relación de camino? Los recorridos por niveles son más utilizados cuando uno tiene que encontrar
+
+01:06:01.540 --> 01:06:05.700
+algo en un nivel. Como hicimos recién, las imágenes de un nivel de una estructura de directorio. Te
+
+01:06:05.700 --> 01:06:10.500
+dice, devolvé todos los empleados de tal jefe en una estructura jerárquica de una empresa,
+
+01:06:10.500 --> 01:06:20.220
+por ejemplo. Ahí se ve, tiene como un poco más de uso. Habría que ver si te ocurre algo, por ahí
+
+01:06:20.220 --> 01:06:26.860
+hacelo y nos lo planteás y lo podemos ver en la próxima clase, lo vamos viendo. Me di cuenta que
+
+01:06:26.860 --> 01:06:33.540
+me compliqué, quedó en preorden. Bien, después hay otra solución también, pero el preorden es
+
+01:06:33.540 --> 01:06:40.860
+como el más, creo que se les ocurriría a la mayoría en un parcial. Entonces, se podría en
+
+01:06:40.860 --> 01:06:48.020
+profundidad, ¿no? Sí, sí, en profundidad y se puede hacer en preorden o vamos a verlo en pos orden
+
+01:06:48.020 --> 01:06:54.780
+también. O algo parecido. Bueno, entonces, lo primero que tenían que hacer era modelar los
+
+01:06:54.780 --> 01:06:59.300
+elementos que se van a guardar en el árbol, como se van a guardar los elementos esos de tipo T,
+
+01:06:59.300 --> 01:07:05.580
+van a ser de tipo personaje. El personaje va a tener un nombre y un tipo, el nombre, en este caso
+
+01:07:05.580 --> 01:07:15.020
+Coyote, Mushu y estos. Y el tipo es animal, dragón u otras cosas. Después tenemos el constructor,
+
+01:07:15.020 --> 01:07:21.620
+tenemos los getters y setters. Y después podemos hacer como hoy que hicimos, si es una imagen,
+
+01:07:21.620 --> 01:07:28.500
+podemos hacer si es un dragón y si es una princesa, porque como recién nos dijo, creo que era Thiago,
+
+01:07:28.500 --> 01:07:34.620
+tenemos un caso base que es si es dragón, otro caso base que si es princesa y el otro caso que es
+
+01:07:34.620 --> 01:07:40.180
+una hoja que ya se lo preguntamos al árbol. Entonces, es una manera de tener después un código más simple
+
+01:07:40.180 --> 01:07:46.220
+elegible en el parcial. Y cada vez, el que vimos recién, cada vez que vamos a preguntar,
+
+01:07:46.220 --> 01:07:51.020
+¿tenemos que hacer todo este if o hoy era sacarle la extensión al dato del archivo?
+
+01:07:51.020 --> 01:07:56.740
+Queda como engorroso el código. Así que bueno, esto es como recomendable hacerlo. Retornamos,
+
+01:07:56.740 --> 01:08:03.740
+si es una princesa, si es un dragón. Bueno, y el algoritmo este, entonces, ¿qué es lo que tendríamos
+
+01:08:03.740 --> 01:08:11.140
+nosotros que ir haciendo? Ir construyendo una lista, ir construyendo una lista que siempre
+
+01:08:11.140 --> 01:08:15.700
+va a tener la raíz como, a lo sumo esto es una princesa, pero siempre va a tener este dato porque
+
+01:08:15.700 --> 01:08:21.300
+es desde la raíz a la princesa. Entonces, podríamos tener un método público otra vez que recibe el
+
+01:08:21.300 --> 01:08:26.900
+árbol nada más y que devuelve la lista. Eso para el exterior es esto, un método público que recibe
+
+01:08:26.900 --> 01:08:31.420
+el árbol general y devuelve una lista de personajes. Y acá adentro podríamos crear una lista que la
+
+01:08:31.420 --> 01:08:37.260
+vamos a usar de esta lista auxiliar, donde vamos a ir poniendo y sacando nodos según vayamos haciendo
+
+01:08:37.260 --> 01:08:46.940
+este recorrido en profundidad. Y después llamamos a este algoritmo recursivo. Entonces, creamos una
+
+01:08:46.940 --> 01:08:52.820
+lista que es una linked list, a esa lista le agregamos el dato de la raíz. Creamos otra
+
+01:08:52.820 --> 01:08:57.820
+lista que después vamos a ver por qué para guardar el camino definitivo cuando encontremos
+
+01:08:57.820 --> 01:09:03.140
+una princesa y llamamos a este algoritmo recursivo. Entonces, ¿qué vamos a tener? Vamos a tener por
+
+01:09:03.140 --> 01:09:11.500
+un lado lista. Entonces, por un lado una lista que tiene nombre camino y otra que se llama lista.
+
+01:09:11.500 --> 01:09:19.260
+Esta lista ya cuando la mandamos tiene un nodo que es el nodo del árbol, o sea que es animal coyote.
+
+01:09:19.460 --> 01:09:30.220
+Acá ya tenemos animal coyote. Bueno, y la otra lista hasta ahora está vacía. Entonces,
+
+01:09:30.220 --> 01:09:35.940
+venimos acá y ¿qué decimos? Al árbol que recibimos como parámetro le decimos get data.
+
+01:09:35.940 --> 01:09:40.340
+Y tomamos a todo lo que vamos a tener es el personaje este, animal coyote. Y decimos,
+
+01:09:40.340 --> 01:09:46.020
+¿es una princesa? No, no es una princesa. Entonces venimos por acá. Si el camino está vacío,
+
+01:09:46.020 --> 01:09:52.140
+¿qué significa camino? Este es el camino a la princesa. El camino a la princesa. Todavía está vacío.
+
+01:09:54.380 --> 01:09:59.820
+Entonces, ¿cómo el camino a la princesa? Está vacío, venimos acá y vamos a decir al árbol,
+
+01:09:59.820 --> 01:10:05.340
+nos quedamos con los hijos. Get children y obtenemos los hijos de esa raíz. Que son
+
+01:10:05.340 --> 01:10:11.300
+children. Entonces, para cada uno de los hijos, ¿qué preguntamos? Si el hijo no es un dragón,
+
+01:10:12.180 --> 01:10:17.620
+cuando obtenemos estos tres hijos, o sea, este children acá me va a dar estos tres hijos. Entonces,
+
+01:10:17.620 --> 01:10:24.980
+el for, el primero que va a agarrar es animal simba. ¿Y ahí qué pregunta? Fíjense que acá ya estamos
+
+01:10:24.980 --> 01:10:31.780
+diciendo, al árbol le decimos get data, que nos va a dar el recurso y a ese le decimos si no es dragón,
+
+01:10:31.780 --> 01:10:37.380
+el método que implementamos antes. Si no es un dragón, entonces me interesa. Lista, agrego ese
+
+01:10:37.380 --> 01:10:43.820
+dragón. Entonces, voy a tener animal simba. Entonces, acá voy a tener otro nodo que es animal
+
+01:10:45.780 --> 01:10:46.540
+simba.
+
+01:10:48.660 --> 01:10:52.420
+¿Sí? ¿Hasta ahora entonces? ¿Sí? ¿No se ve la pizarra?
+
+01:10:58.860 --> 01:11:03.820
+Ah, no sé en qué momento. Ah, en un momento se me perdió internet. Yo me di cuenta que pasa ahí. Se
+
+01:11:03.820 --> 01:11:08.580
+perdió. Bueno, entonces acá ya les había puesto. Vamos a tener entonces dos listas que vamos a
+
+01:11:08.580 --> 01:11:14.620
+mandar. Una lista camino, que es el camino a la princesa, que está vacío todavía, y esta lista
+
+01:11:14.620 --> 01:11:21.300
+que la vamos a ir usando nosotros para ir guardando el camino alternativo. Iba llena con coyote y ahora
+
+01:11:21.300 --> 01:11:26.820
+ya tenemos entonces animal simba. ¿Se entiende? Porque acá elegimos esta lista de los tres hijos,
+
+01:11:26.820 --> 01:11:33.260
+en este for agarramos primero este nodo y preguntamos si no es un dragón me interesa. Entonces,
+
+01:11:33.260 --> 01:11:42.180
+lista, la agrego ese a la lista y llamo recursivamente ahora con child, que sería ese simba,
+
+01:11:42.180 --> 01:11:47.260
+la lista y el camino. Bueno, cuando llamo entonces con child, que es este, ¿qué pregunta hay?
+
+01:11:48.900 --> 01:11:54.900
+Obtenemos el dato y decimos, ¿es una princesa? No, no es una princesa. Entonces venimos acá. Si el
+
+01:11:54.900 --> 01:12:02.700
+camino está vacío, está vacío todavía, entonces obtenemos los hijos de simba. ¿Qué nos va a dar ahí?
+
+01:12:02.700 --> 01:12:04.100
+Los hijos de simba.
+
+01:12:13.700 --> 01:12:19.340
+Ahí bueno, el parcial es escrito en hojas y es en papel. Matías, estoy leyendo y no lo había visto.
+
+01:12:19.340 --> 01:12:24.340
+Nos va a devolver, claro, no va a tener ningún hijo o una lista vacía, entonces ¿qué va a ser?
+
+01:12:24.340 --> 01:12:31.420
+Obtenemos los hijos de simba, no vamos a entrar al for, entonces ¿a dónde volvemos de la recursión?
+
+01:12:33.100 --> 01:12:36.900
+No entramos a este for, o sea, hicimos un llamado recursivo para acá, pedimos los hijos,
+
+01:12:36.900 --> 01:12:41.740
+no tiene hijos, entonces ¿a qué línea volvemos?
+
+01:12:47.860 --> 01:12:54.220
+Al otro hijo de coyote, exactamente. Nosotros guardamos a coyote, llamamos recursivamente,
+
+01:12:54.220 --> 01:12:58.300
+llamamos recursivamente y volvemos a la próxima línea de llamado recursivo.
+
+01:12:58.300 --> 01:13:07.460
+El ADOL no se hace que se modifique el camino. Bueno, después lo vemos eso, Joaquín, ahora
+
+01:13:07.460 --> 01:13:12.860
+cuando lleguemos al camino de la... El ADOL lo que hace es agregar elementos de una lista a otra lista.
+
+01:13:12.860 --> 01:13:20.140
+Volvemos a Mujú. Claro, vamos a Mujú, pero antes, en realidad antes, volvemos de la recursión,
+
+01:13:20.140 --> 01:13:25.100
+llamamos recursivamente para acá. No te dijo volvemos de la recursión. Al volver de la recursión es
+
+01:13:25.100 --> 01:13:29.060
+la línea siguiente. Entonces, ¿qué hacemos acá? Tenemos que eliminar el último elemento,
+
+01:13:29.060 --> 01:13:34.260
+eliminamos a simba, porque llegamos a una hoja y es un caso que no nos sirve. Volvemos de la
+
+01:13:34.260 --> 01:13:39.540
+recursión, pero tenemos que borrar ese dato. Entonces lista, remove el último elemento de la
+
+01:13:39.540 --> 01:13:46.620
+lista. Entonces, la lista ahora, pasamos al próximo hijo, pero la lista quedó así.
+
+01:13:47.340 --> 01:13:56.940
+Bueno, pasamos entonces acá al próximo hijo. Es un dragón profe. ¿Por qué no es necesario
+
+01:13:56.940 --> 01:14:06.980
+preguntar si tiene hijos? No, porque acá getChildren, obtenes los hijos. Y cuando vas a
+
+01:14:06.980 --> 01:14:11.700
+tirar sobre los hijos no entra a este form, porque no tiene hijos, entonces no va a hacer nada ahí.
+
+01:14:11.700 --> 01:14:21.420
+Entonces, ya es como que vuelve a la próxima línea de llamado recursivo anterior, que es acá.
+
+01:14:21.420 --> 01:14:29.820
+Si yo no borro el último elemento, va a venir acá a este dragón Mujú, pero va a tener en la
+
+01:14:29.820 --> 01:14:34.220
+lista también a simba, que está mal. Entonces, cuando volvemos de llamado recursivo tenemos que
+
+01:14:34.220 --> 01:14:39.100
+eliminar el último elemento para estar acá como estábamos antes, con Coyote nada más. Y ahora sí
+
+01:14:39.100 --> 01:14:45.220
+nos va a devolver este elemento, el form. Y decimos, si no es un dragón, es Mujú, que es un dragón.
+
+01:14:45.220 --> 01:14:50.940
+No nos interesa, entonces no entra el if y nos llamamos recursivamente para trabajar con esto,
+
+01:14:50.940 --> 01:14:57.180
+porque ya no son accesibles estos nodos. Entonces volvemos al form otra vez acá y ahora el child va
+
+01:14:57.180 --> 01:15:08.660
+a tener este hijo, que va a ser Animal Zuzu. Entonces, si el hijo no es un dragón, no,
+
+01:15:08.660 --> 01:15:14.460
+no es un dragón porque Zazu es un animal, nos interesa. Entonces, en la lista agregamos a Zazu.
+
+01:15:14.460 --> 01:15:30.940
+En esta lista que vamos teniendo acá agregamos Animal Zazu. Y después agregamos Animal Zazu y
+
+01:15:30.940 --> 01:15:36.820
+llamamos otra vez recursivamente ahora con el child, que vendría a ser este subárbol,
+
+01:15:36.820 --> 01:15:42.140
+con este hijo. Llamamos recursivamente con este. Entonces venimos acá, tomamos el dato,
+
+01:15:42.140 --> 01:15:48.540
+preguntamos, ¿es una princesa? No. Ya encontramos a la princesa, o sea, el camino de Isempi sin
+
+01:15:48.540 --> 01:15:54.020
+Isempi es vacío porque todavía no la encontramos. Entonces, tomamos los hijos ahora de quien,
+
+01:15:54.020 --> 01:16:00.860
+de Zazu. Ahora estamos en este llamado. Entramos al form y preguntamos, el primero que nos encuentra
+
+01:16:00.860 --> 01:16:07.300
+es Animal Rafiki. Entonces decimos, ¿no es un dragón? No, no es un dragón, me interesa. Acá lo mismo
+
+01:16:07.300 --> 01:16:16.700
+de hoy, voy a tener al Animal Rafiki, ahí lo insertamos y llamamos recursivamente ahora el
+
+01:16:16.700 --> 01:16:21.860
+child Animal Rafiki. Va a venir acá, no es una princesa, viene acá, no encontramos la princesa,
+
+01:16:21.860 --> 01:16:27.100
+no. Cuando quiero tener los hijos de Rafiki, no tiene más. Otra vez, entonces, no entra el form,
+
+01:16:27.260 --> 01:16:33.620
+no entra el form porque Rafiki no tiene ningún hijo y vuelve a la siguiente línea de la recursión.
+
+01:16:33.620 --> 01:16:39.460
+¿Qué hacemos? Borramos a Rafiki porque llegamos a una hoja, no es princesa y no podemos seguir.
+
+01:16:39.460 --> 01:16:45.940
+En ese sentido, lo que decía hoy este Nathalie, que es en Defersearch, vamos siempre así como
+
+01:16:45.940 --> 01:16:51.020
+en profundidad hasta llegar a un lugar donde no podemos seguir. Entonces volvemos al form,
+
+01:16:51.020 --> 01:16:58.900
+que nos va a dar? Nos va a dar el otro hijo de Sassou, que es princesa Mulan. Entonces,
+
+01:16:59.940 --> 01:17:08.020
+¿nos interesa? Sí, porque no es un dragón, agregamos a Mulan a nuestra lista. Ahora sí,
+
+01:17:08.020 --> 01:17:14.820
+en este caso, acá llegamos a una princesa, que es lo que estamos buscando, princesa Mulan.
+
+01:17:14.820 --> 01:17:22.420
+Y la guardamos en la lista y llamamos recursivamente ahora con el child,
+
+01:17:22.420 --> 01:17:26.820
+como llamamos acá recursivamente, el child es esa princesa. Entonces, bien acá,
+
+01:17:26.820 --> 01:17:33.780
+tomamos el dato y decimos, ¿es una princesa? Sí, acá llegamos al otro caso base. Un caso
+
+01:17:33.780 --> 01:17:40.100
+base era la raíz, que sea la hoja, perdón, que sea la hoja que llegamos dos veces. Otro caso base
+
+01:17:40.100 --> 01:17:45.660
+era que sea un dragón. Y ahora llegamos al otro caso base, que es la princesa. Entonces,
+
+01:17:45.660 --> 01:17:50.500
+si es una princesa, ¿qué hacemos? En camino ponemos todos sus datos. ¿Qué significa acá?
+
+01:17:51.940 --> 01:18:00.020
+Que vamos a crear, cuando agrega a esta lista, agrega Azunad, Azunad y Azunad y nos va a quedar
+
+01:18:00.020 --> 01:18:13.740
+acá Coyote, Zazu y Princesa. Coyote, Zazu y la princesa, y Mulan. Esa es la lista definitiva
+
+01:18:13.740 --> 01:18:18.980
+que vamos a devolver. ¿Por qué qué pasa? Nosotros hicimos acá un llamado recursivo a Zazu,
+
+01:18:18.980 --> 01:18:25.700
+hicimos un llamado recursivo a Milán, a la princesa, y si bien lo encontramos y hacemos esta
+
+01:18:25.700 --> 01:18:31.460
+copia acá y nosotros después acá decimos si camino es vacío, camino ya no es vacío porque
+
+01:18:31.460 --> 01:18:36.500
+recién acabamos de llenar todos los elementos con la princesa y ahora no es vacío, no va a entrar
+
+01:18:36.500 --> 01:18:41.660
+más acá. Pero el algoritmo tiene dos llamados recursivos pendientes, entonces vuelve de la
+
+01:18:41.660 --> 01:18:47.580
+recursión. O sea, se hizo un llamado recursivo a Zazu y un llamado recursivo a la princesa y se va
+
+01:18:47.580 --> 01:18:52.020
+a volver de los llamados recursivos antes de irnos. Entonces, ¿qué va a hacer la lista? La lista nos
+
+01:18:52.020 --> 01:18:59.140
+va a borrar estos elementos. Cuando volvamos lo vamos a tener esa lista, por eso es que hay
+
+01:18:59.140 --> 01:19:07.060
+que guardarla en otra lista. Bueno, a ver acá que voy a leer un poco lo que me dicen. ¿Puedo
+
+01:19:07.060 --> 01:19:14.580
+antes de agregarlo preguntar un if si es una hoja? ¿Puedo antes de agregarlo preguntar con un if si
+
+01:19:14.580 --> 01:19:20.980
+es una hoja? Sí, podrías antes de agregarlo. ¿Dónde está la? Acá preguntar si es una hoja.
+
+01:19:24.500 --> 01:19:27.060
+Pero si preguntas ahí si es una hoja, no lo agregas.
+
+01:19:30.500 --> 01:19:34.660
+Lo que pasa que también hay que preguntar lo de la princesa ahí adentro también. O sea,
+
+01:19:34.660 --> 01:19:39.460
+esta es una manera de hacerlo. Hay varias maneras de hacerlo. Si ustedes cambian dónde hacen los
+
+01:19:39.460 --> 01:19:43.700
+if, va a cambiar el algoritmo, pero no hay ningún problema. Se podría preguntar pero tenés que
+
+01:19:43.700 --> 01:19:50.540
+preguntar más cosas ahí adentro del for. Hay muchas maneras de hacerlo. Esto es una nada más.
+
+01:19:50.540 --> 01:19:56.420
+La idea es que vean un poco cómo es el recorrido, el concepto, pero puede ser que haya otro if y
+
+01:19:56.420 --> 01:20:00.580
+otra manera de plantearlo. De hecho hay otro que es bastante distinta a esta que les voy a mostrar.
+
+01:20:02.580 --> 01:20:09.340
+Dice, si hubiera más caminos válidos, o sea, sin dragones y a princesa sería con más litas. No,
+
+01:20:09.580 --> 01:20:14.340
+no. El enunciado eso tienen que leer, chicos, porque después en el parcial se complejiza,
+
+01:20:14.340 --> 01:20:20.820
+no sé, se complican y por ahí no llegan a hacer lo que les piden por hacer algo más complejo de
+
+01:20:20.820 --> 01:20:28.140
+lo que les piden. Implementar un método que devuelva una lista, una lista con un camino desde la raíz
+
+01:20:28.140 --> 01:20:34.100
+a la princesa, sin pasar por un dragón. Una, cualquiera, la primera que encuentren según el
+
+01:20:34.100 --> 01:20:40.860
+método que ustedes utilicen. Y asuman que existe al menos un camino. No entendí una cosa. ¿Cuándo
+
+01:20:40.860 --> 01:20:51.500
+llegas a una princesa mulán? Profes, no entendí una cosa. ¿Cuándo llegas a la princesa mulán,
+
+01:20:51.500 --> 01:21:00.100
+te llevas solo a ese camino, a la lista camina? Sí, sí, solo ese, Martín. A ver,
+
+01:21:00.100 --> 01:21:06.060
+para que vuelva otra vez acá. Sí, cuando vos llevaste, o sea, cuando nosotros a la princesa la
+
+01:21:06.060 --> 01:21:13.220
+pilamos acá y fuimos recursivamente con esto, esto y esto y la princesa. Ese child, fuimos con
+
+01:21:13.220 --> 01:21:19.780
+este child, digamos, pero con toda la lista que ya la teníamos armada. Entonces, cuando viene acá
+
+01:21:19.780 --> 01:21:24.260
+y determina que es una princesa, la pasa a otro lugar y ya está. Esa sería la definitiva que
+
+01:21:24.260 --> 01:21:30.500
+devolvemos. Cuando vuelve de la recursión, lo que se retorna es camino, ¿sí? Después encontrar una
+
+01:21:30.500 --> 01:21:39.460
+princesa. Vuelve todo la recursión y lista, termina vacío. Claro, con el coyote va a quedar.
+
+01:21:39.460 --> 01:21:49.660
+Entonces, por eso hay que respaldarla. Repite porque al final remueve. Sí, cómo no. O sea,
+
+01:21:50.140 --> 01:21:55.300
+cuando llamás recursivamente y volvés de la recursión, siempre vuelve a la línea siguiente
+
+01:21:55.300 --> 01:22:02.580
+de la recursión. Entonces, suponete que cuando teníamos la lista, coyote y simba, llegamos a una
+
+01:22:02.580 --> 01:22:09.060
+hoja y volvimos de la recursión. ¿Por qué? Porque cuando pedimos los hijos de simba, no tenía hijos,
+
+01:22:09.060 --> 01:22:13.780
+entonces no entramos a este for. Como no entramos a este for, salimos de acá, pero ¿a dónde volvemos?
+
+01:22:14.420 --> 01:22:22.780
+Al punto siguiente de la recursión. Al eliminar este último, eliminamos simba. Entonces, al eliminar
+
+01:22:22.780 --> 01:22:28.940
+a simba, nos queda en la lista coyote para empezar a armar otro camino por otro, hermano, de este.
+
+01:22:30.940 --> 01:22:36.580
+Siempre, cuando vos volvés de la recursión, vuelve a la línea siguiente de la recursión. Y cuando
+
+01:22:36.580 --> 01:22:40.380
+nosotros acá llamamos recursivamente, llamamos recursivamente, cuando encontramos a Mulán,
+
+01:22:40.460 --> 01:22:44.540
+la respaldamos a la lista, porque por más que volvamos, se vuelve de la recursión,
+
+01:22:44.540 --> 01:22:48.820
+de los llamados recursidos. O sea, al volver de la llamada recursión, nos va a eliminar el
+
+01:22:48.820 --> 01:23:00.980
+caminito que ya teníamos a la princesa Mulán. Si el primer elemento es la princesa. No,
+
+01:23:00.980 --> 01:23:08.020
+porque coyote, acá lo guardamos acá la princesa para eso. O sea, primero guardamos a la princesa,
+
+01:23:08.020 --> 01:23:17.620
+sería hacer la raíz, le animamos acá. Claro, ya vamos con la princesa. Entonces,
+
+01:23:17.620 --> 01:23:24.220
+si es una princesa, ya la pasamos a camino y la devolvemos. Bueno, más o menos se entendió esta
+
+01:23:24.220 --> 01:23:35.380
+idea de este parcial. Bueno, ya todos estuvimos de acuerdo con que por niveles es más difícil,
+
+01:23:35.380 --> 01:23:42.340
+porque perdemos el tema de la profundidad y de llevar el camino. O sea, en los niveles,
+
+01:23:42.340 --> 01:23:47.780
+cuando recorremos por niveles, perdemos un poco la idea de camino. Así que niveles no. Este sería
+
+01:23:47.780 --> 01:23:52.340
+como un parecido, pero orden, digamos, porque vamos, visitamos, guardamos en la lista, visitamos,
+
+01:23:52.340 --> 01:23:57.820
+guardamos en la lista, visitamos, guardamos. Alguien hoy mencionó algo del pos orden. ¿Se
+
+01:23:57.820 --> 01:24:02.300
+les ocurre, por ejemplo, con el pos orden, si nos podría de alguna manera servir?
+
+01:24:05.380 --> 01:24:29.500
+Iba a cortar después de una hora. Siempre en la pandemia, cuando damos virtual,
+
+01:24:29.500 --> 01:24:35.060
+yo cortaba unos cinco minutitos, diez en el medio, pero se me pasó ya. Seguimos las dos
+
+01:24:35.060 --> 01:24:41.860
+horas. Mientras piensan a ver si alguien está ahí, estoy esperando a que escriban.
+
+01:24:41.860 --> 01:24:47.100
+Ahí está, Tiago dice, una vez que encuentro una princesa, pregunto si hay un dragón o algo así.
+
+01:24:52.220 --> 01:24:57.860
+Y lo que pasa que ahí, en ese caso, Tiago, si vos encontraste una princesa, suponete que el árbol
+
+01:24:57.860 --> 01:25:07.980
+es largo, largo. Por ahí no es muy eficiente, porque si vos no armás la lista, pero suponete,
+
+01:25:11.980 --> 01:25:24.980
+suponete que vos encontraste la princesa acá y el dragón lo habías encontrado acá. Entonces,
+
+01:25:24.980 --> 01:25:31.020
+si vos fuiste en recurso llamado este, este, este, este, y pregunté, encontré la princesa,
+
+01:25:31.020 --> 01:25:35.700
+y entonces vos te habías guardado una marca, si encontraste dragón, hiciste todo esto como de más.
+
+01:25:35.700 --> 01:25:41.300
+O sea, cuando encontraste la princesa, preguntaste si había un dragón, por ahí hiciste un camino
+
+01:25:41.300 --> 01:25:48.460
+de más. Una vez que encuentro la princesa, eso por ahí se entiende que si vos ya llegaste una
+
+01:25:48.460 --> 01:25:52.340
+princesa y tenías un dragón en el medio, por ahí hiciste todo este camino que no te sirve,
+
+01:25:52.340 --> 01:25:58.420
+porque llegaste a una princesa, pero no te sirve ese camino. Me estoy complicando solo
+
+01:25:58.420 --> 01:26:04.300
+porque me doy cuenta que es muy rebuscado. No, pero van a ver que hay una solución también linda,
+
+01:26:04.300 --> 01:26:11.780
+pero bueno, está bien, estamos igual discutiendo, medio complicado por acá. A ver si alguien más
+
+01:26:11.780 --> 01:26:19.380
+dice algo, si no, ya empezamos por ahí a pensar la otra solución. Otra solución, si a alguno se
+
+01:26:19.380 --> 01:26:23.300
+ocurre otra, también puede que sea válida. Hay muchas soluciones para un problema.
+
+01:26:28.580 --> 01:26:31.980
+Bueno, la otra solución lo que plantea es,
+
+01:26:34.660 --> 01:26:40.340
+yo terminamos armando recién, o sea terminamos armando esta lista que le sacábamos elementos,
+
+01:26:40.340 --> 01:26:45.220
+poníamos, sacábamos este elemento, poníamos. Este arbolito es chiquito, pero puede ser que yo
+
+01:26:45.220 --> 01:26:51.940
+tenga un árbol con mucha profundidad y que esté haciendo esa lista larga y sacándole los elementos,
+
+01:26:51.940 --> 01:26:57.500
+esa lista larga, por ejemplo este, había esta lista, bueno si el dragón está ahí, por ahí hago esta
+
+01:26:57.500 --> 01:27:02.760
+lista larga, larga, larga, larga, llega un dragón, vuelvo, todo para atrás y así. Voy armando una
+
+01:27:02.760 --> 01:27:07.300
+lista y después además uso otra lista auxiliar, otra lista auxiliar para devolver, estoy usando
+
+01:27:07.300 --> 01:27:12.980
+además dos listas. Estoy creando una lista de antemano que no es la definitiva y estoy creando
+
+01:27:12.980 --> 01:27:19.060
+otra lista auxiliar para guardar la definitiva. Entonces, podría yo decir, bueno, yo recorro,
+
+01:27:19.060 --> 01:27:25.940
+recorro, pero no voy armando la lista. Digo, recorro, es una princesa, es una princesa, no,
+
+01:27:25.940 --> 01:27:33.420
+es una hoja, vuelvo. Es una princesa, no, sería, es una hoja, vuelvo, pero no hago nada. Vengo acá,
+
+01:27:33.420 --> 01:27:40.140
+es un dragón, o una hoja, o una princesa, sí, es un dragón, vuelvo y no hago nada. Vengo acá,
+
+01:27:40.140 --> 01:27:47.500
+es un dragón, una hoja, o una princesa, no es una hoja, no es un dragón, no es una princesa,
+
+01:27:47.500 --> 01:27:53.260
+bueno, sigo adelante entonces, pero no hago nada. Vengo acá, es una hoja, no hago nada,
+
+01:27:53.260 --> 01:27:57.860
+porque no encontré la princesa, no es un dragón, vuelvo. Vengo acá, encontré una princesa, bueno.
+
+01:28:00.060 --> 01:28:04.140
+Si yo encontré una princesa acá es porque no volví por un dragón, porque yo recién decía,
+
+01:28:04.140 --> 01:28:12.540
+es una hoja, vuelvo. Es un dragón, vuelvo, ni sigo recorriendo estos, vuelvo. Seguí acá porque
+
+01:28:12.540 --> 01:28:18.780
+esto era un animal, no era una hoja, ni un dragón, sigo. Y encontré una princesa, cuando yo encuentro
+
+01:28:18.780 --> 01:28:23.820
+una princesa, ya estoy segura que es accesible, porque si hubiese encontrado un dragón antes,
+
+01:28:23.820 --> 01:28:28.540
+me hubiese vuelto en la reculción. Y si hubiese encontrado una hoja, no hubiese podido seguir,
+
+01:28:28.540 --> 01:28:33.740
+obvio. A ver, voy a leer lo que dice acá Martín. Entonces, para este caso,
+
+01:28:33.740 --> 01:28:37.700
+si lo hiciéramos en profundidad, ¿sería similar al preorden?
+
+01:28:40.940 --> 01:28:46.500
+Y es medio un preorden, Martín, lo que hicimos antes, porque, o sea, preorden significa que vos
+
+01:28:46.500 --> 01:28:54.820
+procesás el dato ese, y después para todos los hijos lo procesás también en preorden. Entonces,
+
+01:28:54.820 --> 01:29:01.580
+fuimos a ver ese dato y lo íbamos guardando. Íbamos guardando todo. Es como una idea.
+
+01:29:05.420 --> 01:29:15.860
+Sí, sí, pero digo, en profundidad, ¿hubiera sido parecido? Es que son en profundidad el preorden.
+
+01:29:16.940 --> 01:29:22.860
+Ahora lo que yo estoy por ahí planteando es, ¿es necesario ir armando la lista cuando yo recorro?
+
+01:29:22.860 --> 01:29:27.660
+Cuando yo recorro, que uno en el preorden dice, recorro el preorden, es que imprimo el dato,
+
+01:29:27.660 --> 01:29:32.220
+y después sus hijo imprima el dato. ¿Es necesario cuando yo llego a un nodo ir metiéndolo ya en la
+
+01:29:32.220 --> 01:29:38.780
+lista? Para hacerlo en posorden, serviría ir agregando adelante en la lista del camino. Entonces,
+
+01:29:38.780 --> 01:29:44.620
+primero se agrega a la princesa, después a Zazú, y después a Coyote. Es decir,
+
+01:29:44.620 --> 01:29:50.340
+primero encontrar a la princesa y después armar la lista. Exactamente. Algo así sería, Franco,
+
+01:29:50.340 --> 01:29:55.700
+la idea. O sea, yo no armo ninguna lista hasta que no encontré la princesa. Pero cuando llegue a una
+
+01:29:55.700 --> 01:29:59.780
+princesa, yo tengo que estar segura que antes no pasé por un dragón, porque es un caso base.
+
+01:29:59.780 --> 01:30:05.340
+En el caso que yo venía por acá, retorno de la recursión porque era una hoja. En el caso que yo
+
+01:30:05.340 --> 01:30:09.620
+vengo por acá, retorno de la recursión porque encontré un dragón. Ya no me interesa, por más
+
+01:30:09.620 --> 01:30:17.700
+que acá yo tenga a la princesa bella. Yo vuelvo. Ahora, cuando yo encontré a una princesa, ahí
+
+01:30:17.700 --> 01:30:23.020
+estoy segura que adelante no tenía un dragón. Entonces, como decía acá Franco, ahí armo la
+
+01:30:23.020 --> 01:30:28.860
+lista. Armo la lista y pongo a la princesa. Y después, en la posición cero, pongo a Zazú. Y
+
+01:30:28.860 --> 01:30:35.020
+después, en la posición cero de esa lista, pongo a Coyote. Y ahí me quedó la lista formada.
+
+01:30:35.020 --> 01:30:47.660
+Y ahí usaríamos una sola lista. O sea, el beneficio de eso sería que usamos una sola
+
+01:30:47.660 --> 01:30:52.980
+lista, que no vamos agregando datos a una lista que después no me sirve, porque después con este
+
+01:30:52.980 --> 01:30:59.740
+remote vieron que le íbamos sacando lo que ya habíamos agregado. Pero esta es una solución
+
+01:30:59.740 --> 01:31:07.540
+válida. Es una solución que es un código limpio, que está muy bien para un parcial. Y por ahí es lo
+
+01:31:07.540 --> 01:31:14.420
+más natural, que uno empieza a armar caminos, no a pensar. Si se les ocurre esta, también es otra
+
+01:31:14.420 --> 01:31:21.180
+solución buena porque no utiliza otra lista. Pero los dos son válidos y estarían aprobados en el
+
+01:31:21.180 --> 01:31:31.300
+parcial. Bueno, entonces, en este caso, este no tiene un método público y uno privado, es un
+
+01:31:31.300 --> 01:31:37.580
+único método. Pero la diferencia está que directamente este método recursivo devuelve la
+
+01:31:37.580 --> 01:31:43.540
+lista de personajes. En el anterior, este método era el que devolvía el público, devolvía la lista
+
+01:31:43.540 --> 01:31:49.100
+de personajes, se armaba todo esto de las listas, de las dos listas. En este caso, uno de los cambios
+
+01:31:49.100 --> 01:31:53.460
+sería ese, que directamente el método recursivo recibe el árbol y devuelve la lista de personajes.
+
+01:31:55.820 --> 01:32:03.780
+Bueno, ¿y cómo sería? Yo recibo este árbol. ¿Estaría bien si se hiciera sin método auxiliar? Sí,
+
+01:32:03.780 --> 01:32:13.020
+porque este es sin método auxiliar y es recursivo. Hasta está mejor este. Si vos podés devolver la
+
+01:32:13.020 --> 01:32:18.060
+lista. Hay veces que hay que devolver muchas cosas y no te queda otra que tener método auxiliar con
+
+01:32:18.060 --> 01:32:27.300
+esos datos y eso. Pero este está perfecto. Una pregunta media desconectada. ¿Para los parciales
+
+01:32:27.300 --> 01:32:39.900
+podemos utilizar el método de la lista AdFert? La LinkedIn List tiene el ad en una posición.
+
+01:32:39.900 --> 01:32:48.740
+No recuerdo si tiene AdFert. Si lo tiene, sí. Ustedes pueden llevar un PDF que les armamos en
+
+01:32:48.740 --> 01:32:54.980
+donde está la API de todas las clases que pueden usar. Entonces con eso, tipo, suponete, en el
+
+01:32:54.980 --> 01:33:03.340
+parcial, vos les damos nosotros un PDF en donde figuran todos estos de los UML. El UML de la
+
+01:33:03.340 --> 01:33:09.340
+LinkedIn List y vamos a poner ahora del Array List, del General Tree, del Binary Tree, de todo.
+
+01:33:09.340 --> 01:33:14.500
+Entonces vos ahí te fijás. El método que tenés ahí lo puedes usar perfectamente sin implementarlo.
+
+01:33:14.500 --> 01:33:20.300
+Tenés el ad en una posición particular. No me acuerdo si tenés el AdFert y el ad. Puede ser
+
+01:33:20.300 --> 01:33:26.700
+porque la LinkedIn List es doblemente enlazada. Pero sí, se pueden usar todos sin implementar.
+
+01:33:27.460 --> 01:33:34.660
+Bueno, a ver, ¿dónde estábamos? Acá, acá. Ahí. Bueno, entonces arrancamos a ver cómo nos quedaría
+
+01:33:37.140 --> 01:33:46.620
+el algoritmo este. Voy a dar un minutito. Ahí vengo. La perra está conmigo y quiere salir.
+
+01:33:46.620 --> 01:33:56.660
+Ya está. Bueno, entonces ahora en este algoritmo recibimos el árbol. Venimos por
+
+01:33:56.660 --> 01:34:04.220
+acá. Creamos una lista en null. Fíjense, creamos una lista en nulo y preguntamos al árbol. Los
+
+01:34:04.220 --> 01:34:12.340
+casos base que veníamos viendo. ¿Es una princesa? No. ¿Es un dragón? No. ¿Es una hoja? No. Entonces
+
+01:34:12.340 --> 01:34:19.700
+no entramos a este if y venimos acá. Obtenemos los hijos con getChildren de Coyote. Bueno,
+
+01:34:19.700 --> 01:34:26.420
+en este caso lo hice con el while. Obtenemos un iterador y preguntamos si tiene más elementos y
+
+01:34:26.420 --> 01:34:33.380
+la lista es igual a nulo. ¿Por qué la lista es nulo? Si es nulo significa que no hay ninguno
+
+01:34:33.380 --> 01:34:38.420
+de estos casos todavía. Que la lista no se llenó. Que no encontramos la princesa, básicamente.
+
+01:34:38.580 --> 01:34:43.620
+Porque el único caso que la lista va a dejar de ser nulo es cuando encontremos a la princesa.
+
+01:34:43.620 --> 01:34:48.780
+Ya lo vamos a ver. Pero por el momento la lista es nulo. Entonces, mientras tenga más elementos y la
+
+01:34:48.780 --> 01:35:03.780
+lista esté nulo, ¿yo qué hago? Como está nulo la lista, no entrasteis. Entramos acá. Lista,
+
+01:35:03.780 --> 01:35:08.340
+encontrar princesa con itenex. Entonces ahora vamos a llamar recursivamente con quién. Con
+
+01:35:08.340 --> 01:35:17.620
+el primer elemento del hijo. Venimos acá arriba. Y decimos, ¿es una princesa? ¿Es un dragón? ¿O
+
+01:35:17.620 --> 01:35:24.140
+es una hoja? Sí, nos va a dar en este caso que es una hoja. Entonces vamos a entrar a este if. Pero,
+
+01:35:24.140 --> 01:35:32.700
+¿es una princesa? No, no es una princesa. Entonces retornamos con la lista vacía.
+
+01:35:33.100 --> 01:35:40.140
+Venimos acá y decimos, ¿la lista es distinta de nul? No, es nula todavía. Entonces seguimos y
+
+01:35:40.140 --> 01:35:46.380
+pasamos al próximo hijo. Entonces, llamamos a encontrar princesa. En este caso llamamos siempre.
+
+01:35:46.380 --> 01:35:51.620
+¿Ven? Este es otro caso, Martín. Acá llamamos siempre recursivamente. Llamamos a encontrar
+
+01:35:51.620 --> 01:35:57.540
+princesa ahora con este subárbol. Venimos acá. Los casos se manejan todos acá, los casos bases.
+
+01:35:57.700 --> 01:36:04.300
+Decimos, ¿si el árbol es una princesa? No, ¿es un dragón? Sí, estamos en este caso base. Entonces
+
+01:36:04.300 --> 01:36:10.100
+¿qué hacemos? ¿Es una princesa? No, retornamos la lista pero vacía siempre. Entonces volvemos acá.
+
+01:36:10.100 --> 01:36:15.020
+¿La lista es distinta de nul? No, es nula. Volvemos ahora, tomamos el próximo hijo.
+
+01:36:16.500 --> 01:36:21.380
+Cuando tomamos el próximo hijo, ahora llamamos. Lista es igual. ¿A qué va a ser igual? A lo que
+
+01:36:21.380 --> 01:36:30.260
+me devuelva el encontrar princesa ahora con este subárbol. Venimos acá. ¿Es una princesa? ¿Es un
+
+01:36:30.260 --> 01:36:37.940
+dragón? No, la lista sigue estando nul. Entonces ahora seguimos. Tomamos a Rafiti. Cuando vamos
+
+01:36:37.940 --> 01:36:44.260
+allá con Rafiti, la lista va a retornar en nul porque no cumple ningún caso base. Volvemos acá.
+
+01:36:44.740 --> 01:36:55.500
+Tomamos el hijo de Mulán. En este caso, cuando decimos encontrar princesa con Mulán, en ese caso
+
+01:36:55.500 --> 01:37:01.460
+venimos acá y ahí sí dice, ¿es un dragón, una hoja o una princesa? Sí, entramos al if. ¿Es una
+
+01:37:01.460 --> 01:37:09.340
+princesa? Este es el único caso en el que entra este if. Sí, el get dato. ¿Es una princesa? Entonces
+
+01:37:10.140 --> 01:37:20.940
+sí, agarramos el dato. En este caso hacemos un new linked list de personajes y agregamos a la
+
+01:37:20.940 --> 01:37:28.220
+princesa en la posición cero. Entonces, cuando volvamos acá, la lista ya no va a ser nula. Va
+
+01:37:28.220 --> 01:37:34.580
+a tener en el primer elemento la princesa. O sea, ¿esa lista qué va a tener? Esa lista va a tener
+
+01:37:34.580 --> 01:37:43.180
+ahora en el primer elemento, a diferencia del otro, la princesa que es Mulán. Entonces,
+
+01:37:43.180 --> 01:37:48.660
+la lista va a tener la princesa que es Mulán. Entonces, cuando vuelve acá, ¿qué pregunta?
+
+01:37:48.660 --> 01:37:56.860
+Si la lista es distinta de nul, sí. O sea, yo fui, fíjense, llegué a esta princesa Mulán por
+
+01:37:56.860 --> 01:38:03.980
+este llamado. Cuando yo vuelvo de ese llamado que vuelve la lista con Mulán, ¿dónde estoy yo acá?
+
+01:38:03.980 --> 01:38:09.500
+¿Quién es el dato? Estoy en Sazú. O sea, yo llamé con un hijo de Sazú. Entonces, acá que digo,
+
+01:38:09.500 --> 01:38:14.540
+sí lista distinta de nul. Sí, porque ahora me vino la lista con Mulán. Esa lista que agregó en
+
+01:38:14.540 --> 01:38:21.420
+la posición cero el dato, el get data del árbol de Sazú. Pero ¿en dónde lo guarda? Lo guarda en
+
+01:38:21.420 --> 01:38:26.140
+la posición cero. Entonces, ahora Mulán va a quedar en segundo lugar y en el primer lugar va a quedar
+
+01:38:26.140 --> 01:38:37.980
+Sazú. O sea que la lista va a apuntar ahí ahora. Y lo mismo, cuando vuelva de la recursión el dato
+
+01:38:37.980 --> 01:38:45.780
+va a ser Coyote. Entonces, ¿qué va a hacer? Va a guardar Coyote en la primera posición y ya nos va
+
+01:38:45.780 --> 01:38:50.540
+a quedar la lista armada. Pero lo que se fue haciendo acá es, cuando la lista deja de ser nul,
+
+01:38:51.300 --> 01:38:57.500
+es que vuelve de la recursión, entonces va a poner el dato del árbol cuando se llamó recursivamente
+
+01:38:57.500 --> 01:39:02.780
+con los hijos. Y lo mismo acá, ya va a tener estos dos datos en la lista, cuando vuelve de la recursión
+
+01:39:02.780 --> 01:39:10.260
+va a poner a Coyote. Es como que la lista se arma una única vez, se arma la vuelta de la recursión,
+
+01:39:10.260 --> 01:39:15.820
+en vez de que hoy que borramos, acá se arma la lista. Y cuando termina de recorrer todo,
+
+01:39:15.820 --> 01:39:21.140
+que ya se llega al nivel de la raíz del árbol, se retorna la lista ya armada.
+
+01:39:45.820 --> 01:39:54.820
+Acá estoy. ¿Cómo se entendió más o menos la idea? A ver que preguntan. ¿Es válido el uso del
+
+01:39:54.820 --> 01:40:05.380
+break para cortar las interacciones? Y ahí, en el caso si usaban un for each, tenían que usar un
+
+01:40:05.380 --> 01:40:14.060
+break. Por eso usé el while también acá. Pero sí, sí, se puede usar. Profe, ¿por qué es necesario
+
+01:40:14.060 --> 01:40:26.220
+el primer if del método encontrar princesa? El primer if. ¿Son los casos base de esto, decís?
+
+01:40:27.900 --> 01:40:37.380
+O sea, si es una princesa, un dragón o una hoja, sí, son los casos base.
+
+01:40:37.380 --> 01:40:46.420
+¿Y yo qué hago? Retorno la lista vacía a un return de la lista vacía. Entonces cuando retorna
+
+01:40:46.420 --> 01:40:53.100
+la lista vacía, continúa, continúa, continúa. El único caso de estos tres que se comporta
+
+01:40:53.100 --> 01:40:58.620
+diferente es cuando yo encuentro a la princesa ahí, además de retornar, yo lo que tengo que hacer,
+
+01:40:58.620 --> 01:41:03.420
+porque lo que hace es que cuando se llama ahí, retorno una lista. El tema es si la devuelve vacía
+
+01:41:03.420 --> 01:41:10.220
+o con algo. Entonces el único caso en que la lista va a tener un dato es de esos tres
+
+01:41:10.220 --> 01:41:17.100
+casos base es con la princesa. Por eso está también este otro if. Francisco, ¿pero solo nos interesa
+
+01:41:17.100 --> 01:41:23.060
+si es princesa? ¿No podríamos preguntar solo si es princesa que se cree la lista y no nul?
+
+01:41:34.420 --> 01:41:37.340
+Vamos a encontrar princesa con next.
+
+01:41:43.100 --> 01:41:53.420
+En el caso de hoja, lo que pasa es que en la hoja tenés, o sea son casos base, vos en la hoja tenés
+
+01:41:53.420 --> 01:41:59.820
+que retornar y en el dragón también tenés que retornar, porque son los casos base.
+
+01:42:03.420 --> 01:42:08.300
+Por cualquiera de los dos tenés que retornar, o sea de los tres. Por cualquiera de los tres tenés
+
+01:42:08.300 --> 01:42:13.020
+que retornar, o sea son los tres casos base. Tenés que retornar y al retornar tenés que devolver la
+
+01:42:13.020 --> 01:42:18.140
+lista, porque es lo que usamos acá para determinar cuándo, o sea de la vuelta a la recursión,
+
+01:42:18.140 --> 01:42:23.740
+utilizamos esa lista para determinar cuándo vamos a empezar a armar la lista.
+
+01:42:33.420 --> 01:42:45.780
+Tenés que hacer el return, porque si no seguís vos, esos serían como los casos base. En ese caso,
+
+01:42:45.780 --> 01:42:56.500
+cuando llegas ahí, ya hay que retornar. ¿Te entiendes, Franco? Porque si no es como estos casos
+
+01:42:56.500 --> 01:43:02.260
+que vos seguiste adelante procesando en profundidad, esos serían los tres casos donde vos tenés que
+
+01:43:02.260 --> 01:43:08.980
+retornar de la recursión, el caso base. Y lo que tenés que devolver es una lista. En dos casos tenés
+
+01:43:08.980 --> 01:43:13.700
+que retornar la lista nula, que es, volví porque encontré una hoja, volví porque encontré un dragón.
+
+01:43:15.260 --> 01:43:20.740
+Y en el caso de volví porque encontré la princesa y sí tiene un dato, que es lo que se utiliza acá
+
+01:43:20.740 --> 01:43:28.060
+para empezar a la vuelta de la recursión, armar los datos, poner los datos de los nodos de ese camino.
+
+01:43:28.060 --> 01:43:32.780
+Claro, exacto.
+
+01:43:40.340 --> 01:43:49.540
+Es decir, si ese if no estaría, entraría en Sassu y retomaría nul. Claro, exacto.
+
+01:43:49.540 --> 01:44:01.100
+De las dos a mí, esta es como que me parece más linda, más elegante. Pero bueno,
+
+01:44:01.100 --> 01:44:06.420
+esta está muy bien también. Cualquiera de las dos soluciones. Si a alguno se le ocurre,
+
+01:44:06.420 --> 01:44:11.340
+como hoy decía creo que era Martín o alguno de los chicos, poner algún control acá y cambiar allá,
+
+01:44:11.340 --> 01:44:18.540
+también puede ser otra solución. Pero bueno, son más o menos la idea. En ambos casos teníamos
+
+01:44:18.540 --> 01:44:23.060
+los mismos casos base porque yo cuando encuentro hoja o dragón no tiene sentido que se ira
+
+01:44:23.060 --> 01:44:28.980
+recorriendo. Esas cosas sí se miran en los parciales, que mínimamente hayan encontrado los casos base.
+
+01:44:31.100 --> 01:44:41.860
+Bueno, nos quedan unos minutitos. Hay otro ejercicio acá. No sé si no quieren preguntar
+
+01:44:41.860 --> 01:44:47.380
+nada más de eso. La verdad es que se va mucho más lento así. A mí me gusta mucho llevar pizarrón y
+
+01:44:47.380 --> 01:44:55.660
+acá es bastante incómodo. Por lo menos no se partió la clase porque hoy a la mañana la verdad
+
+01:44:55.660 --> 01:45:01.820
+que había muy pocos micros. No sé qué les pasó, chicos también. No sé cuántos. Ah, no,
+
+01:45:01.820 --> 01:45:07.940
+hay muy pocos, acá 27 también. Sí, a la práctica fueron algo de 19, me dijo Isabel. Así que bueno,
+
+01:45:07.940 --> 01:45:11.740
+el resto no sé, como que por ahí quedaba grabada y no se sumaron.
+
+01:45:17.780 --> 01:45:23.220
+Re poco, porque ese turno somos más de 200.
+
+01:45:26.100 --> 01:45:31.060
+Bueno, planteé un poquito este. No vamos a terminar la clase, así que el jueves que viene
+
+01:45:31.060 --> 01:45:38.220
+por ahí retomamos un poco en estos ejercicios que quedan y seguimos con el tema, con el próximo
+
+01:45:38.220 --> 01:45:56.020
+tema. ¿Capaz están luchando para ir a Fall? Ah, claro, Suzo no lo tuvo en cuenta. Fall no
+
+01:45:56.020 --> 01:46:03.500
+suspendió. Sí, eso me acuerdo. Claro, en siete minutos empieza la clase. Lo que pasa es que Fall
+
+01:46:03.820 --> 01:46:12.580
+no dejaron nada. Nadie sabe. Igual Fall, las teorías son para la promoción, ¿no? Después para la
+
+01:46:12.580 --> 01:46:24.260
+práctica, algo así. Sí, la semana que viene comienza la práctica de árboles generales. Sí,
+
+01:46:24.260 --> 01:46:31.340
+sí. Nosotros mientras tanto vamos a ir dando un poco HEAP e interfaces comparables que se usa
+
+01:46:31.340 --> 01:46:36.820
+para HEAP. La semana que viene que eso se toma más teórico. Bueno, yo tengo que terminar un
+
+01:46:36.820 --> 01:46:51.660
+poco con esto. Bueno, 50 y 50. ¿Te siguen las teorías para la práctica igual? No sé,
+
+01:46:51.660 --> 01:46:56.780
+yo de Fall me habían comentado que las teorías son para la promoción y que la práctica va por
+
+01:46:56.780 --> 01:47:04.100
+otro camino, pero no sé si es verdad. Porque yo me extrañaba por qué en Fall los alumnos le entran
+
+01:47:04.100 --> 01:47:09.900
+y por qué a nosotros no nos entraban en la aula 5, dividiendo el lunes y jueves el grupo y cuando
+
+01:47:09.900 --> 01:47:16.580
+entraba. Bueno, sigo que estamos grabando, después charlamos. Bueno, este ejercicio, un poco se lo
+
+01:47:16.580 --> 01:47:22.380
+voy a dejar también para que lo piensen, porque ya queda poco, pero dice, implementar una clase,
+
+01:47:22.380 --> 01:47:28.140
+esta fue de un parcial del año pasado. Implementar una clase con un método que reciba un árbol
+
+01:47:28.140 --> 01:47:34.700
+general de enteros y que retorne todos los árboles cuya raíz tenga un valor más pequeño que la suma
+
+01:47:34.700 --> 01:47:40.700
+de sus hijos, de los valores de sus hijos. Entonces, ¿cómo sería acá? Yo tendría que retornar todo
+
+01:47:40.700 --> 01:47:49.020
+este subárbol si 100 es más chiquitito que la suma de sus hijos. Acá tenemos 33, 35, 39, no es
+
+01:47:49.020 --> 01:47:55.220
+más chico, entonces no lo devuelvo. Pero esto para todos los árboles, entonces esto es recursivo. Yo
+
+01:47:55.220 --> 01:48:01.660
+devuelvo esto si este dato es más chiquito que la suma de mis hijos, pero a su vez devuelvo este sí,
+
+01:48:01.660 --> 01:48:06.580
+este dato es más chiquito que la suma de mis hijos, en este caso sí lo devuelvo, 2 más chiquito que
+
+01:48:06.580 --> 01:48:13.140
+5. Ese no lo devuelvo porque acá tengo 16, no es más chiquito que 33. Y en este caso lo devuelvo
+
+01:48:13.140 --> 01:48:20.660
+porque 4 es más chiquito que 1600. Bueno, a ver si me están diciendo buenas. Entonces,
+
+01:48:20.660 --> 01:48:25.940
+árboles de expresiones se evalúa de forma teórica en el parcial y no su implementación en Java. Sí,
+
+01:48:25.940 --> 01:48:32.020
+así es, Nahuel. De árboles de expresión no se va a tomar nada en Java. Los demos un poco para que
+
+01:48:32.020 --> 01:48:36.380
+practiquen recursión, que están buenos de árboles binarios, les puede servir para otras cosas,
+
+01:48:36.380 --> 01:48:44.820
+pero se toma más bien teórico. Bueno, entonces, ¿qué es lo que tenemos de volver acá? Tenemos
+
+01:48:44.820 --> 01:48:54.700
+que devolver muchos árboles, muchos subárboles. Una posibilidad podría ser tener una lista como
+
+01:48:54.700 --> 01:49:02.820
+parámetro de árboles y devolver esa lista. En este caso yo para poder concentrarnos bien en el
+
+01:49:02.820 --> 01:49:08.900
+algoritmo que va determinando si el subárbol se devuelve o no se devuelve directamente cuando
+
+01:49:08.900 --> 01:49:13.820
+encontraba un árbol cuyo dato de raíz era más chiquito que lo que me devolvía el contador de
+
+01:49:13.820 --> 01:49:22.420
+sus hojas directamente usaba una clase repositorio con un método de clase que agrega el árbol ahí
+
+01:49:22.420 --> 01:49:29.020
+para no preocuparnos demasiado en el guardado de los árboles y cómo lo vamos a retornar. Es
+
+01:49:29.020 --> 01:49:35.980
+una clase pública que tiene un método de clase agregar estático público que recibe un árbol y
+
+01:49:35.980 --> 01:49:43.420
+lo agrega en esta lista. Después está implementado acá, lo implementé con otro de otra manera en
+
+01:49:43.420 --> 01:49:47.980
+donde yo recibo como parámetro una lista de árboles generales y cada vez que se cumple la
+
+01:49:47.980 --> 01:49:58.220
+condición lo voy agregando. Pero eso hay que ver en el parcial y ustedes y modelos de parcial no,
+
+01:49:58.220 --> 01:50:03.260
+el centro estudiante anda dando vueltas por todos lados. Nosotros agarramos algunos y
+
+01:50:03.260 --> 01:50:07.340
+los usamos para las teorías, lo vamos poniendo a la práctica del año pasado porque lo ponemos
+
+01:50:07.340 --> 01:50:12.340
+a la práctica desde este año, vamos renovando un poco pero andan dando vueltas a muchísimos
+
+01:50:12.340 --> 01:50:18.540
+sí de parciales. Si no encuentran el centro estudiante y eso después bueno nos piden pero hay un montón.
+
+01:50:21.660 --> 01:50:26.380
+Entonces fíjense también en el enunciado del parcial no decía nada, dice implementar una
+
+01:50:26.380 --> 01:50:32.700
+clase con un método que recibe un árbol general de enteros y retorne todos los árboles cuya raíz
+
+01:50:32.700 --> 01:50:39.100
+tenga un valor más pequeño que la suma. Bueno yo acá lo guardé en una clase auxiliar, no lo
+
+01:50:39.100 --> 01:50:46.140
+estaría retornando pero después en la otra versión le dice que lo retorne. Este en realidad
+
+01:50:46.140 --> 01:50:53.500
+no lo está haciendo. ¿Por qué? Porque este método yo lo uso un poco para retornar, lo uso
+
+01:50:53.500 --> 01:51:03.260
+para retornar la suma del valor de sus hijos. En realidad la suma de la hoja. ¿Recursión qué
+
+01:51:03.260 --> 01:51:07.900
+hace? Si es una hoja, o sea el caso base acá es que es una hoja y cuando es una hoja yo tengo
+
+01:51:07.900 --> 01:51:15.420
+que retornar mi valor, así mi padre puede sumar todo el valor de sus hijos. Entonces el caso base
+
+01:51:15.420 --> 01:51:22.220
+es una hoja, cuando es una hoja retorna, ag, get data. Acá me quedo mal, get data, get data.
+
+01:51:24.380 --> 01:51:25.580
+Perdón, me quedo mal.
+
+01:51:28.140 --> 01:51:36.860
+Bueno, de copiar y pegar por eso. Entonces, recibimos el árbol, no es una hoja que hago,
+
+01:51:36.860 --> 01:51:45.860
+pongo el contador en cero, obtengo todos los hijos del árbol. Ah no, lo que pasa es que este
+
+01:51:45.860 --> 01:51:51.860
+chico me quedo, me quedo, ahora después lo cambio, me quedo con la lista,
+
+01:51:58.580 --> 01:52:02.700
+me quedo con la lista enlazada del año pasado. Bueno, ahora lo cambio.
+
+01:52:08.820 --> 01:52:12.940
+Me quedan muy pocos minutos para ir a cambiarlo, porque lo subí en pdf que no,
+
+01:52:12.940 --> 01:52:17.420
+que lo tengo bien, pero no importa. Pero se los dejo para que los vayan pensando,
+
+01:52:17.420 --> 01:52:22.220
+el jueves que viene retornamos o lunes, no sé, después arreglaremos con Katy y retornamos a partir de acá.
+
+01:52:24.380 --> 01:52:32.340
+Va a ir sumando entonces los valores de sus hijos, contador, contador igual a buscar en pre orden,
+
+01:52:32.340 --> 01:52:37.740
+el único que va a devolver valores va a ser la hoja, ya que vea acá sumar los valores de las hojas,
+
+01:52:38.700 --> 01:52:44.500
+y cuando termino de evaluar los hijos, pregunto si el dato que está en la raíz es más chiquitito
+
+01:52:44.500 --> 01:52:51.780
+que el valor que me retorno a las hojas, lo guardo. Y retorno el dato, ¿por qué retorno el dato?
+
+01:52:51.780 --> 01:52:56.500
+Porque yo, por ejemplo, cuando estoy guardando este subárbol, si tendría que retornar el dato,
+
+01:52:56.500 --> 01:53:02.020
+lo que tengo que retornar es 23, acá tengo que retornar 2, acá tengo que retornar 23,
+
+01:53:02.020 --> 01:53:07.900
+acá tengo que retornar 4, así este nodo suma esos datos y devuelve el subárbol o no.
+
+01:53:07.900 --> 01:53:13.420
+Ahora, el próximo ejercicio, hay un cambio pequeño que dice,
+
+01:53:15.420 --> 01:53:22.020
+que tiene que devolver todos los subárboles cuyo valor de la raíz es más chiquitito que la suma
+
+01:53:22.020 --> 01:53:28.140
+de todos sus descendientes, entonces ahí yo no tengo que devolver getDato, sino que tendría
+
+01:53:28.140 --> 01:53:31.740
+que devolver, no tengo que devolver solo el getDato, sino getDato más que
+
+01:53:43.540 --> 01:53:48.180
+más la suma de sus hijos, exacto. Entonces, a ver si este también está mal,
+
+01:53:48.180 --> 01:53:52.100
+ah, este está, el otro me quedó mal, chicos, lo cambié, este sí está pasado,
+
+01:53:52.100 --> 01:53:56.620
+lo pasé los dos, pero no sé por qué me quedó el otro mal. Este, entonces, es una modificación
+
+01:53:56.620 --> 01:54:02.380
+de aquel que devuelve en el parámetro la lista de todos los árboles, entonces cada vez que se
+
+01:54:02.380 --> 01:54:08.180
+da la condición de que el dato de la raíz es más chiquito que el contador, lo agravo, lo guardo,
+
+01:54:08.180 --> 01:54:15.540
+en la raíz creceo como parámetro. Y cuando retorno, retorno el valor del contador más getData,
+
+01:54:15.540 --> 01:54:20.780
+getData, ahora sí. Entonces, acá, cuando yo retorne de acá, voy a decir 33 más la suma de
+
+01:54:20.780 --> 01:54:26.340
+todos estos, porque en realidad este subárbol lo tengo que devolver no solamente sumando 3 hijos,
+
+01:54:26.340 --> 01:54:31.180
+sino todos los descendientes. Y fíjense que cambia el árbol que se retorna, porque acá ya tengo el
+
+01:54:31.180 --> 01:54:36.380
+de 1000, entonces ahora sí voy a retornar todo este árbol. En el anterior, fíjense que yo el árbol
+
+01:54:36.380 --> 01:54:45.020
+grandote no lo retornaba, porque la suma de los hijos era más chiquita que la raíz, pero si yo sumo
+
+01:54:45.020 --> 01:54:50.060
+todos los descendientes, ahí sí, ya pasan a ser mayores que esto. Los árboles están hechos
+
+01:54:50.060 --> 01:54:56.100
+específicos para que cambie. Bueno, ahora que dice Joaquín, fíjate si puedes subir las teorías,
+
+01:54:56.100 --> 01:55:03.380
+a mí me decís sí. Y ahí arrancó fall, bueno, chau chicos, chau, chau, los que se vayan.
+

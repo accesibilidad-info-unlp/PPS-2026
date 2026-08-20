@@ -1,0 +1,3767 @@
+WEBVTT
+
+00:00.000 --> 00:09.600
+Bueno, buen día. Hoy vamos a ver la estructura de árboles binarios y vamos a ver el uso
+
+00:09.600 --> 00:17.200
+de árboles binarios con árboles de expresión. Bueno, el año pasado se cambió la estructura
+
+00:17.200 --> 00:24.400
+por ahí para los Recursantes. Se cambió la estructura y se pusieron todos los nombres,
+
+00:24.400 --> 00:29.200
+de los métodos en inglés. Por eso es que no la tenemos grabada y que decidimos hoy
+
+00:29.200 --> 00:33.600
+de grabarla para que quede. Bueno, me escuchan bien, ¿no?
+
+00:36.800 --> 00:46.000
+Bien, bueno. Los árboles de expresión los definimos así. Ustedes en la práctica van a tener
+
+00:46.000 --> 00:54.400
+el diagrama de este UML, el diagrama de clases. A partir de las pilas y colas, vimos que esas clases
+
+00:54.400 --> 00:58.400
+eran parametrizadas, que se recibe acá un parámetro. Bueno, los árboles binarios lo mismo.
+
+00:58.800 --> 01:04.000
+Vamos a definir la estructura de árbol binario, binary tree, que recibe un parámetro de tipo T.
+
+01:06.000 --> 01:12.400
+Y esto es una estructura recursiva, dado que se tiene un dato en cada nodo, se tiene un dato de
+
+01:12.400 --> 01:18.800
+tipo T y una referencia al left child y right child, o hijo izquierdo, o hijo derecho, que a su vez
+
+01:18.800 --> 01:26.400
+son también de tipo binary tree. Por eso que es una estructura recursiva. Tenemos acá los constructores,
+
+01:26.400 --> 01:34.400
+los getters, setters, algunos métodos. Pasamos a... Bueno, cuando vemos el árbol, se le dice que este
+
+01:34.400 --> 01:39.200
+nodo es la raíz del árbol, que tiene un hijo izquierdo y un hijo derecho, y este sería su árbol
+
+01:39.200 --> 01:44.400
+izquierdo y su árbol derecho. Si tomamos este su árbol, esta es la raíz, su árbol izquierdo y su árbol
+
+01:44.400 --> 01:52.400
+derecho. Entonces, la clase es una clase parametrizada, que recibe algo de tipo T. Esto significa
+
+01:52.400 --> 01:58.400
+que vamos a tener un único programa binary tree.java, pero lo vamos a poder instanciar, o sea,
+
+01:58.400 --> 02:05.200
+adentro va a poder contener objetos de cualquier tipo. Entonces, tenemos un data de tipo T y un hijo
+
+02:05.200 --> 02:10.400
+izquierdo, hijo derecho, o left child y right child, de tipo binary tree, también de tipo T.
+
+02:10.400 --> 02:17.600
+Después tenemos un constructor por defecto, que no hace nada o llama al super. En definitiva acá,
+
+02:17.600 --> 02:23.680
+fíjense que nos va a quedar, como no hace nada el constructor, nos va a quedar el data T en nulo,
+
+02:23.680 --> 02:28.000
+y hijo izquierdo y hijo derecho también son referencias al árbol en nulo. O sea, nos quedaría
+
+02:28.000 --> 02:34.080
+como este arbolito así, que sería el árbol vacío. Y después tenemos otro binary tree, otro constructor
+
+02:34.080 --> 02:39.200
+que recibe un tipo de datos, y eso se asigna en el dato. Entonces, nos quedaría como un nodo con un
+
+02:39.200 --> 02:46.040
+dato, pero su hijo izquierdo e hijo derecho, como no se le asigna nada, también en nulo. Bueno,
+
+02:46.040 --> 02:51.480
+después tenemos get left child y get right child, que recupera el hijo izquierdo o el hijo derecho.
+
+02:51.480 --> 02:59.040
+Tengan en cuenta acá que se recuperan sin preguntar si son nulos o no. Con lo cual,
+
+02:59.040 --> 03:04.560
+cuando ustedes vayan a recuperar un hijo izquierdo para hacer alguna operación, tienen que preguntar
+
+03:04.560 --> 03:14.320
+si es distinto de nulo, porque si no les va a dar un error cuando se invoca a un método sobre un
+
+03:14.320 --> 03:20.360
+objeto que es nulo. El get hijo izquierdo y el hijo derecho devuelve el hijo izquierdo y el hijo
+
+03:20.360 --> 03:29.600
+derecho sin preguntar si es nulo o no. En una hoja, por ejemplo, daría nulo. Bueno, después tenemos
+
+03:29.600 --> 03:34.520
+si es hoja, después mírenlos un poquito, pero no son complejos ejemplos.
+
+06:44.440 --> 06:50.560
+Hola, chicos. No sé si me están escuchando. Yo soy Catalina Mostacio, una de las profesoras.
+
+06:50.560 --> 06:56.800
+Les quería avisar que Laura me avisó que se le cortó la luz. Así que aguantenla un cachito,
+
+06:56.800 --> 07:04.240
+que justo recién, me está comentando que recién volvió, pero tienen que reiniciar el router y eso
+
+07:04.240 --> 07:11.200
+va a demorar un cachito. Así que tengan un poquito de paciencia, que ya siguen con la clase. Bueno,
+
+07:11.680 --> 07:20.560
+si quieren hacer alguna consulta de lo que hayan visto en el video de la parte conceptual de
+
+07:20.560 --> 07:29.800
+árboles binarios, me pueden preguntar en este ratito mientras la esperan a Laura.
+
+08:11.480 --> 08:17.320
+Acá estoy, chicos. Estaba dándole una vuelta a mi casa a ver si estaba en condiciones de estar
+
+08:17.320 --> 08:25.440
+más o menos visible. El método espejo, preguntas, Rocco, no sé si me estás hablando de algo de...
+
+08:25.440 --> 08:33.480
+Nosotros no vemos ningún ejemplo en la teoría de ese algoritmo, que en definitiva es un ejercicio.
+
+08:33.880 --> 08:41.680
+No sé si lo tiene previsto Laura y si no, seguramente se los explicarán en la práctica.
+
+08:41.680 --> 08:45.720
+No sé si es un ejercicio de la práctica, ahora no lo tengo presente.
+
+08:50.320 --> 08:55.920
+Él estaba en la diapositiva anterior, ah, me mataste. Entonces, probablemente sí,
+
+08:55.920 --> 09:00.800
+si ya lo tiene puesto en la agenda Laura, seguramente se los explica.
+
+09:03.480 --> 09:20.640
+Las clases de teoría. La semana pasada dejaba preguntas porque la semana pasada lo único que
+
+09:20.640 --> 09:27.760
+se dio fue todo conceptual de árboles binarios y árboles de expresión. Dejaba no se dio nada.
+
+09:27.760 --> 09:39.760
+Lo que quedó publicado con todas las grabaciones que deberían estar en un doc en Moodle
+
+09:42.360 --> 09:50.040
+son todas las clases que se dieron durante la pandemia y algunas nuevas que está subiendo Laura
+
+09:50.040 --> 09:54.720
+porque se cambió el formato en las partes dejaba.
+
+09:56.240 --> 10:01.480
+Pero la clase de teoría de la semana pasada debería estar publicada.
+
+10:02.920 --> 10:06.360
+Aguanta un cachito que me fijó que es lo que está publicado.
+
+10:06.360 --> 10:11.640
+De la semana pasada.
+
+10:37.360 --> 10:48.000
+La clase toda conceptual que no es de Java está publicada en la semana pasada.
+
+10:48.000 --> 10:55.600
+Lo que no estoy viendo es el documento que supuestamente Laura lo publicó.
+
+10:55.600 --> 11:02.000
+Me temo que por ahí lo haya publicado, le voy a preguntar que se haya confundido que lo haya
+
+11:02.000 --> 11:05.320
+publicado en el curso del año pasado.
+
+11:19.480 --> 11:24.480
+Bueno, acá en esta diapositiva se ve la creación de un árbol.
+
+11:25.880 --> 11:31.120
+En general uno lo que va haciendo es creando distintos árboles que vendrían a ser subárboles y
+
+11:31.160 --> 11:37.160
+finalmente le va insertando como hijo derecho izquierdo un subárbol a otro árbol.
+
+11:37.880 --> 11:42.640
+En este caso, por ejemplo, decimos A-B es un binary tree, new binary tree,
+
+11:43.080 --> 11:50.520
+pasándole el dato 40 que en este caso usaríamos el constructor que recibe un dato como parámetro
+
+11:50.520 --> 11:55.760
+y se crea simplemente este árbol que es una hoja o una raíz, podemos decir, después se va a convertir.
+
+11:56.280 --> 12:04.880
+Luego se crea otro subárbol que es hijo izquierdo al que se le pasa 25 y a ese árbol se le dice
+
+12:04.880 --> 12:12.480
+add left child y add right child y se les manda por parámetro un nuevo árbol con dato 10 y 32.
+
+12:12.480 --> 12:19.680
+Entonces nos queda este subárbol y después se crea otro hijo derecho que tiene el 78 como dato.
+
+12:20.080 --> 12:26.800
+Entonces teniendo este subárbol y este subárbol, finalmente a la primera raíz A-B le decimos
+
+12:26.800 --> 12:31.200
+add left child hijo izquierdo y add right child hijo derecho.
+
+12:32.840 --> 12:35.720
+Bueno, así entonces se crearía un árbol.
+
+12:37.400 --> 12:42.160
+Luego se muestra acá los recorridos que ustedes ya los hicieron con Pascal,
+
+12:42.760 --> 12:49.280
+los recorridos de árboles binarios, tenemos el recorrido pre-order, in-order, post-order y por niveles.
+
+12:49.920 --> 12:54.440
+El recorrido pre-order, in-order y post-order son muy similares.
+
+12:54.440 --> 13:01.920
+En el caso del recorrido pre-order, fíjense que dice, se imprime el dato y luego si tiene hijo izquierdo
+
+13:01.920 --> 13:08.360
+se imprime en pre-order en hijo izquierdo y si tiene hijo derecho se imprime en pre-order en hijo derecho.
+
+13:08.360 --> 13:12.440
+Entonces dice, se imprime el dato, se imprime 40.
+
+13:12.440 --> 13:18.880
+Luego tiene hijo izquierdo y entonces se llama recursivamente con el hijo izquierdo pre-order.
+
+13:18.920 --> 13:23.520
+Entonces hijo izquierdo, que dice otra vez, se imprime el dato, imprime el dato
+
+13:23.520 --> 13:28.560
+y si tiene hijo izquierdo, si tiene hijo izquierdo se llama con el hijo izquierdo al pre-order.
+
+13:28.560 --> 13:34.920
+Entonces viene acá, tiene, este se imprime el dato y se pregunta, tiene hijo izquierdo o no tiene hijo izquierdo.
+
+13:34.920 --> 13:44.160
+Entonces no entra, si no tiene hijo izquierdo, directamente no tiene hijo derecho, vuelve.
+
+13:44.160 --> 13:50.200
+Entonces acá ya el 25 se llamó recursivamente para imprimir el hijo izquierdo, se imprimió el 10.
+
+13:50.200 --> 13:57.800
+Entonces continuamos con este if, tiene hijo derecho, sí, entonces se llama con este subárbol al pre-order.
+
+13:57.800 --> 14:02.520
+Se imprime el dato, como no tiene hijo izquierdo, hijo derecho, vuelve
+
+14:02.520 --> 14:05.840
+y ahora ya se imprimió el hijo derecho para el 40.
+
+14:05.840 --> 14:11.720
+Entonces vamos a ir a esta parte, tiene hijo derecho, sí, se imprime el 78.
+
+14:12.720 --> 14:17.360
+En cuanto al inorder, es muy parecido, pero el dato se imprime en el medio.
+
+14:17.360 --> 14:22.200
+Primero se imprime hijo izquierdo, si tiene hijo izquierdo se llama con hijo izquierdo,
+
+14:22.200 --> 14:28.320
+tiene hijo izquierdo se llama con hijo izquierdo y se imprime el dato y luego el hijo derecho.
+
+14:28.320 --> 14:35.080
+Y después está el pos orden, que es al revés, se imprime primero el hijo izquierdo, el hijo derecho
+
+14:35.080 --> 14:41.480
+y el dato a la vuelta de la impresión del hijo izquierdo derecho, ahí se imprimiría el dato de la raíz.
+
+14:42.360 --> 14:46.800
+Luego tenemos el recorrido por niveles, que este es un poco diferente a los anteriores,
+
+14:46.800 --> 14:49.800
+porque utiliza una estructura auxiliar, que es una cola,
+
+14:49.800 --> 14:53.800
+para ir encolando los distintos niveles a medida que se imprime.
+
+14:53.800 --> 14:58.440
+Ahora vamos a ver después la implementación en Java, pero el pseudo código dice
+
+14:58.440 --> 15:02.320
+que hay que encolar la raíz, mientras la cola no esté vacía,
+
+15:02.320 --> 15:08.520
+se desencola, se imprime el dato y si tiene hijo izquierdo se encola y si tiene hijo derecho se encola.
+
+15:08.520 --> 15:11.240
+Y ahí empezamos a procesar el próximo nivel.
+
+15:11.240 --> 15:14.120
+Ahora vamos a ver un ejemplo en Java.
+
+15:15.120 --> 15:19.160
+Bueno, en cuanto al recorrido preorden, uno lo podría implementar
+
+15:19.160 --> 15:22.280
+adentro de la clase binary tree o en una clase auxiliar.
+
+15:22.280 --> 15:24.280
+Acá están como los dos ejemplos.
+
+15:26.280 --> 15:29.760
+El preorden entonces lo que hace es, se imprime el dato,
+
+15:29.760 --> 15:35.920
+entonces decimos system.opinline.this.getData, que es este dato,
+
+15:36.120 --> 15:39.920
+se imprimiría el 1 y luego dice, ¿tiene hijo izquierdo?
+
+15:39.920 --> 15:45.320
+Sí, tiene hijo izquierdo. Entonces, this.getLeftChild nos va a dar este hijo izquierdo.
+
+15:45.320 --> 15:48.320
+Y ahí se imprime en preorden, ¿sí?
+
+15:48.320 --> 15:51.920
+Cuando se imprime en preorden, ahora se le va el...
+
+15:51.920 --> 15:54.920
+getLeftChild es este subárbol, ¿sí?
+
+15:54.920 --> 15:58.120
+Entonces, a ese subárbol le decimos print preorden.
+
+15:58.120 --> 16:00.920
+Entonces volvemos a llamar de recursivo.
+
+16:00.920 --> 16:03.920
+Se imprime este dato, que está acá, se imprime el 2
+
+16:03.920 --> 16:07.320
+y se pregunta, ¿tiene hijo izquierdo? Sí, entonces,
+
+16:07.320 --> 16:11.920
+getThis, decimos getLeftChild, obtenemos el 3 que es el hijo izquierdo
+
+16:11.920 --> 16:13.920
+y llamamos en preorden con ese.
+
+16:13.920 --> 16:17.920
+Llamamos en preorden otra vez, entonces imprimimos el 3, como dice acá,
+
+16:17.920 --> 16:20.520
+y ahora dice, ¿tiene hijo izquierdo? No, no entra leaf.
+
+16:20.520 --> 16:23.520
+¿Tiene hijo derecho? No, no entra leaf. Entonces vuelve,
+
+16:23.520 --> 16:28.320
+como ya se imprimió el hijo izquierdo del 2, ahora va a ir a leaf del hijo derecho.
+
+16:28.320 --> 16:31.520
+Fíjense acá, lo que yo les decía hoy que
+
+16:31.520 --> 16:35.120
+getLeftChild es un método de árbol que devuelve
+
+16:35.120 --> 16:39.920
+el hijo izquierdo o el hijo derecho, sin importar si está null o no.
+
+16:39.920 --> 16:43.720
+Entonces, en este caso, cuando nosotros al 3 le decimos
+
+16:43.720 --> 16:46.520
+getLeftChild nos va a dar un null.
+
+16:46.520 --> 16:49.520
+Entonces, si a eso le imprimimos, le invocamos el preorden,
+
+16:49.520 --> 16:52.520
+va a dar un null pointer exception, porque es a un null,
+
+16:52.520 --> 16:56.520
+que es lo que nos está devolviendo el hijo de acá, le invocamos un método, da una excepción.
+
+16:56.520 --> 16:59.520
+Por eso es que antes de invocar ese método, hay que decir,
+
+16:59.520 --> 17:02.120
+si tiene hijo izquierdo, bueno, dame el hijo izquierdo.
+
+17:02.120 --> 17:04.520
+Si tiene hijo derecho, dame el hijo derecho.
+
+17:06.520 --> 17:09.920
+Bueno, entonces, en este caso, el preorden, posorden y nórdolo
+
+17:09.920 --> 17:13.520
+podrían ir implementando todos adentro del árbol binario.
+
+17:13.520 --> 17:18.520
+También podría ser que nosotros lo querramos tener en otra clase auxiliar
+
+17:18.520 --> 17:21.520
+con recorridos, por ejemplo, entonces, en ese caso,
+
+17:21.520 --> 17:27.120
+el preorden debería recibir un árbol binario.
+
+17:27.120 --> 17:31.120
+Es similar, la lógica es la misma, pero como recibimos un árbol binario,
+
+17:31.120 --> 17:34.120
+en vez de hacer this, getData o this,
+
+17:36.120 --> 17:41.120
+sí, getData, tenemos que decir system.a o .println, a b,
+
+17:41.120 --> 17:45.120
+que es el árbol que recibimos como parámetro, getData, ¿sí?
+
+17:45.120 --> 17:49.120
+Y después, si a b, en vez de this, tiene hijo izquierdo, si a b tiene hijo
+
+17:49.120 --> 17:52.120
+derecho, izquierdo, entonces llamamos al preorden,
+
+17:52.120 --> 17:55.120
+pasándole el a b, getHijoIzquierda.
+
+17:55.120 --> 17:58.120
+Cambia un poquitito, que en vez del objeto receptor,
+
+17:58.120 --> 18:01.120
+invocarse el preorden, lo recibimos como parámetro.
+
+18:01.120 --> 18:05.120
+Entonces, cambia un poquito la estructura del método, pero la lógica es la misma.
+
+18:05.120 --> 18:09.120
+Se imprime el date y después, si tiene hijo izquierdo, se imprime el hijo izquierdo
+
+18:09.120 --> 18:12.120
+y si tiene hijo derecho, se imprime el preorden, el hijo derecho.
+
+18:13.120 --> 18:17.120
+Bueno, para esto implementarlo en posorden y nórdolo, van a tener que cambiar
+
+18:17.120 --> 18:20.120
+dónde se imprime. Se imprime en el medio si es sin orden
+
+18:20.120 --> 18:22.120
+y se imprime acá abajo si es posorden.
+
+18:22.120 --> 18:25.120
+Y eso los pueden hacer después ustedes.
+
+18:25.120 --> 18:32.120
+Bueno, este es un ejercicio que tiene un pequeño cambio,
+
+18:32.120 --> 18:36.120
+que es el preorden, que está también en una clase auxiliar,
+
+18:36.120 --> 18:40.120
+pero además de mandarle el árbol, en este caso se le está mandando
+
+18:40.120 --> 18:44.120
+una lista, porque se pide, por ejemplo, devolver una lista
+
+18:44.120 --> 18:48.120
+con los elementos de un recorrido en preorden de un árbol.
+
+18:48.120 --> 18:53.120
+Entonces, cuando nosotros tenemos métodos recursivos que tienen que devolver
+
+18:53.120 --> 18:58.120
+otras estructuras, se suele tener un método público
+
+18:58.120 --> 19:01.120
+que devuelva lo que tiene que devolver el método.
+
+19:01.120 --> 19:05.120
+En este caso hay que devolver una lista, entonces tengo un preorden que es público
+
+19:05.120 --> 19:09.120
+que va a devolver una lista y recibo como parámetro un árbol.
+
+19:09.120 --> 19:13.120
+Preorden, recibo el árbol binario y devuelvo una lista de elementos T.
+
+19:14.120 --> 19:17.120
+Esta lista lo voy a tener que ir yo llenando a medida que voy
+
+19:17.120 --> 19:20.120
+atravesando el árbol con el recorrido en preorden.
+
+19:20.120 --> 19:26.120
+Entonces, decimos result, es una lista, es un list, new linked list,
+
+19:26.120 --> 19:32.120
+y después llamamos a este método recursivo enviándole el árbol
+
+19:32.120 --> 19:34.120
+y la lista vacía.
+
+19:34.120 --> 19:37.120
+Cuando retorna del método recursivo porque recorrió todo el árbol
+
+19:37.120 --> 19:41.120
+y llenó la lista, hacemos un return de result que es la lista.
+
+19:41.120 --> 19:45.120
+Acuérdense que acá los parámetros se pasan por valor,
+
+19:45.120 --> 19:49.120
+entonces acá cuando estamos pasando una lista por parámetro
+
+19:49.120 --> 19:52.120
+estamos pasando una copia de la lista.
+
+19:52.120 --> 19:57.120
+Entonces en cada llamado recursivo se va pasando una copia de la lista,
+
+19:57.120 --> 20:00.120
+o sea, todas las copias se apuntan a la misma lista, entonces cada vez
+
+20:00.120 --> 20:03.120
+que se agrega un dato a la lista se va a actualizar la misma lista.
+
+20:03.120 --> 20:07.120
+Cuando vuelve del método recursivo lo que vamos a devolver acá
+
+20:07.120 --> 20:09.120
+es la lista llena.
+
+20:10.120 --> 20:13.120
+Entonces, tenemos el método preorden público,
+
+20:13.120 --> 20:15.120
+recibe el orden, devuelve la lista.
+
+20:15.120 --> 20:19.120
+Y después un método preorden que se suele poner como private
+
+20:19.120 --> 20:22.120
+porque no queremos que se acceda desde afuera,
+
+20:22.120 --> 20:24.120
+entonces se lo pone como privado.
+
+20:24.120 --> 20:27.120
+Y ahí recibe el árbol y la lista vacía la primera vez.
+
+20:27.120 --> 20:31.120
+Entonces hacen la lista, lo primero que hace como es en preorden,
+
+20:31.120 --> 20:33.120
+add ab getData.
+
+20:33.120 --> 20:35.120
+En vez de imprimirlo lo agrega en la lista.
+
+20:35.120 --> 20:38.120
+Y después lo mismo, si tiene eje izquierdo,
+
+20:38.120 --> 20:40.120
+le mandamos al preorden, pasándole el eje izquierdo
+
+20:40.120 --> 20:42.120
+y la copia de la referencia a la lista.
+
+20:42.120 --> 20:45.120
+Si tiene eje derecho, le mandamos el árbol y la copia
+
+20:45.120 --> 20:47.120
+a la referencia a la lista.
+
+20:49.120 --> 20:53.120
+Bueno, se entiende hasta acá el recorrido en preorden.
+
+20:53.120 --> 20:56.120
+Lo vimos en el árbol, lo vimos en una clase auxiliar
+
+20:56.120 --> 20:59.120
+y este es otro tercer caso que es un recorrido en preorden
+
+20:59.120 --> 21:01.120
+con una lista.
+
+21:05.120 --> 21:07.120
+El otro recorrido que tenemos es el recorrido por niveles.
+
+21:07.120 --> 21:10.120
+¿Ustedes el recorrido por niveles en Pascal lo hicieron
+
+21:10.120 --> 21:12.120
+cuando implementaron las listas?
+
+21:15.120 --> 21:18.120
+Bueno, la idea de este recorrido, entonces,
+
+21:18.120 --> 21:21.120
+es usar una estructura.
+
+21:21.120 --> 21:24.120
+A ver, acá voy a poner la cámara.
+
+21:28.120 --> 21:31.120
+A ver si se puede ver bien.
+
+21:31.120 --> 21:33.120
+Otra vez lo vimos bien.
+
+21:33.120 --> 21:35.120
+La pantalla.
+
+21:36.120 --> 21:39.120
+Vamos a ir haciendo ahí la demo.
+
+21:40.120 --> 21:43.120
+Creo que la voy a poner arriba de esta caja.
+
+21:48.120 --> 21:50.120
+Puse la pompa arriba de la caja.
+
+21:50.120 --> 21:52.120
+Creo que ahí se ve bien.
+
+21:53.120 --> 21:55.120
+A ver, ustedes díganme.
+
+21:57.120 --> 21:59.120
+A ver si ahí la ven bien.
+
+21:59.120 --> 22:02.120
+Hay muchos reflejos, por ahí apago la luz, creo.
+
+22:05.120 --> 22:07.120
+Bueno, ahí se ve mejor.
+
+22:11.120 --> 22:12.120
+Bien.
+
+22:12.120 --> 22:15.120
+Bueno, este recorrido, entonces, tenemos un árbol ahí que es
+
+22:15.120 --> 22:20.120
+uno, dos, tres.
+
+22:23.120 --> 22:25.120
+Ah, no, es uno, dos.
+
+22:25.120 --> 22:26.120
+Ese que está ahí es diferente.
+
+22:26.120 --> 22:29.120
+Uno, dos, tres, cuatro, cinco.
+
+22:29.120 --> 22:33.120
+Uno, dos, tres, cuatro, cinco.
+
+22:33.120 --> 22:37.120
+Cinco, seis y siete.
+
+22:37.120 --> 22:39.120
+Así está hecho ese.
+
+22:39.120 --> 22:40.120
+Bueno.
+
+22:40.120 --> 22:48.120
+Entonces, la idea del recorrido por niveles es tener una
+
+22:48.120 --> 22:52.120
+estructura Q o una cola que ustedes ya la implementaron.
+
+22:52.120 --> 22:56.120
+Entonces, tenemos una Q, que se acuerdan que las colas se
+
+22:56.120 --> 23:00.120
+encolan y cuando se hace el de Q se desencola el primero que
+
+23:00.120 --> 23:01.120
+se encola.
+
+23:01.120 --> 23:04.120
+Entonces, este algoritmo lo que dice, bueno, primero,
+
+23:04.120 --> 23:05.120
+encolar el árbol entero.
+
+23:05.120 --> 23:06.120
+Entonces, ¿qué vamos a tener acá?
+
+23:06.120 --> 23:12.120
+Una referencia como el arbolito uno con sus hijos y demás.
+
+23:12.120 --> 23:18.120
+Y después lo que dice acá el algoritmo es, fíjense,
+
+23:18.120 --> 23:22.120
+creamos una cola que es una Q de binary tree.
+
+23:22.120 --> 23:23.120
+Fíjense qué adaptada.
+
+23:23.120 --> 23:25.120
+Nosotros cuando implementamos la Q, ¿se acuerdan?
+
+23:25.120 --> 23:27.120
+Habíamos dicho Q es de tipo T.
+
+23:27.120 --> 23:30.120
+O sea que en una cola podemos guardar elementos de cualquier
+
+23:30.120 --> 23:31.120
+tipo.
+
+23:31.120 --> 23:33.120
+En este caso, los elementos que vamos a guardar,
+
+23:33.120 --> 23:35.120
+vamos a guardar binary tree.
+
+23:35.120 --> 23:38.120
+Pero los binary tree van a ser a su vez de cualquier tipo.
+
+23:38.120 --> 23:41.120
+Por eso es que tenemos una Q de qué tipo?
+
+23:41.120 --> 23:42.120
+Binary tree de T.
+
+23:42.120 --> 23:44.120
+New Q binary tree de T.
+
+23:44.120 --> 23:47.120
+Y después dice cola, encolamos this.
+
+23:47.120 --> 23:48.120
+Y luego un null.
+
+23:48.120 --> 23:50.120
+El null es una marca.
+
+23:50.120 --> 23:51.120
+Null.
+
+23:51.120 --> 23:57.120
+Es una marca para determinar que encolamos el primer nivel del
+
+23:57.120 --> 23:58.120
+árbol.
+
+23:58.120 --> 24:00.120
+Encolamos el primer nivel.
+
+24:00.120 --> 24:04.120
+Entonces ahora el algoritmo dice, mientras la cola no esté vacía,
+
+24:04.120 --> 24:05.120
+¿qué hacemos?
+
+24:05.120 --> 24:06.120
+Desencolamos.
+
+24:06.120 --> 24:09.120
+Cuando desencolamos, desencolamos este primero que está acá.
+
+24:09.120 --> 24:11.120
+Desencolamos ahí.
+
+24:11.120 --> 24:14.120
+Y el algoritmo lo imprime.
+
+24:14.120 --> 24:17.120
+Dice, system.out av get data.
+
+24:17.120 --> 24:20.120
+Entonces vamos a imprimir acá el 1.
+
+24:20.120 --> 24:24.120
+Y luego pregunta, si av tiene hijo izquierdo, entonces en la cola
+
+24:24.120 --> 24:27.120
+encolamos el hijo izquierdo.
+
+24:27.120 --> 24:29.120
+Entonces decimos, ¿tiene hijo izquierdo este?
+
+24:29.120 --> 24:30.120
+Sí.
+
+24:30.120 --> 24:31.120
+Entonces, ¿qué hacemos?
+
+24:31.120 --> 24:32.120
+Encolamos acá.
+
+24:32.120 --> 24:35.120
+Encolaremos el 2 con toda su estructura.
+
+24:35.120 --> 24:38.120
+Y después pregunta, ¿tiene hijo derecho?
+
+24:38.120 --> 24:39.120
+Sí.
+
+24:39.120 --> 24:40.120
+Entonces, ¿qué hacemos?
+
+24:40.120 --> 24:44.120
+Encolamos el hijo derecho que es el 5.
+
+24:44.120 --> 24:47.120
+Sí.
+
+24:47.120 --> 24:49.120
+Entonces, desencolamos.
+
+24:49.120 --> 24:51.120
+Imprimimos el dato.
+
+24:51.120 --> 24:53.120
+Preguntamos si tiene hijo izquierdo, lo encolamos.
+
+24:53.120 --> 24:55.120
+Si tiene hijo derecho, lo encolamos.
+
+24:55.120 --> 24:58.120
+Ahora otra vez, cola de queue.
+
+24:58.120 --> 24:59.120
+Ahora, ¿qué desencolamos?
+
+24:59.120 --> 25:02.120
+Desencolamos el null.
+
+25:02.120 --> 25:04.120
+Entonces, ¿si av es distinto de null?
+
+25:04.120 --> 25:05.120
+No, es null.
+
+25:05.120 --> 25:07.120
+Entonces, venimos por acá al else.
+
+25:07.120 --> 25:10.120
+Y dice, si la cola no está vacía.
+
+25:10.120 --> 25:11.120
+No, no está vacía.
+
+25:11.120 --> 25:14.120
+Tenemos todavía para procesar dos niveles según lo que nos dice
+
+25:14.120 --> 25:15.120
+nuestra cola.
+
+25:15.120 --> 25:19.120
+Entonces, en este caso hacemos un system print line como para
+
+25:19.120 --> 25:21.120
+imprimir acá abajo.
+
+25:21.120 --> 25:24.120
+Y decimos cola en queue null.
+
+25:24.120 --> 25:28.120
+Como nosotros primero procesamos este nivel y teníamos el null.
+
+25:28.120 --> 25:30.120
+Ahora, ya también encolamos este nivel.
+
+25:30.120 --> 25:35.120
+Entonces, ahora ponemos acá otra marca de null para indicar que
+
+25:35.120 --> 25:39.120
+procesamos el segundo nivel del árbol.
+
+25:39.120 --> 25:45.120
+Ahora, entonces volvemos acá y desencolamos.
+
+25:45.120 --> 25:46.120
+¿Qué desencolamos ahora?
+
+25:46.120 --> 25:50.120
+Desencolamos el subárbol cuya raíz es 2.
+
+25:50.120 --> 25:52.120
+Imprimimos el dato.
+
+25:52.120 --> 25:54.120
+Imprimimos el dato.
+
+25:54.120 --> 25:56.120
+Y preguntamos, ¿tiene hijo izquierdo?
+
+25:56.120 --> 25:57.120
+Sí.
+
+25:57.120 --> 25:59.120
+Entonces, lo encolamos acá.
+
+25:59.120 --> 26:01.120
+Bueno, lo voy a poner ahí para que quede más.
+
+26:01.120 --> 26:02.120
+¿Tiene hijo derecho?
+
+26:02.120 --> 26:03.120
+Sí.
+
+26:03.120 --> 26:05.120
+Entonces, lo encolamos.
+
+26:09.120 --> 26:10.120
+Bien.
+
+26:16.120 --> 26:17.120
+Ahora que desencolamos.
+
+26:17.120 --> 26:20.120
+El próximo que viene que es el 5.
+
+26:20.120 --> 26:22.120
+Desencolamos el 5.
+
+26:22.120 --> 26:23.120
+¿Y qué hacemos?
+
+26:23.120 --> 26:25.120
+Lo imprimimos.
+
+26:25.120 --> 26:26.120
+Y lo mismo.
+
+26:26.120 --> 26:27.120
+Preguntamos, ¿tiene hijo izquierdo?
+
+26:27.120 --> 26:28.120
+¿Tiene hijo derecho?
+
+26:28.120 --> 26:29.120
+Sí.
+
+26:29.120 --> 26:32.120
+Entonces, vamos a encolar acá el 6 y el 7.
+
+26:35.120 --> 26:37.120
+Bueno.
+
+26:37.120 --> 26:38.120
+Ahora seguimos acá.
+
+26:38.120 --> 26:41.120
+Cuando desencolamos que tenemos un null otra vez.
+
+26:41.120 --> 26:42.120
+Desencolamos el null.
+
+26:42.120 --> 26:43.120
+Entonces, ¿qué nos indica?
+
+26:43.120 --> 26:45.120
+Que terminamos de procesar este nivel.
+
+26:45.120 --> 26:46.120
+Desencolamos ese.
+
+26:46.120 --> 26:49.120
+Como es un null, venimos por el else.
+
+26:49.120 --> 26:53.120
+Lo único que va a hacer acá es un salto acá de como de carro
+
+26:53.120 --> 26:55.120
+para imprimir en otro renglón.
+
+26:55.120 --> 26:56.120
+Y acá sería lo mismo.
+
+26:56.120 --> 27:01.120
+Vamos a desencolar el 3, el 4, el 6, el 7.
+
+27:01.120 --> 27:04.120
+Como no tienen hijos, vamos a imprimir solo los datos.
+
+27:04.120 --> 27:05.120
+Vamos a decir el 3.
+
+27:05.120 --> 27:06.120
+¿Tiene hijo izquierdo o no?
+
+27:06.120 --> 27:07.120
+¿Tiene hijo derecho?
+
+27:07.120 --> 27:08.120
+Se va.
+
+27:08.120 --> 27:09.120
+El 4.
+
+27:09.120 --> 27:10.120
+¿Tiene hijo izquierdo o derecho?
+
+27:10.120 --> 27:11.120
+No.
+
+27:11.120 --> 27:12.120
+Se va.
+
+27:12.120 --> 27:13.120
+Desencolamos.
+
+27:13.120 --> 27:14.120
+El 6.
+
+27:14.120 --> 27:15.120
+¿Tiene hijo izquierdo o derecho?
+
+27:15.120 --> 27:16.120
+No.
+
+27:16.120 --> 27:17.120
+Se va.
+
+27:17.120 --> 27:18.120
+Ahora viene el 7.
+
+27:18.120 --> 27:19.120
+Acá tenemos el null.
+
+27:19.120 --> 27:21.120
+No lo puse el null.
+
+27:21.120 --> 27:22.120
+Ponemos el 7.
+
+27:22.120 --> 27:23.120
+¿Sí?
+
+27:23.120 --> 27:24.120
+No tiene nada.
+
+27:24.120 --> 27:26.120
+Y, finalmente, viene el null.
+
+27:26.120 --> 27:27.120
+¿Sí?
+
+27:27.120 --> 27:33.120
+Entonces, cuando desencolamos el null, venimos por acá y dice, cola.
+
+27:33.120 --> 27:34.120
+No.
+
+27:34.120 --> 27:38.120
+Si la cola no está vacía, está vacía porque al desencolar el último null,
+
+27:38.120 --> 27:40.120
+nos va a quedar vacía la cola.
+
+27:40.120 --> 27:42.120
+Así que no entra y finaliza.
+
+27:42.120 --> 27:43.120
+¿Sí?
+
+27:43.120 --> 27:46.120
+¿Se entiende cómo es el proceso?
+
+27:47.120 --> 27:49.120
+¿Se vio bien?
+
+27:57.120 --> 27:58.120
+¿Sí?
+
+27:58.120 --> 27:59.120
+Bueno.
+
+27:59.120 --> 28:03.120
+Entonces, los recorridos de árboles son estos.
+
+28:03.120 --> 28:07.120
+Ustedes, en los parciales, puede ser que se les den diferentes enunciados
+
+28:07.120 --> 28:11.120
+y ustedes tengan que determinar cuál es el recorrido que más les conviene.
+
+28:11.120 --> 28:13.120
+No sé.
+
+28:13.120 --> 28:14.120
+No sé.
+
+28:14.120 --> 28:17.120
+Por ejemplo, puede ser, cuando veamos también árboles generales,
+
+28:17.120 --> 28:21.120
+pero el recorrido por niveles, que se quiere saber, por ejemplo,
+
+28:21.120 --> 28:27.120
+no sé, la edad del mayor empleado que está en una jerarquía de una empresa
+
+28:27.120 --> 28:28.120
+en el nivel 3.
+
+28:28.120 --> 28:33.120
+Entonces, por él les convendría usar el recorrido por niveles.
+
+28:33.120 --> 28:37.120
+O, por ejemplo, hoy vamos a ver también que queremos saber
+
+28:37.120 --> 28:40.120
+el valor de todas las hojas de un árbol binario.
+
+28:40.120 --> 28:44.120
+Entonces, ahí por ahí nos conviene un recorrido más en profundidad.
+
+28:44.120 --> 28:46.120
+O sea, depende de lo que tengamos que hacer,
+
+28:46.120 --> 28:48.120
+vamos a usar uno u otro recorrido.
+
+28:48.120 --> 28:52.120
+Pero sí tienen que tener un poco en mente más o menos cómo son,
+
+28:52.120 --> 28:55.120
+cómo es la implementación de los recorridos pre-order y no reposorder
+
+28:55.120 --> 28:57.120
+y el recorrido por niveles.
+
+28:57.120 --> 28:59.120
+No ponerse en el parcial a pensar cómo se hace,
+
+28:59.120 --> 29:01.120
+sino ya saber que se hace con una estructura de cola,
+
+29:01.120 --> 29:03.120
+que uno va encolando, desencolando.
+
+29:03.120 --> 29:06.120
+Y en este caso usamos una marca de null.
+
+29:06.120 --> 29:07.120
+A ver, ¿qué les parece?
+
+29:07.120 --> 29:08.120
+¿Qué les parece?
+
+29:08.120 --> 29:12.120
+Si nosotros no poníamos esta marca de null,
+
+29:12.120 --> 29:16.120
+si nosotros no poníamos esta marca de null,
+
+29:16.120 --> 29:18.120
+¿el algoritmo funcionaba?
+
+29:18.120 --> 29:20.120
+Igual, ¿qué les parece?
+
+29:32.120 --> 29:34.120
+Matías dice que sí, Joaquín que sí, sí.
+
+29:34.120 --> 29:37.120
+Sí, porque, o sea, yo imprimo el 1,
+
+29:37.120 --> 29:39.120
+imprimí el 1, no pongo el null,
+
+29:39.120 --> 29:42.120
+pero después voy desencolando el 2 que el 2,
+
+29:42.120 --> 29:45.120
+después desencoló el 5 y cuando voy desencolando voy encolando.
+
+29:45.120 --> 29:48.120
+O sea, no voy a saber que cambié de nivel,
+
+29:48.120 --> 29:51.120
+pero es verdad, el recorrido me lo va a hacer por niveles.
+
+29:51.120 --> 29:53.120
+Me va a quedar todo uno al lado de otro si yo los imprimo
+
+29:53.120 --> 29:55.120
+porque no sé cuándo cambio de nivel.
+
+29:55.120 --> 29:56.120
+Exactamente.
+
+29:56.120 --> 30:01.120
+Bueno, ¿se acuerdan lo que es un árbol lleno?
+
+30:05.120 --> 30:06.120
+A ver, ¿quién?
+
+30:06.120 --> 30:08.120
+Si quieren, agarren los micrófonos.
+
+30:11.120 --> 30:13.120
+No sé dónde me quedo.
+
+30:16.120 --> 30:18.120
+El gorragón, bueno.
+
+30:25.120 --> 30:31.120
+A ver, el que tiene 2 al H más 1 menos 1 nodos,
+
+30:31.120 --> 30:33.120
+cuando todos los nodos de grado 2,
+
+30:33.120 --> 30:36.120
+son de grado 2, están en la misma altura.
+
+30:36.120 --> 30:39.120
+Son de grado 2 y están a la misma altura.
+
+30:39.120 --> 30:41.120
+A ver, ahí.
+
+30:42.120 --> 30:44.120
+Bueno, esto lo borró.
+
+30:44.120 --> 30:48.120
+Después me lavo la ufa, no sé dónde me quedó el borrador.
+
+30:50.120 --> 30:52.120
+A ver, vamos a seguir viendo esas definiciones.
+
+30:52.120 --> 30:54.120
+¿Qué dicen?
+
+30:55.120 --> 31:00.120
+Dice, aquel que tiene 2 al H más 1 menos 1 nodos,
+
+31:02.120 --> 31:06.120
+eso, cuando todos los nodos son de grado 2
+
+31:06.120 --> 31:09.120
+y están a la misma altura.
+
+31:09.120 --> 31:12.120
+Cuando estos son de grado 2,
+
+31:14.120 --> 31:16.120
+los nodos internos,
+
+31:16.120 --> 31:19.120
+cuando todos los nodos internos son de grado 2,
+
+31:19.120 --> 31:21.120
+es decir, este es de grado 2, de grado 2, 2,
+
+31:21.120 --> 31:24.120
+y las hojas están al mismo nivel.
+
+31:25.120 --> 31:27.120
+Y las hojas están al mismo nivel.
+
+31:27.120 --> 31:28.120
+Eso sería árbol lleno.
+
+31:28.120 --> 31:32.120
+Bien, si yo, por ejemplo, le borro este,
+
+31:32.120 --> 31:34.120
+este árbol,
+
+31:34.120 --> 31:36.120
+¿no es lleno? ¿Es completo?
+
+31:46.120 --> 31:48.120
+No, completo no, porque ¿completo qué es?
+
+31:48.120 --> 31:51.120
+Completo es lleno, como deseamos recién, ¿no?
+
+31:51.120 --> 31:55.120
+Lleno hasta el nivel H menos 1
+
+31:55.120 --> 31:58.120
+y todas las hojas en el mismo nivel.
+
+31:58.120 --> 32:00.120
+Pero completo sería,
+
+32:00.120 --> 32:03.120
+y todas las hojas se van completando de izquierda a derecha.
+
+32:03.120 --> 32:06.120
+Entonces, este es un árbol así, así,
+
+32:06.120 --> 32:07.120
+esto es un árbol lleno,
+
+32:07.120 --> 32:09.120
+y esto es un árbol completo,
+
+32:09.120 --> 32:11.120
+porque es lleno hasta H menos 1
+
+32:11.120 --> 32:15.120
+y después las hojas se van completando de izquierda a derecha.
+
+32:15.120 --> 32:17.120
+Esto es un árbol completo.
+
+32:17.120 --> 32:20.120
+Y esto es un árbol lleno.
+
+32:20.120 --> 32:21.120
+Uno, dos,
+
+32:21.120 --> 32:23.120
+vamos a sacar tres,
+
+32:23.120 --> 32:25.120
+cuatro,
+
+32:25.120 --> 32:26.120
+cinco,
+
+32:26.120 --> 32:28.120
+seis y siete.
+
+32:28.120 --> 32:31.120
+Este sí es un árbol lleno,
+
+32:31.120 --> 32:35.120
+porque tiene un hasta H menos 1,
+
+32:35.120 --> 32:37.120
+está lleno y después su,
+
+32:37.120 --> 32:40.120
+bueno, este y todas sus hojas están al mismo nivel.
+
+32:40.120 --> 32:42.120
+Esto es completo.
+
+32:42.120 --> 32:46.120
+Bueno, ¿qué les parece si tendremos que hacer un algoritmo
+
+32:46.120 --> 32:50.120
+para saber si un árbol está lleno?
+
+32:50.120 --> 32:52.120
+Está lleno, está lleno.
+
+32:52.120 --> 32:56.120
+¿Cuál de los algoritmos que vimos hasta ahora,
+
+32:56.120 --> 32:58.120
+el in-order, post-order
+
+32:58.120 --> 33:00.120
+o por niveles usarían ustedes?
+
+33:00.120 --> 33:03.120
+¿Qué les parece? ¿Cuál se ajusta más para saber
+
+33:03.120 --> 33:05.120
+si un árbol binario está lleno?
+
+33:07.120 --> 33:09.120
+Por niveles dice Matías, por niveles Juan.
+
+33:09.120 --> 33:10.120
+Bien.
+
+33:11.120 --> 33:15.120
+Bueno, ¿y qué harían en cada nivel?
+
+33:15.120 --> 33:19.120
+¿Qué contarían? ¿Cómo les parece que lo podrían encarar?
+
+33:20.120 --> 33:22.120
+El doble del nivel anterior.
+
+33:22.120 --> 33:23.120
+Bien.
+
+33:23.120 --> 33:26.120
+La cantidad de nodos que tengo es igual a la cantidad
+
+33:26.120 --> 33:27.120
+que corresponde.
+
+33:27.120 --> 33:28.120
+Bien.
+
+33:28.120 --> 33:29.120
+¿Qué tenemos acá?
+
+33:29.120 --> 33:31.120
+Hay una propiedad de los árboles llenos.
+
+33:31.120 --> 33:33.120
+Está bien, el doble del nivel anterior.
+
+33:33.120 --> 33:36.120
+O sea que podríamos decir que en el nivel 0,
+
+33:36.120 --> 33:38.120
+dos a la cero es igual a un nodo.
+
+33:38.120 --> 33:42.120
+En el nivel 1, dos a la uno es igual a un nodo.
+
+33:42.120 --> 33:46.120
+En el nivel 2, dos a la cero es igual a un nodo.
+
+33:47.120 --> 33:51.120
+En el nivel 1, dos a la uno es igual a dos nodos.
+
+33:51.120 --> 33:55.120
+Y así, acá el nivel 2 a la 2 es igual a cuatro nodos.
+
+33:55.120 --> 33:57.120
+Tenemos esa propiedad.
+
+33:57.120 --> 34:02.120
+Entonces, ya el algoritmo que vimos acá por niveles más.
+
+34:02.120 --> 34:03.120
+Esa propiedad.
+
+34:03.120 --> 34:05.120
+¿Cómo podríamos modificar esto?
+
+34:05.120 --> 34:08.120
+¿Qué le tendríamos que agregar a este algoritmo
+
+34:08.120 --> 34:12.120
+para poder determinar cuando se cambia el nivel
+
+34:12.120 --> 34:14.120
+si todavía sigue estando el árbol lleno?
+
+34:17.120 --> 34:19.120
+¿Qué tendríamos que llevar?
+
+34:19.120 --> 34:22.120
+Un contador de nodos y un contador de nivel.
+
+34:22.120 --> 34:23.120
+Exactamente.
+
+34:23.120 --> 34:26.120
+Tendríamos que llevar un contador de nivel.
+
+34:26.120 --> 34:28.120
+Entonces, acá en el nivel 0.
+
+34:28.120 --> 34:29.120
+O sea, la cero da uno.
+
+34:29.120 --> 34:32.120
+Cuando terminamos de procesar este nivel.
+
+34:32.120 --> 34:34.120
+Porque es cuando termino.
+
+34:34.120 --> 34:36.120
+O sea, ¿en qué parte del algoritmo iríamos?
+
+34:36.120 --> 34:39.120
+Cuando nosotros decimos, cuando sacamos un null.
+
+34:39.120 --> 34:42.120
+Porque proceso el 2, proceso el 3.
+
+34:42.120 --> 34:44.120
+Cuando llego saco el null, ahí digo,
+
+34:44.120 --> 34:46.120
+estoy en el nivel 1, 2 a la 1.
+
+34:46.120 --> 34:48.120
+¿Cuántos nodos tengo?
+
+34:48.120 --> 34:50.120
+2 a la 1, 2.
+
+34:50.120 --> 34:53.120
+Y ahí, entonces, continuo o corto la ejecución.
+
+34:53.120 --> 34:55.120
+Y después, ¿qué tengo que hacer?
+
+34:55.120 --> 34:57.120
+Con la cantidad de nodos en cada nivel.
+
+34:57.120 --> 34:58.120
+Resetearla.
+
+34:58.120 --> 34:59.120
+Porque tengo que empezar a contar otra vez.
+
+34:59.120 --> 35:01.120
+1, 2, 3, 4.
+
+35:01.120 --> 35:02.120
+¿Sí?
+
+35:02.120 --> 35:03.120
+Entonces, en cada cambio de nivel,
+
+35:03.120 --> 35:05.120
+reseteo la cantidad de nodos.
+
+35:05.120 --> 35:07.120
+Y voy sumando uno al nivel.
+
+35:07.120 --> 35:08.120
+Bueno, ¿qué les parece acá?
+
+35:08.120 --> 35:12.120
+Este algoritmo, si yo le saco el null, ¿me sigue sirviendo?
+
+35:15.120 --> 35:16.120
+Claro.
+
+35:16.120 --> 35:18.120
+Acá no puedo sacar el null.
+
+35:18.120 --> 35:21.120
+Porque null, claro, no serviría más.
+
+35:21.120 --> 35:23.120
+En este caso sí es necesario el null.
+
+35:23.120 --> 35:26.120
+Porque yo, cuando cambio de nivel, necesito hacer algo.
+
+35:26.120 --> 35:28.120
+En este ejemplo acá de la impresión,
+
+35:28.120 --> 35:29.120
+era una pavada lo que hacíamos.
+
+35:29.120 --> 35:31.120
+Un enter prácticamente.
+
+35:31.120 --> 35:34.120
+Imprimíamos un blanco para que salte de línea.
+
+35:34.120 --> 35:35.120
+Pero no era necesario.
+
+35:35.120 --> 35:38.120
+Lo podíamos atravesar sin poner el null.
+
+35:38.120 --> 35:42.120
+Pero para hacer el de árbol lleno,
+
+35:42.120 --> 35:46.120
+el de árbol lleno, es necesario.
+
+35:46.120 --> 35:49.120
+Porque ahí nosotros es donde tenemos que hacer ese cálculo
+
+35:49.120 --> 35:53.120
+de la cantidad de nodos que llevamos, contados.
+
+35:53.120 --> 35:58.120
+Entonces, lo que está negro es prácticamente
+
+35:58.120 --> 35:59.120
+el algoritmo por niveles.
+
+35:59.120 --> 36:01.120
+Y lo que está en rojo es lo nuevo.
+
+36:01.120 --> 36:04.120
+Agregamos una cantidad de nodos, un nivel.
+
+36:04.120 --> 36:09.120
+Entonces, cuando retiramos la raíz,
+
+36:09.120 --> 36:11.120
+preguntamos si tienes que izquierdo,
+
+36:11.120 --> 36:14.120
+además de encolar, cantidad de nodos, cantidad de nodos más 1.
+
+36:14.120 --> 36:17.120
+Si tienes hijo derecho, cantidad de nodos, cantidad de nodos más 1.
+
+36:17.120 --> 36:20.120
+O sea, que contamos este y contamos este.
+
+36:20.120 --> 36:26.120
+Después, cuando sacamos el null del primer, del nivel 0,
+
+36:26.120 --> 36:29.120
+ahí sabemos que ya recorrimos todo este nivel.
+
+36:29.120 --> 36:35.120
+Entonces, preguntamos si cantidad de nodos es igual a 2 a la nivel.
+
+36:35.120 --> 36:38.120
+Entonces, en ese caso, encolamos un null para seguir adelante.
+
+36:38.120 --> 36:40.120
+Y reseteamos la cantidad de nodos a 0
+
+36:40.120 --> 36:44.120
+para empezar a contar otra vez en el nivel nuevo.
+
+36:45.120 --> 36:48.120
+Bueno, ahí se entendió este algoritmo.
+
+36:48.120 --> 36:52.120
+Esto, fíjense que es un recorrido por niveles clásicos
+
+36:52.120 --> 36:54.120
+con algunas alteraciones.
+
+36:54.120 --> 36:57.120
+Los parciales, a veces, son cuestiones así.
+
+36:57.120 --> 37:01.120
+Recorrí un árbol, pero para buscar, por ejemplo, todos los impares
+
+37:01.120 --> 37:05.120
+o para buscar o devolver los subárboles
+
+37:05.120 --> 37:07.120
+que cumplan con alguna condición.
+
+37:07.120 --> 37:09.120
+Después vamos a ir viendo ejemplos.
+
+37:09.120 --> 37:11.120
+Este es como de los más simples.
+
+37:12.120 --> 37:14.120
+Bueno, hasta acá se entiende bien.
+
+37:24.120 --> 37:26.120
+Bueno, no hay dudas, chicos.
+
+37:26.120 --> 37:27.120
+Avanzamos.
+
+37:27.120 --> 37:29.120
+No, Joaquín dice no.
+
+37:29.120 --> 37:31.120
+Funciona, pero no sé bien, o no.
+
+37:31.120 --> 37:33.120
+No veo dónde actualiza el nivel.
+
+37:33.120 --> 37:34.120
+Ah, ya está.
+
+37:34.120 --> 37:35.120
+Para ahí vuelvo.
+
+37:36.120 --> 37:38.120
+Acá, fíjate acá.
+
+37:38.120 --> 37:40.120
+Acá, nivel acá.
+
+37:40.120 --> 37:43.120
+Estamos con nivel 0, veníamos.
+
+37:43.120 --> 37:48.120
+Entonces hace más más nivel, le suma un 1 antes de hacer la potencia.
+
+37:48.120 --> 37:52.120
+Entonces acá hace 2 a la 1 sería.
+
+37:52.120 --> 37:54.120
+Porque el nivel arrancó en 0 y acá.
+
+37:54.120 --> 37:55.120
+En cada nivel.
+
+37:55.120 --> 37:59.120
+Antes de computar la potencia, le suma un 1 al nivel.
+
+38:01.120 --> 38:03.120
+Más más nivel hace primero el incremento
+
+38:03.120 --> 38:05.120
+y después exactamente.
+
+38:05.120 --> 38:09.120
+Si pones nivel más más, ahí tendríamos que haber iniciado el nivel allá con 1.
+
+38:11.120 --> 38:12.120
+Exacto.
+
+38:15.120 --> 38:17.120
+O sea, la raíz no la cuenta.
+
+38:17.120 --> 38:21.120
+No, arranca directamente a contar los hijos.
+
+38:21.120 --> 38:23.120
+Porque la raíz está.
+
+38:23.120 --> 38:27.120
+Entonces si tiene dos hijos, ahí avanza y sigue con los otros niveles y los otros.
+
+38:30.120 --> 38:31.120
+Bueno.
+
+38:32.120 --> 38:34.120
+Bueno, eso entonces en cuanto a niveles.
+
+38:34.120 --> 38:38.120
+En cuanto al árbol binario cualquiera.
+
+38:38.120 --> 38:44.120
+Acá lo que vamos a ver ahora son los árboles de expresión que ya los vieron el lunes con Katy.
+
+38:44.120 --> 38:51.120
+Son árboles binarios que mantienen una expresión aritmética.
+
+38:51.120 --> 38:56.120
+Los nodos internos recuerden que tienen los operadores y las hojas tienen los operandos.
+
+38:56.120 --> 38:58.120
+Esto ya lo vieron un poco con Katy.
+
+38:58.120 --> 39:03.120
+Pero vamos a profundizar un poquito más en los algoritmos en Java.
+
+39:06.120 --> 39:12.120
+Bueno, acá un poco lo que les dice es que dado un árbol de expresión uno puede recorrerlo
+
+39:12.120 --> 39:16.120
+con los recorridos que vimos en inorder, preorder y posorden.
+
+39:16.120 --> 39:24.120
+Y a partir de ahí obtenemos una expresión algebraica infija, prefija o posfija.
+
+39:24.120 --> 39:28.120
+Si lo recorremos en inorder tenemos una expresión infija.
+
+39:28.120 --> 39:32.120
+Esta suele estar sobreparentizada.
+
+39:32.120 --> 39:38.120
+Porque cuando nosotros lo recorremos tenemos que asegurarnos que las operaciones sean bien hechas.
+
+39:38.120 --> 39:40.120
+Entonces a veces hay paréntesis de más.
+
+39:40.120 --> 39:48.120
+Cada vez que nosotros avanzamos hacia abajo hacemos una apertura de un paréntesis
+
+39:48.120 --> 39:51.120
+y cuando volvemos hacemos el cierre del paréntesis.
+
+39:51.120 --> 39:57.120
+Después tenemos el preorden que nos quedan todos los operadores antes de los operandos.
+
+39:57.120 --> 40:01.120
+Acá por ejemplo vemos este subárbolito que es más a, b.
+
+40:01.120 --> 40:04.120
+En preorden nos queda más a, b así.
+
+40:04.120 --> 40:09.120
+En general uno está más familiarizado con hacer a más b, el inorder.
+
+40:09.120 --> 40:15.120
+Pero bueno, esta es otra expresión que se llama prefija en donde el operador,
+
+40:15.120 --> 40:18.120
+en este caso el más, está antes que a, b que son los operandos.
+
+40:18.120 --> 40:24.120
+Y el último es, si yo recorro este árbol en posorden vamos a tener una expresión posfija.
+
+40:24.120 --> 40:28.120
+Está en donde están los operadores detrás de los operandos.
+
+40:28.120 --> 40:35.120
+Fíjense acá a, b y el más que suma a esos dos operandos está detrás de los operandos.
+
+40:35.120 --> 40:43.120
+Bueno, tenían un pseudocódigo que ya lo vieron con Katy,
+
+40:43.120 --> 40:46.120
+que se toma a cada uno de los caracteres.
+
+40:46.120 --> 40:51.120
+En el caso este es del expresión posfija.
+
+40:51.120 --> 40:57.120
+Se toma un carácter, si es un operando crea un nodo y lo apilo.
+
+40:57.120 --> 41:05.120
+Y si es un operador, desapilo, lo pongo como hijo derecho a izquierdo y vuelvo a apilar.
+
+41:05.120 --> 41:10.120
+Entonces en este caso vamos a usar la otra expresión posfija.
+
+41:10.120 --> 41:19.120
+En este caso vamos a usar la otra estructura que ustedes hicieron que es la pila.
+
+41:19.120 --> 41:25.120
+Recién usamos una queue o cola y ahora vamos a usar una pila o stack.
+
+41:30.120 --> 41:37.120
+Entonces vamos a, como ya lo vieron con Katy, yo voy un poco más rápido y vamos directamente a Java.
+
+41:37.120 --> 41:43.120
+Entonces decíamos, para este algoritmo es un algoritmo iterativo y lo que nosotros vamos a ir haciendo
+
+41:43.120 --> 41:49.120
+es utilizar una stack para ir apilando los subárboles que vamos construyendo.
+
+41:49.120 --> 41:56.120
+La expresión es a, a más b.
+
+41:56.120 --> 42:01.120
+No, perdón, es posfija, a, b más.
+
+42:01.120 --> 42:10.120
+A, b más, c por d e, c por d e más y división.
+
+42:10.120 --> 42:12.120
+Esa es la expresión que nos viene.
+
+42:12.120 --> 42:20.120
+Fíjense entonces acá tenemos un método que dice convertir posfija,
+
+42:20.120 --> 42:25.120
+recibe acá la expresión posfija y lo que tenemos que devolver es un árbol binario.
+
+42:25.120 --> 42:32.120
+Como tenemos letras y operadores o podríamos tener números y operadores,
+
+42:32.120 --> 42:39.120
+lo más factible es ponerle un character que, o sea, uno tiene por ejemplo si tendría un número,
+
+42:39.120 --> 42:45.120
+sería el número 1 así, el número 2 o en este caso la letra y los operadores.
+
+42:45.120 --> 42:47.120
+Todo como si fueran un carácter.
+
+42:47.120 --> 42:51.120
+Entonces el árbol binario es de tipo character.
+
+42:52.120 --> 42:58.120
+Después recorremos toda la expresión y decimos,
+
+42:58.120 --> 43:01.120
+creamos un árbol binario con el primer elemento.
+
+43:01.120 --> 43:03.120
+Lo primero que tenemos arrancamos acá.
+
+43:03.120 --> 43:04.120
+Entonces, ¿qué vamos a hacer?
+
+43:04.120 --> 43:07.120
+Vamos a crear un árbol binario con ese a.
+
+43:07.120 --> 43:10.120
+Creamos ese árbol binario y preguntamos,
+
+43:10.120 --> 43:14.120
+¿el character, el primero que leemos está es un operador?
+
+43:14.120 --> 43:15.120
+No.
+
+43:15.120 --> 43:16.120
+Entonces, ¿qué hacemos?
+
+43:16.120 --> 43:18.120
+Un push en la lista.
+
+43:18.120 --> 43:23.120
+Entonces, este arbolito que creamos lo vamos a hacer acá como un push acá.
+
+43:23.120 --> 43:25.120
+Eso es lo que es el algoritmo.
+
+43:25.120 --> 43:28.120
+Y pasamos al segundo elemento.
+
+43:28.120 --> 43:31.120
+Creamos un árbol binario con este también.
+
+43:33.120 --> 43:35.120
+Creamos un árbol binario con este también.
+
+43:35.120 --> 43:38.120
+Y preguntamos, ¿es un operador?
+
+43:38.120 --> 43:44.120
+No. Entonces, hacemos un push de este.
+
+43:45.120 --> 43:46.120
+¿Sí?
+
+43:46.120 --> 43:51.120
+Bueno, después seguimos con la suma.
+
+43:51.120 --> 43:55.120
+Creamos entonces un árbolito con esa suma.
+
+43:55.120 --> 43:58.120
+Y preguntamos, ¿es un operador?
+
+43:58.120 --> 44:02.120
+Sí, entramos acá porque pregunta, ¿es igual a un más, menos, por o división?
+
+44:02.120 --> 44:03.120
+Sí, es igual.
+
+44:03.120 --> 44:04.120
+Entonces, ¿qué hacemos?
+
+44:04.120 --> 44:09.120
+A este arbolito que acabamos de crear le decimos, add right child.
+
+44:09.120 --> 44:13.120
+Le ponemos un hijo derecho con lo que hacemos un pop de acá.
+
+44:13.120 --> 44:16.120
+Fíjense que el último que apilamos es este.
+
+44:16.120 --> 44:19.120
+Y ese entonces queda como hijo derecho.
+
+44:19.120 --> 44:28.120
+Y después hacemos un pop de este y se lo ponemos como hijo izquierdo.
+
+44:28.120 --> 44:31.120
+Y después amp-p ponemos push resul.
+
+44:31.120 --> 44:34.120
+O sea que ahora vamos a apilar este.
+
+44:34.120 --> 44:36.120
+¿Sí?
+
+44:36.120 --> 44:40.120
+Apilamos ese y volvemos acá
+
+44:40.120 --> 44:44.120
+a continuar con el operador.
+
+44:44.120 --> 44:46.120
+Ahora nos viene un C.
+
+44:46.120 --> 44:48.120
+Nos viene un C, entonces lo que hacemos con el C.
+
+44:48.120 --> 44:51.120
+A ver, por aquí me quede bien.
+
+44:51.120 --> 44:52.120
+Hacemos un arbolito.
+
+44:52.120 --> 44:56.120
+Como no es un operador, C apila acá.
+
+44:56.120 --> 45:00.120
+Bueno, este tendría que ser acá.
+
+45:00.120 --> 45:02.120
+Porque ya borramos aquello.
+
+45:02.120 --> 45:04.120
+¿Sí? Apilamos ese.
+
+45:04.120 --> 45:06.120
+Ahora viene el por.
+
+45:06.120 --> 45:10.120
+Entonces creamos un arbol con la multiplicación.
+
+45:10.120 --> 45:12.120
+Como es un operador, ¿qué hace?
+
+45:12.120 --> 45:15.120
+Hacemos un pop de este y se lo ponemos acá.
+
+45:15.120 --> 45:17.120
+Como hijo izquierdo.
+
+45:17.120 --> 45:19.120
+Y hacemos un pop de este.
+
+45:19.120 --> 45:20.120
+Le voy a borrar las líneas.
+
+45:20.120 --> 45:23.120
+Y lo ponemos acá.
+
+45:23.120 --> 45:24.120
+¿Sí?
+
+45:24.120 --> 45:25.120
+Y antes de irnos, ¿qué hacemos?
+
+45:25.120 --> 45:29.120
+Hacemos un push del resul.
+
+45:29.120 --> 45:30.120
+¿Se entiende?
+
+45:30.120 --> 45:32.120
+Hacemos un push del resul.
+
+45:32.120 --> 45:35.120
+Continuamos ahora con el D.
+
+45:35.120 --> 45:40.120
+Como es un operador, vamos a poner el D y el E acá.
+
+45:40.120 --> 45:42.120
+Cuando viene el más, lo sacamos.
+
+45:42.120 --> 45:44.120
+Nos va a quedar así.
+
+45:44.120 --> 45:46.120
+D, E. Nos va a quedar el E.
+
+45:46.120 --> 45:47.120
+El D.
+
+45:47.120 --> 45:49.120
+Y apilamos acá.
+
+45:49.120 --> 45:53.120
+Y finalmente, cuando viene la división, ¿qué hacemos?
+
+45:53.120 --> 45:55.120
+Creamos un arbol con esta división.
+
+45:55.120 --> 45:58.120
+Como es un operador, hacemos un pop de este.
+
+45:58.120 --> 46:00.120
+Y lo enganchamos como hijo derecho.
+
+46:00.120 --> 46:02.120
+Y hacemos un pop de este.
+
+46:02.120 --> 46:04.120
+Y lo enganchamos como hijo izquierdo.
+
+46:04.120 --> 46:09.120
+Y finalmente, hacemos un push del árbol completo.
+
+46:09.120 --> 46:12.120
+Cuando salimos del for, esto cuando está un poco torcido,
+
+46:12.120 --> 46:14.120
+hacemos un return de qué?
+
+46:14.120 --> 46:16.120
+De lo que tenemos en la pila, un pop.
+
+46:16.120 --> 46:21.120
+O sea que ahí vamos a retornar todo el árbol creado.
+
+46:21.120 --> 46:22.120
+¿Sí?
+
+46:22.120 --> 46:24.120
+¿Se entiende el algoritmo?
+
+46:24.120 --> 46:27.120
+¿Con una cola también puede hacerse?
+
+46:27.120 --> 46:35.120
+Con una cola, lo que pasa, a ver, si ponemos una cola,
+
+46:35.120 --> 46:36.120
+una cola.
+
+46:36.120 --> 46:40.120
+Encolamos el A. Encolamos el B.
+
+46:40.120 --> 46:48.120
+Cuando viene el operador este, cuando viene el operador este,
+
+46:49.120 --> 46:52.120
+cuando viene el operador este, hacemos de Q.
+
+46:52.120 --> 46:55.120
+Lo que pasa es que habría que ponerlo, cuando haces de Q,
+
+46:55.120 --> 46:58.120
+creo que sí, con el hijo izquierdo y con el hijo derecho
+
+46:58.120 --> 46:59.120
+después.
+
+46:59.120 --> 47:00.120
+Y encolamos.
+
+47:04.120 --> 47:07.120
+Habría que ver, porque habría que ver después.
+
+47:07.120 --> 47:10.120
+Bueno, habría que hacerla, la pruebita, a ver si da.
+
+47:10.120 --> 47:14.120
+Porque cuando tenemos más de uno, a ver,
+
+47:14.120 --> 47:16.120
+cuando tenemos esos dos, a ver,
+
+47:17.120 --> 47:20.120
+cuando tenemos esos subárboles, tenemos este subárbol,
+
+47:20.120 --> 47:23.120
+este subárbol, cuando viene la división.
+
+47:25.120 --> 47:27.120
+Sí, habría que hacer la pruebita.
+
+47:27.120 --> 47:30.120
+Hay que tener cuidado cuando se desencola o desapila
+
+47:30.120 --> 47:31.120
+donde apilas.
+
+47:31.120 --> 47:37.120
+Lo que sabemos acá en la stack es que como vos apilas
+
+47:37.120 --> 47:40.120
+el izquierdo y después el derecho,
+
+47:40.120 --> 47:43.120
+cuando desapilas tenés que poner primero hijo derecho
+
+47:43.120 --> 47:44.120
+y después izquierdo.
+
+47:44.120 --> 47:46.120
+Si no les queda cualquier árbol,
+
+47:46.120 --> 47:48.120
+esto tienen que estar atentos.
+
+47:48.120 --> 47:51.120
+Eso a veces en los parciales se les suele dar
+
+47:52.120 --> 47:56.120
+una expresión pofija y que ustedes dibujen el árbol,
+
+47:56.120 --> 47:57.120
+por ejemplo.
+
+47:57.120 --> 47:59.120
+O que te digan, por ejemplo,
+
+47:59.120 --> 48:01.120
+¿cuál es el hijo derecho de la multiplicación?
+
+48:01.120 --> 48:03.120
+Ustedes tienen que decir C.
+
+48:03.120 --> 48:06.120
+Para eso tienen que hacer el árbol.
+
+48:07.120 --> 48:10.120
+Ese puede ser un ejercicio de parcial chiquitito.
+
+48:10.120 --> 48:12.120
+A veces se toman algunos teóricos chiquitos.
+
+48:12.120 --> 48:14.120
+Dada esta expresión pofija,
+
+48:14.120 --> 48:18.120
+diga cuál es el hijo derecho de la multiplicación.
+
+48:18.120 --> 48:22.120
+Suponemos que hay solo una multiplicación en la expresión
+
+48:22.120 --> 48:24.120
+y ustedes tienen que decir la C.
+
+48:24.120 --> 48:26.120
+Entonces, para eso tienen que hacer el algoritmo.
+
+48:26.120 --> 48:29.120
+Entonces, tienen que acordarse que ustedes van usando la pila.
+
+48:29.120 --> 48:31.120
+Cuando viene un operador, desapila,
+
+48:31.120 --> 48:33.120
+y primero lo que desapila va al hijo derecho
+
+48:33.120 --> 48:35.120
+y después va al izquierdo.
+
+48:38.120 --> 48:39.120
+Bueno, hasta acá.
+
+48:39.120 --> 48:40.120
+¿Está bien?
+
+48:42.120 --> 48:43.120
+Bueno.
+
+48:46.120 --> 48:47.120
+Bueno.
+
+48:50.120 --> 48:54.120
+El otro algoritmo que un poco les quería comentar
+
+48:54.120 --> 48:58.120
+es el de la transformación de una expresión pre-fija
+
+48:58.120 --> 49:00.120
+a un árbol binario.
+
+49:01.120 --> 49:03.120
+Este es un poquito más común.
+
+49:12.120 --> 49:13.120
+Sí.
+
+49:33.120 --> 49:34.120
+Ahora, chicos.
+
+49:34.120 --> 49:35.120
+Sí, yo me moví.
+
+49:35.120 --> 49:36.120
+Perdón.
+
+49:36.120 --> 49:38.120
+¿Desde cuándo se cortó?
+
+49:39.120 --> 49:40.120
+¿Mucho o no?
+
+49:42.120 --> 49:43.120
+Ah, bueno.
+
+49:43.120 --> 49:47.120
+Les decía, se escuchó hasta cuando empezó la diapo.
+
+49:47.120 --> 49:51.120
+Ah, bueno, les decía que esta es un poquitito más compleja.
+
+49:52.120 --> 49:54.120
+Un poquito más compleja porque es recursivo.
+
+49:54.120 --> 49:58.120
+Porque acá primero tenemos el operador y después los operando.
+
+49:58.120 --> 50:01.120
+Entonces, para poder armar este subárbol, por ejemplo,
+
+50:01.120 --> 50:03.120
+tenemos que ir y ir hasta la hoja.
+
+50:03.120 --> 50:06.120
+Entonces, cuando la recursión me devuelve el nodo con la hoja recién ahí,
+
+50:06.120 --> 50:08.120
+yo puedo insertarle con mi hijo izquierdo.
+
+50:08.120 --> 50:10.120
+Y cuando me devuelve el nodo con la vez recién,
+
+50:10.120 --> 50:12.120
+le puedo poner con mi hijo derecho.
+
+50:12.120 --> 50:14.120
+Y ahí yo puedo devolver este subárbol
+
+50:14.120 --> 50:20.120
+para que se ponga con mucho izquierdo de la multiplicación
+
+50:20.120 --> 50:21.120
+y así sucesivamente.
+
+50:21.120 --> 50:26.120
+Entonces, este algoritmo es un poco más complejo porque es recursivo.
+
+50:28.120 --> 50:31.120
+Entonces, el método se llama convertir pre-fijo.
+
+50:31.120 --> 50:33.120
+Recibo un string buffer.
+
+50:33.120 --> 50:36.120
+Y ahora vamos a ver por qué un string buffer y no un string.
+
+50:36.120 --> 50:40.120
+Por ahora pensé, es como un string, eso, pero mutable.
+
+50:41.120 --> 50:44.120
+Entonces, al igual que en la otra expresión...
+
+50:44.120 --> 50:46.120
+A ver, voy a borrar acá.
+
+50:56.120 --> 51:00.120
+Recibimos esa expresión que es dividido por
+
+51:01.120 --> 51:05.120
+más ABC, más ABC
+
+51:06.120 --> 51:09.120
+y más D, más D y E.
+
+51:10.120 --> 51:12.120
+Entonces, acá...
+
+51:13.120 --> 51:16.120
+No, acá no tenemos la pila, como es el algoritmo.
+
+51:18.120 --> 51:21.120
+Al pseudocódigo, por ahí lo pasé un poco rápido,
+
+51:21.120 --> 51:23.120
+que también ya lo vieron con Katy,
+
+51:23.120 --> 51:28.120
+pero dice, cree un nodo y si el carácter es un operador,
+
+51:28.120 --> 51:33.120
+entonces agrego como hijo izquierdo de un nodo.
+
+51:33.120 --> 51:34.120
+O sea, yo tengo un nodo.
+
+51:34.120 --> 51:37.120
+Si el carácter, si esto es un operador,
+
+51:37.120 --> 51:41.120
+entonces yo agrego como hijo izquierdo, ¿qué cosa?
+
+51:41.120 --> 51:44.120
+Llamo recursivamente a convertir pre-fijo,
+
+51:44.120 --> 51:46.120
+pero ya sacándole el valor que yo puse acá.
+
+51:47.120 --> 51:50.120
+Entonces, se llama recursivamente, pero si es un operador,
+
+51:50.120 --> 51:53.120
+otra vez se va a crear el nodo con el operador,
+
+51:53.120 --> 51:57.120
+pero va a poner ese izquierdo y así va a ir hasta llegar a la hoja.
+
+51:57.120 --> 52:01.120
+Cuando llega a la hoja, ahí, como no entra este hijo del operador,
+
+52:01.120 --> 52:04.120
+va a devolver el nodo, que es el dato de alguna de las hojas
+
+52:04.120 --> 52:06.120
+y ahí va a empezar a subir en la recursión.
+
+52:07.120 --> 52:10.120
+Entonces, tenemos esta expresión.
+
+52:10.120 --> 52:12.120
+Voy a empezar el árbol allá arriba.
+
+52:13.120 --> 52:18.120
+Y dice, agarramos el primero, que es la división.
+
+52:18.120 --> 52:22.120
+Entonces, creamos un nodo con esto y dice, ¿es un operador?
+
+52:23.120 --> 52:26.120
+Sí, entonces, voy a agregar como hijo izquierdo
+
+52:26.120 --> 52:31.120
+lo que me devuelva el llamar otra vez al convertir pre-fijo,
+
+52:31.120 --> 52:34.120
+que va a ser un árbol, pero yo llamo recursivamente.
+
+52:34.120 --> 52:38.120
+Entonces, yo voy a poner acá como hijo izquierdo lo que me devuelva,
+
+52:38.120 --> 52:41.120
+entonces va a quedar pendiente hasta que se haga,
+
+52:41.120 --> 52:43.120
+hasta que vuelva de la recursión.
+
+52:43.120 --> 52:44.120
+¿Qué es lo que llamo?
+
+52:44.120 --> 52:48.120
+Llamo al convertir pre-fijo borrándole a la expresión el uno.
+
+52:48.120 --> 52:53.120
+Entonces, voy a llamar ahora borrándole este.
+
+52:55.120 --> 52:56.120
+¿Qué es ahí?
+
+52:57.120 --> 52:59.120
+Vengo acá otra vez, llamo recursivamente,
+
+52:59.120 --> 53:02.120
+creo un nodo con ese por.
+
+53:03.120 --> 53:05.120
+Y otra vez va a preguntar, ¿es un operador?
+
+53:05.120 --> 53:10.120
+Sí, entonces, a este le voy a poner como hijo izquierdo
+
+53:10.120 --> 53:13.120
+lo que me devuelva, cuando vuelva de la recursión,
+
+53:13.120 --> 53:15.120
+pero sacándole este ahora.
+
+53:16.120 --> 53:19.120
+Volvemos a la recursión, vamos a tener acá un más.
+
+53:20.120 --> 53:22.120
+¿Otra vez lo mismo?
+
+53:22.120 --> 53:23.120
+¿Es un operador?
+
+53:23.120 --> 53:26.120
+Sí, entonces, le voy a agregar lo que me devuelva de la recursión
+
+53:26.120 --> 53:28.120
+sacándole este.
+
+53:28.120 --> 53:30.120
+Acá cambia un poquito.
+
+53:30.120 --> 53:33.120
+Llamamos recursivamente ahora con este string.
+
+53:34.120 --> 53:39.120
+Viene acá y creamos ahora un ex charat a,
+
+53:39.120 --> 53:41.120
+charat cero, o sea, me va a agarrar la a,
+
+53:41.120 --> 53:45.120
+iba a crear un árbol binario, pero ahora con la letra a.
+
+53:46.120 --> 53:49.120
+Cuando crea con la letra a, dice, ¿es un operador?
+
+53:49.120 --> 53:50.120
+¿Alguno de estos? No.
+
+53:50.120 --> 53:51.120
+Entonces, ¿qué hace?
+
+53:51.120 --> 53:53.120
+return result.
+
+53:53.120 --> 53:55.120
+O sea, lo voy a retornar a este.
+
+53:55.120 --> 53:58.120
+Entonces, el que ya le ha llamado recursiva de recién,
+
+53:58.120 --> 54:02.120
+que llamamos recursivamente con un string que empieza la a,
+
+54:02.120 --> 54:04.120
+ya volvió ese árbol.
+
+54:04.120 --> 54:08.120
+Entonces, esto se vaya a como enganchar bien.
+
+54:08.120 --> 54:11.120
+Ya tenemos esta partecita del árbol.
+
+54:11.120 --> 54:13.120
+Como ya hicimos el izquierdo, ahora pasamos acá.
+
+54:13.120 --> 54:17.120
+Agrega el hijo derecho con lo que queda de la expresión.
+
+54:17.120 --> 54:18.120
+Ahora sí.
+
+54:18.120 --> 54:23.120
+Entonces, ahora vamos a mandar a hijo derecho con ese string.
+
+54:23.120 --> 54:25.120
+Así que vamos a agarrar la b.
+
+54:25.120 --> 54:29.120
+Vamos a crear un árbol con ese charat tercero,
+
+54:29.120 --> 54:31.120
+de árbol result.
+
+54:31.120 --> 54:33.120
+Y preguntamos, ¿es un operador? No.
+
+54:33.120 --> 54:36.120
+Otra vez no entra el if y va a retornar ese result.
+
+54:36.120 --> 54:39.120
+Entonces, va a engancharse esto.
+
+54:39.120 --> 54:45.120
+Fíjense cómo este, el más, ya se le agregó el hijo izquierdo y el hijo derecho,
+
+54:45.120 --> 54:48.120
+venimos acá y hace un retorno a este result.
+
+54:48.120 --> 54:51.120
+O sea, que va a quedar enganchado este ya.
+
+54:54.120 --> 54:58.120
+Entonces, acá ya hicimos agregar hijo izquierdo en el port.
+
+54:58.120 --> 55:00.120
+Entonces, vamos a venir acá a agregar hijo derecho,
+
+55:00.120 --> 55:04.120
+sacándole este b, que ya lo usamos acá.
+
+55:04.120 --> 55:07.120
+Entonces, ahora vamos a llamar recursivamente con el c.
+
+55:07.120 --> 55:12.120
+Cuando llamemos con el c, se va a crear el arbolito acá con el c.
+
+55:12.120 --> 55:14.120
+Y pregunta, ¿es un operador? No.
+
+55:14.120 --> 55:17.120
+Entonces, directamente se devuelve ese c, se engancha acá.
+
+55:17.120 --> 55:19.120
+Este subárbol ya está listo.
+
+55:19.120 --> 55:23.120
+Entonces, como ya se le puso el hijo izquierdo y el derecho,
+
+55:23.120 --> 55:24.120
+se retorna.
+
+55:24.120 --> 55:26.120
+Cuando se retorna, queda enganchado acá.
+
+55:28.120 --> 55:30.120
+Entonces, ahora...
+
+55:31.120 --> 55:34.120
+Hijo derecho, ya pasa hijo derecho acá.
+
+55:34.120 --> 55:36.120
+Hijo derecho, ¿con qué se va a pasar?
+
+55:36.120 --> 55:39.120
+Con eso, sacándole el primero.
+
+55:39.120 --> 55:40.120
+Viene el más.
+
+55:40.120 --> 55:43.120
+Como es un operador, continúa.
+
+55:43.120 --> 55:45.120
+Después viene el d.
+
+55:45.120 --> 55:48.120
+Como es una letra, se devuelve.
+
+55:48.120 --> 55:50.120
+Después viene el e.
+
+55:50.120 --> 55:52.120
+Como es una letra, se devuelve.
+
+55:52.120 --> 55:56.120
+Y una vez que terminamos estos streams,
+
+55:56.120 --> 56:01.120
+se retorna este árbol y se retorna el árbol completo.
+
+56:05.120 --> 56:09.120
+Este algoritmo es un poquitito más complejo que el otro.
+
+56:10.120 --> 56:12.120
+Pero bueno, se entiende, ¿no?
+
+56:12.120 --> 56:14.120
+La idea...
+
+56:14.120 --> 56:16.120
+Y la otra cosa que les quería comentar acá,
+
+56:16.120 --> 56:19.120
+que está relacionado con el pasaje de parámetros.
+
+56:19.120 --> 56:22.120
+¿Se acuerdan que nosotros vimos que
+
+56:22.120 --> 56:24.120
+cuando uno pasa parámetros,
+
+56:24.120 --> 56:26.120
+no se pueden pasar primitivos,
+
+56:26.120 --> 56:28.120
+ni clases rappers, porque son inmutables,
+
+56:28.120 --> 56:30.120
+ni los streams.
+
+56:30.120 --> 56:32.120
+Acuérdense que los streams
+
+56:34.120 --> 56:36.120
+son inmutables.
+
+56:36.120 --> 56:38.120
+Y entonces,
+
+56:38.120 --> 56:41.120
+fíjense acá que en esta recursión,
+
+56:41.120 --> 56:44.120
+nosotros fuimos borrando el stream.
+
+56:44.120 --> 56:47.120
+Lo fuimos borrando desde la posición 1 hasta el final.
+
+56:47.120 --> 56:50.120
+Si nosotros pasamos recursivamente
+
+56:50.120 --> 56:52.120
+acá un stream, en vez de un stream buffer,
+
+56:52.120 --> 56:54.120
+cuando va bajando se le va sacando un carácter.
+
+56:54.120 --> 56:56.120
+Pero cuando vuelve, cuando vuelve acá,
+
+56:56.120 --> 57:00.120
+el stream es igual al que mandamos,
+
+57:00.120 --> 57:03.120
+porque se crea otra distancia.
+
+57:03.120 --> 57:06.120
+Cuando uno se le va borrando los elementos del stream,
+
+57:06.120 --> 57:09.120
+se va creando otro stream, otro stream, otro stream.
+
+57:09.120 --> 57:12.120
+Entonces, cuando vuelve acá, el stream no cambió.
+
+57:12.120 --> 57:14.120
+Si era un stream común,
+
+57:14.120 --> 57:16.120
+no lo modificaba nunca, exactamente.
+
+57:16.120 --> 57:18.120
+Ustedes, este algoritmo que funciona,
+
+57:18.120 --> 57:20.120
+si quieren, lo copian y lo pegan en el cliché,
+
+57:20.120 --> 57:22.120
+y cambianle stream,
+
+57:22.120 --> 57:24.120
+buffer por stream,
+
+57:24.120 --> 57:26.120
+y acá, las operaciones son otras también.
+
+57:26.120 --> 57:30.120
+En vez de delete, la clase stream es substream.
+
+57:30.120 --> 57:34.120
+Borrenle, pongan ex-substream de 0 a 1.
+
+57:34.120 --> 57:36.120
+Y van a ver, pueden ir haciendo el debug,
+
+57:36.120 --> 57:39.120
+y vayan viendo cómo se va pasando para abajo,
+
+57:39.120 --> 57:41.120
+porque se va creando otro stream más chiquito,
+
+57:41.120 --> 57:43.120
+más chiquito, más chiquito, pero cuando vuelve,
+
+57:43.120 --> 57:46.120
+de la recursión, acá el stream no cambió.
+
+57:46.120 --> 57:48.120
+Entonces, este algoritmo no funcionaría
+
+57:48.120 --> 57:51.120
+si usamos stream en vez de streamBuffer.
+
+57:51.120 --> 57:54.120
+La clase streamBuffer es una cadena de caracteres
+
+57:54.120 --> 57:56.120
+igual que stream,
+
+57:56.120 --> 57:58.120
+con la diferencia que es mutable.
+
+57:58.120 --> 58:00.120
+Cuando nosotros le decimos al stream delete,
+
+58:00.120 --> 58:03.120
+desde el 0 al 1, lo borra.
+
+58:03.120 --> 58:05.120
+Lo borra en el mismo objeto.
+
+58:05.120 --> 58:07.120
+En cambio, acuérdense que los streams
+
+58:07.120 --> 58:11.120
+crean un nuevo stream sin el primer carácter.
+
+58:11.120 --> 58:13.120
+Así que para la recursión,
+
+58:13.120 --> 58:16.120
+no tienen que usar stream si quieren que vuelva cambiado.
+
+58:18.120 --> 58:20.120
+Bueno, hasta acá. ¿Se entiende, chicos?
+
+58:28.120 --> 58:31.120
+Bueno, la infija se la dio Katy,
+
+58:31.120 --> 58:35.120
+que la infija es la más compleja de las tres.
+
+58:35.120 --> 58:38.120
+Nosotros, primero, lo que se tiene que hacer
+
+58:38.120 --> 58:40.120
+es pasar la infija postfija
+
+58:40.120 --> 58:43.120
+y, después, hacer el algoritmo
+
+58:43.120 --> 58:45.120
+que vimos para postfija.
+
+58:45.120 --> 58:47.120
+Pero este no vamos a ver la implementación de Java,
+
+58:47.120 --> 58:49.120
+así que avanzamos.
+
+58:51.120 --> 58:53.120
+Bueno, ¿vimos qué?
+
+58:55.120 --> 58:58.120
+De un árbol de expresión, uno los puede recorrer
+
+58:58.120 --> 59:00.120
+con los distintos recorridos que hay,
+
+59:00.120 --> 59:02.120
+obtenemos la prefija, infija, postfija,
+
+59:02.120 --> 59:04.120
+y, después, vimos que de una expresión postfija,
+
+59:04.120 --> 59:07.120
+infija o prefija, podríamos obtener un árbol de expresión.
+
+59:07.120 --> 59:10.120
+Lo que resta a ver es cómo evaluar un árbol de expresión.
+
+59:10.120 --> 59:13.120
+Supónganse que tenemos este árbol de expresión
+
+59:13.120 --> 59:16.120
+o este árbol binario que tiene una expresión aritmética
+
+59:16.120 --> 59:19.120
+y quisieran saber cuánto evalúa esto,
+
+59:19.120 --> 59:22.120
+podríamos también hacer un algoritmo.
+
+59:23.120 --> 59:26.120
+También es un algoritmo recursivo,
+
+59:26.120 --> 59:29.120
+porque esto, ¿qué sería?
+
+59:30.120 --> 59:33.120
+Tenemos este árbol y nosotros, ¿qué tendríamos que hacer?
+
+59:33.120 --> 59:36.120
+Para saber cuánto vale esta división,
+
+59:36.120 --> 59:39.120
+tendríamos que hacer la división entre lo que me devuelve
+
+59:39.120 --> 59:42.120
+la expresión de su árbol izquierdo,
+
+59:42.120 --> 59:45.120
+dividido lo que me devuelve la expresión del árbol derecho.
+
+59:45.120 --> 59:48.120
+Ahora, para saber esto, tendría que hacer yo
+
+59:48.120 --> 59:51.120
+la multiplicación de lo que me devuelve el subárbol izquierdo
+
+59:51.120 --> 59:53.120
+con el subárbol derecho.
+
+59:53.120 --> 59:56.120
+Y acá lo mismo, tendría que hacer la suma del subárbol izquierdo
+
+59:56.120 --> 59:58.120
+más el derecho.
+
+59:58.120 --> 01:00:01.120
+Entonces, ¿cuándo yo puedo empezar a hacer los cálculos
+
+01:00:01.120 --> 01:00:04.120
+o los subcálculos cuando llego a las hojas?
+
+01:00:05.120 --> 01:00:08.120
+Que es un operando, ahí yo devuelvo ese valor
+
+01:00:08.120 --> 01:00:11.120
+y ahí entonces de acá se puede subir
+
+01:00:11.120 --> 01:00:14.120
+y empezar a devolver los valores.
+
+01:00:14.120 --> 01:00:17.120
+Bueno, en vez de acá esto ponerle esto,
+
+01:00:17.120 --> 01:00:20.120
+entonces es el mismo arbolito,
+
+01:00:20.120 --> 01:00:23.120
+porque los reuso, por, dividido, por,
+
+01:00:23.120 --> 01:00:26.120
+más, y va así.
+
+01:00:26.120 --> 01:00:29.120
+Es 3, 5, 2, o sea, 3, 5, 2,
+
+01:00:29.120 --> 01:00:32.120
+3 y 1.
+
+01:00:34.120 --> 01:00:37.120
+Entonces, esto sería,
+
+01:00:37.120 --> 01:00:40.120
+yo pregunto acá, si es un operador, si entonces
+
+01:00:40.120 --> 01:00:43.120
+¿qué hago? Hago un subcálculo de esto y
+
+01:00:43.120 --> 01:00:46.120
+subcálculo de esto y lo divido. Pero para hacer,
+
+01:00:46.120 --> 01:00:49.120
+entonces yo tengo que llamar recursivamente, acá lo mismo.
+
+01:00:49.120 --> 01:00:52.120
+Este es un operador, entonces ¿yo qué tengo que hacer?
+
+01:00:52.120 --> 01:00:55.120
+Si tengo que multiplicar lo que me devuelve
+
+01:00:55.120 --> 01:00:58.120
+esto con esto, entonces vengo acá.
+
+01:00:58.120 --> 01:01:01.120
+Es un más ahí otra vez. Tengo que
+
+01:01:01.120 --> 01:01:04.120
+evaluar el subarbol izquierdo y evaluar
+
+01:01:04.120 --> 01:01:07.120
+el subarbol derecho. Como dice acá, evaluar el subarbol
+
+01:01:07.120 --> 01:01:10.120
+derecho y el izquierdo. Bueno, cuando estoy en esta posición,
+
+01:01:10.120 --> 01:01:13.120
+que sería, es un más, sí, es un más,
+
+01:01:13.120 --> 01:01:16.120
+entonces evaluo este subarbol,
+
+01:01:16.120 --> 01:01:19.120
+cuando evalúo este subarbol, no es un operador,
+
+01:01:19.120 --> 01:01:22.120
+entonces me va a hacer retornar el valor.
+
+01:01:22.120 --> 01:01:25.120
+En este caso me va a retornar el 3, me va a retornar el 5,
+
+01:01:25.120 --> 01:01:28.120
+entonces yo voy a sumar 5 y 3, 8, entonces acá
+
+01:01:28.120 --> 01:01:32.120
+voy a hacer 8. Este me va a devolver el 2,
+
+01:01:32.120 --> 01:01:35.120
+entonces 2 por 8 voy a poner para allá 16,
+
+01:01:35.120 --> 01:01:38.120
+y esto 3 más 1, 4, y voy a hacer la división.
+
+01:01:38.120 --> 01:01:41.120
+Fíjense que cuando lleva la hoja dice,
+
+01:01:41.120 --> 01:01:44.120
+Integer parseInt. Integer es una clase
+
+01:01:44.120 --> 01:01:47.120
+de wrapper y parseInt es un método que
+
+01:01:47.120 --> 01:01:50.120
+parsea el string y si es un,
+
+01:01:50.120 --> 01:01:53.120
+y lo retorna como string,
+
+01:01:53.120 --> 01:01:56.120
+parse el string y lo retorna como int.
+
+01:01:57.120 --> 01:02:00.120
+Entonces acá, esto si bien es de
+
+01:02:00.120 --> 01:02:03.120
+character, cuando llega la hoja
+
+01:02:03.120 --> 01:02:06.120
+lo va a devolver como un entero 3, 3 más 5.
+
+01:02:10.120 --> 01:02:13.120
+Dice, para la evaluación del árbol de expresión
+
+01:02:13.120 --> 01:02:16.120
+se utiliza siempre este algoritmo
+
+01:02:16.120 --> 01:02:19.120
+recursivo, y sí porque
+
+01:02:19.120 --> 01:02:22.120
+vos tenés siempre que llegar a las hojas
+
+01:02:22.120 --> 01:02:25.120
+para empezar a hacer los cálculos. Acuérdense que
+
+01:02:25.120 --> 01:02:28.120
+en los árboles de expresión siempre los nodos internos
+
+01:02:28.120 --> 01:02:31.120
+son los operadores, yo tengo que llegar a las hojas
+
+01:02:31.120 --> 01:02:34.120
+para encontrar los valores y ahí recién empezar a hacer los cálculos.
+
+01:02:39.120 --> 01:02:42.120
+¿Tu string lo hace para que funcione el parseInt?
+
+01:02:42.120 --> 01:02:45.120
+Claro, el parseInt
+
+01:02:45.120 --> 01:02:48.120
+recibe un string
+
+01:02:48.120 --> 01:02:51.120
+y devuelve un entero, puede ser, yo podría decir
+
+01:02:51.120 --> 01:02:54.120
+por ejemplo al Integer, Integer
+
+01:02:54.120 --> 01:02:57.120
+punto, parseInt, parseInt
+
+01:02:57.120 --> 01:03:00.120
+y le podría decir 3, 8, 4, 6
+
+01:03:00.120 --> 01:03:03.120
+así, ¿no?
+
+01:03:03.120 --> 01:03:06.120
+Entonces lo que hace la clase Integer es
+
+01:03:06.120 --> 01:03:09.120
+parsea, si todos los números son dígitos
+
+01:03:09.120 --> 01:03:12.120
+me devuelve el entero 3846.
+
+01:03:12.120 --> 01:03:15.120
+Y si yo acá tengo por ejemplo 3, 8, 4, la letra A
+
+01:03:15.120 --> 01:03:18.120
+por ejemplo, esto me dispara una excepción,
+
+01:03:18.120 --> 01:03:21.120
+una excepción.
+
+01:03:21.120 --> 01:03:24.120
+Porque no lo puede convertir a un entero.
+
+01:03:24.120 --> 01:03:27.120
+El parseInt siempre converte un string entero, pero tienen que ser dígitos.
+
+01:03:30.120 --> 01:03:33.120
+Si no pongo el tu string, anda igual, sí.
+
+01:03:33.120 --> 01:03:36.120
+Porque ese, a ver, ese es un character.
+
+01:03:36.120 --> 01:03:39.120
+No, hay que ponerle el tu string.
+
+01:03:39.120 --> 01:03:42.120
+Porque el tu string se hace automáticamente en el print line, pero acá no.
+
+01:03:42.120 --> 01:03:45.120
+Acá si no, estamos mandando un character.
+
+01:03:45.120 --> 01:03:48.120
+Entonces ahí le hacemos el tu string y ahí sí anda bien.
+
+01:03:49.120 --> 01:03:52.120
+En el print line sí se hace tu string automáticamente, pero acá no.
+
+01:03:55.120 --> 01:03:58.120
+Bueno.
+
+01:03:58.120 --> 01:04:01.120
+Bueno, después viene un ejemplo
+
+01:04:01.120 --> 01:04:04.120
+que acá lo que vamos a ver es la creación
+
+01:04:04.120 --> 01:04:07.120
+de un árbol. O sea, ¿qué estuvimos viendo?
+
+01:04:07.120 --> 01:04:10.120
+Estuvimos viendo recorridos, evaluaciones,
+
+01:04:10.120 --> 01:04:13.120
+recorridos o recorridos con algunos cálculos.
+
+01:04:13.120 --> 01:04:16.120
+Y este ejercicio lo que vamos a tener que hacer es
+
+01:04:17.120 --> 01:04:20.120
+crear un árbol. Esto es también nuevo.
+
+01:04:22.120 --> 01:04:25.120
+Este se los presentó Katy, ¿no?
+
+01:04:25.120 --> 01:04:28.120
+Que es el problema de las valencias.
+
+01:04:33.120 --> 01:04:36.120
+Sí, bueno, les contó ya que hay unos jueces
+
+01:04:36.120 --> 01:04:39.120
+en lo de las competencias, ya les contó todo eso.
+
+01:04:39.120 --> 01:04:42.120
+Bueno, este ejercicio dice
+
+01:04:42.120 --> 01:04:45.120
+el señor White ha encontrado una manera de
+
+01:04:45.120 --> 01:04:48.120
+maximizar la pureza de los cristales basados
+
+01:04:48.120 --> 01:04:51.120
+en ciertos compuestos químicos.
+
+01:04:51.120 --> 01:04:54.120
+Ha observado que cada compuesto está hecho por
+
+01:04:54.120 --> 01:04:57.120
+una molécula que está unida
+
+01:04:57.120 --> 01:05:00.120
+entre sí, se me corta porque no veo,
+
+01:05:00.120 --> 01:05:03.120
+está uní, dice, entre sí siguiendo la estructura
+
+01:05:03.120 --> 01:05:06.120
+de un árbol binario con un ángulo
+
+01:05:06.120 --> 01:05:09.120
+que está unido entre sí,
+
+01:05:09.120 --> 01:05:12.120
+que está unido entre sí,
+
+01:05:12.120 --> 01:05:15.120
+entre sí siguiendo la estructura de un árbol binario
+
+01:05:15.120 --> 01:05:18.120
+completo. Bueno, acá tenemos otra cosa.
+
+01:05:18.120 --> 01:05:21.120
+Recién vimos el árbol binario lleno
+
+01:05:21.120 --> 01:05:24.120
+para calcular el árbol binario lleno.
+
+01:05:24.120 --> 01:05:27.120
+Esto es un árbol binario completo. Dice que cada molécula
+
+01:05:27.120 --> 01:05:30.120
+tiene una estructura de árbol binario
+
+01:05:30.120 --> 01:05:33.120
+completo. Entonces dice 4, 3, 2,
+
+01:05:33.120 --> 01:05:36.120
+4, 3,
+
+01:05:36.120 --> 01:05:39.120
+2,
+
+01:05:39.120 --> 01:05:42.120
+6,
+
+01:05:42.120 --> 01:05:45.120
+0, 3.
+
+01:05:45.120 --> 01:05:48.120
+Acá un dato importante es ese que se le está dando
+
+01:05:48.120 --> 01:05:51.120
+en el enunciado. La estructura es de un árbol binario
+
+01:05:51.120 --> 01:05:54.120
+completo. O sea que saben que el árbol está lleno hasta
+
+01:05:54.120 --> 01:05:57.120
+H-1 y completado de izquierda a derecha.
+
+01:05:57.120 --> 01:06:00.120
+Cada nó del árbol almacena la valencia o un valor
+
+01:06:00.120 --> 01:06:03.120
+de la molécula y se representa como un número entero.
+
+01:06:03.120 --> 01:06:06.120
+El señor White utiliza un microscopio electrónico
+
+01:06:06.120 --> 01:06:09.120
+que descarga la estructura de la molécula
+
+01:06:09.120 --> 01:06:12.120
+como un stream de números enteros y le gustaría tener
+
+01:06:12.120 --> 01:06:15.120
+su ayuda para obtener automáticamente la valencia total
+
+01:06:15.120 --> 01:06:18.120
+de las hojas del árbol.
+
+01:06:18.120 --> 01:06:21.120
+Y esta es la manera en que los jueces siempre,
+
+01:06:21.120 --> 01:06:24.120
+o sea, los jueces te dan un enunciado, te dan cuál
+
+01:06:24.120 --> 01:06:27.120
+es el input o en realidad cuál debería ser la salida
+
+01:06:27.120 --> 01:06:30.120
+para este input. Te da como ejemplo. Y te dice,
+
+01:06:30.120 --> 01:06:33.120
+bueno, acá que con el 0 finaliza. Entonces te dice,
+
+01:06:33.120 --> 01:06:36.120
+tengo una molécula de 6 elementos
+
+01:06:36.120 --> 01:06:39.120
+y los valores son 4, 3, 2, 6, 0, 3.
+
+01:06:39.120 --> 01:06:42.120
+4, 3, 2, 6, 0, 3.
+
+01:06:42.120 --> 01:06:45.120
+Y te dice que hay otro árbol que tiene
+
+01:06:45.120 --> 01:06:48.120
+7 elementos y sería 1, 1, 1, 2, 1, 2, 1.
+
+01:06:48.120 --> 01:06:51.120
+Bueno, este es otro árbol. Sería 1,
+
+01:06:51.120 --> 01:06:54.120
+1, 1, 2, 1, 2, 1.
+
+01:06:54.120 --> 01:06:57.120
+Sería otro
+
+01:06:57.120 --> 01:07:00.120
+arbolito ejemplo.
+
+01:07:00.120 --> 01:07:03.120
+Y después dice, ¿cuál debe ser la salida de tu algoritmo? Tu algoritmo
+
+01:07:03.120 --> 01:07:06.120
+debe dar 9 para el primer árbol. Entonces, la suma
+
+01:07:06.120 --> 01:07:09.120
+de las hojas, 6, más 0, más 3. Y el segundo
+
+01:07:09.120 --> 01:07:12.120
+debe dar 6. Entonces, 2 más 1, 2 más 1, 6.
+
+01:07:12.120 --> 01:07:15.120
+Así es como se presentan todos los
+
+01:07:15.120 --> 01:07:18.120
+problemas en los jueces. Si ustedes quieren ver más,
+
+01:07:18.120 --> 01:07:21.120
+acá, por ejemplo, spos.com, ahí
+
+01:07:21.120 --> 01:07:24.120
+tienen más. Y ahí se busca, por ejemplo, palabra clave
+
+01:07:24.120 --> 01:07:27.120
+binary tree para encontrar
+
+01:07:27.120 --> 01:07:30.120
+problemas de los jueces de binary tree.
+
+01:07:30.120 --> 01:07:33.120
+Algunos son demasiado complejos que ni se dan en la cátedra.
+
+01:07:33.120 --> 01:07:36.120
+Entonces, los comento, pero no para que se vayan a hacer todos esos
+
+01:07:36.120 --> 01:07:39.120
+ejercicios.
+
+01:07:39.120 --> 01:07:42.120
+Bueno, entonces, ¿cómo se les ocurre
+
+01:07:42.120 --> 01:07:45.120
+resolver esto?
+
+01:07:45.120 --> 01:07:48.120
+O sea, para lo que nos pide ayuda, porque dice, para obtener
+
+01:07:48.120 --> 01:07:51.120
+automáticamente la valencia de todas las hojas.
+
+01:07:51.120 --> 01:07:54.120
+No alcanzo a leer porque está tapado mi código,
+
+01:07:54.120 --> 01:07:57.120
+pero creo que es la suma de todas las hojas.
+
+01:07:57.120 --> 01:08:00.120
+Entonces, ¿qué se les ocurre? ¿Cómo resolverían este
+
+01:08:00.120 --> 01:08:02.120
+ejercicio?
+
+01:08:02.120 --> 01:08:05.120
+Ustedes lo único que tienen es un stream.
+
+01:08:05.120 --> 01:08:08.120
+Tienen un stream o un stream de datos
+
+01:08:08.120 --> 01:08:11.120
+con esos dígitos. El primero
+
+01:08:11.120 --> 01:08:14.120
+me dice la cantidad de elementos, que ese lo podría descartar.
+
+01:08:14.120 --> 01:08:17.120
+Y después tengo todos los elementos que siguen, son los
+
+01:08:17.120 --> 01:08:20.120
+elementos del árbol. Pone email y sumar
+
+01:08:20.120 --> 01:08:23.120
+solo los del último nivel.
+
+01:08:24.120 --> 01:08:27.120
+Ajá.
+
+01:08:27.120 --> 01:08:29.120
+Podría ser.
+
+01:08:29.120 --> 01:08:32.120
+Pero yo, ¿qué tengo que hacer primero?
+
+01:08:32.120 --> 01:08:35.120
+Porque yo tengo un, lo único que me da
+
+01:08:35.120 --> 01:08:38.120
+es, yo esto tengo 4, 3, 2,
+
+01:08:38.120 --> 01:08:41.120
+6, 0, 3. ¿Qué es lo más
+
+01:08:41.120 --> 01:08:44.120
+difícil de este ejercicio? Ya más o menos
+
+01:08:44.120 --> 01:08:47.120
+el recorrido de niveles lo tenemos, podríamos ir por nivel
+
+01:08:47.120 --> 01:08:50.120
+y las hojas o también lo podríamos hacer recursivo.
+
+01:08:51.120 --> 01:08:54.120
+Porque una vez que tenemos el árbol podríamos decir
+
+01:08:54.120 --> 01:08:57.120
+la suma de las hojas, que es igual, es la suma de las hojas
+
+01:08:57.120 --> 01:09:00.120
+del izquierdo más la suma del derecho. ¿Y este qué sería?
+
+01:09:00.120 --> 01:09:03.120
+La suma de las hojas del izquierdo más de derecho.
+
+01:09:03.120 --> 01:09:06.120
+¿Este qué sería? Bueno, cuando llego a la hoja le devuelvo un 6,
+
+01:09:06.120 --> 01:09:09.120
+le devuelvo un 0, entonces este que va a devolver 6,
+
+01:09:09.120 --> 01:09:12.120
+va a devolver allá, este va a devolver 3,
+
+01:09:12.120 --> 01:09:15.120
+3, y ahí se van a sumar. ¿Sí?
+
+01:09:15.120 --> 01:09:18.120
+Se podrían hacer en profundidad. Identificar las hojas
+
+01:09:18.120 --> 01:09:21.120
+en profundidad. Perfecto. Los dos algoritmos
+
+01:09:21.120 --> 01:09:24.120
+me servirían para hacer
+
+01:09:24.120 --> 01:09:27.120
+el cálculo de las hojas, pero ¿qué tengo que hacer antes?
+
+01:09:36.120 --> 01:09:39.120
+Crear el árbol, exactamente. Eso es como lo más
+
+01:09:39.120 --> 01:09:42.120
+complejo. Crear el árbol,
+
+01:09:42.120 --> 01:09:45.120
+que eso no tenemos ejercicios hechos.
+
+01:09:45.120 --> 01:09:48.120
+El anteaño tampoco, esto es un ejercicio
+
+01:09:48.120 --> 01:09:51.120
+que pusimos nuevo. Entonces, bueno,
+
+01:09:51.120 --> 01:09:54.120
+los árboles
+
+01:09:54.120 --> 01:09:57.120
+completos o los árboles
+
+01:09:57.120 --> 01:10:00.120
+llenos cumplen una propiedad.
+
+01:10:00.120 --> 01:10:03.120
+La propiedad que cumplen es, bueno, nosotros primero
+
+01:10:03.120 --> 01:10:06.120
+por esta cuestión de que son binarios,
+
+01:10:06.120 --> 01:10:09.120
+el primer elemento en donde podríamos
+
+01:10:09.120 --> 01:10:12.120
+poner la cantidad de elementos que tenemos, que es lo primero que recibimos,
+
+01:10:12.120 --> 01:10:15.120
+entonces,
+
+01:10:15.120 --> 01:10:18.120
+Gotem,
+
+01:10:18.120 --> 01:10:21.120
+el primer elemento de la repo,
+
+01:10:21.120 --> 01:10:24.120
+es un ayuntamiento,
+
+01:10:24.120 --> 01:10:27.120
+y con lo secondo,
+
+01:10:27.120 --> 01:10:30.120
+este highway
+
+01:10:30.120 --> 01:10:33.120
+está este.
+
+01:10:33.120 --> 01:10:35.120
+kanada,
+
+01:10:35.120 --> 01:10:38.120
+estamos haciendo este arrow,
+
+01:10:38.120 --> 01:10:41.120
+muy bienepyo,
+
+01:10:41.120 --> 01:10:49.220
+y en el índice 6, ¿sí? Entonces, la particularidad que tenemos es que este hijo que está en la 1,
+
+01:10:49.220 --> 01:10:56.960
+su hijo izquierdo, o sea, si este está en la posición I igual a 1, el hijo izquierdo está
+
+01:10:56.960 --> 01:11:04.160
+en el 2 por I y el hijo derecho está en el 2 por I más 1, ¿sí? Entonces, este 2 por 1.
+
+01:12:41.120 --> 01:13:03.560
+Profe, profe, se cortó el audio. Tengo los auriculares con el cablecito y cuando me muevo,
+
+01:13:03.560 --> 01:13:08.160
+a ver a partir de dónde. ¿Mucho o no?
+
+01:13:13.280 --> 01:13:21.840
+Cuando empezó a hablar de la propiedad de los árboles completos. Los árboles completos
+
+01:13:21.840 --> 01:13:29.840
+y llenos y completos tienen la particularidad de que, dado un nodo, su hijo izquierdo está en la
+
+01:13:29.840 --> 01:13:34.840
+posición 2 por I y su hijo derecho está en la posición 2 por I más 1. Entonces, yo podría,
+
+01:13:34.840 --> 01:13:40.720
+como almacenadora, un arreglo que vendría a ser eso que yo recibo como input y a partir de eso,
+
+01:13:40.720 --> 01:13:47.720
+yo ir leyendo esos datos y armando el árbol. Ahí lo que hice fue ese stream de datos que recibí,
+
+01:13:47.720 --> 01:13:52.560
+lo fui poniendo en un arreglo, no se usa la posición 0 por la cuestión de binaria,
+
+01:13:52.560 --> 01:13:58.440
+se usa a partir del 1 porque tiene esa particularidad, ¿sí? Que 2 por I está el
+
+01:13:58.440 --> 01:14:02.960
+hijo izquierdo y 2 por I más 1 el hijo derecho. Entonces, a partir de esos datos,
+
+01:14:02.960 --> 01:14:08.640
+yo podría ir creando el árbol. Yo sé que el primero es la raíz y después podría decir
+
+01:14:08.640 --> 01:14:13.080
+recursivamente, le agrego el hijo izquierdo, ¿qué quién sería el hijo izquierdo? Bueno,
+
+01:14:13.080 --> 01:14:20.960
+si este es 1, sería el 2 por 1 a 2. Y después a ese dato que yo inserto acá, el 3. La posición
+
+01:14:20.960 --> 01:14:27.280
+es el 2. 2 por 2, 4. Existe todavía un dato 400, entonces le inserto el hijo izquierdo con
+
+01:14:27.280 --> 01:14:33.760
+ese 2 por 2, 4. Y el hijo derecho, bueno, sigo acá con el izquierdo. Al 6, ahora,
+
+01:14:33.760 --> 01:14:40.400
+¿qué es el 4? ¿Le puedo insertar el hijo izquierdo? 2 por 4, 8. ¿Tengo 8 elementos? No. Entonces,
+
+01:14:40.400 --> 01:14:46.040
+ahí yo ya no tengo que seguir insertando, ¿sí? Si me inserto el hijo izquierdo, menos hijo derecho,
+
+01:14:46.040 --> 01:14:52.120
+vuelvo. Entonces, acá ¿qué tengo? En el 3 es 2. 2 por 2, 4 más 1, 5. ¿Tengo hijo derecho? Entonces,
+
+01:14:52.120 --> 01:14:57.640
+inserto el hijo derecho del 5. El 5, 2 por 5 y 10. ¿Tengo para ir insertándolo? Entonces,
+
+01:14:57.640 --> 01:15:05.760
+ya vuelvo y así yo podría con este tip, que es el lugar en donde va el hijo izquierdo y derecho,
+
+01:15:05.760 --> 01:15:16.800
+poder construir el árbol. Acá entonces está el algoritmo. A ver que voy a... El algoritmo,
+
+01:15:16.800 --> 01:15:23.680
+entonces, ¿qué dice? Tenemos crear un binary tree, que lo que recibe es un stream, que es un
+
+01:15:23.680 --> 01:15:30.240
+arreglo, aquel que armé yo allá arriba. Y voy a pos el int is, que yo voy a ir pasando recursivamente,
+
+01:15:30.240 --> 01:15:36.360
+este is yo lo voy a ir pasando recursivamente para ir insertándole a... Este es el nodo que estoy
+
+01:15:36.360 --> 01:15:43.120
+creando en ese momento. Entonces, voy a arrancar de 1, porque el 0 yo lo descarto, porque esto
+
+01:15:43.120 --> 01:15:54.160
+funciona con el i a partir de 1. Entonces, arranco con el 4, agarro stream de i, o sea,
+
+01:15:54.160 --> 01:16:01.280
+stream de 1 que es el 4, creo un árbol binario con el 4 y después pregunto, si 2 por i, o sea,
+
+01:16:01.280 --> 01:16:08.880
+2 por 1 a 2 es menor que la longitud del stream, si entonces yo a este nodo le digo, ahí, agregar
+
+01:16:08.880 --> 01:16:16.880
+hijo izquierdo con qué? Con crear un árbol, pero ahora con 2 por i. 2 por 1 a 2, entonces ahora
+
+01:16:16.880 --> 01:16:23.520
+voy a venir con este, 2 por 1 a 2. Entonces vengo allá, agarro el dato, creo un árbol con el 2,
+
+01:16:25.240 --> 01:16:31.980
+creo un arbolito con el 2 y pregunto ahora, ahora ahí es 2, entonces 2 por 2, 4 es menor todavía que
+
+01:16:31.980 --> 01:16:38.320
+mi stream? Sí, tengo datos para la posición 4. Entonces, a ese a b, ¿qué le hago? Le agrego un hijo
+
+01:16:38.320 --> 01:16:49.320
+izquierdo con qué cosa? Con lo que me devuelve la recursión de llamar ahora con, este es el 1,
+
+01:16:49.320 --> 01:16:58.800
+este es el 2, entonces con 2 por 2, 4. Voy ahora con 4, agarro el stream de 4, creo un árbol 4,
+
+01:16:59.800 --> 01:17:09.800
+y pregunto, 2 por 4, 8 es todavía, tengo datos ahí? No, entonces no voy a entrar a esa recursión,
+
+01:17:09.800 --> 01:17:15.800
+este menos, 2 por 4, 8 más unos nueve, tiene hijo izquierdo? No, menos, entonces retorna,
+
+01:17:15.800 --> 01:17:21.640
+fíjense que acá otra vez cuando llego a la hoja se retorna esto y queda el enganche. Y ahí entonces
+
+01:17:21.640 --> 01:17:30.600
+voy a llamar a agregar hijo derecho, hijo derecho ahora con 2 por 2, 4 más 1, 5. ¿Quién es el 5?
+
+01:17:30.600 --> 01:17:41.200
+Acá me equivoqué, es la posición 4, es el 6. El 5 acá es el 0. Retorna, bueno, y ahí va a ir armando el
+
+01:17:41.200 --> 01:17:57.920
+arbolito. Ahí, ¿se entiende? Esta es la creación de un árbol. Bien. Y ahora, una vez que tenemos el
+
+01:17:57.920 --> 01:18:03.040
+árbol creado, ahí sí podríamos hacer, como recién comentaban, podría hacer el recorrido,
+
+01:18:03.040 --> 01:18:15.360
+en este caso podríamos hacer un cálculo, porque el recorrido por niveles, o sea, este calcular la
+
+01:18:15.360 --> 01:18:21.800
+valencia nos sirve para cualquier tipo de árbol, porque en realidad lo que se devuelve no, ni completo
+
+01:18:21.800 --> 01:18:26.000
+ni lleno, para cualquier tipo de árbol, porque lo que está devolviendo es el valor de las hojas.
+
+01:18:26.000 --> 01:18:33.560
+Fíjense, decimos, si es una hoja, retorno el dato. Entonces, va a recorrer el árbol y va a retornar
+
+01:18:33.560 --> 01:18:44.360
+un dato cuando sea una hoja, ¿sí? Y si no, ¿qué va a ser? Va a ser suma es igual a suma más lo que
+
+01:18:44.360 --> 01:18:55.080
+me devuelve el valor de las hojas del eje izquierdo. Y acá, suma es igual a suma más lo que me devuelve
+
+01:18:55.080 --> 01:19:04.880
+es los valores del hijo derecho. Del izquierdo primero y del derecho. Entonces, yo acá voy a
+
+01:19:04.880 --> 01:19:11.000
+poner suma es igual a cero, ¿sí? ¿Qué va a ser suma? Suma es igual a suma más lo que me devuelva
+
+01:19:11.000 --> 01:19:15.560
+el eje izquierdo, el subárbol izquierdo, más lo que me devuelva el subárbol derecho. Entonces,
+
+01:19:15.560 --> 01:19:20.520
+eso va a ser recursivo. Acá, ¿qué va a ser? Suma va a ser igual otra vez a cero, un suma prima,
+
+01:19:20.520 --> 01:19:25.360
+que va a ser igual a lo que me devuelva las hojas del eje izquierdo más las hojas del
+
+01:19:25.360 --> 01:19:32.080
+hijo derecho. Sí, entonces acá suma es cero más, ahora es una hoja, entonces acá va a devolver un
+
+01:19:32.080 --> 01:19:38.080
+seis este. Y este va a devolver un cero. Entonces, suma va a ser seis más cero, entonces este va a
+
+01:19:38.080 --> 01:19:44.360
+devolver seis. Y esta suma era cero más lo que me devuelve las hojas del izquierdo más lo que me
+
+01:19:44.360 --> 01:19:51.120
+devuelve las del derecho. Entonces, acá lo mismo va a ser suma igual a cero. Bien, acá este sí tiene
+
+01:19:51.120 --> 01:19:56.240
+un valor, entonces este va a devolver un tres. Este va a devolver cero más tres. Acá no tengo
+
+01:19:56.240 --> 01:20:02.440
+nada, devuelvo un tres. Y ahí entonces sí me va a devolver un nueve. Es el valor.
+
+01:20:02.440 --> 01:20:14.840
+En profundidad es como más simple. Porque en hojas, si yo tendría que ir calculando,
+
+01:20:14.840 --> 01:20:23.440
+porque cuando uno está recorriendo por niveles, no sabe si todavía tiene más hojas. Entonces,
+
+01:20:24.440 --> 01:20:30.440
+se podría por ahí con niveles, pero bueno, hay que hacer algunos chequeos más. Y tendría yo que
+
+01:20:30.440 --> 01:20:37.880
+ir sumando cuando desapilo. Es más natural hacerlo en profundidad. Porque si no, por ahí
+
+01:20:37.880 --> 01:20:43.800
+haría algunos cálculos de más, porque tendría que ir guardando esto por si son hojas. Así que
+
+01:20:43.800 --> 01:20:56.440
+es más natural hacerlo con un recorrido en profundidad. Bueno, chicos, no sé si les quedó
+
+01:20:56.440 --> 01:21:24.120
+alguna duda más de esto. Esta es la última. Sí. Parece que haya otro, pero no. Es una convención
+
+01:21:24.120 --> 01:21:33.720
+que siempre arranquemos desde el uno. Para los árboles completos y llenos sí, que después lo
+
+01:21:33.720 --> 01:21:41.520
+vamos a retomar esto cuando veamos la heap. La heap son colas de prioridades. Una cola de prioridad
+
+01:21:41.520 --> 01:21:47.840
+la puede mapear en un arreglo, pero empieza desde uno. Porque si no, el cero nos anula todo lo de
+
+01:21:47.840 --> 01:21:55.040
+los índices. Siempre para una heap binaria se almacena en un arreglo cuya posición cero no se usa.
+
+01:22:09.520 --> 01:22:15.000
+Y por ahí sí habría que probar si queda. En general es que queda como más elegante,
+
+01:22:15.480 --> 01:22:28.040
+pero iterativo, lo que pasa que si lo haces iterativo, viste, cuando empiezas a armar,
+
+01:22:28.040 --> 01:22:34.680
+cuándo le pondrías el eje izquierdo al 13 y al derecho? Tendría que empezar de atrás para adelante.
+
+01:22:34.680 --> 01:22:42.400
+Sí, podríamos pensarlo y traerlo para la próxima teoría, porque vos es difícil saber cuál es la hoja.
+
+01:22:42.880 --> 01:22:50.320
+Hay que hacer algunos cálculos, porque acá cuando haces 2 x 4 x 8, ahí sabes 2 x 4 x 8 y
+
+01:22:50.320 --> 01:22:58.840
+sabes que es una hoja. Sabes que esa es una hoja, sabes que los últimos tres elementos en este
+
+01:22:58.840 --> 01:23:07.200
+caso es una hoja, porque tenés 2 x 6 x 12 es una hoja, 2 x 5 x 10 es una hoja, 2 x 4 x 8 es
+
+01:23:07.200 --> 01:23:14.680
+una hoja, 2 x 3 x 6 acá. Sí, tendrías que calcular cuáles son las hojas y con las hojas
+
+01:23:14.680 --> 01:23:24.040
+sabes cuál es el padre también, porque es la parte dividido 2. Ahí, por ejemplo, si vos arrancas
+
+01:23:24.040 --> 01:23:31.400
+del 3, cuando creas el nodo 3, o sea, por ahí es más complejo y iterativo me parece, porque vos lo
+
+01:23:31.400 --> 01:23:38.640
+que sabes del 3 es que la parte dividido 2 es la parte entera. C dividido 2 es 3, el padre es este.
+
+01:23:38.640 --> 01:23:50.120
+Después de 5, 5 dividido 2 da 2 y 4 dividido 2 da 2, la parte entera. Entonces vos sabés que de este
+
+01:23:51.880 --> 01:24:00.040
+y de este el padre es este, porque 5 dividido 2 es la parte entera y acá bueno 6 dividido 2.
+
+01:24:02.160 --> 01:24:08.120
+¿Te entiendes? Entonces quizás podría ser iterativo, habría que pensarlo, porque tendrías que
+
+01:24:08.120 --> 01:24:13.200
+primero saber cuáles son las hojas, saber quién es el padre y ir armando como de abajo para arriba.
+
+01:24:14.880 --> 01:24:21.400
+Sí, lo podríamos pensar y lo planteamos en la facul el jueves que viene que lo vemos presencial.
+
+01:24:21.400 --> 01:24:25.400
+Ah, no, ustedes son del lunes. Ah, sí, sí, ustedes van a estar conmigo el jueves. Sí,
+
+01:24:25.400 --> 01:24:28.920
+lo podríamos plantear antes de empezar la clase el jueves que viene,
+
+01:24:29.880 --> 01:24:34.440
+que es árboles generales. Podríamos ver la construcción iterativa, a ver cómo queda,
+
+01:24:34.440 --> 01:24:37.600
+si quedan más engorrosos o no. ¿Les parece?
+
+01:24:37.600 --> 01:25:00.800
+Bueno, el jueves no se repite este mismo. Ah, no, no, el jueves es la otra semana. No,
+
+01:25:00.800 --> 01:25:06.880
+no, la otra semana. Esta semana se repite todo, ya está con esto. Y después, la otra semana,
+
+01:25:07.600 --> 01:25:21.160
+o sea, la semana de abril, el 7 de abril y el 10 de abril, ahí ya damos árboles generales,
+
+01:25:21.160 --> 01:25:27.200
+toda la parte teórica el lunes y el jueves ya vamos a dar árboles generales en Java.
+
+01:25:27.200 --> 01:25:32.920
+Entonces ahí podríamos retomar la creación de esto y voy a ver si busco algún ejercicio
+
+01:25:32.920 --> 01:25:37.640
+más del vulbinario, así para que hagamos, para cerrar el vulbinario. Pero todavía,
+
+01:25:37.640 --> 01:25:42.840
+bueno, tienen que ponerse a practicar un poquito ustedes más. Bueno,
+
+01:25:42.840 --> 01:25:46.760
+voy a cortar la grabación. Ah, levanta la mano Jonathan. Sí, Jonathan.
+
+01:25:54.160 --> 01:25:57.480
+Si quieren agarrar los micrófonos, chicos, mejor, más fácil, eh.
+
+01:26:02.920 --> 01:26:14.400
+Ah, Jonathan, no, no quería hablar ahora. Ah, capaz que la mano levantada lo había ahora y
+
+01:26:14.400 --> 01:26:21.840
+era de antes. Ah, no había olvidado de sacarlo. Ah, perfecto. Ah, ok, ok. Bueno,
+
+01:26:21.840 --> 01:26:24.720
+corto acá, si no preguntan más nada y seguimos charlando.
+

@@ -1,0 +1,3248 @@
+WEBVTT
+
+00:00.000 --> 00:11.400
+Bueno, el otro día en realidad lo que vimos fue cómo implementar una cola de prioridades
+
+00:11.400 --> 00:20.760
+de manera eficiente. Entonces, la implementación que se ve es la implementación de heap. ¿Qué
+
+00:20.760 --> 00:30.640
+es una heap? Una heap en realidad es un árbol binario completo que además cumple una cierta
+
+00:30.640 --> 00:40.840
+propiedad de orden. La definición de árbol binario completo, ustedes ya la saben, o sea
+
+00:40.840 --> 00:47.480
+que es un árbol binario lleno hasta la altura anterior y en el último nivel no se completa
+
+00:47.480 --> 01:00.000
+la propiedad de orden que cumplen. Si estamos hablando de una heap, entonces decimos que para
+
+01:00.000 --> 01:08.720
+cada nodo el valor de ese nodo es menor que el valor de los hijos. Esa es la única propiedad
+
+01:08.720 --> 01:24.720
+de orden que cumplen, nada más, del padre con los hijos. Entonces, el otro día vimos las dos
+
+01:24.720 --> 01:35.240
+operaciones básicas de una heap que son insertar y borrar el mínimo. Cuando yo inserto, ¿qué hago?
+
+01:35.280 --> 01:46.160
+Tomo este gráfico como ejemplo. Cuando yo inserto, lo que hago es insertar en el último lugar del
+
+01:46.160 --> 01:53.200
+arreglo, o sea, mejor dicho, en el primer lugar libre del arreglo, después del último elemento,
+
+01:54.200 --> 02:02.360
+que en el árbol sería insertarlo acá. ¿Y después qué es lo que hace el insertar? Hace un filtrado
+
+02:02.360 --> 02:08.720
+hacia arriba. ¿Por qué? Porque yo quizás la clave que estoy insertando acá no cumple con la
+
+02:08.720 --> 02:13.840
+propiedad de orden. Entonces lo que hace es reacomodarla a través del filtrado hacia
+
+02:13.840 --> 02:25.680
+arriba. Entonces, es como que sigue, o sea, yo lo insertaría acá. Entonces, lo que se hace es
+
+02:26.440 --> 02:35.400
+se sigue este camino, el camino hacia los padres, o sea, hacia todos sus ascendentes,
+
+02:35.400 --> 02:42.720
+comparando a ver cómo es ese valor con respecto a cada uno de estos nodos que están en este camino.
+
+02:44.600 --> 02:53.600
+Bien, eso era para insertar. Ahora, ¿para borrar qué es lo que hago? Para borrar,
+
+02:53.600 --> 03:02.840
+siempre lo que se borra es el mínimo. Entonces, yo, en realidad, el valor que va a salir de la hip
+
+03:02.840 --> 03:11.280
+es el mínimo. En este caso, para este ejemplo, sería el 30. Ahora bien, estructuralmente,
+
+03:14.320 --> 03:22.040
+el nodo que va a desaparecer, porque recuerden que la hip es un árbol que estamos en un arreglo,
+
+03:23.040 --> 03:34.040
+entonces, el valor, o sea, el nodo que va a desaparecer es el último que aparece en el arreglo.
+
+03:36.040 --> 03:45.800
+Entonces, yo este valor lo paso a la raíz, ya me guardo el 30, que es el valor que voy a devolver,
+
+03:46.800 --> 03:55.280
+pasaría el 120 a la raíz y ahora sí lo tengo que reacomodar porque puede ser que no cumpla con
+
+03:55.280 --> 04:05.240
+la propiedad de orden. Entonces, lo acomodo a través de un filtrado hacia abajo. ¿Cómo es el
+
+04:05.240 --> 04:11.040
+filtrado hacia abajo? En este caso, como es una mi hip, lo que hago es buscar el menor de los hijos,
+
+04:11.040 --> 04:20.760
+en este caso el 70, y comparo el 120 con el 70. Como el 70 es menor, va a subir el 70 y va a bajar
+
+04:20.760 --> 04:30.680
+el 120. Y así sigo, busco, me fijo si tiene dos hijos, en este caso sí, me fijo cuál es el menor
+
+04:30.680 --> 04:40.160
+de los hijos, que es 110. El 110 es menor que 120, entonces bajo el 120 y sube el 110.
+
+04:41.040 --> 04:55.400
+No, no, no, Julián, o sea, este es un ejemplo, depende de cómo se vaya armando la hip. Y ahora
+
+04:55.400 --> 05:02.200
+incluso vamos a ver hoy en esta clase que hay dos formas de construir una hip a partir de un
+
+05:02.200 --> 05:16.680
+conjunto de elementos. Bueno, fíjate, bueno, en este caso estos no, a ver, sí, bueno,
+
+05:18.880 --> 05:30.720
+esta es una mi hip, y si no veo mal, sí, y fíjate que acá el 20 está en el hijo izquierdo y el 90
+
+05:30.720 --> 05:36.960
+en el hijo derecho. O sea, en realidad se les da distintos ejemplos para que ustedes vean que no es
+
+05:36.960 --> 05:45.440
+que el menor va a ir primero a la izquierda y después sigue el mayor. O sea, la única relación
+
+05:45.440 --> 05:59.400
+que hay es entre el nodo y sus hijos, nada más. Bien, entonces esas son las dos operaciones básicas.
+
+06:00.880 --> 06:09.400
+Bien, yo el otro día les empecé a comentar algo de que yo podría, si es que necesito,
+
+06:09.400 --> 06:19.120
+implementar algunas operaciones adicionales en la hip que no forman parte de la estructura básica,
+
+06:19.120 --> 06:24.600
+o sea, son operaciones que a lo mejor yo en algún momento las voy a necesitar o me va a
+
+06:24.600 --> 06:33.600
+ser útil tenerlas, entonces las implemento. Pero, ¿qué pasa? Yo en una hip no sé dónde están los
+
+06:33.600 --> 06:41.360
+elementos, salvo si es una mi hip, salvo el mínimo, ¿no? El resto no sé dónde están,
+
+06:41.360 --> 06:47.840
+puede estar ubicado en cualquier lugar. Lo único que puedo llegar a saber, que yo creo que les
+
+06:47.840 --> 06:56.720
+comenté la semana pasada, es que si es una mi hip, el elemento máximo va a estar en una hoja,
+
+06:57.840 --> 07:03.800
+pues no puede tener hijos, ese es el elemento porque es justo el máximo. Ahora, en un árbol
+
+07:03.800 --> 07:13.600
+binario completo, la mitad de los elementos son hojas, o sea que tampoco me sirve mucha esa
+
+07:13.600 --> 07:21.640
+información, si yo tuviera que buscar en una mi hip, buscar el máximo elemento. Entonces,
+
+07:21.640 --> 07:33.800
+si a mí me dicen exactamente dónde está una determinada clave, entonces yo podría implementar
+
+07:33.800 --> 07:40.080
+en forma eficiente, eficiente quiere decir que seguimos hablando de orden logarítmico,
+
+07:41.080 --> 07:49.640
+podría implementar algunas operaciones adicionales que en algunos casos me resulta útil tener. Por
+
+07:49.640 --> 07:56.520
+ejemplo, la operación decrease key, o sea, decrementar la clave, la clave que está en
+
+07:56.520 --> 08:07.360
+la posición X de la hip en una cantidad delta. Entonces, ¿qué es lo que puede pasar? A ver,
+
+08:07.360 --> 08:17.200
+vamos a poner. Si yo tengo esta mi hip,
+
+08:37.360 --> 09:03.160
+y a mí me dicen, bueno, decrementar la clave que está en la posición 3. Entonces, yo voy,
+
+09:03.240 --> 09:12.640
+esto en realidad está almacenado en el arreglo, así, 2, 30, 10, etcétera. Entonces,
+
+09:13.640 --> 09:19.080
+a mí me dicen decrementar la clave que está en la posición 10 en una cantidad delta.
+
+09:21.320 --> 09:26.360
+Entonces, esa cantidad delta, por ejemplo, es,
+
+09:26.360 --> 09:39.600
+la cantidad delta es 9, ¿no? Delta, 9. Entonces, yo hago 10 menos 9, 1. Entonces,
+
+09:39.600 --> 09:46.520
+esto me queda el valor 1. ¿Qué pasa? Puede ser que cuando yo esté tocando un valor dentro de la
+
+09:46.520 --> 09:54.520
+key, deje de cumplirse la propiedad de orden. Entonces, en este caso, ¿qué tengo que hacer?
+
+09:54.520 --> 10:02.520
+Tengo que hacer un filtrado hacia arriba, comparar con el padre. Y ahora, este va a ser menor que
+
+10:02.520 --> 10:13.600
+el padre. Entonces, sube este, sube el 1 y baja el 2. Así, hasta la raíz, porque ya llegué a la raíz.
+
+10:13.600 --> 10:27.240
+O sea, esto, claro, porque a mí me dan la posición, pues yo dije la posición X, 3 y de esta 9,
+
+10:27.240 --> 10:34.880
+para dar un ejemplo. O sea, me tiene que dar la posición para que, para yo acceder en forma
+
+10:34.880 --> 10:43.120
+directa al arreglo. Porque si a mí me dicen, bueno, decrementar la clave 10 de esa key. Yo
+
+10:43.120 --> 10:51.040
+no sé dónde está la clave 10. Entonces, ¿qué tengo que hacer? La debería buscar. Si yo ya me
+
+10:51.040 --> 10:58.680
+tengo que poner a buscar la clave dentro de la key, la operación deja de ser logarítmica. Porque
+
+10:58.680 --> 11:08.840
+buscar me requiere N en comparaciones. O sea, entiéndote, porque yo necesito saber la posición,
+
+11:08.840 --> 11:15.600
+de que ir directo y tocar este elemento y después hacer el filtrado hacia atrás. Y lo que hace es
+
+11:15.600 --> 11:22.360
+base al padre, ¿no? Entonces, el padre del 10 estaba acá y así, así, hasta le llegó a lujo.
+
+11:27.040 --> 11:34.880
+Bien. Esto, por ejemplo, un ejemplo de esto. ¿Qué sería? En el caso de, por ejemplo,
+
+11:34.880 --> 11:45.080
+el sistema operativo multitarea, que yo digo, bueno, yo le quiero subir la prioridad a una
+
+11:45.080 --> 11:51.440
+tarea, porque quiero que se ejecute antes que otra. Entonces, lo que hago es bajarle el valor,
+
+11:51.440 --> 11:58.720
+¿no? Y al bajarle el valor, ¿qué hace? Empieza a subir en el árbol, ¿entiende? Entonces,
+
+11:58.720 --> 12:12.960
+el sistema operativo lo tiene disponible, ¿no? En forma más rápida. La otra operación,
+
+12:12.960 --> 12:23.240
+que sin Christie, sería inversa, si yo le digo. Bueno, ahora incrementarme en, no sé,
+
+12:23.240 --> 12:40.200
+en delta igual 100, la clave que está en la posición 2. Entonces, ahora incrementan esa
+
+12:40.200 --> 12:52.280
+cantidad de 30 pasa a valer 130. Entonces, ahí ya tengo que reacomodarlo otra vez. ¿Y cómo lo
+
+12:52.280 --> 13:05.480
+reacomodo? Lo reacomodo con un filtrado hacia abajo. ¿Por qué? Porque ahora me fijo cuál es el menor
+
+13:05.480 --> 13:12.800
+de los hijos, el menor de los hijos es 40 y digo, bueno, pero ahora el 130 es mayor que 40 y estoy
+
+13:12.800 --> 13:19.120
+en una mijí. Entonces, ¿qué hago? Sube 40, baja el 130 y ahí va a quedar, porque bueno, no sé más.
+
+13:19.120 --> 13:29.080
+Pero si no, debería seguir hacia abajo. O sea, ¿se entiende la lógica de estas operaciones? O sea,
+
+13:29.080 --> 13:37.280
+esto por ejemplo se daría en el caso de volvemos a hablar del sistema operativo. Si yo tengo una
+
+13:37.280 --> 13:43.800
+tarea que me estamos subiendo mucha CPU y mucha memoria y eso se digo, no, no, no, no, hace una
+
+13:43.800 --> 13:56.360
+cosa, mandala al final de la cola para el último. Entonces, yo le subo el valor que representa la
+
+13:56.360 --> 14:02.040
+prioridad. Subir el valor quiere decir bajar la prioridad. Lo que yo les comentaba en la clase
+
+14:02.040 --> 14:15.520
+pasada, ¿no? En los eventos ya la legislatura internacional es, bueno, menor valor y mayor prioridad.
+
+14:15.520 --> 14:20.560
+Entonces, digo, no, yo la subo, entonces la mando como abajo al fondo y bueno, que se
+
+14:21.120 --> 14:28.720
+que si yo cuando esté medio libre la máquina, porque me consumo mucho recursos, porque me
+
+14:28.720 --> 14:36.880
+la hace más lenta. Bien. Y la otra operación que es la de borrar una clave cualquiera, ¿no?
+
+14:36.880 --> 14:46.680
+Supongamos que yo tengo una tarea, ¿no? Una tarea que lo que hace es entrar en un loop. Entonces,
+
+14:47.680 --> 14:56.360
+en esos sistemas operativos que le dan un segmento de tiempo a cada tarea, ¿no? Eso lo venan ustedes bien en
+
+14:56.360 --> 15:06.560
+el sistema operativo, pero lo que le dan, lo que le asignan un segmento de tiempo a cada tarea. Y una tarea
+
+15:06.560 --> 15:14.440
+que no va a terminar más. Entonces, yo digo, no, borrámela de la cola. Entonces, yo quiero que
+
+15:14.440 --> 15:24.240
+alguno de estos desaparezca directamente. Entonces, ¿cómo lo podría hacer? Una forma práctica
+
+15:24.240 --> 15:35.880
+utilizando las operaciones que ya tengo implementadas es hacer un decrypting infinito. O sea, el infinito
+
+15:36.480 --> 15:50.440
+es un valor muy grande. Hace una cosa. ¿Qué es eso? A ver esta tarea. Bajale el valor en una cantidad muy grande
+
+15:50.440 --> 15:58.200
+de manera de obligarla a que sea la próxima mínima. Y ahí después haces el del Edmín.
+
+15:58.200 --> 16:07.920
+Entonces, la sacamos. O sea, con estas dos combinaciones, con esta operación y con la del Edmín que
+
+16:07.920 --> 16:19.560
+sabimos el otro día. Entonces, con esas dos podría aprovechar y implementar la operación de borrar una clave de la hip. Sacarla directamente.
+
+16:20.560 --> 16:30.560
+O sea, estas son operaciones que son adicionales, que en algunos casos es bien tenerlas. Que por ahí nosotros acá no le vamos a usar.
+
+16:30.560 --> 16:42.560
+Pero bueno, se las mencionamos a modo de información y para que ustedes sepan que se pueden implementar.
+
+16:43.560 --> 16:51.560
+Bien. ¿Cómo hacemos para construir una hip a partir de...? Una lista de elementos.
+
+17:03.560 --> 17:10.560
+Yo digo, tengo una lista de elementos. O sea, una lista. Uno dice una lista en forma genérica.
+
+17:11.560 --> 17:22.560
+Puedo tener los datos en un archivo. Los puedo ir leyendo en un archivo. Los puedo tener almacenados en un adegro. Los puedo tener en cualquier lado.
+
+17:23.560 --> 17:28.560
+Entonces, yo digo, tres, quince.
+
+17:28.560 --> 17:46.560
+Digo, bueno, yo tengo todos estos elementos. Entonces, yo les digo a ustedes, bueno, háganme una hip con esos elementos.
+
+17:47.560 --> 17:51.560
+Entonces, una forma de hacerlo, ¿qué es? ¿Cuál es?
+
+17:52.560 --> 18:09.560
+Es ir tomando elemento por elemento. O sea, arranco con una hip vacía y voy insertando cada uno de esos elementos de la lista con la operación de insertar.
+
+18:09.560 --> 18:16.560
+De aquí, ¿entiendes? O sea que entonces yo tendría, primero inserto el tres.
+
+18:18.560 --> 18:24.560
+Después inserto si tengo que armar una hip. Después inserto el quince.
+
+18:25.560 --> 18:31.560
+Comparo con el padre, no pasa nada. O sea, con la operación de insertar de la hip.
+
+18:32.560 --> 18:40.560
+Después inserto el ocho. No pasa nada. Después inserto el siete. ¿Y acá qué pasa?
+
+18:46.560 --> 18:51.560
+O sea, siempre el insertar lo que hace es chequear con el padre.
+
+18:57.560 --> 18:59.560
+La lógica que vimos en la clase pasada.
+
+19:01.560 --> 19:07.560
+Es más chico entonces, ¿qué hace? Sube el siete y baja el quince.
+
+19:08.560 --> 19:14.560
+Después sigue para arriba, chequeando. En este caso el siete es mayor que el tres, entonces lo dejo así.
+
+19:17.560 --> 19:19.560
+Bien, voy por acá. Ahora el veinte.
+
+19:23.560 --> 19:24.560
+Ahora el uno.
+
+19:24.560 --> 19:25.560
+El uno.
+
+19:29.560 --> 19:34.560
+Entonces el uno, acá sí. ¿Qué hace? Baja el ocho, sube el uno.
+
+19:35.560 --> 19:39.560
+Pero tengo que seguir filtrando. Baja el tres, sube el uno.
+
+19:43.560 --> 19:45.560
+Ahora el cincuenta.
+
+19:48.560 --> 19:49.560
+No pasa nada.
+
+19:50.560 --> 19:52.560
+Y ahora el cuatro.
+
+19:54.560 --> 19:59.560
+La voy a volver a dibujar porque ya no se entiende nada.
+
+20:18.560 --> 20:22.560
+Entonces ahora tengo que insertar el cuatro, que me insertaría acá.
+
+20:25.560 --> 20:36.560
+Entonces, ¿qué hago? Comparo con el padre, el padre mayor, entonces baja el quince, sube el cuatro.
+
+20:37.560 --> 20:45.560
+Vuelve a comparar con el padre. Como el padre es mayor, entonces baja el siete y sube el cuatro.
+
+20:46.560 --> 20:49.560
+Vuelve a comparar con el padre, en este caso el tres menor.
+
+20:49.560 --> 20:52.560
+Entonces la quince, al final, me va a quedar así.
+
+20:57.560 --> 20:58.560
+Bien.
+
+20:59.560 --> 21:14.560
+Como debía de diseñar la dispositiva, en realidad yo también tengo que hacer, estoy haciendo n llamadas a la operación de insertar.
+
+21:14.560 --> 21:22.560
+Entonces, la operación de insertar, nosotros vimos que es logarítmica, ¿por qué? Porque lo único que hace es recorrer la altura.
+
+21:22.560 --> 21:25.560
+O sea, en el peor caso, recorre la altura del árbol.
+
+21:25.560 --> 21:28.560
+Y la altura es un algoritmo completo logarítmico.
+
+21:29.560 --> 21:38.560
+Entonces, si yo tengo que hacer n operaciones, y esto lo vamos a ver bien en el próximo tema, que es análisis de algoritmo, pero bueno, ya no más.
+
+21:38.560 --> 21:40.560
+Vamos introduciendo un poco en eso.
+
+21:40.560 --> 21:53.560
+Si yo tengo que hacer n veces una operación que me colecta logaritmo de n, entonces el armar toda la hip, de esta manera,
+
+21:53.560 --> 22:01.560
+como le hicimos de ayer, me va a llevar orden n veces lo beno.
+
+22:01.560 --> 22:03.560
+Pues eso es dar una multiplicación.
+
+22:03.560 --> 22:13.560
+O sea, si a mí me cuesta cada operación, me cuesta logaritmo y toca hacer n operaciones, entonces la operación del armado total,
+
+22:13.560 --> 22:15.560
+me va a llevar n lo beno.
+
+22:17.560 --> 22:18.560
+Bien.
+
+22:18.560 --> 22:27.560
+Entonces a alguien se le ocurrió una forma más eficiente de armar la hip, que es de orden lineal.
+
+22:27.560 --> 22:35.560
+O sea, esta función, que n lo beno, crece más o menos en el algoritmo.
+
+22:36.560 --> 22:44.560
+Entonces, se le ocurrió una forma de armar la hip de forma más eficiente, es decir, en tiempo lineal.
+
+22:44.560 --> 22:51.560
+Hay ese método que nosotros, en realidad nosotros lo denominamos armar la hip,
+
+22:51.560 --> 22:57.560
+es decir, armar la hip de forma más eficiente en el algoritmo.
+
+22:58.560 --> 23:01.560
+Es decir, en tiempo lineal.
+
+23:01.560 --> 23:03.560
+Hay ese método que nosotros, en realidad nosotros lo dejamos así con este nombre, que es el nombre en inglés, que es,
+
+23:03.560 --> 23:17.560
+dekir, konstruir, hip, pero así ya lo llamamos a la forma de armar la hip,
+
+23:17.560 --> 23:26.860
+No, que en realidad es tomando todos los elementos de la lista, así como vienen, guardarlos
+
+23:26.860 --> 23:33.560
+en el arreglo, pues recuerden que esto se amasena en un arreglo y después se lo dejan
+
+23:33.560 --> 23:36.560
+hacer todos filtrados hacia abajo.
+
+23:36.560 --> 23:40.560
+Ahora vamos a ver bien cómo es.
+
+23:40.560 --> 23:49.560
+Bueno, lo que acá dice es, para filtrar se elige menor de los hijos y se compara el menor
+
+23:49.560 --> 23:51.560
+de los hijos por el padre.
+
+23:51.560 --> 23:58.560
+Ese es el mecanismo de filtrar hacia abajo, como siempre.
+
+23:58.560 --> 24:05.560
+Ahora bien, dice, se empieza filtrando desde el elemento que está en la posición tamaño
+
+24:05.560 --> 24:07.560
+sobre 2.
+
+24:07.560 --> 24:11.560
+¿Eso por qué es?
+
+24:11.560 --> 24:14.560
+A ver, vamos a ir borrando esto.
+
+24:14.560 --> 24:33.560
+O sea, ustedes imagínense esto.
+
+24:33.560 --> 24:38.560
+¿Qué tienen?
+
+24:39.560 --> 24:50.560
+Tienen esto, o sea, yo tengo, almaceno todos los datos en el arreglo, así como vienen.
+
+24:50.560 --> 25:13.560
+Entonces, en realidad yo acá sería 1, 2, 3, 4, 5, 6, 7, 8.
+
+25:13.560 --> 25:22.560
+O sea que ahí me dice que yo tengo que filtrar desde la posición 8 dividido 2, o sea desde
+
+25:22.560 --> 25:24.560
+la posición 4.
+
+25:24.560 --> 25:33.560
+O sea, desde acá, filtrar desde acá hacia abajo.
+
+25:33.560 --> 25:35.560
+¿Por qué?
+
+25:36.560 --> 25:38.560
+¿Por qué?
+
+25:38.560 --> 25:42.560
+Que es lo que se lo dije yo hace un ratito.
+
+25:42.560 --> 25:47.560
+O sea, de acá para acá, todo esto, ¿qué son?
+
+25:51.560 --> 25:53.560
+Son hojas.
+
+25:53.560 --> 25:58.560
+Es más, si yo esto lo dibujo, por eso nosotros siempre se lo hacemos como un árbol, porque
+
+25:58.560 --> 26:03.560
+con la forma de árbol hay cosas que se ven como más claras.
+
+26:05.560 --> 26:19.560
+3, 5, 6, 7, 8, 7, 20.
+
+26:23.560 --> 26:25.560
+Ahí me queda más.
+
+26:25.560 --> 26:28.560
+20, 1 .
+
+26:35.560 --> 26:56.560
+Si yo voy de atrás para adelante, esta es una hoja, esta es una hoja, esta es una hoja,
+
+26:56.560 --> 27:06.560
+este es el primer nodo que no es una hoja, y es N sobre 2, el tamaño es sobre 2,
+
+27:06.560 --> 27:13.560
+porque en realidad yo no lo voy a filtrar hacia abajo, no tiene nada abajo,
+
+27:13.560 --> 27:20.560
+entonces, se empieza desde acá hacia atrás,
+
+27:21.560 --> 27:26.560
+o sea, filtro este, después voy a filtrar este, después voy a filtrar este, así.
+
+27:30.560 --> 27:37.560
+Entonces, empecemos, ya que está luego por este ejemplo.
+
+27:37.560 --> 27:40.560
+Empiezo filtrando de acá.
+
+27:41.560 --> 27:44.560
+Entonces, ¿cómo es ese filtrado hacia abajo?
+
+27:45.560 --> 27:50.560
+Me fijan los hijos, en este caso tiene un solo hijo,
+
+27:50.560 --> 27:55.560
+así que ahí va a comparar con el único hijo que tiene,
+
+27:55.560 --> 28:01.560
+como el hijo es menor, que hace sube el hijo y baja él.
+
+28:06.560 --> 28:12.560
+Ahora me voy para el próximo, o sea, sería vengo acá, acá,
+
+28:13.560 --> 28:20.560
+a filtrar hacia abajo, siempre filtro hacia abajo, les digo porque después hacen unos guíos con esto,
+
+28:20.560 --> 28:26.560
+porque me empiezan a filtrar capaz el 8, me empiezan a filtrar para arriba, no, bueno.
+
+28:27.560 --> 28:34.560
+Entonces, el filtrado hacia abajo, empieza, busca, este tiene dos hijos,
+
+28:34.560 --> 28:39.560
+busca el menor de los hijos, es el 1, ¿cómo es el 8 con respecto al 1?
+
+28:39.560 --> 28:45.560
+Como es menor, entonces pone el 1 acá y el 8 acá, ahí lo deja,
+
+28:45.560 --> 28:52.560
+o sea, lo que a veces suelen hacer es después ahora, en este momento, seguir con el 1 hacia arriba, no.
+
+28:53.560 --> 28:56.560
+Tienen que filtrar hacia abajo.
+
+28:58.560 --> 29:02.560
+Atienden lo que estoy diciendo y porque a veces se confunden.
+
+29:02.560 --> 29:05.560
+O sea, esto se lo dejo así.
+
+29:05.560 --> 29:12.560
+Y después se va a confundir cuando, cuando yo filtre 3, ahí va a convertir en menor.
+
+29:14.560 --> 29:22.560
+Claro, y por eso va filtrando de atrás para adelante, porque va dejando esto que queda acá,
+
+29:22.560 --> 29:29.560
+estas son chips, ya esta es una chip, ¿entienden?
+
+29:30.560 --> 29:37.560
+Por eso cuando yo venga a filtrar de 3, ahora voy a reacomodar este, ¿no?
+
+29:37.560 --> 29:44.560
+Pero cuando yo venga a filtrar de 3, me va a quedar, yo voy a tener una chip acá y una chip acá.
+
+29:44.560 --> 29:52.560
+Entonces, solo me alcanza con comparar con la raíz.
+
+29:53.560 --> 29:56.560
+Estas son aquí, en la raíz es el menor.
+
+29:57.560 --> 30:04.560
+Entonces, por eso va de atrás para adelante, porque va dejando chips armadas a medida que avanza el algoritmo.
+
+30:05.560 --> 30:11.560
+Bien, entonces, estamos por acá, ahora 15.
+
+30:11.560 --> 30:20.560
+El 15 tiene los hijos, busca el menor de los hijos, que es el 4.
+
+30:20.560 --> 30:25.560
+Entonces, sube el 4 y baja el 15.
+
+30:25.560 --> 30:29.560
+Y sigue, cuando el filtro es abajo, tiene que seguir hasta...
+
+30:29.560 --> 30:31.560
+Ahí, se escucha cortado.
+
+30:32.560 --> 30:35.560
+Ahí, a ver.
+
+30:36.560 --> 30:39.560
+Si no se hace, se mueve.
+
+30:41.560 --> 30:43.560
+Ahí se escucha.
+
+30:44.560 --> 30:46.560
+Mejor.
+
+30:51.560 --> 30:53.560
+Ahí.
+
+30:54.560 --> 30:57.560
+Entonces, estamos acá en el 15.
+
+30:58.560 --> 31:08.560
+El filtrado hacia abajo tiene que llegar o hasta una posición donde sea menor que los dos hijos o hasta una hoja.
+
+31:08.560 --> 31:13.560
+Entonces, yo vine acá, el 15, encontró el menor de los hijos, era el 4.
+
+31:13.560 --> 31:16.560
+Entonces, subió el 4 y bajó el 15.
+
+31:16.560 --> 31:26.560
+Y ahora sigue, en este caso tiene un solo hijo, como es el 15 con respecto al 7, como es mayor, sube el 7, baja el 15.
+
+31:30.560 --> 31:34.560
+Entonces, ahora me quedó esta otra chip.
+
+31:34.560 --> 31:37.560
+Entonces, me quedó esta y ahora esta.
+
+31:37.560 --> 31:40.560
+Y ahora voy a filtrar el 3.
+
+31:41.560 --> 31:50.560
+Entonces, cuando flite el 3, en realidad busca el menor de los hijos que es el 1.
+
+31:50.560 --> 31:54.560
+Entonces, sube el 1, baja el 3.
+
+31:55.560 --> 32:01.560
+Busca el menor de los hijos, que en este caso es el 8, como el 3 es menor que el 8, ahí lo deja.
+
+32:01.560 --> 32:04.560
+Y ahí me quedó armada la chip.
+
+32:05.560 --> 32:18.560
+Que esta chip que quedó armada, ¿puede coincidir o no con la chip que queda armada insertando de a uno los elementos?
+
+32:18.560 --> 32:25.560
+Yo con este conjunto de elementos tengo un montón de chips que son posibles.
+
+32:26.560 --> 32:38.560
+Entonces, si yo tomo esa lista y voy insertando de a uno, entonces me genera una chip.
+
+32:38.560 --> 32:46.560
+Ahora, si yo uso el algoritmo, este algoritmo que nosotros llamamos Virgill, que es más eficiente,
+
+32:46.560 --> 32:51.560
+que es esto, que es mandarlo todos así como vienen y empezar a filtrar hacia abajo,
+
+32:51.560 --> 32:59.560
+desde la mitad para atrás, para adelante, me puede llegar a quedar otra chip.
+
+33:00.560 --> 33:04.560
+O la misma, depende de los datos en realidad.
+
+33:08.560 --> 33:16.560
+Acá hay un ejemplo bien desarrollado, de como una chip un poco más grande,
+
+33:16.560 --> 33:22.560
+donde empieza de la posición 5, o sea desde el 7.
+
+33:24.560 --> 33:27.560
+Entonces acá filtra el 7.
+
+33:30.560 --> 33:33.560
+Y este ya es una chip.
+
+33:33.560 --> 33:36.560
+Ahora viene acá, filtra el 9.
+
+33:36.560 --> 33:40.560
+O sea, lo que se filtra es el lodo hacia abajo.
+
+33:40.560 --> 33:47.560
+No empiecen a subir porque, yo puedo repetir, algunos empiezan y bajan y suben y bajan y suben.
+
+33:47.560 --> 33:54.560
+Entonces así, después los acomodan, como les parece, sabiendo el orden que tienen que cumplir.
+
+33:56.560 --> 34:01.560
+Bien, entonces acá en este caso buscaría el menor de los hijos, que es el 6,
+
+34:01.560 --> 34:04.560
+y va a intercambiar el nuevo con el 6.
+
+34:05.560 --> 34:08.560
+Y acá ahí salió otra chip.
+
+34:08.560 --> 34:11.560
+Nos va a hacer lo mismo.
+
+34:16.560 --> 34:20.560
+Y después sigue con este y después va a seguir con este.
+
+34:23.560 --> 34:25.560
+Si quieren.
+
+34:26.560 --> 34:31.560
+Entonces, por qué me parece,
+
+34:33.560 --> 34:42.560
+o sea, la pichota, lo que hace entonces es tomar la mitad de los segmentos y los filtra hacia abajo.
+
+34:42.560 --> 34:50.560
+Cuando yo veo este mecanismo, esta lógica de este algoritmo,
+
+34:51.560 --> 35:01.560
+en realidad no me, o sea, así tan claramente no me doy cuenta por qué es genial.
+
+35:01.560 --> 35:07.560
+Yo le digo, bueno, esta forma de construir la chip es genial.
+
+35:09.560 --> 35:13.560
+Bueno, ustedes me van a creer, pues yo se los digo, ¿no?
+
+35:13.560 --> 35:18.560
+Pero en realidad, ¿de dónde sale que es genial?
+
+35:18.560 --> 35:24.560
+No sale, no es algo muy, digamos, muy intuitivo.
+
+35:25.560 --> 35:29.560
+Porque ahora vamos a ver que se basa en un diorama.
+
+35:30.560 --> 35:37.560
+Porque en realidad lo que yo estoy haciendo acá son N sobre 2 filtrados hacia abajo.
+
+35:37.560 --> 35:43.560
+Entonces yo podría decir, y pero el filtrado hacia abajo, también el logarítmico.
+
+35:43.560 --> 35:47.560
+Si yo tengo que hacer N sobre 2 filtrados hacia abajo,
+
+35:47.560 --> 35:54.560
+alguien podría hacer el razonamiento de que, bueno, pero esta forma de construir la chip es N o N también.
+
+35:56.560 --> 36:00.560
+Sin embargo, en realidad,
+
+36:03.560 --> 36:08.560
+al hacer el filtrado hacia abajo, yo que estoy recorriendo,
+
+36:09.560 --> 36:15.560
+estoy recorriendo la altura de cada nodo.
+
+36:16.560 --> 36:21.560
+¿Entiendes? O sea, cuando yo estoy acá recorro su altura, que es 1.
+
+36:21.560 --> 36:26.560
+Cuando estoy acá recorro su altura, que en este caso es 1 también.
+
+36:26.560 --> 36:31.560
+Cuando estoy acá recorro, en el peor caso, siempre su altura, que es 2.
+
+36:32.560 --> 36:39.560
+Bien. Entonces, la opción debería que
+
+36:40.560 --> 36:44.560
+poder calcular, o sea, es
+
+36:44.560 --> 36:51.560
+la cantidad de operaciones que hace si yo para cada nodo recorro solo su altura.
+
+36:51.560 --> 36:55.560
+Porque yo que estoy recorriendo la altura de todo el árbol cada vez.
+
+36:56.560 --> 37:00.560
+O sea, yo para cada nodo recorro su altura.
+
+37:00.560 --> 37:05.560
+Y cuando yo estoy abajo, las alturas son menores.
+
+37:05.560 --> 37:09.560
+La altura empieza a crecer a medida que yo voy subiendo en el árbol.
+
+37:11.560 --> 37:14.560
+Entonces,
+
+37:16.560 --> 37:21.560
+lo que a mí me sirve en esto es que se basa,
+
+37:22.560 --> 37:25.560
+quiero decir en el algoritmo,
+
+37:25.560 --> 37:31.560
+es en calcular la suma de las alturas de todos los nodos.
+
+37:33.560 --> 37:38.560
+Entonces, ¿por qué? Porque yo en el filtrado lo que hace es
+
+37:38.560 --> 37:43.560
+busca el menor de los hijos, ahí tengo una comparación,
+
+37:43.560 --> 37:47.560
+y compara el menor de los hijos con el padre, ahí tengo dos comparaciones.
+
+37:47.560 --> 37:51.560
+O sea, por cada vez que baja de nivel hace dos comparaciones.
+
+37:52.560 --> 37:58.560
+O sea, que la cantidad de operaciones que hace el algoritmo
+
+37:58.560 --> 38:06.560
+para cada nodo es dos veces por su altura, por su altura, por la altura de todo el árbol.
+
+38:07.560 --> 38:16.560
+Entonces, en realidad lo que a mí me conviene hacer
+
+38:16.560 --> 38:19.560
+para sacar lo que sería la cantidad de operaciones,
+
+38:19.560 --> 38:23.560
+porque después vamos a llamar tiempo de ejecución cuando veamos la eficiencia,
+
+38:23.560 --> 38:29.560
+es poder calcular la suma de las alturas de todos los nodos.
+
+38:29.560 --> 38:32.560
+Y en eso se basa la demostración,
+
+38:32.560 --> 38:37.560
+la demostración de por qué este mecanismo es de orden lineal.
+
+38:39.560 --> 38:44.560
+Yo tengo la altura del nueve, por ejemplo, es uno,
+
+38:44.560 --> 38:49.560
+la altura del ocho es dos, la altura del siete es uno.
+
+38:49.560 --> 38:54.560
+En este caso la altura del diez es cero,
+
+38:54.560 --> 38:58.560
+pero porque justo en este caso no tiene hijos,
+
+38:58.560 --> 39:01.560
+pero podría ser uno definitivamente.
+
+39:01.560 --> 39:07.560
+Por eso el teorema en realidad se basa en un árbol binario lleno
+
+39:07.560 --> 39:10.560
+para poder hacer bien las cuentas, ¿entiende?
+
+39:10.560 --> 39:15.560
+Es decir, que yo voy a considerar que va a estar totalmente lleno.
+
+39:15.560 --> 39:20.560
+Este va a tener dos hijos, el diez va a tener dos hijos y el veintiuno va a tener dos hijos.
+
+39:20.560 --> 39:23.560
+¿Qué sería si este es el peor caso?
+
+39:26.560 --> 39:30.560
+Pues si tiene menos elementos y el árbol no está lleno,
+
+39:30.560 --> 39:33.560
+no importa, la teórica ya no va a ser menos.
+
+39:33.560 --> 39:39.560
+Pero siempre recuerden que en el caso de análisis de algoritmos
+
+39:39.560 --> 39:44.560
+siempre nosotros vamos a considerar el peor caso.
+
+39:45.560 --> 39:48.560
+Claro, siempre el peor caso es que te llena.
+
+39:49.560 --> 39:56.560
+Entonces, el teorema que dice que el órgano binario lleno de altura H
+
+39:56.560 --> 40:01.560
+contiene dos a la H más un menos un dos, esto ya lo vimos, ¿no?
+
+40:01.560 --> 40:09.560
+O sea, además en un árbol binario lleno ya sé exactamente la cantidad de nodos que tiene.
+
+40:09.560 --> 40:12.560
+Dos a la H más uno menos uno.
+
+40:13.560 --> 40:19.560
+La suma de las alturas de todos los nodos es esta presión que está abajo.
+
+40:26.560 --> 40:42.560
+Entonces, antes de ver la demostración, pero vamos a ver, es muy simple igual la demostración.
+
+40:42.560 --> 40:55.560
+Digo, yo digo, bueno, yo llego, yo logro demostrar el teorema que ustedes ya están en eso bastante cancheo por por matemática y eso.
+
+40:55.560 --> 41:00.560
+Yo logro demostrar el teorema. Ahora esa presión que está ahí.
+
+41:02.560 --> 41:07.560
+Está todo en función de H, porque la única variable que aparece ahí es H.
+
+41:08.560 --> 41:13.560
+O sea, ¿cómo me estás demostrando? Si yo logro demostrar lo que dice ahí, ¿no?
+
+41:13.560 --> 41:26.560
+¿Cómo estoy mostrando que la suma y las alturas de todos los nodos es algo que es de orden lineal?
+
+41:26.560 --> 41:29.560
+O sea, que no se me va más allá del N.
+
+41:30.560 --> 41:33.560
+O sea, esa presión que dice ahí.
+
+41:34.560 --> 41:42.560
+Dos a la H más uno menos uno menos H más uno.
+
+41:43.560 --> 41:45.560
+Esta presión que está acá.
+
+41:47.560 --> 41:51.560
+¿Cómo podría yo traducirla?
+
+41:51.560 --> 41:57.560
+Y que me empieza a parecer la variable N en realidad.
+
+41:57.560 --> 42:08.560
+Porque a mí me dice que esta forma de construir la H, que en realidad lo que hace recordar las alturas de todos los nodos, es de orden lineal.
+
+42:08.560 --> 42:11.560
+Lineal es N en la cantidad de datos.
+
+42:11.560 --> 42:13.560
+Acá no me aparece el N para nada.
+
+42:13.560 --> 42:21.560
+Entonces digo, ¿de dónde puedo deducir yo esta expresión?
+
+42:21.560 --> 42:27.560
+No sé si me entienden lo que yo le estoy preguntando.
+
+42:28.560 --> 42:31.560
+O sea, ¿cómo saco yo?
+
+42:31.560 --> 42:36.560
+O sea, mejor dicho, ¿cómo relaciono yo esto con N?
+
+42:37.560 --> 42:43.560
+Con una función que no sea la función que N.
+
+42:48.560 --> 42:57.560
+O sea, si yo empiezo a analizarla, esta expresión, ¿se entiende lo que yo estoy preguntando o no?
+
+42:58.560 --> 43:02.560
+Y si no se entiende la pregunta, no se va a poder contestar.
+
+43:03.560 --> 43:07.560
+O sea, yo ya tengo dos partes por empezar.
+
+43:07.560 --> 43:10.560
+Tengo esto y tengo esto.
+
+43:17.560 --> 43:20.560
+¿Qué es la primer parte? ¿Qué es?
+
+43:20.560 --> 43:21.560
+Sí, N.
+
+43:21.560 --> 43:23.560
+Además lo dice en el enunciado.
+
+43:23.560 --> 43:29.560
+O sea, el enunciado que arriba lo dice, porque es un arbol binario lleno que tiene esta cantidad de nodos.
+
+43:29.560 --> 43:31.560
+O sea, me lo está diciendo.
+
+43:31.560 --> 43:34.560
+O sea, que esto es N directamente.
+
+43:42.560 --> 43:43.560
+No.
+
+43:43.560 --> 43:45.560
+O sea, es N directamente.
+
+43:45.560 --> 43:46.560
+No.
+
+43:46.560 --> 43:47.560
+O sea, la consulta...
+
+43:47.560 --> 43:48.560
+No, no, no, no.
+
+43:48.560 --> 43:50.560
+En realidad la consulta es...
+
+43:50.560 --> 44:03.560
+O sea, yo sé que para que esté esta forma de construir una hip, lo que hace es para cada nodo recorre la altura, ¿no?
+
+44:03.560 --> 44:08.560
+Y la cantidad de operaciones que hace es dos veces su altura.
+
+44:08.560 --> 44:18.560
+Entonces, si yo logro calcular cuál es la suma de las alturas de todos los nodos de un arbol lleno,
+
+44:18.560 --> 44:22.560
+entonces de ahí voy a poder reducir la cantidad de operaciones.
+
+44:22.560 --> 44:30.560
+Ahora, para calcular cuál es el valor de la suma de las alturas de todos los nodos,
+
+44:30.560 --> 44:33.560
+en realidad está este teorema.
+
+44:33.560 --> 44:36.560
+Ahora, este teorema está todo en función de H, que es la altura.
+
+44:36.560 --> 44:40.560
+Entonces, yo lo que quiero decir, porque uno demuestra este teorema.
+
+44:40.560 --> 44:45.560
+Después que lo demostramos, vamos a llegar a esa expresión y todo, ¿no?
+
+44:45.560 --> 44:49.560
+Ahora, me pueden decir, bueno, pero esto tiene que relacionar con N.
+
+44:49.560 --> 44:54.560
+O sea, ¿para quién me sirve demostrar este teorema?
+
+44:54.560 --> 45:01.560
+Si yo lo que tengo que demostrar es que ya puedo elegir el orden lineal.
+
+45:01.560 --> 45:12.560
+¿Se entiende? Por eso yo primero les quiero que analicemos a lo que vamos a llegar, ¿no?
+
+45:12.560 --> 45:19.560
+Entonces, yo quiero que analicemos juntos esto, ¿no?
+
+45:19.560 --> 45:25.560
+Para ver que esta expresión es algo que se puede ver en el teorema.
+
+45:25.560 --> 45:30.560
+Entonces, yo quiero que analicemos juntos esto, ¿no?
+
+45:30.560 --> 45:37.560
+Para ver que esta expresión es algo que se puede ver en el teorema.
+
+45:38.560 --> 45:44.560
+Para ver que esta expresión es algo de orden N.
+
+45:46.560 --> 45:51.560
+¿Entienden? No sé si entienden lo que...
+
+45:51.560 --> 45:56.560
+O sea, porque ahora vamos a ver la demostración, que es sencilla y todo.
+
+45:56.560 --> 46:00.560
+Pero una vez que veamos la demostración, bueno, bárbaro, llegamos a esto.
+
+46:00.560 --> 46:01.560
+¿Y esto qué relaciona a alguien?
+
+46:01.560 --> 46:06.560
+Entre esto y lo que vos me dijiste que el virjito es de orden lineal.
+
+46:08.560 --> 46:11.560
+Entonces, esto es N.
+
+46:11.560 --> 46:14.560
+Esto es...
+
+46:14.560 --> 46:26.560
+Yo podría decir, bueno, si N es 2 a la H más 1 menos 1, yo puedo dejar H de acá.
+
+46:26.560 --> 46:34.560
+Entonces, me queda que N más 1 es 2 a la H más 1.
+
+46:34.560 --> 46:43.560
+Entonces, H más 1 es el logaritmo base 2 de N más 1.
+
+46:43.560 --> 46:56.560
+O sea, que H es el logaritmo de N más 1 menos 1.
+
+46:56.560 --> 47:05.560
+Esto se van a tener que empezar a acostumbrar porque nada, se volvimos a hacer, todos se hacen así.
+
+47:05.560 --> 47:08.560
+O sea, el despejar es mucho más mal.
+
+47:08.560 --> 47:12.560
+Por eso es que me gustan mucho ustedes.
+
+47:12.560 --> 47:18.560
+Entonces, siempre la altura es algo de orden logarítmico.
+
+47:19.560 --> 47:27.560
+Entonces, si yo tengo esta expresión, que acá tengo N menos, yo no podría copiar todo esto.
+
+47:27.560 --> 47:39.560
+El logaritmo de N más 1 menos 1 más 1 de acá.
+
+47:40.560 --> 47:44.560
+Esto se mueve con esto.
+
+47:44.560 --> 47:50.560
+Entonces, me queda que esta expresión, que eso lo vemos bien en el algoritmo,
+
+47:50.560 --> 47:55.560
+me queda una expresión que tengo algo de N y algo logaritmo de N.
+
+47:55.560 --> 48:01.560
+Entre las dos funciones, cuando se hace una cosa así, siempre prevalece la mayor.
+
+48:03.560 --> 48:08.560
+Nosotros vamos a ver cuando le calculemos la función de tiempo de ejecución a los algoritmos.
+
+48:08.560 --> 48:13.560
+En general, lo que tengo es una expresión.
+
+48:13.560 --> 48:23.560
+Voy a tener N más 3 logaritmo de N más 8 N cuadrado más.
+
+48:23.560 --> 48:25.560
+Entonces, de todo siempre prevalece.
+
+48:25.560 --> 48:31.560
+Y si hay una forma de, ya sabiendo el crecimiento de las funciones,
+
+48:31.560 --> 48:38.560
+en una expresión, la que prevalece es la de mayor crecimiento.
+
+48:38.560 --> 48:40.560
+En este caso, la de mayor crecimiento es N.
+
+48:44.560 --> 48:48.560
+Porque esto que está acá es algo de orden logaritmo.
+
+48:48.560 --> 48:51.560
+El logaritmo crece más lento que el señal.
+
+48:52.560 --> 48:55.560
+Entonces, ¿entendieron esto?
+
+48:55.560 --> 49:01.560
+O ya no sé si me están escuchando o no, si se fueron a la vereda, qué se llama.
+
+49:05.560 --> 49:09.560
+Es decir, que yo voy a llegar ahora cuando demostremos,
+
+49:09.560 --> 49:12.560
+que la demostración es muy simple, ya les digo.
+
+49:12.560 --> 49:16.560
+Pero cuando demostremos esto, vamos a llegar a esa expresión.
+
+49:16.560 --> 49:19.560
+Y esa expresión es algo lineal, en realidad.
+
+49:19.560 --> 49:24.560
+Entonces, ahí estoy demostrando que la suma de las alturas de todos los nodos
+
+49:24.560 --> 49:29.560
+en un algodón binario lleno es algo del orden de N.
+
+49:29.560 --> 49:34.560
+Cuando uno dice del orden, que eso lo vamos a ver bien,
+
+49:34.560 --> 49:37.560
+ya lo digo, el algoritmo se usa siempre del orden del orden,
+
+49:37.560 --> 49:41.560
+es porque no va más allá de N.
+
+49:41.560 --> 49:46.560
+O sea, no es una función que crece más rápido que N, seguro.
+
+49:46.560 --> 49:49.560
+Es una cota superior.
+
+49:50.560 --> 49:51.560
+Bien.
+
+49:51.560 --> 49:55.560
+Entonces, esto como se muestra, se muestra bastante simple,
+
+49:55.560 --> 49:58.560
+porque es una demostración matemática.
+
+49:58.560 --> 50:03.560
+Dice, un algodón tiene dos alaín nodos de altura H menor.
+
+50:03.560 --> 50:06.560
+Sí, esto en realidad es así.
+
+50:06.560 --> 50:07.560
+A ver.
+
+50:36.560 --> 50:39.560
+Supongamos este árbol binario lleno.
+
+50:39.560 --> 50:48.560
+Entonces, yo tengo un nodo de altura ¿cuánto?
+
+50:48.560 --> 50:53.560
+¿De qué altura tiene ese nodo, que es la raíz justo?
+
+50:53.560 --> 50:54.560
+Claro, tres.
+
+50:54.560 --> 50:56.560
+Bueno, en este caso tres.
+
+50:56.560 --> 51:01.560
+No vamos a generalizar con H, porque es la altura del árbol.
+
+51:01.560 --> 51:05.560
+O sea, la raíz es el bajo del árbol.
+
+51:05.560 --> 51:10.560
+La raíz es el bajo del árbol.
+
+51:10.560 --> 51:15.560
+Entonces, la raíz es la altura del árbol.
+
+51:15.560 --> 51:18.560
+Sí, la raíz es la altura del árbol.
+
+51:19.560 --> 51:21.560
+Porque es la altura del árbol.
+
+51:21.560 --> 51:25.560
+O sea, la raíz va a tener la altura de altura del árbol.
+
+51:25.560 --> 51:29.560
+Tengo un nodo de altura H.
+
+51:29.560 --> 51:31.560
+¿A qué que tengo?
+
+51:31.560 --> 51:33.560
+Tengo dos nodos.
+
+51:33.560 --> 51:35.560
+¿De qué altura?
+
+51:39.560 --> 51:40.560
+H menos 1.
+
+51:40.560 --> 51:41.560
+No.
+
+51:41.560 --> 51:42.560
+Bien.
+
+51:48.560 --> 51:53.560
+Pues acá tengo cuatro nodos, que sería 2 al cuadrado.
+
+51:53.560 --> 51:54.560
+Nodos.
+
+51:54.560 --> 51:57.560
+De altura H menos 2.
+
+51:57.560 --> 52:02.560
+Después tengo 2 al cubo de altura H menos 3.
+
+52:02.560 --> 52:06.560
+Si esto siguiera, fíjense.
+
+52:06.560 --> 52:12.560
+¿Qué relación hay entre un nodo que es 2 a la 0?
+
+52:13.560 --> 52:15.560
+Entonces, hay una relación.
+
+52:15.560 --> 52:17.560
+Esto sería 2 a la 1.
+
+52:17.560 --> 52:20.560
+Hay una relación entre esto y esto.
+
+52:24.560 --> 52:25.560
+¿Lo ven?
+
+52:25.560 --> 52:29.560
+Acá sería H menos 0.
+
+52:29.560 --> 52:35.560
+Entonces, por eso dice ahí que el árbol tiene 2 a la i nodos de altura H menos i.
+
+52:35.560 --> 52:39.560
+Fíjense, 2 a la i nodos de altura H menos i.
+
+52:39.560 --> 52:41.560
+Para acá, en cada nivel.
+
+52:43.560 --> 52:53.560
+Entonces, si yo tengo que sumar la altura de cada uno de los nodos en este árbol,
+
+52:53.560 --> 52:58.560
+yo tendría que sumar H.
+
+52:58.560 --> 53:03.560
+Después tendría que sumar 2 veces H menos 1.
+
+53:03.560 --> 53:07.560
+Después tendría que sumar 4 veces H menos 2.
+
+53:07.560 --> 53:11.560
+Luego tendría que sumar 8 veces H menos 3.
+
+53:11.560 --> 53:12.560
+Y así.
+
+53:12.560 --> 53:16.560
+O sea, 2 a la i por H menos i.
+
+53:16.560 --> 53:19.560
+De ahí sale esta sumatoria desde acá.
+
+53:21.560 --> 53:27.560
+O sea, la suma de las alturas de todos los nodos es esta sumatoria que está acá.
+
+53:27.560 --> 53:33.560
+Acá está escrita en forma comprimida con el símbolo sumatoria.
+
+53:33.560 --> 53:35.560
+Y acá está expandida.
+
+53:38.560 --> 53:40.560
+O sea, esto es lo mismo que esto.
+
+53:43.560 --> 53:49.560
+Es empezar a instanciar 2 a la 0, que es 1 por H menos 0 es H.
+
+53:49.560 --> 53:51.560
+Entonces, este es el primer término.
+
+53:52.560 --> 53:58.560
+Después viene 2 veces H menos 1, 4 veces H menos 2, 8 veces H menos 3.
+
+53:58.560 --> 54:02.560
+Acá en realidad dice es hasta H menos 1.
+
+54:02.560 --> 54:04.560
+¿Por qué el último término acá no está?
+
+54:04.560 --> 54:11.560
+Porque acá sería, cuando vale H, me quedaría 2 al H por 0.
+
+54:13.560 --> 54:17.560
+Porque son todos los nodos que son hojas.
+
+54:18.560 --> 54:21.560
+Bien, entonces, ¿qué tal es la igualdad 1?
+
+54:24.560 --> 54:25.560
+¿Qué?
+
+54:25.560 --> 54:30.560
+O, porque acá se llama, bueno, se llama A.
+
+54:35.560 --> 54:38.560
+El símbolo es que esto es muy común.
+
+54:38.560 --> 54:42.560
+Como yo quiero llegar, yo sé el resultado que quiero llegar, ¿no?
+
+54:42.560 --> 54:47.560
+Entonces, lo que hace es multiplicar ambos miembros por 2.
+
+54:48.560 --> 54:51.560
+Entonces, la igualdad sigue estando.
+
+54:51.560 --> 54:54.560
+Entonces, multiplico este miembro por 2.
+
+54:54.560 --> 54:56.560
+Entonces, me queda 2S.
+
+54:56.560 --> 54:58.560
+Y todos los miembros por 2.
+
+54:58.560 --> 55:01.560
+Entonces, la igualdad sigue estando.
+
+55:01.560 --> 55:04.560
+Entonces, multiplico este miembro por 2.
+
+55:05.560 --> 55:07.560
+Entonces, me queda 2S.
+
+55:07.560 --> 55:11.560
+Y cada uno de los miembros por 2.
+
+55:13.560 --> 55:20.560
+Entonces, me queda 2 por H, más 4 por H menos 1, más 8 por H menos 2.
+
+55:20.560 --> 55:29.560
+Y me aparece el último término, porque el último, al hacer 2 veces por 2 al H menos 1, 2 al H.
+
+55:30.560 --> 55:33.560
+Y el resultado que usted hace es restar.
+
+55:33.560 --> 55:36.560
+Esta ve en la segunda igualdad.
+
+55:36.560 --> 55:39.560
+En la segunda le resta la primera.
+
+55:40.560 --> 55:45.560
+Entonces, fíjense que esto se me va imponente.
+
+55:45.560 --> 55:48.560
+Este 4H se me va imponente.
+
+55:49.560 --> 55:57.560
+Entonces, me queda el menos H de par, más 2 por H,
+
+55:58.560 --> 56:05.560
+menos H menos 1, más 4 por H menos 1, menos H menos 2.
+
+56:07.560 --> 56:10.560
+Yo voy significando porque acá se me va.
+
+56:10.560 --> 56:12.560
+H menos H se me va.
+
+56:12.560 --> 56:16.560
+Acá H menos H se me va.
+
+56:16.560 --> 56:23.560
+Entonces, me queda menos H de más 2, más 4, más 8, más 16.
+
+56:23.560 --> 56:25.560
+Me queda esto.
+
+56:28.560 --> 56:30.560
+Ahora bien.
+
+56:31.560 --> 56:33.560
+Fíjese.
+
+56:33.560 --> 56:36.560
+Quiero decir que a partir de 2.
+
+56:36.560 --> 56:44.560
+A partir de 2 tengo algo parecido a la serie geométrica 2.
+
+56:44.560 --> 56:49.560
+Que lo vemos cuando demostramos la cantidad de 2 en un árbol lleno.
+
+56:49.560 --> 56:52.560
+Esta sumatoria que nosotros sabemos.
+
+56:53.560 --> 56:56.560
+Aquí es igual.
+
+57:00.560 --> 57:07.560
+O sea, ahí está la serie geométrica 2 que se ha demostrado por inducción y todo, matemática.
+
+57:07.560 --> 57:09.560
+Eso es algo parecido.
+
+57:09.560 --> 57:12.560
+¿Por qué parecido?
+
+57:14.560 --> 57:18.560
+Y no es exactamente igual a la serie geométrica.
+
+57:22.560 --> 57:32.560
+Porque esta serie geométrica, no sé si me están entendiendo, si están perdidos, si están, no sé.
+
+57:32.560 --> 57:36.560
+Esta serie geométrica empieza de 2 al 0.
+
+57:36.560 --> 57:38.560
+O sea, empieza en 1.
+
+57:38.560 --> 57:41.560
+Y acá me está faltando el 1.
+
+57:41.560 --> 57:43.560
+No lo tengo.
+
+57:44.560 --> 57:46.560
+Entonces, ¿qué hago?
+
+57:46.560 --> 57:48.560
+Entonces, ¿qué hago?
+
+57:48.560 --> 57:51.560
+Sumo de los dos lados.
+
+57:51.560 --> 57:52.560
+Le sumo 1.
+
+57:52.560 --> 57:55.560
+Entonces hago S más 1.
+
+57:55.560 --> 57:58.560
+Menos H es más 1 más 2 más 4.
+
+57:58.560 --> 58:01.560
+Y ahora sí me quedó la serie geométrica.
+
+58:04.560 --> 58:07.560
+Entonces me queda S más 1.
+
+58:09.560 --> 58:10.560
+Es menos H.
+
+58:10.560 --> 58:11.560
+Y esto que está acá.
+
+58:11.560 --> 58:13.560
+Vamos a ver el color.
+
+58:14.560 --> 58:17.560
+Y esto que está acá.
+
+58:21.560 --> 58:24.560
+Es 2 cada H más 1 me la sumo.
+
+58:24.560 --> 58:29.560
+Porque es esto que estaba acá.
+
+58:32.560 --> 58:35.560
+Y bueno, y una vez que ya tengo eso.
+
+58:35.560 --> 58:38.560
+O sea, eso lo que tengo que llegar a fijar es S.
+
+58:38.560 --> 58:41.560
+Que S es la suma de la altura de todos los nodos.
+
+58:41.560 --> 58:42.560
+Entonces.
+
+58:45.560 --> 58:47.560
+Una vez que ya tengo eso.
+
+58:47.560 --> 58:48.560
+O sea, acá.
+
+58:48.560 --> 58:53.560
+Porque acá me quedó menos H más 2 al H más 1 más 1.
+
+58:53.560 --> 58:55.560
+Paso el 1 restando para allá.
+
+58:55.560 --> 58:58.560
+Y ya me quedó lo que yo quería.
+
+59:00.560 --> 59:03.560
+Yo la demostración no se entendía nada.
+
+59:04.560 --> 59:05.560
+Me la hice.
+
+59:05.560 --> 59:06.560
+Me voy con un comentario.
+
+59:06.560 --> 59:08.560
+Me voy a preguntar.
+
+59:09.560 --> 59:13.560
+Esa es una demostración de teoría más matemático.
+
+59:13.560 --> 59:16.560
+Como ustedes habrán visto en la otra.
+
+59:16.560 --> 59:18.560
+Y entonces.
+
+59:21.560 --> 59:22.560
+¿Qué es lo que dice ahí?
+
+59:22.560 --> 59:27.560
+Dice que un árbol binario completo no es un árbol binario lleno.
+
+59:27.560 --> 59:33.560
+Pero el resultado es una cota superior de la suma de las alturas de todos los nodos en un árbol binario completo.
+
+59:33.560 --> 59:35.560
+Es decir, lo que yo le he comentado hoy.
+
+59:35.560 --> 59:38.560
+Como esto está demostrado para el árbol lleno.
+
+59:38.560 --> 59:40.560
+También me sirve para el completo.
+
+59:40.560 --> 59:42.560
+O sea, tendrá menos nodos.
+
+59:42.560 --> 59:43.560
+O sea, va a ser menos operaciones.
+
+59:43.560 --> 59:45.560
+Pero me sirve como cota superior.
+
+59:48.560 --> 59:49.560
+Entonces.
+
+59:49.560 --> 59:54.560
+Un árbol binario completo tiene entre 2 al H y 2 al H más o menos un nodo.
+
+59:54.560 --> 59:59.560
+Entonces el teorima implica que esa suma es de orden lineal.
+
+01:00:00.560 --> 01:00:04.560
+Porque lo que estaba escrito antes era pisada.
+
+01:00:04.560 --> 01:00:07.560
+Porque me queda una expresión que es N.
+
+01:00:07.560 --> 01:00:10.560
+Y después me queda otra expresión que lo valía.
+
+01:00:10.560 --> 01:00:15.560
+Entonces todo eso uno puede decir que lo puede acotar con N.
+
+01:00:16.560 --> 01:00:21.560
+Ya ahí sale que esta forma de construir la pieza es lineal.
+
+01:00:21.560 --> 01:00:28.560
+Entonces es más eficiente que insertar los elementos de A1.
+
+01:00:28.560 --> 01:00:29.560
+No.
+
+01:00:29.560 --> 01:00:30.560
+No.
+
+01:00:30.560 --> 01:00:34.560
+Por el método de insertar el hip.
+
+01:00:38.560 --> 01:00:39.560
+Bien.
+
+01:00:42.560 --> 01:00:46.560
+Veamos ahora otro algoritmo que es el hip sort.
+
+01:00:46.560 --> 01:00:49.560
+Un método de ordenación que usa hip.
+
+01:00:59.560 --> 01:01:01.560
+Supongamos que.
+
+01:01:03.560 --> 01:01:06.560
+Yo tengo que ordenar.
+
+01:01:06.560 --> 01:01:07.560
+Dice.
+
+01:01:14.560 --> 01:01:15.560
+Entonces.
+
+01:01:15.560 --> 01:01:17.560
+Existen dos alternativas.
+
+01:01:19.560 --> 01:01:21.560
+La primera alternativa es.
+
+01:01:21.560 --> 01:01:25.560
+O sea, siempre estas dos alternativas son los hip.
+
+01:01:25.560 --> 01:01:26.560
+Las dos.
+
+01:01:27.560 --> 01:01:29.560
+Y la última opción aquí.
+
+01:01:29.560 --> 01:01:33.560
+Quiere decir una cantidad aproximada de N lo bien operaciones.
+
+01:01:34.560 --> 01:01:35.560
+No.
+
+01:01:35.560 --> 01:01:36.560
+Pero qué hace.
+
+01:01:36.560 --> 01:01:39.560
+Yo tengo que ordenar en forma creciente.
+
+01:01:39.560 --> 01:01:41.560
+Entonces lo que hace.
+
+01:01:41.560 --> 01:01:43.560
+Construye una mi hip.
+
+01:01:43.560 --> 01:01:47.560
+Y va sacando cada vez el mínimo y lo manda otro arreglo.
+
+01:01:48.560 --> 01:01:51.560
+Es decir, a mí me da esta lista de elementos.
+
+01:01:52.560 --> 01:01:54.560
+Solo tengo que ordenar.
+
+01:01:54.560 --> 01:01:57.560
+Si es un algoritmo ordenación, lo tengo que ordenar en forma creciente.
+
+01:01:59.560 --> 01:02:00.560
+Entonces, ¿qué hago?
+
+01:02:00.560 --> 01:02:02.560
+Una forma.
+
+01:02:03.560 --> 01:02:07.560
+Es construir una hip.
+
+01:02:07.560 --> 01:02:08.560
+No.
+
+01:02:08.560 --> 01:02:14.560
+De cualquiera de las dos maneras que vimos con el hip que es lineal o insertando de A1.
+
+01:02:16.560 --> 01:02:19.560
+Una vez que tengo la hip armada.
+
+01:02:19.560 --> 01:02:20.560
+No.
+
+01:02:21.560 --> 01:02:22.560
+Voy.
+
+01:02:22.560 --> 01:02:27.560
+Borrando el mínimo y lo paso a otro arreglo.
+
+01:02:28.560 --> 01:02:29.560
+No.
+
+01:02:30.560 --> 01:02:33.560
+Por ejemplo, si yo tengo este arreglo de entrada.
+
+01:02:35.560 --> 01:02:38.560
+Esto es un conjunto de datos que está desordenado.
+
+01:02:38.560 --> 01:02:39.560
+Y me dice en forma.
+
+01:02:39.560 --> 01:02:42.560
+Ordenado en forma creciente.
+
+01:02:43.560 --> 01:02:44.560
+Entonces, ¿qué hago?
+
+01:02:44.560 --> 01:02:46.560
+Primero tengo que armar la mi hip.
+
+01:02:46.560 --> 01:02:49.560
+Entonces acá tengo que armar la mi hip.
+
+01:02:51.560 --> 01:02:55.560
+12, 12, 18, 25, 30, 51.
+
+01:02:57.560 --> 01:02:58.560
+Sería esta.
+
+01:02:58.560 --> 01:03:01.560
+Esta es la mi hip armada.
+
+01:03:03.560 --> 01:03:06.560
+Y ahora lo que haces es.
+
+01:03:06.560 --> 01:03:07.560
+Haces.
+
+01:03:07.560 --> 01:03:11.560
+Y ahora me dices la operación de borrar mínimo.
+
+01:03:11.560 --> 01:03:14.560
+La operación de borrar mínimo.
+
+01:03:14.560 --> 01:03:18.560
+Entonces borrar mínimo es el 12 y lo pasa a otro arreglo.
+
+01:03:18.560 --> 01:03:20.560
+Me lo ubica acá.
+
+01:03:20.560 --> 01:03:22.560
+Cuando se borra el mínimo.
+
+01:03:22.560 --> 01:03:24.560
+Usando la operación del delvín.
+
+01:03:24.560 --> 01:03:28.560
+Es sacar el mínimo, pasar el último arriba y filtrarlo.
+
+01:03:28.560 --> 01:03:30.560
+Como siempre.
+
+01:03:31.560 --> 01:03:34.560
+Entonces, ¿qué hizo?
+
+01:03:34.560 --> 01:03:38.560
+Vino al 50, arriba y lo filtró.
+
+01:03:39.560 --> 01:03:42.560
+Y ahora le volvió a quedarme aquí.
+
+01:03:42.560 --> 01:03:44.560
+Con el mínimo en la raíz.
+
+01:03:46.560 --> 01:03:49.560
+Entonces le puede ir a borrar el mínimo.
+
+01:03:49.560 --> 01:03:53.560
+Y lo ubica en la segunda posición.
+
+01:04:00.560 --> 01:04:02.560
+Cuando borra el mínimo.
+
+01:04:02.560 --> 01:04:03.560
+Ya se sube el 30.
+
+01:04:03.560 --> 01:04:05.560
+Lo tiene que filtrar.
+
+01:04:05.560 --> 01:04:08.560
+Y le queda este otro arreglo.
+
+01:04:08.560 --> 01:04:10.560
+Vuelve a sacar el mínimo.
+
+01:04:10.560 --> 01:04:12.560
+Lo pone en la tercera posición.
+
+01:04:12.560 --> 01:04:15.560
+Y así sucesivamente hasta terminar.
+
+01:04:18.560 --> 01:04:23.560
+Esta forma de ordenar el arreglo me lleva.
+
+01:04:23.560 --> 01:04:27.560
+N log N operaciones.
+
+01:04:30.560 --> 01:04:32.560
+O sea, en realidad, ¿por qué?
+
+01:04:33.560 --> 01:04:35.560
+O sea, en realidad, ¿por qué?
+
+01:04:35.560 --> 01:04:37.560
+Yo tengo que construir la heap.
+
+01:04:40.560 --> 01:04:41.560
+Primero.
+
+01:04:44.560 --> 01:04:50.560
+Y después lo que tengo que hacer es N veces un delvín.
+
+01:04:57.560 --> 01:04:58.560
+¡Ya esto!
+
+01:04:58.560 --> 01:05:00.560
+El delvín.
+
+01:05:00.560 --> 01:05:04.560
+Para hacerlo N veces, ya esto me da N log N.
+
+01:05:06.560 --> 01:05:13.560
+Por eso es que el construir la heap, si yo la construyo en la forma más eficiente, que es de orden lineal, mejor.
+
+01:05:13.560 --> 01:05:16.560
+Ahora, si yo lo hago disertando de a uno, también me va a quedar N log N.
+
+01:05:16.560 --> 01:05:24.560
+O sea, no me va a cambiar, digamos, la eficiencia final de todo el algoritmo de ordenación.
+
+01:05:26.560 --> 01:05:27.560
+¿Se entiende?
+
+01:05:27.560 --> 01:05:30.560
+Ahora, lo que sí, ¿qué es lo que ven ustedes ahí?
+
+01:05:33.560 --> 01:05:36.560
+Que estaba dicho en la primer diapositiva.
+
+01:05:37.560 --> 01:05:39.560
+Esto y esto.
+
+01:05:46.560 --> 01:05:47.560
+Si ven algo, ¿no?
+
+01:05:58.560 --> 01:06:00.560
+O sea, ¿qué notan de desventaja?
+
+01:06:00.560 --> 01:06:05.560
+Si estaba dicho en la diapositiva anterior, no vuelvo para que no lo van a leer.
+
+01:06:14.560 --> 01:06:15.560
+Claro, tal cual.
+
+01:06:15.560 --> 01:06:21.560
+Que ocupa el doble espacio, porque necesita otro reglo de las mismas dimensiones.
+
+01:06:21.560 --> 01:06:23.560
+De las mismas dimensiones.
+
+01:06:23.560 --> 01:06:31.560
+Y fíjense que este, el arreglo original, el piso tendrá lugar vacío, ¿no?
+
+01:06:31.560 --> 01:06:34.560
+Hasta que se vacíe del todo, ¿no?
+
+01:06:34.560 --> 01:06:36.560
+Cuando este esté lleno.
+
+01:06:37.560 --> 01:06:42.560
+Y en general, los algoritmos de ordenación que ustedes han visto.
+
+01:06:43.560 --> 01:06:48.560
+En general, los algoritmos trabajan sobre el mismo arreglo.
+
+01:06:49.560 --> 01:06:54.560
+Hacen intercambios, hacen comparaciones, van, vienen, lo que sea.
+
+01:06:54.560 --> 01:06:57.560
+Pero siempre trabajan sobre el mismo arreglo.
+
+01:06:59.560 --> 01:07:07.560
+Entonces, si bien este algoritmo de ordenación y este orden en el que viene.
+
+01:07:07.560 --> 01:07:09.560
+Es un buen algoritmo, ¿no?
+
+01:07:10.560 --> 01:07:12.560
+En cuanto a eficiencia.
+
+01:07:13.560 --> 01:07:17.560
+Si digo, bueno, pero tengo que ordenar, no sé, 100.000 elementos.
+
+01:07:17.560 --> 01:07:19.560
+Necesito dos arreglos de 100.000.
+
+01:07:19.560 --> 01:07:23.560
+Para ir sacando de uno y mandando al otro.
+
+01:07:24.560 --> 01:07:29.560
+Entonces, por eso es que aparece el que se llama el hip-sort.
+
+01:07:32.560 --> 01:07:35.560
+Que requiere menos espacio, ¿por qué?
+
+01:07:35.560 --> 01:07:37.560
+Porque lo va a hacer en el mismo arreglo.
+
+01:07:38.560 --> 01:07:41.560
+En lo lógico, no de los algoritmos de ordenación.
+
+01:07:43.560 --> 01:07:44.560
+Ahora bien.
+
+01:07:46.560 --> 01:07:48.560
+¿Cómo que hace eso?
+
+01:07:50.560 --> 01:07:53.560
+Yo tengo que ordenar en forma.
+
+01:07:53.560 --> 01:07:55.560
+¿Qué le siente en un arreglo?
+
+01:07:58.560 --> 01:08:01.560
+Lo que hace es una max-hip.
+
+01:08:01.560 --> 01:08:03.560
+No una mi-hip.
+
+01:08:03.560 --> 01:08:04.560
+¿Por qué?
+
+01:08:04.560 --> 01:08:08.560
+Porque empieza de atrás para adelante.
+
+01:08:08.560 --> 01:08:10.560
+Es decir, fíjense.
+
+01:08:11.560 --> 01:08:17.560
+La hip inicial empezaba a dejar los últimos lugares libres.
+
+01:08:20.560 --> 01:08:25.560
+Entonces, ellos son los que va a aprovechar para ir dejando el arreglo ordenado.
+
+01:08:26.560 --> 01:08:35.560
+Entonces, los últimos lugares son los primeros que se van liberando.
+
+01:08:35.560 --> 01:08:40.560
+Entonces, yo tengo que poner el mayor en el último lugar.
+
+01:08:41.560 --> 01:08:44.560
+Porque yo lo estoy ordenando en forma creciente.
+
+01:08:45.560 --> 01:08:49.560
+El que le sigue es el segundo mayor.
+
+01:08:49.560 --> 01:08:50.560
+Y así.
+
+01:08:51.560 --> 01:08:55.560
+O sea, lo empieza como a ordenar de atrás para adelante.
+
+01:08:56.560 --> 01:08:58.560
+¿Se entiende por qué?
+
+01:08:58.560 --> 01:09:02.560
+O sea, por qué cuando yo tengo que ordenar en forma creciente...
+
+01:09:03.560 --> 01:09:07.560
+Porque esto cuando tienen lo que tienen que hacer también se confunden después.
+
+01:09:09.560 --> 01:09:13.560
+Dicen, ah, en forma creciente eso será una mi-hip.
+
+01:09:13.560 --> 01:09:15.560
+No, el hip-hop no.
+
+01:09:15.560 --> 01:09:16.560
+El hip-hop trabaja.
+
+01:09:16.560 --> 01:09:19.560
+Si es en forma creciente, tengo que hacer una max-hip.
+
+01:09:21.560 --> 01:09:25.560
+Entonces, ¿cómo el que funciona?
+
+01:09:30.560 --> 01:09:31.560
+En realidad...
+
+01:09:33.560 --> 01:09:35.560
+Fíjense, por ejemplo, en este caso.
+
+01:09:38.560 --> 01:09:41.560
+En este caso, yo ya tengo la hip construida.
+
+01:09:41.560 --> 01:09:46.560
+O sea, siempre tengan en cuenta que el hip-hop lleva dos pasos.
+
+01:09:46.560 --> 01:09:48.560
+Primero, armar la hip.
+
+01:09:51.560 --> 01:09:52.560
+Y después...
+
+01:09:53.560 --> 01:09:54.560
+No.
+
+01:09:54.560 --> 01:09:59.560
+Es hacer el proceso este que vamos a ver cómo lo hace.
+
+01:09:59.560 --> 01:10:03.560
+Entonces, fíjense que acá se tiene armada la hip.
+
+01:10:05.560 --> 01:10:07.560
+¿Qué? Le vuelvo a decir.
+
+01:10:07.560 --> 01:10:11.560
+En la armada la hip la pueden armar cualquier...
+
+01:10:11.560 --> 01:10:16.560
+A no ser que uno, si le toma un ejercicio de este estilo, uno diga...
+
+01:10:17.560 --> 01:10:22.560
+Construye a la hip usando el big hip de orden ideal.
+
+01:10:22.560 --> 01:10:29.560
+Entonces, hay uno que está guiando o induciendo que use el big hip.
+
+01:10:29.560 --> 01:10:31.560
+Para construir la hip inicial.
+
+01:10:31.560 --> 01:10:32.560
+Bien.
+
+01:10:33.560 --> 01:10:35.560
+Entonces, acá tienes la hip.
+
+01:10:35.560 --> 01:10:39.560
+Esta es una hip, que es esta que aparecía acá en forma de algo.
+
+01:10:39.560 --> 01:10:41.560
+50, 30, 18...
+
+01:10:43.560 --> 01:10:45.560
+Entonces, ¿qué es lo que hace?
+
+01:10:46.560 --> 01:10:51.560
+Intercambia el primer elemento con el último.
+
+01:10:52.560 --> 01:10:56.560
+¿Por qué? Porque el primero sabe que es el más grande de todos.
+
+01:10:56.560 --> 01:11:01.560
+Entonces, lo intercambia con el nueve.
+
+01:11:01.560 --> 01:11:04.560
+Entonces, le quedó que se le muestra acá y le muestra acá.
+
+01:11:04.560 --> 01:11:06.560
+Y ahora le acomoda el nueve.
+
+01:11:06.560 --> 01:11:12.560
+¿Por qué? Porque el nueve en la raíz, si es una más hip, seguramente va a estar desordenado.
+
+01:11:12.560 --> 01:11:18.560
+Entonces, fíjense lo que dice acá, que tengo que filtrar el nueve.
+
+01:11:18.560 --> 01:11:24.560
+Entonces, mismo acá y lo filtró con el filtrado hacia abajo de siempre.
+
+01:11:25.560 --> 01:11:31.560
+Entonces, ahora me fijo el mayor de los hijos, porque es una más hip, recuerden.
+
+01:11:31.560 --> 01:11:34.560
+El mayor de los hijos, en este caso es el 30.
+
+01:11:34.560 --> 01:11:37.560
+Sube el 30 y baja el nueve.
+
+01:11:37.560 --> 01:11:40.560
+Ahora, sigue, busca.
+
+01:11:40.560 --> 01:11:42.560
+¿Tiene hijos? Sí.
+
+01:11:42.560 --> 01:11:46.560
+Tiene dos hijos, busca el mayor de los hijos, que es el 25.
+
+01:11:46.560 --> 01:11:49.560
+Va a subir el 25 y va a bajar el nueve.
+
+01:11:53.560 --> 01:11:56.560
+Entonces, todo eso lo hace en el arreglo, obviamente.
+
+01:11:56.560 --> 01:12:02.560
+Entonces, ahora la más hip me quedó así, pero termina acá.
+
+01:12:03.560 --> 01:12:12.560
+O sea, recuerden siempre que la hip lleva una variable que me dice de tamaño, que es la cantidad de elementos que tiene en ese momento.
+
+01:12:12.560 --> 01:12:21.560
+Como yo, al intercambiar el primero con el último, estoy cortando, le estoy sacando un elemento que es el máximo justamente aquí.
+
+01:12:23.560 --> 01:12:26.560
+Entonces, es como que ahora mi hip termina acá.
+
+01:12:26.560 --> 01:12:29.560
+O sea, el 50 no lo considera.
+
+01:12:29.560 --> 01:12:31.560
+Es como basura dentro del arreglo.
+
+01:12:31.560 --> 01:12:35.560
+Mi hip termina en esta posición, por eso está la línea esta roja.
+
+01:12:37.560 --> 01:12:43.560
+Después que filtró el arreglo, le volvió a quedar en la posición donde le volvió a quedar el máximo.
+
+01:12:43.560 --> 01:12:46.560
+Entonces, hace bueno y hace lo mismo.
+
+01:12:46.560 --> 01:12:52.560
+Intercambia el primero con el último, que ahora el último es este, es el 15.
+
+01:12:52.560 --> 01:13:02.560
+Entonces, intercambia el primero con el último.
+
+01:13:02.560 --> 01:13:05.560
+Entonces, le puso el 15 acá y el 30 acá.
+
+01:13:05.560 --> 01:13:09.560
+Y ahora mi hip termina un lugar antes.
+
+01:13:09.560 --> 01:13:13.560
+Y ahora sí, Víctor, ¿para quién me sirve esto de saber dónde termina?
+
+01:13:13.560 --> 01:13:16.560
+Porque yo tengo que filtrar el 15 ahora.
+
+01:13:16.560 --> 01:13:19.560
+Teniendo en cuenta que es una más hip.
+
+01:13:19.560 --> 01:13:23.560
+Entonces, por eso es bastante el dibujo del arreglo porque acá es como que se ve como más claro.
+
+01:13:23.560 --> 01:13:26.560
+Ya se hace todo acá en el arreglo.
+
+01:13:26.560 --> 01:13:29.560
+Entonces, me fico. Tiene dos hijos, sí.
+
+01:13:29.560 --> 01:13:31.560
+¿Cuál es el mayor de los dos? El 25.
+
+01:13:31.560 --> 01:13:33.560
+Entonces, sube el 25, baja el 15.
+
+01:13:33.560 --> 01:13:35.560
+Bueno, este tiene dos hijos, sí.
+
+01:13:35.560 --> 01:13:37.560
+¿Cuál es el mayor? El 22.
+
+01:13:37.560 --> 01:13:40.560
+Entonces, va a bajar el 15 y va a subir el 22.
+
+01:13:40.560 --> 01:13:47.560
+Entonces, me va a quedar 25, 22, 18, 9, 15, 12.
+
+01:13:49.560 --> 01:13:53.560
+25, 22, 18, 9, 15, 12.
+
+01:13:57.560 --> 01:14:02.560
+Ahora vuelve a hacer lo mismo y así y así se termina.
+
+01:14:04.560 --> 01:14:06.560
+¿Entiendes?
+
+01:14:06.560 --> 01:14:11.560
+O sea, intercambia el 25 con el 12 y corre la hip.
+
+01:14:13.560 --> 01:14:18.560
+O sea, siempre se intercambia el primero con el último, pero con el último de la hip.
+
+01:14:18.560 --> 01:14:20.560
+De ese momento.
+
+01:14:23.560 --> 01:14:28.560
+Y, o sea, intercambia el 25 con el 12 y bien intercambia.
+
+01:14:28.560 --> 01:14:30.560
+Ahí ya hay decrementes de tamaño.
+
+01:14:31.560 --> 01:14:34.560
+Es decir que ya está, ya corrió esto acá.
+
+01:14:34.560 --> 01:14:36.560
+Me dice, ahora mi hip termina acá.
+
+01:14:36.560 --> 01:14:42.560
+Filtrá el 12 ahora con la hip terminado en la posición 5.
+
+01:14:43.560 --> 01:14:45.560
+¿Se entiende?
+
+01:14:46.560 --> 01:14:52.560
+Entonces, filtra el 12, busca otra vez.
+
+01:14:52.560 --> 01:14:57.560
+Tiene dos hijos, el mayor es el 22, baja el 12 y sube el 22.
+
+01:14:57.560 --> 01:15:03.560
+Tiene dos hijos, el mayor es el 15, entonces va a venir el 15 acá y el 12 acá.
+
+01:15:04.560 --> 01:15:08.560
+Entonces me va a quedar 22, 15, 18, 9, 12.
+
+01:15:09.560 --> 01:15:12.560
+22, 15, 18, 9, 12.
+
+01:15:13.560 --> 01:15:15.560
+Entonces, fíjese.
+
+01:15:16.560 --> 01:15:18.560
+Ya está acá.
+
+01:15:18.560 --> 01:15:22.560
+Si hubo teniendo en esta parte de acá.
+
+01:15:23.560 --> 01:15:25.560
+O sea, en esta parte de acá.
+
+01:15:27.560 --> 01:15:29.560
+Y arreglo ordenado.
+
+01:15:29.560 --> 01:15:31.560
+Voy dejando el arreglo ordenado.
+
+01:15:31.560 --> 01:15:34.560
+Y en esta parte de acá voy teniendo la hip todavía.
+
+01:15:35.560 --> 01:15:40.560
+Hasta que todo eso se va nadando en la parte ordenada y se va agitando la hip.
+
+01:15:43.560 --> 01:15:44.560
+Bien.
+
+01:15:48.560 --> 01:15:50.560
+O sea, acá vuelve a hacer lo mismo.
+
+01:15:50.560 --> 01:15:54.560
+Intercambia el 22 con el 12, corre el 1 y ahora filtráme el 12.
+
+01:15:55.560 --> 01:15:58.560
+Lo va a filtrar con el 18.
+
+01:15:58.560 --> 01:16:00.560
+Entonces.
+
+01:16:05.560 --> 01:16:09.560
+Le va a quedar 18, 15, 12, 9.
+
+01:16:13.560 --> 01:16:15.560
+Y así.
+
+01:16:15.560 --> 01:16:17.560
+Y así lo va a dejar.
+
+01:16:19.560 --> 01:16:21.560
+Entonces.
+
+01:16:21.560 --> 01:16:23.560
+¿El hip sort?
+
+01:16:23.560 --> 01:16:25.560
+¿En realidad?
+
+01:16:26.560 --> 01:16:29.560
+O sea, algoritmicamente, ¿en qué consiste?
+
+01:16:29.560 --> 01:16:31.560
+Primero, construir una hip.
+
+01:16:31.560 --> 01:16:33.560
+¿Va a ser una mi hip o una más hip?
+
+01:16:33.560 --> 01:16:37.560
+Depende de cómo tenga que dejarse el arreglo ordenado.
+
+01:16:37.560 --> 01:16:41.560
+Si la tengo que dejar, o si la tengo que ordenar en forma creciente.
+
+01:16:41.560 --> 01:16:43.560
+Tengo que armar una más hip.
+
+01:16:44.560 --> 01:16:46.560
+Esto lo puedo hacer.
+
+01:16:46.560 --> 01:16:49.560
+Insertando de a uno los elementos en el arreglo.
+
+01:16:49.560 --> 01:16:51.560
+Usando el insertado de hip.
+
+01:16:51.560 --> 01:16:53.560
+Que eso me va a llevar en el oguene.
+
+01:16:53.560 --> 01:16:55.560
+En el oguene.
+
+01:16:55.560 --> 01:16:57.560
+Esto me va a llevar en el oguene.
+
+01:16:57.560 --> 01:16:59.560
+Que eso me va a llevar en el oguene.
+
+01:16:59.560 --> 01:17:01.560
+En el oguene.
+
+01:17:01.560 --> 01:17:03.560
+Esto sería insertando de a uno.
+
+01:17:07.560 --> 01:17:09.560
+De a uno.
+
+01:17:11.560 --> 01:17:13.560
+O si no.
+
+01:17:21.560 --> 01:17:23.560
+De orden lineal con el virgil.
+
+01:17:24.560 --> 01:17:26.560
+Eso.
+
+01:17:26.560 --> 01:17:28.560
+Y después, hacer N veces.
+
+01:17:28.560 --> 01:17:30.560
+En realidad serían N-1.
+
+01:17:30.560 --> 01:17:32.560
+Porque el último no lo voy a filtrar con nadie.
+
+01:17:32.560 --> 01:17:34.560
+Desde cuando me quede uno solo.
+
+01:17:37.560 --> 01:17:39.560
+Serían N-1 veces.
+
+01:17:41.560 --> 01:17:43.560
+Intercambiar el primero con el último.
+
+01:17:43.560 --> 01:17:45.560
+Que eso es constante.
+
+01:17:45.560 --> 01:17:47.560
+Y después sí filtrar el que me quedó primero.
+
+01:17:49.560 --> 01:17:51.560
+Entonces, N-1.
+
+01:17:51.560 --> 01:17:53.560
+Filtrados.
+
+01:17:55.560 --> 01:17:57.560
+Hacia abajo.
+
+01:18:01.560 --> 01:18:03.560
+En realidad sería.
+
+01:18:03.560 --> 01:18:05.560
+Acá sería el primero.
+
+01:18:05.560 --> 01:18:07.560
+N-1 intercambios.
+
+01:18:13.560 --> 01:18:15.560
+Lo que pasa es que esto no tiene costo.
+
+01:18:15.560 --> 01:18:17.560
+Al momento de medir la eficiencia.
+
+01:18:17.560 --> 01:18:19.560
+Al momento de medir la eficiencia.
+
+01:18:19.560 --> 01:18:21.560
+Porque es hacer un cambio de variable.
+
+01:18:21.560 --> 01:18:23.560
+O sea, ponerme este valor acá.
+
+01:18:23.560 --> 01:18:25.560
+Otro valor acá.
+
+01:18:27.560 --> 01:18:29.560
+Lo que sí tiene costo es esto.
+
+01:18:29.560 --> 01:18:31.560
+Hacer N-1 filtrados.
+
+01:18:31.560 --> 01:18:33.560
+Hacia abajo.
+
+01:18:33.560 --> 01:18:35.560
+Del elemento que está en la primera posición.
+
+01:18:35.560 --> 01:18:37.560
+Entonces, esto sí.
+
+01:18:37.560 --> 01:18:39.560
+Me lleva N.
+
+01:18:39.560 --> 01:18:41.560
+Log N operaciones.
+
+01:18:43.560 --> 01:18:45.560
+O sea que si yo sumo.
+
+01:18:45.560 --> 01:18:49.560
+Volvemos al método anterior de ordenación.
+
+01:18:49.560 --> 01:18:51.560
+Que usaba dos arreglos.
+
+01:18:51.560 --> 01:18:53.560
+O sea.
+
+01:18:53.560 --> 01:18:55.560
+Si yo puedo construir la hip.
+
+01:18:55.560 --> 01:18:57.560
+En la forma más eficiente.
+
+01:18:57.560 --> 01:18:59.560
+Que me lleve N.
+
+01:18:59.560 --> 01:19:01.560
+Pero después tengo sí o sí.
+
+01:19:01.560 --> 01:19:03.560
+Voy a traer N log N.
+
+01:19:03.560 --> 01:19:05.560
+Porque necesito hacer N filtrados hacia abajo.
+
+01:19:05.560 --> 01:19:07.560
+O N-1 filtrados hacia abajo.
+
+01:19:09.560 --> 01:19:11.560
+Entonces, este método de ordenación.
+
+01:19:11.560 --> 01:19:13.560
+Que es el hip-sort.
+
+01:19:13.560 --> 01:19:15.560
+Es muy sencillo.
+
+01:19:15.560 --> 01:19:17.560
+Porque una vez que yo ya tengo todas las operaciones de hip hechas.
+
+01:19:19.560 --> 01:19:21.560
+El borrar.
+
+01:19:21.560 --> 01:19:23.560
+El insertar.
+
+01:19:23.560 --> 01:19:25.560
+Y nada, es hacer un form.
+
+01:19:25.560 --> 01:19:27.560
+O sea, el filtrado para medir.
+
+01:19:27.560 --> 01:19:29.560
+Todo.
+
+01:19:29.560 --> 01:19:31.560
+Lo único que tengo que hacer es un form.
+
+01:19:31.560 --> 01:19:33.560
+Intercambio.
+
+01:19:33.560 --> 01:19:35.560
+Y primero con el último.
+
+01:19:35.560 --> 01:19:37.560
+Y chamar a filtrado hacia abajo de la posición 1.
+
+01:19:37.560 --> 01:19:39.560
+Eso es todo.
+
+01:19:39.560 --> 01:19:41.560
+Y.
+
+01:19:41.560 --> 01:19:43.560
+Si ya tengo hecho el build-hip.
+
+01:19:43.560 --> 01:19:45.560
+El construir la hip.
+
+01:19:45.560 --> 01:19:47.560
+Por ejemplo.
+
+01:19:49.560 --> 01:19:51.560
+O la construyo con.
+
+01:19:51.560 --> 01:19:53.560
+Insertar.
+
+01:19:53.560 --> 01:19:55.560
+Lo mismo de a un.
+
+01:19:57.560 --> 01:19:59.560
+¿Te entendió?
+
+01:19:59.560 --> 01:20:01.560
+El.
+
+01:20:01.560 --> 01:20:03.560
+Este método.
+
+01:20:03.560 --> 01:20:05.560
+O sea, es un algoritmo.
+
+01:20:05.560 --> 01:20:07.560
+Sí, sí.
+
+01:20:07.560 --> 01:20:09.560
+Es muy interesante.
+
+01:20:09.560 --> 01:20:11.560
+Hip-sort.
+
+01:20:11.560 --> 01:20:13.560
+Eso es algoritmo de ordenación.
+
+01:20:13.560 --> 01:20:15.560
+Es otro más que ahora ya sabes.
+
+01:20:27.560 --> 01:20:29.560
+O sea, no sé.
+
+01:20:29.560 --> 01:20:31.560
+No, acá no hay rama izquierda, rama derecha.
+
+01:20:31.560 --> 01:20:33.560
+Hay que comparar.
+
+01:20:33.560 --> 01:20:35.560
+Y.
+
+01:20:35.560 --> 01:20:37.560
+No sé a qué te referimos.
+
+01:20:37.560 --> 01:20:39.560
+La tendencia de la rama izquierda.
+
+01:20:39.560 --> 01:20:41.560
+O sea, no hay un orden entre los hermanos.
+
+01:20:43.560 --> 01:20:45.560
+Yo no sé cómo me voy a quedar dedicada.
+
+01:20:45.560 --> 01:20:47.560
+En el hijo izquierdo o el hijo derecho.
+
+01:20:47.560 --> 01:20:49.560
+Si el hijo derecho va a ser mayor.
+
+01:20:49.560 --> 01:20:51.560
+O menor que el izquierdo.
+
+01:20:51.560 --> 01:20:53.560
+O sea, es comparar con el valor.
+
+01:20:55.560 --> 01:20:57.560
+Y me voy por el camino que sea.
+
+01:20:59.560 --> 01:21:01.560
+Depende si es una más hip.
+
+01:21:01.560 --> 01:21:03.560
+O si es un filtrar, teniendo en cuenta.
+
+01:21:03.560 --> 01:21:05.560
+Con el mayor de los hijos.
+
+01:21:05.560 --> 01:21:07.560
+A veces el mayor va a estar en el lado izquierdo.
+
+01:21:07.560 --> 01:21:09.560
+Y a veces va a estar en el algoritmo.
+
+01:21:09.560 --> 01:21:11.560
+No, no, pero.
+
+01:21:15.560 --> 01:21:17.560
+Pero eso depende del valor.
+
+01:21:17.560 --> 01:21:19.560
+Con qué duda te quedaste.
+
+01:21:21.560 --> 01:21:23.560
+O sea.
+
+01:21:25.560 --> 01:21:27.560
+No sé.
+
+01:21:27.560 --> 01:21:29.560
+No sé qué es lo que.
+
+01:21:29.560 --> 01:21:31.560
+Confirmé en la clase pasada.
+
+01:21:31.560 --> 01:21:33.560
+La realidad que el intercambio de elementos.
+
+01:21:33.560 --> 01:21:35.560
+O sea, siempre se intercambia.
+
+01:21:35.560 --> 01:21:37.560
+Siempre se intercambia.
+
+01:21:37.560 --> 01:21:39.560
+Siempre se intercambia.
+
+01:21:39.560 --> 01:21:41.560
+Siempre se intercambia.
+
+01:21:41.560 --> 01:21:43.560
+Siempre se intercambia.
+
+01:21:43.560 --> 01:21:45.560
+Siempre se intercambia.
+
+01:21:45.560 --> 01:21:47.560
+Siempre se intercambia.
+
+01:21:47.560 --> 01:21:49.560
+O sea, si es un filtrado hacia abajo.
+
+01:21:49.560 --> 01:21:51.560
+Y es una minhip.
+
+01:21:51.560 --> 01:21:53.560
+Que ocupa el menor de los hijos.
+
+01:21:53.560 --> 01:21:55.560
+De donde esté.
+
+01:21:55.560 --> 01:21:57.560
+El menor.
+
+01:21:57.560 --> 01:21:59.560
+Y comparar el padre con el menor de los hijos.
+
+01:21:59.560 --> 01:22:01.560
+O sea, el izquierdo o el derecho.
+
+01:22:01.560 --> 01:22:03.560
+No lo sé.
+
+01:22:03.560 --> 01:22:05.560
+Y si es una más hip.
+
+01:22:05.560 --> 01:22:07.560
+Comparar con el mayor.
+
+01:22:09.560 --> 01:22:11.560
+Se restaura el tamaño de la hip original.
+
+01:22:11.560 --> 01:22:13.560
+No, no.
+
+01:22:13.560 --> 01:22:15.560
+La hip en realidad es un algoritmo que ordena.
+
+01:22:17.560 --> 01:22:19.560
+O sea, el construir la hip es un paso intermedio.
+
+01:22:21.560 --> 01:22:23.560
+O sea, mire que me sigue.
+
+01:22:23.560 --> 01:22:25.560
+Yo te digo.
+
+01:22:25.560 --> 01:22:27.560
+Toma este arreglo y ordename.
+
+01:22:27.560 --> 01:22:29.560
+No.
+
+01:22:29.560 --> 01:22:31.560
+Yo qué sé qué voy a hacer con una hip intermedio.
+
+01:22:31.560 --> 01:22:33.560
+O sea.
+
+01:22:33.560 --> 01:22:35.560
+Vos de.
+
+01:22:35.560 --> 01:22:37.560
+Yo de este arreglo digo.
+
+01:22:37.560 --> 01:22:39.560
+Bueno, ordenalo.
+
+01:22:39.560 --> 01:22:41.560
+Vos puedes usar el hip sort.
+
+01:22:41.560 --> 01:22:43.560
+O sea.
+
+01:22:43.560 --> 01:22:45.560
+En la hip es un paso intermedio.
+
+01:22:45.560 --> 01:22:47.560
+Pero en realidad lo que
+
+01:22:47.560 --> 01:22:49.560
+recibe detrás es un arreglo.
+
+01:22:49.560 --> 01:22:51.560
+Y la salida.
+
+01:22:51.560 --> 01:22:53.560
+Es el mismo.
+
+01:22:53.560 --> 01:22:55.560
+O sea, serían los mismos datos
+
+01:22:55.560 --> 01:22:57.560
+ordenados.
+
+01:22:57.560 --> 01:22:59.560
+En un arreglo.
+
+01:22:59.560 --> 01:23:01.560
+Ordenado de forma preciosa.
+
+01:23:01.560 --> 01:23:03.560
+O deficiente según me pidan.
+
+01:23:03.560 --> 01:23:05.560
+Ahora, que yo en el medio.
+
+01:23:05.560 --> 01:23:07.560
+Haga una hip y haga todo esto.
+
+01:23:07.560 --> 01:23:09.560
+Es un tema mío.
+
+01:23:09.560 --> 01:23:11.560
+Porque yo elegí de ordenarte
+
+01:23:11.560 --> 01:23:13.560
+las arreglas con el hip sort.
+
+01:23:13.560 --> 01:23:15.560
+O sea, puedo usar
+
+01:23:15.560 --> 01:23:17.560
+el hip sort o usar
+
+01:23:17.560 --> 01:23:19.560
+el hip sort.
+
+01:23:19.560 --> 01:23:21.560
+Puedo usar el método de las burbujas.
+
+01:23:21.560 --> 01:23:23.560
+Creo que es igualático.
+
+01:23:23.560 --> 01:23:25.560
+Ahí sí te vas a hacer más deficiente.
+
+01:23:27.560 --> 01:23:29.560
+O sea, se entiende.
+
+01:23:29.560 --> 01:23:31.560
+Este es un método de ordenación.
+
+01:23:33.560 --> 01:23:35.560
+Acá no hay.
+
+01:23:35.560 --> 01:23:37.560
+El tamaño de la hip.
+
+01:23:37.560 --> 01:23:39.560
+Se va manteniendo en el proceso
+
+01:23:39.560 --> 01:23:41.560
+mismo de la hip.
+
+01:23:45.560 --> 01:23:47.560
+O sea, ahí todo
+
+01:23:47.560 --> 01:23:49.560
+mirenlo bien.
+
+01:23:49.560 --> 01:23:51.560
+Porque después.
+
+01:23:51.560 --> 01:23:53.560
+Seguro que se lo tomamos con el parcial.
+
+01:23:53.560 --> 01:23:55.560
+Se empiezan a confundir
+
+01:23:55.560 --> 01:23:57.560
+lo que es el big hip.
+
+01:23:57.560 --> 01:23:59.560
+Con lo que es el hip sort.
+
+01:23:59.560 --> 01:24:01.560
+Hacen una mi hip.
+
+01:24:01.560 --> 01:24:03.560
+Para ordenar deficiente hacen una mi hip.
+
+01:24:03.560 --> 01:24:05.560
+Y después se empieza a hacer un apolvimiento.
+
+01:24:05.560 --> 01:24:07.560
+Que hacen todo mal.
+
+01:24:09.560 --> 01:24:11.560
+Después se entiende
+
+01:24:11.560 --> 01:24:13.560
+de que, como es la primera vez que lo ven
+
+01:24:13.560 --> 01:24:15.560
+por ahí,
+
+01:24:15.560 --> 01:24:17.560
+tal algoritmo, tal otro algoritmo,
+
+01:24:17.560 --> 01:24:19.560
+tal otro, después se
+
+01:24:19.560 --> 01:24:21.560
+mezclan.
+
+01:24:21.560 --> 01:24:23.560
+O sea, se parren las cosas.
+
+01:24:23.560 --> 01:24:25.560
+Una cosa es que se construye la hip.
+
+01:24:25.560 --> 01:24:27.560
+Y otra cosa es que el hip sort
+
+01:24:27.560 --> 01:24:29.560
+te ordena.
+
+01:24:29.560 --> 01:24:31.560
+Pero la serie es el arreglo ordenado
+
+01:24:31.560 --> 01:24:33.560
+y la hip es intermedia para el ordenado.
+
+01:24:33.560 --> 01:24:35.560
+Claro.
+
+01:24:35.560 --> 01:24:37.560
+Sí, sí. O sea, yo te doy.
+
+01:24:37.560 --> 01:24:39.560
+Yo usuario.
+
+01:24:39.560 --> 01:24:41.560
+Te digo, ordename este arreglo.
+
+01:24:41.560 --> 01:24:43.560
+Y vos ya tenés todo
+
+01:24:43.560 --> 01:24:45.560
+implementado con el hip sort.
+
+01:24:45.560 --> 01:24:47.560
+Chau. Vos me devolvés el arreglo ordenado.
+
+01:24:47.560 --> 01:24:49.560
+Eso que se yo lo que hiciste en el medio.
+
+01:24:49.560 --> 01:24:51.560
+Eso es abstracción, además.
+
+01:24:51.560 --> 01:24:53.560
+¿Te entiendes?
+
+01:24:53.560 --> 01:24:55.560
+O sea, yo quiero el arreglo ordenado.
+
+01:24:55.560 --> 01:24:57.560
+Que se yo si usaste una hip.
+
+01:24:57.560 --> 01:24:59.560
+Si intercambiaste.
+
+01:24:59.560 --> 01:25:01.560
+Si usaste el mer sort.
+
+01:25:01.560 --> 01:25:03.560
+O si usaste el algoritmo que quieras.
+
+01:25:03.560 --> 01:25:05.560
+El mer sort, que es el que
+
+01:25:05.560 --> 01:25:07.560
+vimos en la primer clase, que es recursivo,
+
+01:25:07.560 --> 01:25:09.560
+ese orden enero viene también.
+
+01:25:09.560 --> 01:25:11.560
+Lo que pasa es que es un poco más complicado
+
+01:25:11.560 --> 01:25:13.560
+ver que es de esas,
+
+01:25:13.560 --> 01:25:15.560
+si se acuerdan.
+
+01:25:15.560 --> 01:25:17.560
+Que viene a las mitades y mezcla.
+
+01:25:17.560 --> 01:25:19.560
+Ese es el orden enero viene.
+
+01:25:19.560 --> 01:25:21.560
+Lo que pasa es que es el análisis de
+
+01:25:21.560 --> 01:25:23.560
+si es un poco más complicado
+
+01:25:23.560 --> 01:25:25.560
+de lo que vamos a ver
+
+01:25:25.560 --> 01:25:27.560
+Lo vamos a ver cuando veamos.
+
+01:25:27.560 --> 01:25:29.560
+Ahora analicemos bien.
+
+01:25:29.560 --> 01:25:31.560
+¿Cómo se gana que es en el hoguera?
+
+01:25:31.560 --> 01:25:33.560
+Este se puede explicar un poco
+
+01:25:33.560 --> 01:25:35.560
+sin saber.
+
+01:25:35.560 --> 01:25:37.560
+Sin haber entrado en el tema
+
+01:25:37.560 --> 01:25:39.560
+de la deficiencia.
+
+01:25:39.560 --> 01:25:41.560
+Sabiendo más o menos, bueno,
+
+01:25:41.560 --> 01:25:43.560
+la operación de filtrado
+
+01:25:43.560 --> 01:25:45.560
+en logarítmica. Tengo que hacer el filtrado.
+
+01:25:45.560 --> 01:25:47.560
+Entonces, lo que viene
+
+01:25:47.560 --> 01:25:49.560
+en el hoguera viene.
+
+01:25:49.560 --> 01:25:51.560
+O sea, lo puedo ir
+
+01:25:51.560 --> 01:25:53.560
+razonando de esa manera.
+
+01:25:55.560 --> 01:25:57.560
+¿Te entendió?
+
+01:25:57.560 --> 01:25:59.560
+Esperen que voy a prender la luz
+
+01:25:59.560 --> 01:26:01.560
+porque ya no...
+
+01:26:01.560 --> 01:26:03.560
+Se nos viene la luz.
+
+01:26:25.560 --> 01:26:27.560
+Bien.
+
+01:26:27.560 --> 01:26:29.560
+Bueno, y con esto
+
+01:26:29.560 --> 01:26:31.560
+creo que...
+
+01:26:31.560 --> 01:26:33.560
+Ya.
+
+01:26:33.560 --> 01:26:35.560
+Bueno, vean que acá sigue.
+
+01:26:39.560 --> 01:26:41.560
+Bueno.
+
+01:26:41.560 --> 01:26:43.560
+Bueno.
+
+01:26:43.560 --> 01:26:45.560
+Bueno.
+
+01:26:45.560 --> 01:26:47.560
+Bueno.
+
+01:26:47.560 --> 01:26:49.560
+Bueno.
+
+01:26:49.560 --> 01:26:51.560
+Bueno.
+
+01:26:51.560 --> 01:26:53.560
+Bueno.
+
+01:26:53.560 --> 01:26:55.560
+Bueno.
+
+01:26:55.560 --> 01:26:57.560
+Bueno.
+
+01:26:57.560 --> 01:26:59.560
+Bueno.
+
+01:26:59.560 --> 01:27:01.560
+Bueno.
+
+01:27:01.560 --> 01:27:03.560
+Bueno.
+
+01:27:03.560 --> 01:27:05.560
+Bueno.
+
+01:27:07.560 --> 01:27:09.560
+Bueno.
+
+01:27:09.560 --> 01:27:11.560
+Bueno.
+
+01:27:11.560 --> 01:27:13.560
+Bueno.
+
+01:27:13.560 --> 01:27:15.560
+Bueno.
+
+01:27:15.560 --> 01:27:17.560
+Bueno.
+
+01:27:17.560 --> 01:27:19.560
+Bueno.
+
+01:27:19.560 --> 01:27:21.560
+Bueno.
+
+01:27:21.560 --> 01:27:41.320
+Entonces, bueno, esta sería la heap en este momento. Y cuando se termina, se acaba. O sea,
+
+01:27:41.320 --> 01:27:45.920
+ahí está la carita KAL como que me va indicando dónde va a terminar la heap. Cuando el tamaño
+
+01:27:45.920 --> 01:27:49.920
+de la heap ya es uno o se acaba, se terminó la heap.
+
+01:27:49.920 --> 01:28:08.920
+Bueno, les quedo una duda. Ya con esto terminamos con heap. Ya la clase que viene, que se lleva
+
+01:28:08.920 --> 01:28:19.920
+mañana, se le va a indicar que quedó pendiente el tema de la implementación de árboles
+
+01:28:19.920 --> 01:28:24.920
+generales en Java, que en realidad lo retrasamos un poco porque la práctica de Java recién
+
+01:28:24.920 --> 01:28:30.920
+va a salir la semana próxima, la práctica de árboles generales. Entonces, para que
+
+01:28:30.920 --> 01:28:39.920
+lo tenga más fresco, repaso un poco algunos conceptos de árboles generales, futuras,
+
+01:28:39.920 --> 01:28:49.920
+recorridos y eso y se lo caen, se lo van a ir reventando en Java.
+
+01:28:49.920 --> 01:28:57.920
+Así que, y después ya la semana que viene creo que ya arrancamos con análisis de algoritmos.
+
+01:28:57.920 --> 01:29:18.920
+¿Cómo va a ser el examen? En realidad, no sé a qué es, es un poco general tu pregunta,
+
+01:29:18.920 --> 01:29:25.920
+pero bueno, en realidad va a tener una parte práctica y una parte teórica. Cada, o sea,
+
+01:29:25.920 --> 01:29:32.920
+el parcial es uno solo en realidad. Va a tener una parte práctica que es de implementación,
+
+01:29:32.920 --> 01:29:38.920
+tal como ven en la práctica, y una parte teórica. Por ejemplo, todo esto de heap entra
+
+01:29:38.920 --> 01:29:50.920
+dentro de la parte teórica. No, no, no, se rinde en papel. Todo estos algoritmos, yo
+
+01:29:50.920 --> 01:30:00.920
+le puedo decir, bueno, dado este arreglo, aplicar el heap sort o usar el heap sort para
+
+01:30:00.920 --> 01:30:07.920
+ordenar el arreglo en forma creciente. Entonces ustedes tienen que ir mostrando paso por paso.
+
+01:30:07.920 --> 01:30:18.920
+Yo publiqué ayer una ejercitación de árboles y pronto, quizá en esta semana ya publicamos
+
+01:30:18.920 --> 01:30:30.920
+una ejercitación teórica de heap. Igual van a haber algún código en Java porque con eso
+
+01:30:30.920 --> 01:30:38.920
+también se les aclara y de paso repasan un poco. Pero no, en el parcial no. No, no, en Java no.
+
+01:30:38.920 --> 01:30:46.920
+En el parcial la parte de implementación va a ser resolver un problema como resuelven en la práctica.
+
+01:30:47.920 --> 01:30:56.920
+Vieron que hay todos los problemas de árboles. Eso va a ser la parte práctica.
+
+01:30:59.920 --> 01:31:06.920
+La parte de árboles de expresión también entra más en la parte teórica. Ya van a ver,
+
+01:31:06.920 --> 01:31:13.920
+si ustedes ven y hacen la ejercitación que vamos publicando, ese es el estilo de lo que nosotros
+
+01:31:13.920 --> 01:31:21.920
+tomamos en la teoría. Igual hay más preguntas, pero alguna de esas es la parte que nosotros tomamos
+
+01:31:21.920 --> 01:31:27.920
+en la teoría. Y algo de árboles generales también, alguna pregunta conceptual.
+
+01:31:32.920 --> 01:31:34.920
+Así va a ser el parcial.
+
+01:31:43.920 --> 01:31:48.920
+No, en realidad lo que...
+

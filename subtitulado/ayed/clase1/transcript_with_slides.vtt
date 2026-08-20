@@ -1,0 +1,5279 @@
+WEBVTT
+
+00:00.000 --> 00:11.840
+[Diapositiva 1] Bueno chicos, ahora sí, ya puse la grabación, ven ahí bien la clase, ya un poquitito hicimos
+
+00:11.840 --> 00:16.240
+[Diapositiva 2] una introducción de bienvenida, así que ya arranco directamente con los temas.
+
+00:16.240 --> 00:24.040
+[Diapositiva 2] Bueno, la idea de este año, para ver si hay algún recursante, hicimos unos pequeños
+
+00:24.040 --> 00:30.520
+[Diapositiva 2] cambios, así que bueno, estén atentos, si no, si son todos nuevos. Acá un poco están los temas
+
+00:30.520 --> 00:36.160
+[Diapositiva 2] principales de la materia, vamos a ver un poco la implementación primero de estructuras de datos
+
+00:36.160 --> 00:44.680
+[Diapositiva 2] lineales que son pilas y colas, utilizando listas que vienen dentro de lo que es la plataforma Java,
+
+00:44.680 --> 00:49.800
+[Diapositiva 2] después vamos a ver estructuras no lineales, árboles binarios que ustedes un poco ya vieron,
+
+00:49.800 --> 00:56.000
+[Diapositiva 2] pero bueno, los vamos a implementar en Java, árboles generales, colas de prioridades y después
+
+00:56.000 --> 01:02.520
+[Diapositiva 2] otro de los temas más interesantes de la materia que es grafos. Esto en cuanto a las
+
+01:02.520 --> 01:06.800
+[Diapositiva 2] estructuras de datos y también el otro tema importante de la materia es el análisis de
+
+01:06.800 --> 01:13.880
+[Diapositiva 2] algoritmos, que nos permite calcular el tiempo de ejecución y el orden de ejecución de los algoritmos.
+
+01:13.880 --> 01:24.620
+[Diapositiva 2] Estos temas mencionados se vienen como en tres módulos que son árboles, grafos y tiempo de
+
+01:24.620 --> 01:32.040
+[Diapositiva 2] ejecución. Se va a tomar un único parcial que evalúa los tres temas y deben aprobarse los tres
+
+01:32.040 --> 01:39.360
+[Diapositiva 2] temas en un único parcial con sus dos recuperatorios al final de la cursada. Tanto el parcial como los
+
+01:39.360 --> 01:45.040
+[Diapositiva 2] dos recuperatorios se van a tomar antes de las vacaciones de invierno y cada parcial tiene los
+
+01:45.040 --> 01:50.440
+[Diapositiva 2] tres temas. Ustedes pueden rendir los tres temas y se aprueba por tema, si salen bien por ejemplo en
+
+01:50.440 --> 01:56.160
+[Diapositiva 2] dos temas, después tienen dos fechas más para rendir el tema siguiente. Para aprobar la cursada
+
+01:56.160 --> 02:02.240
+[Diapositiva 2] tienen que obtener un cuatro o más en cada uno de los temas y para obtener la promoción tienen que
+
+02:02.240 --> 02:07.920
+[Diapositiva 2] obtener un seis en promedio entre los tres módulos. Una vez que sacaron un cuatro en alguno de los
+
+02:07.920 --> 02:11.280
+[Diapositiva 2] módulos, ese módulo ya no se puede volver a rendir para subir la nota.
+
+02:14.880 --> 02:22.480
+[Diapositiva 2] Bueno, en cuanto a la modalidad de las teorías, para los que no estaban antes de la grabación o para
+
+02:22.480 --> 02:29.800
+[Diapositiva 2] que quede grabado, la semana próxima, este turno de mañana, para hacer lo mismo, de la A a la H,
+
+02:29.800 --> 02:34.560
+[Diapositiva 2] creo que era como habíamos dividido, vamos a dar la clase el lunes y el jueves vamos a
+
+02:34.560 --> 02:41.400
+[Diapositiva 2] repetir con el resto de los estudiantes. Inician las prácticas la semana que viene.
+
+02:41.400 --> 02:52.440
+[Diapositiva 2] Katy, yo no sé, ¿vos estás emuteada o no, Katy? Ahí estamos, sí. Bueno,
+
+02:52.440 --> 02:56.520
+[Diapositiva 2] después no sé si quieren hacer alguna consulta más respecto de la modalidad.
+
+02:56.520 --> 03:06.920
+[Diapositiva 2] Como son poquitos, si quieren, abran el micrófono y pregunten y si no,
+
+03:06.920 --> 03:15.120
+[Diapositiva 2] para el chat. Como son poquitos pueden preguntar. Los parciales son los días sábados al mediodía,
+
+03:15.120 --> 03:21.240
+[Diapositiva 2] debido a la capacidad de las aulas, y todos van a entrar antes del parcial.
+
+03:21.240 --> 03:30.280
+[Diapositiva 2] Bueno, para Joaquín, espera un segundito. Joaquín estaba preguntando cómo van a hacer
+
+03:30.280 --> 03:38.840
+[Diapositiva 2] las clases teóricas después de la semana que viene. Dios dirá, no, vamos a tratar. La idea es
+
+03:38.840 --> 03:49.440
+[Diapositiva 2] que estén todos juntos porque nos estamos atrasando con los temas. Fíjense que ya tendríamos que estar
+
+03:49.440 --> 03:55.800
+[Diapositiva 2] dando, esta semana ya tendríamos que haber dado dos temas y la semana que viene otros dos, así que
+
+03:55.800 --> 04:04.400
+[Diapositiva 2] estamos yendo por la mitad. Así que la idea es poder agruparlos de alguna manera, es decir,
+
+04:04.400 --> 04:10.200
+[Diapositiva 2] no hacer este doble, sino que, por ejemplo, hablando del turno de la mañana, que el lunes se pueda
+
+04:10.200 --> 04:18.680
+[Diapositiva 2] dar un tema y que el jueves se pueda dar otro tema, como es lo previsto normalmente. Vamos a
+
+04:18.680 --> 04:27.360
+[Diapositiva 2] ver si podemos resolverlo de alguna manera durante la semana que viene esta cuestión de que en el
+
+04:27.360 --> 04:34.640
+[Diapositiva 2] aula 4 no entran los 260 inscritos que tenemos. ¿Se entiende? Es decir, los chicos que ya estuvieron
+
+04:34.640 --> 04:42.280
+[Diapositiva 2] la semana pasada, que eran la mitad, en el aula 4 se dieron cuenta que estaban a full. Y bueno,
+
+04:42.280 --> 04:46.840
+[Diapositiva 2] algunas que vienen también se van a dar cuenta que está muy completa el aula, como para además
+
+04:46.840 --> 04:54.040
+[Diapositiva 2] agregar otra tanto. Lo vamos viendo, chicos, por el momento la semana que viene vamos a
+
+04:54.040 --> 04:58.440
+[Diapositiva 2] desdoblar. Así que los del lunes vienen el lunes, el jueves el jueves y después les vamos informando.
+
+04:58.440 --> 05:06.160
+[Diapositiva 2] Y por otro lado, bueno, los de la tarde van, el marco es un grupo y el miércoles otro grupo,
+
+05:06.160 --> 05:12.160
+[Diapositiva 2] pero también se va a dar un solo tema. En cuanto a los parciales que ahí preguntan,
+
+05:12.160 --> 05:17.800
+[Diapositiva 2] el parcial es teórico práctico, por eso es que si se obtienen mayor de 4 en cada uno de los
+
+05:17.800 --> 05:23.360
+[Diapositiva 2] módulos y en promedio mayor que 6, ya obtienen la promoción de la materia, porque también se
+
+05:23.360 --> 05:30.680
+[Diapositiva 2] evalúan algunos conceptos teóricos. Como se toman los tres temas, tenemos pensado el examen
+
+05:30.680 --> 05:36.360
+[Diapositiva 2] hacer un corte, tomar dos temas que son un poquito más cortos, hacer un recreo de media hora y después
+
+05:36.360 --> 05:41.080
+[Diapositiva 2] tomar el otro tema. Pero es todo en el mismo día, digamos, el mismo día.
+
+05:50.080 --> 05:57.040
+[Diapositiva 2] Bueno, si no, no sé si tiene alguna duda más. Después, bueno, los que están acá no tuvieron
+
+05:57.040 --> 06:01.440
+[Diapositiva 2] problema y pudieron entrar a Moodle, así que bueno, después nos escribirán quienes no pueden
+
+06:01.440 --> 06:07.840
+[Diapositiva 2] acceder todavía, porque además del problema que tuvimos de la cantidad de inscritos,
+
+06:07.840 --> 06:14.520
+[Diapositiva 2] también se emigró Guaraní y bueno, tuvimos problemas con Moodle. Pero bueno, ya se van solucionando las cosas.
+
+06:18.400 --> 06:26.000
+[Diapositiva 2] Bueno, chicos, no sé si Pablo o Sandra quieren comentar algo, abrir el micrófono. Si no, arranco con los temas.
+
+06:27.000 --> 06:34.880
+[Diapositiva 2] Hola, ¿cómo estás, Lau? En cuanto a los parciales, se aprueba por teoría y práctica,
+
+06:34.880 --> 06:42.000
+[Diapositiva 2] todo junto. Y en la práctica tenemos un mínimo, que después se lo vamos a informar para llegar a ese
+
+06:42.000 --> 06:47.920
+[Diapositiva 2] cuatro, ¿no? Cuatro como mínimo. Pero en la práctica, además, se exige un mínimo de puntaje.
+
+06:47.920 --> 07:01.440
+[Diapositiva 2] Y además, el tema de, ahí preguntaron si es en horario de clases, el tema es que no conseguimos
+
+07:01.440 --> 07:08.200
+[Diapositiva 2] aulas grandes, así que por eso estos son los sábados y a la tarde, aparte del mediodía, como dijo Lau.
+
+07:11.080 --> 07:17.160
+[Diapositiva 2] Claro, un único turno el sábado y se toman la banda horaria a la mañana y a la tarde, todos juntos.
+
+07:17.920 --> 07:27.120
+[Diapositiva 2] Bueno, arrancamos, ¿no? Que ya hay veinticuatro. No sé, chicos, si tienen alguna duda más o quieren
+
+07:27.120 --> 07:34.240
+[Diapositiva 2] escribir por acá o tomar el micrófono. Si no, arrancamos. Bueno, son muy poquitos. La verdad que
+
+07:34.240 --> 07:43.680
+[Diapositiva 2] este grupo eran 160. Así que, bueno, con 30, dijimos que le van a grabar o tienen otra materia,
+
+07:43.680 --> 07:48.200
+[Diapositiva 2] están cursando. Bueno, también esa fue la idea de grabarlo porque como no es el horario de ustedes,
+
+07:48.200 --> 07:53.760
+[Diapositiva 2] por ahí no podían estar. Claro, por ahí los que pueden estar son los que se anotaron en el horario
+
+07:53.760 --> 08:02.240
+[Diapositiva 3] de práctica que estaba más o menos en este horario. Bueno, no sé si pudieron leer, chicos,
+
+08:02.240 --> 08:09.920
+[Diapositiva 4] algo de los que están acá. Pudieron leer un poco la clase o mirarla. Les resultaron conocidos los
+
+08:09.920 --> 08:20.520
+[Diapositiva 4] conceptos. Sí, varios. Bueno, ¿les parece que vayamos haciendo una pasada por todas las
+
+08:20.520 --> 08:25.720
+[Diapositiva 4] diapositivas rápido y me van parando o quieren hacer una consulta así de los temas puntuales?
+
+08:25.720 --> 08:45.600
+[Diapositiva 4] ¿Hacemos una pasada? Bueno, esta diapositiva simplemente para conocer cómo se maneja el
+
+08:45.600 --> 08:53.120
+[Diapositiva 4] lenguaje en el que vamos a trabajar que Java, que ustedes ya habrán visto, que trabajan con un
+
+08:54.080 --> 08:59.600
+[Diapositiva 4] programa en alto nivel que se debe salvar con extensión Java, después a través de un compilador
+
+08:59.600 --> 09:08.400
+[Diapositiva 4] se compila a un archivo que se denomina bytecode o código de byte, que es un código que es
+
+09:08.400 --> 09:14.000
+[Diapositiva 4] interpretado únicamente por la máquina virtual. Por eso se necesita tener el intérprete de Java
+
+09:14.000 --> 09:20.960
+[Diapositiva 4] para poder ejecutarlo en la máquina. El programa en Java se escribe una única vez,
+
+09:21.040 --> 09:27.760
+[Diapositiva 4] se compila una única vez y este punto class es independiente de la plataforma. Uno lo puede
+
+09:27.760 --> 09:34.480
+[Diapositiva 4] ejecutar en cualquier sistema operativo con cualquier procesador. Uno no necesita un
+
+09:34.480 --> 09:38.880
+[Diapositiva 4] compilador especial como otros lenguajes como C, que por ejemplo no tiene que compilar para
+
+09:38.880 --> 09:45.240
+[Diapositiva 4] Windows o para Linux, sino que uno compila y lo que logra es este punto class o código de byte
+
+09:45.240 --> 09:52.760
+[Diapositiva 4] que es interpretado por la máquina virtual. Esto un poco para que nada más que sepan,
+
+09:52.760 --> 09:59.120
+[Diapositiva 5] lo mismo que esta otra transparencia o diapos. Nosotros antes les dábamos o cuando arrancábamos
+
+09:59.120 --> 10:04.440
+[Diapositiva 5] les dábamos un poco todo lo que son los principios de programación orientado a objetos, pero después
+
+10:04.440 --> 10:10.080
+[Diapositiva 5] empezaron a dar en primer año, así que dejamos de darlo. Esto como que resume un poco que un
+
+10:10.080 --> 10:17.440
+[Diapositiva 5] programa orientado a objetos, escrito en Java o en cualquier lenguaje, en ejecución es un conjunto
+
+10:17.440 --> 10:24.640
+[Diapositiva 5] de objetos que se comunican entre sí a través de mensajes. Cada uno de los objetos tiene su
+
+10:24.640 --> 10:30.000
+[Diapositiva 5] propio estado y un comportamiento. Ahora vamos a ver un poco para crear objetos que es lo que
+
+10:30.000 --> 10:37.160
+[Diapositiva 5] se necesita, pero básicamente es un conjunto de objetos que se comunican a través de mensajes.
+
+10:37.280 --> 10:43.240
+[Diapositiva 5] Para crear un objeto uno necesita una plantilla o un molde, que es lo que se denominan clases.
+
+10:44.440 --> 10:52.800
+[Diapositiva 5] En cuanto a las clases, esto seguramente estarán más familiarizado. ¿Ustedes
+
+10:52.800 --> 10:57.040
+[Diapositiva 6] utilizaron como IDE de programación BlueJ? ah usaron NetBeans, perfecto.
+
+11:10.160 --> 11:13.960
+[Diapositiva 6] Bueno, el molde o la clase, ¿ustedes lo están viendo?
+
+11:23.360 --> 11:28.800
+[Diapositiva 6] Bueno, si hacen doble clic es como si se les ampliara un poco la pantalla. Bueno, una clase
+
+11:28.800 --> 11:33.680
+[Diapositiva 6] entonces es un molde a partir del cual creamos objetos. Para escribir una clase necesitamos
+
+11:33.680 --> 11:38.920
+[Diapositiva 6] poner la palabra `class`, el nombre de la clase y un conjunto de atributos y métodos que nos
+
+11:38.920 --> 11:45.040
+[Diapositiva 6] permiten configurar o cerrarle valores a esos atributos o recuperarlos. Acá como primera
+
+11:45.040 --> 11:50.800
+[Diapositiva 6] línea está la palabra `package`. No sé si lo alcanzaron a ver, utilizaron `package`,
+
+11:50.800 --> 11:52.320
+[Diapositiva 6] ¿para qué sirve un paquete?
+
+12:01.720 --> 12:08.120
+[Diapositiva 6] A ver si alguien me sirve algo, ¿para qué sirven paquetes? Utilizamos de lectura,
+
+12:08.120 --> 12:19.240
+[Diapositiva 6] de escritura, de escritura, solo paquete lectura. Los `package`, acá la primera línea de un código
+
+12:19.640 --> 12:24.520
+[Diapositiva 6] en Java, ¿por qué lectura? ¿Para qué sirve un `package` en Java?
+
+12:27.400 --> 12:31.080
+[Diapositiva 6] No está relacionado con la lectura, ¿en qué sentido?
+
+12:34.240 --> 12:39.400
+[Diapositiva 6] Claro, sí. Java lo que hace es aprovecha la estructura jerárquica del sistema operativo
+
+12:39.400 --> 12:47.480
+[Diapositiva 6] para ubicar a las clases en carpetas con los nombres de los paquetes. Entonces todas las clases
+
+12:47.480 --> 12:51.800
+[Diapositiva 6] que se ubican en un mismo paquete, lo que se dice que tienen acceso package y entre ellas
+
+12:51.800 --> 12:59.240
+[Diapositiva 6] se las puede acceder. Es una buena recomendación utilizar la palabra `package` porque uno podría
+
+12:59.240 --> 13:05.680
+[Diapositiva 6] escribir muchas clases contactas y sean ubicadas en distintos paquetes y no habría superposición
+
+13:05.680 --> 13:12.160
+[Diapositiva 6] entre ellas. También está relacionado con un nuevo alcance de Java, que en Java tenemos
+
+13:12.160 --> 13:17.440
+[Diapositiva 6] el alcance privado, público y también el alcance package, pero que por el momento no lo vamos a ver.
+
+13:17.960 --> 13:22.120
+[Diapositiva 6] Entonces lo que encontramos en un código fuente es el paquete, que se recomienda siempre poner
+
+13:22.120 --> 13:29.600
+[Diapositiva 6] un nombre de paquete, la clase, los atributos y sus métodos. A partir de este monte, entonces
+
+13:29.600 --> 13:34.120
+[Diapositiva 6] creamos instancias y cada instancia tiene una copia de todas las variables de instancia de
+
+13:34.120 --> 13:42.680
+[Diapositiva 6] los atributos, cada objeto con su valor particular. Bueno, el estado, las variables de instancia,
+
+13:43.000 --> 13:48.560
+[Diapositiva 7] las variables de instancia con sus valores conforman el estado de los objetos y el comportamiento es
+
+13:48.560 --> 13:55.240
+[Diapositiva 7] lo que el objeto sabe hacer. Cada vez que se crea un objeto en la memoria se crea ese objeto con la
+
+13:55.240 --> 14:00.320
+[Diapositiva 7] copia de las variables y los valores en esas variables propios para cada objeto. Y el código
+
+14:00.320 --> 14:06.480
+[Diapositiva 7] es el memoria que es utilizado por todos los objetos de esa clase. Java es un lenguaje
+
+14:06.480 --> 14:11.840
+[Diapositiva 7] fuertemente tipado, así que cada vez que se declara una variable, esa variable tiene un tipo
+
+14:11.840 --> 14:17.080
+[Diapositiva 7] de datos que se antepone al nombre de la variable, ya sea para las variables de instancia,
+
+14:17.080 --> 14:21.000
+[Diapositiva 7] para las variables o los parámetros que se reciben en los métodos, o también para las
+
+14:21.000 --> 14:27.920
+[Diapositiva 7] variables locales que se declaran adentro de un método. Y los métodos, bueno, tienen un nombre,
+
+14:27.920 --> 14:31.520
+[Diapositiva 7] un conjunto de parámetros, eso es parecido también a Pascal, que ustedes venían trabajando,
+
+14:31.520 --> 14:37.600
+[Diapositiva 7] y tiene un tipo de datos de retorno. Siempre Java también necesita que el método retorne un tipo
+
+14:37.600 --> 14:43.200
+[Diapositiva 7] de datos y si no existe la sentencia return dentro del cuerpo del método porque no retorna nada,
+
+14:43.200 --> 14:50.600
+[Diapositiva 7] ahí se pone `void`, pero siempre debe estar también adelante del nombre del método. Los métodos
+
+14:50.600 --> 14:55.600
+[Diapositiva 7] también pueden ser públicos o privados, al igual que las variables, y otra recomendación es que
+
+14:55.600 --> 14:59.960
+[Diapositiva 7] casi todas las variables que puedan declararse privadas se declaren privadas, y después tener
+
+14:59.960 --> 15:05.840
+[Diapositiva 7] sus métodos setter y getters asociados para trabajar con esas variables. Bueno,
+
+15:05.840 --> 15:17.120
+[Diapositiva 8] acá fíjense si vemos la diapositiva anterior, que hay algunas variables cuyo tipo de datos es
+
+15:17.120 --> 15:25.560
+[Diapositiva 7] con mayúsculas y otros con minúsculas, ¿ahí qué se acuerdan? Porque hay algunos tipos de datos con
+
+15:25.560 --> 15:31.840
+[Diapositiva 7] mayúsculas y minúsculas. Bien, Augusto dice un objeto, un stream es un objeto, y los otros son
+
+15:31.840 --> 15:37.680
+[Diapositiva 7] tipos de datos primitivos, exacto. Bueno, Java, cuando se define el lenguaje de Java, que muchos
+
+15:37.680 --> 15:42.680
+[Diapositiva 7] dicen que no es un lenguaje puro de objetos, porque no todo es un objeto, si eso es cierto,
+
+15:42.680 --> 15:48.360
+[Diapositiva 8] porque existen los tipos de datos primitivos que no son objetos, pero cuando se define el lenguaje,
+
+15:48.360 --> 15:53.560
+[Diapositiva 8] la idea de dejar los tipos de datos primitivos fue para cuando uno tiene que hacer procesamiento
+
+15:53.560 --> 15:59.120
+[Diapositiva 8] de datos, es más eficiente trabajar con los primitivos que trabajar con objetos, ya que cada
+
+15:59.120 --> 16:04.200
+[Diapositiva 8] uno de estos primitivos tiene su objeto relacionado, ¿sí? Porque tenemos el tipo de datos primitivos
+
+16:04.200 --> 16:11.560
+[Diapositiva 8] `int`, tiene su objeto `Integer`, el tipo de datos primitivos `byte`, tiene su objeto `Byte`. Pero por
+
+16:11.560 --> 16:16.720
+[Diapositiva 8] cuestiones de eficiencia, Java decidió dejar los tipos de datos primitivos. Es decir, los dividió
+
+16:16.720 --> 16:22.760
+[Diapositiva 8] en enteros, puntos flotantes, caracteres y booleanos, que acá hay otra diapositiva, porque la diferencia
+
+16:22.760 --> 16:28.680
+[Diapositiva 9] entre los enteros es la cantidad o el tamaño del entero que puede guardar, si definimos un byte es
+
+16:28.680 --> 16:39.800
+[Diapositiva 9] hasta 8 bit, short 16, int 32 y long 64, ¿sí? Y después acá un poco les da los tipos de datos por
+
+16:39.800 --> 16:44.320
+[Diapositiva 9] defectos cuando uno declara una variable y no la inicializa. Por ejemplo, si volvemos acá a la
+
+16:44.320 --> 16:51.040
+[Diapositiva 7] clase, a la definición de esta clase, vemos que acá nombre, imagen y string son tipos de datos
+
+16:51.040 --> 16:57.360
+[Diapositiva 7] referenciales o que referencian a un objeto y no están igualadas a nada, no están inicializadas.
+
+16:57.360 --> 17:02.760
+[Diapositiva 7] Bueno, en estos casos Java le pone null y en los casos de tipo de datos primitivos, si son enteros
+
+17:02.760 --> 17:11.920
+[Diapositiva 7] le pone cero, si es un booleano le pone false y si es un carácter le pone el valor `null`. Es decir,
+
+17:11.920 --> 17:16.720
+[Diapositiva 7] cuando uno crea un objeto a partir de una clase de Java, no se tiene que preocupar ni por alocar
+
+17:16.720 --> 17:21.960
+[Diapositiva 7] memoria, ni por inicializar las variables porque Java lo hace automáticamente.
+
+17:24.400 --> 17:28.960
+[Diapositiva 7] Bueno, acá hay un ejemplo entonces variables de tipo de datos primitivos y variables de tipos
+
+17:28.960 --> 17:33.520
+[Diapositiva 7] referenciales. Esa es la diferencia que siempre van con mayúsculas porque referencia a una clase
+
+17:33.520 --> 17:37.880
+[Diapositiva 7] y necesitamos el operador new para poder asignar algún valor.
+
+17:40.360 --> 17:44.840
+[Diapositiva 10] Bueno, en las clases wrapper dieron algo que recién yo les decía que los tipos de datos
+
+17:44.840 --> 17:54.640
+[Diapositiva 10] primitivos tienen asociado a una clase wrapper. ¿Cuál es la diferencia entre poner `void` y no ponerlo?
+
+17:54.640 --> 17:59.520
+[Diapositiva 10] Te da un error de compilación Felipe, si no pones `void` te da un error de compilación.
+
+17:59.520 --> 18:04.880
+[Diapositiva 10] El única estructura parecida a un método que puede no tener ese tipo de datos de retorno es
+
+18:04.880 --> 18:09.600
+[Diapositiva 10] el constructor. El constructor sí no tiene nada, pero los métodos ya sean de clase o instancia,
+
+18:10.440 --> 18:17.480
+[Diapositiva 10] tienen que tener un tipo de datos que retorna y si no tiene sentencia `return` el método, entonces va un `void`.
+
+18:19.600 --> 18:21.160
+[Diapositiva 10] Entre paquete y una carpeta.
+
+18:23.160 --> 18:30.760
+[Diapositiva 10] Y básicamente, a ver si puedo poner la cámara.
+
+18:30.760 --> 18:36.600
+[Diapositiva 10] A ver acá, permitir compartir cámara.
+
+18:38.320 --> 18:44.160
+[Diapositiva 10] Si pueden ver, díganme si se ve bien la cámara, la pizarra.
+
+18:44.160 --> 18:45.640
+[Diapositiva 10] A ver más para allá.
+
+18:47.640 --> 18:48.140
+[Diapositiva 10] Se ve.
+
+18:49.760 --> 18:58.320
+[Diapositiva 10] Bueno, osea el paquete lo que tiene uno declara, cuando uno declara una clase el `package`
+
+19:01.760 --> 19:07.600
+[Diapositiva 10] y acá tenemos la clase, `public class A`.
+
+19:07.600 --> 19:14.600
+[Diapositiva 10] El nombre del paquete puede ser, como decía ahí, por ejemplo, WhatsApp o podría ser, por ejemplo,
+
+19:14.600 --> 19:22.960
+[Diapositiva 10] ayed, en el paquete se suelen poner con minúscula, `ayed.grafos`.
+
+19:23.960 --> 19:34.440
+[Diapositiva 10] Entonces, cada una de las clases que esté en este paquete, `ayed.grafos`, significa que pertenece al mismo paquete.
+
+19:34.440 --> 19:46.800
+[Diapositiva 10] En el disco va a estar seguro en una carpeta, ayed/grafos/claseA.class.
+
+19:47.400 --> 19:52.880
+[Diapositiva 10] Sí, y todas las clases que definamos en ese paquete.
+
+19:52.880 --> 20:00.360
+[Diapositiva 10] La idea de esto es que uno pueda tener muchas clases que se llaman claseA o con el nombre que nosotros queramos,
+
+20:00.360 --> 20:06.480
+[Diapositiva 10] porque el nombre canónico, el nombre largo de la clase esta es ayed.grafos.claseA.
+
+20:06.480 --> 20:13.960
+[Diapositiva 10] Entonces yo podría en un programa hacer un import de ayed.grafos.claseA y si tiene otro valor,
+
+20:13.960 --> 20:19.120
+[Diapositiva 10] podría hacer otro import también en la misma clase de otroPaquete.claseA.
+
+20:19.120 --> 20:28.760
+[Diapositiva 10] Lo mismo cuando yo hago un `new` de la clase A, yo podría hacer un `new` de ayed.grafos.claseA o de ayed.otroPaquete.claseA.
+
+20:31.360 --> 20:40.920
+[Diapositiva 10] Y es diferente en el sentido que entre una carpeta que me decías y un paquete, un paquete es más al nivel sintáctico, digamos.
+
+20:40.920 --> 20:45.400
+[Diapositiva 10] Y la carpeta, nos referimos a la carpeta en el sistema operativo.
+
+20:45.400 --> 20:49.920
+[Diapositiva 10] Java lo que hace, aprovecha esas estructuras jerárquicas del sistema operativo para ubicarlos ahí
+
+20:49.920 --> 20:56.120
+[Diapositiva 10] y de esta manera poder tener muchas clases con el nombre B, pero tener unicidad,
+
+20:56.120 --> 21:00.120
+[Diapositiva 10] es decir, poder identificar específicamente a las clases con el mismo nombre.
+
+21:01.120 --> 21:07.240
+[Diapositiva 10] Después, bueno, hay otra cuestión que todas las clases que pertenecen, que no importa en esta materia, no todavía,
+
+21:07.240 --> 21:12.000
+[Diapositiva 10] pero si tenemos una claseB, la claseA y la claseB pertenecen al mismo paquete.
+
+21:12.000 --> 21:17.120
+[Diapositiva 10] Entonces, yo podría tener variables declaradas de tipo package,
+
+21:17.120 --> 21:24.360
+[Diapositiva 10] entonces desde esta clase se podría también acceder a las clases y métodos de la claseA
+
+21:24.360 --> 21:27.960
+[Diapositiva 10] por pertenecer en el mismo paquete, si yo tengo acceso package.
+
+21:29.920 --> 21:30.920
+[Diapositiva 10] Simplemente eso.
+
+21:31.920 --> 21:36.800
+[Diapositiva 10] Por el momento la recomendación, bueno, nosotros vamos a utilizar Eclipse como IDE
+
+21:36.800 --> 21:39.800
+[Diapositiva 10] y ustedes van a ver que cuando ustedes crean una clase con Eclipse,
+
+21:39.800 --> 21:43.080
+[Diapositiva 10] si no le ponen paquete, les va a quedar un triangulito amarillo de advertencia,
+
+21:43.680 --> 21:47.680
+[Diapositiva 10] porque es como una buena práctica que las clases estén ordenadas en sus respectivos paquetes.
+
+21:48.160 --> 21:52.480
+[Diapositiva 10] De hecho, cada una de las clases de las prácticas también nosotros las vamos a guardar.
+
+21:52.480 --> 22:00.480
+[Diapositiva 10] Por ejemplo, TP1 es el nombre del paquete y ahí vamos a guardar la clase pilas, colas y todas las subclases de ellas.
+
+22:00.880 --> 22:06.680
+[Diapositiva 10] Después en el TP2 vamos a guardar todas las clases relacionadas con árboles binarios.
+
+22:07.280 --> 22:10.280
+[Diapositiva 10] Entonces, bueno, se van a guardar en diferentes paquetes.
+
+22:10.800 --> 22:16.800
+[Diapositiva 10] Todo puede estar en un mismo proyecto en Eclipse, en diferentes paquetes y cada paquete adentro va a tener su clase.
+
+22:20.280 --> 22:27.280
+[Diapositiva 10] Bueno, en cuanto a los wrappers que estábamos viendo ahí, a ver, voy a borrar.
+
+22:30.280 --> 22:34.800
+[Diapositiva 10] En Java existe un wrapper para cada uno de los tipos de datos primitivos,
+
+22:34.800 --> 22:41.800
+[Diapositiva 10] es decir, para un `int`, que es un tipo de datos primitivos, existe su correspondiente `Integer`.
+
+22:42.800 --> 22:50.800
+[Diapositiva 10] Para un `byte`, para un `boolean`, existe su correspondiente `Boolean`.
+
+22:52.800 --> 22:59.800
+[Diapositiva 10] Bueno, ¿qué son estas wrappers? Son clases que tienen una referencia a su tipo de datos primitivos correspondiente.
+
+22:59.800 --> 23:17.800
+[Diapositiva 10] Es decir, si yo por ejemplo digo x=10, int primitivo y después digo `Integer y = new Integer(10)`,
+
+23:18.800 --> 23:22.800
+[Diapositiva 10] bueno, esto significa que "x" es una variable primitivo e "y" es referencial.
+
+23:22.800 --> 23:27.800
+[Diapositiva 10] Entonces, si nosotros las vemos en la memoria, ¿cómo vamos a tener estas variables?
+
+23:27.800 --> 23:33.800
+[Diapositiva 10] "x" como es primitivo, se guarda acá en la memoria stack, que es una memoria de rápido acceso.
+
+23:33.800 --> 23:40.800
+[Diapositiva 10] "y" es una variable de tipo referencial, entonces va a tener una referencia al objeto de tipo `int`
+
+23:40.800 --> 23:44.800
+[Diapositiva 10] en donde nosotros tenemos el valor primitivo.
+
+23:45.800 --> 23:51.800
+[Diapositiva 10] O sea, cuando hacemos `new integer` es como un wrapper o una clase que adentro tiene una referencia a un primitivo.
+
+23:51.800 --> 23:56.800
+[Diapositiva 10] Así para cada uno de las variables primitivas.
+
+23:56.800 --> 24:02.800
+[Diapositiva 10] Entonces, si uno tendrá que hacer operaciones con tipos de datos primitivos, lo puede hacer directamente acá en el stack.
+
+24:02.800 --> 24:06.800
+[Diapositiva 10] Entonces, es mucho más rápido. Es de acceso rápido y se computa ahí.
+
+24:06.800 --> 24:12.800
+[Diapositiva 10] Si yo tengo que hacer operaciones sobre el tipo de datos wrapper o que es una referencia al objeto,
+
+24:12.800 --> 24:22.800
+[Diapositiva 10] yo tengo que ir a buscar el objeto a la heap, tomar el valor y procesar y demanda un poco más tiempo.
+
+24:23.800 --> 24:30.800
+[Diapositiva 10] Una de las características, como dice acá de los wrappers, es que son clases inmutables, al igual que la clase `String`.
+
+24:30.800 --> 24:32.800
+[Diapositiva 10] ¿Eso lo escucharon?
+
+24:32.800 --> 24:35.800
+[Diapositiva 10] Que son inmutables, ¿qué significa?
+
+24:39.800 --> 24:42.800
+[Diapositiva 10] Es que no se puede modificar.
+
+24:43.800 --> 24:47.800
+[Diapositiva 10] No se puede modificar. El valor de ese objeto no se puede modificar.
+
+24:47.800 --> 24:55.800
+[Diapositiva 10] Entonces, si yo quisiera, por ejemplo, acá decir `y = y + 5`,
+
+24:55.800 --> 25:01.800
+[Diapositiva 10] yo no puedo venir a buscar "y" cuanto vale y ponerle acá 15, porque este objeto es inmutable.
+
+25:01.800 --> 25:07.800
+[Diapositiva 10] Entonces, lo que hace Java automáticamente es ir a buscar el valor de "y", sumarle 5, que es 15,
+
+25:07.800 --> 25:10.800
+[Diapositiva 10] y hacer un nuevo `Integer` y asignárselo a ese valor.
+
+25:10.800 --> 25:15.800
+[Diapositiva 10] Entonces, yo voy a tener un nuevo integer 15, ahora va a apuntar acá, porque yo lo guardé en "y",
+
+25:15.800 --> 25:19.800
+[Diapositiva 10] y ahora es igual a "y", que va a ir a buscar el valor que tenía, más 5, y crea un nuevo objeto.
+
+25:19.800 --> 25:26.800
+[Diapositiva 10] Entonces, esta referencia se corta. Este objeto ahora queda ahí sin referencia.
+
+25:26.800 --> 25:32.800
+[Diapositiva 10] Por eso es que a veces cuando una tiene operaciones matemáticas se suelen usar los primitivos,
+
+25:32.800 --> 25:39.800
+[Diapositiva 10] pero bueno, existen igual sus wrappers correspondientes, por si también se necesita en algún momento algún objeto.
+
+25:39.800 --> 25:44.800
+[Diapositiva 10] Por ejemplo, la clase integer tiene métodos que uno puede trabajar, métodos de clase,
+
+25:44.800 --> 25:47.800
+[Diapositiva 10] por ejemplo, `Integer.parseInt()`.
+
+25:47.800 --> 25:55.800
+[Diapositiva 10] Uno puede decir `Integer.parseInt("888")`, y puede parsear acá un número en string,
+
+25:55.800 --> 26:03.800
+[Diapositiva 10] y esto lo que me hace es, me devuelve el primitivo, si son todos dígitos, si tiene alguna letra, me dispara una sección,
+
+26:03.800 --> 26:10.800
+[Diapositiva 10] o la clase, por ejemplo, `Character`, me puede pasar `toUpperCase()` toda mayúscula, `toLowerCase()`,
+
+26:11.800 --> 26:14.800
+[Diapositiva 10] o sea, como son objetos,
+
+26:21.800 --> 26:24.800
+[Diapositiva 10] esa es un poco la diferencia.
+
+26:24.800 --> 26:30.800
+[Diapositiva 10] Y la clase `String`, acuérdense que, bueno, después vamos a ver cuando trabajamos con el pasaje de parámetros,
+
+26:30.800 --> 26:33.800
+[Diapositiva 10] es igual que las clases wrapper, su valor es inmutable.
+
+26:33.800 --> 26:39.800
+[Diapositiva 10] Entonces, si yo comparte el valor, lo que va a hacer Java es crear un nuevo `String`.
+
+26:39.800 --> 26:46.800
+[Diapositiva 10] Eso consume mucha memoria, entonces, bueno, uno a veces tiene que ser cuidadoso con el uso también de las clases inmutables.
+
+26:52.800 --> 26:55.800
+[Diapositiva 11] Bueno, a partir ya de las últimas versiones de Java,
+
+26:57.800 --> 27:06.800
+[Diapositiva 11] no se puede crear el objeto para guardarlo en una variable de tipo referencial en el caso de los wrappers.
+
+27:06.800 --> 27:08.800
+[Diapositiva 11] Es decir,
+
+27:09.800 --> 27:13.800
+[Diapositiva 11] veamos ahí el ejemplo, fíjense que ahí dice, por ejemplo,
+
+27:14.800 --> 27:21.800
+[Diapositiva 11] character, declara algo de tipo character, o character como quieran, `Character a = "a"`.
+
+27:22.800 --> 27:28.800
+[Diapositiva 11] Fíjense que esto es un objeto, a es una referencia a un objeto, sin embargo, se está guardando como un primitivo.
+
+27:28.800 --> 27:33.800
+[Diapositiva 11] Y lo mismo podemos hacer con integer, podemos decir integer, o en algún lado,
+
+27:33.800 --> 27:35.800
+[Diapositiva 11] `Integer x = 10`.
+
+27:36.800 --> 27:39.800
+[Diapositiva 11] Acá parecería que estamos guardando un primitivo
+
+27:40.800 --> 27:46.800
+[Diapositiva 11] en una variable referencial. Bueno, esto Java lo que hace automáticamente, hace new integer de 10.
+
+27:46.800 --> 27:49.800
+[Diapositiva 11] Eso se llama autoboxing.
+
+27:49.800 --> 27:52.800
+[Diapositiva 11] Y acá Java hace `new Character(a)`.
+
+27:52.800 --> 27:55.800
+[Diapositiva 11] Hace un objeto y le pone adentro estos primitivos.
+
+27:55.800 --> 27:57.800
+[Diapositiva 11] Esto se llama autoboxing.
+
+27:57.800 --> 28:02.800
+[Diapositiva 11] Pero acá no se tienen que confundir que si ven esta asignación, estos no son los primitivos.
+
+28:02.800 --> 28:06.800
+[Diapositiva 11] Son referencias a objetos. Si vemos otra vez esto en la memoria,
+
+28:06.800 --> 28:11.800
+[Diapositiva 11] "x" va a apuntar a un objeto en la heap que va a tener un integer con el 10.
+
+28:11.800 --> 28:16.800
+[Diapositiva 11] Y "a" va a apuntar a un objeto en la heap que va a tener una letra, un carácter adentro,
+
+28:16.800 --> 28:19.800
+[Diapositiva 11] pero es un objeto de tipo character.
+
+28:20.800 --> 28:22.800
+[Diapositiva 11] A pesar de que ahora se pueden.
+
+28:24.800 --> 28:26.800
+[Diapositiva 11] Siempre.
+
+28:27.800 --> 28:30.800
+[Diapositiva 11] Las variables siguen siendo referenciales.
+
+28:30.800 --> 28:33.800
+[Diapositiva 11] A esto se le llama entonces autoboxing.
+
+28:33.800 --> 28:38.800
+[Diapositiva 11] Y lo mismo también pasa si yo quiero x, que es una referencia a un objeto,
+
+28:38.800 --> 28:40.800
+[Diapositiva 11] guardarlo en una variable de tipo primitivo.
+
+28:40.800 --> 28:42.800
+[Diapositiva 11] Eso también yo lo puedo hacer.
+
+28:42.800 --> 28:45.800
+[Diapositiva 11] Puedo decir, por ejemplo, `int y =`.
+
+28:45.800 --> 28:49.800
+[Diapositiva 11] Fíjense que `int y` está declarando una variable primitiva.
+
+28:49.800 --> 28:52.800
+[Diapositiva 11] Puedo guardar esto que es una referencia `int y = x`.
+
+28:52.800 --> 28:55.800
+[Diapositiva 11] Pero qué hace Java acá? Hace el unboxing.
+
+28:55.800 --> 28:57.800
+[Diapositiva 11] Le saca lo que tiene adentro.
+
+28:58.800 --> 29:00.800
+[Diapositiva 11] Acá hace un autobox.
+
+29:00.800 --> 29:03.800
+[Diapositiva 11] Con el primitivo, un objeto y se lo saca.
+
+29:03.800 --> 29:07.800
+[Diapositiva 11] Y acá lo que hace es agarra el objeto, le saca el primitivo que tiene adentro
+
+29:07.800 --> 29:10.800
+[Diapositiva 11] y se lo asigna ahí al primitivo.
+
+29:12.800 --> 29:16.800
+[Diapositiva 11] Si bien es práctico esto de hacer autoboxing y unboxing,
+
+29:16.800 --> 29:20.800
+[Diapositiva 11] a veces puede confundir, por eso le los damos.
+
+29:20.800 --> 29:23.800
+[Diapositiva 11] Siempre lo que importa es el tipo de la variable.
+
+29:23.800 --> 29:26.800
+[Diapositiva 11] "c" es un objeto, "i" referencia a un objeto.
+
+29:26.800 --> 29:28.800
+[Diapositiva 11] Y "c1" e "i1" son primitivos.
+
+29:29.800 --> 29:32.800
+[Diapositiva 11] Y acá abajo hay un pequeño ejemplo.
+
+29:32.800 --> 29:37.800
+[Diapositiva 11] Un poco para demostrar que no da lo mismo que un objeto.
+
+29:37.800 --> 29:44.800
+[Diapositiva 11] Y lo que hace es que es un `for` que desde cero
+
+29:44.800 --> 29:52.800
+[Diapositiva 11] y se puede ver la cantidad máxima, pero la cantidad máxima va sumando.
+
+29:52.800 --> 29:56.800
+[Diapositiva 11] Y si vemos uno muestra...
+
+29:56.800 --> 29:59.800
+[Diapositiva 11] Tardó 37 segundos y el otro 5.
+
+29:59.800 --> 30:03.800
+[Diapositiva 11] Yo no sé por qué no puedo sacar esta manita.
+
+30:05.800 --> 30:08.800
+[Diapositiva 11] No puedo ver el total de la pantalla.
+
+30:08.800 --> 30:10.800
+[Diapositiva 11] Uno creo que dice 37 y el otro 5.
+
+30:13.800 --> 30:16.800
+[Diapositiva 11] ¿Y por qué les parece que está pasando eso?
+
+30:16.800 --> 30:20.800
+[Diapositiva 11] Que cuando yo uso un objeto, tarda mucho más que uso los primitivos.
+
+30:20.800 --> 30:22.800
+[Diapositiva 11] ¿Qué va pasando cuando va haciendo esa suma?
+
+30:25.800 --> 30:27.800
+[Diapositiva 11] ¿Se les trabó?
+
+30:29.800 --> 30:31.800
+[Diapositiva 11] ¿No me están escuchando bien, chicos?
+
+30:34.800 --> 30:36.800
+[Diapositiva 11] ¿No me están escuchando bien?
+
+30:41.800 --> 30:43.800
+[Diapositiva 11] [Estudiante] Sí, sí se escucha perfecto.
+
+30:43.800 --> 30:48.800
+[Diapositiva 11] Me parece que cuando me paré, moví acá el auricular.
+
+30:48.800 --> 30:54.800
+[Diapositiva 11] Bueno, ¿se entiende entonces ahí qué está pasando cuando yo uso un objeto?
+
+30:55.800 --> 31:00.800
+[Diapositiva 11] Cuando quiere sumar, tiene cero en la variable.
+
+31:00.800 --> 31:03.800
+[Diapositiva 11] Tiene cero en la variable integer, por ejemplo.
+
+31:03.800 --> 31:07.800
+[Diapositiva 11] Entonces, cuando quiere sumar cero más uno, tiene que buscar el objeto,
+
+31:07.800 --> 31:10.800
+[Diapositiva 11] cero más uno, uno, crea un nuevo objeto con uno.
+
+31:10.800 --> 31:14.800
+[Diapositiva 11] Después cuando tiene que sumar uno más dos, tiene que ir a buscar el objeto,
+
+31:14.800 --> 31:19.800
+[Diapositiva 11] saca el primitivo adentro uno más dos tres, crear un nuevo objeto con tres.
+
+31:19.800 --> 31:22.800
+[Diapositiva 11] Y así con todas las sumas.
+
+31:22.800 --> 31:24.800
+[Diapositiva 11] Entonces eso lo que hace es que demore más.
+
+31:24.800 --> 31:27.800
+[Diapositiva 11] Y además hace uso más intensivo de memoria.
+
+31:30.800 --> 31:34.800
+[Diapositiva 11] ¿Se cortó la parte del boxing y unboxing?
+
+31:34.800 --> 31:36.800
+[Diapositiva 11] ¿Se entendió o no? ¿Quieren que lo repita?
+
+31:45.800 --> 31:48.800
+[Diapositiva 11] Ah, bueno.
+
+31:48.800 --> 31:55.800
+[Diapositiva 11] Claro, así como acá arriba, no necesitamos nosotros explícitamente decir
+
+31:55.800 --> 32:01.800
+[Diapositiva 11] `new Integer(7)` o `new Character(a)`, porque Java automáticamente hace el autoboxing,
+
+32:01.800 --> 32:04.800
+[Diapositiva 11] es decir, crea un objeto a partir de este primitivo.
+
+32:04.800 --> 32:10.800
+[Diapositiva 11] Cuando yo tengo una referencia a un objeto, como es el caso de c, a character o i,
+
+32:10.800 --> 32:13.800
+[Diapositiva 11] que es un integer, yo puedo hacer también el proceso inverso.
+
+32:13.800 --> 32:18.800
+[Diapositiva 11] Es decir, declaro una variable primitiva char, que es primitivo, c1 y le asigno,
+
+32:18.800 --> 32:20.800
+[Diapositiva 11] fíjense, le estoy asignando la referencia al objeto.
+
+32:20.800 --> 32:24.800
+[Diapositiva 11] ¿Pero qué hace Java? Va, busca el primitivo y asigna el primitivo acá.
+
+32:24.800 --> 32:27.800
+[Diapositiva 11] Y acá lo mismo, i1 de tipo int primitivo.
+
+32:27.800 --> 32:29.800
+[Diapositiva 11] Yo estoy asignando acá una referencia a un objeto.
+
+32:29.800 --> 32:31.800
+[Diapositiva 11] ¿Pero qué hace Java? El unboxing.
+
+32:31.800 --> 32:34.800
+[Diapositiva 11] Se da cuenta que es un integer, saca el primitivo adentro y lo asigna acá.
+
+32:34.800 --> 32:36.800
+[Diapositiva 11] ¿Sí?
+
+32:37.800 --> 32:41.800
+[Diapositiva 11] A la memoria, dibujar esas cuatro variables, ¿cómo nos quedan?
+
+32:41.800 --> 32:47.800
+[Diapositiva 11] "c", o sea, "c" apunta a un objeto.
+
+32:47.800 --> 32:54.800
+[Diapositiva 11] Después, "i" apunta a un objeto integer con el 7 y este con la a.
+
+32:54.800 --> 32:58.800
+[Diapositiva 11] Y después, las otras dos variables, a pesar de que yo le asigné objetos,
+
+32:58.800 --> 33:04.800
+[Diapositiva 11] "c1" tiene el valor de a, el primitivo acá.
+
+33:04.800 --> 33:10.800
+[Diapositiva 11] e "i1", que es el primitivo entero, tiene el valor acá.
+
+33:10.800 --> 33:13.800
+[Diapositiva 11] Lo que importa es el tipo de la variable.
+
+33:13.800 --> 33:19.800
+[Diapositiva 11] "i" y "c" son referencias a objetos y "i1" y "c1" son tipos de datos primitivos.
+
+33:19.800 --> 33:24.800
+[Diapositiva 11] Y Java automáticamente hace unboxing y autoboxing.
+
+33:26.800 --> 33:30.800
+[Diapositiva 11] Bueno, ¿esto está más o menos?
+
+33:31.800 --> 33:32.800
+[Diapositiva 11] [Estudiante] Profe.
+
+33:32.800 --> 33:34.800
+[Diapositiva 11] Sí.
+
+33:34.800 --> 33:41.800
+[Diapositiva 11] [Estudiante] Entonces, si quisiera declarar bien, ¿habría que pasar como parámetro el valor auténtico o cómo se haría?
+
+33:42.800 --> 33:45.800
+[Diapositiva 11] Como parámetro, ¿en dónde?
+
+33:45.800 --> 33:48.800
+[Diapositiva 11] [Estudiante] Si querés crear un wrapper.
+
+33:51.800 --> 33:56.800
+[Diapositiva 11] Si vos querés explícitamente utilizar el wrapper,
+
+33:56.800 --> 34:00.800
+[Diapositiva 11] digamos, de todas maneras, cuando acá decís `Integer a`,
+
+34:00.800 --> 34:05.800
+[Diapositiva 11] te queda guardado un char, un character, que es un wrapper.
+
+34:05.800 --> 34:09.800
+[Diapositiva 11] Vos podrías hacerlo explícitamente new character o así, es lo mismo.
+
+34:09.800 --> 34:14.800
+[Diapositiva 11] Te va a quedar "c" apunta "a" un objeto en la heap que tiene la "a" dentro.
+
+34:15.800 --> 34:18.800
+[Diapositiva 11] O sea, lo hagas o no lo hagas con el new Java lo hace por vos.
+
+34:18.800 --> 34:23.800
+[Diapositiva 11] Así que son wrappers, son objetos, porque lo que importa es el tipo de la variable.
+
+34:23.800 --> 34:28.800
+[Diapositiva 11] "c" de tipo character "i" de tipo integer, bueno, ahí vos vas a tener objetos en la heap,
+
+34:28.800 --> 34:32.800
+[Diapositiva 11] porque la variable determina eso.
+
+34:32.800 --> 34:35.800
+[Diapositiva 11] Acá yo estoy diciendo que la variable es un primitivo.
+
+34:35.800 --> 34:39.800
+[Diapositiva 11] Acá estoy diciendo que "c" de tipo character es referencia a un objeto.
+
+34:39.800 --> 34:43.800
+[Diapositiva 11] No importa si hiciste el new o lo asignaste así.
+
+34:43.800 --> 34:46.800
+[Diapositiva 11] En ambos casos vas a tener un wrapper ahí.
+
+34:46.800 --> 34:49.800
+[Diapositiva 11] ¿Sí?
+
+34:51.800 --> 34:55.800
+[Diapositiva 11] Como parámetros me decías esto, no parámetro de métodos ni nada.
+
+34:55.800 --> 34:58.800
+[Diapositiva 11] Me decías el parámetro del `new Integer()` y eso.
+
+34:58.800 --> 35:09.800
+[Diapositiva 11] [Estudiante] Eh, yo lo que preguntaba era por si quería usar un wrapper. Decía si siempre había que poner `new Character` entre ( ) o " ".
+
+35:09.800 --> 35:11.800
+[Diapositiva 11] Ah, sí, así es.
+
+35:11.800 --> 35:17.800
+[Diapositiva 11] New character y el primitivo así, claro.
+
+35:17.800 --> 35:25.800
+[Diapositiva 11] New así, o new integer y le pasás el integer directamente así también.
+
+35:25.800 --> 35:27.800
+[Diapositiva 11] New character, new así.
+
+35:27.800 --> 35:30.800
+[Diapositiva 11] Eso es lo mismo que hacer esto.
+
+35:30.800 --> 35:33.800
+[Diapositiva 11] Esplícitamente o lo dejas a Java que lo haga.
+
+35:34.800 --> 35:38.800
+[Diapositiva 11] Estas diapos por ahí están más que todo para que presen atención.
+
+35:38.800 --> 35:43.800
+[Diapositiva 11] Que acá están asignando un primitivo, pero que la variable es un referencial.
+
+35:43.800 --> 35:47.800
+[Diapositiva 11] Como para que en esto piensen, que la variable tiene un tipo de datos
+
+35:47.800 --> 35:51.800
+[Diapositiva 11] y eso es lo que importa, el tipo de datos de la variable.
+
+35:51.800 --> 35:54.800
+[Diapositiva 11] ¿Sí?
+
+35:55.800 --> 36:00.800
+[Diapositiva 11] [Estudiante] ¿Y entonces los wrappers solo se usan si querés usar sus métodos?
+
+36:03.800 --> 36:06.800
+[Diapositiva 11] ¿Si querés? ¿Cómo? ¿Los wrappers solo se usan sí?
+
+36:06.800 --> 36:09.800
+[Diapositiva 11] [Estudiante] Por sus métodos.
+
+36:09.800 --> 36:11.800
+[Diapositiva 11] Sí, por sus métodos básicamente.
+
+36:11.800 --> 36:17.800
+[Diapositiva 11] Sí, si querés parcear enteros o si `toUpperCase()`, `toLowerCase()`.
+
+36:17.800 --> 36:21.800
+[Diapositiva 11] Sí, sí, no tienen demasiada funcionalidad.
+
+36:21.800 --> 36:26.800
+[Diapositiva 11] Pero también se los damos porque ustedes saben que los integers son objetos
+
+36:26.800 --> 36:29.800
+[Diapositiva 11] y si ustedes los pasan como parámetros en algunos métodos
+
+36:29.800 --> 36:32.800
+[Diapositiva 11] y son inmutables, tienen problemas.
+
+36:32.800 --> 36:36.800
+[Diapositiva 11] Un poco para que aprendan eso, que los wrappers y los Strings
+
+36:36.800 --> 36:40.800
+[Diapositiva 11] no se pasan como parámetros si queremos que en ese objeto
+
+36:40.800 --> 36:42.800
+[Diapositiva 11] nos devuelva algún valor cambiado.
+
+36:42.800 --> 36:44.800
+[Diapositiva 11] Lo vamos a ver más adelante en las clases.
+
+36:44.800 --> 36:48.800
+[Diapositiva 11] No sé si lo alcanzan a ver la parte de pasaje de parámetros.
+
+36:48.800 --> 36:56.800
+[Diapositiva 11] Que no es una buena decisión o no se deben pasar parámetros de tipos primitivos,
+
+36:56.800 --> 37:00.800
+[Diapositiva 11] wrappers y strings si queremos que esos parámetros se modifiquen.
+
+37:01.800 --> 37:06.800
+[Diapositiva 11] Para eso les damos que la diferencia entre lo que es un primitivo, un wrapper
+
+37:06.800 --> 37:11.800
+[Diapositiva 11] y nada más. No es un tema tan importante.
+
+37:11.800 --> 37:16.800
+[Diapositiva 11] No, no se pueden cambiar. No existe ningún método para cambiar el valor a un wrapper.
+
+37:16.800 --> 37:20.800
+[Diapositiva 11] Y las clases wrapper son finales, así que no se pueden sobrescribir.
+
+37:21.800 --> 37:23.800
+[Diapositiva 11] Así que no.
+
+37:23.800 --> 37:27.800
+[Diapositiva 11] Simplemente se las damos para que las conozcan y sepan que no las tienen que usar.
+
+37:27.800 --> 37:31.800
+[Diapositiva 11] Porque por ahí están tentados a decir, es un objeto, paso este integer como parámetro
+
+37:31.800 --> 37:35.800
+[Diapositiva 11] para que me devuelva, cambiado el valor y eso no sirve.
+
+37:35.800 --> 37:40.800
+[Diapositiva 11] Un poco para mostrarles eso, que no se pueden usar para esas cosas.
+
+37:41.800 --> 37:46.800
+[Diapositiva 11] A ver qué dice, entonces, lo mejor es no usar los wrappers.
+
+37:46.800 --> 37:52.800
+[Diapositiva 11] Y si un poco la conclusión es esa, si no es necesario no usarlo en los wrappers.
+
+37:52.800 --> 37:56.800
+[Diapositiva 11] No crean que porque es un objeto integer ya lo puedo usar para pasar parámetros
+
+37:56.800 --> 37:58.800
+[Diapositiva 11] que me devuelva el valor.
+
+37:58.800 --> 38:02.800
+[Diapositiva 11] Y si hay procesamiento, si hay mucho procesamiento, alcanza con usar los primitivos.
+
+38:02.800 --> 38:04.800
+[Diapositiva 11] Sí, tal cual.
+
+38:05.800 --> 38:09.800
+[Diapositiva 11] No se ve más esto, solamente ahora después cuando vemos lo de los parámetros
+
+38:09.800 --> 38:12.800
+[Diapositiva 11] y después prácticamente no tienen mucho uso.
+
+38:21.800 --> 38:24.800
+[Diapositiva 12] Esta diapositiva les muestra un poco la creación de un objeto
+
+38:24.800 --> 38:29.800
+[Diapositiva 12] que entiendo que también ya ustedes lo han visto, cuando se crea un objeto en Java
+
+38:29.800 --> 38:32.800
+[Diapositiva 12] o uno crea primero una variable de tipo referencial
+
+38:32.800 --> 38:38.800
+[Diapositiva 12] donde va a guardar el objeto, se aloca espacio para esa variable en la stack
+
+38:38.800 --> 38:42.800
+[Diapositiva 13] y cuando se hace un new, uno simplemente corre este constructor
+
+38:42.800 --> 38:46.800
+[Diapositiva 13] pero por debajo de Java es un montón de cosas porque aloca espacio en la heap,
+
+38:46.800 --> 38:51.800
+[Diapositiva 13] inicializa con los valores declarados acá en la clase el objeto,
+
+38:51.800 --> 38:55.800
+[Diapositiva 13] después si tiene un constructor se tapan estos valores con los valores del objeto
+
+38:55.800 --> 39:01.800
+[Diapositiva 13] y finalmente devuelve una dirección en hexadecimal que se guarda acá en la variable stack.
+
+39:03.800 --> 39:06.800
+[Diapositiva 13] Es una memoria donde se guardan los objetos, hay distintas memorias,
+
+39:06.800 --> 39:10.800
+[Diapositiva 13] tenemos la memoria stack en donde se guardan las variables
+
+39:10.800 --> 39:15.800
+[Diapositiva 13] y hay un puntero que va subiendo y bajando a medida que se crean las variables,
+
+39:15.800 --> 39:18.800
+[Diapositiva 13] después tenemos una variable heap en donde se guardan los objetos,
+
+39:18.800 --> 39:24.800
+[Diapositiva 13] hay una memoria estática en donde se guardan los valores estáticos de los objetos,
+
+39:24.800 --> 39:29.800
+[Diapositiva 13] son distintas memorias que utilizan los programas este orientados a objetos para guardar sus datos.
+
+39:33.800 --> 39:40.800
+[Diapositiva 13] Bueno, está?, estoy desacostumbrada de dar clase virtual ya desde la pandemia
+
+39:40.800 --> 39:43.800
+[Diapositiva 13] que no les veo las caras, no sé si entienden o no entienden.
+
+39:45.800 --> 39:52.800
+[Diapositiva 13] Después acá, esto también entiendo que lo vieron, que son los constructores,
+
+39:52.800 --> 39:57.800
+[Diapositiva 13] ¿para qué sirven los constructores? A ver alguno que tome el micrófono rápidamente.
+
+39:58.800 --> 40:03.800
+[Diapositiva 13] [Estudiante] Son para inicializar los valores en objetos cuando los creás.
+
+40:03.800 --> 40:04.800
+[Diapositiva 13] Exacto.
+
+40:04.800 --> 40:06.800
+[Diapositiva 13] [Estudiante] Si no querés que estén los valores adentro.
+
+40:07.800 --> 40:10.800
+[Diapositiva 13] Claro, para no andar corriendo los setters después,
+
+40:10.800 --> 40:13.800
+[Diapositiva 13] en general los constructores se usan para eso,
+
+40:13.800 --> 40:16.800
+[Diapositiva 13] para inicializar los valores en el momento de la construcción.
+
+40:16.800 --> 40:20.800
+[Diapositiva 13] Sintácticamente un constructor es muy parecido a un método,
+
+40:20.800 --> 40:24.800
+[Diapositiva 13] la diferencia está en que no retorna valor, como decíamos hace un rato,
+
+40:24.800 --> 40:28.800
+[Diapositiva 13] que el nombre sí o sí tiene que ser exactamente igual al de la clase,
+
+40:28.800 --> 40:32.800
+[Diapositiva 13] y uno no lo invoca a través de punto explícitamente a un constructor
+
+40:32.800 --> 40:37.800
+[Diapositiva 13] como lo invocan los métodos, sino que uno hace un `new` de la clase
+
+40:37.800 --> 40:41.800
+[Diapositiva 13] y la clase va a ir a buscar algún constructor según los parámetros que le pasemos,
+
+40:41.800 --> 40:45.800
+[Diapositiva 13] va a locar espacio de memoria, va creando el objeto y corre el constructor.
+
+40:45.800 --> 40:47.800
+[Diapositiva 13] Esa es un poco la diferencia.
+
+40:47.800 --> 40:50.800
+[Diapositiva 13] ¿Y qué pasa si yo creo una clase sin ningún constructor
+
+40:50.800 --> 40:53.800
+[Diapositiva 13] y hago un new de esa clase? ¿Funciona?
+
+40:54.800 --> 40:55.800
+[Diapositiva 13] [Estudiante] Sí.
+
+40:58.800 --> 41:00.800
+[Diapositiva 13] Sí, ¿por qué?
+
+41:04.800 --> 41:07.800
+[Diapositiva 13] Se usa constructor por defecto, perfecto.
+
+41:07.800 --> 41:10.800
+[Diapositiva 13] Y si nosotros creamos un constructor
+
+41:10.800 --> 41:14.800
+[Diapositiva 13] y hago un new con el constructor por defecto, ¿qué pasa?
+
+41:17.800 --> 41:21.800
+[Diapositiva 13] Bien, lo crea, es decir que Java lo crea solamente
+
+41:21.800 --> 41:23.800
+[Diapositiva 14] si no existe ningún constructor.
+
+41:23.800 --> 41:26.800
+[Diapositiva 14] Si detecta que ya existe un constructor en la clase,
+
+41:26.800 --> 41:30.800
+[Diapositiva 15] entonces en ese caso ya Java no hace nada.
+
+41:30.800 --> 41:33.800
+[Diapositiva 15] No crea el constructor, se queda con el único que definió,
+
+41:33.800 --> 41:35.800
+[Diapositiva 15] los que definió el programador.
+
+41:36.800 --> 41:37.800
+[Diapositiva 15] Bárbaro.
+
+41:37.800 --> 41:41.800
+[Diapositiva 15] Eso se hace, bueno, para un poco no cortar la cadena de adherencia,
+
+41:41.800 --> 41:44.800
+[Diapositiva 15] porque cuando uno hace un `new` de un objeto,
+
+41:44.800 --> 41:47.800
+[Diapositiva 15] se corre el constructor de la superclase, superclase,
+
+41:47.800 --> 41:49.800
+[Diapositiva 15] así hasta llegar a Object.
+
+41:49.800 --> 41:52.800
+[Diapositiva 15] Entonces si alguna de las clases no tiene ningún constructor,
+
+41:52.800 --> 41:54.800
+[Diapositiva 15] se corta esa cadena de invocación.
+
+41:54.800 --> 41:58.800
+[Diapositiva 15] Por eso que cuando el compilador de Java detecta
+
+41:58.800 --> 42:00.800
+[Diapositiva 15] que una clase no tiene ningún constructor,
+
+42:00.800 --> 42:03.800
+[Diapositiva 15] antes de compilarlo le inserta al constructor por defecto.
+
+42:04.800 --> 42:10.800
+[Diapositiva 15] Y de esta manera nos aseguramos la cadena de construcción de un objeto.
+
+42:11.800 --> 42:17.800
+[Diapositiva 15] Bueno, acá vemos un constructor que recibe dos parámetros,
+
+42:17.800 --> 42:20.800
+[Diapositiva 15] una clase Vehículo que tiene marca y precio,
+
+42:20.800 --> 42:22.800
+[Diapositiva 15] y tiene dos constructores.
+
+42:23.800 --> 42:28.800
+[Diapositiva 15] Y fíjense que en un método ponemos directamente marca y precio
+
+42:28.800 --> 42:30.800
+[Diapositiva 15] igual a los valores de los parámetros,
+
+42:30.800 --> 42:33.800
+[Diapositiva 15] y en el otro podemos `this.marca` y `this.precio`
+
+42:33.800 --> 42:35.800
+[Diapositiva 15] igual al valor de los parámetros.
+
+42:37.800 --> 42:38.800
+[Diapositiva 15] ¿Eso por qué es?
+
+42:38.800 --> 42:43.800
+[Diapositiva 15] ¿Qué pasa si yo no pongo este `this` acá?
+
+42:43.800 --> 42:45.800
+[Diapositiva 15] Si alguien agarra el micrófono.
+
+42:45.800 --> 42:48.800
+[Diapositiva 15] ¿Es necesario que yo ponga ese `this` ahí?
+
+42:51.800 --> 42:53.800
+[Diapositiva 15] O sea, yo tengo este método, ¿no?
+
+42:53.800 --> 43:02.800
+[Diapositiva 15] public, vehículo, tengo vehículo,
+
+43:03.800 --> 43:08.800
+[Diapositiva 15] acá tengo private, string, marca,
+
+43:08.800 --> 43:13.800
+[Diapositiva 15] acá tengo private, string, marca,
+
+43:14.800 --> 43:18.800
+[Diapositiva 15] y acá tengo private, string, precio.
+
+43:20.800 --> 43:24.800
+[Diapositiva 15] Y después tengo acá un constructor que recibe algo de tipo string,
+
+43:24.800 --> 43:30.800
+[Diapositiva 15] marca, y string, precio.
+
+43:30.800 --> 43:37.800
+[Diapositiva 15] Y acá entonces dice, `this.marca = marca`.
+
+43:38.800 --> 43:43.800
+[Diapositiva 15] Y acá dice, `this.precio = precio`.
+
+43:44.800 --> 43:47.800
+[Diapositiva 15] Los dos valores que recibimos ahí en el parámetro.
+
+43:47.800 --> 43:49.800
+[Diapositiva 15] A ver qué me están diciendo acá.
+
+43:50.800 --> 43:53.800
+[Diapositiva 15] Dice, ¿qué pasa?
+
+43:53.800 --> 43:55.800
+[Diapositiva 15] Yo le dije, ¿qué pasa?
+
+43:56.800 --> 43:59.800
+[Diapositiva 15] Dice, ¿qué pasa?
+
+43:59.800 --> 44:01.800
+[Diapositiva 15] Yo le dije, ¿qué pasa si yo no pongo?
+
+44:01.800 --> 44:03.800
+[Diapositiva 15] Ah, no, el error no.
+
+44:03.800 --> 44:05.800
+[Diapositiva 15] ¿Te referís a la variable de este objeto this?
+
+44:05.800 --> 44:07.800
+[Diapositiva 15] Claro, a este, sí.
+
+44:07.800 --> 44:10.800
+[Diapositiva 15] ¿Es por si coincide con un argumento?
+
+44:10.800 --> 44:15.800
+[Diapositiva 15] ¿Si tiene que distinguir atributos de los parámetros con el this?
+
+44:15.800 --> 44:17.800
+[Diapositiva 15] Sí, o el objeto en sí.
+
+44:17.800 --> 44:20.800
+[Diapositiva 15] ¿Es necesario porque tiene el mismo nombre?
+
+44:20.800 --> 44:22.800
+[Diapositiva 15] Exactamente, bien.
+
+44:22.800 --> 44:26.800
+[Diapositiva 15] Si nosotros no ponemos este this, ¿qué pasa?
+
+44:26.800 --> 44:30.800
+[Diapositiva 15] Los parámetros tapan la variable distancia.
+
+44:30.800 --> 44:36.800
+[Diapositiva 15] Entonces, si yo no pongo esto, cuando yo hago un `new Vehículo()`,
+
+44:36.800 --> 44:39.800
+[Diapositiva 15] y voy a tener acá precio, que está null,
+
+44:39.800 --> 44:42.800
+[Diapositiva 15] porque lo crea `precio = null`.
+
+44:42.800 --> 44:46.800
+[Diapositiva 15] ¿Se acuerdan que dijimos que cuando nosotros hacemos un new de un objeto,
+
+44:46.800 --> 44:48.800
+[Diapositiva 15] se aloca espacio en la memoria,
+
+44:48.800 --> 44:53.800
+[Diapositiva 15] se inicializan estos valores con lo que definimos acá en la clase,
+
+44:53.800 --> 44:55.800
+[Diapositiva 15] pero en la clase no pusimos nada, o sea, tenemos null,
+
+44:55.800 --> 44:57.800
+[Diapositiva 15] y después se corre el constructor.
+
+44:57.800 --> 45:01.800
+[Diapositiva 15] Viene el constructor y dice, marca es igual a marca,
+
+45:01.800 --> 45:04.800
+[Diapositiva 15] pero marca es el parámetro, y este marca es el parámetro.
+
+45:04.800 --> 45:07.800
+[Diapositiva 15] Entonces, lo que hace es, al parámetro que vino,
+
+45:07.800 --> 45:10.800
+[Diapositiva 15] le pone la marca que vino, y al precio que vino al parámetro,
+
+45:10.800 --> 45:12.800
+[Diapositiva 15] nada, le asigna el mismo precio.
+
+45:12.800 --> 45:14.800
+[Diapositiva 15] Entonces, cuando termina este constructor,
+
+45:14.800 --> 45:17.800
+[Diapositiva 15] ¿cuánto vale el precio y la marca en el objeto?
+
+45:17.800 --> 45:19.800
+[Diapositiva 15] Vale null
+
+45:19.800 --> 45:25.800
+[Diapositiva 15] Sí, entonces, al poner acá `this.precio`, y `this.marca`,
+
+45:25.800 --> 45:28.800
+[Diapositiva 15] lo que decimos es, this es el objeto que se está creando.
+
+45:28.800 --> 45:32.800
+[Diapositiva 15] Entonces, ahora sí, a la marca de este objeto,
+
+45:32.800 --> 45:35.800
+[Diapositiva 15] le ponemos la marca que viene allá en el parámetro,
+
+45:35.800 --> 45:40.800
+[Diapositiva 15] y al precio de este objeto, le ponemos el precio que viene en el parámetro.
+
+45:41.800 --> 45:44.800
+[Diapositiva 15] Por eso, el primer método directamente no utiliza el this,
+
+45:44.800 --> 45:47.800
+[Diapositiva 15] porque marca la única que existe es la variable en instancia,
+
+45:47.800 --> 45:50.800
+[Diapositiva 15] entonces acá no se tapa, no hay ambigüedad.
+
+45:50.800 --> 45:52.800
+[Diapositiva 15] Entonces, no es necesario.
+
+45:52.800 --> 45:56.800
+[Diapositiva 15] Pero si recibimos un parámetro con el mismo nombre y las variables en instancia,
+
+45:56.800 --> 45:59.800
+[Diapositiva 15] acuérdense que el parámetro tapa las variables en instancia.
+
+45:59.800 --> 46:02.800
+[Diapositiva 15] Entonces, sí o sí es necesario ponerlo.
+
+46:05.800 --> 46:09.800
+[Diapositiva 15] Y después abajo hay ejemplos, yo no veo la segunda parte,
+
+46:09.800 --> 46:13.800
+[Diapositiva 15] pero sí, hay ejemplos de un constructor que recibe String
+
+46:13.800 --> 46:18.800
+[Diapositiva 15] y un número, otro con el constructor por defecto, creo,
+
+46:18.800 --> 46:20.800
+[Diapositiva 15] o no la próxima, ¿no?
+
+46:20.800 --> 46:23.800
+[Diapositiva 16] Me entiendo que todas estas cosas las vieron bastante.
+
+46:23.800 --> 46:26.800
+[Diapositiva 16] Puedo tener más de un constructor en la clase,
+
+46:26.800 --> 46:30.800
+[Diapositiva 16] unos sin parámetros con un String o con un double y un String,
+
+46:30.800 --> 46:33.800
+[Diapositiva 16] y Java automáticamente cuando hacemos el new,
+
+46:33.800 --> 46:37.800
+[Diapositiva 16] va y busca el constructor, el constructor correspondiente,
+
+46:37.800 --> 46:41.800
+[Diapositiva 16] teniendo en cuenta el tipo y la ubicación de los parámetros.
+
+46:43.800 --> 46:46.800
+[Diapositiva 16] Bueno, Juan Cruz dice: ¿no es mejor poner siempre el this?
+
+46:46.800 --> 46:49.800
+[Diapositiva 16] Sí, puede ser una buena práctica poner el this siempre,
+
+46:49.800 --> 46:52.800
+[Diapositiva 16] y ahí, bueno, ya no vas a tener ningún inconveniente.
+
+46:53.800 --> 46:55.800
+[Diapositiva 16] Pero, bueno, depende de cada programador.
+
+46:55.800 --> 46:58.800
+[Diapositiva 16] O sea, si no es necesario, muchos no quieren poner más código.
+
+46:58.800 --> 47:02.800
+[Diapositiva 16] Pero, bueno, si pones this, no vas a tener problema nunca en este sentido.
+
+47:03.800 --> 47:07.800
+[Diapositiva 16] Bueno, y acá si yo haría un, por ejemplo, un new,
+
+47:07.800 --> 47:13.800
+[Diapositiva 16] new onda, no, new vehículo, no sé, 1500, onda.
+
+47:13.800 --> 47:15.800
+[Diapositiva 16] ¿Me funcionaría?
+
+47:15.800 --> 47:18.800
+[Diapositiva 16] New vehículo, 1500, onda.
+
+47:19.800 --> 47:23.800
+[Diapositiva 16] Bien, porque no existe un constructor que tenga el primer parámetro,
+
+47:23.800 --> 47:25.800
+[Diapositiva 16] un double y el segundo un String.
+
+47:25.800 --> 47:28.800
+[Diapositiva 16] O sea, Java va y busca exactamente ubicación y tipo.
+
+47:28.800 --> 47:29.800
+[Diapositiva 16] Bien.
+
+47:30.800 --> 47:31.800
+[Diapositiva 17] Bueno.
+
+47:32.800 --> 47:35.800
+[Diapositiva 17] Bueno, y acá tenemos un ejemplo de todo junto.
+
+47:35.800 --> 47:37.800
+[Diapositiva 17] No sé por qué se ve tan feo.
+
+47:38.800 --> 47:42.800
+[Diapositiva 17] No tengo manera de, o sea, así se ve muy chiquitito y el otro se ve muy feo.
+
+47:42.800 --> 47:44.800
+[Diapositiva 17] No tengo manera de ver algo intermedio.
+
+47:44.800 --> 47:47.800
+[Diapositiva 17] A ver si saco, pero si saco el chat, no los veo a ustedes.
+
+47:47.800 --> 47:49.800
+[Diapositiva 17] No veo lo que me responden.
+
+47:49.800 --> 47:50.800
+[Diapositiva 17] A ver.
+
+47:54.800 --> 47:56.800
+[Diapositiva 17] No, igual no, no se ve bien.
+
+47:57.800 --> 48:00.800
+[Diapositiva 17] Bueno, y acá es un ejemplo de todo junto.
+
+48:00.800 --> 48:04.800
+[Diapositiva 17] Está la clase Contacto, una clase de test con un main
+
+48:04.800 --> 48:08.800
+[Diapositiva 17] que crea dos contactos y corre su setter y getters.
+
+48:08.800 --> 48:10.800
+[Diapositiva 18] Hasta acá todo esto sin problemas, ¿no?
+
+48:11.800 --> 48:14.800
+[Diapositiva 18] Bueno, este ejemplo, no sé si lo vieron.
+
+48:17.800 --> 48:22.800
+[Diapositiva 18] Quería mostrar un poco diferencias entre variables de instancia y variables locales.
+
+48:22.800 --> 48:26.800
+[Diapositiva 18] Si alguien quiere tomar el micrófono, variables locales, ¿qué serían?
+
+48:27.800 --> 48:28.800
+[Diapositiva 18] Locales.
+
+48:31.800 --> 48:33.800
+[Diapositiva 18] [Estudiante] Locales al método.
+
+48:34.800 --> 48:37.800
+[Diapositiva 18] Locales al método, o sea, ¿qué serían?
+
+48:37.800 --> 48:39.800
+[Diapositiva 18] Los parámetros.
+
+48:39.800 --> 48:41.800
+[Diapositiva 18] Los parámetros es una variable local.
+
+48:41.800 --> 48:45.800
+[Diapositiva 18] Las variables que yo declare acá, adentro de este método.
+
+48:48.800 --> 48:49.800
+[Diapositiva 18] Y nada más.
+
+48:49.800 --> 48:54.800
+[Diapositiva 18] Esas variables van a vivir mientras se esté ejecutando ese método.
+
+48:55.800 --> 48:58.800
+[Diapositiva 18] Entonces, acá hay un pequeño ejemplo que dice,
+
+48:58.800 --> 49:02.800
+[Diapositiva 18] declaro una variable al alcance variable que lo único que tiene es una variable de distancia.
+
+49:02.800 --> 49:04.800
+[Diapositiva 18] O sea, cuando yo hago new alcance variable,
+
+49:04.800 --> 49:09.800
+[Diapositiva 18] en la heap voy a tener solo un objeto que tiene una variable de nombre i
+
+49:09.800 --> 49:13.800
+[Diapositiva 18] y valor 1 porque está inicializado acá, fíjense, con un 1.
+
+49:13.800 --> 49:15.800
+[Diapositiva 18] Entonces, cuando yo hago new alcance variable,
+
+49:15.800 --> 49:23.800
+[Diapositiva 18] en la heap voy a tener un objeto que tiene un primitivo entero i con valor 1.
+
+49:26.800 --> 49:33.800
+[Diapositiva 18] Y después lo que hace es, a esa variable le invoca un método y le pasa el 5 como parámetro.
+
+49:33.800 --> 49:36.800
+[Diapositiva 18] Entonces, venimos acá a ejecutar este método.
+
+49:36.800 --> 49:38.800
+[Diapositiva 18] Venimos a ejecutar este método.
+
+49:38.800 --> 49:41.800
+[Diapositiva 18] Tampoco tengo la animación acá, ¿verdad?
+
+49:41.800 --> 49:42.800
+[Diapositiva 17] No.
+
+49:43.800 --> 49:45.800
+[Diapositiva 18] Es lo mismo que dice subir un pdf al final.
+
+49:46.800 --> 49:49.800
+[Diapositiva 18] ¿Por qué esto tiene una pequeña animación?
+
+49:55.800 --> 49:56.800
+[Diapositiva 18] Pero el tema es así.
+
+49:56.800 --> 49:59.800
+[Diapositiva 18] La animación lo que tenía era la stack.
+
+49:59.800 --> 50:02.800
+[Diapositiva 18] No, la stack lo que tenía era una variable a
+
+50:02.800 --> 50:07.800
+[Diapositiva 18] que apuntaba a un objeto que tiene adentro la variable i con valor 1.
+
+50:07.800 --> 50:12.800
+[Diapositiva 18] O sea, cuando nosotros ejecutamos a alcance variable, new alcance variable,
+
+50:12.800 --> 50:16.800
+[Diapositiva 18] si ahí miramos la memoria, tenemos en la stack una variable a
+
+50:16.800 --> 50:19.800
+[Diapositiva 18] que tiene un objeto que adentro tiene el i.
+
+50:19.800 --> 50:22.800
+[Diapositiva 18] Después decimos a un método y le pasamos el 5.
+
+50:22.800 --> 50:25.800
+[Diapositiva 18] En ese caso, entonces, volvemos acá a este contexto.
+
+50:25.800 --> 50:26.800
+[Diapositiva 18] Se invoca este método.
+
+50:26.800 --> 50:29.800
+[Diapositiva 18] Lo primero que vamos a tener acá es una variable i de tipo entero.
+
+50:29.800 --> 50:32.800
+[Diapositiva 18] Vamos a tener una variable i de tipo entero.
+
+50:32.800 --> 50:33.800
+[Diapositiva 18] ¿Qué es?
+
+50:33.800 --> 50:36.800
+[Diapositiva 18] Es el parámetro que recibimos, que va a tener un valor 5.
+
+50:36.800 --> 50:40.800
+[Diapositiva 18] Eso es una variable local porque estamos recibiendo la i en el parámetro.
+
+50:40.800 --> 50:42.800
+[Diapositiva 18] Después declaramos una variable.
+
+50:42.800 --> 50:45.800
+[Diapositiva 18] Declaramos una variable imj igual a 8.
+
+50:45.800 --> 50:48.800
+[Diapositiva 18] Entonces, después decimos j es igual a 8.
+
+50:53.800 --> 50:54.800
+[Diapositiva 18] J igual a 8.
+
+50:54.800 --> 50:56.800
+[Diapositiva 18] Y después, ¿qué decimos?
+
+50:56.800 --> 51:01.800
+[Diapositiva 18] Bueno, suponganse que nosotros decimos, no le ponemos el list ahí tampoco.
+
+51:01.800 --> 51:04.800
+[Diapositiva 18] Decimos i es igual a i más j.
+
+51:04.800 --> 51:07.800
+[Diapositiva 18] ¿Qué pasa ahí si yo no le pongo el list otra vez?
+
+51:07.800 --> 51:08.800
+[Diapositiva 18] ¿Y quién es?
+
+51:08.800 --> 51:09.800
+[Diapositiva 18] Es la variable local.
+
+51:09.800 --> 51:11.800
+[Diapositiva 18] ¿i es igual a i más j?
+
+51:11.800 --> 51:12.800
+[Diapositiva 18] ¿Qué va a venir?
+
+51:12.800 --> 51:13.800
+[Diapositiva 18] ¿Dónde va a poner?
+
+51:13.800 --> 51:16.800
+[Diapositiva 18] Va a decir, i es esta, es la variable local.
+
+51:16.800 --> 51:18.800
+[Diapositiva 18] Entonces, i es igual a i más j.
+
+51:18.800 --> 51:20.800
+[Diapositiva 18] O sea, 5 más 8, 13.
+
+51:20.800 --> 51:22.800
+[Diapositiva 18] Entonces, le va a poner 13 acá.
+
+51:22.800 --> 51:23.800
+[Diapositiva 18] ¿Estamos de acuerdo?
+
+51:23.800 --> 51:30.800
+[Diapositiva 18] Si no le ponemos este this acá, acá otra vez se ve el tema de las variables locales y de instancia.
+
+51:30.800 --> 51:35.800
+[Diapositiva 18] Como tiene el mismo nombre, lo que va a hacer acá es i variable local es igual a i más j.
+
+51:35.800 --> 51:36.800
+[Diapositiva 18] Me va a poner un 13 ahí.
+
+51:36.800 --> 51:42.800
+[Diapositiva 18] Termina el método y cuando yo vuelvo mi variable de instancia no se modificó.
+
+51:42.800 --> 51:46.800
+[Diapositiva 18] Ahora, al poner `this.i`, ahí ya cambia.
+
+51:46.800 --> 51:48.800
+[Diapositiva 18] Al poner `this.i`, ¿qué pasa?
+
+51:48.800 --> 51:50.800
+[Diapositiva 18] Ya se refiere a este.
+
+51:50.800 --> 51:52.800
+[Diapositiva 18] Este es el `this.i`.
+
+51:52.800 --> 51:55.800
+[Diapositiva 18] `this.i = i + j`.
+
+51:55.800 --> 51:58.800
+[Diapositiva 18] Entonces, ahora sí, esto va a valer 13.
+
+52:00.800 --> 52:02.800
+[Diapositiva 18] ¿Se entiende?
+
+52:08.800 --> 52:10.800
+[Diapositiva 18] Chicos, ¿los perdí o están?.
+
+52:10.800 --> 52:12.800
+[Diapositiva 18] ¿Sí?
+
+52:12.800 --> 52:14.800
+[Diapositiva 18] [Estudiante] Sí, sí, se entiende.
+
+52:14.800 --> 52:15.800
+[Diapositiva 18] Bien.
+
+52:15.800 --> 52:17.800
+[Diapositiva 18] Bueno, ¿ninguna duda seguimos?
+
+52:21.800 --> 52:26.800
+[Diapositiva 20] Bueno, el otro tema que viene ahora son las variables de clase.
+
+52:26.800 --> 52:29.800
+[Diapositiva 20] Las variables de clase, ¿qué se acuerdan de las variables de clase?
+
+52:30.800 --> 52:34.800
+[Diapositiva 20] Hasta ahora vimos variables de instancia y métodos de instancia.
+
+52:34.800 --> 52:35.800
+[Diapositiva 20] ¿Sí?
+
+52:35.800 --> 52:38.800
+[Diapositiva 20] Getter y setters y métodos de instancia.
+
+52:38.800 --> 52:45.800
+[Diapositiva 20] ¿Para qué sirvían las variables de instancia o los variables de clase o los métodos de clase?
+
+52:45.800 --> 52:46.800
+[Diapositiva 20] ¿Se acuerdan?
+
+52:54.800 --> 52:55.800
+[Diapositiva 20] ¿No? ¿Ninguno?
+
+52:56.800 --> 53:04.800
+[Diapositiva 20] Bueno, una clase que siempre menciono que es de la API de Java es la clase Math.
+
+53:04.800 --> 53:10.800
+[Diapositiva 20] En donde ahí se ve bien el uso de todo lo que es estático o de clase.
+
+53:10.800 --> 53:16.800
+[Diapositiva 20] Cuando yo digo variable de clase o variable estática, método de clase o método estático, es lo mismo.
+
+53:16.800 --> 53:21.800
+[Diapositiva 20] Existe una clase dentro de java.lang que seguramente la han usado que es la clase Math.
+
+53:21.800 --> 53:22.800
+[Diapositiva 20] ¿Sí?
+
+53:22.800 --> 53:31.800
+[Diapositiva 20] Yo podría decir, por ejemplo, `Math m1 = a new Math()` para crear una instancia de math, por ejemplo.
+
+53:31.800 --> 53:36.800
+[Diapositiva 20] Y podría decir `m1.sin(90)`.
+
+53:36.800 --> 53:39.800
+[Diapositiva 20] Y la clase math tiene una variable de clase pi.
+
+53:39.800 --> 53:45.800
+[Diapositiva 20] Entonces yo también podría decir m1.
+
+53:45.800 --> 53:49.800
+[Diapositiva 20] Y también podría decir `m1.PI`.
+
+53:49.800 --> 53:50.800
+[Diapositiva 20] ¿Sí?
+
+53:50.800 --> 53:56.800
+[Diapositiva 20] Y podría crear otra instancia, por ejemplo, `Math m2 = a new Math()`.
+
+53:58.800 --> 54:03.800
+[Diapositiva 20] Y podría decir, por ejemplo, `m1.sin(90)`.
+
+54:03.800 --> 54:06.800
+[Diapositiva 20] Y podría decir, por ejemplo, `m2.PI`.
+
+54:06.800 --> 54:09.800
+[Diapositiva 20] ¿Qué me devuelven estos valores?.
+
+54:09.800 --> 54:12.800
+[Diapositiva 20] Bueno, ¿qué ven acá de particular?
+
+54:12.800 --> 54:18.800
+[Diapositiva 20] Yo digo m1 seno de 90, m2 seno de 90. ¿Qué le va a dar este método?
+
+54:18.800 --> 54:20.800
+[Diapositiva 20] ¿Qué particularidad tiene?
+
+54:24.800 --> 54:25.800
+[Diapositiva 20] ¿Siempre lo mismo?
+
+54:25.800 --> 54:30.800
+[Diapositiva 20] O yo digo acá m1 punto pi, m2 punto pi. ¿Qué me va a dar?
+
+54:31.800 --> 54:34.800
+[Diapositiva 20] ¿Siempre 3,1416...? ¿Siempre lo mismo?
+
+54:34.800 --> 54:35.800
+[Diapositiva 20] ¿Sí?
+
+54:35.800 --> 54:44.800
+[Diapositiva 20] Entonces, ¿tiene sentido que yo tenga que crear instancias para pedir una variable pi que es siempre la misma?
+
+54:44.800 --> 54:48.800
+[Diapositiva 20] ¿Tiene sentido crear una instancia para yo pedir el seno de 90, el coseno de 90?
+
+54:48.800 --> 54:50.800
+[Diapositiva 20] ¿Si siempre me va a devolver lo mismo?
+
+54:50.800 --> 54:51.800
+[Diapositiva 20] No.
+
+54:51.800 --> 55:01.800
+[Diapositiva 20] Entonces, en este caso, estas variables o estos métodos son candidatos a ser métodos de clase o variables de clase.
+
+55:01.800 --> 55:03.800
+[Diapositiva 20] De la clase Math.
+
+55:03.800 --> 55:10.800
+[Diapositiva 20] Porque el seno, el coseno, todo lo que es las funciones o los valores, son propios de la clase Math.
+
+55:11.800 --> 55:15.800
+[Diapositiva 20] Entonces, no tiene sentido que yo tenga que crear instancias para obtener.
+
+55:15.800 --> 55:22.800
+[Diapositiva 20] En ese clase, si nosotros vemos la clase math como está declarada, estos métodos están declarados estáticos
+
+55:22.800 --> 55:25.800
+[Diapositiva 20] y la variable está declarada estática de clase.
+
+55:25.800 --> 55:34.800
+[Diapositiva 20] Si está declarada estática significa que está en un lugar de memoria particular y que es compartido por todas las instancias de la clase Math.
+
+55:34.800 --> 55:41.800
+[Diapositiva 20] O sea, yo puedo a través de un objeto también invocarlo o puedo invocarlo cómo?
+
+55:41.800 --> 55:42.800
+[Diapositiva 20] ¿De eso no se acuerdan?
+
+55:42.800 --> 55:46.800
+[Diapositiva 20] ¿Algún momento tienen que haber usado cómo se invoca un método de clase variable de clase?
+
+55:50.800 --> 56:00.800
+[Diapositiva 20] Yo puedo decir directamente `Math.PI` sin crear instancias o puedo decir `Math.sin(90)`.
+
+56:01.800 --> 56:05.800
+[Diapositiva 20] Directamente puedo invocarlos a través de punto con la clase.
+
+56:05.800 --> 56:07.800
+[Diapositiva 20] No es necesario tener una instancia.
+
+56:09.800 --> 56:15.800
+[Diapositiva 20] En la práctica les van a hacer crear algunos métodos y ahí ustedes tienen que definir si es un método de instancia de clase.
+
+56:16.800 --> 56:25.800
+[Diapositiva 20] Hay veces, en el caso de los ejemplos que vimos antes, por ejemplo, el anterior contacto, este contacto.
+
+56:26.800 --> 56:30.800
+[Diapositiva 19] Suponganse que yo creo un contacto que tiene un nombre.
+
+56:30.800 --> 56:42.800
+[Diapositiva 19] Yo digo, por ejemplo, contacto, `Contacto c = new Contacto('Juan')`.
+
+56:42.800 --> 56:46.800
+[Diapositiva 19] Entonces yo después digo `c.getNombre()`.
+
+56:46.800 --> 56:48.800
+[Diapositiva 19] `c.getNombre()`.
+
+56:49.800 --> 56:51.800
+[Diapositiva 19] Esto, lo que me devuelve este método
+
+56:51.800 --> 56:54.800
+[Diapositiva 19] ¿Depende del objeto receptor acá?
+
+56:56.800 --> 56:59.800
+[Diapositiva 19] ¿El nombre que me devuelva? ¿Depende del objeto receptor?
+
+56:59.800 --> 57:02.800
+[Diapositiva 19] Sí. Si yo se lo pido a este contacto me va a devolver Juan.
+
+57:02.800 --> 57:04.800
+[Diapositiva 19] Si yo se lo pido a otro contacto me va a devolver otro.
+
+57:04.800 --> 57:09.800
+[Diapositiva 19] En cambio, en el caso de los métodos y variables de clase no depende del objeto receptor.
+
+57:09.800 --> 57:15.800
+[Diapositiva 19] Entonces esos son métodos y variables de clase que puede invocarlos directamente sobre la clase.
+
+57:15.800 --> 57:22.800
+[Diapositiva 19] Entonces, en la práctica tienen algunos métodos, tienen una clase que tienen que implementar.
+
+57:22.800 --> 57:27.800
+[Diapositiva 20] Y por ejemplo, si implemento un método que reciba un arreglo y devuelva la suma del arreglo.
+
+57:27.800 --> 57:32.800
+[Diapositiva 20] ¿Tiene sentido que tenga que crear una instancia yo para invocar el método?
+
+57:36.800 --> 57:42.800
+[Diapositiva 20] No. Porque de qué depende el valor que va a resolver, de lo que recibo como parámetro, no de la instancia receptora.
+
+57:42.800 --> 57:47.800
+[Diapositiva 20] Entonces ese es un método de clase y después directamente a la clase yo le digo
+
+57:47.800 --> 57:51.800
+[Diapositiva 20] Clase `sumaEnteros.sumaArreglo(arreglo)`.
+
+57:51.800 --> 57:54.800
+[Diapositiva 20] Y no creo en ninguna instancia, no son métodos de instancia.
+
+57:54.800 --> 58:01.800
+[Diapositiva 20] Después tienen otro que tienen que implementar que dice que pida tres enteros por consola
+
+58:01.800 --> 58:03.800
+[Diapositiva 20] y que devuelva la suma de esos enteros.
+
+58:03.800 --> 58:08.800
+[Diapositiva 20] Bueno, lo mismo. Pueden usar la clase Scanner, `System.in` para leer datos.
+
+58:08.800 --> 58:13.800
+[Diapositiva 20] Se pide acá que ingrese tres datos, acá arriba está la corrida.
+
+58:13.800 --> 58:17.800
+[Diapositiva 20] Se ingresan los tres datos y se devuelve la suma de ellos.
+
+58:18.800 --> 58:22.800
+[Diapositiva 20] ¿Se entiende la idea de los métodos de clases?
+
+58:22.800 --> 58:24.800
+[Diapositiva 20] ¿Qué sería un Scanner?
+
+58:24.800 --> 58:26.800
+[Diapositiva 20] ¿Cómo? ¿Por aquí?
+
+58:26.800 --> 58:29.800
+[Diapositiva 20] [Estudiante] Perdón, ahí sí lo estarías instanciando, ¿no?
+
+58:31.800 --> 58:35.800
+[Diapositiva 20] No, porque acá decís a la derecha dónde se usa.
+
+58:35.800 --> 58:37.800
+[Diapositiva 20] [Estudiante] No, por el Scanner.
+
+58:37.800 --> 58:39.800
+[Diapositiva 20] Ah, sí, el Scanner sí.
+
+58:39.800 --> 58:42.800
+[Diapositiva 20] El Scanner sí, pero ahí estoy instanciando un objeto Scanner.
+
+58:42.800 --> 58:48.800
+[Diapositiva 20] El método lo creamos estático, `public static int sumaValores()`.
+
+58:48.800 --> 58:52.800
+[Diapositiva 20] Es un método estático. Entonces, ¿cómo lo invoco yo directamente con la clase?
+
+58:52.800 --> 58:55.800
+[Diapositiva 20] `sumaValores()`, acá está.
+
+58:55.800 --> 58:59.800
+[Diapositiva 20] Veis, el nombre de la clase, punto, suma valores.
+
+58:59.800 --> 59:03.800
+[Diapositiva 20] No le pasó nada porque se piden los tres datos acá y me devuelve la suma.
+
+59:03.800 --> 59:04.800
+[Diapositiva 20] Y acá lo mismo.
+
+59:04.800 --> 59:07.800
+[Diapositiva 20] `sumaArreglo(arreglo)`, le paso un arreglo. Es estático.
+
+59:07.800 --> 59:11.800
+[Diapositiva 20] Entonces, pues, la clase, punto, suma arreglo y le paso el arreglo.
+
+59:11.800 --> 59:15.800
+[Diapositiva 20] Porque yo, por más que cree una instancia y invoque el método,
+
+59:15.800 --> 59:18.800
+[Diapositiva 20] siempre me devuelve lo mismo. Porque no depende del objeto receptor,
+
+59:18.800 --> 59:23.800
+[Diapositiva 20] sino que depende de los parámetros que pase o de los datos que maneje acá adentro.
+
+59:23.800 --> 59:27.800
+[Diapositiva 20] Diferente, acá en la pizarra que yo puse `Contacto c = new Contacto('Juan')`.
+
+59:27.800 --> 59:30.800
+[Diapositiva 20] Y después `c.getNombre()`, ahí sí me va a devuelver juan.
+
+59:30.800 --> 59:34.800
+[Diapositiva 20] Si yo le pido ese método a otra instancia, me va a devuelver otra cosa.
+
+59:34.800 --> 59:36.800
+[Diapositiva 20] ¿Sí?
+
+59:36.800 --> 59:38.800
+[Diapositiva 20] ¿Se entiende?
+
+59:42.800 --> 59:44.800
+[Diapositiva 20] Bueno.
+
+59:44.800 --> 59:46.800
+[Diapositiva 20] Bueno, ¿quién es? Joaquín Augusto.
+
+59:46.800 --> 59:50.800
+[Diapositiva 20] Si quiere poner el micrófono y dejarlo abierto.
+
+59:50.800 --> 59:52.800
+[Diapositiva 21] Así no me siento tan sola.
+
+59:52.800 --> 59:54.800
+[Diapositiva 21] Bueno.
+
+59:54.800 --> 59:57.800
+[Diapositiva 21] Augusto, ahora está escribiendo Augusto. A ver qué nos dice.
+
+01:00:00.800 --> 01:00:12.800
+[Diapositiva 21] `Scanner.nextInt()` no, no creo porque `nextInt()` no es un método de clase.
+
+01:00:12.800 --> 01:00:14.800
+[Diapositiva 20] Es un método de instancia.
+
+01:00:14.800 --> 01:00:19.800
+[Diapositiva 20] Lo mismo que no funciona. O sea, no funciona que yo haga contacto,
+
+01:00:19.800 --> 01:00:22.800
+[Diapositiva 20] contacto punto, mira, getNombre.
+
+01:00:22.800 --> 01:00:24.800
+[Diapositiva 20] Lo que decíamos ahí.
+
+01:00:24.800 --> 01:00:26.800
+[Diapositiva 20] `Contacto.getNombre()`.
+
+01:00:26.800 --> 01:00:28.800
+[Diapositiva 20] Esto, ¿funciona?
+
+01:00:33.800 --> 01:00:35.800
+[Diapositiva 20] Porque además.
+
+01:00:35.800 --> 01:00:38.800
+[Diapositiva 20] No, porque es un método de instancia.
+
+01:00:38.800 --> 01:00:40.800
+[Diapositiva 20] ¿Sí? ¿Se entiende?
+
+01:00:40.800 --> 01:00:42.800
+[Diapositiva 20] Claro, no funciona.
+
+01:00:42.800 --> 01:00:43.800
+[Diapositiva 20] Pero además, fíjense esto. ¿Por qué no funciona?
+
+01:00:43.800 --> 01:00:50.800
+[Diapositiva 20] Supóganse que tengo un contacto c1 que tiene nombre juan y tiene 10 años
+
+01:00:50.800 --> 01:00:54.800
+[Diapositiva 20] otro contacto c2 que se llama Ana y tiene 15 años.
+
+01:00:54.800 --> 01:00:58.800
+[Diapositiva 20] Y si yo a la clase contacto le digo `getNombre()`
+
+01:00:58.800 --> 01:01:01.800
+[Diapositiva 20] ¿El nombre de quién me va a dar si tiene un montón de instancias creadas?
+
+01:01:01.800 --> 01:01:03.800
+[Diapositiva 20] ¿Se entiende?
+
+01:01:03.800 --> 01:01:06.800
+[Diapositiva 20] Cuando el dato depende del objeto
+
+01:01:06.800 --> 01:01:08.800
+[Diapositiva 20] O sea, cada vez que yo hago un `new Contacto ()`
+
+01:01:08.800 --> 01:01:14.800
+[Diapositiva 20] yo creo objetos y cada objeto tiene una copia de las variables de instancia con sus valores
+
+01:01:14.800 --> 01:01:15.800
+[Diapositiva 20] Entonces eso es de instancia
+
+01:01:15.800 --> 01:01:19.320
+[Diapositiva 20] Si yo quiero saber algún valor de esas variables de instancia,
+
+01:01:19.320 --> 01:01:22.000
+[Diapositiva 20] tengo que usar los getters, ¿sí?
+
+01:01:22.000 --> 01:01:24.120
+[Diapositiva 20] Por eso es que yo no puedo hacer contacto `getNombre()`,
+
+01:01:24.120 --> 01:01:26.880
+[Diapositiva 20] porque ¿qué me va a devolver? ¿Juan, Ana o el nombre de
+
+01:01:26.880 --> 01:01:28.920
+[Diapositiva 20] cualquier objeto que tenga creado?
+
+01:01:28.920 --> 01:01:30.200
+[Diapositiva 20] ¿Se entiende la diferencia?
+
+01:01:35.500 --> 01:01:36.000
+[Diapositiva 20] Bien.
+
+01:01:39.440 --> 01:01:41.680
+[Diapositiva 20] No, el escáner es de Java.
+
+01:01:41.680 --> 01:01:45.800
+[Diapositiva 20] Es un, creo que está en `java.util`, en el paquete `java.util`.
+
+01:01:45.800 --> 01:01:50.080
+[Diapositiva 20] `java.util.Scanner` es una clase, vos la instancias y con esa
+
+01:01:50.080 --> 01:01:53.280
+[Diapositiva 20] instancia podés leer datos de teclado.
+
+01:01:53.280 --> 01:01:57.800
+[Diapositiva 20] Tiene `nextInt()`, `nextChar()`, para leer datos del teclado sería.
+
+01:02:02.720 --> 01:02:06.200
+[Diapositiva 20] Joaquín, ¿querías algo decir?
+
+01:02:06.200 --> 01:02:08.960
+[Diapositiva 20] [Estudiante] Sí, respecto al escáner, yo las veces que lo intenté usar
+
+01:02:08.960 --> 01:02:11.640
+[Diapositiva 20] [Estudiante] siempre me salía una advertencia diciendo que el escáner no
+
+01:02:11.680 --> 01:02:12.640
+[Diapositiva 20] [Estudiante] se cerró.
+
+01:02:12.640 --> 01:02:14.680
+[Diapositiva 20] [Estudiante] ¿Eso importa?
+
+01:02:14.680 --> 01:02:17.440
+[Diapositiva 20] ¿Qué advertencia? ¿Que el escáner qué?
+
+01:02:17.440 --> 01:02:20.200
+[Diapositiva 20] [Estudiante] Que el escáner no se cerró, que era como una pérdida de
+
+01:02:20.200 --> 01:02:23.720
+[Diapositiva 20] [Estudiante] recursos o filtración de recursos o algo así.
+
+01:02:23.720 --> 01:02:26.760
+[Diapositiva 20] Ah, porque sí, puede ser.
+
+01:02:26.760 --> 01:02:29.200
+[Diapositiva 20] Por ahí la consola te faltó cuando terminaste de hacer un
+
+01:02:29.200 --> 01:02:30.920
+[Diapositiva 20] consola.close, algo así.
+
+01:02:33.960 --> 01:02:37.560
+[Diapositiva 20] Siempre que trabajas con entrada/salida,
+
+01:02:37.560 --> 01:02:40.320
+[Diapositiva 20] o sea, si vos trabajas con un archivo,
+
+01:02:40.320 --> 01:02:42.320
+[Diapositiva 20] con una URL, querás, por ejemplo,
+
+01:02:42.320 --> 01:02:44.840
+[Diapositiva 20] para conectar de una base de datos,
+
+01:02:44.840 --> 01:02:49.280
+[Diapositiva 20] para correr una sentencia SQL a una base de datos, ¿viste?
+
+01:02:49.280 --> 01:02:51.640
+[Diapositiva 20] Todo lo que sea entrada/salida de datos,
+
+01:02:51.640 --> 01:02:53.680
+[Diapositiva 20] tiene sus respectivos close.
+
+01:02:53.680 --> 01:02:56.200
+[Diapositiva 20] Porque si no queda como abierto y utilizando recursos.
+
+01:02:56.200 --> 01:02:59.040
+[Diapositiva 20] Cuando vos no lo usas más, se cierra y se libera ese espacio.
+
+01:03:01.720 --> 01:03:05.200
+[Diapositiva 20] Así que puede ser que te haya dicho por eso.
+
+01:03:05.200 --> 01:03:09.800
+[Diapositiva 21] [Estudiante] Profe, para ver si terminé de entender el tema de static.
+
+01:03:09.800 --> 01:03:14.560
+[Diapositiva 20] [Estudiante] ¿Eso lo usamos entonces cuando el valor de retorno no dependa de
+
+01:03:14.560 --> 01:03:16.920
+[Diapositiva 20] [Estudiante] una instancia o un objeto, digamos?
+
+01:03:16.920 --> 01:03:17.480
+[Diapositiva 20] Claro.
+
+01:03:17.480 --> 01:03:21.520
+[Diapositiva 20] Para hacer métodos tipo funciones como acá,
+
+01:03:21.520 --> 01:03:24.720
+[Diapositiva 20] no son parecidos a funciones, ¿no?
+
+01:03:24.720 --> 01:03:27.160
+[Diapositiva 20] Que tiene sentido que estén adentro de la clase Math.
+
+01:03:27.160 --> 01:03:28.800
+[Diapositiva 20] Porque son funciones trigonométricas,
+
+01:03:28.800 --> 01:03:31.200
+[Diapositiva 20] tiene sentido que está dentro de la clase Math como el valor de
+
+01:03:31.200 --> 01:03:32.240
+[Diapositiva 20] PI.
+
+01:03:32.240 --> 01:03:35.440
+[Diapositiva 20] Pero no tiene sentido andar creando instancias para
+
+01:03:35.440 --> 01:03:36.400
+[Diapositiva 20] recuperarlas.
+
+01:03:36.400 --> 01:03:39.280
+[Diapositiva 20] Eso sería la idea.
+
+01:03:39.280 --> 01:03:41.880
+[Diapositiva 20] Y, bueno, los getter y setter, eso se dan cuenta bien que son
+
+01:03:41.880 --> 01:03:43.880
+[Diapositiva 20] de instancia, porque es lo que vinían usando desde el año
+
+01:03:43.880 --> 01:03:46.000
+[Diapositiva 20] pasado, ¿sí?
+
+01:03:46.000 --> 01:03:48.320
+[Diapositiva 20] Depende bien, bien del objeto receptor,
+
+01:03:48.320 --> 01:03:53.800
+[Diapositiva 20] cuando llego getNombre, getEdad, getApellido, ¿sí?
+
+01:03:53.800 --> 01:03:56.680
+[Diapositiva 20] Ahora viene otro ejemplito.
+
+01:03:56.680 --> 01:04:00.600
+[Diapositiva 21] Supónganse, les dice, ah, no lo tengo acá.
+
+01:04:00.600 --> 01:04:03.680
+[Diapositiva 20] Se me parece dañar ahora.
+
+01:04:03.680 --> 01:04:06.160
+[Diapositiva 19] ¿Lo pasé?
+
+01:04:06.160 --> 01:04:09.240
+[Diapositiva 19] Ah, acá.
+
+01:04:09.240 --> 01:04:11.520
+[Diapositiva 19] Acá está el ejemplo de static con el ejemplo que teníamos
+
+01:04:11.520 --> 01:04:13.440
+[Diapositiva 19] recién.
+
+01:04:13.440 --> 01:04:15.560
+[Diapositiva 19] Supónganse que nosotros queremos,
+
+01:04:15.560 --> 01:04:19.480
+[Diapositiva 19] cada vez que creamos un contacto, ir contando.
+
+01:04:19.480 --> 01:04:23.080
+[Diapositiva 19] Quiero saber cuántos contactos creé, ¿sí?
+
+01:04:23.080 --> 01:04:26.240
+[Diapositiva 19] Tiene sentido que yo a la clase contacto le diga,
+
+01:04:26.240 --> 01:04:28.440
+[Diapositiva 19] ¿cuántos contactos creaste?
+
+01:04:28.440 --> 01:04:28.960
+[Diapositiva 19] ¿Se entiende?
+
+01:04:28.960 --> 01:04:31.880
+[Diapositiva 19] Tiene sentido que a la clase contacto yo le diga.
+
+01:04:31.880 --> 01:04:34.720
+[Diapositiva 19] Entonces, yo podría tener una variable que cada vez que yo
+
+01:04:34.720 --> 01:04:38.320
+[Diapositiva 19] hago un new de un objeto, vaya incrementando ese valor.
+
+01:04:38.320 --> 01:04:40.560
+[Diapositiva 19] Y después llego a la clase contacto, ¿cuántos contactos
+
+01:04:40.560 --> 01:04:42.680
+[Diapositiva 19] creaste?
+
+01:04:42.680 --> 01:04:46.600
+[Diapositiva 19] Entonces, ¿qué pasa si yo pongo ese contacto como variable de
+
+01:04:46.600 --> 01:04:47.360
+[Diapositiva 19] instancia?
+
+01:04:47.360 --> 01:04:50.920
+[Diapositiva 19] Esa cantidad de contactos como variable de instancia,
+
+01:04:50.920 --> 01:04:51.880
+[Diapositiva 19] ¿qué le pasaría?
+
+01:04:54.560 --> 01:04:56.800
+[Diapositiva 19] Porque yo cuando creo un contacto,
+
+01:04:57.040 --> 01:04:58.360
+[Diapositiva 19] creo un contacto que le pongo.
+
+01:04:58.360 --> 01:05:00.960
+[Diapositiva 19] Le pongo Juan, le pongo la edad que tiene.
+
+01:05:00.960 --> 01:05:04.000
+[Diapositiva 19] Y le podría poner que es el objeto 1.
+
+01:05:04.000 --> 01:05:05.680
+[Diapositiva 19] Después creo otro contacto.
+
+01:05:05.680 --> 01:05:11.000
+[Diapositiva 19] Y yo digo, es Ana, tiene 15 años, es el contacto 2.
+
+01:05:11.000 --> 01:05:12.560
+[Diapositiva 19] Creo otro más.
+
+01:05:12.560 --> 01:05:17.600
+[Diapositiva 19] Lo mismo, es el contacto 3, tiene 20 años, Elena.
+
+01:05:17.600 --> 01:05:20.720
+[Diapositiva 19] Entonces, tengo tres objetos de tipo contacto.
+
+01:05:20.720 --> 01:05:24.680
+[Diapositiva 19] ¿Qué pasa si yo pongo como variable de instancia la última,
+
+01:05:24.680 --> 01:05:26.680
+[Diapositiva 19] el último contacto creado?
+
+01:05:26.680 --> 01:05:29.200
+[Diapositiva 19] Si yo te pongo acá último contacto creado,
+
+01:05:29.200 --> 01:05:31.520
+[Diapositiva 19] cuando creo este, el 1, le pongo 1.
+
+01:05:31.520 --> 01:05:32.720
+[Diapositiva 19] Después creo el 2.
+
+01:05:32.720 --> 01:05:34.200
+[Diapositiva 19] Último contacto, creo el 2.
+
+01:05:34.200 --> 01:05:36.400
+[Diapositiva 19] Tengo que venir a este objeto y decirle, no, el último ahora
+
+01:05:36.400 --> 01:05:37.480
+[Diapositiva 19] hace el 2.
+
+01:05:37.480 --> 01:05:40.040
+[Diapositiva 19] Cuando creo este, último contacto creado, 3.
+
+01:05:40.040 --> 01:05:41.480
+[Diapositiva 19] Tengo que venir a este a ponerle 3.
+
+01:05:41.480 --> 01:05:43.440
+[Diapositiva 19] Tengo que venir a este a ponerle 3.
+
+01:05:43.440 --> 01:05:45.600
+[Diapositiva 19] O sea, no, no sirve.
+
+01:05:45.600 --> 01:05:48.960
+[Diapositiva 19] O sea, no tiene sentido que sea una variable de instancia.
+
+01:05:48.960 --> 01:05:53.160
+[Diapositiva 19] Porque es un valor único que deberían compartir las
+
+01:05:53.160 --> 01:05:53.640
+[Diapositiva 19] instancias.
+
+01:05:53.960 --> 01:05:57.400
+[Diapositiva 19] Es como que la clase tendría que tener ese valor.
+
+01:05:57.400 --> 01:05:59.080
+[Diapositiva 19] ¿Se entiende?
+
+01:05:59.080 --> 01:06:01.480
+[Diapositiva 19] No es que cada instancia le pregunto,
+
+01:06:01.480 --> 01:06:04.400
+[Diapositiva 19] yo, ¿cuál es la cantidad de contactos creados?
+
+01:06:04.400 --> 01:06:07.000
+[Diapositiva 19] No, a la clase yo le tendría que preguntar cuántos contactos
+
+01:06:07.000 --> 01:06:08.440
+[Diapositiva 19] se crearon.
+
+01:06:08.440 --> 01:06:12.040
+[Diapositiva 19] Entonces, ese es un candidato a declararlo estático.
+
+01:06:12.040 --> 01:06:14.600
+[Diapositiva 19] Entonces, además de nombre, apellido, el estado,
+
+01:06:14.600 --> 01:06:18.280
+[Diapositiva 19] yo podría crear una variable, contador,
+
+01:06:18.280 --> 01:06:22.200
+[Diapositiva 19] lo que sea contador, de tipo entero estática.
+
+01:06:22.200 --> 01:06:26.000
+[Diapositiva 19] Entonces, lo que es `static` no va dentro de cada objetito en
+
+01:06:26.000 --> 01:06:26.840
+[Diapositiva 19] la heap.
+
+01:06:26.840 --> 01:06:29.600
+[Diapositiva 19] Va en otra memoria ahí externa que está acá como un cuadradito
+
+01:06:29.600 --> 01:06:32.840
+[Diapositiva 19] que se llama memoria estática.
+
+01:06:32.840 --> 01:06:34.240
+[Diapositiva 19] ¿Y qué es de la clase?
+
+01:06:34.240 --> 01:06:35.920
+[Diapositiva 19] Es una memoria estática, es de la clase.
+
+01:06:35.920 --> 01:06:38.560
+[Diapositiva 19] No va dentro de cada objetito.
+
+01:06:38.560 --> 01:06:41.480
+[Diapositiva 19] Entonces, yo después podría tener un método de clase
+
+01:06:41.480 --> 01:06:44.880
+[Diapositiva 19] también que me devuelva ese valor.
+
+01:06:44.880 --> 01:06:48.880
+[Diapositiva 19] Todo lo que es estático se carga automáticamente cuando se carga
+
+01:06:48.880 --> 01:06:50.440
+[Diapositiva 19] la clase.
+
+01:06:50.440 --> 01:06:51.880
+[Diapositiva 19] ¿Cuándo se carga la clase?
+
+01:06:51.920 --> 01:06:54.120
+[Diapositiva 19] Una clase se carga cuando.
+
+01:06:54.120 --> 01:06:59.640
+[Diapositiva 19] Por ejemplo, yo digo `Math m1 = new Math()`.
+
+01:06:59.640 --> 01:07:02.640
+[Diapositiva 19] La primera vez que se hace un `new` de una clase se carga la
+
+01:07:02.640 --> 01:07:04.120
+[Diapositiva 19] clase.
+
+01:07:04.120 --> 01:07:10.440
+[Diapositiva 19] O también, si yo no hice new, pero digo `Math.PI`,
+
+01:07:10.440 --> 01:07:12.120
+[Diapositiva 19] también se carga.
+
+01:07:12.120 --> 01:07:14.280
+[Diapositiva 19] ¿Cuándo se carga una clase en memoria?
+
+01:07:14.280 --> 01:07:17.520
+[Diapositiva 19] ¿Cuando yo hago un new por primera vez de esa clase?
+
+01:07:17.520 --> 01:07:20.040
+[Diapositiva 19] ¿O cuando yo accedo a alguno de sus valores estáticos?
+
+01:07:20.040 --> 01:07:21.840
+[Diapositiva 19] Ahí se carga y los valores estáticos van a
+
+01:07:21.880 --> 01:07:23.760
+[Diapositiva 19] estar disponibles siempre.
+
+01:07:23.760 --> 01:07:25.760
+[Diapositiva 19] Por más que yo, ustedes han usado la sentencia,
+
+01:07:25.760 --> 01:07:31.080
+[Diapositiva 19] por ejemplo, import java punto util, por ejemplo,
+
+01:07:31.080 --> 01:07:32.600
+[Diapositiva 19] paquete punto asterisco `import java.util.*`.
+
+01:07:32.600 --> 01:07:34.360
+[Diapositiva 19] ¿Han usado una sentencia así?
+
+01:07:34.360 --> 01:07:36.120
+[Diapositiva 19] Por ejemplo, ¿alguna vez?
+
+01:07:36.120 --> 01:07:36.720
+[Diapositiva 19] Un import.
+
+01:07:42.160 --> 01:07:45.080
+[Diapositiva 19] ¿Nunca usaron nada clases de otro paquete?
+
+01:07:45.080 --> 01:07:46.920
+[Diapositiva 19] ¿Nada?
+
+01:07:46.920 --> 01:07:50.080
+[Diapositiva 19] Bueno, cuando ustedes hacen un import de un paquete o de una
+
+01:07:50.120 --> 01:07:54.360
+[Diapositiva 19] clase, no se cargan todas esas clases a memoria.
+
+01:07:54.360 --> 01:07:56.840
+[Diapositiva 19] Simplemente es como que se tiene una referencia a dónde
+
+01:07:56.840 --> 01:08:00.920
+[Diapositiva 19] están las clases, mapeadas con esa estructura de carpeta y
+
+01:08:00.920 --> 01:08:04.320
+[Diapositiva 19] todo, pero no se carga la clase en memoria.
+
+01:08:04.320 --> 01:08:07.760
+[Diapositiva 19] No es que porque yo haga java punto útil punto asterisco me va
+
+01:08:07.760 --> 01:08:11.120
+[Diapositiva 19] a cargar todas las clases que están en el paquete `java.util`.
+
+01:08:11.120 --> 01:08:15.200
+[Diapositiva 19] Y es diferente a si yo digo `java.util.list`,
+
+01:08:15.200 --> 01:08:17.360
+[Diapositiva 19] por ejemplo, que es una clase en paquete,
+
+01:08:17.360 --> 01:08:18.680
+[Diapositiva 19] que esto es más eficiente.
+
+01:08:18.680 --> 01:08:21.240
+[Diapositiva 19] Si yo voy a usar list es más eficiente importar así que
+
+01:08:21.240 --> 01:08:22.200
+[Diapositiva 19] todos.
+
+01:08:22.200 --> 01:08:25.320
+[Diapositiva 19] No, el import no importa nada, solamente es como que tiene una
+
+01:08:25.320 --> 01:08:28.000
+[Diapositiva 19] referencia a dónde están las cosas, pero nada.
+
+01:08:28.000 --> 01:08:31.800
+[Diapositiva 19] Se cargan a memoria las clases cuando se las usa,
+
+01:08:31.800 --> 01:08:35.880
+[Diapositiva 19] cuando se hace `new Math()` o cuando se accede a través de un método
+
+01:08:35.880 --> 01:08:36.960
+[Diapositiva 19] de clase o variable de clase.
+
+01:08:36.960 --> 01:08:43.680
+[Diapositiva 19] En este momento se cargan todo lo que es estático a la memoria.
+
+01:08:43.680 --> 01:08:47.060
+[Diapositiva 19] Entonces, si nosotros tenemos este ejemplito acá de este
+
+01:08:47.060 --> 01:08:50.480
+[Diapositiva 19] contacto, que le agregamos una variable de clase para ir
+
+01:08:50.480 --> 01:08:54.860
+[Diapositiva 19] contando cada instancia que se hace, en el constructor lo que
+
+01:08:54.860 --> 01:08:57.980
+[Diapositiva 19] hacemos es ulCont, accedemos a esta variable de clase,
+
+01:08:57.980 --> 01:09:01.300
+[Diapositiva 19] ulcont más 1 y después guardamos ese id en el objeto que
+
+01:09:01.300 --> 01:09:02.180
+[Diapositiva 19] creamos.
+
+01:09:02.180 --> 01:09:05.340
+[Diapositiva 19] Y después tenemos un método de clase static que me devuelve
+
+01:09:05.340 --> 01:09:07.780
+[Diapositiva 19] ese ulCont, ¿sí?
+
+01:09:07.780 --> 01:09:09.500
+[Diapositiva 19] El código se entiende, ¿no?
+
+01:09:09.500 --> 01:09:16.020
+[Diapositiva 19] Entonces, tenemos una clase test con un main y acá decimos
+
+01:09:16.020 --> 01:09:20.500
+[Diapositiva 19] `System.out.println(Contacto.getUlCont))`.
+
+01:09:20.500 --> 01:09:22.940
+[Diapositiva 19] O sea, contacto es la clase y como este es estático,
+
+01:09:22.940 --> 01:09:24.780
+[Diapositiva 19] yo puedo invocar al método.
+
+01:09:24.780 --> 01:09:26.900
+[Diapositiva 19] ¿Está bien que pueda invocar al método ahí?
+
+01:09:26.900 --> 01:09:29.140
+[Diapositiva 19] Yo no creí ninguna instancia, ¿me va a dar error?
+
+01:09:35.860 --> 01:09:37.860
+[Diapositiva 19] Sí, está bien, porque es un método de clase,
+
+01:09:37.860 --> 01:09:40.820
+[Diapositiva 19] yo le pido a la clase el método, así que perfecto.
+
+01:09:40.820 --> 01:09:42.700
+[Diapositiva 19] ¿Qué me va a devolver ahí la primera vez?
+
+01:09:42.700 --> 01:09:47.140
+[Diapositiva 19] Un 0, perfecto.
+
+01:09:47.140 --> 01:09:52.380
+[Diapositiva 19] Después abajo dice `Contancto c1 = new Contacto()`, ¿sí?
+
+01:09:52.380 --> 01:09:55.820
+[Diapositiva 19] Entonces, va a venir acá y va a ejecutar este contacto.
+
+01:09:55.820 --> 01:09:57.220
+[Diapositiva 19] Entonces, ¿qué hace ulCont?
+
+01:09:57.220 --> 01:09:58.300
+[Diapositiva 19] Es ulCont más 1.
+
+01:09:58.300 --> 01:10:01.540
+[Diapositiva 19] Entonces, esto va a valer 1 ahora ulCont.
+
+01:10:01.540 --> 01:10:05.460
+[Diapositiva 19] Y `this.id = ulCont` le va a poner el id a este objeto que creó
+
+01:10:05.460 --> 01:10:06.060
+[Diapositiva 19] acá.
+
+01:10:06.060 --> 01:10:08.020
+[Diapositiva 19] Esto tiene toda una animación, pero no sé,
+
+01:10:08.020 --> 01:10:11.580
+[Diapositiva 19] al meterlo acá adentro no se pudo ver.
+
+01:10:11.580 --> 01:10:15.460
+[Diapositiva 19] Después, cuando le pedimos contacto get ulCont, ¿qué me va
+
+01:10:15.460 --> 01:10:15.740
+[Diapositiva 19] a decir?
+
+01:10:15.740 --> 01:10:18.380
+[Diapositiva 19] Me va a decir 1, porque yo creé un objeto.
+
+01:10:18.380 --> 01:10:21.060
+[Diapositiva 19] Después decimos `Contacto c2 = new Contacto()`.
+
+01:10:21.060 --> 01:10:23.140
+[Diapositiva 19] Vamos a crear otro contacto.
+
+01:10:23.140 --> 01:10:25.340
+[Diapositiva 19] Venimos acá, ulCont ulCont más 1,
+
+01:10:25.340 --> 01:10:27.740
+[Diapositiva 19] me va a poner un 2 acá como está ahora.
+
+01:10:27.740 --> 01:10:30.540
+[Diapositiva 19] Y después dice `this.id = ulCont`.
+
+01:10:30.540 --> 01:10:34.340
+[Diapositiva 19] Ahí sí pongo el id acá en este objeto, ¿sí?
+
+01:10:34.340 --> 01:10:38.460
+[Diapositiva 19] Entonces, el último contacto get ulCont me va a dar 2.
+
+01:10:38.460 --> 01:10:41.500
+[Diapositiva 19] Pero se entiende que se guarda en un único lugar y
+
+01:10:41.500 --> 01:10:45.660
+[Diapositiva 19] es compartido, digamos, por todas las instancias.
+
+01:10:45.660 --> 01:10:51.020
+[Diapositiva 19] Yo desde los constructores y desde los métodos de instancia
+
+01:10:51.020 --> 01:10:55.380
+[Diapositiva 19] puedo invocar o acceder a lo estático.
+
+01:10:55.380 --> 01:10:57.260
+[Diapositiva 19] Pero al revés, ¿qué les parece?
+
+01:10:57.260 --> 01:11:00.180
+[Diapositiva 19] Desde un método estático, ¿yo puedo acceder a una variable de
+
+01:11:00.180 --> 01:11:00.700
+[Diapositiva 19] instancia?
+
+01:11:04.580 --> 01:11:09.180
+[Diapositiva 19] Yo puedo acá decir, en ese ejemplo que tenemos ahí,
+
+01:11:09.180 --> 01:11:13.020
+[Diapositiva 19] yo puedo decir contacto.
+
+01:11:13.020 --> 01:11:14.660
+[Diapositiva 19] Ahí está un poco lo que decíamos ahí.
+
+01:11:14.660 --> 01:11:18.060
+[Diapositiva 19] `Contacto.getNombre()`.
+
+01:11:25.220 --> 01:11:27.460
+[Diapositiva 19] Claro, pueden no haber, claro, como dice Joaquín,
+
+01:11:27.460 --> 01:11:29.980
+[Diapositiva 19] pueden ni siquiera, como en el primer caso acá arriba en el
+
+01:11:29.980 --> 01:11:32.820
+[Diapositiva 19] main, pueden no haber ninguna instancia.
+
+01:11:32.820 --> 01:11:35.980
+[Diapositiva 19] O podemos tener el caso de que haya 3 instancias.
+
+01:11:35.980 --> 01:11:37.860
+[Diapositiva 19] Entonces, no sabe a cuál.
+
+01:11:37.860 --> 01:11:41.900
+[Diapositiva 19] O sea, a la clase se le puede pedir todo lo estático,
+
+01:11:41.900 --> 01:11:44.500
+[Diapositiva 19] variable de instancia, métodos, variables de clase,
+
+01:11:44.500 --> 01:11:45.700
+[Diapositiva 19] métodos de clase.
+
+01:11:45.700 --> 01:11:49.380
+[Diapositiva 19] Y los métodos de clase solo pueden devolver cosas o
+
+01:11:49.380 --> 01:11:53.260
+[Diapositiva 19] variables estáticas o funciones o lo que sea,
+
+01:11:53.260 --> 01:11:54.100
+[Diapositiva 19] algún procesamiento.
+
+01:11:54.100 --> 01:11:57.180
+[Diapositiva 19] Pero nada relacionado a las variables de instancia,
+
+01:11:57.180 --> 01:11:59.660
+[Diapositiva 19] porque las variables de instancia son propias de cada
+
+01:11:59.660 --> 01:12:02.220
+[Diapositiva 19] objeto, cada objeto tiene su copia.
+
+01:12:02.220 --> 01:12:05.020
+[Diapositiva 19] Y eso no, no se puede.
+
+01:12:05.060 --> 01:12:07.660
+[Diapositiva 19] Todo lo estático está disponible cuando yo cargo la
+
+01:12:07.660 --> 01:12:10.780
+[Diapositiva 19] clase antes de haber traído cualquier instancia.
+
+01:12:10.780 --> 01:12:14.100
+[Diapositiva 19] Entonces, es imposible que un método de clase acceda a lo de
+
+01:12:14.100 --> 01:12:16.700
+[Diapositiva 19] instancia.
+
+01:12:16.700 --> 01:12:19.500
+[Diapositiva 19] Bueno, ¿se entendió el concepto de estático entonces?
+
+01:12:19.500 --> 01:12:21.140
+[Diapositiva 19] ¿Esto no lo habían visto el año pasado?
+
+01:12:21.140 --> 01:12:22.700
+[Diapositiva 19] ¿Solo instancia habían visto?
+
+01:12:27.900 --> 01:12:31.700
+[Diapositiva 19] Bueno, así que, bueno, se completa un poco variable de
+
+01:12:31.700 --> 01:12:34.520
+[Diapositiva 19] instancia, método de instancia, variables de clase y métodos de clase.
+
+01:12:37.900 --> 01:12:39.500
+[Diapositiva 19] Bueno.
+
+01:12:39.500 --> 01:12:41.740
+[Diapositiva 19] No, lo único que han visto como estático,
+
+01:12:41.740 --> 01:12:44.220
+[Diapositiva 19] ustedes es el main, pero por ahí no prestaron atención,
+
+01:12:44.220 --> 01:12:47.980
+[Diapositiva 19] porque el main es estático, es `public static void main()`.
+
+01:12:47.980 --> 01:12:50.180
+[Diapositiva 19] Porque cuando uno lo ejecuta en la línea de comando,
+
+01:12:50.180 --> 01:12:54.580
+[Diapositiva 19] uno, por ejemplo, pone `java testContacto`.
+
+01:12:54.580 --> 01:12:57.300
+[Diapositiva 19] Ahí es como que se está ejecutando el método main que
+
+01:12:57.300 --> 01:13:00.060
+[Diapositiva 19] es estático sin crear ninguna clase.
+
+01:13:00.100 --> 01:13:04.340
+[Diapositiva 19] Pero, bueno, por ahí no vieron en detalles qué es el estático.
+
+01:13:04.340 --> 01:13:06.860
+[Diapositiva 19] Este es porque es obligatorio ponerlo así.
+
+01:13:06.860 --> 01:13:11.100
+[Diapositiva 19] Pero uno también puede utilizar, como es el caso de `Math`,
+
+01:13:11.100 --> 01:13:12.740
+[Diapositiva 19] métodos de clase o variables de clase.
+
+01:13:12.740 --> 01:13:14.660
+[Diapositiva 19] Y también pueden, las propias clases de uno,
+
+01:13:14.660 --> 01:13:16.340
+[Diapositiva 19] hacer métodos y variables de clase.
+
+01:13:20.580 --> 01:13:23.020
+[Diapositiva 20] Bueno, ¿esto entonces cuánto estático?
+
+01:13:23.020 --> 01:13:28.180
+[Diapositiva 21] Bueno, acá empieza un poquitito hablar de arreglos.
+
+01:13:28.180 --> 01:13:33.140
+[Diapositiva 21] Arreglos es un objeto que tiene una colección de objetos o que
+
+01:13:33.140 --> 01:13:36.620
+[Diapositiva 21] referencia a una colección de objetos.
+
+01:13:36.620 --> 01:13:44.020
+[Diapositiva 21] Dentro del API de Java hay una librería que es `java.util`,
+
+01:13:44.020 --> 01:13:47.780
+[Diapositiva 21] que en realidad tiene todas las clases que uno comúnmente
+
+01:13:47.780 --> 01:13:50.260
+[Diapositiva 21] utiliza cuando tiene que trabajar con colecciones.
+
+01:13:50.260 --> 01:13:54.060
+[Diapositiva 21] Porque todas las clases del paquete `java.util` tienen tamaño
+
+01:13:54.060 --> 01:13:57.580
+[Diapositiva 21] variable, crecen y se achican automáticamente según los datos
+
+01:13:57.580 --> 01:13:59.100
+[Diapositiva 21] que uno les va poniendo.
+
+01:13:59.100 --> 01:14:03.340
+[Diapositiva 21] Pero este arreglo, que es el que vino con la versión de Java 1.0,
+
+01:14:03.340 --> 01:14:09.860
+[Diapositiva 21] Java 1.0 ya trajo a los arrays, a estos que estamos viendo acá.
+
+01:14:09.860 --> 01:14:11.740
+[Diapositiva 21] Y es una estructura muy limitada, ¿vieron?
+
+01:14:11.740 --> 01:14:15.020
+[Diapositiva 21] Tiene un tamaño fijo, uno crea un arreglo de un tipo de datos,
+
+01:14:15.020 --> 01:14:16.420
+[Diapositiva 21] no puede crecer.
+
+01:14:16.420 --> 01:14:18.900
+[Diapositiva 21] Si nos quedamos sin espacio, tenemos que crear otro arreglo
+
+01:14:18.900 --> 01:14:22.220
+[Diapositiva 21] y copiar todos los valores.
+
+01:14:22.220 --> 01:14:25.020
+[Diapositiva 21] Tiene una variable `length` que me dice la cantidad de tamaño
+
+01:14:25.020 --> 01:14:27.380
+[Diapositiva 21] físico del arreglo.
+
+01:14:27.380 --> 01:14:29.300
+[Diapositiva 21] Y después, cuando uno declara el arreglo,
+
+01:14:29.300 --> 01:14:33.540
+[Diapositiva 21] tiene que poner qué tipo de datos se pueden guardar ahí.
+
+01:14:33.540 --> 01:14:36.540
+[Diapositiva 22] En este caso, bueno, acá hay un arreglo declarado de tipo de
+
+01:14:36.540 --> 01:14:39.340
+[Diapositiva 22] datos enteros, solo puedo guardar enteros ahí.
+
+01:14:39.340 --> 01:14:42.020
+[Diapositiva 22] Y acá tengo un arreglo de elemento de tipo cliente,
+
+01:14:42.020 --> 01:14:44.900
+[Diapositiva 22] yo podría guardar elemento de tipo cliente o subclases de
+
+01:14:44.900 --> 01:14:46.660
+[Diapositiva 22] cliente también, ¿no?
+
+01:14:46.660 --> 01:14:49.420
+[Diapositiva 22] Pero está limitado a eso, a clientes o subclases de
+
+01:14:49.420 --> 01:14:52.340
+[Diapositiva 22] clientes.
+
+01:14:52.340 --> 01:14:53.860
+[Diapositiva 22] Esto creo que sí lo han manejado.
+
+01:14:53.860 --> 01:14:56.460
+[Diapositiva 22] Acá por ahí lo que hago a veces se llama la atención,
+
+01:14:56.620 --> 01:15:01.260
+[Diapositiva 22] acá cuando hago un new cliente, fíjense ahí cuando nosotros
+
+01:15:01.260 --> 01:15:05.740
+[Diapositiva 22] creamos ese arreglo, nosotros decimos cliente o vamos a usar
+
+01:15:05.740 --> 01:15:07.860
+[Diapositiva 22] Contacto, que es el que veníamos haciendo.
+
+01:15:07.860 --> 01:15:11.660
+[Diapositiva 22] Contacto, que sabemos que tiene name acá.
+
+01:15:11.660 --> 01:15:16.580
+[Diapositiva 22] Name, age, edad y el number, ¿no?
+
+01:15:16.580 --> 01:15:24.100
+[Diapositiva 22] Contacto, nosotros decimos, ¿qué vamos a hacer al arreglo?
+
+01:15:24.140 --> 01:15:28.340
+[Diapositiva 22] Un arreglo de contactos con, por ejemplo,
+
+01:15:28.340 --> 01:15:34.540
+[Diapositiva 22] es igual a new contacto, new contacto de 3, ¿sí?
+
+01:15:34.540 --> 01:15:37.060
+[Diapositiva 22] Así se instancia el arreglo.
+
+01:15:37.060 --> 01:15:40.540
+[Diapositiva 22] Cont es una variable de tipo arreglo donde voy a guardar
+
+01:15:40.540 --> 01:15:44.180
+[Diapositiva 22] objetos de tipo contacto, new contacto de 3.
+
+01:15:44.220 --> 01:15:53.860
+[Diapositiva 22] ¿Qué pasa si yo digo `System.out.print`,
+
+01:15:53.860 --> 01:16:04.300
+[Diapositiva 22] ¿`System.out.print(cont[0].getNombre())`?
+
+01:16:04.300 --> 01:16:08.140
+[Diapositiva 22] Nosotros sabemos que son objetos de tipo contacto y pido el
+
+01:16:08.140 --> 01:16:10.780
+[Diapositiva 22] nombre, ¿sí?
+
+01:16:10.780 --> 01:16:11.500
+[Diapositiva 22] ¿Qué pasa acá?
+
+01:16:11.500 --> 01:16:12.420
+[Diapositiva 22] ¿Qué me devuelve?
+
+01:16:15.180 --> 01:16:18.180
+[Diapositiva 22] A ver, Joaquín dice null.
+
+01:16:18.180 --> 01:16:19.900
+[Diapositiva 22] Otro dice el nombre del contacto.
+
+01:16:19.900 --> 01:16:21.860
+[Diapositiva 22] Pero esta definición, ¿eh?
+
+01:16:21.860 --> 01:16:25.940
+[Diapositiva 22] Esta definición, yo digo, con es un arreglo de contacto.
+
+01:16:25.940 --> 01:16:29.380
+[Diapositiva 22] Después digo new contacto de 3 y digo `system.out.print`,
+
+01:16:29.380 --> 01:16:33.420
+[Diapositiva 22] `System.out.print(cont[0].getNombre())`, ¿sí?
+
+01:16:33.420 --> 01:16:34.860
+[Diapositiva 22] Andrés dice error.
+
+01:16:34.860 --> 01:16:37.580
+[Diapositiva 22] A ver, Andrés, ¿por qué nos devuelve error esto?
+
+01:16:37.580 --> 01:16:39.580
+[Diapositiva 22] ¿Por qué nos devuelve error esto?
+
+01:16:40.220 --> 01:16:41.380
+[Diapositiva 22] Andrés dice error.
+
+01:16:41.380 --> 01:16:43.540
+[Diapositiva 22] A ver, Andrés, ¿por qué nos devuelve error esto?
+
+01:16:46.540 --> 01:16:50.980
+[Diapositiva 22] [Estudiante] Porque cuando ejecutas eso así, cuando no tiene,
+
+01:16:50.980 --> 01:16:53.500
+[Diapositiva 22] [Estudiante] cuando está en null, te tira error.
+
+01:16:53.500 --> 01:16:54.260
+[Diapositiva 22] Claro.
+
+01:16:54.260 --> 01:16:57.340
+[Diapositiva 22] Porque acá esto tiene que tener cuidado cuando trabajamos con
+
+01:16:57.340 --> 01:17:00.540
+[Diapositiva 22] objetos, que acá cuando decimos new contacto de 3,
+
+01:17:00.540 --> 01:17:03.340
+[Diapositiva 22] no estamos creando 3 contactos.
+
+01:17:03.340 --> 01:17:06.700
+[Diapositiva 22] Estamos creando un arreglo de 3 elementos donde voy a guardar
+
+01:17:06.700 --> 01:17:07.380
+[Diapositiva 22] contactos.
+
+01:17:07.380 --> 01:17:11.660
+[Diapositiva 22] Entonces, new contacto de 3, ¿qué tiene en este momento este
+
+01:17:11.660 --> 01:17:12.380
+[Diapositiva 22] arreglito?
+
+01:17:12.380 --> 01:17:17.060
+[Diapositiva 22] Tiene 3 posiciones, porque yo dije que me cree un arreglo de
+
+01:17:17.060 --> 01:17:19.860
+[Diapositiva 22] 3 elementos donde voy a guardar contacto.
+
+01:17:19.860 --> 01:17:22.300
+[Diapositiva 22] En Java, cuando yo creo una variable y no inicializo,
+
+01:17:22.300 --> 01:17:22.860
+[Diapositiva 22] ¿qué tengo?
+
+01:17:22.860 --> 01:17:28.140
+[Diapositiva 22] Tengo null, tengo null, y tengo null en la posición 0,
+
+01:17:28.140 --> 01:17:30.100
+[Diapositiva 22] en la 1 y en la 2.
+
+01:17:30.100 --> 01:17:34.860
+[Diapositiva 22] Entonces, cuando yo digo acá `cont[0]`, ¿qué es? null
+
+01:17:34.860 --> 01:17:38.220
+[Diapositiva 22] Al null le estoy invocando el método `getNombre()`.
+
+01:17:38.220 --> 01:17:41.180
+[Diapositiva 22] Entonces, ahí esto me da un error.
+
+01:17:41.180 --> 01:17:45.500
+[Diapositiva 22] Se cancela la ejecución del método, ¿sí?
+
+01:17:45.500 --> 01:17:45.980
+[Diapositiva 22] Claro.
+
+01:17:45.980 --> 01:17:48.380
+[Diapositiva 22] Hay que poner mínimo los objetos.
+
+01:17:48.380 --> 01:17:51.540
+[Diapositiva 22] Entonces, ahora, si yo acá antes de hacer esta consulta
+
+01:17:51.540 --> 01:17:57.420
+[Diapositiva 22] decía `cont[0] = new Contacto('Juan')`,
+
+01:17:57.420 --> 01:18:01.580
+[Diapositiva 22] si yo digo new contacto juan, ¿sí?
+
+01:18:01.580 --> 01:18:02.460
+[Diapositiva 22] Ahí sí.
+
+01:18:02.460 --> 01:18:06.620
+[Diapositiva 22] Ya en la 1er posición, acá ahora ya sí tengo un objeto de
+
+01:18:06.620 --> 01:18:13.020
+[Diapositiva 22] tipo contacto que su nombre es juan y ahí sí daría.
+
+01:18:13.020 --> 01:18:15.740
+[Diapositiva 22] Sí, esto siempre lo menciono, porque como no hay ese new
+
+01:18:15.740 --> 01:18:18.660
+[Diapositiva 22] contacto, parecería que se está corriendo el constructor de
+
+01:18:18.660 --> 01:18:21.660
+[Diapositiva 22] contacto y no es así.
+
+01:18:21.660 --> 01:18:23.940
+[Diapositiva 22] Uno tiene que explícitamente, ¿cómo?
+
+01:18:23.940 --> 01:18:26.220
+[Diapositiva 22] [Estudiante] Una pregunta, profe.
+
+01:18:26.220 --> 01:18:29.140
+[Diapositiva 22] [Estudiante] Antes de que esté null en el vector,
+
+01:18:29.180 --> 01:18:32.180
+[Diapositiva 22] [Estudiante] o sea, ahí te crea las referencias, digamos,
+
+01:18:32.180 --> 01:18:35.340
+[Diapositiva 22] [Estudiante] como una especie de puntero, digamos.
+
+01:18:35.340 --> 01:18:36.580
+[Diapositiva 22] ¿Acá?
+
+01:18:36.580 --> 01:18:38.740
+[Diapositiva 22] [Estudiante] Sí, antes de que te ponga null Java, digamos.
+
+01:18:41.980 --> 01:18:44.700
+[Diapositiva 22] No, cuando vos haces new contacto de 3,
+
+01:18:44.700 --> 01:18:50.940
+[Diapositiva 22] lo que hace ahí es crear un arreglo de 3 elementos y los
+
+01:18:50.940 --> 01:18:54.060
+[Diapositiva 22] prepara para guardar referencia de tipo Contacto.
+
+01:18:54.060 --> 01:18:55.260
+[Diapositiva 22] Es lo mismo que vos haces así.
+
+01:18:55.260 --> 01:19:01.340
+[Diapositiva 22] Mira, vos decís `Contacto c;`.
+
+01:19:01.340 --> 01:19:03.820
+[Diapositiva 22] Si vos ves esta variable, ¿cómo está en la stack?
+
+01:19:03.820 --> 01:19:06.100
+[Diapositiva 22] ¿Tenés c que tiene a null?
+
+01:19:08.780 --> 01:19:11.100
+[Diapositiva 22] Porque vos creaste una variable y no la inicializaste.
+
+01:19:11.100 --> 01:19:13.380
+[Diapositiva 22] Como es una referencia a objeto, es null.
+
+01:19:13.380 --> 01:19:15.580
+[Diapositiva 22] Acá es lo mismo, creas un arreglo en donde le decís que
+
+01:19:15.580 --> 01:19:18.580
+[Diapositiva 22] vas a guardar 3 referencias a contactos,
+
+01:19:18.580 --> 01:19:20.380
+[Diapositiva 22] pero no le pusiste nada, entonces está null.
+
+01:19:20.660 --> 01:19:21.620
+[Diapositiva 22] ¿Se entiende?
+
+01:19:27.620 --> 01:19:28.460
+[Diapositiva 22] [Estudiante] Sí, sí.
+
+01:19:28.460 --> 01:19:28.960
+[Diapositiva 22] [Estudiante] Gracias.
+
+01:19:31.540 --> 01:19:32.940
+[Diapositiva 22] Para que te pueda devolver null.
+
+01:19:32.940 --> 01:19:35.620
+[Diapositiva 22] Claro, hay que hacer un new contacto en cada null.
+
+01:19:35.620 --> 01:19:36.120
+[Diapositiva 22] Claro.
+
+01:19:39.340 --> 01:19:43.020
+[Diapositiva 22] Hay que hacer un new contacto en cada posición, claro.
+
+01:19:43.020 --> 01:19:44.500
+[Diapositiva 22] Para que te pueda devolver null.
+
+01:19:44.500 --> 01:19:48.300
+[Diapositiva 22] Para que no te devuelva null, sería, ¿no?
+
+01:19:48.420 --> 01:19:53.140
+[Diapositiva 22] Bueno, el null ya está.
+
+01:19:53.140 --> 01:19:54.380
+[Diapositiva 22] Augusto, el null ya está.
+
+01:19:54.380 --> 01:19:56.620
+[Diapositiva 22] Cuando vos haces el new ya lo ponen null, como acá.
+
+01:19:56.620 --> 01:20:00.340
+[Diapositiva 22] C, contacto, ya está null.
+
+01:20:00.340 --> 01:20:04.100
+[Diapositiva 23] Bueno, acá hay un poco la creación de arreglos,
+
+01:20:04.100 --> 01:20:06.980
+[Diapositiva 23] que esto supongo que también lo han manejado bien ustedes.
+
+01:20:06.980 --> 01:20:09.060
+[Diapositiva 23] Creación de arreglos.
+
+01:20:09.060 --> 01:20:13.220
+[Diapositiva 23] Yo puedo crear el arreglo y después con un `for` llenarlo de
+
+01:20:13.220 --> 01:20:14.180
+[Diapositiva 23] datos.
+
+01:20:14.180 --> 01:20:16.260
+[Diapositiva 23] O puedo en el momento que declaro el arreglo acá,
+
+01:20:16.260 --> 01:20:22.100
+[Diapositiva 23] por ejemplo, `int[] array`, y ya ponerle los elementos adentro,
+
+01:20:22.100 --> 01:20:24.580
+[Diapositiva 24] como ustedes quieran.
+
+01:20:24.580 --> 01:20:29.140
+[Diapositiva 24] Y después, acá también hay una comparación entre recorrer el
+
+01:20:29.140 --> 01:20:33.500
+[Diapositiva 24] arreglo con el `for` tradicional y recorrerlo utilizando el
+
+01:20:33.500 --> 01:20:34.380
+[Diapositiva 24] foreach.
+
+01:20:34.380 --> 01:20:37.260
+[Diapositiva 24] Ese lo han usado, chicos, el foreach, ¿se acuerdan?
+
+01:20:37.260 --> 01:20:38.100
+[Diapositiva 24] No lo usamos.
+
+01:20:38.100 --> 01:20:38.940
+[Diapositiva 24] Ah, bien.
+
+01:20:38.940 --> 01:20:41.100
+[Diapositiva 24] Bueno, el `for` este sí, ¿no?
+
+01:20:41.100 --> 01:20:45.660
+[Diapositiva 24] Que es el de Pascal, prácticamente el mismo, desde int igual 0.
+
+01:20:45.660 --> 01:20:47.540
+[Diapositiva 24] ¿Es lo mismo que un `for` mejorado?
+
+01:20:47.540 --> 01:20:49.700
+[Diapositiva 24] Sí, sí, es como un `for` mejorado.
+
+01:20:49.700 --> 01:20:53.340
+[Diapositiva 24] Es como un `for`, no sé si mejorado,
+
+01:20:53.340 --> 01:20:56.980
+[Diapositiva 24] porque sirve como para atravesar la colección así
+
+01:20:56.980 --> 01:20:58.500
+[Diapositiva 24] completa.
+
+01:20:58.500 --> 01:21:03.580
+[Diapositiva 24] Y es como un `for`, no sé si mejorado,
+
+01:21:03.580 --> 01:21:07.660
+[Diapositiva 24] como para atravesar la colección así completa.
+
+01:21:07.660 --> 01:21:12.460
+[Diapositiva 24] Pero no te olvides del tamaño del arreglo y de las posiciones
+
+01:21:12.460 --> 01:21:12.980
+[Diapositiva 24] de todo.
+
+01:21:12.980 --> 01:21:16.860
+[Diapositiva 24] Por ejemplo, yo digo `for i = 0`, `i < longitud`
+
+01:21:16.860 --> 01:21:20.980
+[Diapositiva 24] con paso 1, `result = result + a[i];`.
+
+01:21:20.980 --> 01:21:24.220
+[Diapositiva 24] Este for no solamente sirve para los arreglos,
+
+01:21:24.220 --> 01:21:27.260
+[Diapositiva 24] sino que sirve para todos los objetos del framework de
+
+01:21:27.260 --> 01:21:30.060
+[Diapositiva 24] colecciones que yo les decía que existe en Java.
+
+01:21:30.060 --> 01:21:32.900
+[Diapositiva 24] O sea, en Java, dentro del API, ya existe, por ejemplo,
+
+01:21:33.140 --> 01:21:36.500
+[Diapositiva 24] linked list, array list, tree set, tree map,
+
+01:21:36.500 --> 01:21:38.020
+[Diapositiva 24] que son árboles, listas.
+
+01:21:38.020 --> 01:21:40.060
+[Diapositiva 24] Pero, bueno, la idea es que ustedes no la usen porque
+
+01:21:40.060 --> 01:21:42.620
+[Diapositiva 24] tienen que aprender a implementarlas.
+
+01:21:42.620 --> 01:21:45.860
+[Diapositiva 24] Entonces, ese foreach se puede usar para todas esas
+
+01:21:45.860 --> 01:21:46.660
+[Diapositiva 24] colecciones.
+
+01:21:46.660 --> 01:21:47.580
+[Diapositiva 24] ¿Y cómo es el foreach?
+
+01:21:47.580 --> 01:21:51.380
+[Diapositiva 24] Es así `for` y acá yo digo.
+
+01:21:51.380 --> 01:21:55.580
+[Diapositiva 24] Acá yo le puedo pasar cualquier colección, colección.
+
+01:21:55.580 --> 01:21:59.460
+[Diapositiva 24] Y lo que le digo es que en cada iteración me cree una
+
+01:21:59.540 --> 01:22:00.740
+[Diapositiva 24] variable.
+
+01:22:00.740 --> 01:22:03.380
+[Diapositiva 24] Por ejemplo, bueno, ahí dice int.
+
+01:22:03.380 --> 01:22:04.500
+[Diapositiva 24] ¿Cómo se llama el arreglo ahí?
+
+01:22:04.500 --> 01:22:06.340
+[Diapositiva 24] Int.
+
+01:22:06.340 --> 01:22:07.180
+[Diapositiva 24] Ah.
+
+01:22:07.180 --> 01:22:11.980
+[Diapositiva 24] Entonces, acá yo le estoy pasando "a" que este es el arreglo.
+
+01:22:11.980 --> 01:22:14.660
+[Diapositiva 24] Pero así como le paso el arreglo, yo le puedo pasar una
+
+01:22:14.660 --> 01:22:17.020
+[Diapositiva 24] linked list, un array list, un tree set,
+
+01:22:17.020 --> 01:22:19.460
+[Diapositiva 24] todos los objetos de las colecciones del framework de
+
+01:22:19.460 --> 01:22:20.220
+[Diapositiva 24] Java.
+
+01:22:20.220 --> 01:22:22.140
+[Diapositiva 24] Pero en este caso estamos con el arreglo.
+
+01:22:22.140 --> 01:22:26.060
+[Diapositiva 24] Entonces, le decimos que nos intere todo este arreglo y que
+
+01:22:26.060 --> 01:22:30.380
+[Diapositiva 24] en cada iteración la posición del arreglo me la devuelva en
+
+01:22:30.380 --> 01:22:33.460
+[Diapositiva 24] esta variable int, no sé, valor.
+
+01:22:33.460 --> 01:22:35.540
+[Diapositiva 24] Así.
+
+01:22:35.540 --> 01:22:38.980
+[Diapositiva 24] Y entonces, este es el arreglo.
+
+01:22:38.980 --> 01:22:42.020
+[Diapositiva 24] Este es el arreglo.
+
+01:22:42.020 --> 01:22:47.500
+[Diapositiva 24] Y ahí después decía `System.out.print(valor)`.
+
+01:22:47.500 --> 01:22:48.460
+[Diapositiva 24] ¿Y qué imprimimos?
+
+01:22:48.460 --> 01:22:50.980
+[Diapositiva 24] Este valor.
+
+01:22:50.980 --> 01:22:52.060
+[Diapositiva 24] ¿Qué es ese valor?
+
+01:22:52.060 --> 01:22:54.300
+[Diapositiva 24] Es el a del array, el mismo de arriba.
+
+01:22:54.300 --> 01:22:57.980
+[Diapositiva 24] Ese array o el elemento es el a[i].
+
+01:22:57.980 --> 01:23:00.900
+[Diapositiva 24] En cada iteración, automáticamente en cada
+
+01:23:00.900 --> 01:23:05.500
+[Diapositiva 24] iteración, agarra un elemento del arreglo y lo pone acá.
+
+01:23:05.500 --> 01:23:08.780
+[Diapositiva 24] Si yo tendría un arreglo de, supónganse que tenemos,
+
+01:23:08.780 --> 01:23:22.860
+[Diapositiva 24] como hoy decíamos, Contacto es cont_array es igual a new
+
+01:23:22.860 --> 01:23:27.980
+[Diapositiva 24] contacto, new contacto de 10 o lo que sea y le pongo los
+
+01:23:27.980 --> 01:23:29.580
+[Diapositiva 24] contactos a ese arreglo `Contacto[] cont_array = new Contacto[10]`.
+
+01:23:29.580 --> 01:23:31.700
+[Diapositiva 24] Pero yo quisiera iterar con el foreach este.
+
+01:23:31.700 --> 01:23:32.580
+[Diapositiva 24] Entonces, ¿qué le digo?
+
+01:23:32.580 --> 01:23:36.940
+[Diapositiva 24] En vez de mandarle a, le mando este arreglo de contactos.
+
+01:23:36.940 --> 01:23:39.460
+[Diapositiva 24] cont_array.
+
+01:23:39.460 --> 01:23:40.020
+[Diapositiva 24] ¿Y qué le digo?
+
+01:23:40.020 --> 01:23:42.180
+[Diapositiva 24] En cada iteración, créame una variable.
+
+01:23:42.180 --> 01:23:44.420
+[Diapositiva 24] ¿Pero qué me pones en cada iteración?
+
+01:23:44.420 --> 01:23:45.580
+[Diapositiva 24] Un objeto de tipo contacto.
+
+01:23:48.940 --> 01:23:51.500
+[Diapositiva 24] Entonces, imprimo acá que en cada iteración me va a imprimir
+
+01:23:51.500 --> 01:23:52.900
+[Diapositiva 24] un contacto.
+
+01:23:52.900 --> 01:23:54.020
+[Diapositiva 24] ¿Se entiende?
+
+01:23:54.020 --> 01:23:57.980
+[Diapositiva 24] Es como que atraviesa el arreglo en este caso y en cada
+
+01:23:57.980 --> 01:24:01.260
+[Diapositiva 24] iteración, en esa variable, me deja el elemento del arreglo.
+
+01:24:01.260 --> 01:24:02.740
+[Diapositiva 24] Pero esto sirve para todo en Java.
+
+01:24:02.740 --> 01:24:05.140
+[Diapositiva 24] Está muy bueno este foreach porque yo le puedo mandar un
+
+01:24:05.140 --> 01:24:10.700
+[Diapositiva 24] árbol, ahí una tabla de hash y me itera la colección sin yo
+
+01:24:10.700 --> 01:24:11.900
+[Diapositiva 24] saber cómo es la estructura.
+
+01:24:11.900 --> 01:24:14.140
+[Diapositiva 24] No sé si me devuelve el primer origen izquierdo, el derecho o
+
+01:24:14.140 --> 01:24:14.740
+[Diapositiva 24] qué.
+
+01:24:14.740 --> 01:24:17.660
+[Diapositiva 24] Me itera la colección.
+
+01:24:17.660 --> 01:24:20.740
+[Diapositiva 24] Estos objetos tienen que ser iterables.
+
+01:24:20.740 --> 01:24:25.500
+[Diapositiva 24] Hay una particularidad ahí que todos esos objetos son
+
+01:24:25.500 --> 01:24:28.020
+[Diapositiva 24] iterables y se saben iterar a sí mismos.
+
+01:24:28.020 --> 01:24:31.260
+[Diapositiva 24] Entonces, cuando este for los itera,
+
+01:24:31.260 --> 01:24:33.580
+[Diapositiva 24] va devolviendo en cada iteración un elemento del
+
+01:24:33.580 --> 01:24:36.380
+[Diapositiva 24] arreglo.
+
+01:24:36.380 --> 01:24:39.020
+[Diapositiva 24] Cuando trabajamos con matrices se ve un poco más.
+
+01:24:39.020 --> 01:24:41.700
+[Diapositiva 24] Si uno no necesita explícitamente trabajar con un
+
+01:24:41.700 --> 01:24:43.940
+[Diapositiva 25] índice particular, queda muchísimo más chiquitito.
+
+01:24:43.940 --> 01:24:46.700
+[Diapositiva 25] Fíjense.
+
+01:24:46.700 --> 01:24:49.940
+[Diapositiva 25] Supongamos que tenemos esta matriz que son las notas de tres
+
+01:24:49.940 --> 01:24:51.100
+[Diapositiva 25] alumnos.
+
+01:24:51.100 --> 01:24:56.180
+[Diapositiva 25] Notas es un arreglo de arreglos y tenemos las notas de tres
+
+01:24:56.180 --> 01:24:57.380
+[Diapositiva 25] alumnos.
+
+01:24:57.380 --> 01:25:00.540
+[Diapositiva 25] La primera dimensión sería el alumno 1, alumno 2, alumno 3.
+
+01:25:00.540 --> 01:25:03.660
+[Diapositiva 25] Y la segunda dimensión serían sus seis notas.
+
+01:25:03.660 --> 01:25:08.220
+[Diapositiva 25] Si nosotros esto lo tenemos que iterar con un for, decimos for
+
+01:25:08.220 --> 01:25:11.860
+[Diapositiva 25] `for (int x = 0; x < notas.length; x++)`.
+
+01:25:11.860 --> 01:25:14.740
+[Diapositiva 25] `notas.length` es la primera dimensión, es 3.
+
+01:25:14.740 --> 01:25:20.260
+[Diapositiva 25] Me lo va a hacer para 0, para 1 y para 2, porque menor que 3.
+
+01:25:20.260 --> 01:25:23.820
+[Diapositiva 25] Y ahí adentro, cuando x vale 0, cuando x vale 0,
+
+01:25:23.820 --> 01:25:27.260
+[Diapositiva 25] que estoy en esta primer fila, itero otra vez y digo
+
+01:25:27.260 --> 01:25:31.420
+[Diapositiva 25] `for (int y = 0; y < notas[x]; y++)`, así estoy parada en este
+
+01:25:31.420 --> 01:25:37.220
+[Diapositiva 25] pedacito en la primer fila, notas de x.length,
+
+01:25:37.220 --> 01:25:39.660
+[Diapositiva 25] así hitero para estos 6, por ejemplo.
+
+01:25:39.660 --> 01:25:41.940
+[Diapositiva 25] Y después imprimo `notas[x][y]`.
+
+01:25:41.940 --> 01:25:46.300
+[Diapositiva 25] Entonces, 0, 1, 0, 2, 0, 3, 0, 4, así hasta el 5.
+
+01:25:46.300 --> 01:25:48.820
+[Diapositiva 25] Si querríamos atrás de imprimir toda la matriz o el
+
+01:25:48.820 --> 01:25:52.700
+[Diapositiva 25] arreglo de arreglos, hacemos un foreach y le decimos,
+
+01:25:52.740 --> 01:25:56.900
+[Diapositiva 25] iterame notas, que es toda esta matriz o este arreglo de
+
+01:25:56.900 --> 01:25:57.900
+[Diapositiva 25] arreglos.
+
+01:25:57.900 --> 01:26:01.500
+[Diapositiva 25] Y en cada iteración, déjame en la variable fila el arreglo de
+
+01:26:01.500 --> 01:26:02.460
+[Diapositiva 25] int.
+
+01:26:02.460 --> 01:26:06.180
+[Diapositiva 25] Entonces, me va a dejar este en la variable fila.
+
+01:26:06.180 --> 01:26:09.540
+[Diapositiva 25] Y después hago otro foreach y le digo, iterame esta fila.
+
+01:26:09.540 --> 01:26:11.780
+[Diapositiva 25] Y en cada iteración, déjame el elemento entero.
+
+01:26:11.780 --> 01:26:14.180
+[Diapositiva 25] Y después imprimo elto.
+
+01:26:14.180 --> 01:26:18.180
+[Diapositiva 25] Entonces, ahí queda como mucho más simple la iteración.
+
+01:26:19.180 --> 01:26:24.100
+[Diapositiva 25] Después vamos a ver que hay otra manera de iterar que son los
+
+01:26:24.100 --> 01:26:27.460
+[Diapositiva 25] iteradores también.
+
+01:26:27.460 --> 01:26:30.980
+[Diapositiva 25] Y ahí dice, ¿por qué utiliza `notas[x].length`?
+
+01:26:30.980 --> 01:26:35.220
+[Diapositiva 25] `notas[x].length` lo que me da es la primer dimensión del arreglo,
+
+01:26:35.220 --> 01:26:38.940
+[Diapositiva 25] que es 1, 2, 3.
+
+01:26:38.940 --> 01:26:41.940
+[Diapositiva 25] Y después ya cuando estoy parada en `notas[0]`,
+
+01:26:41.940 --> 01:26:45.500
+[Diapositiva 25] que es la primera dimensión, agarro todas sus columnas o sus
+
+01:26:45.500 --> 01:26:46.820
+[Diapositiva 25] elementos.
+
+01:26:46.820 --> 01:26:51.100
+[Diapositiva 25] `notas.length` me va a dar 3.
+
+01:26:51.100 --> 01:26:53.780
+[Diapositiva 25] Y después `notas[0]`, que estoy parada acá,
+
+01:26:53.780 --> 01:26:58.060
+[Diapositiva 25] `notas[0].length` me va a dar 6.
+
+01:26:58.060 --> 01:27:01.220
+[Diapositiva 25] Después `notas[1].length`, 6.
+
+01:27:01.220 --> 01:27:03.100
+[Diapositiva 25] Y `notas[2].length`, 6.
+
+01:27:03.100 --> 01:27:06.100
+[Diapositiva 25] Yo acá si, por ejemplo, no tendríamos este 90 acá en el
+
+01:27:06.100 --> 01:27:10.060
+[Diapositiva 25] del medio, `notas[0]` me daría 6.
+
+01:27:10.060 --> 01:27:13.460
+[Diapositiva 25] `notas[1]` me daría 5 y `notas[2]` me daría 6.
+
+01:27:13.460 --> 01:27:14.180
+[Diapositiva 25] ¿Se entiende?
+
+01:27:14.180 --> 01:27:17.140
+[Diapositiva 25] Por ejemplo, es una matriz esta de b por b.
+
+01:27:17.140 --> 01:27:19.820
+[Diapositiva 25] Es un arreglo que adentro cada elemento tiene un arreglo.
+
+01:27:19.820 --> 01:27:25.100
+[Diapositiva 25] O sea, que estos podrían ser de distintos tamaños también.
+
+01:27:25.100 --> 01:27:27.780
+[Diapositiva 25] ¿Sí?
+
+01:27:27.780 --> 01:27:28.740
+[Diapositiva 25] ¿Se entiende?
+
+01:27:28.740 --> 01:27:29.240
+[Diapositiva 25] ¿Acá?
+
+01:27:34.580 --> 01:27:35.620
+[Diapositiva 25] ¿Hasta acá vamos bien?
+
+01:27:41.180 --> 01:27:42.780
+[Diapositiva 25] Bueno.
+
+01:27:42.820 --> 01:27:44.660
+[Diapositiva 25] A ver qué más nos quedan.
+
+01:27:44.660 --> 01:27:46.420
+[Diapositiva 25] Esto de arreglos.
+
+01:27:46.420 --> 01:27:47.780
+[Diapositiva 26] Sí.
+
+01:27:47.780 --> 01:27:49.860
+[Diapositiva 26] [Estudiante] ¿Entonces que era lo que habías dicho del foreach?
+
+01:27:49.860 --> 01:27:53.340
+[Diapositiva 25] [Estudiante] ¿Era solo para objetos iterables o?
+
+01:27:53.340 --> 01:27:55.260
+[Diapositiva 25] Sí, sí.
+
+01:27:55.260 --> 01:27:57.580
+[Diapositiva 25] Sí, en realidad, es que me costaría,
+
+01:27:57.580 --> 01:27:59.900
+[Diapositiva 25] se necesita un poco más de conocimiento para saber cómo es
+
+01:27:59.900 --> 01:28:01.140
+[Diapositiva 25] que funciona.
+
+01:28:01.140 --> 01:28:07.380
+[Diapositiva 25] Para ustedes lo que vamos a pasar acá son arreglos, ¿sí?
+
+01:28:07.380 --> 01:28:09.220
+[Diapositiva 25] Pero dentro de la teja, lo que yo le decía,
+
+01:28:09.220 --> 01:28:13.420
+[Diapositiva 25] que existe, por ejemplo, la clase tree set.
+
+01:28:13.420 --> 01:28:15.140
+[Diapositiva 25] Que es un arreglo, es un árbol.
+
+01:28:15.140 --> 01:28:16.860
+[Diapositiva 25] Esta es una clase un árbol.
+
+01:28:16.860 --> 01:28:19.940
+[Diapositiva 25] Y yo podría hacer `new TreeSet<>()` y pasárselo por acá.
+
+01:28:19.940 --> 01:28:23.100
+[Diapositiva 25] Y me sirve también este foreach y me itera todo el árbol.
+
+01:28:23.100 --> 01:28:23.620
+[Diapositiva 25] ¿Pero por qué?
+
+01:28:23.620 --> 01:28:26.500
+[Diapositiva 25] Porque el tree set es iterable.
+
+01:28:26.500 --> 01:28:29.340
+[Diapositiva 25] Eso significa que implementa una interfaz particular y sabe
+
+01:28:29.340 --> 01:28:30.780
+[Diapositiva 25] iterarse a sí mismo.
+
+01:28:30.780 --> 01:28:33.260
+[Diapositiva 25] Los objetos saben hacer cosas, ¿no?
+
+01:28:33.260 --> 01:28:35.620
+[Diapositiva 25] Conocen su estado y su comportamiento.
+
+01:28:35.620 --> 01:28:38.340
+[Diapositiva 25] En este caso, para que yo pueda acá poner un objeto,
+
+01:28:38.340 --> 01:28:40.780
+[Diapositiva 25] ese objeto tiene que ser iterable y tiene que saberse
+
+01:28:40.780 --> 01:28:41.900
+[Diapositiva 25] iterar.
+
+01:28:41.900 --> 01:28:44.780
+[Diapositiva 25] Para eso tiene que implementar una interfaz particular.
+
+01:28:44.780 --> 01:28:46.580
+[Diapositiva 25] Interfaces vamos a ver también acá.
+
+01:28:46.580 --> 01:28:49.060
+[Diapositiva 25] ¿Alcanzaron a ver interfaces?
+
+01:28:49.060 --> 01:28:52.380
+[Diapositiva 25] No interfaces visuales, interfaces Java.
+
+01:28:52.380 --> 01:28:53.340
+[Diapositiva 24] ¿Alcanzaron a ver?
+
+01:28:53.340 --> 01:28:55.740
+[Diapositiva 24] Ah, ah, bien.
+
+01:28:55.740 --> 01:28:57.220
+[Diapositiva 24] ¿Hacieron lo que es una interfaz?
+
+01:28:57.220 --> 01:29:00.460
+[Diapositiva 24] Bueno, para que una clase tenga que ponerse acá,
+
+01:29:00.460 --> 01:29:04.540
+[Diapositiva 24] tiene que implementar, tiene que hacer un `implements Iterable<>`,
+
+01:29:04.540 --> 01:29:07.780
+[Diapositiva 24] implements de iterable.
+
+01:29:10.580 --> 01:29:15.060
+[Diapositiva 24] Si implementa esa interfaz iterable, entonces uno puede,
+
+01:29:15.060 --> 01:29:18.580
+[Diapositiva 24] ah, ah, no, perdón, me confundí.
+
+01:29:18.580 --> 01:29:21.820
+[Diapositiva 24] En objetos, ah, en Objetos 1.
+
+01:29:21.820 --> 01:29:25.500
+[Diapositiva 24] Sí, me parecía que 1º no.
+
+01:29:25.500 --> 01:29:26.540
+[Diapositiva 24] Ah, OK, OK.
+
+01:29:26.540 --> 01:29:29.260
+[Diapositiva 24] Por eso, por el momento el foreach a ustedes les va a servir
+
+01:29:29.260 --> 01:29:34.460
+[Diapositiva 24] para atravesar un arreglo o una matriz sin preocuparse por
+
+01:29:34.460 --> 01:29:36.220
+[Diapositiva 24] el tamaño ni nada.
+
+01:29:36.220 --> 01:29:39.220
+[Diapositiva 24] Esa sería la idea.
+
+01:29:39.220 --> 01:29:44.940
+[Diapositiva 24] [Estudiante] Profe, ¿puede ser que para el merge no sirve el forage?
+
+01:29:44.940 --> 01:29:46.540
+[Diapositiva 24] Para el merge.
+
+01:29:46.540 --> 01:29:49.300
+[Diapositiva 24] Y no, porque vos, por ahí, no, cuando vos tenés que trabajar
+
+01:29:49.300 --> 01:29:51.220
+[Diapositiva 24] con los índices, para los algoritmos que tengas que
+
+01:29:51.220 --> 01:29:54.140
+[Diapositiva 24] trabajar con índices, no.
+
+01:29:54.140 --> 01:29:56.540
+[Diapositiva 24] Eso sería como para atravesar toda la colección.
+
+01:29:59.700 --> 01:30:04.440
+[Diapositiva 26] Bueno, el otro temita que nos queda es pasaje de parámetros.
+
+01:30:05.080 --> 01:30:06.400
+[Diapositiva 27] ¿Qué se acuerdan de esto?
+
+01:30:06.400 --> 01:30:08.520
+[Diapositiva 27] ¿Cómo es el pasaje de parámetros en Java?
+
+01:30:15.000 --> 01:30:16.520
+[Diapositiva 27] Por valor, por valor
+
+01:30:16.520 --> 01:30:17.560
+[Diapositiva 27] ¿Están todos de acuerdo?
+
+01:30:22.840 --> 01:30:24.240
+[Diapositiva 27] Bien.
+
+01:30:24.240 --> 01:30:27.560
+[Diapositiva 27] Lo que se pasa cuando se pasa un parámetro es el valor.
+
+01:30:27.560 --> 01:30:28.120
+[Diapositiva 27] Exacto.
+
+01:30:28.120 --> 01:30:31.400
+[Diapositiva 27] Una copia del valor.
+
+01:30:31.400 --> 01:30:34.120
+[Diapositiva 27] Entonces, si nosotros tenemos una clase.
+
+01:30:34.120 --> 01:30:36.400
+[Diapositiva 27] Acá simplemente es como una definición.
+
+01:30:36.400 --> 01:30:41.080
+[Diapositiva 27] Tenemos una clase con un main, declaro dos variables enteras,
+
+01:30:41.080 --> 01:30:44.040
+[Diapositiva 27] y después invoca un método pasándole esos valores.
+
+01:30:44.040 --> 01:30:48.240
+[Diapositiva 27] Esos valores que les pasamos acá son valores o parámetros
+
+01:30:48.240 --> 01:30:49.280
+[Diapositiva 27] reales.
+
+01:30:49.280 --> 01:30:52.640
+[Diapositiva 27] Parámetros actuales también se llama o reales.
+
+01:30:52.640 --> 01:30:55.640
+[Diapositiva 27] Cuando se invoca ese método, viene acá, se ejecuta esto,
+
+01:30:55.640 --> 01:30:59.400
+[Diapositiva 27] y estos que son los parámetros formales del método,
+
+01:30:59.400 --> 01:31:02.680
+[Diapositiva 27] cuando uno define un método, van a tomar el valor que le pasamos
+
+01:31:02.680 --> 01:31:07.920
+[Diapositiva 27] acá en los valores que le pasamos para su invocación.
+
+01:31:07.920 --> 01:31:08.520
+[Diapositiva 27] Bueno.
+
+01:31:08.520 --> 01:31:11.160
+[Diapositiva 27] Entonces, vamos a ver algunos casos.
+
+01:31:11.160 --> 01:31:14.400
+[Diapositiva 28] Primero lo vemos un poco acá como por el absurdo,
+
+01:31:14.400 --> 01:31:16.120
+[Diapositiva 28] para que vean, como yo les decía,
+
+01:31:16.120 --> 01:31:20.080
+[Diapositiva 28] que si yo quiero pasar un parámetro que vuelva cambiado,
+
+01:31:20.080 --> 01:31:22.120
+[Diapositiva 28] no tengo que pasar ciertos tipos de datos.
+
+01:31:22.120 --> 01:31:27.600
+[Diapositiva 28] Por eso le damos los wrappers y vemos un poco los primitivos.
+
+01:31:27.600 --> 01:31:32.440
+[Diapositiva 28] Supongamos que tenemos un método acá desde clase también.
+
+01:31:32.440 --> 01:31:36.800
+[Diapositiva 28] O sea, que lo voy a invocar directamente sobre la clase.
+
+01:31:36.800 --> 01:31:39.840
+[Diapositiva 28] Acá decimos el nombre de la clase, punto, pedir edades,
+
+01:31:39.840 --> 01:31:41.360
+[Diapositiva 28] y le pasamos dos valores.
+
+01:31:41.360 --> 01:31:42.600
+[Diapositiva 28] Bueno, ¿qué hace este método?
+
+01:31:42.600 --> 01:31:48.440
+[Diapositiva 28] Este método recibe dos enteros, llama al escáner otra vez,
+
+01:31:48.440 --> 01:31:50.920
+[Diapositiva 28] y le dice, ingrese el nombre de la madre,
+
+01:31:50.920 --> 01:31:53.680
+[Diapositiva 28] ingresa el nombre de la madre y lo guardo en edad1,
+
+01:31:53.680 --> 01:31:58.440
+[Diapositiva 28] ingrese el nombre del hijo mayor, se hace el `nextInt()`,
+
+01:31:58.440 --> 01:32:00.520
+[Diapositiva 28] se lee el valor y se guarda en edad2.
+
+01:32:01.000 --> 01:32:04.440
+[Diapositiva 28] Recibo dos parámetros y en esos parámetros le asigno valores
+
+01:32:04.440 --> 01:32:05.320
+[Diapositiva 28] que ingresó el usuario.
+
+01:32:05.320 --> 01:32:08.480
+[Diapositiva 28] Por ejemplo, como dice acá, ingrese edad de la madre 56,
+
+01:32:08.480 --> 01:32:11.560
+[Diapositiva 28] ingrese edad del hijo 23.
+
+01:32:11.560 --> 01:32:14.680
+[Diapositiva 28] Bueno, esa es la lógica del método.
+
+01:32:14.680 --> 01:32:17.680
+[Diapositiva 28] Entonces, ustedes podrían decir, llamo al método,
+
+01:32:17.680 --> 01:32:21.840
+[Diapositiva 28] le paso la edad de la madre y la edad del padre en 0,
+
+01:32:21.840 --> 01:32:26.160
+[Diapositiva 28] y cuando se ejecuta esto me vienen los parámetros cambiados.
+
+01:32:26.160 --> 01:32:28.920
+[Diapositiva 28] Bueno, lo que se está pasando ahí es una copia del valor.
+
+01:32:28.920 --> 01:32:30.920
+[Diapositiva 28] Entonces, como se pasa una copia,
+
+01:32:30.920 --> 01:32:32.520
+[Diapositiva 28] ¿qué pasa cuando vuelvo a ese método?
+
+01:32:32.520 --> 01:32:35.120
+[Diapositiva 28] ¿Cuánto vale edad madre y edad hijo?
+
+01:32:39.680 --> 01:32:41.400
+[Diapositiva 28] Bien, cero todos.
+
+01:32:41.400 --> 01:32:46.680
+[Diapositiva 28] Si yo tengo la memoria, está ahí hecha, ¿no?
+
+01:32:46.680 --> 01:32:47.400
+[Diapositiva 28] ¿Cómo tenía yo?
+
+01:32:47.400 --> 01:32:55.240
+[Diapositiva 28] Tenía edad de la madre, edad del hijo, yo tenía 0, tenía 0.
+
+01:32:55.240 --> 01:33:01.960
+[Diapositiva 28] Después teníamos edad1 y edad2.
+
+01:33:01.960 --> 01:33:06.320
+[Diapositiva 28] Cuando nosotros acá pasamos edad1 y edad2 en este
+
+01:33:06.320 --> 01:33:08.800
+[Diapositiva 28] parámetro, lo que se hace es una copia del valor.
+
+01:33:08.800 --> 01:33:11.280
+[Diapositiva 28] Entonces, cuando venimos acá, edad1 y edad2,
+
+01:33:11.280 --> 01:33:14.520
+[Diapositiva 28] va a tener la copia de ese valor.
+
+01:33:14.520 --> 01:33:19.440
+[Diapositiva 28] Cuando nosotros le pedimos al usuario que ingrese los valores,
+
+01:33:19.440 --> 01:33:20.880
+[Diapositiva 28] esos valores se van a cambiar acá.
+
+01:33:20.880 --> 01:33:25.560
+[Diapositiva 28] Va a tener la edad de la madre, la edad de la hija.
+
+01:33:25.560 --> 01:33:27.560
+[Diapositiva 28] El puntero está ahí, ¿no es cierto?
+
+01:33:27.560 --> 01:33:30.600
+[Diapositiva 28] Cuando termina de ejecutarse este método, ¿qué pasa?
+
+01:33:30.600 --> 01:33:33.520
+[Diapositiva 28] Estas variables son variables locales al método.
+
+01:33:33.520 --> 01:33:35.000
+[Diapositiva 28] O sea, estas variables desaparecen,
+
+01:33:35.000 --> 01:33:38.200
+[Diapositiva 28] el puntero para acá y cuando volvemos acá,
+
+01:33:38.200 --> 01:33:40.680
+[Diapositiva 28] se perdieron esos valores, ¿sí?
+
+01:33:40.680 --> 01:33:42.640
+[Diapositiva 28] Entonces, esto se entiende bien.
+
+01:33:42.640 --> 01:33:47.160
+[Diapositiva 28] Nunca pasar primitivo si uno quiere que se modifique algo,
+
+01:33:47.160 --> 01:33:48.280
+[Diapositiva 28] vea algo cambiado.
+
+01:33:48.280 --> 01:33:51.400
+[Diapositiva 28] Porque lo que se pasa es la copia de valor primitivo.
+
+01:33:51.400 --> 01:33:53.600
+[Diapositiva 28] O sea, no sirve para eso.
+
+01:33:53.600 --> 01:33:57.400
+[Diapositiva 28] ¿Qué otro valor se les ocurriría en vez de int pasar?
+
+01:34:02.720 --> 01:34:03.600
+[Diapositiva 28] Bien.
+
+01:34:03.600 --> 01:34:04.520
+[Diapositiva 28] Que es un objeto.
+
+01:34:04.520 --> 01:34:06.600
+[Diapositiva 28] Entonces, yo digo, bueno, entonces voy a crear,
+
+01:34:06.600 --> 01:34:09.480
+[Diapositiva 28] voy a trabajar con integer.
+
+01:34:09.480 --> 01:34:12.200
+[Diapositiva 28] Entonces, edad de la madre y edad del padre,
+
+01:34:12.200 --> 01:34:18.200
+[Diapositiva 28] si nosotros volvemos para acá, las declaramos como 0.
+
+01:34:18.400 --> 01:34:19.120
+[Diapositiva 29] Pero ¿qué sería?
+
+01:34:19.120 --> 01:34:20.640
+[Diapositiva 29] Ya esto lo vimos.
+
+01:34:20.640 --> 01:34:23.800
+[Diapositiva 29] Es como que tengo acá la memoria heap.
+
+01:34:23.800 --> 01:34:25.640
+[Diapositiva 29] Como yo le asigno 0, ¿esto qué es?
+
+01:34:25.640 --> 01:34:27.480
+[Diapositiva 29] No es ya primitivo, es un objeto.
+
+01:34:27.480 --> 01:34:32.920
+[Diapositiva 29] Entonces, tengo acá 0, que es el edad de la madre y tengo
+
+01:34:32.920 --> 01:34:36.080
+[Diapositiva 29] la edad del hijo acá también, otro objeto 0.
+
+01:34:36.080 --> 01:34:41.920
+[Diapositiva 29] Es un objeto de tipo Integer y un objeto tipo Integer.
+
+01:34:41.920 --> 01:34:43.200
+[Diapositiva 29] Bueno.
+
+01:34:43.200 --> 01:34:47.640
+[Diapositiva 29] Cuando vamos a invocar el método, pasamos.
+
+01:34:47.640 --> 01:34:50.320
+[Diapositiva 29] Edad madre y edad hijo acá como parámetro.
+
+01:34:50.320 --> 01:34:52.120
+[Diapositiva 29] Ahora son objetos.
+
+01:34:52.120 --> 01:34:53.280
+[Diapositiva 29] Entonces, ¿esto qué es?
+
+01:34:53.280 --> 01:34:55.000
+[Diapositiva 29] Esto es una dirección en hexadecimal.
+
+01:34:55.000 --> 01:34:58.640
+[Diapositiva 29] Acá yo tengo una dirección en hexa, no sé, le voy a poner 12.
+
+01:34:58.640 --> 01:35:00.800
+[Diapositiva 29] Acá tengo una dirección en hexadecimal 1.
+
+01:35:00.800 --> 01:35:01.840
+[Diapositiva 29] Que me apunta ahí, ¿no?
+
+01:35:01.840 --> 01:35:03.520
+[Diapositiva 29] Como un punterito que me apunta al objeto.
+
+01:35:03.520 --> 01:35:05.920
+[Diapositiva 29] Es una dirección en hexadecimal que me apunta donde está el
+
+01:35:05.920 --> 01:35:07.520
+[Diapositiva 29] objeto en la heap.
+
+01:35:07.520 --> 01:35:09.040
+[Diapositiva 29] Entonces, ¿qué voy a tener acá?
+
+01:35:09.040 --> 01:35:11.160
+[Diapositiva 29] Es la misma copia de esa dirección.
+
+01:35:11.360 --> 01:35:14.200
+[Diapositiva 29] Si yo tengo la misma dirección a ese objeto, ¿dónde va a apuntar
+
+01:35:14.200 --> 01:35:15.280
+[Diapositiva 29] este acá?
+
+01:35:15.280 --> 01:35:19.080
+[Diapositiva 29] Y si yo paso una copia de este, este otro hexa acá me va a
+
+01:35:19.080 --> 01:35:21.160
+[Diapositiva 29] apuntar ahí.
+
+01:35:21.160 --> 01:35:22.840
+[Diapositiva 29] ¿Estamos hasta ahí?
+
+01:35:22.840 --> 01:35:23.960
+[Diapositiva 29] Lo que mandamos, ¿qué es?
+
+01:35:23.960 --> 01:35:26.520
+[Diapositiva 29] Como es una referencia en un objeto, es una copia,
+
+01:35:26.520 --> 01:35:29.640
+[Diapositiva 29] siempre mandamos por valores, una copia de la referencia.
+
+01:35:29.640 --> 01:35:32.160
+[Diapositiva 29] Los dos apuntan ahí.
+
+01:35:32.160 --> 01:35:34.760
+[Diapositiva 29] Entonces, venimos acá a ejecutar el método.
+
+01:35:34.760 --> 01:35:39.240
+[Diapositiva 29] Pedimos entonces edad1 que ingrese la edad de la madre y se
+
+01:35:39.320 --> 01:35:42.000
+[Diapositiva 29] le asigna el valor a edad1.
+
+01:35:42.000 --> 01:35:46.080
+[Diapositiva 29] O sea, pido yo, este objeto cambió.
+
+01:35:46.080 --> 01:35:49.840
+[Diapositiva 29] ¿Qué pasa cuando viene acá y yo le asigno a esta variable y
+
+01:35:49.840 --> 01:35:51.000
+[Diapositiva 29] le quiero cambiar el valor?
+
+01:35:56.400 --> 01:36:00.560
+[Diapositiva 29] Claro, se me crea otro objeto porque este objeto no puede
+
+01:36:00.560 --> 01:36:00.960
+[Diapositiva 29] cambiar.
+
+01:36:00.960 --> 01:36:02.520
+[Diapositiva 29] Entonces, cuando yo a este le asigno,
+
+01:36:02.520 --> 01:36:03.520
+[Diapositiva 29] no puede cambiar ese.
+
+01:36:03.520 --> 01:36:04.600
+[Diapositiva 29] ¿Qué me va a hacer?
+
+01:36:04.600 --> 01:36:09.000
+[Diapositiva 29] Me va a hacer otro objeto que va a poner la edad de la madre.
+
+01:36:09.040 --> 01:36:11.440
+[Diapositiva 29] Y esto queda cortado.
+
+01:36:11.440 --> 01:36:13.280
+[Diapositiva 29] Y acá lo mismo cuando pido la edad del hijo.
+
+01:36:13.280 --> 01:36:14.480
+[Diapositiva 29] No puede venir a cambiar esto.
+
+01:36:14.480 --> 01:36:19.120
+[Diapositiva 29] Entonces, la edad del hijo lo voy a tener acá en otro objeto.
+
+01:36:19.120 --> 01:36:23.880
+[Diapositiva 29] Y ahora ya entonces esto se corta esa referencia.
+
+01:36:23.880 --> 01:36:29.560
+[Diapositiva 29] Se corta esta referencia, se corta esta referencia.
+
+01:36:29.560 --> 01:36:33.920
+[Diapositiva 29] Y hasta ahí es cuando terminamos acá de pedir las 2 edades.
+
+01:36:33.920 --> 01:36:41.000
+[Diapositiva 29] ¿En este caso sucede eso del box que explicaste hace un rato?
+
+01:36:41.000 --> 01:36:46.120
+[Diapositiva 29] Sí, porque como lees un int, el Integer lo pone al Integer.
+
+01:36:46.120 --> 01:36:47.840
+[Diapositiva 29] Y acá lees un int y lo pone al Integer.
+
+01:36:47.840 --> 01:36:52.200
+[Diapositiva 29] Lo mismo acá, Camilo, ves acá en el main también.
+
+01:36:52.200 --> 01:36:55.240
+[Diapositiva 29] Acá declaramos edad de la madre Integer y pusimos un 0.
+
+01:36:55.240 --> 01:36:57.160
+[Diapositiva 29] Pero, sin embargo, hicimos un new Integer.
+
+01:36:57.160 --> 01:37:00.520
+[Diapositiva 29] Son objetos, porque lo que importa es el tipo de dato de la
+
+01:37:00.520 --> 01:37:01.240
+[Diapositiva 29] variable.
+
+01:37:01.240 --> 01:37:03.440
+[Diapositiva 29] Es un objeto.
+
+01:37:03.760 --> 01:37:06.320
+[Diapositiva 29] Entonces, cuando llegamos acá a esta línea que ponemos la edad
+
+01:37:06.320 --> 01:37:10.000
+[Diapositiva 29] del hijo también ahí, que estamos ahí y no el puntero está
+
+01:37:10.000 --> 01:37:12.920
+[Diapositiva 29] ahí, termina el método y ¿qué pasa?
+
+01:37:12.920 --> 01:37:15.360
+[Diapositiva 29] Estas variables desaparecen.
+
+01:37:15.360 --> 01:37:17.360
+[Diapositiva 29] Estas variables desaparecen, esto desaparece,
+
+01:37:17.360 --> 01:37:20.480
+[Diapositiva 29] todo lo que es, digamos, esto verde.
+
+01:37:20.480 --> 01:37:22.360
+[Diapositiva 29] Y cuando volvemos, ¿qué pasó?
+
+01:37:22.360 --> 01:37:23.560
+[Diapositiva 29] ¿Qué valor tienen esos objetos?
+
+01:37:26.680 --> 01:37:28.200
+[Diapositiva 29] 0.
+
+01:37:28.200 --> 01:37:30.320
+[Diapositiva 29] ¿Sí?
+
+01:37:30.320 --> 01:37:30.960
+[Diapositiva 29] ¿Se entiende?
+
+01:37:30.960 --> 01:37:35.120
+[Diapositiva 29] Entonces, por más que ustedes digan, ay, es un objeto,
+
+01:37:35.120 --> 01:37:38.320
+[Diapositiva 29] le pasa el Integer y yo le seteo el valor cuando lo leo desde
+
+01:37:38.320 --> 01:37:43.200
+[Diapositiva 29] allá, ahí no se puede, o sea, no se pueden pasar parámetros de
+
+01:37:43.200 --> 01:37:46.400
+[Diapositiva 29] tipos primitivos si quieren que vuelva modificado.
+
+01:37:46.400 --> 01:37:49.280
+[Diapositiva 29] No se pueden pasar ninguna de las wrappers y no te puedes
+
+01:37:49.280 --> 01:37:51.160
+[Diapositiva 29] pasar tampoco String.
+
+01:37:51.160 --> 01:37:53.760
+[Diapositiva 29] Porque con String pasa lo mismo.
+
+01:37:53.760 --> 01:37:56.040
+[Diapositiva 29] Si yo pasar un String como parámetro,
+
+01:37:56.040 --> 01:37:57.880
+[Diapositiva 29] se pasa una copia del String.
+
+01:37:57.880 --> 01:38:00.680
+[Diapositiva 29] Y cuando yo en el método quiero concatenarle algún valor a ese
+
+01:38:00.680 --> 01:38:03.720
+[Diapositiva 29] String, me voy a ir a crear otro objeto, ¿cómo hizo acá?
+
+01:38:03.720 --> 01:38:07.560
+[Diapositiva 29] Porque los Strings también son inmutables, ¿sí?
+
+01:38:07.560 --> 01:38:11.080
+[Diapositiva 29] Entonces, esos tipos de datos no se tienen que pasar.
+
+01:38:11.080 --> 01:38:16.000
+[Diapositiva 29] Después vamos a ver ejemplos en donde, por ejemplo,
+
+01:38:16.000 --> 01:38:19.160
+[Diapositiva 29] recibimos un String y si queremos usar recursión,
+
+01:38:19.160 --> 01:38:21.600
+[Diapositiva 29] que ese String se va pasando en los distintos pasos de la
+
+01:38:21.600 --> 01:38:23.440
+[Diapositiva 29] recursión, no se puede usar String.
+
+01:38:23.440 --> 01:38:26.800
+[Diapositiva 29] Porque en algún paso de la recursión se pierde eso.
+
+01:38:26.800 --> 01:38:29.400
+[Diapositiva 29] Entonces, bueno, hay que ser cuidadosos con el pasaje de
+
+01:38:29.400 --> 01:38:33.520
+[Diapositiva 29] parámetros de primitivos, wrappers y String.
+
+01:38:33.520 --> 01:38:37.440
+[Diapositiva 29] Esto es un poco porque antes le dimos lo de los wrappers y los
+
+01:38:37.440 --> 01:38:40.200
+[Diapositiva 29] primitivos para que sepan esa diferencia.
+
+01:38:40.200 --> 01:38:43.720
+[Diapositiva 29] Ahora, si yo tengo algún objeto de otro tipo que es mutable,
+
+01:38:43.720 --> 01:38:44.320
+[Diapositiva 29] no hay problema.
+
+01:38:44.320 --> 01:38:46.680
+[Diapositiva 29] Yo paso una copia de la referencia y de los métodos,
+
+01:38:46.680 --> 01:38:50.240
+[Diapositiva 29] yo modifico los contenidos de esos objetos si son mutables.
+
+01:38:50.240 --> 01:38:51.280
+[Diapositiva 29] No hay ningún problema.
+
+01:38:51.280 --> 01:38:53.480
+[Diapositiva 29] Una vez estoy esperando que algo decía Valentín.
+
+01:39:06.720 --> 01:39:08.960
+[Diapositiva 30] Y si le asignamos una variable al método,
+
+01:39:08.960 --> 01:39:12.720
+[Diapositiva 30] el resultado nos quedaría en la variable.
+
+01:39:12.720 --> 01:39:15.960
+[Diapositiva 30] Y si le asignamos una variable al método,
+
+01:39:15.960 --> 01:39:18.680
+[Diapositiva 30] el resultado nos quedaría en la variable.
+
+01:39:18.680 --> 01:39:25.560
+[Diapositiva 30] Y si le asignamos una variable al método, a ver, ¿a cuál?
+
+01:39:25.560 --> 01:39:26.640
+[Diapositiva 30] Espera que vuelvo.
+
+01:39:30.920 --> 01:39:33.680
+[Diapositiva 29] No, no sé, la única manera de que vuelva es que vos hagas un
+
+01:39:33.680 --> 01:39:34.180
+[Diapositiva 29] return.
+
+01:39:36.960 --> 01:39:38.640
+[Diapositiva 29] Si haces un return, sí.
+
+01:39:38.640 --> 01:39:43.840
+[Diapositiva 29] Pero como parámetro, no, porque ¿a cuál método?
+
+01:39:43.840 --> 01:39:46.240
+[Diapositiva 29] Si acá pones una variable, por más que la crees o la
+
+01:39:46.240 --> 01:39:49.840
+[Diapositiva 29] recibiste como parámetro, vamos a asignale a un wrapper o
+
+01:39:49.840 --> 01:39:52.480
+[Diapositiva 29] String, algo nuevo, ya se crea un objeto nuevo.
+
+01:39:52.480 --> 01:39:56.720
+[Diapositiva 29] Y cuando te vas de ese método, ya no lo tenés más.
+
+01:40:06.440 --> 01:40:07.680
+[Diapositiva 29] ¿Me entendió, Valentino?
+
+01:40:07.680 --> 01:40:09.920
+[Diapositiva 29] Estaba esperando porque vi que seguías escribiendo.
+
+01:40:12.960 --> 01:40:14.880
+[Diapositiva 29] Si quieres agarrar el micrófono, así te va mejor.
+
+01:40:14.880 --> 01:40:15.600
+[Diapositiva 29] ¿Se entendió?
+
+01:40:15.600 --> 01:40:16.100
+[Diapositiva 29] Bien.
+
+01:40:19.000 --> 01:40:21.320
+[Diapositiva 29] Bueno, ahora si el objeto es mutable.
+
+01:40:21.320 --> 01:40:23.640
+[Diapositiva 30] Veamos qué pasa con el pasaje de parámetros.
+
+01:40:23.640 --> 01:40:26.200
+[Diapositiva 30] No miren esto celeste todavía.
+
+01:40:26.200 --> 01:40:29.840
+[Diapositiva 30] Solamente acá, "c" de tipo contacto, new contacto, "c",
+
+01:40:29.840 --> 01:40:32.680
+[Diapositiva 30] nombre, Lucía, pasaje por valor.
+
+01:40:32.680 --> 01:40:38.640
+[Diapositiva 30] Llamamos a un método y le pasamos una referencia a el "c".
+
+01:40:38.640 --> 01:40:41.240
+[Diapositiva 30] ¿Cómo sería el caso acá?
+
+01:40:41.240 --> 01:40:45.040
+[Diapositiva 30] Ahí, supongamos ahí.
+
+01:40:45.040 --> 01:40:49.680
+[Diapositiva 30] Tenemos "c", que es un objeto de tipo contacto que tiene
+
+01:40:49.680 --> 01:40:52.600
+[Diapositiva 30] adentro el nombre Lucía.
+
+01:40:52.600 --> 01:40:57.000
+[Diapositiva 30] Entonces, acá decimos, para cambiar nombre,
+
+01:40:57.000 --> 01:41:00.840
+[Diapositiva 30] vamos a invocar este método y le pasamos "c" como parámetro.
+
+01:41:00.840 --> 01:41:04.400
+[Diapositiva 30] ¿Cuándo ese "c" que se recibe acá en el parámetro formal?
+
+01:41:04.400 --> 01:41:07.040
+[Diapositiva 30] Este es un parámetro formal, podría haber sido "c", "a", "x".
+
+01:41:07.040 --> 01:41:08.600
+[Diapositiva 30] Le pongo "c" prima.
+
+01:41:08.600 --> 01:41:10.880
+[Diapositiva 30] "c" prima va a tener la misma dirección de memoria.
+
+01:41:10.880 --> 01:41:13.800
+[Diapositiva 30] Entonces, va a apuntar también ahí.
+
+01:41:13.800 --> 01:41:14.560
+[Diapositiva 30] ¿Pero ahí qué pasa?
+
+01:41:14.560 --> 01:41:17.600
+[Diapositiva 30] Yo digo, `c.setNombre("Pilar")`.
+
+01:41:17.600 --> 01:41:20.120
+[Diapositiva 30] O sea, tanto la variable original como la copia de la
+
+01:41:20.120 --> 01:41:21.360
+[Diapositiva 30] referencia apuntan ahí.
+
+01:41:21.360 --> 01:41:22.760
+[Diapositiva 30] Este objeto es mutable.
+
+01:41:22.760 --> 01:41:26.400
+[Diapositiva 30] Entonces, yo acá puedo cambiar y ponerle Pilar.
+
+01:41:26.400 --> 01:41:30.080
+[Diapositiva 30] Entonces, cuando vuelva ese método, eso sí se cambió.
+
+01:41:30.080 --> 01:41:33.320
+[Diapositiva 30] Porque lo que le cambiamos ahí es el contenido al objeto y el
+
+01:41:33.320 --> 01:41:35.200
+[Diapositiva 30] objeto ese sí es mutable.
+
+01:41:35.200 --> 01:41:35.720
+[Diapositiva 30] ¿Se entienden?
+
+01:41:35.720 --> 01:41:37.760
+[Diapositiva 30] Entonces, en ese caso sí se puede pasar parámetro y
+
+01:41:37.760 --> 01:41:38.760
+[Diapositiva 30] modificar.
+
+01:41:38.760 --> 01:41:42.120
+[Diapositiva 30] Suponganse que ustedes tienen que hacer algún algoritmo
+
+01:41:42.120 --> 01:41:46.640
+[Diapositiva 30] recursivo o algo que tenga y pasan una lista como parámetro.
+
+01:41:46.640 --> 01:41:51.120
+[Diapositiva 30] Y en esos pasos recursivos a la lista le van agregando nodos o
+
+01:41:51.120 --> 01:41:52.040
+[Diapositiva 30] cosas.
+
+01:41:52.040 --> 01:41:52.640
+[Diapositiva 30] ¿Está bien?
+
+01:42:04.160 --> 01:42:05.400
+[Diapositiva 30] Claro, es un objeto mutable.
+
+01:42:05.400 --> 01:42:06.920
+[Diapositiva 30] Entonces, eso sí está bien.
+
+01:42:06.920 --> 01:42:11.440
+[Diapositiva 30] Ustedes se le pasan una lista en cada paso de la iteración o de
+
+01:42:11.440 --> 01:42:15.360
+[Diapositiva 30] la recursión le van agregando nodos a la lista y eso sí se
+
+01:42:15.360 --> 01:42:16.200
+[Diapositiva 30] vuelve cambiado.
+
+01:42:16.200 --> 01:42:17.600
+[Diapositiva 30] Porque la lista es mutable.
+
+01:42:17.600 --> 01:42:23.120
+[Diapositiva 30] Ustedes lo que van pasando es siempre la copia de la lista,
+
+01:42:23.120 --> 01:42:25.080
+[Diapositiva 30] digamos, de donde apunta el primer elemento de la lista o
+
+01:42:25.080 --> 01:42:26.080
+[Diapositiva 30] el último.
+
+01:42:26.080 --> 01:42:29.840
+[Diapositiva 30] Entonces, ahí agregan datos.
+
+01:42:29.840 --> 01:42:31.360
+[Diapositiva 30] En la copia de la lista, en realidad.
+
+01:42:31.360 --> 01:42:35.440
+[Diapositiva 30] Y a la lista le agregan un dato del inicio o del final.
+
+01:42:35.440 --> 01:42:40.640
+[Diapositiva 30] Bueno, después ahí hay un ejemplito en celeste que dice,
+
+01:42:40.640 --> 01:42:45.840
+[Diapositiva 30] ¿qué sucede si acá en vez de hacer setNombre decimos "c" igual
+
+01:42:45.840 --> 01:42:49.520
+[Diapositiva 30] `new Contacto` con pilar?
+
+01:42:49.520 --> 01:42:50.880
+[Diapositiva 30] En ese caso, ¿qué pasa?
+
+01:42:57.840 --> 01:43:01.320
+[Diapositiva 30] Claro, no se modifica porque yo estoy a la variable esa a la
+
+01:43:01.320 --> 01:43:02.720
+[Diapositiva 30] copia le asigné uno nuevo.
+
+01:43:02.720 --> 01:43:05.720
+[Diapositiva 30] Claro, es como que a la copia que yo recibí en vez de ir y
+
+01:43:05.720 --> 01:43:11.840
+[Diapositiva 30] cambiarle el contenido, yo le dije `new Usuario("Pilar")`.
+
+01:43:11.840 --> 01:43:14.320
+[Diapositiva 30] Entonces, yo acá tenía Lucía.
+
+01:43:14.320 --> 01:43:15.520
+[Diapositiva 30] Yo hago `new Usuario("Pilar")`.
+
+01:43:15.520 --> 01:43:19.360
+[Diapositiva 30] Entonces, se va a crear el objeto y lo va a cambiar pero en el
+
+01:43:19.360 --> 01:43:20.400
+[Diapositiva 30] contexto de este método.
+
+01:43:20.400 --> 01:43:22.560
+[Diapositiva 30] Cuando este método termine y vuelva,
+
+01:43:22.560 --> 01:43:25.160
+[Diapositiva 30] ahí ya no se me modificó nada.
+
+01:43:28.240 --> 01:43:30.480
+[Diapositiva 30] Porque no es como un parámetro por referencia real,
+
+01:43:30.480 --> 01:43:33.200
+[Diapositiva 30] sino que es una copia de la referencia.
+
+01:43:33.200 --> 01:43:35.240
+[Diapositiva 30] Se entiende, es una copia de la referencia.
+
+01:43:39.600 --> 01:43:41.360
+[Diapositiva 31] Bueno, eso en cuanto a los parámetros,
+
+01:43:41.360 --> 01:43:43.680
+[Diapositiva 31] hay que tengan en cuenta eso.
+
+01:43:43.680 --> 01:43:46.240
+[Diapositiva 31] Después acá hay un pequeño ejemplo que dice, bueno,
+
+01:43:46.240 --> 01:43:48.720
+[Diapositiva 31] si ustedes tendrán que implementar un método que recibe
+
+01:43:48.720 --> 01:43:51.800
+[Diapositiva 31] un arreglo y tendrían que devolver el máximo,
+
+01:43:51.800 --> 01:43:55.320
+[Diapositiva 31] ¿qué posibilidades tienen para eso?
+
+01:43:55.320 --> 01:43:59.600
+[Diapositiva 32] Entonces, acá hay, por ejemplo, un ejemplo que dice,
+
+01:43:59.680 --> 01:44:03.600
+[Diapositiva 32] si uno puede evitar, cambiar, pasar parámetros es mejor.
+
+01:44:03.600 --> 01:44:07.360
+[Diapositiva 32] O sea, un código que tenga una sentencia return con el valor
+
+01:44:07.360 --> 01:44:14.160
+[Diapositiva 32] pedido es lo mejor que tener otro parámetro que me devuelva
+
+01:44:14.160 --> 01:44:15.840
+[Diapositiva 32] los datos, ¿se entiende?
+
+01:44:15.840 --> 01:44:18.840
+[Diapositiva 32] Pero bueno, hay veces que uno necesita pasar varios parámetros
+
+01:44:18.840 --> 01:44:20.960
+[Diapositiva 32] que no alcanza con la sentencia return.
+
+01:44:20.960 --> 01:44:24.040
+[Diapositiva 32] Entonces, uno tiene que saber usar también parámetros.
+
+01:44:24.040 --> 01:44:25.560
+[Diapositiva 32] ¿Qué tipos de datos puedo pasar?
+
+01:44:25.560 --> 01:44:27.160
+[Diapositiva 32] ¿Cómo los tengo que pasar?
+
+01:44:27.160 --> 01:44:29.720
+[Diapositiva 32] Pero si no es necesario, si yo me puedo arreglar con la
+
+01:44:29.720 --> 01:44:32.360
+[Diapositiva 32] sentencia return para devolver algún valor,
+
+01:44:32.360 --> 01:44:33.920
+[Diapositiva 32] lo ideal es hacer eso.
+
+01:44:33.920 --> 01:44:35.720
+[Diapositiva 32] Este acá, por ejemplo, recibo un arreglo,
+
+01:44:35.720 --> 01:44:39.680
+[Diapositiva 32] hace un for de 0 hasta el final del arreglo y voy calculando el
+
+01:44:39.680 --> 01:44:41.800
+[Diapositiva 32] máximo, si `datos[i] > máximo`,
+
+01:44:41.800 --> 01:44:46.480
+[Diapositiva 32] entonces me lo guardo el máximo y retorno ese máximo.
+
+01:44:46.480 --> 01:44:48.880
+[Diapositiva 32] Eso sería como un programa más elegante.
+
+01:44:48.880 --> 01:44:52.160
+[Diapositiva 32] Sin pasar parámetros, podría ser.
+
+01:44:52.160 --> 01:44:53.840
+[Diapositiva 32] Ahora, ¿qué pasa si yo les digo, bueno,
+
+01:44:53.840 --> 01:44:57.320
+[Diapositiva 32] tengo que devolver el mínimo y el máximo?
+
+01:44:57.320 --> 01:44:58.360
+[Diapositiva 32] ¿Cómo se les ocurre?
+
+01:45:11.240 --> 01:45:12.280
+[Diapositiva 32] ¿Vector qué usaron?
+
+01:45:12.280 --> 01:45:16.480
+[Diapositiva 32] ¿Usaron `new Vector<>()` ustedes o le llaman vector a un array?
+
+01:45:16.480 --> 01:45:21.080
+[Diapositiva 32] ¿O usaron la clase Vector en Taller?
+
+01:45:24.120 --> 01:45:25.120
+[Diapositiva 32] Ah, un arreglo.
+
+01:45:25.120 --> 01:45:28.440
+[Diapositiva 32] Bien, una posibilidad podría ser esa, como dice Joaquín.
+
+01:45:28.440 --> 01:45:33.120
+[Diapositiva 32] Yo tengo un arreglo, entonces en la posición 0 pongo el máximo y
+
+01:45:33.120 --> 01:45:37.640
+[Diapositiva 32] en la posición 1 pongo el mínimo y en vez de hacer un return de un
+
+01:45:37.640 --> 01:45:39.800
+[Diapositiva 32] entero, un return del arreglo.
+
+01:45:39.800 --> 01:45:40.840
+[Diapositiva 32] Perfecto.
+
+01:45:40.840 --> 01:45:43.960
+[Diapositiva 32] Esa puede ser una posibilidad, sino que otra cosa.
+
+01:45:43.960 --> 01:45:45.720
+[Diapositiva 32] Si tengo que devolver muchas cosas,
+
+01:45:45.720 --> 01:45:48.160
+[Diapositiva 32] la del mínimo, el máximo, el porcentaje,
+
+01:45:48.160 --> 01:45:50.640
+[Diapositiva 32] no sé, otra cosa, ¿qué podría usar?
+
+01:45:54.000 --> 01:45:55.280
+[Diapositiva 32] Algo más práctico, porque si no,
+
+01:45:55.280 --> 01:45:56.840
+[Diapositiva 32] tengo que saber que en la 0 guardo el máximo,
+
+01:45:56.840 --> 01:45:59.240
+[Diapositiva 32] en la 1 el mínimo, en la otra el porcentaje.
+
+01:45:59.240 --> 01:46:00.840
+[Diapositiva 32] Un objeto, sí.
+
+01:46:00.840 --> 01:46:03.720
+[Diapositiva 32] Podríamos usar un objeto con sus atributos.
+
+01:46:03.720 --> 01:46:05.800
+[Diapositiva 33] Acá está el mismo ejemplo con un objeto.
+
+01:46:05.800 --> 01:46:08.200
+[Diapositiva 33] Yo podría crear una clase de datos que tengo el mínimo,
+
+01:46:08.200 --> 01:46:11.960
+[Diapositiva 33] el máximo, el porcentaje, lo que quiera con sus
+
+01:46:11.960 --> 01:46:13.080
+[Diapositiva 33] setter y getter.
+
+01:46:13.080 --> 01:46:15.480
+[Diapositiva 33] Entonces queda mucho más prolijo.
+
+01:46:15.480 --> 01:46:20.680
+[Diapositiva 33] Cuando recorro el arreglo para sacar el mínimo y el máximo,
+
+01:46:20.680 --> 01:46:23.280
+[Diapositiva 33] recorro y me voy quedando con el mínimo y el máximo y antes de
+
+01:46:23.280 --> 01:46:26.600
+[Diapositiva 33] volver, digo, objetos, datos, new datos,
+
+01:46:26.600 --> 01:46:28.480
+[Diapositiva 33] creo un objeto de este tipo.
+
+01:46:28.480 --> 01:46:31.080
+[Diapositiva 33] Corro sus setters, le pongo el máximo,
+
+01:46:31.080 --> 01:46:34.880
+[Diapositiva 33] set mil le pongo el mínimo y retorno el objeto, ¿sí?
+
+01:46:34.880 --> 01:46:39.360
+[Diapositiva 33] Este máximo ahora devuelve algo de tipo Datos, ¿sí?
+
+01:46:45.200 --> 01:46:46.320
+[Diapositiva 33] Alguien más acá me escribió.
+
+01:46:46.320 --> 01:46:51.520
+[Diapositiva 33] [Estudiante] Profe, ahí en el caso de que el máximo, por ejemplo,
+
+01:46:51.520 --> 01:46:53.600
+[Diapositiva 33] [Estudiante] no se actualice en el for, o sea,
+
+01:46:53.600 --> 01:46:59.760
+[Diapositiva 33] [Estudiante] el máximo sea la primera vez, igualmente hacés el `setMax()`
+
+01:46:59.760 --> 01:47:02.360
+[Diapositiva 33] [Estudiante] otra vez con el mismo valor, digamos.
+
+01:47:02.360 --> 01:47:05.080
+[Diapositiva 33] Claro, con 0 iría, sí.
+
+01:47:05.080 --> 01:47:07.400
+[Diapositiva 33] Claro.
+
+01:47:07.400 --> 01:47:07.920
+[Diapositiva 33] Sí.
+
+01:47:07.920 --> 01:47:10.120
+[Diapositiva 33] [Estudiante] O sea, por más que no se actualice el máximo,
+
+01:47:10.120 --> 01:47:13.200
+[Diapositiva 33] [Estudiante] el set max siempre se hace.
+
+01:47:13.200 --> 01:47:14.240
+[Diapositiva 33] Sí, se hace, sí.
+
+01:47:17.040 --> 01:47:19.880
+[Diapositiva 33] Podrías decir, sí, es diferente, lo hago,
+
+01:47:19.880 --> 01:47:22.440
+[Diapositiva 33] pero entre un setter y un if, es medio lo mismo.
+
+01:47:25.560 --> 01:47:27.400
+[Diapositiva 33] Así que sí.
+
+01:47:27.400 --> 01:47:28.480
+[Diapositiva 33] Si no, ¿cómo se te ocurre?
+
+01:47:32.360 --> 01:47:33.120
+[Diapositiva 33] Hay que hacer un if.
+
+01:47:33.120 --> 01:47:33.600
+[Diapositiva 33] [Estudiante] No, no, no.
+
+01:47:33.600 --> 01:47:36.760
+[Diapositiva 33] [Estudiante] Hay que hacerlo de otra forma, sino que no sabía si cómo.
+
+01:47:36.760 --> 01:47:37.600
+[Diapositiva 33] Sí, lo hacemos.
+
+01:47:37.600 --> 01:47:39.920
+[Diapositiva 33] Total, bueno, le ponemos 0 a 0 y es lo mismo.
+
+01:47:39.920 --> 01:47:41.760
+[Diapositiva 33] [Estudiante] O algo así.
+
+01:47:41.760 --> 01:47:42.400
+[Diapositiva 33] Claro.
+
+01:47:42.400 --> 01:47:45.720
+[Diapositiva 33] No, porque entre un if y un set no ganaríamos mucho igual.
+
+01:47:46.400 --> 01:47:50.120
+[Diapositiva 33] Así que sí, está bien así.
+
+01:47:50.120 --> 01:47:52.360
+[Diapositiva 34] Y después es mucho más, queda más prolijo, ¿no?
+
+01:47:52.360 --> 01:47:56.960
+[Diapositiva 34] Porque yo Datos, llamo al maxmin y después a maxmin le
+
+01:47:56.960 --> 01:48:00.160
+[Diapositiva 34] digo `getMax()`, `getMin()`, `getProm()`.
+
+01:48:00.160 --> 01:48:01.840
+[Diapositiva 34] O sea, corre los getters.
+
+01:48:01.840 --> 01:48:04.080
+[Diapositiva 34] Si yo lo tengo un arreglo con todas las cosas,
+
+01:48:04.080 --> 01:48:08.120
+[Diapositiva 34] tengo que saber bien en qué posición guardé cada cosa.
+
+01:48:08.120 --> 01:48:09.600
+[Diapositiva 34] O sea, cuando se empieza a complejizar,
+
+01:48:09.600 --> 01:48:12.800
+[Diapositiva 34] a veces conviene más un objeto.
+
+01:48:12.800 --> 01:48:18.600
+[Diapositiva 34] Así que, bueno, chicos, con esto ya podrían empezar a hacer
+
+01:48:18.600 --> 01:48:19.080
+[Diapositiva 34] el TP1.
+
+01:48:21.640 --> 01:48:23.800
+[Diapositiva 34] Como ustedes usaban NetBeans, de eso no hablamos nada,
+
+01:48:23.800 --> 01:48:28.880
+[Diapositiva 34] pero pueden seguir con NetBeans, no hay ningún problema.
+
+01:48:28.880 --> 01:48:31.080
+[Diapositiva 34] Los que quieran usar Eclipse, pasarse a Eclipse,
+
+01:48:31.080 --> 01:48:32.360
+[Diapositiva 34] hay un tutorial.
+
+01:48:32.360 --> 01:48:34.160
+[Diapositiva 34] Y ya pueden empezar con la primera parte,
+
+01:48:34.160 --> 01:48:36.960
+[Diapositiva 34] que es un poco trabajar con parámetros,
+
+01:48:36.960 --> 01:48:42.200
+[Diapositiva 34] un poco con recursión y todos esos temas.
+
+01:48:42.200 --> 01:48:42.700
+[Diapositiva 34] A ver.
+
+01:48:45.520 --> 01:48:48.480
+[Diapositiva 34] El objeto sirve para devolver varios valores a la vez, claro.
+
+01:48:48.480 --> 01:48:49.240
+[Diapositiva 34] Sí, sí.
+
+01:48:49.240 --> 01:48:51.440
+[Diapositiva 34] Sí, podrías devolver en un objeto lo que quieras,
+
+01:48:51.440 --> 01:48:53.240
+[Diapositiva 34] listas, lo que quieras.
+
+01:49:00.920 --> 01:49:03.040
+[Diapositiva 34] Vamos a esperar a ver si tienen algunas dudas más.
+
+01:49:04.040 --> 01:49:05.080
+[Diapositiva 34] Un objeto auxiliar.
+
+01:49:08.640 --> 01:49:10.480
+[Diapositiva 34] Tipo como esto, ¿decís?
+
+01:49:10.480 --> 01:49:12.880
+[Diapositiva 33] Acá, que por ejemplo acá usamos un objeto.
+
+01:49:12.880 --> 01:49:16.320
+[Diapositiva 33] Una ventaja es que la cátera usa Eclipse.
+
+01:49:16.320 --> 01:49:18.480
+[Diapositiva 33] Eclipse tiene alguna ventaja sobre NetBeans.
+
+01:49:21.280 --> 01:49:24.480
+[Diapositiva 33] Para esta materia no van a notar la diferencia si usan
+
+01:49:24.480 --> 01:49:27.720
+[Diapositiva 33] IntelliJ IDEA, NetBeans o Eclipse.
+
+01:49:27.720 --> 01:49:29.840
+[Diapositiva 33] Nosotros, porque lo venimos usando hace tiempo,
+
+01:49:29.840 --> 01:49:31.360
+[Diapositiva 33] los ayudantes de Eclipse, nosotros,
+
+01:49:31.360 --> 01:49:32.560
+[Diapositiva 33] venimos usando hace tiempo.
+
+01:49:32.560 --> 01:49:35.240
+[Diapositiva 33] Los ayudantes están todos prácticos con Eclipse.
+
+01:49:35.240 --> 01:49:38.400
+[Diapositiva 33] Y por ahí les van a resolver más rápido las cuestiones.
+
+01:49:41.040 --> 01:49:42.560
+[Diapositiva 33] Después tienen particularidades.
+
+01:49:42.560 --> 01:49:45.120
+[Diapositiva 33] El NetBeans es como que de una, cuando uno se lo descarga,
+
+01:49:45.120 --> 01:49:46.240
+[Diapositiva 33] está como más completo.
+
+01:49:46.240 --> 01:49:48.560
+[Diapositiva 33] Si uno quiere hacer una interfaz de usuario gráfica,
+
+01:49:48.560 --> 01:49:51.280
+[Diapositiva 33] por ejemplo, ya tiene los paneles para arrastrar los
+
+01:49:51.280 --> 01:49:54.000
+[Diapositiva 33] botones y las componentes de interfaz.
+
+01:49:54.000 --> 01:49:55.480
+[Diapositiva 33] En cambio, Eclipse no tiene nada.
+
+01:49:55.480 --> 01:50:00.720
+[Diapositiva 33] Es más un híbrido, pero tiene más de 100 plugins que uno puede
+
+01:50:00.720 --> 01:50:02.200
+[Diapositiva 33] enchufar para darle más funcionalidad.
+
+01:50:02.200 --> 01:50:04.320
+[Diapositiva 33] Por ejemplo, no sé, si quiere hacer interfaz de usuario
+
+01:50:04.320 --> 01:50:07.760
+[Diapositiva 33] gráfica, tiene que poner plugins como se llama Igloo o buscar
+
+01:50:07.760 --> 01:50:08.260
+[Diapositiva 33] alguno.
+
+01:50:12.320 --> 01:50:15.240
+[Diapositiva 33] Pero, bueno, para esta materia, la verdad que no hay
+
+01:50:15.240 --> 01:50:15.760
+[Diapositiva 33] diferencia.
+
+01:50:15.760 --> 01:50:18.320
+[Diapositiva 33] Pueden usar el que quieran, el que estén cómodos.
+
+01:50:18.320 --> 01:50:20.920
+[Diapositiva 33] Porque lo que hacemos son proyectitos muy chiquititos con
+
+01:50:20.920 --> 01:50:22.680
+[Diapositiva 33] clases y nada más.
+
+01:50:22.680 --> 01:50:26.240
+[Diapositiva 33] Después, cuando damos materia de este tipo como TPS,
+
+01:50:26.240 --> 01:50:29.400
+[Diapositiva 33] la opción dejaba, donde hacemos aplicaciones empresariales,
+
+01:50:29.400 --> 01:50:34.520
+[Diapositiva 33] que ahí un proyecto tiene muchos archivos de configuración.
+
+01:50:34.520 --> 01:50:37.920
+[Diapositiva 33] Ahí sí se empieza a notar la diferencia entre los diferentes
+
+01:50:37.920 --> 01:50:38.400
+[Diapositiva 33] framework.
+
+01:50:41.440 --> 01:50:46.040
+[Diapositiva 33] Pero por ahora sí, también se puede usar Visual Studio Code.
+
+01:50:46.040 --> 01:50:49.760
+[Diapositiva 33] Sí, sí, porque son prácticamente si es un proyecto con
+
+01:50:49.760 --> 01:50:52.560
+[Diapositiva 33] carpetitas y las clases también.
+
+01:50:52.560 --> 01:50:54.720
+[Diapositiva 33] Si estás cómodo con el Visual Studio, se puede.
+
+01:50:54.720 --> 01:50:55.200
+[Diapositiva 33] Sí, sí.
+
+01:51:00.400 --> 01:51:03.720
+[Diapositiva 33] Así que, bueno, no sé si hay otra duda más.
+
+01:51:03.720 --> 01:51:06.440
+[Diapositiva 33] El examen va a ser, ah, el examen es en papel.
+
+01:51:06.440 --> 01:51:10.680
+[Diapositiva 33] Chicos, el examen es en papel, a pesar de que se da que pasen
+
+01:51:10.680 --> 01:51:13.840
+[Diapositiva 33] todo el máquina también para ver los estados de la recursión,
+
+01:51:13.840 --> 01:51:17.520
+[Diapositiva 33] cómo van los algoritmos, cómo les están yendo.
+
+01:51:17.520 --> 01:51:19.920
+[Diapositiva 33] El examen es en papel, sí.
+
+01:51:19.920 --> 01:51:21.960
+[Diapositiva 33] En la parte teórica tiene preguntas de desarrollo.
+
+01:51:21.960 --> 01:51:26.880
+[Diapositiva 33] No, la parte teórica va a ser un poco más corta ahora que si
+
+01:51:26.880 --> 01:51:30.680
+[Diapositiva 33] hay algún recursante, porque como el examen es más largo,
+
+01:51:30.680 --> 01:51:33.280
+[Diapositiva 33] la parte teórica va a ser algo más chiquitito.
+
+01:51:33.280 --> 01:51:35.720
+[Diapositiva 33] Igual, antes de los parciales, va en cada tema.
+
+01:51:35.720 --> 01:51:39.200
+[Diapositiva 33] Nosotros les damos unas guías teóricas de lo que se puede
+
+01:51:39.200 --> 01:51:42.600
+[Diapositiva 33] tomar y las vamos haciendo también en la teoría.
+
+01:51:42.600 --> 01:51:43.360
+[Diapositiva 33] Y ahí van a ver.
+
+01:51:43.360 --> 01:51:46.440
+[Diapositiva 33] Pero va a ser un ejercicio o dos de teoría, es cortito.
+
+01:51:51.560 --> 01:51:54.200
+[Diapositiva 33] De desarrollo va a ser el de tiempo de ejecución,
+
+01:51:54.200 --> 01:51:57.600
+[Diapositiva 33] un algoritmo de grafos y un algoritmo de árboles,
+
+01:51:57.600 --> 01:52:00.640
+[Diapositiva 33] que en general ahí tampoco se les da que ustedes implementen el
+
+01:52:00.640 --> 01:52:02.520
+[Diapositiva 33] árbol, que implementen el grafo.
+
+01:52:02.520 --> 01:52:06.760
+[Diapositiva 33] Todo eso ustedes ya lo van a tener y pueden llevar lo que
+
+01:52:06.760 --> 01:52:10.840
+[Diapositiva 33] les llamamos como el diagrama de clase donde ustedes ahí
+
+01:52:10.840 --> 01:52:14.160
+[Diapositiva 33] tienen un grafo, cuáles son los métodos y pueden usar eso.
+
+01:52:16.920 --> 01:52:20.000
+[Diapositiva 33] Pero no se les va a tomar que implementen muchas hojas de
+
+01:52:20.000 --> 01:52:24.120
+[Diapositiva 33] código muy largos, sino más que todo el algoritmo de grafos
+
+01:52:24.440 --> 01:52:26.960
+[Diapositiva 33] que puede ser de búsqueda.
+
+01:52:26.960 --> 01:52:30.040
+[Diapositiva 33] Pero no son tan largos los algoritmos ustedes tienen que
+
+01:52:30.040 --> 01:52:32.920
+[Diapositiva 33] implementar, porque se supone que ustedes ya disponen del
+
+01:52:32.920 --> 01:52:36.400
+[Diapositiva 33] grafo, disponen del árbol y tienen más que todo hacer el
+
+01:52:36.400 --> 01:52:41.800
+[Diapositiva 33] algoritmo de búsqueda o de lo que se les dé.
+
+01:52:41.800 --> 01:52:43.720
+[Diapositiva 33] Igual vamos a hacer parciales, o sea,
+
+01:52:43.720 --> 01:52:46.480
+[Diapositiva 33] en la parte teórica hacemos parciales, en la práctica,
+
+01:52:46.480 --> 01:52:52.680
+[Diapositiva 33] o sea, vamos haciendo ejemplos para que tengan una idea.
+
+01:52:52.720 --> 01:52:58.200
+[Diapositiva 33] Y vamos a tener como... por ahí dos horas,
+
+01:52:58.200 --> 01:53:01.600
+[Diapositiva 33] por ejemplo, para grafos y como dos horas o dos horas y media
+
+01:53:01.600 --> 01:53:04.720
+[Diapositiva 33] para la otra parte también con un recreito en el medio.
+
+01:53:07.760 --> 01:53:13.320
+[Diapositiva 33] Así que nos vamos a tener que llevar el almuerzo o la
+
+01:53:13.320 --> 01:53:15.880
+[Diapositiva 33] merienda, porque sí es largo.
+
+01:53:18.680 --> 01:53:20.480
+[Diapositiva 33] Bueno, voy a dejar de grabar.
+

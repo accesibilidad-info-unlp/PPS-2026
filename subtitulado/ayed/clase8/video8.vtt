@@ -1,0 +1,3296 @@
+WEBVTT
+
+00:00.000 --> 00:18.000
+Por ejemplo, si yo tengo una cola de impresión, entonces tengo una impresora conectada a un web y uno manda todos los trabajos a imprimir.
+
+00:18.000 --> 00:42.000
+Si yo quisiera que los trabajos más importantes se impriman antes, entonces necesito implementar esa cola de impresión con una cierta prioridad, es decir, darle prioridad a los trabajos
+
+00:42.000 --> 00:58.000
+para que no se incorren en una cola tradicional, como la que uno usa normalmente, que es el primero que llega y el primero que se atiende.
+
+00:58.000 --> 01:18.000
+Si uno le da prioridad a los elementos, entonces de alguna manera se va a atender al elemento según la prioridad que tenga. Esa es la lógica de una cola de prioridad.
+
+01:18.000 --> 01:34.000
+También se usan sistemas operativos, es decir, hay sistemas operativos que son multitareas, que entonces es útil darle prioridad a los trabajos que se van a ejecutar.
+
+01:34.000 --> 01:45.000
+Para el algoritmo de ordenación, vamos a ver un algoritmo de ordenación que usa cola de prioridad.
+
+01:45.000 --> 01:53.000
+Es decir, hay que aprovechar la implementación de cola de prioridad para implementarse con el algoritmo de ordenación.
+
+01:53.000 --> 01:57.000
+¿Qué es una cola de prioridad?
+
+01:57.000 --> 02:17.000
+Una cola de prioridad es simplemente una estructura de datos que implementa estas dos operaciones.
+
+02:17.000 --> 02:19.000
+Bueno, nosotros las dejamos.
+
+02:19.000 --> 02:20.000
+Ahí se escucha.
+
+02:20.000 --> 02:25.000
+Ah, porque me lo estoy teniendo, claro.
+
+02:25.000 --> 02:28.000
+Si por ahí será porque se mueve, ¿no?
+
+02:28.000 --> 02:29.000
+A lo mejor porque se mueve.
+
+02:29.000 --> 02:39.000
+Me tendría que comprar uno más fijo.
+
+02:39.000 --> 02:41.000
+Sí, porque el sonido sale por acá.
+
+02:41.000 --> 02:42.000
+No sale por no.
+
+02:42.000 --> 02:52.000
+Bien, la estructura de datos en realidad implementa estas dos operaciones.
+
+02:52.000 --> 02:58.000
+Insertar, sí.
+
+02:58.000 --> 03:00.000
+Ay, sí, sí, sí.
+
+03:00.000 --> 03:04.000
+Necesito un estudio de design, acá una por la clase.
+
+03:04.000 --> 03:14.000
+Bien, una operación de insertar y una operación de borrar el mismo.
+
+03:15.000 --> 03:34.000
+O sea, cualquier, digamos, cualquier estructura de datos que yo use, digamos, cualquier implementación que yo use e implemente valga la redundancia.
+
+03:34.000 --> 03:43.000
+Estas dos operaciones, insertar y borrar el mínimo, puedo decir que es una cola de prioridad.
+
+03:43.000 --> 03:57.000
+En realidad, ¿por qué uno dice, o sea, cuando ustedes vean cola de prioridades en general, cuando uno dice que después la vamos a llamar HIP, que es la forma de implementarlo,
+
+03:57.000 --> 04:10.000
+cuando uno habla de cola de prioridades, en general, lo que se hace es se borra el mínimo elemento.
+
+04:10.000 --> 04:12.000
+¿Por qué el mínimo?
+
+04:12.000 --> 04:25.000
+Porque en realidad las prioridades, no sé si ustedes por ahí saben que las prioridades de los eventos en realidad se enumeran, ¿no?
+
+04:25.000 --> 04:28.000
+O sea, eso es en la vida cotidiana, ¿no?
+
+04:28.000 --> 04:35.000
+Entonces, ¿cuáles son los eventos, un evento de mayor prioridad?
+
+04:36.000 --> 04:40.000
+Son los que tienen prioridad, en general, prioridad cero.
+
+04:45.000 --> 04:49.000
+Claro, o sea, se asigna, claro, un valor.
+
+04:49.000 --> 05:02.000
+Entonces, o sea, por ejemplo, si, no sé, si en un lugar donde se atiendan, no sé, urgencias, uno dice, bueno,
+
+05:02.000 --> 05:12.000
+o ocurrió, o no sé, o en alguna central, o en alguna central eléctrica, lo que sea, uno dice, bueno, ocurren eventos.
+
+05:12.000 --> 05:16.000
+¿Cuáles son los eventos que son más urgentes de atender?
+
+05:16.000 --> 05:18.000
+Los que tienen prioridad cero.
+
+05:18.000 --> 05:22.000
+O sea, cero son los de mayor prioridad, ¿no?
+
+05:22.000 --> 05:29.000
+O sea, esos son numeraciones internacionales, ¿no?
+
+05:29.000 --> 05:40.000
+Por eso es como que la cola de prioridad surge siempre de se atiende al de mayor prioridad y es borrar el mínimo de la estructura, ¿no?
+
+05:40.000 --> 05:47.000
+O sea, la operación de DELETE, lo que es que ahí queda, bueno, quedó en inglés porque es bastante común nombrarlo en inglés,
+
+05:47.000 --> 05:56.000
+DELETE MIN dice, encuentra, recupera y elimina el elemento mínimo de la estructura, siempre el mínimo.
+
+05:56.000 --> 06:01.000
+O sea, el mínimo de los que tengo almacenado en ese momento, ¿no?
+
+06:01.000 --> 06:05.000
+Y el INSERTAR inserta la cola de prioridades.
+
+06:05.000 --> 06:13.000
+Entonces, cualquier estructura, cualquier implementación que yo use, ¿no?
+
+06:13.000 --> 06:20.000
+Que donde yo le implemento estas dos operaciones va a ser una cola de prioridades.
+
+06:21.000 --> 06:29.000
+Entonces, yo como, volvamos para atrás, ¿no?
+
+06:31.000 --> 06:36.000
+Es decir, esta es la definición conceptual de cola de prioridades.
+
+06:39.000 --> 06:49.000
+Entonces, yo la podría implementar con cualquiera de las estructuras que ustedes conocen hasta el momento.
+
+06:49.000 --> 06:55.000
+Puede ser con lista, puede ser con arreglos, puede ser con árboles, ¿no?
+
+06:57.000 --> 07:01.000
+Ahora bien, ¿qué pasa?
+
+07:01.000 --> 07:06.000
+Depende de cómo, qué estructura yo use, ¿no?
+
+07:06.000 --> 07:13.000
+Va a ser la eficiencia de las dos operaciones.
+
+07:13.000 --> 07:18.000
+Entonces, yo tengo que poner eso en la balanza, ¿entiende?
+
+07:18.000 --> 07:24.000
+Por ejemplo, si yo uso una lista ordenada,
+
+07:29.000 --> 07:32.000
+¿por qué les parece que lo que dice ahí?
+
+07:32.000 --> 07:38.000
+Bueno, esta notación que aparece acá, esta O grande, ¿no?
+
+07:38.000 --> 07:43.000
+Es la notación que podemos usar cuando demos análisis de algoritmo que dice que es de orden N.
+
+07:43.000 --> 07:47.000
+Que ya más o menos en la primer clase lo hemos mencionado, ¿no?
+
+07:47.000 --> 07:53.000
+O sea, uno dice que hace N operaciones, entonces uno dice que el algoritmo es de orden N.
+
+07:53.000 --> 07:55.000
+Así se lo llaman.
+
+07:55.000 --> 08:05.000
+Entonces, ¿por qué en una lista ordenada el insertar es de orden N?
+
+08:08.000 --> 08:10.000
+¿Qué les parece a ustedes?
+
+08:17.000 --> 08:21.000
+Claro, sí, es lineal. Si, orden N es lineal. ¿Por qué?
+
+08:25.000 --> 08:31.000
+Claro, porque yo tengo que recorrer toda la lista hasta encontrar el lugar
+
+08:31.000 --> 08:37.000
+donde insertar el nuevo elemento, porque la lista la tengo que mantener ordenada.
+
+08:38.000 --> 08:46.000
+Bien, claro. Ahora bien, el del Edmin
+
+08:47.000 --> 08:52.000
+dice que tiene orden 1 operaciones.
+
+08:53.000 --> 08:58.000
+Orden 1 quiere decir que es constante, o sea que no depende de N.
+
+08:58.000 --> 09:02.000
+Todo lo que uno diga que es constante, o sea, el próximo tema es análisis de algoritmo.
+
+09:03.000 --> 09:05.000
+Vamos a ver esto.
+
+09:05.000 --> 09:11.000
+Todo lo que uno diga que es constante es porque no depende del N.
+
+09:13.000 --> 09:17.000
+Entonces, como la lista está ordenada, ¿no?
+
+09:17.000 --> 09:21.000
+Entonces, yo el mínimo elemento lo voy a encontrar al principio.
+
+09:21.000 --> 09:23.000
+Entonces, ahí ya no tengo que hacer nada.
+
+09:23.000 --> 09:28.000
+Lo único que tengo que hacer sería cambiar el inicio del puntero.
+
+09:29.000 --> 09:32.000
+O sea, del inicio de la lista, perdón.
+
+09:32.000 --> 09:38.000
+Cambiar un puntero y recuperar el elemento, quedarme con el elemento
+
+09:38.000 --> 09:40.000
+para procesarlo, para lo que sea.
+
+09:43.000 --> 09:48.000
+Entonces, el insertar es costoso porque es de orden N
+
+09:48.000 --> 09:54.000
+y el borrar mínimo es lo más eficiente que hay, que es constante.
+
+09:55.000 --> 09:59.000
+Bien, ¿qué pasa si la lista no está ordenada?
+
+10:05.000 --> 10:11.000
+Fíjense que pasa, o sea, en cuanto al orden o a la cantidad de operaciones
+
+10:11.000 --> 10:16.000
+que hace cada una de las operaciones de la colectividad,
+
+10:18.000 --> 10:19.000
+se invierte.
+
+10:22.000 --> 10:23.000
+¿Por qué?
+
+10:24.000 --> 10:29.000
+Porque el insertar, yo inserto en cualquier lugar.
+
+10:29.000 --> 10:32.000
+O sea, puedo insertar al principio de la lista.
+
+10:32.000 --> 10:37.000
+Entonces, eso no me insume ninguna operación.
+
+10:37.000 --> 10:41.000
+O sea, ninguna operación, o sea, solo agregar a la lista,
+
+10:41.000 --> 10:44.000
+cambiar el puntero que es el inicio de la lista y ya está.
+
+10:45.000 --> 10:55.000
+Ahora, el borrar el mínimo ahí sí me requiere N operaciones.
+
+10:56.000 --> 10:57.000
+¿Por qué?
+
+11:08.000 --> 11:10.000
+¿Por qué lo tengo que buscar en realidad?
+
+11:11.000 --> 11:14.000
+O sea, pues yo no sé dónde está el mínimo, claro.
+
+11:15.000 --> 11:17.000
+No sé dónde está el mínimo y tengo que buscarlo.
+
+11:18.000 --> 11:23.000
+O sea, buscarlo es eso, es recorrer uno por uno, quedarme con y comparar,
+
+11:24.000 --> 11:26.000
+para quedarme con el más chico.
+
+11:27.000 --> 11:31.000
+Bien, también podría usar un árbol binario de búsqueda,
+
+11:31.000 --> 11:34.000
+que nosotros no lo dimos, que ustedes ya saben de qué se trata,
+
+11:35.000 --> 11:43.000
+que un árbol binario de búsqueda en realidad, vamos a poner la pantalla.
+
+11:54.000 --> 11:58.000
+Un árbol binario de búsqueda, díganme si se escucha bien.
+
+11:58.000 --> 12:25.000
+Yo, por ejemplo, tengo diez, seis, tres, uno, cuatro, cinco, ocho, veinte.
+
+12:28.000 --> 12:37.000
+O sea, eso es un árbol binario de búsqueda, ¿no?
+
+12:38.000 --> 12:43.000
+En realidad, un árbol binario de búsqueda, que nosotros, bueno, como no lo dimos,
+
+12:44.000 --> 12:50.000
+no hablamos del tema, pero ahí lo que dice, y vean bien esta palabra,
+
+12:50.000 --> 13:02.000
+tiene en promedio, las dos operaciones tienen en promedio orden logarítmico.
+
+13:03.000 --> 13:05.000
+¿Por qué se dice que es en promedio?
+
+13:06.000 --> 13:12.000
+O sea, primero, ¿cómo sería el insertar en un árbol binario de búsqueda?
+
+13:13.000 --> 13:15.000
+Entonces, todos lo vieron en el año pasado, ¿no?
+
+13:20.000 --> 13:47.000
+Se compara con la raíz y se va por el hijo izquierdo,
+
+13:47.000 --> 13:51.000
+si es menor o por el derecho si es mayor, claro, se llama recursión a menis,
+
+13:52.000 --> 13:54.000
+o sea, recursión alternativa.
+
+13:55.000 --> 13:57.000
+O sea, entonces, ¿yo qué hago con lo que hacen?
+
+13:58.000 --> 14:03.000
+Las operaciones de insertar y la de volver al mínimo también,
+
+14:04.000 --> 14:06.000
+es recorrer la altura del árbol.
+
+14:07.000 --> 14:15.000
+Ahora, un árbol binario de búsqueda, en el peor caso, no es logarítmico, es lineal.
+
+14:15.000 --> 14:16.000
+Es lineal.
+
+14:18.000 --> 14:22.000
+Pues si yo tengo este árbol, por ejemplo...
+
+14:38.000 --> 14:39.000
+¿Qué pasa ahí?
+
+14:46.000 --> 14:56.000
+O sea, un árbol binario de búsqueda en realidad se dice en promedio
+
+14:57.000 --> 15:02.000
+porque en general los árboles binarios de búsqueda básicos no están balanceados.
+
+15:02.000 --> 15:09.000
+Entonces, al no estar balanceados, yo no sé la forma del árbol
+
+15:10.000 --> 15:13.000
+y puedo llegar a tener que buscar todos los elementos.
+
+15:15.000 --> 15:18.000
+Entonces, por eso ahí dice la palabra promedio.
+
+15:19.000 --> 15:22.000
+Si ustedes buscan siempre en uno de los árboles binarios de búsqueda,
+
+15:23.000 --> 15:25.000
+va a decir que promedio es de orden logarítmico.
+
+15:26.000 --> 15:28.000
+En promedio, siempre hay que poner esa palabra.
+
+15:28.000 --> 15:33.000
+Porque uno no puede decir livianamente que las operaciones son logarítmicas.
+
+15:34.000 --> 15:36.000
+Porque en el peor caso son lineales.
+
+15:37.000 --> 15:42.000
+En los comunes, si no después están a par, cualquiera que sea balanceado, una BL y eso,
+
+15:43.000 --> 15:45.000
+ahí sí, en el peor caso son logarítmicas.
+
+15:46.000 --> 15:52.000
+Entonces, yo podría usar un árbol binario de búsqueda, volviendo al tema,
+
+15:53.000 --> 15:55.000
+podría usar un árbol binario de búsqueda,
+
+15:55.000 --> 15:59.000
+para implementar las dos operaciones.
+
+16:00.000 --> 16:06.000
+El insertar, supongamos que yo tengo que insertar acá, no sé, el 30, le debo acá,
+
+16:07.000 --> 16:08.000
+inserto acá.
+
+16:10.000 --> 16:15.000
+Y para borrar el mínimo, que para borrar el mínimo, que es lo que hago.
+
+16:16.000 --> 16:19.000
+Me voy por la dama izquierda, siempre, siempre, siempre por la dama izquierda,
+
+16:19.000 --> 16:21.000
+hasta un nodo que no tenga hijo izquierdo.
+
+16:23.000 --> 16:26.000
+Puede ser una hoja o no, pero que no tenga hijo izquierdo.
+
+16:28.000 --> 16:30.000
+O sea, podría ser esto, ¿no?
+
+16:31.000 --> 16:32.000
+Entonces, este es el mínimo.
+
+16:33.000 --> 16:40.000
+Entonces, ahí también, lo que estoy recorriendo es la altura del árbol,
+
+16:41.000 --> 16:45.000
+que es la altura de la hoja, que es la altura de la hoja,
+
+16:45.000 --> 16:52.000
+que es la altura del árbol, que es, que en promedio es logarítmico, en promedio.
+
+16:53.000 --> 16:54.000
+Pero, ¿qué pasa?
+
+16:55.000 --> 16:58.000
+Que lo ideal de usar un árbol binario de búsqueda es como que,
+
+16:59.000 --> 17:03.000
+están diseñados para otra cosa, para facilitar la búsqueda del elemento.
+
+17:04.000 --> 17:07.000
+O sea, yo podría usarlo para implementar una búsqueda de búsqueda,
+
+17:08.000 --> 17:12.000
+pero es como que me sobran unas cuantas operaciones.
+
+17:13.000 --> 17:19.000
+Entonces, la estructura de datos que nosotros vamos a usar,
+
+17:20.000 --> 17:24.000
+se llama, se le llama heap.
+
+17:25.000 --> 17:28.000
+Heap o la traducen como montículo.
+
+17:32.000 --> 17:36.000
+Heap binario, en este caso porque lo que vamos a usar es un árbol binario.
+
+17:37.000 --> 17:38.000
+Bien.
+
+17:39.000 --> 17:44.000
+Es la implementación que me asegura, me asegura que las dos operaciones
+
+17:45.000 --> 17:48.000
+son de orden logarítmico.
+
+17:49.000 --> 17:54.000
+O sea que tanto para insertar como para borrar el mínimo que encontrar
+
+17:55.000 --> 18:02.000
+y borrarlo, me van a llevar log en operaciones, ¿no?
+
+18:03.000 --> 18:04.000
+En el peor caso.
+
+18:04.000 --> 18:05.000
+Y hay demás.
+
+18:07.000 --> 18:11.000
+Es una implementación que, vamos a ver, es muy simple,
+
+18:12.000 --> 18:16.000
+que no maneja puntero porque se amacena en un arreglo.
+
+18:17.000 --> 18:21.000
+Y que cumple con esas dos propiedades que dice ahí.
+
+18:22.000 --> 18:25.000
+La propiedad estructural y una propiedad de orden.
+
+18:25.000 --> 18:26.000
+Bien.
+
+18:27.000 --> 18:31.000
+La propiedad estructural y cumple es que es un árbol binario completo.
+
+18:32.000 --> 18:34.000
+Ahora vuelven a estar las definiciones.
+
+18:35.000 --> 18:37.000
+Esto ya lo vimos cuando dijimos árbol binario,
+
+18:38.000 --> 18:41.000
+que es un árbol binario completo y que es un árbol binario lleno.
+
+18:44.000 --> 18:50.000
+Entonces, la heap en realidad se implementa con un árbol binario completo.
+
+18:50.000 --> 18:52.000
+Como un árbol binario completo.
+
+18:53.000 --> 18:57.000
+Un árbol binario completo, recuerden que es de altura H,
+
+18:58.000 --> 19:01.000
+es un árbol binario lleno hasta la altura H-1
+
+19:02.000 --> 19:04.000
+y en el último nivel, en el nivel H,
+
+19:05.000 --> 19:07.000
+los nodos se completan de izquierda a derecha.
+
+19:08.000 --> 19:12.000
+Entonces, sería una cosa así.
+
+19:13.000 --> 19:14.000
+Este sería un ejemplo.
+
+19:15.000 --> 19:20.000
+Pues ahora vamos a ver el tema del orden de cómo se ordenan los datos en este árbol.
+
+19:22.000 --> 19:23.000
+Bien.
+
+19:24.000 --> 19:30.000
+Que son estos números 1, 2, 3, 4, 5, y así se amacena en el arreglo.
+
+19:31.000 --> 19:35.000
+Entonces, como es un árbol binario completo, la cantidad de nodos,
+
+19:36.000 --> 19:38.000
+y esto también lo vimos en árbol binarios,
+
+19:39.000 --> 19:42.000
+estaría entre 2 a la H y 2 a la H más 1 más 1.
+
+19:43.000 --> 19:52.000
+Entonces, si yo despejo H de cualquier recta 2,
+
+19:53.000 --> 19:59.000
+o sea, la cantidad de nodos va a variar de 2 a la H,
+
+20:00.000 --> 20:03.000
+después va a ser 2 a la H más 1,
+
+20:04.000 --> 20:07.000
+después va a ser 2 a la H más 2, etcétera, etcétera,
+
+20:08.000 --> 20:10.000
+hasta 2 a la H más 1 menos 1.
+
+20:11.000 --> 20:13.000
+Que sería el caso de que el árbol esté lleno.
+
+20:14.000 --> 20:18.000
+Entonces, siempre con cualquiera de estos valores, si yo despejo H,
+
+20:19.000 --> 20:24.000
+H es algo de orden logarítmico.
+
+20:28.000 --> 20:32.000
+O sea, acá el N va tomando estos valores.
+
+20:33.000 --> 20:36.000
+Desde 2 a la H, 2 a la H más 1,
+
+20:36.000 --> 20:41.000
+4 a la H más 1, cada vez que yo voy agregando un nodo base en el último nivel.
+
+20:42.000 --> 20:47.000
+Entonces, ¿por qué es importante esto, que la altura es de orden logarítmico?
+
+20:48.000 --> 20:51.000
+Porque las dos operaciones recorren la altura del árbol.
+
+20:52.000 --> 20:53.000
+¿Qué es lo que hace el arbol?
+
+20:54.000 --> 20:56.000
+¿Qué es lo que vimos recién en un árbol binario dupla?
+
+20:57.000 --> 21:00.000
+En un árbol binario dupla se recorre la altura del árbol.
+
+21:01.000 --> 21:03.000
+Lo que pasa es que al estar, al no estar balanceado,
+
+21:03.000 --> 21:08.000
+balanceado la altura puede ser ahora tener menos 1, en el peor caso.
+
+21:10.000 --> 21:11.000
+¿Entiendes?
+
+21:13.000 --> 21:14.000
+Bien.
+
+21:16.000 --> 21:18.000
+Entonces,
+
+21:21.000 --> 21:25.000
+dice, dado que es un árbol binario completo,
+
+21:26.000 --> 21:27.000
+¿no?
+
+21:28.000 --> 21:33.000
+Los árbol binarios completos son las culturas que son regulares en su forma.
+
+21:38.000 --> 21:39.000
+Entonces,
+
+21:40.000 --> 21:43.000
+como son regulares se pueden almacenar en un arreglo.
+
+21:45.000 --> 21:46.000
+En un arreglo.
+
+21:46.000 --> 21:47.000
+¿Dónde?
+
+21:47.000 --> 21:50.000
+Para cada la raíz está ubicada en posición 1.
+
+21:55.000 --> 21:57.000
+La raíz está ubicada en posición 1.
+
+21:59.000 --> 22:06.000
+Y para cada nodo que está en la posición I,
+
+22:07.000 --> 22:08.000
+es lo que dice ahí,
+
+22:08.000 --> 22:11.000
+el hijo izquierdo está en la posición 1.
+
+22:12.000 --> 22:13.000
+Es lo que dice ahí.
+
+22:14.000 --> 22:17.000
+El hijo izquierdo está en la posición 2 por I.
+
+22:18.000 --> 22:22.000
+Y el hijo derecho está en la posición 2 por I más 1.
+
+22:24.000 --> 22:26.000
+Si tú quieres el hijo derecho.
+
+22:27.000 --> 22:30.000
+Porque por ahí el último,
+
+22:31.000 --> 22:36.000
+ahora vamos a ver algún paso, que por ahí tiene solo el hijo izquierdo y no tiene el hijo derecho.
+
+22:37.000 --> 22:42.000
+Y el padre, por ende, está en la posición I sobre 2.
+
+22:45.000 --> 22:48.000
+Bien, ahora vamos a ver otro ejemplo que se entiende bien.
+
+22:49.000 --> 22:51.000
+Este ejemplo es el que veníamos recién.
+
+22:51.000 --> 22:52.000
+Fíjense,
+
+22:53.000 --> 22:56.000
+esto con el color rojo son las posiciones en el arreglo.
+
+22:56.000 --> 23:01.000
+O sea, en realidad la forma almacenada es por niveles, si ustedes se ponen a ver.
+
+23:02.000 --> 23:08.000
+Fíjense, es 1, 3, 2, 8, 7, 29, 6, 18, 14, 9.
+
+23:11.000 --> 23:15.000
+Entonces, si yo digo, bueno, el 8,
+
+23:15.000 --> 23:17.000
+¿dónde están los hijos del 8?
+
+23:17.000 --> 23:19.000
+Me voy a agarrar y digo, bueno,
+
+23:19.000 --> 23:21.000
+el 8 está en la posición 4.
+
+23:22.000 --> 23:25.000
+El hijo izquierdo está en la posición 8
+
+23:25.000 --> 23:28.000
+y el hijo derecho está en la posición 9.
+
+23:31.000 --> 23:33.000
+¿Dónde están los dos hijos?
+
+23:35.000 --> 23:38.000
+El 7 está en la posición 5,
+
+23:38.000 --> 23:40.000
+el hijo izquierdo está en la posición 10.
+
+23:40.000 --> 23:43.000
+Ahora, fíjense que no tiene el hijo derecho.
+
+23:44.000 --> 23:48.000
+Por eso yo tengo que llevar la cuenta
+
+23:48.000 --> 23:52.000
+de qué cantidad de elementos tengo hasta ese momento,
+
+23:52.000 --> 23:56.000
+para no caerme, no siempre las estructuras implantistas pasan lo mismo, ¿no?
+
+23:56.000 --> 24:01.000
+O sea, yo reservo un espacio y digo, bueno,
+
+24:01.000 --> 24:04.000
+si yo reservé este arreglo,
+
+24:04.000 --> 24:07.000
+digo, bueno, mi hip va a terminar acá.
+
+24:07.000 --> 24:09.000
+Todo lo que hay para acá es basura.
+
+24:09.000 --> 24:11.000
+O sea, que hay una cantidad de elementos.
+
+24:11.000 --> 24:15.000
+Entonces, voy a tener que llevar una variable con la cantidad de elementos.
+
+24:17.000 --> 24:19.000
+¿Se va? ¿Entendiendo? Hasta ahora, chicos.
+
+24:23.000 --> 24:25.000
+¿Se va a escuchar todo bien también?
+
+24:27.000 --> 24:28.000
+¿Qué es ese otro tema?
+
+24:29.000 --> 24:30.000
+Bien.
+
+24:34.000 --> 24:35.000
+Entonces.
+
+24:42.000 --> 24:45.000
+Esa es la propiedad estructural
+
+24:47.000 --> 24:49.000
+que tiene el complejo.
+
+24:49.000 --> 24:51.000
+O sea, ¿cuál es la propiedad estructural?
+
+24:51.000 --> 24:53.000
+Que es un arroyo en un área completa.
+
+24:54.000 --> 24:57.000
+¿Cuál es la propiedad de orden que cumple?
+
+24:59.000 --> 25:01.000
+La propiedad de orden
+
+25:02.000 --> 25:05.000
+para una mini hip
+
+25:05.000 --> 25:10.000
+me dice que de un hecho mínimo está almacenada la raíz
+
+25:10.000 --> 25:15.000
+y que ella está almacenada cada nodo en menor o igual que sus hijos.
+
+25:15.000 --> 25:16.000
+Nada más.
+
+25:16.000 --> 25:17.000
+Nada más.
+
+25:19.000 --> 25:21.000
+Para una mini hip se da
+
+25:24.000 --> 25:26.000
+el orden inverso.
+
+25:26.000 --> 25:28.000
+La propiedad inversa.
+
+25:32.000 --> 25:33.000
+Fíjense.
+
+25:33.000 --> 25:35.000
+Fíjense el ejemplo que traba.
+
+25:35.000 --> 25:37.000
+Esto es una mini hip.
+
+25:38.000 --> 25:42.000
+En realidad, esto es lo que yo voy a usar.
+
+25:43.000 --> 25:47.000
+Lo que pasa es que nosotros se lo dibujamos así con árboles
+
+25:47.000 --> 25:50.000
+y ahora les yo les voy a explicar las operaciones con árboles,
+
+25:50.000 --> 25:53.000
+con el dibujo del árbol porque se entiende mejor.
+
+25:54.000 --> 25:59.000
+Pero en realidad lo que usa el algoritmo es el arreglo
+
+25:59.000 --> 26:02.000
+que es donde está almacenada el árbol.
+
+26:05.000 --> 26:10.000
+O sea, les aclaro esto porque por ahí una vez me preguntaron
+
+26:10.000 --> 26:11.000
+lo que tengo.
+
+26:11.000 --> 26:13.000
+¿Tengo el árbol y el arreglo?
+
+26:13.000 --> 26:14.000
+No, no, no.
+
+26:14.000 --> 26:15.000
+Tengo solo el arreglo.
+
+26:16.000 --> 26:19.000
+Ahí adentro está almacenado el árbol.
+
+26:20.000 --> 26:22.000
+O sea, ¿sabe que es un árbol?
+
+26:22.000 --> 26:23.000
+¿Por qué?
+
+26:23.000 --> 26:26.000
+Porque sabe que yo...
+
+26:26.000 --> 26:30.000
+O sea, porque fíjense que esta forma de almacenar el árbol
+
+26:30.000 --> 26:36.000
+no me permite a mí hacer un recorrido pre-order, in-order y esas cosas.
+
+26:36.000 --> 26:37.000
+O sea, esta
+
+26:37.000 --> 26:43.000
+está diseñada para implementar estas dos operaciones.
+
+26:43.000 --> 26:44.000
+Nada más.
+
+26:44.000 --> 26:45.000
+¿Por qué?
+
+26:45.000 --> 26:49.000
+Porque fíjense que yo de un nodo puedo ir a los hijos y al padre,
+
+26:49.000 --> 26:50.000
+a los hijos y al padre.
+
+26:51.000 --> 26:55.000
+Es lo que va a hacer las dos operaciones que ahora vamos a hablar.
+
+26:57.000 --> 26:59.000
+Es lo único que necesita saber.
+
+27:00.000 --> 27:02.000
+Fíjense que no hay otro orden.
+
+27:02.000 --> 27:05.000
+O sea, no hay orden entre los hermanos,
+
+27:05.000 --> 27:08.000
+no hay orden entre nodos de...
+
+27:08.000 --> 27:10.000
+O sea, por niveles, digamos.
+
+27:10.000 --> 27:15.000
+O sea, yo puedo tener un valor mayor en un nivel más chico, o sea, más arriba.
+
+27:15.000 --> 27:18.000
+Yo acá tengo 29 y acá tengo 9.
+
+27:18.000 --> 27:20.000
+No, o sea, no hay...
+
+27:20.000 --> 27:24.000
+En eso no hay ningún otro orden más que ese que dice ahí.
+
+27:25.000 --> 27:29.000
+Para cada nodo tiene que ser menor o igual que sus hijos.
+
+27:29.000 --> 27:30.000
+Nada más.
+
+27:31.000 --> 27:32.000
+Bien.
+
+27:32.000 --> 27:33.000
+Bien.
+
+27:34.000 --> 27:37.000
+O si esto es una más, sería mayor o igual.
+
+27:38.000 --> 27:43.000
+Entonces, la G consta de un arreglo que contiene los datos
+
+27:43.000 --> 27:46.000
+y un valor que indica el número de eventos almacenados.
+
+27:49.000 --> 27:55.000
+La ventaja entonces es que no se necesita usar contenidos
+
+27:55.000 --> 27:59.000
+y las operaciones son muy fáciles de implementar.
+
+27:59.000 --> 28:01.000
+Vamos a ver, vamos a ver.
+
+28:03.000 --> 28:05.000
+¿Cómo lo hizo para insertar?
+
+28:05.000 --> 28:09.000
+Vamos a verlo con un ejemplo, un poquito agradecido.
+
+28:09.000 --> 28:10.000
+Así.
+
+28:32.000 --> 28:35.000
+Bueno, vamos a ver un ejemplo.
+
+29:02.000 --> 29:05.000
+Bueno, vamos a ver un ejemplo.
+
+29:32.000 --> 29:33.000
+?-
+
+29:53.000 --> 29:54.000
+Bien.
+
+29:54.000 --> 29:55.000
+Entonces.
+
+29:57.000 --> 29:58.000
+Claro.
+
+29:58.000 --> 29:59.000
+Claro, Alain.
+
+29:59.000 --> 30:07.000
+En realidad, yo lo que digo, volvemos haciéndolo simultáneamente con el arreglo.
+
+30:07.000 --> 30:11.000
+Dos, cinco, veinte.
+
+30:29.000 --> 30:51.000
+Bueno, yo tengo el arreglo y digo, bueno, la cantidad de elementos que tengo hasta ahora son 7, 8, 9, 10, 11.
+
+30:51.000 --> 30:59.000
+Entonces, lo que hace es, lo agrega justamente, como bien decía, al final del arreglo.
+
+30:59.000 --> 31:05.000
+Es como si lo agregara acá.
+
+31:05.000 --> 31:11.000
+Supongo que el que más lo quieren insertar.
+
+31:11.000 --> 31:13.000
+Cualquiera.
+
+31:21.000 --> 31:23.000
+El 23, bueno.
+
+31:26.000 --> 31:29.000
+El 23, después insertamos el 11.
+
+31:31.000 --> 31:33.000
+Insertamos el 40.
+
+31:33.000 --> 31:35.000
+En 40 va a ser más fácil.
+
+31:37.000 --> 31:39.000
+Acá no me quedaba lugar.
+
+31:43.000 --> 31:48.000
+Bueno, si yo te pude insertar el 23, digo, bueno, yo lo inserto acá.
+
+31:51.000 --> 31:53.000
+Es como si me insertara acá.
+
+31:53.000 --> 32:02.000
+Entonces yo ahora digo, Mijil ahora, en vez de tener 11 elementos, ahora tiene 12 elementos.
+
+32:02.000 --> 32:09.000
+12, cantidad de elementos, cantidad 12.
+
+32:09.000 --> 32:18.000
+O sea que estructuralmente también, o no, estructuralmente no miren los datos.
+
+32:22.000 --> 32:25.000
+Porque es un arreglo medio completo.
+
+32:28.000 --> 32:30.000
+Ahora, ¿qué pasa?
+
+32:32.000 --> 32:45.000
+Si yo lo inserto ahí, se puede destruir la propiedad de orden, que es lo que está pasando ahí.
+
+32:45.000 --> 32:52.000
+Entonces, lo que se hace es lo que se llama un ciltrado hacia arriba.
+
+32:53.000 --> 32:56.000
+Claro, hay que comparar con el padre, tal cual, padre.
+
+32:57.000 --> 33:00.000
+Entonces, comparo con el padre.
+
+33:02.000 --> 33:05.000
+En este caso, el menor que el padre.
+
+33:05.000 --> 33:07.000
+Entonces, ¿qué hago?
+
+33:08.000 --> 33:11.000
+Intercambio el padre con el hijo.
+
+33:12.000 --> 33:22.000
+Entonces, el 23 va a pasar a estar acá y el 35 va a pasar a estar acá.
+
+33:25.000 --> 33:28.000
+Esto sería en la nueva posición del 23.
+
+33:29.000 --> 33:33.000
+¿Qué hago? Vuelvo a comparar con el padre.
+
+33:34.000 --> 33:36.000
+En este caso, ya está.
+
+33:36.000 --> 33:38.000
+El padre menor ya lo dejó ahí.
+
+33:38.000 --> 33:40.000
+O sea, en este caso no tuve que hacer mucho.
+
+33:42.000 --> 33:52.000
+Ahora, ¿cuál sería si yo tuviera que insertar, por ejemplo, el 11?
+
+33:53.000 --> 33:56.000
+El 11 ahora lo inserto acá.
+
+33:58.000 --> 34:01.000
+Entonces, chequeo otra vez con el padre.
+
+34:02.000 --> 34:07.000
+Como el padre mayor pasa el 23 acá, pasa el 11 acá.
+
+34:08.000 --> 34:10.000
+Pero vuelvo a comparar con el padre.
+
+34:10.000 --> 34:19.000
+Entonces, como el padre es mayor que él, entonces baja el 20 y sube el 11.
+
+34:19.000 --> 34:20.000
+Y ahí me quedo.
+
+34:23.000 --> 34:26.000
+O sea, ¿esto cuándo termina?
+
+34:27.000 --> 34:33.000
+Termina cuando yo ubique la clave en el lugar correcto, según el orden.
+
+34:34.000 --> 34:35.000
+¿Donde es el lugar correcto?
+
+34:35.000 --> 34:36.000
+Voy a llegar hasta la raíz.
+
+34:36.000 --> 34:40.000
+Si yo acá tuviera que insertar el 1, voy a llegar hasta la raíz.
+
+34:41.000 --> 34:42.000
+Pero no importa.
+
+34:42.000 --> 34:44.000
+Va a bajar el 2.
+
+34:45.000 --> 34:48.000
+En este caso, si yo acá voy a insertar el 1.
+
+34:50.000 --> 34:52.000
+Vamos a insertarlo para otro jugador.
+
+34:54.000 --> 34:55.000
+Sería acá, ¿no?
+
+34:55.000 --> 34:57.000
+Como el juguierdo del 22.
+
+35:05.000 --> 35:08.000
+Sería como hijo izquierdo del 22.
+
+35:10.000 --> 35:11.000
+Entonces compara.
+
+35:12.000 --> 35:17.000
+El 1 con el 22, como es mayor, baja el 22, sube el 1.
+
+35:17.000 --> 35:23.000
+El 1 con el 11, como el 11 es mayor, baja el 11 y sube el 1.
+
+35:23.000 --> 35:28.000
+El 1 con el 22, como es mayor, baja el 22, sube el 1.
+
+35:28.000 --> 35:33.000
+El 1 con el 11, como el 11 es mayor, baja el 11 y sube el 1.
+
+35:36.000 --> 35:39.000
+Compara con el 2, como es mayor.
+
+35:42.000 --> 35:43.000
+Y ahí quedo.
+
+35:44.000 --> 35:51.000
+O sea, fíjense que lo único que hace es recorrer el camino
+
+35:51.000 --> 35:57.000
+desde el lugar donde lo insertó originalmente, que sería la última posición del arreglo,
+
+35:57.000 --> 36:02.000
+hacia atrás, recorriendo los padres.
+
+36:04.000 --> 36:06.000
+O sea, ¿esto cómo sería?
+
+36:08.000 --> 36:15.000
+En realidad, uno se los dibuja así para que vean lo que sería el filtrado hacia arriba, ¿no?
+
+36:15.000 --> 36:16.000
+Pero ¿esto cómo sería?
+
+36:16.000 --> 36:17.000
+¿Esto cómo sería?
+
+36:17.000 --> 36:25.000
+El algoritmo, que ahora vamos a ver con pseudo-pódigo, lo que hace es, puso el 23 acá, en la posición 12.
+
+36:25.000 --> 36:29.000
+Entonces dice, ¿dónde está el padre del 23?
+
+36:29.000 --> 36:32.000
+El 23 está en el 2, entonces dio 2, 6.
+
+36:33.000 --> 36:35.000
+Entonces se va al 6.
+
+36:39.000 --> 36:45.000
+Como el 23 es menor que el 35, entonces pone el 35 acá y el 23 acá.
+
+36:46.000 --> 36:51.000
+Y ahora dice, ¿dónde está ahora mi padre?
+
+36:51.000 --> 36:54.000
+Para comparar, 6 dividió 2, 3.
+
+36:54.000 --> 36:56.000
+¿Me vengo acá?
+
+36:56.000 --> 36:59.000
+Bueno, ya está, mi padre es menor, me lo dejo ahí.
+
+37:02.000 --> 37:05.000
+O sea, eso es lo que hace la operación, la operación de insertar.
+
+37:05.000 --> 37:07.000
+Fíjense que es muy simple.
+
+37:08.000 --> 37:19.000
+O sea, va saltando, digamos, siempre por el camino de su padre, ¿no?
+
+37:20.000 --> 37:25.000
+Hasta que termino, porque puedo llegar hasta la raíz.
+
+37:25.000 --> 37:27.000
+Bueno, ese es el insertar.
+
+37:27.000 --> 37:34.000
+Lo que usa es lo que se llama un filtrado o percoletado, filtrado hacia arriba.
+
+37:36.000 --> 37:40.000
+Entonces, vuelve ahí, bueno, ahí lo explica, ¿no?
+
+37:40.000 --> 37:45.000
+Que el filtrado hacia arriba, que está en la propiedad de orden, que está abriendo acá,
+
+37:45.000 --> 37:49.000
+que se va lo agregado, ahí lo largo el camino hacia arriba.
+
+37:49.000 --> 37:51.000
+Desde el lugar de inserción.
+
+37:53.000 --> 37:59.000
+Entonces, ¿por qué hace en operaciones o intercambios?
+
+37:59.000 --> 38:01.000
+Porque recorre la altura.
+
+38:02.000 --> 38:07.000
+En el peor caso, recorre la altura que es llegar hasta la raíz.
+
+38:08.000 --> 38:11.000
+O sea, siempre arranca del último nivel, ¿no?
+
+38:11.000 --> 38:18.000
+Ahora, puede ser que el algoritmo termine antes de llegar a la raíz,
+
+38:18.000 --> 38:22.000
+porque la inserción se hace ahí originalmente.
+
+38:23.000 --> 38:25.000
+Entonces, ¿por qué?
+
+38:25.000 --> 38:28.000
+Porque la inserción se hace ahí originalmente.
+
+38:29.000 --> 38:31.000
+Entonces, ¿por qué?
+
+38:31.000 --> 38:34.000
+Porque la inserción se hace ahí originalmente.
+
+38:34.000 --> 38:40.000
+Puede ser que el algoritmo termine antes de llegar a la raíz.
+
+38:41.000 --> 38:49.000
+En ese caso, bueno, por ahí la cantidad de intercambios capaz que es uno solo o ninguno, ¿no?
+
+38:49.000 --> 38:54.000
+Como me decían, si quieren insertar el 40, el 40 yo lo voy a insertar acá y no va a hacer nada.
+
+38:54.000 --> 38:56.000
+Y ahí se va a quedar.
+
+38:58.000 --> 38:59.000
+Bien.
+
+39:00.000 --> 39:02.000
+Entonces, fíjense.
+
+39:02.000 --> 39:06.000
+El algoritmo siderativo es muy simple.
+
+39:08.000 --> 39:16.000
+Lo que hace es, bueno, el elemento tiene que ser algo de tipo comparable, ¿no?
+
+39:19.000 --> 39:21.000
+Esto creo que se lo vieron también el otro día, ¿no?
+
+39:21.000 --> 39:23.000
+Que es una interfaz de Java.
+
+39:23.000 --> 39:25.000
+¿Comparable por qué?
+
+39:25.000 --> 39:28.000
+Porque tanto en los árboles minario de bukeda pasa lo mismo, ¿no?
+
+39:28.000 --> 39:33.000
+Es decir, los elementos se tienen que poder, tienen que tener un orden.
+
+39:33.000 --> 39:35.000
+Entonces se tienen que poder comparar.
+
+39:37.000 --> 39:41.000
+Lo que hace es incrementar la variable tamaño.
+
+39:41.000 --> 39:43.000
+Es decir, ¿esto qué quiere decir?
+
+39:43.000 --> 39:48.000
+Que yo tengo un elemento más dentro de la heap.
+
+39:49.000 --> 39:53.000
+En n, pongo cuál es el tamaño nuevo.
+
+39:53.000 --> 40:02.000
+Y después mientras n sobre 2 sea mayor que 0 y el dato que está en n sobre 2 sea mayor que x.
+
+40:04.000 --> 40:13.000
+Entonces, donde en la posición n, pone lo que está dentro de la heap.
+
+40:14.000 --> 40:20.000
+En la posición n, pone lo que está en la posición n sobre 2.
+
+40:20.000 --> 40:22.000
+Y ahora n pasa a ser n sobre 2.
+
+40:22.000 --> 40:23.000
+Es decir.
+
+40:23.000 --> 40:24.000
+¿Qué hace?
+
+40:24.000 --> 40:27.000
+Arrancó con n igual a 12.
+
+40:27.000 --> 40:30.000
+Entonces, n sobre 12.
+
+40:30.000 --> 40:31.000
+¿Más o menos 0?
+
+40:31.000 --> 40:32.000
+Sí.
+
+40:32.000 --> 40:35.000
+El dato que está en la posición n sobre 2.
+
+40:35.000 --> 40:40.000
+El mayor que, en este caso, x es el número de saltada, que es el 23, ¿no?
+
+40:41.000 --> 40:44.000
+Entonces, se viene acá y dice sí.
+
+40:44.000 --> 40:45.000
+Es mayor.
+
+40:45.000 --> 40:51.000
+Entonces, en la posición n, que n era 12, pone lo que está en el padre.
+
+40:51.000 --> 40:54.000
+O sea, que pone el 35.
+
+40:54.000 --> 40:58.000
+Y el x, por ahora, le sigue quedando.
+
+40:58.000 --> 41:01.000
+O sea, x es el dato de saltar.
+
+41:01.000 --> 41:04.000
+O sea, todavía, es como que no lo puso acá.
+
+41:04.000 --> 41:06.000
+Lo seguimos teniendo por ahí.
+
+41:06.000 --> 41:11.000
+Ahí todavía es la variable de entrada, ¿no?
+
+41:11.000 --> 41:14.000
+Hasta encontrar el lugar donde insertarlo.
+
+41:14.000 --> 41:18.000
+Entonces, dice, bueno, puso el 35 acá.
+
+41:18.000 --> 41:20.000
+Bien.
+
+41:20.000 --> 41:24.000
+Y ahora, el n se me vino acá.
+
+41:24.000 --> 41:28.000
+O sea, el n es la variable que va sin tamaño.
+
+41:28.000 --> 41:30.000
+Acá es la cantidad.
+
+41:30.000 --> 41:34.000
+El n, en este caso, es la variable de iteración.
+
+41:37.000 --> 41:42.000
+Entonces, pone el igual a n sobre 2 y vuelve a preguntar lo mismo.
+
+41:42.000 --> 41:44.000
+¿N sobre 2 es mayor que 0?
+
+41:44.000 --> 41:45.000
+Sí.
+
+41:45.000 --> 41:48.000
+El dato que está en la posición...
+
+41:49.000 --> 41:52.000
+Sería el 123, que está en la posición 3.
+
+41:52.000 --> 41:55.000
+¿Eres mayor que el x?
+
+41:55.000 --> 41:56.000
+No.
+
+41:56.000 --> 41:58.000
+Entonces, sale del y.
+
+41:58.000 --> 42:02.000
+Y en la posición n, ahí pone el 23.
+
+42:03.000 --> 42:07.000
+Esto que está recuadrado acá...
+
+42:07.000 --> 42:11.000
+Es el filtrado hacia arriba.
+
+42:11.000 --> 42:14.000
+O para poner a...
+
+42:14.000 --> 42:17.000
+En realidad, ¿qué es lo que conviene?
+
+42:17.000 --> 42:21.000
+Conviene tener algo caracterizado.
+
+42:21.000 --> 42:23.000
+¿Para qué?
+
+42:23.000 --> 42:28.000
+Para que dispone, sirva para otras operaciones que vamos a implementar.
+
+42:28.000 --> 42:32.000
+Quiere decir que yo pueda hacer un filtrado,
+
+42:32.000 --> 42:35.000
+no siempre desde la última posición,
+
+42:35.000 --> 42:41.000
+sino que yo pueda hacer un filtrado desde cualquier posición de la hip.
+
+42:41.000 --> 42:45.000
+Entonces, si yo lo parametrizo,
+
+42:45.000 --> 42:54.000
+lo que hago es hacer una operación de filtrado que está acá desde la posición y.
+
+42:54.000 --> 42:56.000
+Entonces, ¿qué hace?
+
+42:56.000 --> 43:00.000
+Se guarda el dato que está en la posición y.
+
+43:00.000 --> 43:03.000
+Se lo guarda temporariamente.
+
+43:03.000 --> 43:05.000
+Y empieza a hacer eso.
+
+43:05.000 --> 43:07.000
+Mientras y sobre 2 sea mayor que 0
+
+43:07.000 --> 43:12.000
+y lo que está en el padre sea mayor que esa variable.
+
+43:12.000 --> 43:16.000
+Entonces, pongo la posición y, lo que estaba en el padre,
+
+43:16.000 --> 43:18.000
+y ahora y es y sobre 2.
+
+43:18.000 --> 43:20.000
+Cuando sale de este y,
+
+43:20.000 --> 43:27.000
+lo que hace es ubicarla en la posición y en el contenido del tema.
+
+43:27.000 --> 43:29.000
+Entonces, de esta manera,
+
+43:29.000 --> 43:31.000
+de esta manera,
+
+43:31.000 --> 43:36.000
+yo el clip saldar no quedaría así.
+
+43:36.000 --> 43:40.000
+Yo el tamaño o poco tamaño a su hora.
+
+43:40.000 --> 43:42.000
+Ahora sí carga.
+
+43:42.000 --> 43:44.000
+Ahora sí almacena.
+
+43:44.000 --> 43:46.000
+En este caso sería el 23.
+
+43:46.000 --> 43:52.000
+Lo almacena en el último lugar.
+
+43:52.000 --> 43:56.000
+Y manda a filtrar desde acá.
+
+43:56.000 --> 43:59.000
+¿Se entiende?
+
+43:59.000 --> 44:02.000
+O sea, lo almacena y dice bueno,
+
+44:02.000 --> 44:06.000
+yo lo pongo en el último lugar y después filtramelo.
+
+44:06.000 --> 44:11.000
+Bien.
+
+44:11.000 --> 44:16.000
+Bueno, como esto ya es un bollo,
+
+44:16.000 --> 44:18.000
+lo que pido acá.
+
+44:18.000 --> 44:23.000
+Vamos a botar algo.
+
+44:37.000 --> 44:42.000
+O sea, yo que tenía 20, 15, 7,
+
+44:42.000 --> 44:49.000
+15, 7, 35.
+
+44:49.000 --> 44:53.000
+Vamos a tener, vamos a tomarlo aquí original así.
+
+44:53.000 --> 45:00.000
+22, 18, 30, 9, 8.
+
+45:06.000 --> 45:27.000
+Bueno, ¿qué pasa si yo quiero borrar el mínimo?
+
+45:27.000 --> 45:29.000
+Borrar el mínimo.
+
+45:29.000 --> 45:32.000
+O sea, yo sé dónde está el mínimo.
+
+45:32.000 --> 45:34.000
+Porque está en la posición 1.
+
+45:34.000 --> 45:36.000
+Siempre está en la posición 1.
+
+45:36.000 --> 45:40.000
+En los arreglos en Java, los arreglos de arrancas de 0,
+
+45:40.000 --> 45:46.000
+la posición 0 no se ocupa.
+
+45:46.000 --> 45:54.000
+Entonces los datos se empiezan a almacenar a partir de la posición 1.
+
+45:54.000 --> 45:57.000
+Bien.
+
+45:57.000 --> 46:03.000
+¿Cómo yo para borrar el mínimo?
+
+46:03.000 --> 46:05.000
+Que es un poco lo que está explicado ahí.
+
+46:05.000 --> 46:11.000
+O sea, yo sé dónde está el mínimo, que está en la posición 1.
+
+46:11.000 --> 46:18.000
+O sea que, digo, bueno, el mínimo que en esta heap es 2.
+
+46:18.000 --> 46:21.000
+O sea, hasta consultarlo es constante, consultarlo,
+
+46:21.000 --> 46:24.000
+yo voy a la posición 1 y ya está.
+
+46:24.000 --> 46:26.000
+Y ya sé que ese es el mínimo.
+
+46:26.000 --> 46:27.000
+¿Ahora qué pasa?
+
+46:27.000 --> 46:29.000
+Yo lo tengo que borrar.
+
+46:29.000 --> 46:36.000
+Porque una vez que uno lo tiene que procesar, lo saca de la estructura.
+
+46:36.000 --> 46:45.000
+Entonces, yo saco, en realidad, saco este valor.
+
+46:45.000 --> 46:47.000
+¿No?
+
+46:47.000 --> 46:49.000
+Saco este valor.
+
+46:49.000 --> 46:52.000
+Ahora bien.
+
+46:52.000 --> 46:57.000
+Según la propiedad estructural.
+
+47:03.000 --> 47:07.000
+Según la propiedad estructural.
+
+47:07.000 --> 47:12.000
+Es decir que la heap tiene que ser un árbol binario completo.
+
+47:12.000 --> 47:17.000
+¿Qué?
+
+47:17.000 --> 47:28.000
+El nodo, o sea, a ver, el dato que se va a sacar va a ser el 2, el dato.
+
+47:28.000 --> 47:38.000
+Ahora, estructuralmente, el nodo que deja de estar va a ser este.
+
+47:38.000 --> 47:39.000
+¿Por qué?
+
+47:39.000 --> 47:42.000
+Porque al ser un árbol binario completo, tal cual.
+
+47:45.000 --> 47:53.000
+El árbol, o sea, el último nivel se va borrando así, de derecha a izquierda.
+
+47:53.000 --> 47:58.000
+Así como va creciendo de izquierda a derecha, se va borrando de derecha a izquierda.
+
+47:58.000 --> 48:02.000
+O sea que yo digo, bueno, me guardo el mínimo.
+
+48:03.000 --> 48:09.000
+¿Y qué elemento va a desaparecer?
+
+48:11.000 --> 48:13.000
+¿Eso cómo lo hago?
+
+48:13.000 --> 48:17.000
+Digo, bueno, ahora mi heap va a terminar acá.
+
+48:21.000 --> 48:27.000
+Entonces, es como que me guardo en una variable el 8.
+
+48:28.000 --> 48:34.000
+Me guardo en una variable o directamente lo pongo acá arriba.
+
+48:40.000 --> 48:49.000
+Claro, o sea, al decir que termina un lugar antes es incrementar la cantidad de elementos.
+
+48:49.000 --> 48:52.000
+O lo pongo acá arriba.
+
+48:52.000 --> 48:54.000
+¿Y qué hago ahí?
+
+48:54.000 --> 49:00.000
+Tengo que hacer un filtrado hacia abajo.
+
+49:00.000 --> 49:07.000
+O sea, por la operación inversa de lo que hice recién en el insertar, ese filtrado hacia arriba.
+
+49:08.000 --> 49:11.000
+Tengo que hacer un filtrado hacia abajo.
+
+49:11.000 --> 49:17.000
+¿Por qué? Porque si yo lo pongo acá, deja de cumplir la propiedad de orden.
+
+49:19.000 --> 49:23.000
+Entonces, ¿en qué consiste ese filtrado hacia abajo?
+
+49:24.000 --> 49:29.000
+Primero, tengo que buscar cuál es el menor de los dos hijos.
+
+49:31.000 --> 49:33.000
+En este caso es el 5.
+
+49:33.000 --> 49:36.000
+Comparo el 8 con el 5.
+
+49:38.000 --> 49:45.000
+Como el 5 es menor que el 8, entonces lo que hago es...
+
+49:47.000 --> 49:51.000
+Pongo el 5 acá y el 8 acá.
+
+49:52.000 --> 49:55.000
+Pero tengo que volver y hacer lo mismo.
+
+50:04.000 --> 50:09.000
+O sea, ahora lo baje acá. Ahora tengo que volver y hacer lo mismo.
+
+50:13.000 --> 50:18.000
+Me fijo cuál es el menor de los hijos. O sea, lo comparo con el menor.
+
+50:18.000 --> 50:26.000
+Por alguna vez que yo sé cuál hijo es menor, que puede ser el izquierdo o el derecho, porque no hay un orden.
+
+50:26.000 --> 50:31.000
+Fíjate que yo acá me vine por la rama izquierda y acá me vanico la derecha, en realidad.
+
+50:36.000 --> 50:40.000
+Claro, por cada vez que uno baja el nivel, claro.
+
+50:41.000 --> 50:47.000
+Entonces, acá busco el menor de los hijos.
+
+50:47.000 --> 50:51.000
+En este caso es el 7. O sea, acá ya el 8 dejó de existir.
+
+50:51.000 --> 50:53.000
+Así no lo confundí.
+
+50:53.000 --> 50:57.000
+Entonces, me fijo, ¿cuál es el menor de los hijos? Es el 7.
+
+50:57.000 --> 51:00.000
+¿Cómo es el 7 respecto del 8?
+
+51:00.000 --> 51:02.000
+El 7 es menor.
+
+51:02.000 --> 51:07.000
+Entonces, subo el 7 y bajo el 8.
+
+51:10.000 --> 51:12.000
+Ahora.
+
+51:14.000 --> 51:18.000
+Acá tengo que controlar. O sea, vamos a ver ahora.
+
+51:18.000 --> 51:23.000
+Vamos a ver que el código es un poco más largo que insertar.
+
+51:23.000 --> 51:27.000
+Porque tengo que hacer más controles en realidad, más comparaciones.
+
+51:27.000 --> 51:29.000
+Pero es solo por eso.
+
+51:29.000 --> 51:33.000
+O sea, primero tengo que buscar cuál es el menor de los hijos.
+
+51:33.000 --> 51:35.000
+Para ver con quién comparo.
+
+51:35.000 --> 51:39.000
+Mientras que en el filtrado hacia arriba solo comparaba con el padre.
+
+51:40.000 --> 51:43.000
+En realidad es mucho más directo.
+
+51:43.000 --> 51:47.000
+En cambio, acá primero tengo que buscar con quién voy a comparar.
+
+51:48.000 --> 51:52.000
+Que tiene que ser con el hijo menor.
+
+51:53.000 --> 51:55.000
+Lo comparo con él.
+
+51:55.000 --> 52:00.000
+Si el hijo menor es menor que el padre, hago el intercambio.
+
+52:00.000 --> 52:04.000
+Y vuelvo a hacer lo mismo, hacia abajo.
+
+52:04.000 --> 52:11.000
+Ahora, acá además tengo que chequear.
+
+52:11.000 --> 52:14.000
+En este caso que llegué al último nivel.
+
+52:14.000 --> 52:16.000
+Tengo que chequear que tenga los dos hijos.
+
+52:16.000 --> 52:19.000
+O puede ser que no tenga los dos hijos como en este caso.
+
+52:20.000 --> 52:21.000
+O sea, yo no puedo.
+
+52:21.000 --> 52:27.000
+Fíjense, esta es la posición 1, 2, 3, 4, 5.
+
+52:27.000 --> 52:28.000
+5.
+
+52:28.000 --> 52:30.000
+Por 2, 10.
+
+52:34.000 --> 52:37.000
+Estoy dentro del tamaño de la hip.
+
+52:37.000 --> 52:42.000
+Pero cuando haga 5 por 2, más 1, 11.
+
+52:42.000 --> 52:45.000
+Ya no estoy dentro del tamaño de la hip.
+
+52:45.000 --> 52:47.000
+De las 10 elementos que tiene la hip.
+
+52:47.000 --> 52:51.000
+O sea, que eso significa que no tiene hijo derecho.
+
+52:52.000 --> 52:55.000
+¿Entiende? Porque ahora la hip termina en 10.
+
+52:56.000 --> 52:58.000
+O sea, que el 8 ya ha quedado acá.
+
+52:58.000 --> 53:02.000
+No importa, pero ya no forma parte de la hip.
+
+53:02.000 --> 53:03.000
+¿Se entiende?
+
+53:04.000 --> 53:05.000
+No entiendo.
+
+53:10.000 --> 53:13.000
+El resto entiende, pues solo me contestan.
+
+53:17.000 --> 53:21.000
+Y como no les veo la cara, cuando estás en el auge les veo la cara.
+
+53:21.000 --> 53:22.000
+Si estás perdido o no.
+
+53:26.000 --> 53:28.000
+Claro, tengo que comparar con Kant.
+
+53:28.000 --> 53:29.000
+Tal cual.
+
+53:29.000 --> 53:37.240
+Por eso, ahora cuando veamos el código, el código es un poco más largo, porque tengo
+
+53:37.240 --> 53:49.040
+que hacer más chequeos, pero la locking en realidad es la misma, pero hacia abajo, es
+
+53:49.040 --> 53:50.680
+un filtrado hacia abajo.
+
+53:50.680 --> 54:03.000
+Entonces, en este caso, hago 5x2, 10, o sea, estoy dentro del, digamos, de los márgenes
+
+54:03.000 --> 54:04.000
+de la key.
+
+54:04.000 --> 54:05.000
+Bien.
+
+54:05.000 --> 54:12.440
+Después cuando haga 5x2 es 1 o 11, ya vieron que estoy casiendo de la key, entonces no
+
+54:12.440 --> 54:18.080
+tiene hijo derecho, solo tiene hijo izquierdo, entonces comparo el 8 con el 9, como el 8
+
+54:18.080 --> 54:29.560
+es menor que el 9, entonces ya está, ahí lo dejo, y ahí quedó el borrar mínimo.
+
+54:29.560 --> 54:43.560
+Bien, entonces, por acá, más o menos, dice todo esto que yo les vengo diciendo, ¿no?
+
+54:43.560 --> 54:52.240
+Pues yo siempre voy siguiendo ese camino, el del hijo menor, ¿no?
+
+54:52.240 --> 55:02.320
+Claro, al ser un árbol completo, yo lo puedo almacenar en un arreglo, sí, sí, quizás
+
+55:02.320 --> 55:16.880
+ya sabes dónde están los hijos, y ya sabes dónde están los hijos y dónde está el
+
+55:16.880 --> 55:23.880
+padre, que es lo único que necesita en las operaciones.
+
+55:23.880 --> 55:24.880
+Bien.
+
+55:24.880 --> 55:30.880
+O sea que, ¿cómo sería esta operación en el arreglo?
+
+55:31.440 --> 55:39.080
+O sea, lo que hicimos acá, en realidad lo que hace el algoritmo es esto, pone el 8 acá
+
+55:39.080 --> 55:40.080
+y empieza.
+
+55:40.080 --> 55:42.520
+¿Dónde está el hijo izquierdo?
+
+55:42.520 --> 55:43.520
+¿No?
+
+55:43.520 --> 55:51.120
+El hijo izquierdo está en la posición 2 y el hijo derecho está en la posición 3.
+
+55:51.120 --> 55:53.880
+¿Cuál de los dos hijos es menor?
+
+55:53.880 --> 56:00.440
+Este, el que está en la posición 2, entonces compara el 8 con el 5, como el 8 es más o
+
+56:00.440 --> 56:05.440
+menos el 5, sube el 5 y pone el 8 acá.
+
+56:05.440 --> 56:10.440
+Ahora, estoy acá, avanza el índice.
+
+56:10.440 --> 56:12.440
+¿Dónde están los hijos del 2?
+
+56:12.440 --> 56:15.440
+Están en la 4 y en la 5.
+
+56:16.440 --> 56:23.440
+¿Cuál te dice la cantidad de nodo del árbol?
+
+56:23.440 --> 56:31.440
+No, no, no, el tamaño del arreglo lo tenéis que definir de un tamaño lo suficientemente
+
+56:31.440 --> 56:36.440
+grande para que te entren todos los elementos, porque no sabéis cuántos elementos van a
+
+56:36.440 --> 56:39.440
+manejar en las operaciones en realidad.
+
+56:40.440 --> 56:49.440
+O sea, puedo decirse el árbol lleno, pero en este caso, porque tiene la altura 3, pero
+
+56:49.440 --> 56:54.440
+si vos tenés un árbol de altura 10, ¿cuánto se...?
+
+56:54.440 --> 56:58.440
+O sea, es genial.
+
+56:58.440 --> 57:06.440
+Por ejemplo, los algoritmos, vamos a ver un algoritmo de lo que grajo que usa Heap.
+
+57:06.440 --> 57:15.440
+Uno sabe de antemano más o menos la cantidad de elementos que va a tener la polaridad.
+
+57:18.440 --> 57:26.440
+Entonces uno arranca y dice, bueno, más o menos tengo 500 elementos, bueno, le defino
+
+57:26.440 --> 57:33.440
+un arreglo de 500 o de 550, por las dudas.
+
+57:33.440 --> 57:38.440
+Después lo voy poniendo, voy almacenando.
+
+57:38.440 --> 57:43.440
+Pero no te... o sea, la versión de árbol no sé cuál es la cantidad.
+
+57:43.440 --> 57:46.440
+¿Entiendes, Fabio?
+
+57:46.440 --> 57:52.440
+O sea, porque vos tenés en cuenta que vos estás manejando una estructura que es una
+
+57:52.440 --> 57:54.440
+polia de prioridades.
+
+57:54.440 --> 58:01.440
+O sea, una serie de sí, que vos vas a manejar elementos, que los vas a insertar y después
+
+58:01.440 --> 58:07.440
+siempre vas a tener que poder recuperar el mínimo.
+
+58:07.440 --> 58:13.440
+Entonces, esta forma de implementar me garantiza que las dos operaciones son eficientes.
+
+58:13.440 --> 58:18.440
+Esta es una implementación eficiente de una polia de prioridades.
+
+58:22.440 --> 58:26.440
+No, no necesariamente.
+
+58:27.440 --> 58:32.440
+Porque si ficaste que yo acababa, ¿por qué con 11 elementos?
+
+58:36.440 --> 58:44.440
+O sea, está bien, va a ser 2 h más 1 menos 1 en realidad.
+
+58:44.440 --> 58:48.440
+Pero no, en eso no tiene porque ese potencia de 11.
+
+58:48.440 --> 58:54.440
+La cantidad de elementos siempre es potencia de 2.
+
+58:54.440 --> 59:01.440
+De hecho, cuando es 1, tampoco es potencia de 2, porque es 2 h más 1 menos 1.
+
+59:01.440 --> 59:05.440
+Eso no es potencia de 2.
+
+59:07.440 --> 59:17.440
+Entonces, pero usted piénsalo como un mapa, como un astrato.
+
+59:17.440 --> 59:23.440
+Es decir, usted tiene que manejar una estructura de datos que es una polia de prioridades.
+
+59:23.440 --> 59:35.440
+O sea, que yo voy a manejar elementos y siempre voy a necesitar recuperar y insertar de la
+
+59:35.440 --> 59:38.440
+estructura al mínimo.
+
+59:40.440 --> 59:45.440
+En este caso, si es una mígil o almacenmo, si es una mací.
+
+59:46.440 --> 59:48.440
+¿Entiende?
+
+59:50.440 --> 01:00:00.440
+Y después digo, bueno, si me dice, bueno, aproximadamente la Kim va a manejar,
+
+01:00:00.440 --> 01:00:10.440
+porque si yo 100 elementos, bueno, defino un arreglo de 100 o de 120 o de 150.
+
+01:00:11.440 --> 01:00:20.440
+De hecho, en el Cava hay vectores que cuando se va llenando a partir de un determinado
+
+01:00:20.440 --> 01:00:26.440
+presentable se ubica en el espacio automático automáticamente.
+
+01:00:33.440 --> 01:00:35.440
+Me tengo que preocupar mucho.
+
+01:00:36.440 --> 01:00:46.440
+Bien. Entonces, estábamos acá en el filtrado.
+
+01:00:46.440 --> 01:00:50.440
+Yo puse el 8 acá. Bueno, ¿dónde están los hijos del 8?
+
+01:00:50.440 --> 01:00:55.440
+En este caso están en la posición 4 y 5.
+
+01:00:57.440 --> 01:00:59.440
+4 y 5.
+
+01:01:00.440 --> 01:01:08.440
+Entonces, ¿cuál de los dos es el menor?
+
+01:01:08.440 --> 01:01:11.440
+El menor está en esta posición.
+
+01:01:11.440 --> 01:01:13.440
+Entonces comparo el 8 con el 7.
+
+01:01:13.440 --> 01:01:22.440
+Como el 8 es mayor, entonces subo el 7 y pongo el 8 acá.
+
+01:01:30.440 --> 01:01:37.440
+Si necesitabas un ajed dinámico tendrías una lista en lugar de...
+
+01:01:37.440 --> 01:01:39.440
+Claro, porque eso no se puede tampoco.
+
+01:01:39.440 --> 01:01:42.440
+O sea, cuando hay una lista no tenés acceso directo.
+
+01:01:42.440 --> 01:01:45.440
+O sea, por eso se almacena en un arreglo.
+
+01:01:47.440 --> 01:01:53.440
+Bien. Cuando viene acá, ¿qué hace? ¿Dónde están los hijos del 8?
+
+01:01:53.440 --> 01:01:56.440
+Porque ahora tengo que ver si el 8 está bien indicado acá.
+
+01:01:56.440 --> 01:01:59.440
+Entonces viene 5 por 2, 10.
+
+01:01:59.440 --> 01:02:01.440
+Acá está el hijo izquierdo.
+
+01:02:01.440 --> 01:02:08.440
+Estoy dentro del límite del arreglo.
+
+01:02:11.440 --> 01:02:13.440
+Entonces, sí.
+
+01:02:13.440 --> 01:02:16.440
+Y después digo, bueno, ¿y tiene hijo derecho?
+
+01:02:16.440 --> 01:02:20.440
+5 por 2, 10 más 1, 11.
+
+01:02:20.440 --> 01:02:23.440
+11 no, ya me voy. Entonces tiene solo hijo izquierdo.
+
+01:02:24.440 --> 01:02:27.440
+Entonces viene, comparo el 8 con el 9 y pongo el 8.
+
+01:02:27.440 --> 01:02:29.440
+El menor que el 9 lo deja ahí.
+
+01:02:29.440 --> 01:02:33.440
+O sea, eso es lo que hace la operación acá en el arreglo.
+
+01:02:38.440 --> 01:02:45.440
+Claro, sí, sí, sí. Ya les digo, hay estructuras que cuando el arreglo se empieza a llenar
+
+01:02:45.440 --> 01:02:49.440
+a partir de un determinado porcentaje, no sé si del 70 o del 80%,
+
+01:02:49.440 --> 01:02:51.440
+lo duplica solo el espacio.
+
+01:02:53.440 --> 01:03:00.440
+Después pregúntenle a Pepe la estructura si quieren.
+
+01:03:02.440 --> 01:03:04.440
+Los arreglos dinámicos, sí.
+
+01:03:04.440 --> 01:03:05.440
+Bien.
+
+01:03:05.440 --> 01:03:11.440
+Entonces, vamos a ver un poquito el código.
+
+01:03:11.440 --> 01:03:18.440
+O sea, por eso yo les decía que el código es más largo que el otro.
+
+01:03:18.440 --> 01:03:19.440
+¿Por qué?
+
+01:03:19.440 --> 01:03:24.440
+Porque primero tienen que buscar los dos hijos.
+
+01:03:24.440 --> 01:03:26.440
+Ver cuál es el menor.
+
+01:03:26.440 --> 01:03:29.440
+Comparar ese hijo con el padre.
+
+01:03:29.440 --> 01:03:33.440
+Si el hijo es menor que el padre, intercambiar y seguir.
+
+01:03:33.440 --> 01:03:37.440
+Chequear que tenga los dos hijos.
+
+01:03:37.440 --> 01:03:45.440
+Entonces, lo que hace primero acá es guardarse el mínimo.
+
+01:03:45.440 --> 01:03:54.440
+¿Qué es el elemento que va a devolver?
+
+01:03:54.440 --> 01:03:57.440
+O sea, ¿qué es lo que yo necesito en realidad?
+
+01:03:57.440 --> 01:03:59.440
+Yo necesito el mínimo.
+
+01:03:59.440 --> 01:04:03.440
+A la operación le digo devolverme el mínimo.
+
+01:04:03.440 --> 01:04:08.440
+Después arreglar la estructura como te parezca.
+
+01:04:08.440 --> 01:04:10.440
+¿El candidato cuál es?
+
+01:04:10.440 --> 01:04:13.440
+Ese que está en el último lugar.
+
+01:04:16.440 --> 01:04:20.440
+Que en este caso era el 8.
+
+01:04:20.440 --> 01:04:22.440
+Que está en el último lugar.
+
+01:04:22.440 --> 01:04:25.440
+Decrementa el tamaño de la hip.
+
+01:04:25.440 --> 01:04:29.440
+O sea que acá entonces está haciendo esto, está cortando la hip.
+
+01:04:29.440 --> 01:04:32.440
+¿Se alcanza a ver ahí en que se puso tan volado ahora?
+
+01:04:36.440 --> 01:04:38.440
+¿Se alcanza a ver bien la pizarra?
+
+01:04:41.440 --> 01:04:44.440
+No sé, pues de golpe se nubló todo.
+
+01:04:45.440 --> 01:04:47.440
+Entonces, ¿de incrementar el tamaño?
+
+01:04:47.440 --> 01:04:50.440
+Es decir, bueno, la gente mira acá.
+
+01:04:50.440 --> 01:04:53.440
+No importa lo que hay de acá para la derecha.
+
+01:04:55.440 --> 01:04:56.440
+Bien.
+
+01:04:56.440 --> 01:04:59.440
+Empieza en P igual a 1.
+
+01:04:59.440 --> 01:05:03.440
+Y acá con una variante muliana para ver
+
+01:05:03.440 --> 01:05:08.440
+donde si ya quedó bien ubicado no seguir para abajo.
+
+01:05:08.440 --> 01:05:12.440
+Solo para cortar en caso de que ya olvide.
+
+01:05:12.440 --> 01:05:17.440
+Para cortar y ubicar el elemento donde va.
+
+01:05:29.440 --> 01:05:37.440
+Entonces, Mierras dice, ¿cómo por qué sea distinto?
+
+01:05:37.440 --> 01:05:39.440
+No, era igual.
+
+01:05:39.440 --> 01:05:42.440
+Por eso tengo que hablar.
+
+01:05:42.440 --> 01:05:49.440
+Mientras sea menor o igual que el tamaño y esta variable
+
+01:05:49.440 --> 01:05:51.440
+siga estando falso.
+
+01:05:51.440 --> 01:05:54.440
+Entonces, ¿esto qué quiere decir?
+
+01:05:54.440 --> 01:05:56.440
+Que por momento tiene izquierdo.
+
+01:05:56.440 --> 01:05:59.440
+Al hacer 2 por P menor o igual que el tamaño.
+
+01:05:59.440 --> 01:06:01.440
+Que era este caso que estábamos acá.
+
+01:06:01.440 --> 01:06:02.440
+5 por 2, 10.
+
+01:06:02.440 --> 01:06:03.440
+¿Es menor o igual que el tamaño?
+
+01:06:03.440 --> 01:06:04.440
+Sí.
+
+01:06:04.440 --> 01:06:07.440
+Hasta ahora 6 tiene izquierdo.
+
+01:06:08.440 --> 01:06:13.440
+Y todavía no tengo que colocar el filtrado.
+
+01:06:13.440 --> 01:06:21.440
+Entonces, el HP pone 2 por P.
+
+01:06:21.440 --> 01:06:26.440
+O sea, HP es el índice de hijo mínimo.
+
+01:06:26.440 --> 01:06:30.440
+Entonces, dice, bueno, por ahora 2 por P.
+
+01:06:30.440 --> 01:06:33.440
+Es el hijo que encontré hasta ahora en izquierda.
+
+01:06:33.440 --> 01:06:35.440
+¿Pero qué hace?
+
+01:06:38.440 --> 01:06:43.440
+Tengo que votar si HP es distinto del tamaño.
+
+01:06:45.440 --> 01:06:50.440
+Porque si es distinto quiere decir que además tiene hijo derecho.
+
+01:06:50.440 --> 01:06:53.440
+En este último caso no le hubiese dado que es distinto.
+
+01:06:53.440 --> 01:06:55.440
+Le daba que es igual.
+
+01:06:56.440 --> 01:06:59.440
+Pero mientras tanto, la primera vez para que es distinto.
+
+01:06:59.440 --> 01:07:02.440
+O sea, la primera vez estaba acá.
+
+01:07:02.440 --> 01:07:04.440
+2 por 1, 2.
+
+01:07:04.440 --> 01:07:06.440
+Y 2 por 1, 2.
+
+01:07:06.440 --> 01:07:07.440
+Más o menos 3.
+
+01:07:07.440 --> 01:07:10.440
+O sea, los hijos están 2 y 3.
+
+01:07:10.440 --> 01:07:13.440
+¿3 es igual al tamaño?
+
+01:07:13.440 --> 01:07:14.440
+No.
+
+01:07:16.440 --> 01:07:18.440
+Es distinto al tamaño.
+
+01:07:18.440 --> 01:07:21.440
+Entonces, quiere decir que tiene hijo derecho.
+
+01:07:21.440 --> 01:07:23.440
+Entonces, acá sí pregunta.
+
+01:07:23.440 --> 01:07:29.440
+Acá está preguntando en realidad cuál de los dos hijos es menor.
+
+01:07:29.440 --> 01:07:35.440
+Si el dato que está en H.000 más 1 es menor que el dato que está en H.000.
+
+01:07:35.440 --> 01:07:41.440
+Entonces, el hijo mínimo va a estar en la posición H.000 más 1.
+
+01:07:43.440 --> 01:07:48.440
+O sea, que siempre el H.000 es el índice del hijo mínimo.
+
+01:07:48.440 --> 01:07:50.440
+Ya sea el izquierdo o el derecho.
+
+01:07:51.440 --> 01:07:54.440
+Entonces, ahora sí pregunta.
+
+01:07:54.440 --> 01:08:01.440
+¿El candidato es mayor que el dato que está en esa posición?
+
+01:08:01.440 --> 01:08:04.440
+Si es así, entonces.
+
+01:08:04.440 --> 01:08:07.440
+En la posición 1 sería.
+
+01:08:07.440 --> 01:08:10.440
+O sea, yo acá tenía el 8 originalmente.
+
+01:08:10.440 --> 01:08:14.440
+Buscó los hijos, el 5 y el 20.
+
+01:08:14.440 --> 01:08:17.440
+Se fijó cuál era el menor, es el 5.
+
+01:08:17.440 --> 01:08:22.440
+Entonces, ¿el candidato es mayor que el 8?
+
+01:08:22.440 --> 01:08:26.440
+¿Es mayor que el dato que está en el hijo mínimo?
+
+01:08:26.440 --> 01:08:28.440
+O sea, que 5 sí.
+
+01:08:28.440 --> 01:08:33.440
+Entonces, en la posición P, que P todavía sigue siendo 1.
+
+01:08:35.440 --> 01:08:39.440
+Como el dato que está en el hijo mínimo.
+
+01:08:39.440 --> 01:08:41.440
+O sea, te pongo el 5.
+
+01:08:43.440 --> 01:08:46.440
+Y ahora P pasa hasta acá.
+
+01:08:48.440 --> 01:08:53.440
+Es decir, que en realidad P pasa hasta acá.
+
+01:08:55.440 --> 01:08:58.440
+Es como si P hubiese arrancado de acá.
+
+01:08:58.440 --> 01:09:00.440
+Se fijó cuál era el hijo mínimo.
+
+01:09:00.440 --> 01:09:03.440
+Y ahora P pasa hasta acá.
+
+01:09:03.440 --> 01:09:04.440
+Después que hizo el intercambio.
+
+01:09:04.440 --> 01:09:05.440
+¿Y para qué?
+
+01:09:05.440 --> 01:09:07.440
+Para volver a hacer lo mismo.
+
+01:09:11.440 --> 01:09:13.440
+Vuelve acá y otra vez.
+
+01:09:13.440 --> 01:09:17.440
+Entonces, ¿2 por P es menor o igual que el tamaño?
+
+01:09:17.440 --> 01:09:19.440
+En este caso le va a dar que sí.
+
+01:09:19.440 --> 01:09:22.440
+Porque P es la posición 2.
+
+01:09:22.440 --> 01:09:24.440
+¿2 por 2?
+
+01:09:24.440 --> 01:09:26.440
+4.
+
+01:09:26.440 --> 01:09:29.440
+¿Y es menor o igual que el tamaño?
+
+01:09:29.440 --> 01:09:30.440
+Sí.
+
+01:09:30.440 --> 01:09:34.440
+Y todavía no puedo parar de filtrar.
+
+01:09:34.440 --> 01:09:37.440
+Porque todavía no lo ubiqué en el elemento.
+
+01:09:37.440 --> 01:09:39.440
+Entonces.
+
+01:09:39.440 --> 01:09:42.440
+En H1.000 pone 4.
+
+01:09:42.440 --> 01:09:45.440
+H1.000 pone 4.
+
+01:09:45.440 --> 01:09:46.440
+El 15.
+
+01:09:46.440 --> 01:09:48.440
+Le deja 4.
+
+01:09:49.440 --> 01:09:51.440
+Porque es el 10.
+
+01:09:51.440 --> 01:09:53.440
+Ahora Pregunta.
+
+01:09:53.440 --> 01:09:56.440
+¿H1.000 es distinto del tamaño?
+
+01:09:56.440 --> 01:09:57.440
+Sí.
+
+01:09:57.440 --> 01:09:59.440
+Porque P todavía está dentro de la G.
+
+01:09:59.440 --> 01:10:02.440
+O sea, que tiene hijo a derecho.
+
+01:10:02.440 --> 01:10:04.440
+O sea, que quiere decir que tiene hijo a derecho.
+
+01:10:04.440 --> 01:10:05.440
+Entonces P pregunta.
+
+01:10:05.440 --> 01:10:07.440
+¿El dato que está en H1.000 más 1?
+
+01:10:07.440 --> 01:10:08.440
+O sea, en 5.
+
+01:10:08.440 --> 01:10:11.440
+¿El menor que el dato que está en H1.000?
+
+01:10:11.440 --> 01:10:12.440
+Sí.
+
+01:10:12.440 --> 01:10:15.440
+Entonces H1.000 ahora pregunta acá.
+
+01:10:15.440 --> 01:10:17.440
+Porque este es el hijo mismo de los dos.
+
+01:10:17.440 --> 01:10:21.440
+Entre el 15 y el 7 es el hijo mío.
+
+01:10:21.440 --> 01:10:24.440
+Entonces ahora recién ahí compara.
+
+01:10:24.440 --> 01:10:27.440
+¿Cómo es el 7?
+
+01:10:27.440 --> 01:10:31.440
+Por ejemplo, el 8.
+
+01:10:31.440 --> 01:10:34.440
+¿Cómo el 7 es menor?
+
+01:10:34.440 --> 01:10:37.440
+Entonces pasa el 7 acá.
+
+01:10:37.440 --> 01:10:42.440
+Y el P pasa acá ahora.
+
+01:10:45.440 --> 01:10:47.440
+Y vuelve otra vez.
+
+01:10:49.440 --> 01:10:52.440
+Ahora sí va a venir acá.
+
+01:10:52.440 --> 01:10:55.440
+Y empieza 2.
+
+01:10:55.440 --> 01:10:57.440
+Porque tiene los 4 de tamaño.
+
+01:10:57.440 --> 01:11:01.440
+Entonces H1.000 va a ser este índice.
+
+01:11:02.440 --> 01:11:05.440
+El 10.
+
+01:11:05.440 --> 01:11:08.440
+Siempre H1.000 son índices.
+
+01:11:08.440 --> 01:11:10.440
+Entonces H1.000.
+
+01:11:10.440 --> 01:11:12.440
+¿Es distinto de tamaño o no?
+
+01:11:12.440 --> 01:11:14.440
+¿Es igual el tamaño?
+
+01:11:14.440 --> 01:11:16.440
+Entonces directamente pregunta.
+
+01:11:16.440 --> 01:11:18.440
+¿Cómo es el candidato?
+
+01:11:18.440 --> 01:11:21.440
+O sea, que sigue siendo el 8 el candidato.
+
+01:11:21.440 --> 01:11:24.440
+Con respecto al H1.000.
+
+01:11:24.440 --> 01:11:26.440
+En este caso menor.
+
+01:11:26.440 --> 01:11:30.440
+Pero si hubiese sido mayor.
+
+01:11:30.440 --> 01:11:31.440
+¿Qué hace?
+
+01:11:31.440 --> 01:11:33.440
+Pone el T.
+
+01:11:33.440 --> 01:11:35.440
+Lo pone acá.
+
+01:11:41.440 --> 01:11:45.440
+Y pone el P.
+
+01:11:45.440 --> 01:11:47.440
+Lo pone acá.
+
+01:11:51.440 --> 01:11:53.440
+Y ahí sí sale igual.
+
+01:11:53.440 --> 01:11:54.440
+2 por P.
+
+01:11:54.440 --> 01:11:55.440
+¿Es menor o igual que el tamaño?
+
+01:11:55.440 --> 01:11:57.440
+Ahí va dando por 10, 20.
+
+01:11:57.440 --> 01:11:59.440
+Ya está.
+
+01:11:59.440 --> 01:12:01.440
+Entonces en la posición P.
+
+01:12:01.440 --> 01:12:03.440
+Hubiese puesto el candidato.
+
+01:12:03.440 --> 01:12:07.440
+En este caso no por el candidato.
+
+01:12:10.440 --> 01:12:14.440
+O sea, ¿se entendió cómo es el algoritmo?
+
+01:12:18.440 --> 01:12:19.440
+Bien.
+
+01:12:19.440 --> 01:12:21.440
+Y esto que está también cuadrado.
+
+01:12:21.440 --> 01:12:25.440
+Es el filtrado hacia abajo.
+
+01:12:27.440 --> 01:12:29.440
+Es el filtrado hacia abajo.
+
+01:12:29.440 --> 01:12:32.440
+Que otra vez, igual que el filtrado hacia arriba.
+
+01:12:32.440 --> 01:12:34.440
+Yo lo puedo parametrizar.
+
+01:12:34.440 --> 01:12:35.440
+¿Para qué?
+
+01:12:35.440 --> 01:12:39.440
+Porque en este caso empezó a filtrar desde la posición 1.
+
+01:12:40.440 --> 01:12:41.440
+¿No?
+
+01:12:43.440 --> 01:12:51.440
+Pero yo puedo querer filtrar desde cualquier posición.
+
+01:12:55.440 --> 01:13:00.440
+Yo puedo querer filtrar de cualquier posición.
+
+01:13:00.440 --> 01:13:04.440
+De la 1, de la 5, de cualquiera.
+
+01:13:04.440 --> 01:13:11.440
+Entonces le mando acá el índice de dónde quiero filtrar.
+
+01:13:13.440 --> 01:13:16.440
+Pero hace todo lo mismo que ya vimos.
+
+01:13:16.440 --> 01:13:19.440
+El candidato se guarda lo que estaba ahí.
+
+01:13:19.440 --> 01:13:21.440
+Usa la pambarilla de mulgana.
+
+01:13:21.440 --> 01:13:24.440
+Pregunta si 2 por P es menor o igual que el tamaño.
+
+01:13:24.440 --> 01:13:27.440
+Ahí no tengo que parar de filtrar.
+
+01:13:27.440 --> 01:13:30.440
+Entonces si en HMI pone 2 por P.
+
+01:13:30.440 --> 01:13:32.440
+Si HMI es distinto del tamaño.
+
+01:13:32.440 --> 01:13:37.440
+Entonces se fija 2 por P menor.
+
+01:13:37.440 --> 01:13:39.440
+Hace todo lo mismo.
+
+01:13:41.440 --> 01:13:44.440
+Entonces ahora el borrado.
+
+01:13:45.440 --> 01:13:49.440
+El borrado me queda así ahora.
+
+01:13:50.440 --> 01:13:52.440
+El tamaño mayor que 0.
+
+01:13:52.440 --> 01:13:54.440
+Quiere decir que aquí no está vacía.
+
+01:13:54.440 --> 01:13:57.440
+Entonces se guarda el elemento mínimo.
+
+01:13:58.440 --> 01:14:02.440
+Ahora si pone el último elemento.
+
+01:14:02.440 --> 01:14:06.440
+El último lo ubica en la raíz.
+
+01:14:06.440 --> 01:14:10.440
+O sea, lo ubica en la posición 1 directamente en la raíz.
+
+01:14:12.440 --> 01:14:15.440
+Decrementa el tamaño de aquí.
+
+01:14:15.440 --> 01:14:18.440
+Y mando a filtrar desde la posición 1.
+
+01:14:18.440 --> 01:14:21.440
+Quiere decir que acá es desde 1.
+
+01:14:28.440 --> 01:14:38.440
+Entonces es bastante útil tener los dos filtrados en métodos apartes para analizados.
+
+01:14:41.440 --> 01:14:46.440
+Porque entonces me sirve para poder filtrar hacia arriba o hacia abajo.
+
+01:14:46.440 --> 01:14:50.440
+Desde cualquier posición del arreglo.
+
+01:14:53.440 --> 01:14:55.440
+Bien.
+
+01:14:58.440 --> 01:15:01.440
+A ver, esta ejercitación.
+
+01:15:07.440 --> 01:15:19.440
+Dice, indique para cada uno de los siguientes árboles binarios si son un árbol parcialmente ordenado.
+
+01:15:19.440 --> 01:15:21.440
+En caso negativo explico por qué.
+
+01:15:21.440 --> 01:15:23.440
+Bueno, esto no es algo que está copiado.
+
+01:15:23.440 --> 01:15:26.440
+Nosotros no lo llamamos así con esta expresión parcialmente ordenado.
+
+01:15:26.440 --> 01:15:29.440
+Pero quiere decir que sí es una hit.
+
+01:15:29.440 --> 01:15:32.440
+Aquí está copiada la demanda.
+
+01:15:35.440 --> 01:15:38.440
+Entonces, fíjense cada uno de estos.
+
+01:15:40.440 --> 01:15:43.440
+O sea, si lo presenta, a lo mejor lo presenta la misma hit.
+
+01:15:51.440 --> 01:15:53.440
+¿Qué les parece?
+
+01:15:55.440 --> 01:15:57.440
+Ah, sí. A ver.
+
+01:16:02.440 --> 01:16:03.440
+Bien.
+
+01:16:04.440 --> 01:16:05.440
+B, no.
+
+01:16:11.440 --> 01:16:12.440
+B, no.
+
+01:16:13.440 --> 01:16:14.440
+¿Por qué?
+
+01:16:14.440 --> 01:16:15.440
+A B, no.
+
+01:16:21.440 --> 01:16:22.440
+Bien.
+
+01:16:40.440 --> 01:16:43.440
+Entonces, B, sí o B, no.
+
+01:16:52.440 --> 01:16:54.440
+Bueno, está peleado.
+
+01:16:54.440 --> 01:16:57.440
+Bueno, no es enriquecido decirme no.
+
+01:17:00.440 --> 01:17:02.440
+Claro, no es un árbol completo.
+
+01:17:02.440 --> 01:17:04.440
+Estructuralmente no es cumple.
+
+01:17:04.440 --> 01:17:06.440
+Ya se ve algo.
+
+01:17:06.440 --> 01:17:08.440
+Aparte se ve sin mirar hasta los datos.
+
+01:17:08.440 --> 01:17:10.440
+Que acá le falta el hijo derecho.
+
+01:17:10.440 --> 01:17:12.440
+No puede tener estos hijos.
+
+01:17:12.440 --> 01:17:14.440
+Acá y desde acá.
+
+01:17:14.440 --> 01:17:16.440
+Y desde acá no.
+
+01:17:16.440 --> 01:17:18.440
+O sea, acá sin mirar los datos.
+
+01:17:18.440 --> 01:17:20.440
+A ver si están ordenados.
+
+01:17:20.440 --> 01:17:22.440
+A ver si están ordenados ni nada.
+
+01:17:22.440 --> 01:17:24.440
+Ya acá ya te de cuenta que no tiene ahí.
+
+01:17:24.440 --> 01:17:25.440
+Que no tiene hijo derecho.
+
+01:17:25.440 --> 01:17:26.440
+Y no puede tener.
+
+01:17:26.440 --> 01:17:28.440
+Entonces, esto no puede estar.
+
+01:17:32.440 --> 01:17:33.440
+Bien.
+
+01:17:33.440 --> 01:17:35.440
+Y la última, la C.
+
+01:17:39.440 --> 01:17:41.440
+¿Qué les parece?
+
+01:17:50.440 --> 01:17:53.440
+O sea, fíjense que se tiene que cumplir a dos propiedades.
+
+01:17:53.440 --> 01:17:55.440
+La propiedad estructural.
+
+01:17:55.440 --> 01:17:57.440
+O sea, ser un árbol binario completo.
+
+01:17:57.440 --> 01:17:59.440
+Y que para cada nodo.
+
+01:17:59.440 --> 01:18:02.440
+El nodo tiene que ser menor o igual que los hijos.
+
+01:18:02.440 --> 01:18:04.440
+O si es una máxima.
+
+01:18:04.440 --> 01:18:07.440
+Tiene que ser mayor o igual que los hijos.
+
+01:18:07.440 --> 01:18:09.440
+Si no cumplen las proposas.
+
+01:18:09.440 --> 01:18:11.440
+No es una proposa.
+
+01:18:11.440 --> 01:18:13.440
+No es una proposa.
+
+01:18:13.440 --> 01:18:15.440
+No es una proposa.
+
+01:18:15.440 --> 01:18:17.440
+No es una proposa.
+
+01:18:17.440 --> 01:18:19.440
+Si no cumplen las proposas.
+
+01:18:19.440 --> 01:18:21.440
+No es una hip.
+
+01:18:27.440 --> 01:18:29.440
+Claro.
+
+01:18:29.440 --> 01:18:31.440
+El seno está desordenado.
+
+01:18:31.440 --> 01:18:33.440
+O sea, venimos con.
+
+01:18:35.440 --> 01:18:38.440
+No, no cumple el.
+
+01:18:38.440 --> 01:18:40.440
+Es 30.
+
+01:18:40.440 --> 01:18:42.440
+Más que 60.
+
+01:18:42.440 --> 01:18:44.440
+Porque si venimos pensando que es una hip.
+
+01:18:47.440 --> 01:18:50.440
+Entonces el que está mal ubicado.
+
+01:18:50.440 --> 01:18:52.440
+Es el 30 con respecto al 40.
+
+01:18:56.440 --> 01:18:58.440
+Todo el resto está bien.
+
+01:18:58.440 --> 01:19:00.440
+Pero ahí ya no.
+
+01:19:02.440 --> 01:19:04.440
+Bien.
+
+01:19:04.440 --> 01:19:06.440
+Después dice.
+
+01:19:06.440 --> 01:19:08.440
+¿Cuáles de las siguientes opciones.
+
+01:19:08.440 --> 01:19:12.440
+Corresponde al almacenamiento lineal.
+
+01:19:12.440 --> 01:19:15.440
+Del siguiente árbol parcialmente ordenado.
+
+01:19:15.440 --> 01:19:17.440
+Ordenado o hipinario.
+
+01:19:17.440 --> 01:19:19.440
+Es decir.
+
+01:19:19.440 --> 01:19:20.440
+Usted tiene.
+
+01:19:20.440 --> 01:19:22.440
+¿Qué significa esa pregunta?
+
+01:19:24.440 --> 01:19:26.440
+Que.
+
+01:19:26.440 --> 01:19:28.440
+Usted tiene en ese árbol.
+
+01:19:28.440 --> 01:19:30.440
+Y cómo se almacenaría.
+
+01:19:30.440 --> 01:19:32.440
+En un arreglo.
+
+01:19:34.440 --> 01:19:36.440
+De acuerdo a lo que vimos hoy.
+
+01:19:38.440 --> 01:19:40.440
+Entonces esperen que.
+
+01:19:40.440 --> 01:19:42.440
+Entre que sea un blog.
+
+01:19:42.440 --> 01:19:43.440
+Sí, sí.
+
+01:19:57.440 --> 01:19:59.440
+30.
+
+01:19:59.440 --> 01:20:01.440
+80.
+
+01:20:01.440 --> 01:20:03.440
+O sea que ya ahí estamos.
+
+01:20:03.440 --> 01:20:05.440
+Entre el B y el C.
+
+01:20:07.440 --> 01:20:09.440
+70.
+
+01:20:09.440 --> 01:20:10.440
+Claro.
+
+01:20:10.440 --> 01:20:12.440
+Es fácil.
+
+01:20:13.440 --> 01:20:15.440
+Va, creo que después sigue bien.
+
+01:20:15.440 --> 01:20:16.440
+70.
+
+01:20:16.440 --> 01:20:17.440
+100.
+
+01:20:17.440 --> 01:20:18.440
+90.
+
+01:20:18.440 --> 01:20:20.440
+130.
+
+01:20:20.440 --> 01:20:21.440
+110.
+
+01:20:21.440 --> 01:20:22.440
+120.
+
+01:20:22.440 --> 01:20:24.440
+O sea siempre con niveles que se.
+
+01:20:24.440 --> 01:20:26.440
+No se ve nada.
+
+01:20:28.440 --> 01:20:30.440
+Pero no se ve nada.
+
+01:20:40.440 --> 01:20:41.440
+Bien.
+
+01:21:01.440 --> 01:21:02.440
+Piana.
+
+01:21:02.440 --> 01:21:12.200
+Bueno, y después sería inserte.
+
+01:21:12.200 --> 01:21:15.560
+Sí.
+
+01:21:42.200 --> 01:22:04.960
+Dice, inserte los valores 60, 75 y 10 a la hip anterior, dibuje la hip resultante después
+
+01:22:04.960 --> 01:22:18.000
+de cada operación. Entonces, yo tengo el 30, 80, 70,
+
+01:22:18.000 --> 01:22:39.480
+190, 190, 130, 110, 120. Bien, entonces,
+
+01:22:39.480 --> 01:23:00.520
+yo tengo que insertar el 60. Entonces, lo inserto, ¿cómo lo inserto? Lo inserto acá.
+
+01:23:00.520 --> 01:23:16.840
+Bien, entonces, esto es una mean hip. Entonces, pregunto, ¿cómo es el 60 respecto
+
+01:23:16.840 --> 01:23:27.760
+del 100? Como es menor, bajo el 100, subo el 60. ¿Cómo es el 60 respecto al 80? Como es menor,
+
+01:23:27.840 --> 01:23:46.480
+bajo el 80, subo el 60. O sea que entonces, la hip final me quedó así.
+
+01:23:46.480 --> 01:24:14.400
+30, 60, 70, 80, 90, 130, 110, 120, 100.
+
+01:24:16.680 --> 01:24:42.200
+Bien, ahora tengo que insertar el día.
+
+01:24:42.200 --> 01:25:01.640
+Bueno, ahora vamos a seguir. 75, el 75 iría acá. Entonces, como es menor que el 90,
+
+01:25:01.640 --> 01:25:12.680
+sería 90, 75 y ahí quedó. Entonces, o sea, cuando uno, que a veces les tomamos de ese tipo
+
+01:25:12.680 --> 01:25:22.840
+de ejercicios o con algún otro de algunas operaciones de hip. Siempre les pedimos que
+
+01:25:22.840 --> 01:25:28.560
+sean prolijos, entonces, pues esto lo vuelven a copiar como se hizo recién. O sea, para no seguir,
+
+01:25:28.560 --> 01:25:35.040
+porque yo acá podría decir, bueno, ahora tengo que insertar el 10. Bueno, el 10 inserto acá,
+
+01:25:35.040 --> 01:25:54.720
+y sigo tachando. Entonces, siempre le pedimos que, como se llama, que vayan dibujando. Incluso,
+
+01:25:54.800 --> 01:26:05.320
+si quieren ir dibujando el árbol, cada vez que tachan uno, o sea, acá, ya se entendería bien,
+
+01:26:05.320 --> 01:26:14.440
+con una sola tachada. Pero ya si tengo que volver a tachar, ya ahí ya está el 10. Entonces,
+
+01:26:14.440 --> 01:26:42.520
+acá me quedaría 30, 60, 70, 80, 75, 130, 110, 120, 100, 90. Y ahora tengo que insertar el 10.
+
+01:26:45.160 --> 01:26:46.720
+Entonces, el 10.
+
+01:26:54.840 --> 01:27:06.400
+El 10 estaría acá. Entonces, otra vez, filtro 75. Tendría que poner el 10 acá, pero en realidad
+
+01:27:06.400 --> 01:27:11.480
+ya sé que tengo que bajar el 60. Tendría que poner el 10 acá, pero ya sé que tengo que bajar
+
+01:27:11.480 --> 01:27:20.880
+el 30. Y el 10 me queda así. Entonces, me queda, a ver, como dijo Federico, 10, 30, 70, 80.
+
+01:27:24.880 --> 01:27:38.320
+10, 30, 70, 80, 60, 130, 110, 120, 100.
+
+01:27:39.320 --> 01:27:44.240
+Ah, en los últimos dos, 75, 90, 90, 75.
+
+01:27:49.520 --> 01:27:55.520
+Pero por ahí te equivocaste a copiar, a tipiar, pero en el árbol, si lo hiciste, si lo hiciste haciendo.
+
+01:27:56.880 --> 01:28:03.200
+O sea, uno lo hace, si yo esto se lo hago negar, lo que nosotros en general, cuando retomamos,
+
+01:28:03.600 --> 01:28:16.680
+lo mismo que el bilgi o el juzor, que es lo que se ve desde después, en realidad le decimos que lo pueden hacer con arreglo o con árboles.
+
+01:28:17.040 --> 01:28:22.320
+Con árboles enmascaró, creo que para ustedes, y enmascaró para nosotros también para corregir.
+
+01:28:22.320 --> 01:28:29.840
+Y vemos bien si van haciendo bien todo el camino y todo el filtrado hacia arriba o hacia abajo.
+
+01:28:30.480 --> 01:28:40.000
+Pero hay algunos que están acostumbrados a usar el arreglo directamente, bueno, lo hacen a ver.
+
+01:28:43.280 --> 01:28:58.480
+Pero en realidad, o sea, lo que tienen que ir mostrando es esto, es todos los pasos, ¿no?
+
+01:28:58.480 --> 01:29:04.160
+O sea, no van a poner el resultado si final, uno no sabe de dónde sale la cosa.
+
+01:29:20.640 --> 01:29:28.080
+Bueno, y después vienen estas otras operaciones, pero esto, bueno, vamos a ver si van a hacer bien.
+
+01:29:29.120 --> 01:29:31.600
+Vamos a parezco bien con las horas de la mañana.
+
+01:29:31.600 --> 01:29:42.160
+Que son operaciones que me permiten modificar algún valor dentro de las GIFs, ¿no?
+
+01:29:44.640 --> 01:29:51.120
+Si yo estuviera en general, yo en las GIFs no sé dónde están ubicados los datos.
+
+01:29:51.680 --> 01:29:58.400
+O sea, es cierto, el valor mínimo, si es una GIF, yo no sé dónde están ubicados los datos.
+
+01:29:58.560 --> 01:29:59.920
+¿Se entiende?
+
+01:29:59.920 --> 01:30:08.240
+O sea, yo le digo, por ejemplo, y estas operaciones, digamos, para la clase que viene.
+
+01:30:08.240 --> 01:30:20.000
+Pero si yo no le digo dónde está el máximo elemento, esto es una GIF, ¿no?
+
+01:30:20.000 --> 01:30:26.800
+Yo le digo dónde está el máximo elemento, no el mínimo, el máximo.
+
+01:30:28.560 --> 01:30:41.120
+Y al final...
+
+01:30:52.880 --> 01:30:56.800
+Claro, fijate que ya en este caso, en esta GIF no se cumple.
+
+01:30:58.480 --> 01:31:13.520
+Claro, hay que recordar, o sea, lo que yo sí sé en relación a lo que dijo Alan, que dijo al final,
+
+01:31:13.520 --> 01:31:26.640
+o sea, de algo sí estoy segura, no necesariamente en el último nivel, pero está más cerca.
+
+01:31:29.120 --> 01:31:31.840
+Porque acá tampoco está en el último nivel, mira.
+
+01:31:33.920 --> 01:31:37.120
+Yo pensé que era uno, pero ahora veo que hay otro más suave.
+
+01:31:40.240 --> 01:31:48.560
+Es una hoja, lo que yo estoy segura que va a ser una hoja, porque si es el máximo y es una GIF, va a ser una hoja.
+
+01:31:48.560 --> 01:31:56.960
+Lo que pasa es que la hoja, fíjense, que están acá o están acá, tiene un árbol binario completo,
+
+01:31:56.960 --> 01:32:09.440
+la mitad de los elementos son hojas, fíjense, ya nomás acá cuenta, uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez, hay cinco hojas.
+
+01:32:10.480 --> 01:32:12.480
+La mitad de los elementos son hojas.
+
+01:32:12.480 --> 01:32:41.280
+Entonces, en realidad, yo para buscarlo, sí, puedo decir, bueno, lo puedo buscar en las hojas,
+
+01:32:41.280 --> 01:32:49.520
+pero tengo que buscar en cuanto, en la mitad del arreglo, entonces ya hay que hacer una búsqueda secuencial,
+
+01:32:49.520 --> 01:33:05.760
+o sea, buscar en n o buscar en n sobre 2 a la hora de hablar de eficiencia, estamos hablando de lo mismo, el lineal, sigue siendo el lineal,
+
+01:33:06.720 --> 01:33:11.120
+eso lo vamos a ver bien en mi análisis de algoritmos.
+
+01:33:11.120 --> 01:33:21.600
+Entonces, yo en realidad no tengo, la GIF no está diseñada para ubicar elementos dentro de la GIF,
+
+01:33:21.600 --> 01:33:29.920
+o sea, la GIF así, no, pues es esta implementación, un arbol binario completo, almacenado en un arreglo con esa propiedad de orden.
+
+01:33:30.880 --> 01:33:42.000
+No está diseñado para ubicar elementos, o sea, diseñado en cuanto, para que se puedan implementar en forma eficiente las operaciones,
+
+01:33:42.000 --> 01:33:51.680
+se entiende, o sea, está diseñado para que las operaciones eficientes sean insertar y borrar el mínimo, nada más.
+
+01:33:52.400 --> 01:34:07.040
+Entonces, después lo que vamos a ver es que yo, para poder modificar el valor a alguna clave que está dentro de la GIF,
+
+01:34:07.040 --> 01:34:16.000
+o incluso borrar alguna clave que no sea el mínimo, que sería esta última operación, yo necesito saber ubicación.
+
+01:34:16.960 --> 01:34:23.360
+Lo que pasa es que para saber ubicación necesito una estructura, alguna estructura auxiliar, tipo una tabla hash.
+
+01:34:23.360 --> 01:34:32.240
+Ustedes no han visto tablas hash en el fondo, tablas hash se ven en las materias de base de datos.
+
+01:34:32.240 --> 01:34:44.160
+O sea, la tabla hash es una tabla que a mí me permite insertar y borrar el tiempo constante a través de una función hash.
+
+01:34:45.120 --> 01:34:51.040
+Bueno, a mí, porque igual no necesitan saberlo, porque no lo vamos a tratar acá,
+
+01:34:51.040 --> 01:35:00.400
+pero yo necesito, lo que sí necesito para implementar estas tres operaciones es saber dónde está la clave que yo tengo que tocar.
+
+01:35:00.400 --> 01:35:08.480
+Porque si no me dicen dónde está, yo tengo que buscar si la operación pasa a ser lineal, ¿entiende?
+
+01:35:09.440 --> 01:35:21.200
+A mí me dice, bueno, bajar el valor a 80, porque por ejemplo, siento que representa la prioridad de una tarea en un sistema operativo,
+
+01:35:21.200 --> 01:35:28.480
+bueno, no, en realidad yo quiero que esa tarea tenga una mayor prioridad, que se ejecute antes,
+
+01:35:28.480 --> 01:35:35.360
+entonces claro, tengo que bajar el valor para que suba en el árbol.
+
+01:35:38.480 --> 01:35:47.440
+Entonces, yo le digo, bueno, pero decime dónde está el 80, yo le apretó, pero decime dónde está, bueno, está en la posición 4.
+
+01:35:47.440 --> 01:35:56.160
+Entonces, bajar la clave que está en tal posición, por eso acá aparece esto, que es la posición.
+
+01:35:56.160 --> 01:36:01.520
+Decrementa la clave que está en la posición X de la key en una cantidad delta.
+
+01:36:02.480 --> 01:36:12.400
+Entonces, todas esas operaciones son cuando a mí me da la posición de la clave que yo tengo que modificar en la key.
+
+01:36:12.400 --> 01:36:20.880
+Estas operaciones que vemos acá son operaciones complementarias, no son las operaciones básicas de la lógica de la key.
+
+01:36:20.880 --> 01:36:28.640
+¿Se entiende? O sea, las operaciones básicas son insertar y borrar el mínimo.
+
+01:36:28.640 --> 01:36:36.000
+Todo el nuevo tradicional, bueno, vemos a ver por qué me sirve para otras cosas, si me sirve para, bueno,
+
+01:36:36.000 --> 01:36:45.440
+vemos cómo la podemos implementar, hacer uso de otra estructura auxiliar para que sea más o menos eficiente, etcétera, etcétera.
+
+01:36:45.440 --> 01:36:51.840
+¿Cuál es la clave que está en la posición X de la key?
+
+01:36:51.840 --> 01:37:05.840
+Claro, en una clave de hash, en realidad vos te dices, tal clave le aplicas una opción y obtenés el lugar donde está.
+
+01:37:05.840 --> 01:37:11.280
+No lo tenés en el vocal, obtenés el índice directamente.
+
+01:37:11.280 --> 01:37:18.640
+Es lo que se llama función hash.
+
+01:37:18.640 --> 01:37:27.920
+Pero bueno, eso se suele ver en la materia de base de datos, porque la base de datos trabaja la trabaja con la hash, entonces se suele dar.
+
+01:37:27.920 --> 01:37:35.360
+Claro, se debe directamente, le aplicas la función, que se supone que esa función es solo una cuenta,
+
+01:37:35.840 --> 01:37:44.240
+no, es solo una cuenta, y de ahí directamente se va a obtener el índice, la ubicación de la clave en la red.
+
+01:37:44.240 --> 01:37:52.000
+Por eso se dice que es de tiempo constantes, porque además después de entrar el juego a que pueda haber paviciones,
+
+01:37:52.000 --> 01:37:58.720
+porque esa función aplicada a dos claves distintas los porte al mismo valor, ¿entiendes?
+
+01:37:59.680 --> 01:38:08.480
+Hay funciones, hay, bueno, todo esto es un tema, creo que es bastante interesante.
+
+01:38:08.480 --> 01:38:23.360
+Pero las operaciones son un antiguo de la inserción y la recuperación del valor del nuevo RAM.
+
+01:38:23.360 --> 01:38:37.200
+Bueno, entonces terminamos acá un poquito antes, así ya esto nos queda para la próxima, y arrancamos más frescos todos.
+

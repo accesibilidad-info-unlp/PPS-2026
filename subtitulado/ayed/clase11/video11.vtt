@@ -1,0 +1,3239 @@
+WEBVTT
+
+00:00.000 --> 00:11.440
+Bueno, entonces, en la clase de hoy vamos a empezar con el tema de análisis de algoritmos.
+
+00:11.440 --> 00:19.440
+¿Se acuerdan que en la primer clase habíamos hablado un poquito de cuáles eran los objetivos
+
+00:19.440 --> 00:25.640
+de la materia? Y entre ellos, además de darles los temas puntuales que íbamos a ver, que
+
+00:25.640 --> 00:47.640
+son árboles, colas de prioridades, análisis de algoritmos y grafos, agrupamos todos esos temas con un objetivo que es el de resolver problemas a través de algoritmos eficientes que usen todas esas estructuras de datos.
+
+00:47.640 --> 00:53.640
+Las estructuras de datos que ustedes ya vienen conociendo de años anteriores y las estructuras de datos
+
+00:53.640 --> 01:09.640
+que empiezan a ver con nosotros. Entonces, por un lado, para poder usar esas estructuras de datos tienen que conocer cómo se implementan esas estructuras de datos, en qué casos conviene usarlas y no usarlas,
+
+01:09.640 --> 01:25.640
+que fue lo que estuvimos haciendo hasta ahora con las estructuras nuevas. Aprendimos a definir distintos tipos de árboles, definimos las colas de prioridades, vimos cómo manejar esas estructuras que básicamente, en todas las estructuras,
+
+01:25.640 --> 01:43.640
+hay operaciones básicas que son las que nos permiten ir aumentando la cantidad de datos que tiene una estructura, ahorrando datos que tienen una estructura y, además, aquellas que son propias de las estructuras, como en el caso de las colas, las pilas,
+
+01:43.640 --> 01:53.640
+que no pueden estar en cualquier lado, no puede borrar cualquier pimiento, sino que tiene que respetar el comportamiento que las estructuras de datos tienen.
+
+01:53.640 --> 02:04.640
+Entonces, conocer las estructuras, saber implementarlas, saber cuándo usamos una y otra, hasta ahora lo venimos haciendo, nos faltaría todavía ver cuándo trabajemos con datos.
+
+02:04.640 --> 02:17.640
+Ahora bien, si nuestro objetivo es usar esas estructuras en algoritmos eficientes, lo que vamos a ver ahora es cómo hacemos para detectar cuán eficiente es nuestro algoritmo.
+
+02:17.640 --> 02:30.640
+Entonces, para eso lo que tenemos que aprender a hacer es analizar nuestros algoritmos, o no necesariamente nuestros algoritmos, sino algún algoritmo estándar.
+
+02:30.640 --> 02:41.640
+Ustedes vieron que cuando uno resuelve un problema, uno siempre desarrolla el algoritmo de cero. Por ahí combina otros algoritmos que ya conoce.
+
+02:41.640 --> 02:48.640
+Vieron que cuando trabajábamos con el March-Sort, usábamos una estrategia de dividir el problema en problemas más chicos.
+
+02:48.640 --> 02:54.640
+Y después, cuando teníamos resueltos esos pequeños problemas, para llegar a la solución final, hacíamos un March.
+
+02:55.640 --> 02:59.640
+Y el March es un algoritmo que ustedes ya conocían desde antes.
+
+02:59.640 --> 03:13.640
+Entonces, al juntar todos esos pequeños segmentos, digamos, de código más el código del March-Sort, eso nos daría la eficiencia de todo nuestro algoritmo.
+
+03:13.640 --> 03:27.640
+Entonces, bueno, para todos esos pasos tenemos que poder analizar el ritmo del algoritmo y determinar cuán eficiente es nuestro algoritmo.
+
+03:27.640 --> 03:39.640
+El determinar cuál eficiente es nuestro algoritmo lo vamos a hacer a través de poder determinar una medida que vamos a asociar a nuestro algoritmo,
+
+03:39.640 --> 03:51.640
+que nos da, no sería el equivalente a un valor o a un precio, pero es algo que nos dice cuán bueno es nuestro algoritmo.
+
+03:51.640 --> 04:02.640
+El saber cuán bueno es nuestro algoritmo no sirve. Por un lado, ya vamos a ver qué parámetros nos van a indicar cuán bueno es nuestro algoritmo o no.
+
+04:02.640 --> 04:08.640
+Nosotros vamos a llegar a tener un valor, una función que va a estar asociada a nuestro algoritmo.
+
+04:08.640 --> 04:14.640
+Después, bueno, ya vamos viendo cuáles son mejores o peores los valores que uno puede encontrar.
+
+04:14.640 --> 04:25.640
+Pero con ese valor que nosotros encontramos, podemos comparar nuestro algoritmo con otros algoritmos que resuelvan el mismo problema.
+
+04:25.640 --> 04:33.640
+Es conocido que para resolver un problema no existe necesariamente un único algoritmo que lo resuelva.
+
+04:33.640 --> 04:44.640
+Para encontrar un elemento dentro de un vector, lo pueden hacer con una búsqueda línica o, si los elementos estuvieran ordenados, lo podrían hacer con una búsqueda dicotomica.
+
+04:44.640 --> 04:53.640
+Entonces, los dos resuelven el problema, uno con menor cantidad de operaciones que otra, también ajustado a ciertas características,
+
+04:53.640 --> 04:59.640
+el hecho de que los elementos estén ordenados, pero ambos resuelven el problema.
+
+04:59.640 --> 05:11.640
+Entonces, por un lado me sirve para comparar con otros elementos y, por otro lado, me sirve porque si yo le asimulé el valor que tiene o la medida que tiene mi algoritmo,
+
+05:11.640 --> 05:23.640
+yo me doy cuenta que es pésima porque en este rango, después vamos a ver cuál es este, resulta ser un algoritmo que hace millones de pasas.
+
+05:23.640 --> 05:34.640
+Lo que me va a permitir también es decir, bueno, presto atención, qué operaciones hay de más para ver si las puedo quitar, si las puedo reemplazar por alguna otra,
+
+05:34.640 --> 05:39.640
+o, bueno, ver de qué manera puedo bajar esa cantidad de operaciones.
+
+05:39.640 --> 05:44.640
+¿Se entienden lo que estamos diciendo? Cualquier cosa me interrumpen y seguimos adelante.
+
+05:44.640 --> 05:47.640
+O me preguntan y está claro.
+
+05:47.640 --> 05:52.640
+Entonces, estamos hablando de conseguir algoritmos eficientes.
+
+05:52.640 --> 05:57.640
+Entonces, la eficiencia, bueno, perdón, acá está la agenda de lo que vamos a ver hoy.
+
+05:57.640 --> 06:00.640
+Me arranqué y me olvidé.
+
+06:00.640 --> 06:08.640
+Hoy lo que vamos a ver es un poco la introducción al concepto de TDN, que es esta función que vamos a asociar a nuestros algoritmos
+
+06:08.640 --> 06:14.640
+y que esto va a tener que ver con ciertos parámetros que ahora vamos a charlar un poquito.
+
+06:14.640 --> 06:20.640
+Y después vamos a ver cómo calcular ese valor para nuestros algoritmos.
+
+06:20.640 --> 06:26.640
+Puntualmente en clase de hoy vamos a llegar a ver en algoritmos iterativos cómo se resuelve.
+
+06:26.640 --> 06:29.640
+Está en grisecito, pero creo que ustedes lo ven.
+
+06:29.640 --> 06:43.640
+Después lo que vamos a aprender en la próxima clase es a calcular ese valor que tiene asignado nuestro algoritmo sobre algoritmos repulsivos.
+
+06:43.640 --> 06:54.640
+Y luego vamos a ver unos conceptos matemáticos que nos sirven para poder comparar más fácilmente distintos algoritmos
+
+06:54.640 --> 06:58.640
+según esta función que tengan asociado cada uno.
+
+06:58.640 --> 07:04.640
+Y después, bueno, finalmente vamos a ver algunos ejemplos de cómo optimizar los algoritmos.
+
+07:04.640 --> 07:11.640
+Esto que yo les decía, yo tengo mi algoritmo, resulta que es pésimo porque hace muchas operaciones de más.
+
+07:11.640 --> 07:15.640
+Entonces, bueno, ¿qué me tengo que estar fijando para mejorarlo?
+
+07:15.640 --> 07:26.640
+Bueno, entonces, bueno, acá esto es un poquito lo que nos traemos de una manera independiente, de la plataforma en particular.
+
+07:26.640 --> 07:28.640
+Ahora también vamos a verificar eso.
+
+07:28.640 --> 07:32.640
+Y mire la eficiencia de un algoritmo dependiendo del tamaño de la entrada.
+
+07:32.640 --> 07:48.640
+Esto porque es precisamente porque nosotros vamos a calcular y definiendo en términos de el tiempo de respuesta que da mi algoritmo.
+
+07:48.640 --> 07:52.640
+El tiempo de respuesta, bueno, es el tiempo de respuesta.
+
+07:52.640 --> 07:55.640
+Eso me lo pongo a ejecutar y veo así, demora mucho, demora poco.
+
+07:55.640 --> 07:57.640
+No hay más ni menos que esto.
+
+07:57.640 --> 08:05.640
+Pero eso, bueno, de alguna manera nos va a indicar si nuestro algoritmo es bueno o es malo,
+
+08:05.640 --> 08:11.640
+si nosotros lo pusiéramos a ejecutar con una determinada cantidad de datos.
+
+08:11.640 --> 08:16.640
+Por eso es que mire la eficiencia de un algoritmo dependiendo del tamaño de la entrada.
+
+08:16.640 --> 08:23.640
+Vieron que puede haber un algoritmo, por ejemplo, que trabaje con poca cantidad de datos.
+
+08:23.640 --> 08:28.640
+Entonces, si yo tengo que buscar un elemento en un vector que tiene poca cantidad de datos,
+
+08:28.640 --> 08:34.640
+en realidad si hago una búsqueda lineal no me va a afectar porque no voy a tener que hacer demasiados pasos.
+
+08:34.640 --> 08:38.640
+Y es un algoritmo mucho más sencillo que hacer una búsqueda dicotónica.
+
+08:38.640 --> 08:46.640
+Pero si yo el mismo problema lo tengo que resolver para muchas cantidades de datos,
+
+08:46.640 --> 08:51.640
+bueno, ahí tengo que hacer un poco de atención en lo que estamos haciendo.
+
+08:52.640 --> 08:57.640
+Entonces, lo que nosotros vamos a calcular y por eso es que hablamos siempre,
+
+08:57.640 --> 09:01.640
+cuando hablamos de análisis de algoritmo terminamos hablando de TDN,
+
+09:01.640 --> 09:07.640
+porque en realidad nosotros lo que vamos a calcular es una función,
+
+09:07.640 --> 09:12.640
+que la llamamos T porque está directamente asociada con el tiempo de respuesta de mi algoritmo,
+
+09:12.640 --> 09:19.640
+y que va a depender de la cantidad de datos que estemos usando.
+
+09:19.640 --> 09:25.640
+Pero en realidad no es que vaya a depender de la cantidad de datos, el resultado puntual de mi algoritmo,
+
+09:25.640 --> 09:31.640
+sino que yo lo que pretendo es que cuando aumento la cantidad de datos
+
+09:31.640 --> 09:36.640
+con los cuales tendría que correr ese algoritmo para resolver un problema,
+
+09:36.640 --> 09:40.640
+el tiempo de respuesta no aumente demasiado.
+
+09:41.640 --> 09:43.640
+Porque eso es que depende del tamaño.
+
+09:43.640 --> 09:48.640
+Y esto que nos dice que los compara en forma independiente de la plataforma a la cual estamos trabajando
+
+09:48.640 --> 09:52.640
+es porque el análisis que nosotros vamos a hacer es un análisis teórico.
+
+09:52.640 --> 09:56.640
+Eso creo que ya lo vimos en la primer clase.
+
+09:57.640 --> 10:05.640
+Entonces, yo siempre digo que ese tiempo de ejecución que uno encuentra,
+
+10:05.640 --> 10:09.640
+uno lo usa como un argumento de venta del algoritmo.
+
+10:10.640 --> 10:15.640
+Estamos pensando que uno está vendiendo el producto que uno genera,
+
+10:15.640 --> 10:19.640
+en este caso el desarrollo de algún algoritmo, uno va a decir,
+
+10:19.640 --> 10:24.640
+mi algoritmo se ejecuta con este Tdn,
+
+10:24.640 --> 10:29.640
+y bueno, ya van a ver que matemáticamente puede haber Tdn que sean mayores
+
+10:29.640 --> 10:36.640
+y que respeten el concepto matemático, pero uno no va a estar diciendo que su algoritmo
+
+10:37.640 --> 10:42.640
+está por debajo de tal cota y a una cota muy alta. ¿Entiendes?
+
+10:43.640 --> 10:47.640
+Bien, a ver cómo seguimos.
+
+10:47.640 --> 10:54.640
+Bueno, entonces, en realidad lo que uno va a tener que hacer para llegar a ese Tdn
+
+10:54.640 --> 11:00.640
+es analizar la entrada, identificar cuáles son las operaciones abstractas
+
+11:00.640 --> 11:05.640
+sobre la que se base el algoritmo, porque esas operaciones van a ver que cada una tiene
+
+11:05.640 --> 11:11.640
+distintas cantidades de pasos a resolver, a ejecutarse para resolverse
+
+11:11.640 --> 11:17.640
+y realizar un análisis matemático para encontrar los valores de las cantidades anteriores.
+
+11:17.640 --> 11:22.640
+Entonces, calcular cuántas veces se repiten cada una de esas operaciones.
+
+11:22.640 --> 11:30.640
+Lo que también vimos es que nosotros estamos hablando del Tdn
+
+11:30.640 --> 11:37.640
+como tiempo de respuesta de nuestro algoritmo porque es el recurso que elegimos
+
+11:37.640 --> 11:42.640
+priorizar en el cálculo que nosotros queremos hacer.
+
+11:42.640 --> 11:51.640
+En realidad, cuando uno elige qué considera como medida de eficiencia,
+
+11:51.640 --> 12:00.640
+podría haber elegido algún otro recurso, por ejemplo, memoria y uso de memoria,
+
+12:01.640 --> 12:06.640
+pero nosotros elegimos priorizar el tiempo de ejecución.
+
+12:06.640 --> 12:13.640
+Esto ya lo hemos charlado en la primer clase. De la misma manera, cuando uno piensa
+
+12:13.640 --> 12:18.640
+en qué recursos de computas elegir. Vieron, cuando uno escribe un programa,
+
+12:18.640 --> 12:23.640
+el programa lo puede escribir muy documentado, con muchos comentarios,
+
+12:23.640 --> 12:26.640
+muy intentado, muy prolíficamente, etcétera, etcétera.
+
+12:26.640 --> 12:35.640
+Pero nosotros, en este caso, lo que le hicimos es tomar el tiempo de respuesta que me da ese algoritmo
+
+12:35.640 --> 12:42.640
+y, si está bien documentado o no, es como que, bueno, no le estamos haciendo nada.
+
+12:42.640 --> 12:48.640
+Y la forma en que medimos esa eficiencia es esto que yo les decía recién.
+
+12:48.640 --> 12:55.640
+Por eso es que es independiente de la plataforma en la que vayamos a correr nuestro algoritmo.
+
+12:55.640 --> 13:03.640
+Y por eso es que yo les decía, es el tiempo de respuesta que tendría mi algoritmo si yo lo ejecutara.
+
+13:03.640 --> 13:11.640
+En realidad, el análisis yo lo hago, digamos, en papel, sin llegar a ponerlo en ejecución.
+
+13:11.640 --> 13:18.640
+Uno lo podría hacer en forma entérica, pero eso implicaría muchos más cuidados,
+
+13:18.640 --> 13:26.640
+porque si yo tengo que analizar tres o cuatro algoritmos que resuelvan el mismo problema,
+
+13:26.640 --> 13:35.640
+tendría que ejecutarlos en la misma máquina, con el mismo lenguaje, con el mismo compilador,
+
+13:35.640 --> 13:41.640
+con el mismo juego de datos, con la misma distribución de esos datos,
+
+13:41.640 --> 13:49.640
+porque el buscar si un elemento está o no en un vector no va a ser lo mismo
+
+13:49.640 --> 13:54.640
+si el elemento está en la primera posición, en la segunda, en la tercera, en la cuarta, no está.
+
+13:55.640 --> 14:01.640
+Entonces, los distintos algoritmos hay que usarlos con exactamente el mismo juego de datos,
+
+14:01.640 --> 14:06.640
+para que la cosa sea seria, hay que hacerlo probando en cada una de esas posiciones,
+
+14:06.640 --> 14:17.640
+sacar un promedio, etcétera, para ver cuál es el tiempo, en esos casos, el tiempo reloj de nuestro resultado.
+
+14:17.640 --> 14:23.640
+Y además, la complicación que también tiene es que yo tendría que implementar todos los algoritmos
+
+14:23.640 --> 14:30.640
+y ponerlos en ejecución, y recién después de haber implementado todo, decir cuál es el que me resulta más eficiente.
+
+14:30.640 --> 14:40.640
+Entonces, evita tener que hacer todo porque ya no pasé sin llegar a implementar los algoritmos.
+
+14:40.640 --> 14:43.640
+Pregúntenme si tienen alguna duda.
+
+14:43.640 --> 14:59.640
+Entonces, el TDN que nosotros vamos a calcular es una función que está asociada al tiempo de respuesta
+
+14:59.640 --> 15:09.640
+de mi algoritmo y que tiene como argumento el tamaño de la entrada de datos sobre la cual yo estoy trabajando
+
+15:09.640 --> 15:17.640
+y que la importancia de esto es para que me sirva para ver cuál es la respuesta de mi algoritmo
+
+15:17.640 --> 15:20.640
+cuando este tamaño de entrada se modifica.
+
+15:20.640 --> 15:23.640
+Cuando uno habla de que se modifica es porque aumenta, no?
+
+15:23.640 --> 15:36.640
+Es decir, hoy en día, cada vez, siempre las cosas, si algo funciona bien, se pretende mayor cantidad de datos.
+
+15:37.640 --> 15:44.640
+Este TDN se va a calcular en forma teórica, que es lo que nos vamos a decir, y ese cálculo se hace en el peor de los casos.
+
+15:44.640 --> 15:53.640
+Estas son cosas que ya estuvimos conversando porque cuando uno dice que la búsqueda de un elemento,
+
+15:53.640 --> 16:02.640
+también hace un elemento, está uno en un vector lineal, está diciendo que lo peor que me puede pasar
+
+16:02.640 --> 16:10.640
+es que tenga que preguntar en cada uno de los elementos que no lo encontré o que lo encontré en el último lugar
+
+16:10.640 --> 16:16.640
+o lo puede haber encontrado en el primero o en el segundo, pero yo digo que lo peor que me puede pasar
+
+16:16.640 --> 16:22.640
+es que tenga que observar los elementos, precisamente, se dice en el teor de los casos,
+
+16:22.640 --> 16:27.640
+pues bueno, tengo que buscar todos, estoy diciendo que mi algoritmo se comporta de eso, de esa forma,
+
+16:27.640 --> 16:30.640
+pero puede comportarse mejor.
+
+16:30.640 --> 16:33.640
+Ah, y entre cortas sonamos, o suelo es para mí.
+
+16:33.640 --> 16:35.640
+Igual...
+
+16:36.640 --> 16:39.640
+Ya da tanto, no siempre, bueno, trato de hablar por ahí más despacio y lo resolvemos.
+
+16:39.640 --> 16:42.640
+No soy el único en el que toco el sonamo.
+
+16:42.640 --> 16:44.640
+Estas cosas empiezan a pasar.
+
+16:46.640 --> 16:51.640
+Me doy cuenta, entre cortas se me van a pasar a mí, igual...
+
+16:51.640 --> 16:54.640
+Se entiende igual, bueno, vamos a tratar de...
+
+16:55.640 --> 16:57.640
+Sin apurarme, se resuelve.
+
+16:57.640 --> 17:03.640
+Bien, pero esto es lo que veníamos diciendo en otras oportunidades también,
+
+17:03.640 --> 17:06.640
+con respecto al peor de los casos.
+
+17:06.640 --> 17:10.640
+Y en este caso en particular, cuando yo hablo así de un argumento de venta,
+
+17:10.640 --> 17:17.640
+yo digo que mi algoritmo va a funcionar de esta manera, que por ahí no es absolutamente la mejor,
+
+17:17.640 --> 17:22.640
+pero no estoy mintiendo, digamos, porque eso es lo peor, peor que me puede pasar.
+
+17:22.640 --> 17:25.640
+Y ahí para abajo va a estar todo bien.
+
+17:25.640 --> 17:31.640
+Bien, bueno, esto es solamente, bueno, justo hablando de lo mismo,
+
+17:31.640 --> 17:40.640
+creo que no es necesario volver a mirar esta página, la pueden tener ustedes para volver a revisarla,
+
+17:40.640 --> 17:47.640
+que en realidad en estos casos analizábamos la cantidad de veces,
+
+17:47.640 --> 17:54.640
+que cuántas intentos se hacía antes de llegar al elemento que queríamos.
+
+17:54.640 --> 17:58.640
+En realidad esa es la cantidad de esos intentos,
+
+17:58.640 --> 18:01.640
+que es equivalente a la cantidad de operaciones que uno hace,
+
+18:01.640 --> 18:07.640
+hasta llegar a encontrar el elemento, que es esto que venimos diciendo recién.
+
+18:08.640 --> 18:15.640
+Pero cuando hablamos de tiempo, por ahí uno no solo quiere saber cuántos intentos se hicieron,
+
+18:15.640 --> 18:19.640
+sino qué tiempo llegó a hacer esos intentos.
+
+18:19.640 --> 18:21.640
+¿Qué tiempo llegó a hacer esos intentos?
+
+18:21.640 --> 18:31.640
+Obviamente va a estar directamente relacionado con el equipo que finalmente se vaya a llevar,
+
+18:31.640 --> 18:34.640
+que vaya a ejecutar.
+
+18:34.640 --> 18:40.640
+Con la cantidad de intentos yo ya estoy viendo cuál de los algoritmos es mejor o peor,
+
+18:41.640 --> 18:46.640
+pero con el tiempo, sabiendo el tiempo es como que todavía se potencia un poco más
+
+18:46.640 --> 18:51.640
+el valor de saber que el algoritmo es bueno, mejor o peor.
+
+18:51.640 --> 18:54.640
+Entonces acá está un poquito lo que yo les decía recién,
+
+18:54.640 --> 19:00.640
+debemos enfocarnos en cuán rápido crece la función del TDN respecto al tamaño de la entrada.
+
+19:00.640 --> 19:05.640
+A esto lo vamos a llamar tasa o velocidad de crecimiento del tiempo de ejecución,
+
+19:05.640 --> 19:09.640
+porque el tiempo de ejecución va a ser algo como esto.
+
+19:09.640 --> 19:18.640
+Mi TDN va a tener una expresión así o con algún logaritmo, pero va a ser una función precisamente.
+
+19:18.640 --> 19:26.640
+Pero a mí, lo que yo les decía recién, más que la expresión exacta del TDN,
+
+19:26.640 --> 19:36.640
+a mí lo que me interesa es la repercusión que tiene el cambiar el N y cambiar la cantidad de datos
+
+19:36.640 --> 19:45.640
+sobre los que yo voy a ejecutar este algoritmo cuando ese tamaño de entrada cambia.
+
+19:45.640 --> 19:53.640
+Entonces yo lo que pretendo es que la tasa o velocidad de crecimiento sea la más baja posible.
+
+19:53.640 --> 19:55.640
+Eso se entiende, ¿no?
+
+19:55.640 --> 19:59.640
+Ya parece que también en algún momento ya lo estuvimos hablando.
+
+19:59.640 --> 20:05.640
+Y es un poco lo que refleja este gráfico.
+
+20:05.640 --> 20:15.640
+Si yo escribiera o graficara esta función exactamente, bueno, sería medio parecida a esta,
+
+20:15.640 --> 20:21.640
+porque fíjense que estaría como todo subidito un poco y tendría más esta forma que está acá.
+
+20:21.640 --> 20:32.640
+Acá se la dividió en dos partes para ver cuál de las dos partes es la que realmente tiene efecto,
+
+20:32.640 --> 20:37.640
+digamos, en la velocidad de crecimiento de nuestro algoritmo.
+
+20:37.640 --> 20:45.640
+¿Se entiende? Es decir, la que más peso tiene es este pedacito de acá que es el término cuadrático.
+
+20:45.640 --> 20:55.640
+Porque, fíjense, a mí lo que me interesa es que cuando yo cambio un poquitito,
+
+20:56.640 --> 21:02.640
+cuando yo cambio un poquitito, bueno, vamos a hacerlo con este.
+
+21:02.640 --> 21:16.640
+De 20 datos a 40, fíjense que la parte lineal a penitas se movió de acá,
+
+21:16.640 --> 21:22.640
+el pedacito de acá hasta este pedacito de acá.
+
+21:22.640 --> 21:31.640
+Yo cambié de 20 a 30 a 40. Digo, cuando estaba en 20 tenía esta cantidad de tiempo de respuesta.
+
+21:31.640 --> 21:34.640
+Cuando estoy en 40 es este pedacito que está acá.
+
+21:34.640 --> 21:42.640
+Pero, en cambio, la parte roja, cuando estoy en 20 estoy casi igual.
+
+21:43.640 --> 21:47.640
+Cuando estoy en 20 estoy casi igual.
+
+21:47.640 --> 21:49.640
+¿Sí?
+
+21:51.640 --> 21:57.640
+Pero cuando pasé a 40 subí un montón más. ¿Se entiende?
+
+21:57.640 --> 21:59.640
+Entonces, ¿qué pasa?
+
+21:59.640 --> 22:09.640
+Yo, para decir cuál es la tasa de crecimiento de mi algoritmo, tengo que decir la mayor de todos,
+
+22:09.640 --> 22:16.640
+porque por debajo de eso mi algoritmo se va a comportar bien, se va a comportar mejor.
+
+22:16.640 --> 22:18.640
+¿Se entiende?
+
+22:18.640 --> 22:23.640
+Pero, bueno, uno tiene que intentar, si estas fueran dos cosas separadas,
+
+22:23.640 --> 22:27.640
+si estas fueran dos funciones separadas obviamente se me hubiera quedado con el azul.
+
+22:27.640 --> 22:35.640
+Acá lo que estamos mostrando es que estas, en realidad, son una sola.
+
+22:35.640 --> 22:44.640
+Esta es toda la función sumada, entonces, de esas dos partes, la que salió mal.
+
+22:44.640 --> 22:47.640
+Nunca puedo hacer bien el circulito.
+
+22:51.640 --> 22:54.640
+¿Esto vendría a ser...? Claro.
+
+22:54.640 --> 22:58.640
+Sí, ese es el análisis asintótico.
+
+22:58.640 --> 23:05.640
+No sé si estaba mencionado en la transparencia anterior y yo no lo dije, o viene en la que sigue.
+
+23:05.640 --> 23:11.640
+Es equivalente a esa notación asintótica que estamos usando.
+
+23:11.640 --> 23:17.640
+Cuando descartamos, bueno, y además estamos descartando los términos que son menos significativos,
+
+23:17.640 --> 23:22.640
+como en algunos casos son las constantes, y en este caso son estos términos,
+
+23:22.640 --> 23:26.640
+que es el término lineal más la constante, porque, si yo, insisto,
+
+23:26.640 --> 23:33.640
+si yo tuviera que graficar toda la función completa, sería más o menos parecida,
+
+23:33.640 --> 23:41.640
+un poquito más arriba, pero que siempre esta parte cuadrática es la que tendría más peso.
+
+23:43.640 --> 23:46.640
+Bueno, esto es lo que después aparece por acá.
+
+23:46.640 --> 23:52.640
+Al descartar los términos menos significativos y los coeficientes constantes,
+
+23:52.640 --> 23:55.640
+podemos enfocarnos en la parte importante.
+
+23:55.640 --> 24:00.640
+Eso es lo que vamos a ver después cuando hablemos de la notación matemática.
+
+24:00.640 --> 24:05.640
+Si hay una definición matemática que me justifica y que me argumenta,
+
+24:05.640 --> 24:12.640
+vamos a dejar todos esos términos menores y constantes,
+
+24:12.640 --> 24:19.640
+porque lo que más peso tiene y lo que representa la función es la de términos mayores.
+
+24:19.640 --> 24:23.640
+Ya van a ver, cuando veamos la definición en la notación bigot,
+
+24:23.640 --> 24:31.640
+que lo que vamos a terminar viendo es que hay una familia, digamos, de funciones cuadráticas
+
+24:31.640 --> 24:33.640
+que todas se comportan de la misma manera.
+
+24:33.640 --> 24:40.640
+Entonces, esto así sumado, o algo que tenga un 100 en el cuadrado más dos millones de cosas,
+
+24:40.640 --> 24:47.640
+o algo que sea en el cuadrado más lo que fuera, todas se comportan iguales que en el cuadrado.
+
+24:47.640 --> 24:52.640
+Eso es lo que vamos a ver la semana que viene.
+
+24:53.640 --> 24:55.640
+Bien.
+
+24:57.640 --> 25:04.640
+Acá tenemos esto. Bueno, y acá volvemos a un poquito ver qué es lo que pasa
+
+25:04.640 --> 25:12.640
+con la cantidad de datos con los que uno trabaja y el tiempo de respuesta reloj.
+
+25:12.640 --> 25:21.640
+Si nosotros tenemos tres algoritmos donde uno tiene esa función, ese Tdn,
+
+25:21.640 --> 25:29.640
+ese, bueno, sería orden de magnitud o tasa de crecimiento,
+
+25:29.640 --> 25:36.640
+porque nos despojamos de todos los términos que no necesitamos tanto
+
+25:36.640 --> 25:44.640
+y termina siendo logarítmico o una función que es lineal o una función cuadrática.
+
+25:44.640 --> 25:49.640
+Por eso acá, fíjense, yo no lo quería decir la palabra orden de ejecución,
+
+25:49.640 --> 25:56.640
+pero está escrito acá porque es la forma en que vamos a decir si las familias de logarítmico,
+
+25:56.640 --> 26:02.640
+N o N cuadrado, todas se comportan igual porque todas tienen el mismo orden de ejecución.
+
+26:02.640 --> 26:11.640
+Pero por otro lado, lo que vamos a ver también es que si el tamaño de la entrada es 10 al cubo,
+
+26:11.640 --> 26:17.640
+estamos trabajando con una computadora que hace una operación por segundo,
+
+26:17.640 --> 26:26.640
+nos vamos a encontrar con que al trabajar con el logaritmo en base 2 de 10 al cubo,
+
+26:26.640 --> 26:29.640
+vamos a tener un orden de 10 operaciones.
+
+26:29.640 --> 26:36.640
+Si cada operación requiere un segundo, el algoritmo va a tardar 10 segundos.
+
+26:36.640 --> 26:43.640
+Si lo que tenemos es una función o un algoritmo cuya función,
+
+26:43.640 --> 26:51.640
+cuyo valor que lo representa es lineal, al tener una entrada de tamaño 10 al cubo,
+
+26:51.640 --> 26:56.640
+lo que vamos a tener es 10 al cubo segundos, que les creo...
+
+26:57.640 --> 27:03.640
+...de donde está nuestra transparencia, que son 6 minutos aproximadamente, tendríamos que hacerlo.
+
+27:03.640 --> 27:09.640
+Y si es cuadrático, al tener una entrada de 10 al cubo,
+
+27:09.640 --> 27:15.640
+en realidad la cantidad de operaciones que yo voy a hacer es 10 a la sexta, ¿sí?
+
+27:15.640 --> 27:25.640
+Todo va a demandar 11 días de trabajo con un tamaño de N igual a 10 al cubo.
+
+27:25.640 --> 27:31.640
+Si en lugar de tener un tamaño de N igual a 10 al cubo, tengo 10 a la sexta,
+
+27:31.640 --> 27:35.640
+fíjense que con el logaritmo se duplica y son 20 segundos,
+
+27:35.640 --> 27:42.640
+con lo lineal crece mucho más y con la cuadrática crece todavía muchísimo más.
+
+27:42.640 --> 27:50.640
+Entonces, aquella acá está reflejándose y cuando yo cambio el tamaño de la entrada...
+
+27:56.640 --> 28:06.640
+...si yo cambio el tamaño de la entrada de 10 al cubo a 10 a la sexta,
+
+28:06.640 --> 28:13.640
+fíjense que la que se comporta mejor, la que crece menos, es la logaritmo.
+
+28:13.640 --> 28:20.640
+Y eso obviamente se ve reflejado en las funciones directamente, la función.
+
+28:20.640 --> 28:29.640
+Entonces, la mejor función que uno podría conseguir es una función que sea constante,
+
+28:29.640 --> 28:33.640
+es decir, que no dependa del tamaño de la entrada.
+
+28:33.640 --> 28:39.640
+Eso es algo prácticamente ilógico porque no tendría sentido.
+
+28:39.640 --> 28:43.640
+Para hacer una cosa así es muy difícil.
+
+28:44.640 --> 28:50.640
+Podríamos tener, pues van a ver en algunos ejercicios que tenemos un método por ahí
+
+28:50.640 --> 28:55.640
+que lo que hace es determinarme si un número es par o impar.
+
+28:55.640 --> 28:58.640
+Entonces, eso es constante, claro.
+
+28:58.640 --> 29:02.640
+No sé qué querés preguntar con el acceso a un arreglo.
+
+29:02.640 --> 29:06.640
+Ah, el acceso solamente, pero después lo tenés que recorrer.
+
+29:06.640 --> 29:09.640
+Y ya va a depender de la cantidad de datos.
+
+29:09.640 --> 29:14.640
+El tema es, claro, el acceso es constante, pero por ejemplo,
+
+29:14.640 --> 29:19.640
+un algoritmo que tenga que ver con un vector y con algo que sea constante
+
+29:19.640 --> 29:22.640
+sería que siempre te devuelva el elemento que está en la cuarta posición.
+
+29:22.640 --> 29:25.640
+Y eso no va a servir de mucho.
+
+29:25.640 --> 29:28.640
+¿Qué significa linearlo el índico?
+
+29:28.640 --> 29:34.640
+Porque esto debe ser hecho, debe ser n log n, esto.
+
+29:35.640 --> 29:39.640
+Así que esto es exponencial, cúbica, cuadrática.
+
+29:39.640 --> 29:44.640
+Debe ser no n, sino n log n.
+
+29:44.640 --> 29:47.640
+Y acá está la logarítmica sola y acá está la constante.
+
+29:51.640 --> 29:53.640
+Ah, está bien.
+
+29:55.640 --> 30:00.640
+Se entiende decir, tú puedes tener un método que me diga si un elemento es par o impar.
+
+30:00.640 --> 30:05.640
+Está bien, pero que haya un vector que hace un conjunto de datos
+
+30:05.640 --> 30:10.640
+y que eso sea absolutamente independiente de la cantidad de datos es muy difícil.
+
+30:10.640 --> 30:13.640
+Porque lo primero que se me ocurre es decir eso.
+
+30:13.640 --> 30:16.640
+Que devuelva el quinto elemento.
+
+30:16.640 --> 30:18.640
+Y siempre me va a devolver el quinto elemento.
+
+30:18.640 --> 30:21.640
+Está bien, el vector puede estar cambiando sus contenidos
+
+30:21.640 --> 30:24.640
+y devolver el quinto elemento. Ahí sería constante.
+
+30:24.640 --> 30:29.640
+Pero bueno, lo de que la constante, o que una función constante
+
+30:30.640 --> 30:39.640
+es la mejor de todas, es porque cuando yo cambio el tamaño de la entrada,
+
+30:39.640 --> 30:42.640
+¿cuánto cambia el t de n?
+
+30:42.640 --> 30:51.640
+Si yo paso de 4k a 5k, el t correspondiente a esa entrada, ¿cuánto cambia?
+
+30:52.640 --> 30:53.640
+Nada.
+
+30:53.640 --> 30:55.640
+Claro, no cambia.
+
+30:55.640 --> 31:01.640
+Entonces, ese dibujito que yo les hacía, yo hago gestos con las manos
+
+31:01.640 --> 31:03.640
+como si estuviera la cámara prendida.
+
+31:03.640 --> 31:14.640
+Esa alteración sobre el eje y, cuando estamos en una constante, no se modifica.
+
+31:14.640 --> 31:18.640
+Y acá, bueno, el dibujo no ayuda demasiado,
+
+31:18.640 --> 31:21.640
+pero porque, por ejemplo, esto que es cúbico, esto que es cuadrático,
+
+31:21.640 --> 31:25.640
+obviamente, lo cuadrático uno está más acostumbrado a lo más redondito,
+
+31:25.640 --> 31:30.640
+lo cúbico también, pero más aplastadito, ¿no?
+
+31:30.640 --> 31:36.640
+De acá no se nota mucho, pero sí se nota que, ante un pequeño cambio acá,
+
+31:36.640 --> 31:39.640
+el cambio sobre el eje y es muy grande.
+
+31:39.640 --> 31:42.640
+Eso queda claro, ¿no? No necesito...
+
+31:42.640 --> 31:44.640
+Si no me dice.
+
+31:44.640 --> 31:45.640
+Bien.
+
+31:45.640 --> 31:56.640
+Bueno, vamos a ver algún ejercito antes de empezar a calcular los TDN
+
+31:56.640 --> 31:59.640
+sobre lo que sería el código, ¿sí?
+
+31:59.640 --> 32:03.640
+Porque lo que vamos a ver después es, si ustedes tienen un código
+
+32:03.640 --> 32:09.640
+que va a estar formado por sentencias de control, ¿no?
+
+32:10.640 --> 32:15.640
+Sentencias de control, ¿no? Asignaciones, un por, un while, etcétera.
+
+32:15.640 --> 32:20.640
+Lo que vamos a aprender es a ver cuántos pasos requieren cada una de estas
+
+32:20.640 --> 32:27.640
+y esas operaciones y combinarlas para que nos dé el resultado final.
+
+32:27.640 --> 32:38.640
+Bien. Entonces, acá, ¿cómo se les ocurre que podríamos resolver esto que está acá?
+
+32:39.640 --> 32:46.640
+Tenemos un algoritmo que nos dice que requiere FDN operaciones.
+
+32:46.640 --> 32:51.640
+En este caso, el FDN, ¿qué les parece que es?
+
+32:55.640 --> 32:58.640
+Para resolver un problema dado.
+
+33:02.640 --> 33:06.640
+Mi idea, el TDN, claro, es decir, acá está escrito con esa anotación
+
+33:06.640 --> 33:11.640
+porque en definitiva, pues es una función, el TDN en definitiva es una función.
+
+33:11.640 --> 33:18.640
+Nosotros lo llamamos como T porque las asociamos directamente con el tiempo,
+
+33:18.640 --> 33:20.640
+pero en definitiva es una función.
+
+33:23.640 --> 33:27.640
+Nosotros, porque lo estamos viendo así, pero si nosotros hubiéramos hecho
+
+33:27.640 --> 33:35.640
+un análisis práctico y calcularamos el TDN a partir de ese análisis práctico,
+
+33:35.640 --> 33:40.640
+uno hubiera tenido que calculaba el tiempo de respuesta de nuestro algoritmo
+
+33:40.640 --> 33:43.640
+para una determinada cantidad de datos, para otra cantidad de datos,
+
+33:43.640 --> 33:49.640
+para otra cantidad de datos, por ejemplo, no sé, supónganse este logarítmico que está acá,
+
+33:49.640 --> 33:53.640
+que se represente o que se relacione con una búsqueda dicotómica.
+
+33:53.640 --> 33:57.640
+Entonces, yo tengo ocho datos, me va a quedar un puntito acá.
+
+33:57.640 --> 34:00.640
+Tengo 8K, digo, voy a tener otro puntito por acá.
+
+34:00.640 --> 34:03.640
+Tengo distintos tamaños y voy a tener distintos puntitos.
+
+34:03.640 --> 34:07.640
+Si yo esto lo hago en forma práctica, yo voy a tener puntitos, ¿sí?
+
+34:07.640 --> 34:10.640
+Para una cantidad de datos, ¿cuánto tiempo reloj me da?
+
+34:10.640 --> 34:12.640
+Otra cantidad de datos, ¿cuánto tiempo reloj me da?
+
+34:12.640 --> 34:19.640
+Eso con algún método de interpolación, yo lo termino uniendo esos puntitos
+
+34:19.640 --> 34:23.640
+y eso es una función que lo representa, ¿sí?
+
+34:23.640 --> 34:27.640
+Entonces, el TDN finalmente no es nada más ni nada menos que una función,
+
+34:27.640 --> 34:29.640
+depende de la cantidad de datos.
+
+34:29.640 --> 34:36.640
+Bien, cuando nosotros nos encontramos con un problema más general,
+
+34:36.640 --> 34:42.640
+los problemas que tienen que ver con este análisis de algoritmos
+
+34:42.640 --> 34:47.640
+medio llevados a la práctica, menos medio bajados a tierra, digamos,
+
+34:47.640 --> 34:52.640
+en cuanto a cuánto va a demorar mi algoritmo en una computadora virtual,
+
+34:52.640 --> 34:58.640
+va a tener que ver, va a tener la forma o la pinta de estos problemas.
+
+34:58.640 --> 35:05.640
+Si nosotros tenemos que un algoritmo ya tenemos definido su TDN, su FDN,
+
+35:05.640 --> 35:09.640
+sirve para resolver un problema dado.
+
+35:09.640 --> 35:13.640
+El FDN va a ser una de estas dos, no van a ser estas dos.
+
+35:13.640 --> 35:17.640
+Un FDN para la ejercitación va a ser logaritmo en base 10
+
+35:17.640 --> 35:24.640
+y otro va a ser raíz de N, ¿sí?
+
+35:25.640 --> 35:28.640
+FDN sobre 100.
+
+35:28.640 --> 35:31.640
+¿Ese es el resultado?
+
+35:31.640 --> 35:38.640
+Sería la solución 3.
+
+35:38.640 --> 35:44.640
+A ver, vean, FDN sobre 100.
+
+35:44.640 --> 35:49.640
+Pero, ojo, FDN no tiene un número todavía.
+
+35:49.640 --> 35:57.640
+FDN te dice, el FDN en este caso, en realidad, por ejemplo, en el primer caso
+
+35:57.640 --> 36:03.640
+va a ser esto y en el segundo caso va a ser esto que está acá.
+
+36:03.640 --> 36:09.640
+El logaritmo en base 10 de esto es 4, logaritmo en base 10 de esto divide 200.
+
+36:09.640 --> 36:11.640
+Ahí me perdí ya con las cuentas, espérate.
+
+36:11.640 --> 36:13.640
+Esto es 4 y esto divide 200.
+
+36:13.640 --> 36:17.640
+Muy bien, combinándose los dos estuvieron perfectos.
+
+36:17.640 --> 36:20.640
+Todo el mundo lo entendió.
+
+36:20.640 --> 36:28.640
+Es decir, esto no es nada más ni nada menos que una regla de tres.
+
+36:28.640 --> 36:30.640
+No, no.
+
+36:30.640 --> 36:36.640
+Sí, me pareció que lo habían hecho medio rápido los chicos porque hasta...
+
+36:36.640 --> 36:39.640
+Yo me perdí, pero lo hicieron bien.
+
+36:39.640 --> 36:44.640
+Me perdí porque fueron ahí de sopetón y yo me olvido de las cosas.
+
+36:44.640 --> 36:51.640
+Es decir, si ustedes tienen, que ya tienen el TDN que es el que me está indicando
+
+36:51.640 --> 36:54.640
+cuántas operaciones hago, fíjense que en la tablita...
+
+36:54.640 --> 36:56.640
+Ah, me olvide de mostrarles esa tablita, disculpen.
+
+36:56.640 --> 36:58.640
+Ahora sí las muestro.
+
+36:58.640 --> 37:00.640
+Este...
+
+37:00.640 --> 37:06.640
+Esto me decía la cantidad de operaciones que yo estaba haciendo.
+
+37:06.640 --> 37:10.640
+Pero mi TDN era logarítmico, lineal o cuadrático.
+
+37:10.640 --> 37:13.640
+Yo sabía cuántas operaciones estaba haciendo.
+
+37:13.640 --> 37:15.640
+Entonces, acá me pasa lo mismo.
+
+37:15.640 --> 37:17.640
+Después me acordé de volver a la tablita.
+
+37:17.640 --> 37:21.640
+Yo tengo la cantidad de operaciones que es FDN.
+
+37:21.640 --> 37:26.640
+En realidad, en el primer caso mi FDN va a ser logaritmo DN.
+
+37:26.640 --> 37:29.640
+Por otro lado, ¿qué información tengo?
+
+37:29.640 --> 37:33.640
+¿Qué información tengo en este caso?
+
+37:43.640 --> 37:47.640
+En este ejercicio, la información que yo tengo es que...
+
+37:47.640 --> 37:50.640
+Sí, ya sé.
+
+37:58.640 --> 38:00.640
+Yo tengo.
+
+38:00.640 --> 38:02.640
+Ya sé.
+
+38:05.640 --> 38:09.640
+Se ve que estoy usando...
+
+38:14.640 --> 38:21.640
+Yo tengo un algoritmo que hace FDN operaciones.
+
+38:23.640 --> 38:28.640
+Por otro lado, tengo como información el acompu.
+
+38:29.640 --> 38:39.640
+Tengo un acompu en particular que hace 100 operaciones por segundo.
+
+38:40.640 --> 38:47.640
+Entonces, yo quiero saber cuánto va a tardar el algoritmo
+
+38:50.640 --> 38:53.640
+si lo tengo que ejecutar con un N igual a...
+
+38:53.640 --> 38:54.640
+Sí, le ganó.
+
+38:54.640 --> 38:57.640
+Con un N igual a 10.000.
+
+38:58.640 --> 39:07.640
+Entonces, una de las opciones de FDN sea logaritmo en base a 10 de...
+
+39:10.640 --> 39:16.640
+La opción primera es FDN es logaritmo en base a 10 de N.
+
+39:18.640 --> 39:21.640
+¿Cuántas operaciones va a tardar?
+
+39:23.640 --> 39:26.640
+Es lo que decía por ahí...
+
+39:26.640 --> 39:31.640
+Creo que le decía primero que decía que hacía cuatro operaciones.
+
+39:32.640 --> 39:38.640
+Hace cuatro operaciones porque si yo hago F de 10.000,
+
+39:38.640 --> 39:43.640
+lo hago así muy detallado, sería logaritmo en base a 10.
+
+39:44.640 --> 39:51.640
+F de 10.000 es igual a 4 porque 10 a la cuarta es igual a 10.000.
+
+39:52.640 --> 39:55.640
+Pasando matemáticas.
+
+39:55.640 --> 40:11.640
+Entonces, yo necesito saber cuánto tiempo para un N igual a 10.000.
+
+40:12.640 --> 40:21.640
+Entonces, si yo sé que 100 operaciones va a tardarse en un segundo,
+
+40:21.640 --> 40:25.640
+cuatro operaciones, ¿cuánto va a demorar?
+
+40:26.640 --> 40:28.640
+Uno, un segundo.
+
+40:29.640 --> 40:32.640
+Va a demorar x segundos, que es uno.
+
+40:33.640 --> 40:38.640
+Por cuatro operaciones dividido en 100 operaciones,
+
+40:39.640 --> 40:42.640
+y esto va a ser 0,04.
+
+40:42.640 --> 40:52.640
+A ver, ¿se entendió? Vamos a mirar todo lo que estuvieron escribiendo.
+
+40:53.640 --> 40:57.640
+Ah, el tiempo es 0,04 segundos.
+
+40:57.640 --> 41:02.640
+Claro, por eso digo que combinado lo que escribió Alan con lo que escribiste vos,
+
+41:02.640 --> 41:04.640
+llegaban al resultado.
+
+41:04.640 --> 41:06.640
+Vos dijiste la cantidad de operaciones,
+
+41:06.640 --> 41:10.640
+Alan tomó esa cantidad de operaciones, aunque no puse el cuatro,
+
+41:10.640 --> 41:13.640
+dividido 100, y ahí llegó.
+
+41:13.640 --> 41:16.640
+Le erré en la calculadora.
+
+41:17.640 --> 41:21.640
+Me parece, no, pero ojo, que vos estabas viendo, Leticia,
+
+41:21.640 --> 41:24.640
+la cantidad de operaciones, no el tiempo.
+
+41:24.640 --> 41:26.640
+No sé si después te diste cuenta.
+
+41:27.640 --> 41:32.640
+Sería 4 milisegundos para la A.
+
+41:33.640 --> 41:36.640
+Bueno, sí, 0,04.
+
+41:36.640 --> 41:38.640
+Lo pasé, no sé si son milisegundos.
+
+41:38.640 --> 41:41.640
+Bueno, un segundo.
+
+41:41.640 --> 41:46.640
+La B, claro, y la B es de un segundo porque me queda también 100,
+
+41:46.640 --> 41:48.640
+así que es lo que da la operación.
+
+41:48.640 --> 41:52.640
+40, 40, 40. ¿Por qué 40? A ver.
+
+41:54.640 --> 41:58.640
+¿Viene algo? Alan, tú pusiste 40.
+
+42:03.640 --> 42:07.640
+Ah, 40 milisegundos, no 4. Ah, está bien.
+
+42:07.640 --> 42:11.640
+Sí, por eso yo ahí con los milisegundos estaba dudando,
+
+42:11.640 --> 42:15.640
+me parecía que había una coma medio perdida.
+
+42:15.640 --> 42:21.640
+Bueno, en este tipo de ejercicios siempre les va a aparecer,
+
+42:21.640 --> 42:25.640
+que tengan, que siempre les vaya a aparecer.
+
+42:25.640 --> 42:29.640
+Puede aparecer ejercicio para cuando lleguemos a los parciales o a un final
+
+42:29.640 --> 42:34.640
+que sea, cosas combinadas de esta manera.
+
+42:34.640 --> 42:39.640
+Vamos a tener, a ver si puedo marcar acá.
+
+42:39.640 --> 42:47.640
+Por un lado, cantidad de operaciones que tenga el algoritmo.
+
+42:47.640 --> 42:57.640
+Después, por unidad de tiempo que haga la computadora.
+
+42:57.640 --> 43:03.640
+Y después, sobre qué cantidad de datos yo lo quiero hacer.
+
+43:03.640 --> 43:11.640
+Entonces, a partir de tener esos tres parámetros, digamos,
+
+43:11.640 --> 43:17.640
+siempre van a tener dos para poder calcular el que les falta.
+
+43:17.640 --> 43:23.640
+Y podríamos haber tenido, no sé, que disponemos de una determinada cantidad de tiempo,
+
+43:23.640 --> 43:28.640
+entonces cuál es el tamaño más grande de la entrada que podríamos necesitar.
+
+43:28.640 --> 43:34.640
+Siempre tenemos algo que nos da el TNDN, que nos da cantidad de operaciones que hace el algoritmo.
+
+43:34.640 --> 43:38.640
+Lo que nos dice cuánto operaciones hace la computadora
+
+43:38.640 --> 43:44.640
+y un N sobre el cual queremos calcular el tiempo o lo que sea.
+
+43:44.640 --> 43:50.640
+Entonces, siempre van a aparecer esas tres cosas, bueno, o dos y una.
+
+43:50.640 --> 43:55.640
+Y una es la que ustedes tienen que calcular. Siempre vamos a disponer de dos, claro, tal cual.
+
+43:55.640 --> 44:04.640
+Ahora justo para que saquemos el N, no se me ocurre ninguno, pero después seguro que alguno va a aparecer.
+
+44:04.640 --> 44:06.640
+Bien.
+
+44:08.640 --> 44:19.640
+Y con este, acá tenemos otro que nos dice cuál es el tiempo exacto de ejecución
+
+44:19.640 --> 44:32.640
+de un algoritmo y cuánto más lento se va a hacer.
+
+44:32.640 --> 44:38.640
+Porque siempre estamos hablando de, obviamente, que si aumenta la cantidad de datos,
+
+44:38.640 --> 44:44.640
+obviamente en general lo que va a pasar es que el algoritmo tarde más, ¿sí?
+
+44:44.640 --> 44:48.640
+Lo tengo que juntar para que la mayor cantidad de datos va a tardar más.
+
+44:48.640 --> 44:57.640
+Entonces, por eso es que dice cuánto más lento se hace si la cantidad de datos se aumenta al doble o se aumenta al triple.
+
+45:01.640 --> 45:09.640
+En el primero a cuatro veces y en el otro caso nueve veces. Perfecto.
+
+45:09.640 --> 45:25.640
+En ese caso, es lo que tienen que tener cuidado para ver por qué llegaron a esta conclusión.
+
+45:40.640 --> 45:42.640
+A ver.
+
+45:45.640 --> 45:49.640
+Perfecto. Esa precisamente es la idea.
+
+45:49.640 --> 45:54.640
+Ustedes tienen que tener cuidado porque si el CDN...
+
+45:54.640 --> 46:03.640
+No funciona.
+
+46:03.640 --> 46:12.640
+El CDN exacto es 10 por 10 al cuadro.
+
+46:12.640 --> 46:14.640
+Perfecto.
+
+46:28.640 --> 46:32.640
+10 por 10 al cuadrado.
+
+46:32.640 --> 46:35.640
+Lo que se dubla es este argumento.
+
+46:35.640 --> 46:43.640
+Entonces, lo que vamos a tener es un T de 2N y lo único que tiene que cambiar es esto.
+
+46:43.640 --> 46:50.640
+Entonces es 10 por 2 a la N al cuadrado.
+
+46:50.640 --> 46:55.640
+Esto va a ser 10 por 4 por N al cuadrado.
+
+46:55.640 --> 47:01.640
+Esto sería lo mismo que tener 4 por 10 por N al cuadrado.
+
+47:01.640 --> 47:05.640
+Esto es lo que teníamos originalmente.
+
+47:05.640 --> 47:08.640
+Entonces, esto se cuadra así.
+
+47:08.640 --> 47:10.640
+¿Se entendió?
+
+47:10.640 --> 47:12.640
+Todo el mundo lo sabe.
+
+47:12.640 --> 47:19.640
+Por eso tienen que tener cuidado porque no es que sea 10 por 2 a la N y todo eso elevado al cuadrado.
+
+47:19.640 --> 47:24.640
+Lo único que está elevado al cuadrado es la N.
+
+47:24.640 --> 47:26.640
+Perfecto.
+
+47:26.640 --> 47:28.640
+Bien.
+
+47:28.640 --> 47:32.640
+Si fuese lineal, ahí solo aumenta el doble o el triple.
+
+47:32.640 --> 47:34.640
+Claro, tal cual.
+
+47:34.640 --> 47:36.640
+¿Se triplica o se triplica?
+
+47:36.640 --> 47:38.640
+Está bien.
+
+47:38.640 --> 47:43.640
+Claro, se triplica o se triplica.
+
+47:43.640 --> 47:46.640
+¿Se triplica o se triplica?
+
+47:46.640 --> 47:48.640
+Está bien.
+
+47:48.640 --> 47:50.640
+¿Se triplica o se triplica?
+
+47:50.640 --> 47:52.640
+Está bien.
+
+47:52.640 --> 47:56.640
+Claro, se triplica o se triplica.
+
+48:00.640 --> 48:08.640
+Pero acá también lo que tienen que tener cuidado es que como es al cuadrado, lo que se duplica se eleva al cuadrado.
+
+48:08.640 --> 48:10.640
+Lo que se triplica se eleva al cuadrado.
+
+48:10.640 --> 48:15.640
+Por eso es que queda 4 veces más o 9 veces más.
+
+48:15.640 --> 48:20.640
+Está afectado por la potencia que tiene la N.
+
+48:20.640 --> 48:22.640
+Bien.
+
+48:24.640 --> 48:32.640
+Y esto es lo que decíamos en cuanto a calcular el tiempo de ejecución de un algoritmo cualquiera.
+
+48:32.640 --> 48:40.640
+Cuando nosotros tenemos un algoritmo, en el algoritmo van a aparecer sentencias de secuencia, ¿no?
+
+48:40.640 --> 48:49.640
+Varias asignaciones, a veces lo llamamos secuencia, algún condicional, colas, iteraciones, todo eso combinado.
+
+48:49.640 --> 48:59.640
+Entonces, para nosotros poder calcular a través de nuestros algoritmos o de algún algoritmo en el cual tengamos el código,
+
+48:59.640 --> 49:04.640
+esa es la cosa, pues vamos a ver si hacemos algún ejercitito.
+
+49:08.640 --> 49:14.640
+Va a estar formado por estas sentencias, estas estructuras de control.
+
+49:14.640 --> 49:23.640
+Y va a tener, digamos, hagamos una diferencia entre lo que es un algoritmo y lo que es un programa.
+
+49:23.640 --> 49:28.640
+El algoritmo es el corazón de lo que va a resolver el problema.
+
+49:28.640 --> 49:36.640
+Y después vamos a tener sentencias de declaración de variables, de operaciones de entrada-salida,
+
+49:36.640 --> 49:45.640
+de declaraciones y el tipo de cosas, que nosotros ahora no las vamos a tener en cuenta.
+
+49:45.640 --> 49:56.640
+Pero, obviamente, cuando ustedes ejecutan algo, el tiempo de eso, cada compilador o cada equipo sobre el cual lo corran, obviamente va a tener efecto.
+
+49:56.640 --> 50:03.640
+Pero, como nosotros no sabemos cuán bueno o malo es un algoritmo, esa parte se va a tener que hacer
+
+50:03.640 --> 50:09.640
+en cualquier caso y no va a pasar.
+
+50:09.640 --> 50:17.640
+Si yo tengo que leer un millón de datos y después hago una búsqueda lineal o después hago una búsqueda dicotómica,
+
+50:17.640 --> 50:22.640
+o tengo que hacer un método de ordenación y lo hago por un método que es cuadrático,
+
+50:22.640 --> 50:32.640
+lo hago por el hip-sort en el OVN, el que va a decir que es más rápido un algoritmo que otro es haber usado un algoritmo o el otro.
+
+50:32.640 --> 50:37.640
+No haber leído el millón de datos y haber impreso el vector ordenado que es el millón de datos.
+
+50:37.640 --> 50:41.640
+Porque eso no tengo forma de mejorarlo, ¿entiende?
+
+50:41.640 --> 50:48.640
+Entonces, todas las operaciones que tengan que ver con declaraciones, entrada-salida, pasaje de parámetros,
+
+50:48.640 --> 50:54.640
+ya después van a ver que el código, bueno, nosotros hablamos de estas estructuras de control,
+
+50:54.640 --> 50:59.640
+que son las que se usan, pero nuestro algoritmo puede tener una invocación al merge, por ejemplo.
+
+50:59.640 --> 51:04.640
+Entonces, bueno, eso uno se deriva, se fija el código que tiempo lleva
+
+51:04.640 --> 51:09.640
+y como que lo vuelve a meter dentro de todo el código que uno tiene, ¿entienden?
+
+51:09.640 --> 51:11.640
+¿Listo?
+
+51:15.640 --> 51:23.640
+Estamos pensando en que nosotros tenemos un algoritmo
+
+51:24.640 --> 51:35.640
+que tiene un montón de reglaciones, de sentencias,
+
+51:35.640 --> 51:44.640
+entre las cuales, bueno, vamos a tener lo que es una secuencia, lo que es un if y lo que son los conditionados.
+
+51:53.640 --> 52:20.640
+Bueno, entonces, un repete, un repete manchado.
+
+52:53.640 --> 52:58.640
+Entonces, ustedes imagínense que lo que tienen,
+
+52:58.640 --> 53:02.640
+no sé, espero que no se entrecorte cuando me vuelva,
+
+53:02.640 --> 53:09.640
+ustedes tienen un montón de sentencias, entonces tenemos que ver cuánto tiempo,
+
+53:09.640 --> 53:14.640
+o cuántos pasos demuestra cada una para ayudar a calcular nuestro CDN.
+
+53:14.640 --> 53:23.640
+Entonces, si tenemos A, A2, B, igual a 3, C, igual a A más B,
+
+53:23.640 --> 53:30.640
+y después unir C, por ejemplo,
+
+53:30.640 --> 53:36.640
+recontraste el código más psicológico.
+
+53:36.640 --> 53:42.640
+Nosotros lo que vamos a decir es que cada operación de asignación
+
+53:42.640 --> 53:45.640
+va a requerir un paso, ¿sí?
+
+53:45.640 --> 53:49.640
+Esta va a requerir un paso, esta va a requerir un paso,
+
+53:49.640 --> 53:54.640
+las operaciones aritméticas y lógicas también van a requerir un paso,
+
+53:54.640 --> 53:59.640
+porque no dependen de la cantidad de datos con las que estemos trabajando,
+
+53:59.640 --> 54:01.640
+entonces esto va a ser un paso,
+
+54:01.640 --> 54:05.640
+el paso de asignación sería equivalente a tener dos pasos,
+
+54:05.640 --> 54:08.640
+y esto suponga que lo consideramos un paso.
+
+54:08.640 --> 54:15.640
+Entonces, el CDN, en este caso va a ser uno, dos, tres, cinco pasos.
+
+54:17.640 --> 54:21.640
+Es una constante, y obviamente no depende de la cantidad de datos que tuviéramos,
+
+54:21.640 --> 54:23.640
+si estuviéramos trabajando con un método.
+
+54:23.640 --> 54:27.640
+Entonces, el CDN cuando es una secuencia de pasos,
+
+54:27.640 --> 54:30.640
+es lo que requiera cada uno de ellos.
+
+54:30.640 --> 54:36.640
+Si acá en el medio hubiera habido unir alguna otra operación,
+
+54:36.640 --> 54:38.640
+bueno...
+
+54:45.640 --> 54:51.640
+Fíjense que la sintaxis que usamos para el if es que hay que chequear
+
+54:51.640 --> 54:55.640
+una expresión booleana que me diga si es verdadero o falso.
+
+54:55.640 --> 54:57.640
+En el caso que esto sea verdadero,
+
+54:57.640 --> 55:01.640
+ejecuto el conjunto de sentencias que tiene este if acá.
+
+55:01.640 --> 55:03.640
+Y la otra opción es,
+
+55:03.640 --> 55:05.640
+en esta condición que es verdadera,
+
+55:05.640 --> 55:10.640
+ejecuto estas sentencias y si no ejecuto estas otras.
+
+55:10.640 --> 55:13.640
+Entonces, el tiempo,
+
+55:14.640 --> 55:17.640
+cuando uno está trabajando con un if,
+
+55:18.640 --> 55:20.640
+va a ser igual a
+
+55:21.640 --> 55:25.640
+el tiempo que demande la expresión
+
+55:27.640 --> 55:30.640
+más y cosa.
+
+55:31.640 --> 55:36.640
+Supónganse, yo les estoy diciendo,
+
+55:36.640 --> 55:41.640
+el tiempo que demande evaluar la expresión,
+
+55:45.640 --> 55:48.640
+porque no siempre evaluar esta expresión,
+
+55:48.640 --> 55:50.640
+es constante,
+
+55:50.640 --> 55:53.640
+lo que se ejecute y luego de evaluar,
+
+55:53.640 --> 55:57.640
+en el caso que demande más claro, tal cual.
+
+55:58.640 --> 56:03.640
+En general, si lo que tenemos son expresiones lógicas,
+
+56:03.640 --> 56:06.640
+ah, y negación, etcétera, etcétera,
+
+56:06.640 --> 56:09.640
+bueno, esas llevarían tiempo constante.
+
+56:09.640 --> 56:13.640
+Ah, es menor que b, eso implica un tiempo constante.
+
+56:15.640 --> 56:20.640
+Pero podría pasar que esa expresión booleana sea
+
+56:20.640 --> 56:24.640
+la invocación de una función que no tenemos ni idea lo que hace
+
+56:25.640 --> 56:27.640
+El tiempo tiembla, ¿entiendes?
+
+56:27.640 --> 56:29.640
+Entonces,
+
+56:31.640 --> 56:33.640
+siempre,
+
+56:33.640 --> 56:35.640
+más el tiempo,
+
+56:35.640 --> 56:40.640
+vaya directamente a trabajar la condición,
+
+56:40.640 --> 56:43.640
+porque es una realización de ésta.
+
+56:43.640 --> 56:46.640
+Entonces, más
+
+56:47.640 --> 56:49.640
+el tiempo,
+
+56:50.640 --> 56:53.640
+el máximo entre,
+
+56:53.640 --> 56:56.640
+vamos a escribir el máximo, entre el den,
+
+56:56.640 --> 56:59.640
+el máximo entre el den y el,
+
+56:59.640 --> 57:01.640
+se entiende, ¿no?
+
+57:03.640 --> 57:06.640
+En definitiva, lo que estaban diciendo por ahí,
+
+57:06.640 --> 57:08.640
+el que lleve más tiempo,
+
+57:08.640 --> 57:11.640
+el tiempo de la condición más el máximo del tiempo
+
+57:11.640 --> 57:14.640
+entre la sentencia 1 y el tiempo de la sentencia, tal cual.
+
+57:14.640 --> 57:16.640
+Entonces, ¿por qué?
+
+57:16.640 --> 57:21.640
+Porque lo que estamos evaluando es lo que lleve,
+
+57:21.640 --> 57:23.640
+la cantidad de pasos que lleve,
+
+57:23.640 --> 57:25.640
+ah, el justo se cortó, ¿no?
+
+57:25.640 --> 57:27.640
+Voy a repetir.
+
+57:27.640 --> 57:31.640
+Que vamos a evaluar esta parte, lo del if,
+
+57:31.640 --> 57:35.640
+y lo que salga por verdadero o salga por falso,
+
+57:35.640 --> 57:40.640
+porque en definitiva es una generalización del que estaba más arriba, ¿sí?
+
+57:40.640 --> 57:44.640
+Y, por eso que se está escribiendo Leticia ahí,
+
+57:44.640 --> 57:47.640
+no sé si qué partecita se había cortado, Francisco.
+
+57:47.640 --> 57:49.640
+Pero,
+
+57:49.640 --> 57:53.640
+como nosotros lo estamos evaluando en el peor de los casos,
+
+57:53.640 --> 57:56.640
+lo que nosotros planteamos como tiempo de ejecución
+
+57:56.640 --> 57:58.640
+es lo peor que pueda pasar.
+
+57:58.640 --> 58:02.640
+Por ejemplo, en este caso hubiera sido que siempre me diera verdadero.
+
+58:02.640 --> 58:05.640
+No sé, bueno, como que siempre pasó por esa sentencia.
+
+58:05.640 --> 58:07.640
+Y acá, bueno, que voy a pasar,
+
+58:07.640 --> 58:10.640
+o siempre por verdadero, o siempre por falso,
+
+58:10.640 --> 58:14.640
+pero voy a considerar que pase por al lado,
+
+58:14.640 --> 58:17.640
+que demande mayor cantidad de operaciones.
+
+58:17.640 --> 58:19.640
+¿Ahora se entendió?
+
+58:21.640 --> 58:23.640
+Bien, entonces.
+
+58:30.640 --> 58:36.640
+En el a, sería solo que de la condición, entonces.
+
+58:36.640 --> 58:39.640
+No, serían las dos cosas también.
+
+58:39.640 --> 58:42.640
+En el a, sería...
+
+58:42.640 --> 58:44.640
+Este era el b.
+
+58:44.640 --> 58:46.640
+Este es el b.
+
+58:46.640 --> 58:50.640
+En el caso del a, el tiempo sería
+
+58:50.640 --> 58:55.640
+el tiempo de evaluar la expresión
+
+58:57.640 --> 59:01.640
+más el tiempo de la sentencia.
+
+59:02.640 --> 59:08.640
+Porque estamos como considerando que la expresión siempre es verdadera.
+
+59:08.640 --> 59:12.640
+Pero ahora tenemos que evaluar por esto que yo les decía.
+
+59:12.640 --> 59:16.640
+Eso en sí mismo puede implicar
+
+59:16.640 --> 59:21.640
+una llamada, una función que demande unos cuantos pasos.
+
+59:21.640 --> 59:25.640
+Entonces, la tengo que hacer.
+
+59:25.640 --> 59:27.640
+La tengo que hacer.
+
+59:28.640 --> 59:30.640
+Pero tomamos el peor de los casos.
+
+59:30.640 --> 59:33.640
+En el a, sería solo el tiempo de la condición, entonces.
+
+59:33.640 --> 59:35.640
+No sé qué que no, no sé qué que sí.
+
+59:35.640 --> 59:37.640
+Está todo.
+
+59:37.640 --> 59:39.640
+Ese.
+
+59:39.640 --> 59:41.640
+Bien.
+
+59:44.640 --> 59:47.640
+Bueno, y este que es un switch, un select,
+
+59:47.640 --> 59:51.640
+con que nombre se usan, pero que en definitiva es lo mismo.
+
+59:51.640 --> 59:55.640
+Es el tiempo de evaluar la condición
+
+59:55.640 --> 59:59.640
+más el tiempo de aquel que lleve más tiempo.
+
+59:59.640 --> 01:00:02.640
+Generalización todavía mayor del if.
+
+01:00:02.640 --> 01:00:04.640
+Por eso están las tres opciones.
+
+01:00:04.640 --> 01:00:06.640
+El a, la b.
+
+01:00:08.640 --> 01:00:10.640
+Bien.
+
+01:00:14.640 --> 01:00:16.640
+Es lo mismo.
+
+01:00:16.640 --> 01:00:18.640
+Si tenés un if anidado,
+
+01:00:18.640 --> 01:00:22.640
+el if anidado va a estar bueno en el del o en el else.
+
+01:00:23.640 --> 01:00:25.640
+Entonces va a ser parte de eso.
+
+01:00:25.640 --> 01:00:28.640
+Se vuelve a evaluar la condición.
+
+01:00:28.640 --> 01:00:30.640
+Condiciones de los otros, tal cual.
+
+01:00:30.640 --> 01:00:32.640
+Claro, sí, sí.
+
+01:00:32.640 --> 01:00:34.640
+El de, el de evaluar.
+
+01:00:34.640 --> 01:00:36.640
+Las tres b.
+
+01:00:36.640 --> 01:00:38.640
+Bueno, puede pasar que sea un if,
+
+01:00:38.640 --> 01:00:42.640
+pero ahí otra vez se van anidando las condiciones.
+
+01:00:43.640 --> 01:00:46.640
+Bueno, ¿qué pasa si tenemos un for?
+
+01:00:46.640 --> 01:00:51.640
+En este caso estamos hablando de un for que tiene
+
+01:00:51.640 --> 01:00:54.640
+una inicialización,
+
+01:00:54.640 --> 01:00:58.640
+un chequeo por la termina, la finalización
+
+01:00:58.640 --> 01:01:00.640
+y un incremento, ¿sí?
+
+01:01:00.640 --> 01:01:02.640
+Y un conjunto de sentencias.
+
+01:01:02.640 --> 01:01:06.640
+Yo creo que vieron algo el año pasado, o en primer año,
+
+01:01:06.640 --> 01:01:11.640
+porque siempre surge la discusión de que creo que le suman seis pasos
+
+01:01:11.640 --> 01:01:15.640
+o algo por el estilo, o tres pasos para todas estas opciones.
+
+01:01:15.640 --> 01:01:17.640
+Puede ser, pues,
+
+01:01:17.640 --> 01:01:19.640
+ser útil o no.
+
+01:01:22.640 --> 01:01:25.640
+Pero bueno, vamos a ver esto con un ejemplito.
+
+01:01:25.640 --> 01:01:28.640
+Porque en realidad cuando uno lo que tiene es un for,
+
+01:01:28.640 --> 01:01:33.640
+lo que tiene que ver es qué tiempo me demanda
+
+01:01:35.640 --> 01:01:37.640
+este conjunto de sentencias
+
+01:01:38.640 --> 01:01:40.640
+y cuántas veces lo hago.
+
+01:01:40.640 --> 01:01:42.640
+¿Sí? Ese for
+
+01:01:45.640 --> 01:01:48.640
+implica hacer algo muchas veces.
+
+01:01:48.640 --> 01:01:51.640
+Entonces lo que tenemos que contabilizar
+
+01:01:51.640 --> 01:01:54.640
+es cuántas veces se hace eso.
+
+01:01:54.640 --> 01:01:56.640
+Lo mismo cuando después veamos el while,
+
+01:01:56.640 --> 01:02:02.640
+que también vemos cuántos pasos me demanda hacer esta sentencia,
+
+01:02:02.640 --> 01:02:06.640
+pero ahora acá voy a tener que ver en qué momento
+
+01:02:06.640 --> 01:02:08.640
+esta condición se hace falsa.
+
+01:02:08.640 --> 01:02:11.640
+Porque esto como tengo un valor inicial, un valor final,
+
+01:02:11.640 --> 01:02:13.640
+un incremento, etcétera, etcétera,
+
+01:02:13.640 --> 01:02:16.640
+es como que yo ya lo puedo calcular de antemano.
+
+01:02:16.640 --> 01:02:20.640
+En cambio en el while no lo puedo calcular de antemano
+
+01:02:20.640 --> 01:02:24.640
+porque esta condición va a ir cambiando.
+
+01:02:24.640 --> 01:02:26.640
+Va a ir cambiando.
+
+01:02:26.640 --> 01:02:29.640
+No es como en el if, que es una única condición
+
+01:02:29.640 --> 01:02:31.640
+y resultó ser verdadero o falsa.
+
+01:02:31.640 --> 01:02:34.640
+Esta condición va cambiando con cada vuelta.
+
+01:02:34.640 --> 01:02:36.640
+Más tiene que cambiar con cada vuelta
+
+01:02:36.640 --> 01:02:38.640
+hasta que en algún momento sea la falsa.
+
+01:02:38.640 --> 01:02:41.640
+Si no entramos en un loop que no salimos más. ¿Entiendes?
+
+01:02:44.640 --> 01:02:45.640
+Bien.
+
+01:02:55.640 --> 01:02:58.640
+Bien, si tenemos el ejemplo que está...
+
+01:02:58.640 --> 01:03:02.640
+A ver, uno por la inicialización,
+
+01:03:02.640 --> 01:03:05.640
+uno por las iteraciones para la terminación
+
+01:03:05.640 --> 01:03:09.640
+y dos para las iteraciones de incrementar.
+
+01:03:09.640 --> 01:03:12.640
+Claro, más o menos se cuenta así,
+
+01:03:12.640 --> 01:03:13.640
+pero...
+
+01:03:16.640 --> 01:03:20.640
+¿Por qué para iteraciones de incrementar quieres decir
+
+01:03:20.640 --> 01:03:24.640
+uno para la iniciación, uno para la iteración,
+
+01:03:24.640 --> 01:03:29.640
+para esa condición y no sé por qué dos para incrementar?
+
+01:03:29.640 --> 01:03:32.640
+Sería dos operaciones, creo.
+
+01:03:32.640 --> 01:03:35.640
+Porque lo que pasa es que en realidad
+
+01:03:35.640 --> 01:03:39.640
+sería una para la inicialización
+
+01:03:39.640 --> 01:03:43.640
+y después se hacen dos veces porque chequeas el final incrementar,
+
+01:03:43.640 --> 01:03:46.640
+chequeas el final incrementar, chequeas el final incrementar,
+
+01:03:46.640 --> 01:03:48.640
+eso se hace repetidas veces.
+
+01:03:48.640 --> 01:03:53.640
+Pero como se hacen todos, en realidad no afecta.
+
+01:03:53.640 --> 01:03:57.640
+Lo que realmente tiene importancia es la cantidad de veces que hacen.
+
+01:03:57.640 --> 01:04:05.640
+No justamente esos valores dentro del encabezado, digamos.
+
+01:04:05.640 --> 01:04:06.640
+Bien.
+
+01:04:09.640 --> 01:04:12.640
+En este ejemplo, ¿qué tenemos?
+
+01:04:12.640 --> 01:04:18.640
+Tenemos un lazo que va desde 1 hasta n con el incremento de a1, ¿sí?
+
+01:04:18.640 --> 01:04:24.640
+Y lo que tenemos es una sumatoria que va sumando los elementos del vector.
+
+01:04:24.640 --> 01:04:27.640
+Siempre que tengamos un lazo, que tengamos un for,
+
+01:04:27.640 --> 01:04:33.640
+eso se va a transcribir o reescribir, no sé cómo decirlo,
+
+01:04:33.640 --> 01:04:34.640
+en una sumatoria.
+
+01:04:34.640 --> 01:04:38.640
+Yo lo que tengo que calcular es cuántas veces hago esto.
+
+01:04:38.640 --> 01:04:41.640
+Entonces, esto va a ser una sumatoria,
+
+01:04:41.640 --> 01:04:44.640
+que es lo que te estamos escribiendo acá,
+
+01:04:44.640 --> 01:04:51.640
+que va desde 1 hasta n.
+
+01:04:51.640 --> 01:04:53.640
+¿Se entiende?
+
+01:04:53.640 --> 01:04:57.640
+Se inicializa en 1 y va hasta n.
+
+01:04:57.640 --> 01:05:00.640
+Y yo en cada paso incremento 1.
+
+01:05:00.640 --> 01:05:03.640
+Uno podría poner, esto es una operación constante,
+
+01:05:03.640 --> 01:05:07.640
+porque son dos pasos, en definitiva es algo constante, ¿sí?
+
+01:05:08.640 --> 01:05:12.640
+Tomo el elemento de una determinada posición
+
+01:05:12.640 --> 01:05:15.640
+y lo voy agregando a una sumatoria.
+
+01:05:15.640 --> 01:05:20.640
+Y eso, además, podríamos pensar que tiene involucrándose
+
+01:05:20.640 --> 01:05:25.640
+el incremento del i y un chequeo de que ese i haya llegado hasta el final.
+
+01:05:25.640 --> 01:05:28.640
+Pero en realidad, lo que más me afecta acá,
+
+01:05:28.640 --> 01:05:30.640
+lo que más me interesa acá,
+
+01:05:30.640 --> 01:05:33.640
+es cuántas operaciones hago yo acá dentro del for.
+
+01:05:33.640 --> 01:05:36.640
+En este caso, hago operaciones que son de tiempo constante.
+
+01:05:36.640 --> 01:05:39.640
+Y como esta sumatoria va desde 1 hasta n,
+
+01:05:39.640 --> 01:05:42.640
+yo voy a hacer n veces e.
+
+01:05:42.640 --> 01:05:43.640
+¿Se entendió?
+
+01:05:43.640 --> 01:05:52.640
+Lo repito siempre lo mismo, porque esto es como si yo tuviera un for,
+
+01:05:54.640 --> 01:06:01.640
+como si yo tuviera una sumatoria desde i igual a 1 hasta n de 4.
+
+01:06:02.640 --> 01:06:09.640
+Esto queda 4 más 4 más 4 más 4.
+
+01:06:09.640 --> 01:06:12.640
+Esto hizo n veces.
+
+01:06:14.640 --> 01:06:15.640
+¿Se entiende?
+
+01:06:15.640 --> 01:06:19.640
+Entonces, esto es lo mismo que tener n por 4.
+
+01:06:19.640 --> 01:06:23.640
+Y esto, como es una constante, esto va también haciendo n veces.
+
+01:06:23.640 --> 01:06:25.640
+Se ve el pizarrón o ya no se ve nada.
+
+01:06:25.640 --> 01:06:27.640
+Está todo medio oscuro ahí.
+
+01:06:27.640 --> 01:06:30.640
+La constante 1 son las líneas antes del for.
+
+01:06:30.640 --> 01:06:32.640
+Ah, sí, sí, perdón, perdón.
+
+01:06:32.640 --> 01:06:33.640
+No le presté atención.
+
+01:06:33.640 --> 01:06:38.640
+Esta inicialización, yo dije que no le vamos a hacer mucho caso,
+
+01:06:38.640 --> 01:06:43.640
+son estas constantes que después al final de todo, fíjense que,
+
+01:06:43.640 --> 01:06:45.640
+las sacamos del medio.
+
+01:06:45.640 --> 01:06:49.640
+Pero el tdn, el tdn como tdn, es todo esto.
+
+01:06:49.640 --> 01:06:53.640
+La constante 1 más n veces por la constante 2.
+
+01:06:56.640 --> 01:06:57.640
+Bien.
+
+01:07:01.640 --> 01:07:04.640
+Vamos a ver otro ejemplito.
+
+01:07:12.640 --> 01:07:15.640
+Vamos a ver qué puedo poner para que...
+
+01:07:31.640 --> 01:07:32.640
+Pues pues.
+
+01:07:46.640 --> 01:07:48.640
+Veamos el próximo.
+
+01:07:51.640 --> 01:07:56.640
+¿Y el caso de for anidados sería n cuadrados?
+
+01:07:56.640 --> 01:08:00.640
+en algunos casos sí, en algunos casos sí.
+
+01:08:26.640 --> 01:08:52.560
+Bien, tipo al procesar una matriz como ahí, claro, tal cual, ahí tenemos eso o podrían haber sido
+
+01:08:52.560 --> 01:09:04.120
+no necesariamente una matriz, podría haber sido otro tipo de sumatoria que requieran un form anidado.
+
+01:09:04.120 --> 01:09:10.320
+Entonces esto se va a transformar en una sumatoria, esto se va a transformar en una sumatoria y acá
+
+01:09:10.320 --> 01:09:16.000
+adentro vamos a tener algo que es de tiempo constante. Entonces otra vez tenemos el constante
+
+01:09:16.000 --> 01:09:24.040
+de la inicialización afuera y tenemos esta sumatoria y esta sumatoria. Entonces lo que
+
+01:09:24.040 --> 01:09:29.880
+tienen que tener cuidado es que esto siempre se resuelve de adentro hacia afuera y porque
+
+01:09:29.880 --> 01:09:36.360
+después van a aparecer otro juego de índices porque las sumatorias no siempre van desde i hasta
+
+01:09:36.360 --> 01:09:46.240
+n, desde 1 hasta n, perdón, desde 1 hasta n. A veces los índices varían de alguna otra manera,
+
+01:09:46.240 --> 01:09:54.160
+¿cierto? Entonces esta primer sumatoria es como si hubiéramos tenido una solita antes que nos daba
+
+01:09:54.160 --> 01:10:03.640
+n por la constante 2 de afuera. Pero después, cuando tenemos la de más afuera,
+
+01:10:09.600 --> 01:10:20.080
+cuando tenemos esta otra sumatoria de afuera, eso se transforma en este n al cuadrado,
+
+01:10:20.080 --> 01:10:26.440
+en este n que aparece acá y esto termina siendo un n al cuadrado. Dejamos las constantes de lado
+
+01:10:26.440 --> 01:10:37.600
+si me quedó el n al cuadrado. Parece que no está complicado eso. Bien, a ver, algún otro. Acá
+
+01:10:37.600 --> 01:10:44.520
+aparecemos con cosas un poco más extrañas que es un poco lo que yo les decía hace un ratito. Por
+
+01:10:44.520 --> 01:10:55.320
+ejemplo, este j va hasta i. Sacás las constantes cuando pasa esa anotación asintótica, ¿no? Sí,
+
+01:10:55.320 --> 01:11:10.600
+tal cual. Cuando saco, dejo de tener el t d n cuando cambio, cuando cambio el t d n,
+
+01:11:15.120 --> 01:11:21.040
+quiero jugar con esto, cuando cambio de esto
+
+01:11:26.720 --> 01:11:32.480
+y después van a ver, bueno, cuál es el orden de magnitud de mi algoritmo. El t d n es este,
+
+01:11:32.480 --> 01:11:39.160
+pero el orden de magnitud de mi algoritmo, esa anotación asintótica, es esta anotación bigón
+
+01:11:39.160 --> 01:11:46.840
+que es orden tanto. T n sigue siendo esto que calcula. Sí, sí, sí. ¿Qué es eso? Me da miedo.
+
+01:11:46.840 --> 01:11:52.800
+No te asuste, no te asuste. Van a ver que le facilita las cosas porque se sacan cosas de encima.
+
+01:11:52.800 --> 01:12:00.200
+Bienvenido a tiempo de ejecución. A mí también. Tranquilas, tranquilas, no pasa nada. Bien, acá
+
+01:12:00.200 --> 01:12:07.920
+tenemos otra vez lo mismo. Esto van a ser constantes. Esto va a ser un for y este van a
+
+01:12:07.920 --> 01:12:19.440
+ser dos for, uno al entrito del otro. Bien. Esto sería, esto me quedó largo, ojo. Entonces,
+
+01:12:19.440 --> 01:12:33.920
+acá tenemos una, la primer constante que es la de acá afuera. Esto es esta inicialización de acá.
+
+01:12:33.920 --> 01:12:55.480
+¿Entiende? Y después tenemos esta, esta más interna y después tenemos esta, que es la que es más externa.
+
+01:13:04.520 --> 01:13:17.880
+Bien. Entonces, hasta acá venimos bien. Todo conocido. Es la constante. Esto se hace n veces por
+
+01:13:17.880 --> 01:13:25.960
+la constante. Porque, ojo, nosotros vamos a decir n por, y lo que está acá adentro, siempre y
+
+01:13:25.960 --> 01:13:33.040
+cuando lo de acá adentro sea una constante. Si no, no lo vamos a poder manejar tan rápidamente.
+
+01:13:33.160 --> 01:13:43.960
+Por ejemplo, como está pasando acá. ¿Por qué yo acá puse y?
+
+01:13:46.760 --> 01:13:53.280
+Porque en realidad, esta sumatoria, la que está en azulcito, ¿cuántas veces se hace?
+
+01:13:53.280 --> 01:14:11.160
+Se hace y veces, ¿sí? Porque yo digo que esta asignación, y sumado a una posición del,
+
+01:14:11.160 --> 01:14:17.960
+pues fíjense que acá lo que yo hago es ir sumando dentro de la misma posición de afuera varios
+
+01:14:17.960 --> 01:14:24.040
+elementos de a y después paso a otra posición si uno quisiera seguir el algoritmo con detalle.
+
+01:14:24.040 --> 01:14:31.880
+Pero bueno, no estamos focalizados en esto. Entonces, esto, en realidad, el límite superior
+
+01:14:31.880 --> 01:14:40.000
+del for es y. Entonces, ¿esto cuántas veces se hace? Se hace y veces.
+
+01:14:40.000 --> 01:14:51.520
+Y después eso termina quedando de orden n cuadrado. ¿Saben por qué termina quedando de orden n cuadrado?
+
+01:14:51.520 --> 01:15:03.080
+Bueno, la mitad ya sí fue. No, la mitad no, algunos menos.
+
+01:15:06.400 --> 01:15:07.920
+Si quedaron, se pudiera.
+
+01:15:21.760 --> 01:15:41.000
+Porque y se repite n veces. El tema es que si yo tengo esa sumatoria que me dice que lo que está
+
+01:15:41.000 --> 01:15:53.440
+dentro se hace y veces, no se hace siempre la misma cantidad de veces. Fíjense que la cantidad
+
+01:15:53.440 --> 01:16:10.320
+de veces que se hace este pedacito de la sumatoria depende, depende, depende, depende del valor que
+
+01:16:10.320 --> 01:16:21.200
+se va tomando acá. Yo digo, esta sumatoria se hace una vez, se hace dos veces, se hace tres veces.
+
+01:16:22.680 --> 01:16:23.680
+¿Se entiende?
+
+01:16:29.120 --> 01:16:35.360
+Si uno mirara con detalle el anidamiento del código que tenemos ahí.
+
+01:16:36.200 --> 01:16:48.000
+Nosotros teníamos un for en i que iba desde 1 hasta n y otro for en j que iba desde 1 hasta i.
+
+01:16:49.080 --> 01:17:00.560
+Y lo que hacía era que en s de i guardabas lo que estaba en s de i,
+
+01:17:00.560 --> 01:17:05.400
+lo que iba de esa misma manera, más a de j.
+
+01:17:09.600 --> 01:17:11.760
+Supongo que ustedes tienen el vector a.
+
+01:17:14.080 --> 01:17:19.320
+Entienden lo que tengo. Dos, cuatro, siete, ocho, nueve.
+
+01:17:19.320 --> 01:17:21.760
+Y son, el n vale cinco.
+
+01:17:22.720 --> 01:17:31.560
+¿A qué es lo que pasa? En el s de salida, es decir, en el s, en la posición uno,
+
+01:17:31.560 --> 01:17:36.160
+porque el i vale uno, ¿qué es lo que guardo? Bueno, tenía algo inicializado en cero, ¿no?
+
+01:17:38.320 --> 01:17:44.880
+Tenía algo inicializado en cero. Entonces, en esta primera posición, ¿qué es lo que yo guardo?
+
+01:17:45.440 --> 01:17:53.720
+Lo que está en a de uno, porque guardo lo que está en a de uno y lo que está en a de uno.
+
+01:17:54.480 --> 01:17:57.600
+Cuando voy a la segunda posición, ¿qué guardo ahí?
+
+01:17:57.600 --> 01:18:00.080
+Lo que está en a de uno más lo que está en a de dos.
+
+01:18:03.160 --> 01:18:05.040
+¿Qué guardo en la tercera posición?
+
+01:18:05.040 --> 01:18:08.840
+Lo que está en a de uno más lo que está en a de dos más lo que está en a de tres.
+
+01:18:09.800 --> 01:18:15.000
+¿Entiende? Porque esto no lo hago una única vez.
+
+01:18:15.000 --> 01:18:18.440
+Lo hago, y veces.
+
+01:18:18.440 --> 01:18:21.720
+Es el i que yo tenía más a juega.
+
+01:18:21.720 --> 01:18:26.280
+Cuando llego al cuarto, bueno, lo hago cuatro veces y te hago dos veces.
+
+01:18:28.280 --> 01:18:32.040
+¿Se entendió que no hago una cosa que es constante?
+
+01:18:32.680 --> 01:18:39.240
+Claro, sería la constante por uno más dos más dos más dos, o la constante se multiplica cada vez.
+
+01:18:39.240 --> 01:18:44.920
+No es lo mismo, porque como es distributiva, después da lo mismo.
+
+01:18:46.280 --> 01:18:53.480
+Claro, por eso es que queda fuera la constante tres, que sería lo que implica hacer esta sumatoria.
+
+01:18:53.480 --> 01:18:55.800
+Sería la constante tres, es esta que está acá.
+
+01:18:55.800 --> 01:19:01.080
+En realidad queda fuera, por la forma en que lo escribiste vos, Alanis, que lo pusiste.
+
+01:19:01.160 --> 01:19:08.600
+Bueno, pusiste constante uno, pero bueno, es la constante tres, porque en realidad es en cada término, pero estaría llevado afuera.
+
+01:19:08.600 --> 01:19:14.200
+Entonces, lo que aparece por ahí.
+
+01:19:18.520 --> 01:19:24.120
+Este sonito, ¿no? No todo lo que aparece ahí.
+
+01:19:24.200 --> 01:19:35.400
+En ese pedacito final, que es la sumatoria en i, iguales de uno hasta m, de i veces.
+
+01:19:35.400 --> 01:19:46.280
+Esto es, cuando les aparezca algo, si les queda algo así, siempre tiene que aparecer el mismo índice acá.
+
+01:19:46.280 --> 01:19:52.920
+Porque si no, no lo puedo desarrosar. Acá esto no podría haber sido una j, porque no tengo forma de reemplazarlo.
+
+01:19:53.000 --> 01:19:59.000
+¿Cambio esto? ¿Cuántas veces lo voy a hacer? Una vez. Cuando iba de dos, lo hago dos veces.
+
+01:19:59.000 --> 01:20:04.840
+Cuando iba de tres, lo hago tres veces. Hasta el último que se hace en l.
+
+01:20:07.960 --> 01:20:09.160
+¿Se entendió?
+
+01:20:09.880 --> 01:20:17.240
+Y eso, ya van a ver, cuando desde la parte de, como ahora están teniendo las...
+
+01:20:18.200 --> 01:20:24.600
+los diagramas de UML, y tienen las clases, tienen los métodos, todas esas cosas, tipo ayuda a memoria.
+
+01:20:24.600 --> 01:20:29.640
+Después también van a tener el ayuda a memoria de un montón de formulitas.
+
+01:20:29.640 --> 01:20:41.560
+Dentro de esas formulitas va a aparecer una, que es, que esta sumatoria es igual a m sobre 2 por n más uno.
+
+01:20:42.280 --> 01:20:43.080
+¿Sí?
+
+01:20:43.720 --> 01:20:44.680
+Ojo.
+
+01:20:46.600 --> 01:20:52.600
+Acá, porque lo que estamos teniendo es una serie aritmética que se va sumando de a uno.
+
+01:20:53.080 --> 01:20:59.800
+Si la serie aritmética suma de otra manera, la formulita va a ser de otra manera.
+
+01:21:00.280 --> 01:21:03.640
+¿Saben por qué? Esto es lo mismo que esto.
+
+01:21:05.080 --> 01:21:07.880
+Ah, bueno, claro, yo es la primer clase que toco en esta.
+
+01:21:08.840 --> 01:21:12.360
+Porque, por ahí, uno no va a conocer a los míos, se los vi alguna vez.
+
+01:21:15.640 --> 01:21:18.200
+Por ahí tampoco se los vi, ¿eh? Pero a ustedes seguro que no.
+
+01:21:20.200 --> 01:21:28.200
+Si eso es así, por ahí si hay alguno que les guste algo de matemáticas, lo puedo ayudar a tener más presente.
+
+01:21:28.200 --> 01:21:39.960
+¿Contamos uno, dos, tres? Si no se lo acuerdan, se los digo.
+
+01:21:41.960 --> 01:21:49.000
+No, por inducción no, es medio una demostracióncita nada más, este, que funciona.
+
+01:21:49.160 --> 01:22:04.280
+Ustedes fíjense que si hay una serie aritmética así, supónganse uno, más dos, más tres, más cuatro, más cinco, más seis, esto que tendría que ser.
+
+01:22:05.800 --> 01:22:13.000
+Dos, cuatro, seis. Seis sobre tres por uno, ¿sí?
+
+01:22:13.400 --> 01:22:31.560
+Esto en general es, si uno tuviera una serie aritmética desde i, saliendo desde uno hasta e, de a sub i, esto es a sub uno, más a sub n, multiplicado por n sobre dos.
+
+01:22:32.040 --> 01:22:40.680
+¿Por qué? Porque la suma de estos extremos, fíjense que da siempre lo mismo.
+
+01:22:43.000 --> 01:22:59.240
+Pero si yo ya tengo sumado los extremos, la suma total, como yo ya tengo sumado los extremos, esa suma no la tengo que hacer seis veces, la tengo que hacer la mitad de las veces.
+
+01:22:59.960 --> 01:23:07.000
+Y por eso es que la suma de los extremos, pero esto multiplicado en sobre dos.
+
+01:23:07.800 --> 01:23:14.600
+Si en lugar de tener una cantidad par de iemens, si tienen una cantidad de impar, por ejemplo, así.
+
+01:23:14.600 --> 01:23:28.840
+Esto tendrían uno, más cinco, cinco dividido dos, quedaría tres también, ¿no?
+
+01:23:29.560 --> 01:23:52.200
+Si hubiéramos cinco dividido dos, sería dos coma cinco, esto me tendría quedado lo mismo, esto me queda seis dividido dos, me queda tres, por cinco, si lo simplificamos, esto me quedaría cinco medios, por seis.
+
+01:23:52.440 --> 01:24:06.760
+Esto lo simplificamos y me da cinco, y esto también vale porque lo que pasa es que yo hago la suma de los extremos en tres, los sume dos veces en dos, por eso me queda que desaparece.
+
+01:24:15.640 --> 01:24:17.640
+¿Se entiende, más o menos?
+
+01:24:18.600 --> 01:24:39.320
+Entonces, eso es una serie aritmética y por eso que termina siendo n más uno, por n sobre dos, pero que en general, para una serie cualquiera, es el primero más el último, multiplicado en la mitad de la cantidad de iemens dos que tengo.
+
+01:24:41.320 --> 01:24:46.120
+¿Entendió? Los perdí demasiado, los perdí porque se me fue el aula.
+
+01:24:47.640 --> 01:24:49.640
+¿No?
+
+01:24:54.680 --> 01:24:58.680
+Bueno, me triste yo chicos.
+
+01:25:00.200 --> 01:25:03.240
+Bien, bueno, acá ya viene el while.
+
+01:25:05.400 --> 01:25:09.400
+No, había otra cosa que yo les quería dar que a veces aparece.
+
+01:25:09.800 --> 01:25:15.320
+Bueno, ahí apareció cuando teníamos esta sumatoria en y.
+
+01:25:16.440 --> 01:25:29.240
+Otra cosa que puede aparecer es cuando tenemos.
+
+01:25:39.480 --> 01:25:43.480
+No tenemos.
+
+01:25:51.480 --> 01:25:57.480
+No está, pero cuando tenemos una sumatoria.
+
+01:25:57.560 --> 01:25:59.560
+No.
+
+01:26:09.560 --> 01:26:13.560
+Iba desde uno hasta y que se hacía aquí veces.
+
+01:26:13.640 --> 01:26:27.640
+Y tenemos una sumatoria que va desde j igual y hasta n, pero algo que es constante.
+
+01:26:27.640 --> 01:26:29.640
+¿Esto cuántas veces se hace?
+
+01:26:29.720 --> 01:26:31.720
+No.
+
+01:26:41.720 --> 01:26:45.720
+Estaba pidiendo alguna señal de vida, por favor.
+
+01:26:45.800 --> 01:26:47.800
+No.
+
+01:26:55.800 --> 01:26:57.800
+Así.
+
+01:26:57.800 --> 01:26:59.800
+O nada que ver, no.
+
+01:27:05.800 --> 01:27:07.800
+Y tienen un vector, no.
+
+01:27:07.880 --> 01:27:11.880
+Y tienen que sumar los elementos.
+
+01:27:11.880 --> 01:27:19.880
+Esta constante tienen una suma donde lo que suman es a de j.
+
+01:27:19.880 --> 01:27:23.880
+Entonces, cuando suman a de j y esto empieza en i,
+
+01:27:23.880 --> 01:27:29.880
+entonces tienen que sumar lo que está en i y más 1 y más 2 y más 3 y más 4 hasta llegar al n.
+
+01:27:29.880 --> 01:27:35.880
+Entonces, ¿esos cuántos términos son?
+
+01:27:35.960 --> 01:27:45.960
+N menos i más 1 por la constante.
+
+01:27:45.960 --> 01:27:51.960
+Porque imagínense que sea desde 5 hasta 10.
+
+01:27:55.960 --> 01:28:03.960
+El 5, el 6, el 7, el 8, el 9, el 10, el 10 con 6.
+
+01:28:04.040 --> 01:28:06.040
+¿Entienden?
+
+01:28:06.040 --> 01:28:08.040
+No, por la constante no.
+
+01:28:08.040 --> 01:28:14.040
+Es porque son cada uno de los puntitos.
+
+01:28:14.040 --> 01:28:18.040
+Si uno pone n menos i son la cantidad de intervalos.
+
+01:28:18.040 --> 01:28:24.040
+Si uno pone n menos i es porque es 1, 2, 3, 4.
+
+01:28:24.040 --> 01:28:26.040
+Serían los intervalos.
+
+01:28:26.040 --> 01:28:28.040
+Yo a veces lo cuento con el tema de los dedos.
+
+01:28:28.120 --> 01:28:34.120
+Si yo tengo que ir de 1 a 5, o aparte fíjense cuando uno hace de 1 a n.
+
+01:28:34.120 --> 01:28:38.120
+En definitiva es 1, 2, 3, 4, 5.
+
+01:28:38.120 --> 01:28:46.120
+El final hasta el principio es 5 menos 1, 4 más 1, 5.
+
+01:28:46.120 --> 01:28:52.120
+Y si no, otra forma en la que ustedes lo pueden hacer,
+
+01:28:52.200 --> 01:28:56.200
+que probablemente ustedes también en la práctica,
+
+01:28:56.200 --> 01:29:00.200
+para no tener que estar memorizando esto,
+
+01:29:00.200 --> 01:29:08.200
+es siempre tratar de llevar las sumatorias a que empiecen en 1.
+
+01:29:08.200 --> 01:29:14.200
+¿Por qué saben que si la sumatoria empieza en 1, la cantidad que se hace es el límite?
+
+01:29:14.200 --> 01:29:16.200
+Si va de 1 a n se hace n veces.
+
+01:29:16.200 --> 01:29:18.200
+Si va de 1 a 100 se hace 100 veces.
+
+01:29:18.200 --> 01:29:20.200
+Si va de 1 a j se hace j veces.
+
+01:29:20.280 --> 01:29:24.280
+¿Esto en la bibliografía está? Sí, seguramente.
+
+01:29:24.280 --> 01:29:30.280
+En el capítulo 2 de Way, seguramente está.
+
+01:29:30.280 --> 01:29:32.280
+Yo ahora justo no me lo acuerdo, pero debe estar.
+
+01:29:32.280 --> 01:29:38.280
+Y si no, yo les digo, esto va a aparecer en el machito cuando vayan a la práctica 5.
+
+01:29:38.280 --> 01:29:40.280
+Creo que empiezan con la práctica de Teden.
+
+01:29:40.280 --> 01:29:46.280
+Pero si no, si ustedes llevan todos las sumatorias que empiezan en 1,
+
+01:29:46.280 --> 01:29:48.280
+ahí se les hace más fácil.
+
+01:29:48.360 --> 01:29:54.360
+Acá, esta sumatoria que va de 1 a n, ¿cómo la llevaríamos de términos de 1?
+
+01:29:54.360 --> 01:30:00.360
+Sería un j que vaya desde 1 hasta n, una constante.
+
+01:30:00.360 --> 01:30:02.360
+¿Y a esto qué le tendría que estar claro?
+
+01:30:02.360 --> 01:30:06.360
+Un j que vaya desde 1 hasta cuánto.
+
+01:30:10.360 --> 01:30:14.360
+Yo tengo que hacer los elementos hasta ahí.
+
+01:30:14.440 --> 01:30:22.440
+Yo en esta primer parte trabajo con todos los elementos, que vayan desde 1 hasta n.
+
+01:30:22.440 --> 01:30:24.440
+¿Quién le tengo que restar?
+
+01:30:28.440 --> 01:30:32.440
+Para que me entiende después esto que está acá.
+
+01:30:38.440 --> 01:30:40.440
+No exacto.
+
+01:30:40.440 --> 01:30:42.440
+Tendría que ser hasta el previo.
+
+01:30:44.440 --> 01:30:48.440
+Hasta i menos 1.
+
+01:30:48.440 --> 01:30:50.440
+¿Se entiende?
+
+01:30:50.440 --> 01:30:54.440
+Porque si yo le resto el 1 y le resto el i, me queda aquel pedacito.
+
+01:30:54.440 --> 01:30:56.440
+Y yo el i lo quiero tener.
+
+01:31:00.440 --> 01:31:02.440
+Entonces, ¿a qué va a ser igual?
+
+01:31:02.440 --> 01:31:08.440
+Esto va a ser igual a n y esto va a ser igual a i menos 1.
+
+01:31:08.440 --> 01:31:12.440
+Entonces, cuando doblamos la cuenta, esto se le tiene menos i más 1.
+
+01:31:12.520 --> 01:31:16.520
+Más i no, porque acá hay un paréntesis.
+
+01:31:30.520 --> 01:31:40.520
+Y si no, acá tenemos esto, acá tenemos esto.
+
+01:31:40.600 --> 01:31:44.600
+Y si no, otras que partimos de lo mismo.
+
+01:31:44.600 --> 01:31:52.600
+Y algo va desde un límite inferior a un límite superior.
+
+01:31:52.600 --> 01:31:58.600
+Porque esto podría haber ido desde a a b, ni desde i hasta n, ni desde 1 hasta n.
+
+01:31:58.600 --> 01:32:06.600
+Si no, podría haber tenido que ir desde a hasta b para calcular el tn y sacar sumatorias.
+
+01:32:06.680 --> 01:32:12.680
+Está claro esto, porque cuando ustedes tengan un for, ese for se transforma en una sumatoria.
+
+01:32:12.680 --> 01:32:16.680
+Entonces, si yo tengo desde un límite inferior a un límite inferior.
+
+01:32:16.680 --> 01:32:26.680
+Si alguna cosa es contundente, esto va a ser el límite superior menos el límite inferior más 1.
+
+01:32:26.680 --> 01:32:30.680
+En definitiva fue un poco lo que hicimos acá, este menos este más 1.
+
+01:32:30.760 --> 01:32:36.760
+Pero lo que generalizamos es límite superior menos el límite inferior más 1.
+
+01:32:36.760 --> 01:32:44.760
+Y ojo, cuando la sumatoria vaya hasta 100, hasta 1000, hasta un millón, no hasta n,
+
+01:32:44.760 --> 01:32:48.760
+esa sumatoria es constante.
+
+01:32:48.760 --> 01:32:56.760
+La sumatoria va a ser de orden n, n cuadrado, lo que sea, si aparece el n.
+
+01:32:56.840 --> 01:32:58.840
+Pero si yo tengo
+
+01:33:11.840 --> 01:33:17.840
+si yo tengo una sumatoria que va entre igual 1, hasta 1000,
+
+01:33:17.920 --> 01:33:26.920
+de una constante, esto es 1000 por la constante, y esto finalmente es de orden 1.
+
+01:33:26.920 --> 01:33:29.920
+Lo llamamos cuando tenemos un orden constante.
+
+01:33:29.920 --> 01:33:34.920
+Todo lo que no depende de la entrada va a ser constante, se podría decir tal cual.
+
+01:33:34.920 --> 01:33:40.920
+Entonces, si esta sumatoria va desde 1 hasta un valor pico, por más que sea un for,
+
+01:33:40.920 --> 01:33:46.920
+o si el for, acá esos que van desde 1 a n, hubiera sido desde 1 a 1000,
+
+01:33:47.000 --> 01:33:50.000
+eso se transforma en una sumatoria que va hasta 1000.
+
+01:33:50.000 --> 01:33:55.000
+Y eso se va a hacer siempre mil veces, sea cual sea el tamaño del vector, ¿entendió?
+
+01:33:55.000 --> 01:34:03.000
+Bueno, yo tengo que terminar acá, porque Ale terminó acá en mi turno,
+
+01:34:03.000 --> 01:34:09.000
+así que para que quede todo grabado parejo, tendremos que terminar acá y ella empieza con cosa.
+
+01:34:09.000 --> 01:34:13.000
+Pero solamente les quiero mostrar este ejercicito.
+
+01:34:13.000 --> 01:34:16.000
+¿Cómo les parece a ustedes que sería este TDN?
+
+01:34:17.000 --> 01:34:21.000
+Ahí que dice, ¿cuál es la expresión correcta?
+
+01:34:21.000 --> 01:34:26.000
+Porque es multiple choice y después les aparece cuáles son las opciones.
+
+01:34:26.000 --> 01:34:34.000
+Pero, ¿cuál les parece a ustedes que sería la opción correcta si tienen, digamos,
+
+01:34:34.000 --> 01:34:40.000
+esto se los muestro porque no es nada más ni nada menos que dos fores anidados,
+
+01:34:40.000 --> 01:34:41.000
+que son los que estuvimos viendo.
+
+01:34:41.000 --> 01:34:45.000
+Lo único que cambia es que el for de afuera va desde 0 hasta n,
+
+01:34:45.080 --> 01:34:48.080
+pero como el n es menor estricto, esto se haría n veces.
+
+01:34:48.080 --> 01:34:53.080
+Así que no cambia mucho que sea el i, uno más uno menos no cambia demasiado.
+
+01:34:53.080 --> 01:35:02.080
+La c, n lo viene, n lo viene, la b, la b, la b, la b, la b.
+
+01:35:02.080 --> 01:35:10.080
+A ver, tenemos la c, la b y la b.
+
+01:35:10.160 --> 01:35:12.160
+Ah, qué sustidito, chicos.
+
+01:35:12.160 --> 01:35:16.160
+A ver, a ver, la d.
+
+01:35:16.160 --> 01:35:22.160
+Bien, la d me imagino que es porque tenemos dos fores anidados
+
+01:35:22.160 --> 01:35:27.160
+que van hasta n y entonces la habrán pensado por...
+
+01:35:31.160 --> 01:35:38.160
+... un n dividido 2 por ahí que los puede llevar a que se divida por n.
+
+01:35:38.240 --> 01:35:41.240
+Pero alguien dijo la b.
+
+01:35:45.240 --> 01:35:50.240
+La primera, el primero es un for que es lineal, perfecto.
+
+01:35:50.240 --> 01:35:54.240
+Y el segundo es constante, por eso Leticia está pensando que es la b.
+
+01:35:54.240 --> 01:35:58.240
+Bien, evidentemente los demás no están de acuerdo porque dijeron otras cosas.
+
+01:35:58.240 --> 01:36:03.240
+Habría que ver cómo lo justifica Leticia.
+
+01:36:03.320 --> 01:36:08.320
+Pero esa es la opción correcta.
+
+01:36:10.320 --> 01:36:18.320
+Porque ustedes fíjense que el caso que se incrementa no se incrementa en dos,
+
+01:36:18.320 --> 01:36:23.320
+no se incrementa en tres, que ahí podría que esté también cuadrático.
+
+01:36:23.320 --> 01:36:31.320
+Sino que el segundo n no va cambiando, el segundo for no va cambiando su valor.
+
+01:36:31.400 --> 01:36:36.400
+El valor, no sé bien qué querés decir, sí cambia, el valor del j va cambiando.
+
+01:36:39.400 --> 01:36:42.400
+No sé si es eso lo que querés decir, Leticia.
+
+01:36:54.400 --> 01:36:59.400
+Cuando va cambiando, ¿qué consta la cantidad de veces que se hace algo?
+
+01:36:59.480 --> 01:37:00.480
+No entiendo.
+
+01:37:07.480 --> 01:37:12.480
+El segundo for no va cambiando, por eso digo que es constante.
+
+01:37:13.480 --> 01:37:18.480
+Claro, el número de operaciones no cambia porque siempre suma n sobre 2.
+
+01:37:18.480 --> 01:37:21.480
+¿Cuántas veces se hace el for más alto?
+
+01:37:21.560 --> 01:37:34.560
+Para que me digan que vale n y que eso es constante, el for for resulta ser constante.
+
+01:37:35.560 --> 01:37:42.560
+Y me están diciendo que es de orden n porque el único que tiene peso es el de afuera.
+
+01:37:42.560 --> 01:37:48.560
+Me están diciendo que Alan dice que se hace dos veces.
+
+01:37:48.640 --> 01:37:53.640
+Vos lo que me está diciendo, Fabio, es que se hace dos veces todo.
+
+01:37:53.640 --> 01:37:56.640
+El n más dos veces de eso.
+
+01:37:59.640 --> 01:38:04.640
+No que se haga, una se hace n y la otra se hace dos veces.
+
+01:38:05.640 --> 01:38:08.640
+El interno se hace dos n veces.
+
+01:38:09.640 --> 01:38:17.640
+Pero entonces, si el interno se hiciera dos n veces, más las n veces que se hace el de afuera, sería cuadrático.
+
+01:38:17.720 --> 01:38:20.720
+Vos eras el que había dicho que se hacía cuadrático, no me acuerdo.
+
+01:38:31.720 --> 01:38:34.720
+El interno se hace dos n veces.
+
+01:38:39.720 --> 01:38:43.720
+Suponemos que tenemos un n igual a 50.
+
+01:38:43.800 --> 01:38:48.800
+El más externo se hace 50 veces.
+
+01:38:50.800 --> 01:38:53.800
+El más interno, ¿cuántas veces se hace?
+
+01:38:59.800 --> 01:39:03.800
+Para el n más interno se hace la mitad.
+
+01:39:05.800 --> 01:39:08.800
+¿Y cinco veces?
+
+01:39:13.800 --> 01:39:16.800
+Si el n fuera cien.
+
+01:39:17.800 --> 01:39:24.800
+Si el afuera se hace cien veces, el de adentro vos decís que se hace cincuenta veces.
+
+01:39:27.800 --> 01:39:32.800
+Entonces, uno se haría n veces y el otro se haría n sobre dos veces.
+
+01:39:32.800 --> 01:39:35.800
+Esto termina quedando cuadrático también.
+
+01:39:36.800 --> 01:39:39.800
+Ahí sería cuadrático.
+
+01:39:39.880 --> 01:39:42.880
+Ahí sería cuadrático.
+
+01:39:49.880 --> 01:39:52.880
+No lo puedo hacer sobre la pantalla.
+
+01:39:55.880 --> 01:40:00.880
+Se hace dos veces porque le suma la mitad.
+
+01:40:01.880 --> 01:40:04.880
+Una sola vez lo de adentro, claro.
+
+01:40:04.880 --> 01:40:07.880
+No, en realidad lo de adentro se hace dos veces.
+
+01:40:07.960 --> 01:40:13.960
+Porque cuando el j vale uno, entra el forz.
+
+01:40:13.960 --> 01:40:18.960
+La próxima vez, suponiendo que estamos en el primer caso,
+
+01:40:20.960 --> 01:40:25.960
+la segunda vez el j es igual a 26.
+
+01:40:25.960 --> 01:40:31.960
+Si a la tercera vez el j valdría 51, entonces no entra el forz.
+
+01:40:32.040 --> 01:40:37.040
+Ahora, el forz valdr 50 va a ir a cien.
+
+01:40:38.040 --> 01:40:41.040
+Al primero entra cien veces.
+
+01:40:42.040 --> 01:40:46.040
+Al segundo, al más interno, j vale uno.
+
+01:40:46.040 --> 01:40:49.040
+Después, como lo divide por dos el paso,
+
+01:40:49.040 --> 01:40:53.040
+la segunda vez este j vale 51
+
+01:40:53.040 --> 01:40:58.040
+y la segunda vez este j vale 101.
+
+01:40:58.040 --> 01:41:01.040
+No entro porque me pasé de cien.
+
+01:41:01.120 --> 01:41:04.120
+Así siguiendo.
+
+01:41:06.120 --> 01:41:07.120
+Claro, tal cual.
+
+01:41:07.120 --> 01:41:14.120
+Es decir, si acá, en lugar de haber tenido un n sobre dos
+
+01:41:14.120 --> 01:41:19.120
+y la suma hubiera sido dos,
+
+01:41:19.200 --> 01:41:22.200
+j al revés.
+
+01:41:25.200 --> 01:41:32.200
+Si ahí el paso hubiera sido j igual a j más dos,
+
+01:41:32.200 --> 01:41:35.200
+entonces sí se hubiera hecho la mitad de las veces.
+
+01:41:35.200 --> 01:41:38.200
+Porque ustedes piensen que, en este caso,
+
+01:41:38.200 --> 01:41:41.200
+el intervalo es de a dos.
+
+01:41:41.200 --> 01:41:42.200
+Voy sumando.
+
+01:41:42.200 --> 01:41:47.200
+Pero en el otro, el intervalo se le divide por la mitad.
+
+01:41:47.280 --> 01:41:50.280
+El intervalo se le divide por la mitad.
+
+01:41:50.280 --> 01:41:53.280
+Que depende del mismo n.
+
+01:41:53.280 --> 01:41:55.280
+¿Se entiende?
+
+01:41:55.280 --> 01:42:00.280
+Si hubiera hecho n sobre cuatro, ahí sería cuatro veces.
+
+01:42:00.280 --> 01:42:03.280
+Es decir, alguno de este estilo,
+
+01:42:03.280 --> 01:42:08.280
+el incremento, el paso sea n sobre algo,
+
+01:42:08.280 --> 01:42:11.280
+la cantidad de veces que se hace es ese algo.
+
+01:42:11.280 --> 01:42:13.280
+Y ese algo es constante.
+
+01:42:13.280 --> 01:42:16.280
+Entonces, lo que vale es el de afuera.
+
+01:42:16.360 --> 01:42:20.360
+Para que hubiera sido logarítmico,
+
+01:42:20.360 --> 01:42:24.360
+lo que tendría pasado es que hubiéramos empezado
+
+01:42:24.360 --> 01:42:29.360
+con un j igual a n y al j lo fuéramos dividiendo por dos.
+
+01:42:29.360 --> 01:42:31.360
+Entonces, arrancamos en un valor grande,
+
+01:42:31.360 --> 01:42:34.360
+después pasamos a la mitad, a la mitad, a la mitad,
+
+01:42:34.360 --> 01:42:39.360
+para quienes hayan dicho la opción del logarítmico.
+
+01:42:39.360 --> 01:42:40.360
+¿Sí?
+
+01:42:40.360 --> 01:42:43.360
+Hubiera sido logarítmico, hubiera sido cuadrático,
+
+01:42:43.440 --> 01:42:46.440
+pero acá en lugar de a tener una suma,
+
+01:42:46.440 --> 01:42:48.440
+el paso a haber sido n sobre dos hubiera sido dos.
+
+01:42:48.440 --> 01:42:50.440
+Ahí sí hubiera sido cuadrático.
+
+01:42:50.440 --> 01:42:52.440
+Porque hubiera sido n por n sobre dos.
+
+01:42:52.440 --> 01:42:54.440
+Así que quedaba cuadrático.
+
+01:42:54.440 --> 01:42:59.440
+Y si en este caso el j hubiera sido el que se dividía por dos,
+
+01:42:59.440 --> 01:43:01.440
+eso sí se hacía logarítmico.
+
+01:43:01.440 --> 01:43:04.440
+Pero para eso tendríamos que haber empezado
+
+01:43:04.440 --> 01:43:06.440
+por los valores al revés.
+
+01:43:06.440 --> 01:43:09.440
+El j que se vaya decrementando.
+
+01:43:09.440 --> 01:43:12.440
+O si no que el j se vaya multiplicando por dos.
+
+01:43:12.520 --> 01:43:13.520
+Esa es la otra opción.
+
+01:43:13.520 --> 01:43:16.520
+El j se va multiplicando por dos, el mismo j.
+
+01:43:16.520 --> 01:43:18.520
+Ahí sí también es logarítmico.
+
+01:43:22.520 --> 01:43:23.520
+Bien.
+
+01:43:24.520 --> 01:43:27.520
+¿Y a con qué n no cambia de valor?
+
+01:43:27.520 --> 01:43:29.520
+Ah, eso te rese.
+
+01:43:29.520 --> 01:43:31.520
+Yo, no, este, me rese.
+
+01:43:31.520 --> 01:43:32.520
+¿Y a con qué?
+
+01:43:32.520 --> 01:43:35.520
+Está bien, yo entendía que el for no cambiaba de valor.
+
+01:43:35.520 --> 01:43:36.520
+No te entendí bien.
+
+01:43:36.520 --> 01:43:38.520
+Leticia, disculpame.
+
+01:43:38.600 --> 01:43:42.600
+Bueno, chicos, si no hay más consultas,
+
+01:43:42.600 --> 01:43:44.600
+esto lo dejamos por acá.
+
+01:43:44.600 --> 01:43:46.600
+Bueno, acá había otro, pero bueno,
+
+01:43:46.600 --> 01:43:50.600
+lo dejo para que lo hagan con Ale la semana que viene.
+
+01:43:52.600 --> 01:43:57.600
+Y entonces tendrían que empezar desde esta transparencia,
+
+01:43:57.600 --> 01:44:00.600
+que es lo que tengo que empezar yo en el turno de los lunes.
+
+01:44:00.600 --> 01:44:01.600
+Así quedamos parejos.
+
+01:44:01.600 --> 01:44:04.600
+Súper régete parejos.
+
+01:44:04.600 --> 01:44:05.600
+Bueno, listo.
+
+01:44:05.600 --> 01:44:06.600
+Entonces quedamos así.
+
+01:44:06.680 --> 01:44:14.680
+Mañana, recuerden que la clase es en la otra sala.
+
+01:44:14.680 --> 01:44:15.680
+¿Sí?
+
+01:44:15.680 --> 01:44:19.680
+Claro, porque sí terminan con la parte de aquí.
+
+01:44:19.680 --> 01:44:21.680
+Bueno, chicos, un gusto.
+
+01:44:21.680 --> 01:44:24.680
+Cualquier consulta, si después llegamos a querer,
+
+01:44:24.680 --> 01:44:26.680
+quieren querer tener alguna consulta,
+
+01:44:26.680 --> 01:44:30.680
+yo por ahí el miércoles a la mañana no tendría problema.
+
+01:44:30.680 --> 01:44:34.680
+O por ahí el lunes un rato antes de las 11 que yo voy a la clase.
+
+01:44:34.760 --> 01:44:41.760
+Esto pídanlo por el foro o avísenle a Pepe o a Ale la semana que viene
+
+01:44:41.760 --> 01:44:43.760
+y podemos coordinar una clase.
+
+01:44:43.760 --> 01:44:46.760
+Bueno, chicos, muchísimo gusto.
+
+01:44:46.760 --> 01:44:49.760
+Espero que les haya presentado cómoda la clase
+
+01:44:49.760 --> 01:44:51.760
+y nos vemos en algún otro momento.
+

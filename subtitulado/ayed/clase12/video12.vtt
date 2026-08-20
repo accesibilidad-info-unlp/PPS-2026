@@ -1,0 +1,2708 @@
+WEBVTT
+
+00:00.000 --> 00:11.000
+Bueno, el otro día empezaron con el tema de análisis de algoritmos, ¿no?
+
+00:11.000 --> 00:25.000
+Katy ya les ha explicado cómo calcular el tiempo de ejecución en las distintas sentencias que empiezan a aparecer en los algoritmos.
+
+00:25.000 --> 00:30.000
+Creo que, según me dijo ella, llegó hasta acá, ¿no?
+
+00:30.000 --> 00:36.000
+O sea, este código lo vieron ya, ¿no?
+
+00:36.000 --> 00:45.000
+O sea, yo para determinar cuántas operaciones hace cada for yo eso lo identifico a través de una sumatoria.
+
+00:45.000 --> 00:58.000
+O sea, en general de un for o de un while, de cualquier sentencia que sea iterativa y que dé varias vueltas, ¿no?
+
+00:58.000 --> 01:21.000
+Bien, en este caso, por ejemplo, yo tengo x igual a 0, y igual a 1 y dice, mientras i sea menor o igual que n, suma 1 a la variable x y suma 2 a la variable i.
+
+01:21.000 --> 01:32.000
+En este caso, ¿cuántas veces? O sea, porque en el caso del for es como que es más evidente la cantidad de iteraciones que hacen, ¿no?
+
+01:32.000 --> 01:40.000
+En general, pues si yo digo, bueno, voy de 1 a n y la variable se incrementa en 1, entonces se hace n veces.
+
+01:40.000 --> 01:57.000
+Ahora, acá en el caso del while, en realidad te lo tengo que analizar bien que es para, o sea, el código y el cuerpo del while para ver cuántas veces se va a ejecutar, cuál es la cantidad de iteraciones.
+
+01:57.000 --> 02:10.000
+Recuerden que para sacarle tiempo al while hay que sacar el tiempo de evaluar la condición más el tiempo del cuerpo del while, ¿no?
+
+02:10.000 --> 02:17.000
+Todo eso multiplicado por la cantidad de operaciones que hace, la cantidad de iteraciones que hace, perdón.
+
+02:18.000 --> 02:28.000
+Entonces, en este caso, la condición del while es constante porque solo comparar una variable con otra.
+
+02:28.000 --> 02:39.000
+El cuerpo también es constante porque es una operación de suma y una asignación y después otra operación de suma y una asignación.
+
+02:40.000 --> 02:54.000
+Ahora bien, si yo les pregunto a ustedes cuántas iteraciones o cuántas veces se ejecuta este, o sea, estas dos cosas, la condición y el cuerpo, la condición y el cuerpo.
+
+02:55.000 --> 03:09.000
+¿Cuántas veces? Así intuitivamente, en forma aproximada, viendo el código adentro, ¿no? N sobre 2, claro, tal cual.
+
+03:10.000 --> 03:17.000
+Porque y se va incrementando en 2, ¿no? Entonces va saltando y se hace n sobre 2.
+
+03:17.000 --> 03:37.000
+Entonces, esto se indica así, que en realidad es una vez más, ¿no? Porque para 1 también se ejecuta, si yo me pongo a contar, ¿no?
+
+03:37.000 --> 03:48.000
+Para el n, hay veces si el n es par o si el n es impar, ¿no? Hay veces se ejecuta una vez más un n más 1 sobre 2, por eso ahí está n más 1 sobre 2, ¿no?
+
+03:49.000 --> 04:01.000
+Pero en realidad a los términos de sacar cuál es el orden, ¿no? Que después se ve bien, que vamos a ver bien la definición de este bigó, ¿no?
+
+04:01.000 --> 04:15.000
+Que es el orden, es decir, a fin de acotar la función, decir n más 1 sobre 2, n sobre 2 es lo mismo.
+
+04:15.000 --> 04:20.000
+¿Por qué? Porque después vamos a ver que las constantes se descartan.
+
+04:20.000 --> 04:26.000
+Que en realidad acá lo que se hace es se compara el crecimiento de la función.
+
+04:26.000 --> 04:34.000
+Entonces, esta función que yo tengo acá, todo esto es una función lineal.
+
+04:34.000 --> 04:53.000
+Entonces, uno dice que este segmento de código es de orden n, o sea que va a ser aproximadamente n operaciones, aproximadamente, o sea es como si fuera el tope.
+
+04:53.000 --> 05:06.000
+No importa que haga n sobre 2, pero lo que está queriendo decir que a eso apunta la análisis de algoritmos es que a medida que el n crezca va a crecer según la función lineal.
+
+05:07.000 --> 05:09.000
+Esa es la idea.
+
+05:09.000 --> 05:24.000
+Bien, ¿entienden eso cuál es la idea de calcular la función de tiempo de ejecución y después de acotarla en realidad?
+
+05:24.000 --> 05:39.000
+Porque a mí después a lo largo lo que, o sea, al final lo que a mí me interesa es cuál es la función que acota a toda esta expresión que representa mi función de tiempo de ejecución.
+
+05:40.000 --> 05:44.000
+Bien, a ver, ¿qué pasa en este caso?
+
+05:45.000 --> 05:55.000
+Donde yo tengo x igual a 1, mientras x sea menor que n, hace x igual a 2 por x.
+
+05:55.000 --> 06:08.000
+O sea, ahí la condición es constante porque es solo comparar una variable con otra, el cuerpo es constante.
+
+06:09.000 --> 06:13.000
+Ahora, ¿cuántas iteraciones hace ese y?
+
+06:25.000 --> 06:27.000
+A ver si se dan cuenta.
+
+06:33.000 --> 06:35.000
+Raíz cuadrada.
+
+06:35.000 --> 06:56.000
+Ah, no, no, no, no dice Ana. Ah, pues ya había respondido Ana. No, no, no se había visto la primera respuesta. ¿Cuándo pusiste? Ah, no, no.
+
+06:56.000 --> 07:05.000
+Claro, o sea, algunos dicen raíz cuadrada, otros dicen logaritmo en base 2.
+
+07:09.000 --> 07:22.000
+O sea, yo arranco con x igual a 1, después al x lo multiplico por 2, después lo vuelvo a multiplicar por 2, después lo vuelvo a multiplicar por 2, así hasta que llego a n.
+
+07:22.000 --> 07:32.000
+Entonces, ¿cuántas iteraciones hice? Es la cantidad de multiplicaciones que yo hice por 2, que en realidad esa, como bien dijo Brenda, es la definición del logaritmo.
+
+07:34.000 --> 07:41.000
+¿Cuántas veces yo multipliqué por 2 hasta llegar a n? Sería el logaritmo en base 2 de n.
+
+07:41.000 --> 07:57.000
+Que en realidad esto uno después lo expresa, bueno, acá en realidad yo tendría que poner la suma desde igual 1 hasta logaritmo directamente. O sea, acá está bastante simplificado.
+
+07:58.000 --> 08:05.000
+O sea, para expresar en sumatoria que se hace logaritmo de n iteraciones.
+
+08:06.000 --> 08:19.000
+Dices potencias, aclaración, si n es potencia de 2, realiza log de n iteraciones. Y si no es potencia exacta, no realiza log de n más 1 iteraciones, que es lo que yo les decía recién.
+
+08:19.000 --> 08:30.000
+O sea, que haga una operación más o una menos, en realidad siempre va a estar dentro del orden del logaritmo.
+
+08:31.000 --> 08:37.000
+Por eso, o sea, todas estas cosas hay que analizarlas en forma detallada.
+
+08:38.000 --> 08:46.000
+A ver, dice, ¿cuál es la expresión correcta respecto al tiempo de ejecución del siguiente segmento de código?
+
+08:47.000 --> 09:10.000
+Fíjense, yo tengo un for que va desde 0 hasta n menos 1, sería donde i se incrementa de 1. Un for adentro que va desde 1 hasta n menos 1, sería porque es menor estricto que n.
+
+09:11.000 --> 09:16.000
+Y el j se incrementa en n sobre 2.
+
+09:20.000 --> 09:29.000
+Después tengo el cuerpo de este for, que es una operación de suma y una asignación, o sea que es constante.
+
+09:30.000 --> 09:39.000
+Este código, ¿cuántas iteraciones va a ser todo el código?
+
+09:41.000 --> 09:57.000
+O sea, ¿qué es lo que uno va a decir? Bueno, ese segmento de código es de orden tal, viéndolo así intuitivamente, sin plantear ninguna fórmula, ninguna expresión.
+
+10:00.000 --> 10:03.000
+A ver si lo sacan.
+
+10:04.000 --> 10:11.000
+En realidad, si yo avanzo acá, o sea, dice, tendría que elegir alguna de estas.
+
+10:16.000 --> 10:19.000
+¿Qué les parece?
+
+10:29.000 --> 10:32.000
+Acá Christian dice orden n.
+
+10:37.000 --> 10:40.000
+Ramiro dice n log n.
+
+10:44.000 --> 10:47.000
+Francisco dice la C también.
+
+10:47.000 --> 10:51.000
+Brenda dice la B, que es n.
+
+10:58.000 --> 11:01.000
+Y el J dice n log n.
+
+11:04.000 --> 11:07.000
+Francisco dice la C también.
+
+11:07.000 --> 11:10.000
+Es n.
+
+11:21.000 --> 11:28.000
+Ramiro dice que el primer for sería lineal, eso está bien, y el segundo logaritmo.
+
+11:29.000 --> 11:42.000
+¿Por qué? A ver, alguno explicaba por ahí que escribiendo es medio complicado. No sé si alguno quiere prender el micrófono, abrir el micrófono.
+
+11:43.000 --> 11:50.000
+O sea, para justificar, ¿no? O sea, de cualquiera de los que respondieron.
+
+11:59.000 --> 12:16.000
+Claro, fíjense, está bien lo que dice Christian. En realidad, el for, yo tengo, si yo digo bueno, el J va de 1 hasta n, bueno, menos 1.
+
+12:17.000 --> 12:34.000
+Pero el paso es n sobre 2. N sobre 2. O sea que yo estoy por acá, entonces se ejecuta esta vez, se ejecuta esta vez.
+
+12:35.000 --> 12:44.000
+Y después, bueno, esta no se va a ejecutar porque es menor estricto que n. Si hubiese aparecido menor igual, se ejecutaría tres veces.
+
+12:46.000 --> 12:52.000
+O sea que se ejecuta, como bien dice Christian, se ejecuta dos veces.
+
+12:55.000 --> 12:57.000
+Dos veces.
+
+12:58.000 --> 13:22.000
+Es decir, si n vale 100, yo tengo 1 y tengo 100, se ejecuta para 1 y para, sería 51, porque es más n sobre 2.
+
+13:23.000 --> 13:28.000
+Entonces se ejecuta acá y acá. Dos veces.
+
+13:29.000 --> 13:44.000
+Ahora, si n vale un millón, ¿cuántas veces se va a ejecutar?
+
+13:45.000 --> 13:59.000
+O sea, se va a ejecutar para 1 y después ¿qué hace? Hace n sobre 2, o sea, un millón dividido 2, 500.000 más 1, 500.001.
+
+14:04.000 --> 14:09.000
+O sea que siempre se ejecuta dos veces, siempre.
+
+14:10.000 --> 14:21.000
+No depende del n, eso es lo que se llama algo constante, cuando es algo que no depende del tamaño de la entrada.
+
+14:21.000 --> 14:29.000
+Entonces, como el for de adentro se ejecuta siempre dos veces, no importa el valor de n, entonces yo digo que eso es constante.
+
+14:29.000 --> 14:32.000
+O sea, esto que está acá es constante.
+
+14:33.000 --> 14:41.000
+Entonces, solo me queda considerar esto, este for que bien dijeron todos y estaban todos de acuerdo que eso es lineal.
+
+14:45.000 --> 14:49.000
+Entonces la opción sería la B.
+
+14:49.000 --> 14:56.000
+O sea, entendieron todos los que por ahí contestaron, algunos lo sacaron enseguida, que era lineal.
+
+14:56.000 --> 15:04.000
+Bueno, a ver, fíjense este otro ejercicio que dice, considera el siguiente fragmento de código.
+
+15:04.000 --> 15:10.000
+Tenemos un contador en cero, n que es la longitud de una red,
+
+15:10.000 --> 15:16.000
+n que es la longitud de una red, n que es la longitud de una red,
+
+15:16.000 --> 15:22.000
+n que es la longitud de una red, n que es la longitud de una red,
+
+15:22.000 --> 15:27.000
+un contador en cero, n que es la longitud de un arreglo,
+
+15:27.000 --> 15:33.000
+un for desde cero hasta n, bueno, hasta n menos uno,
+
+15:33.000 --> 15:38.000
+otro for desde cero hasta n menos uno,
+
+15:41.000 --> 15:46.000
+y suma los elementos en la posición J.
+
+15:47.000 --> 15:56.000
+O se incrementa en uno el elemento de la posición J según ese índice.
+
+15:56.000 --> 16:04.000
+Dice, suponga que tarda un segundo cuando n es igual a 3500.
+
+16:04.000 --> 16:10.000
+¿Cuánto tardará? Aproximadamente, por eso se recalca la palabra aproximadamente,
+
+16:10.000 --> 16:15.000
+porque es para hacer un cálculo general, no, a grosso modo,
+
+16:15.000 --> 16:21.000
+para n igual 35000. Justifica su respuesta.
+
+16:25.000 --> 16:28.000
+A ver, ¿qué les parece?
+
+16:31.000 --> 16:37.000
+Para n igual a 3500, tarda un segundo.
+
+16:37.000 --> 16:45.000
+Para n igual a 35000, ¿cuánto va a tardar?
+
+17:07.000 --> 17:11.000
+A ver, Julián, ¿por qué pusiste el logaritmo ahí?
+
+17:11.000 --> 17:16.000
+O sea, vos asumís, o sea, yo cuando tengo que analizar esto,
+
+17:16.000 --> 17:21.000
+¿qué tengo que ver? Tengo que ver el código y ver,
+
+17:21.000 --> 17:28.000
+claro, cuál es el orden aproximado de ese segmento de código.
+
+17:28.000 --> 17:32.000
+¿Y cuál es el orden aproximado de ese segmento de código?
+
+17:33.000 --> 17:37.000
+Yo tengo dos for anidados que van de cero.
+
+17:37.000 --> 17:43.000
+El primer for es lineal y el segundo for también es lineal.
+
+17:43.000 --> 17:46.000
+O sea, es n cuadrado.
+
+17:52.000 --> 17:57.000
+¿Y cuál es el orden aproximado de ese segmento de código?
+
+17:57.000 --> 18:01.000
+O sea, que ese segmento de código es cuadrático.
+
+18:07.000 --> 18:10.000
+¿Te quedó claro, Julián?
+
+18:10.000 --> 18:14.000
+Por eso cuando pusiste el log, por eso te preguntaba, claro.
+
+18:17.000 --> 18:20.000
+Entonces, el segmento de código es cuadrático.
+
+18:20.000 --> 18:25.000
+O sea, que ese segmento de código es cuadrático.
+
+18:26.000 --> 18:30.000
+O sea, que hace aproximadamente n.
+
+18:30.000 --> 18:34.000
+O sea, yo podría decir que es de orden n cuadrado.
+
+18:34.000 --> 18:38.000
+O sea, que hace aproximadamente n cuadrado operaciones, ¿no?
+
+18:38.000 --> 18:49.000
+O sea, sin contar, bueno, la inicialización, las comparaciones, este cuerpo.
+
+18:49.000 --> 18:54.000
+O sea, no poniéndome a contar en detalle una, dos, tres, así.
+
+18:54.000 --> 19:04.000
+O sea, yo veo que las iteraciones que da esa parte del código es n cuadrado.
+
+19:04.000 --> 19:06.000
+Me va a quedar n cuadrado en algún momento.
+
+19:06.000 --> 19:20.000
+Entonces, sí, yo tengo que para n igual 3.500 tarda un segundo.
+
+19:20.000 --> 19:22.000
+Eso es lo que yo sé.
+
+19:23.000 --> 19:27.000
+Este hicimos, creo que ya vimos uno similar.
+
+19:43.000 --> 19:49.000
+No, y si la unidad te la dan en segundos, uno la da en segundos.
+
+19:50.000 --> 19:58.000
+Pues te dice que tarda un segundo para hacer n para una entrada de n igual 3.500.
+
+19:58.000 --> 20:19.000
+Hay uno parecido, antes que la de Ana Luisa la semana pasada con Katy, que dice, ¿qué pasa si el enunciado es?
+
+20:19.000 --> 20:25.000
+¿Qué pasa si la entrada se duplica o se triplica o sea así?
+
+20:25.000 --> 20:27.000
+Así era el enunciado.
+
+20:32.000 --> 20:36.000
+Entonces, ¿acá qué pasó con la entrada?
+
+20:36.000 --> 20:40.000
+Porque ahora la entrada es 35.000.
+
+20:40.000 --> 20:45.000
+¿Qué pasó de acá a acá? ¿Se multiplicó por cuánto?
+
+20:48.000 --> 20:50.000
+Por 10.
+
+20:51.000 --> 21:10.000
+Ahora, como el segmento de código es n cuadrado, esta magnitud en la que aumenta la entrada, yo la tengo que elevar al cuadrado.
+
+21:11.000 --> 21:25.000
+O sea que va a tardar, si para 3.500 tardaba un segundo, para 35.000 va a tardar 100 segundos.
+
+21:26.000 --> 21:30.000
+¿Entiende?
+
+21:37.000 --> 21:39.000
+O sea, ¿por qué?
+
+21:39.000 --> 21:44.000
+¿Qué pasa si el segmento de código hubiese sido lineal?
+
+21:45.000 --> 21:50.000
+O sea, yo ahí si hubiese tenido un solo for de 0 a n.
+
+21:50.000 --> 21:55.000
+Entonces, el tamaño de la entrada aumenta en 10, el tiempo aumenta en 10.
+
+21:57.000 --> 22:04.000
+O sea, el tiempo aumentaría a la par de cómo aumenta la entrada.
+
+22:04.000 --> 22:09.000
+¿Por qué? Porque la función de tiempo de ejecución del código es lineal.
+
+22:09.000 --> 22:11.000
+¿Se entiende?
+
+22:11.000 --> 22:21.000
+Ahora, como en este caso es cuadrática, yo acá tendría que hacer 35.000.
+
+22:21.000 --> 22:31.000
+Yo digo, bueno, sí, en realidad esta sería la solución más rápida.
+
+22:31.000 --> 22:38.000
+Si yo lo quiero analizar bien, yo digo, bueno, para un n igual 3.500 tarda un segundo.
+
+22:38.000 --> 22:45.000
+O sea, que para hacer 3.500 al cuadrado operaciones tarda un segundo.
+
+22:45.000 --> 22:50.000
+Porque en realidad n es el tamaño de la entrada.
+
+22:51.000 --> 22:56.000
+Y la cantidad de operaciones que hace como el algoritmo cuadrático es 3.500 al cuadrado.
+
+22:56.000 --> 23:04.000
+Entonces, para 35.000 al cuadrado, ¿cuánto hace?
+
+23:09.000 --> 23:17.000
+Entonces, yo acá, fíjense que si yo hago esto, me iba a quedar 100.
+
+23:17.000 --> 23:19.000
+¿Se entiende?
+
+23:19.000 --> 23:26.000
+Entonces, nosotros tenemos que tener en cuenta para resolver estos problemas varias cosas.
+
+23:26.000 --> 23:31.000
+O sea, analizar los datos que me dan y ver lo que me preguntan.
+
+23:31.000 --> 23:37.000
+Es decir, tengo que tener en cuenta, una cosa es el tamaño de la entrada.
+
+23:38.000 --> 23:44.000
+Otra cosa es la cantidad de operaciones que hace.
+
+23:44.000 --> 23:50.000
+Que es que en realidad yo tengo que aplicar el tamaño de la entrada a la función que me dan.
+
+23:50.000 --> 23:54.000
+Que es del tiempo de ejecución del algoritmo.
+
+23:54.000 --> 23:59.000
+Y después si me dicen, ¿cuánto tarda en tiempo concreto?
+
+24:01.000 --> 24:03.000
+¿Cuánto tarda?
+
+24:03.000 --> 24:06.000
+Entonces, ahí hago la regla de 3.
+
+24:06.000 --> 24:11.000
+Pero no confundir tamaño de la entrada con cantidad de operaciones.
+
+24:15.000 --> 24:17.000
+Bien.
+
+24:22.000 --> 24:25.000
+Bueno, a ver, veamos este.
+
+24:26.000 --> 24:28.000
+Este es un poquito largo.
+
+24:28.000 --> 24:34.000
+Fíjense, yo tengo un método impares y pares.
+
+24:34.000 --> 24:38.000
+Que clara dos variables, las inicializa en cero.
+
+24:38.000 --> 24:42.000
+Y tiene un for desde igual 1 hasta n.
+
+24:44.000 --> 24:46.000
+Incrementa en 1 la variable.
+
+24:46.000 --> 24:53.000
+Y si i es impar, que la función es impar viene acá.
+
+24:53.000 --> 24:56.000
+La función es impar viene acá.
+
+24:57.000 --> 25:00.000
+La función es impar, lo único que hace es recibir un número.
+
+25:00.000 --> 25:03.000
+Y devuelve true or false si es par o impar.
+
+25:05.000 --> 25:08.000
+Entonces, si es impar, hace este for.
+
+25:09.000 --> 25:14.000
+Y si i es par, hace este otro for.
+
+25:16.000 --> 25:19.000
+Entonces, nosotros acá.
+
+25:19.000 --> 25:24.000
+Tenemos que reflejar todas esas vueltas que da el algoritmo.
+
+25:24.000 --> 25:27.000
+Las tenemos que reflejar en la función de tiempo de ejecución.
+
+25:27.000 --> 25:29.000
+¿Se entiende?
+
+25:31.000 --> 25:38.000
+Porque acá yo sé que dentro de ese for, la mitad de las veces va a ir.
+
+25:38.000 --> 25:41.000
+Va a ser este for.
+
+25:42.000 --> 25:45.000
+Y la otra mitad va a ser este.
+
+25:45.000 --> 25:48.000
+Y la otra mitad va a ser este.
+
+25:48.000 --> 25:53.000
+Entonces, eso yo lo tengo que reflejar en la función de tiempo de ejecución.
+
+25:56.000 --> 25:59.000
+Bien, ¿cómo hacemos eso?
+
+26:00.000 --> 26:03.000
+Dice, asumimos que n es par.
+
+26:05.000 --> 26:12.000
+Entonces, el método es impar tiene todas las sentencias constantes.
+
+26:12.000 --> 26:17.000
+Entonces, el tiempo del método es impar es constante.
+
+26:19.000 --> 26:26.000
+Y además, el método es impar se llama para todo el valor de n.
+
+26:27.000 --> 26:32.000
+O sea, siempre la llamada es impar se hace para todos los n.
+
+26:32.000 --> 26:35.000
+Para todos los valores de i, mejor dicho.
+
+26:35.000 --> 26:38.000
+O sea, que se va a hacer n veces.
+
+26:39.000 --> 26:45.000
+El método impares-impares tiene un loop en el que en cada iteración se llama el método es impar.
+
+26:45.000 --> 26:50.000
+Y la mitad de las veces se ejecuta uno a la for, que son para valores impares.
+
+26:50.000 --> 26:53.000
+Y la otra mitad para valores pares.
+
+26:54.000 --> 27:00.000
+O sea que yo podría empezar a plantear la función de tiempo de ejecución de esta manera.
+
+27:00.000 --> 27:04.000
+O sea, la suma desde igual 1 hasta n de una constante.
+
+27:04.000 --> 27:08.000
+O sea, porque esto sería la llamada a les impar.
+
+27:08.000 --> 27:11.000
+Esta parte de atrás, vamos a cambiar el color.
+
+27:11.000 --> 27:14.000
+Esta sería la llamada a les impar.
+
+27:18.000 --> 27:20.000
+¿Me siguen hasta ahí?
+
+27:21.000 --> 27:27.000
+O sea, yo digo, bueno, la llamada a les impar la hace n veces o lo hace siempre.
+
+27:28.000 --> 27:31.000
+Ahora, fíjense esto.
+
+27:31.000 --> 27:37.000
+Que en realidad esto no es, o sea, es una forma no matemática de escribirlo.
+
+27:37.000 --> 27:41.000
+Pero vamos a ver después cómo se escribe matemáticamente.
+
+27:43.000 --> 27:48.000
+Dice, para la sumatoria.
+
+27:48.000 --> 27:56.000
+O sea, cuántas veces, digamos, cómo es el cuerpo del for dependiendo del i.
+
+27:56.000 --> 28:00.000
+Para i igual 1 hasta n, pero con paso 2.
+
+28:00.000 --> 28:03.000
+Porque en realidad, ¿cómo sería?
+
+28:03.000 --> 28:09.000
+Yo siempre les digo que en los algoritmos iterativos, cuando por ahí me cuesta un poco sacar el orden,
+
+28:09.000 --> 28:13.000
+yo empiezo a ver cuál es el comportamiento del algoritmo.
+
+28:13.000 --> 28:17.000
+Entonces yo digo, supongamos un n igual a 6.
+
+28:17.000 --> 28:21.000
+Entonces digo, para i igual a 1, ¿qué hace?
+
+28:21.000 --> 28:25.000
+Hace un for desde 1 hasta n.
+
+28:25.000 --> 28:30.000
+Hace un for desde 1, en este caso está 6.
+
+28:32.000 --> 28:36.000
+Para i igual a 2, ¿qué hace?
+
+28:37.000 --> 28:41.000
+Hace un for desde 1 hasta 2.
+
+28:41.000 --> 28:44.000
+Hace un for desde 1 hasta 2.
+
+28:44.000 --> 28:47.000
+Para i igual a 3, ¿qué hace?
+
+28:47.000 --> 28:52.000
+Hace un for desde 3 hasta 6.
+
+28:53.000 --> 29:03.000
+Para i igual a 4, hace un for desde 1 hasta 4.
+
+29:03.000 --> 29:11.000
+Para i igual a 5, hace un for de 5 a 6.
+
+29:11.000 --> 29:21.000
+Y para i igual a 6, hace un for de 1 a 6.
+
+29:22.000 --> 29:32.000
+Entonces, ¿qué es lo que empieza?
+
+29:32.000 --> 29:35.000
+¿Cómo se puede plantear esto en una sumatoria?
+
+29:35.000 --> 29:40.000
+Entonces yo agarro y empiezo como a agrupar de a2.
+
+29:40.000 --> 29:48.000
+¿Por qué? Porque fíjense que es como que estos dos for se complementarán.
+
+29:49.000 --> 29:55.000
+En realidad se hace una, sería dos veces más, ¿no?
+
+29:55.000 --> 29:59.000
+O sea, porque este va de 1 a 6 y este de 1 a 2.
+
+29:59.000 --> 30:02.000
+Este después va de 3 a 6.
+
+30:02.000 --> 30:09.000
+O sea, un for, uno de los for se va achicando y el otro se va extendiendo en la cantidad de iteraciones.
+
+30:09.000 --> 30:16.000
+Pero entre los dos se complementan que es más o menos n, o n más 2 en realidad, ¿no?
+
+30:16.000 --> 30:21.000
+Porque en este caso sería para 3, para 4, para 5, para 6.
+
+30:21.000 --> 30:28.000
+Y después tengo para de 1 a 4.
+
+30:28.000 --> 30:35.000
+O sea, sería 8 veces. Y acá también 8 veces, acá 8 veces y acá 8 veces.
+
+30:35.000 --> 30:39.000
+Sería n más 2 veces en total.
+
+30:39.000 --> 30:43.000
+Es como que más o menos se complementan.
+
+30:43.000 --> 30:50.000
+Entonces, por eso en realidad acá está planteado así.
+
+30:50.000 --> 30:57.000
+Yo digo, bueno, es una sumatoria desde igual 1 hasta n, pero con paso 2.
+
+30:57.000 --> 31:04.000
+O sea, que vaya desde 1 hasta 6, pero de 2 en 2.
+
+31:04.000 --> 31:11.000
+Que eso matemáticamente no se puede plantear así. Por eso después hay que hacer un cambio de variable, ¿no?
+
+31:11.000 --> 31:16.000
+Pero si yo primero lo empiezo a pensar así, yo digo, bueno, ¿qué hace?
+
+31:16.000 --> 31:26.000
+El loop que hace es este, es un for desde i hasta n para valores impares.
+
+31:26.000 --> 31:31.000
+Desde i hasta n. Fíjense que sería este.
+
+31:31.000 --> 31:36.000
+Y el otro es desde 1 hasta i más 1. ¿Por qué?
+
+31:36.000 --> 31:44.000
+Porque acá en realidad yo asumo que lo hizo para i igual a 1, para i igual a 3 y para i igual a 5.
+
+31:44.000 --> 31:50.000
+Porque acá arriba aparece paso 2.
+
+31:50.000 --> 31:56.000
+Entonces yo le digo, bueno, hacémelo para 1, para 3 y para 5.
+
+31:56.000 --> 32:10.000
+Entonces cuando i valga 1, hace un loop de 1 a n y después agregale el loop que vas a hacer para cuando i valga 2.
+
+32:10.000 --> 32:15.000
+¿Entiende la idea? O sea, lo va tomando de abloque de a 2.
+
+32:15.000 --> 32:20.000
+O sea, expresa las vueltas que das para i igual a 1 y para i igual a 2.
+
+32:20.000 --> 32:28.000
+Entonces, pues ahora, según esto que yo les puse acá, paso 2.
+
+32:28.000 --> 32:32.000
+Y en vez de valer 2, pasaría a valer 3.
+
+32:32.000 --> 32:40.000
+Entonces ahora expresa la suma de 3 a n y de 1 a 4.
+
+32:40.000 --> 33:02.000
+Entonces, acá en realidad dice constante 2 y constante 2 porque acá el cuerpo de cada uno de los loops es igual casi.
+
+33:02.000 --> 33:05.000
+Es incrementar en 1 una variable.
+
+33:05.000 --> 33:18.000
+Ahora, si fuera distinto, si uno hiciera otra cosa acá adentro, bueno, yo de eso lo tengo que expresar acá en la sumatoria correspondiente.
+
+33:18.000 --> 33:28.000
+Entonces, yo en realidad lo que tengo que hacer es resolver esas sumatorias para llegar a la expresión de la función de tiempo de ejecución.
+
+33:28.000 --> 33:35.000
+Pero claro, así yo matemáticamente no se puede escribir una sumatoria con paso 2.
+
+33:35.000 --> 33:40.000
+O sea, uno lo puede poner en un for, vieron que en un for uno le pone el paso que quiere.
+
+33:40.000 --> 33:44.000
+Pero ahora en una sumatoria matemática no.
+
+33:44.000 --> 33:53.000
+Entonces se hace lo que ustedes ya habrán visto en algunas matemáticas, un cambio de variable.
+
+33:53.000 --> 34:11.000
+Entonces, ¿qué dice? Hacémelo la mitad de las veces, o sea, para igual 1 hasta n sobre 2, porque en realidad hacerlo desde 1 hasta n con paso 2 es hacerlo la mitad de las veces en realidad.
+
+34:11.000 --> 34:16.000
+Bueno, entonces, hacémelo la mitad de las veces.
+
+34:16.000 --> 34:27.000
+Pero yo lo que tengo que lograr expresar acá en los límites de estas sumatorias internas,
+
+34:27.000 --> 34:40.000
+es el valor de cuando i vale 1, vos hacés el loop desde 2 por i menos 1 hasta n.
+
+34:40.000 --> 34:50.000
+Entonces, cuando i vale 1, ¿qué hace? Hace 2 por 1, 2 menos 1, 1, desde 1 hasta n.
+
+34:50.000 --> 34:57.000
+Más la suma de 1 hasta 2 por i, y sigue valiendo 1.
+
+34:57.000 --> 35:07.000
+O sea, tal como está ahí, esa sumatoria se va a resolver para i igual a 1, para 2 y para 3 nada más.
+
+35:07.000 --> 35:10.000
+Para n sobre 2 veces.
+
+35:10.000 --> 35:20.000
+Ahora, cuando i es 1, en realidad, ¿qué hace? Yo pongo esta sumatoria y esta.
+
+35:20.000 --> 35:24.000
+Después yo sé que iba a valer 2.
+
+35:24.000 --> 35:32.000
+Ahora, cuando i valga 2, yo quiero que acá me aparezca de 3 a 6 y de 1 a 4.
+
+35:32.000 --> 35:38.000
+Entonces, fíjense, cuando i vale 2, me queda 2 por 2, 4 menos 1, 3.
+
+35:38.000 --> 35:44.000
+De 3 hasta n y de 1 hasta 4.
+
+35:44.000 --> 35:48.000
+De 3 hasta n y de 1 hasta 4.
+
+35:48.000 --> 35:54.000
+¿Se entiende cómo se hizo el cambio de variable?
+
+35:55.000 --> 36:03.000
+Para que refleje todas las iteraciones que hace cuando i es par y cuando i es impar.
+
+36:07.000 --> 36:22.000
+¿Entendieron? Como no les veo la cara, ahora que yo doy algunas clases presenciales, tengo más feedback de la cara de los alumnos, de si está muy perdido, de si les parece chino.
+
+36:25.000 --> 36:29.000
+Y hay que procesarlo. Esto es matemática, en realidad.
+
+36:31.000 --> 36:36.000
+O sea, y además, entender la lógica en los algoritmos iterativos.
+
+36:36.000 --> 36:38.000
+Y esto se lo vuelvo a repetir.
+
+36:38.000 --> 36:44.000
+Yo, por ahí, me conviene empezar a decir, bueno, ¿qué pasa cuando i vale 1?
+
+36:44.000 --> 36:49.000
+¿Cómo se comporta el algoritmo cuando i vale 2, cuando i vale 3, cuando i vale 4?
+
+36:49.000 --> 36:55.000
+O sea, hago todos los valores que necesite hasta darme cuenta la lógica.
+
+36:57.000 --> 37:01.000
+O sea, ¿cuáles son las iteraciones?
+
+37:01.000 --> 37:03.000
+De 1 a 6, después de 1 a 2.
+
+37:03.000 --> 37:05.000
+De 3 a 6 y de 1 a 4.
+
+37:05.000 --> 37:07.000
+De 5 a 6 y de 1 a 6.
+
+37:07.000 --> 37:26.000
+Entonces, una vez que yo hice este cambio de variables, o sea, que me di cuenta de expresarlo así, entonces ahora lo único que me queda es resolver esto.
+
+37:26.000 --> 37:38.000
+O sea, bueno, lo que dice acá es que, lo que yo les decía, como i toma ahora valores consecutivos entre 1 y n sobre 2,
+
+37:38.000 --> 37:50.000
+entonces yo tengo que encontrar esta presión y esta, que son las que me van cambiando los límites, los que dependen.
+
+37:50.000 --> 37:53.000
+Pues fíjense que este y este es siempre el mismo.
+
+37:53.000 --> 37:57.000
+Este arranca en 1 y el primero termina en 6.
+
+37:57.000 --> 38:03.000
+El segundo termina en 1 y el primero, los que cambia son estos.
+
+38:05.000 --> 38:12.000
+Entonces tengo que encontrar una variable, o sea, una expresión que me refleje eso.
+
+38:12.000 --> 38:16.000
+O sea, que estaría dada acá y acá.
+
+38:20.000 --> 38:21.000
+Bien.
+
+38:22.000 --> 38:33.000
+Entonces, después de solo resolver esta sumatoria, es decir, yo tengo, bueno, esto es lo mismo que el que estaba,
+
+38:33.000 --> 38:42.000
+entonces acá, en realidad esto es n por constante 1 y después acá tengo la suma de igual 1 hasta n sobre 2,
+
+38:42.000 --> 38:54.000
+de SATA, SATA es constante 2 afuera, y esto le queda n menos esto más 1.
+
+38:54.000 --> 39:03.000
+Vieron que siempre la suma de 1 desde un valor hasta otro valor es el límite superior menos el límite inferior más 1.
+
+39:03.000 --> 39:11.000
+Entonces es n menos esto, 2 por i menos 1, que acá ya está más 1, más 1.
+
+39:11.000 --> 39:16.000
+Y 2 por i menos 1 más 1. Bueno, ahí se simplifica todo, qué sé yo.
+
+39:16.000 --> 39:25.000
+Y queda, que acá me queda cuadrático, porque acá me queda n más 2.
+
+39:25.000 --> 39:31.000
+O sea, el este, esperen a ver qué.
+
+39:32.000 --> 39:42.000
+O sea, éste se me va con éste, éste se me va con éste.
+
+39:48.000 --> 39:49.000
+¿Y qué me queda?
+
+39:51.000 --> 39:52.000
+Me queda.
+
+39:52.000 --> 40:05.000
+N más 2, me queda éste n y éste más 2.
+
+40:07.000 --> 40:13.000
+Entonces me quedaría la constante 2 por n más 2 por n sobre 2.
+
+40:13.000 --> 40:15.000
+Y acá aparece el cuadrado.
+
+40:19.000 --> 40:20.000
+¿Se entiende?
+
+40:22.000 --> 40:34.000
+Bien, ¿qué pasa acá en este otro ejercicio?
+
+40:53.000 --> 40:59.000
+Fíjense, o sea, parece similar a la anterior, ¿no?
+
+40:59.000 --> 41:06.000
+En cuanto que tiene un form, llama la función, es impar, ¿no?
+
+41:06.000 --> 41:12.000
+Y si es impar, entonces vamos a hacerlo otra vez para n igual a 6.
+
+41:12.000 --> 41:16.000
+Entonces, ¿para i igual a 1 qué hace?
+
+41:16.000 --> 41:21.000
+Hace j igual j por 2, o sea, j era 1, 1 por 2, 2.
+
+41:21.000 --> 41:24.000
+Pone j en 2.
+
+41:24.000 --> 41:33.000
+Para i igual 2, hace un loop desde 1 hasta 2.
+
+41:33.000 --> 41:37.000
+Y lo que hace es incrementar 1 a la variable p.
+
+41:37.000 --> 41:41.000
+O sea, p sería 1 más 1, entonces sería 2.
+
+41:43.000 --> 41:45.000
+Para i igual 3, ¿qué hace?
+
+41:45.000 --> 41:48.000
+Pone j en 4.
+
+41:49.000 --> 41:53.000
+Para i igual 4, ¿qué hace?
+
+41:53.000 --> 41:58.000
+Hace un loop desde 1 hasta 4.
+
+41:58.000 --> 42:01.000
+Y sigue sumando en p.
+
+42:01.000 --> 42:07.000
+O sea que p, que ya tenía 2, ahora tiene 4.
+
+42:07.000 --> 42:09.000
+De este loop.
+
+42:10.000 --> 42:13.000
+Para i igual 5, ¿qué hace?
+
+42:13.000 --> 42:16.000
+Hace j en 8.
+
+42:18.000 --> 42:23.000
+Para i igual 6, hace un loop desde 1 hasta 8.
+
+42:23.000 --> 42:28.000
+Entonces, en p tenía 2 más 4 más 8.
+
+42:33.000 --> 42:34.000
+Bien.
+
+42:34.000 --> 42:46.000
+Entonces, ¿cómo les parece a ustedes plantear, a ver si tengo otra fibra,
+
+42:46.000 --> 42:50.000
+la función de tiempo de ejecución?
+
+42:51.000 --> 42:55.000
+Otra vez, yo lo hago
+
+42:59.000 --> 43:02.000
+de a pares, ¿no?
+
+43:03.000 --> 43:11.000
+Entonces yo digo, la mitad de las veces, ¿qué hace?
+
+43:11.000 --> 43:15.000
+La mitad de las veces hace algo constante.
+
+43:17.000 --> 43:25.000
+Ahora, la otra mitad hace una sumatoria
+
+43:25.000 --> 43:31.000
+que ahí hay que sacar cuál es la lógica de esa sumatoria.
+
+43:32.000 --> 43:35.000
+Entonces, yo podría...
+
+43:36.000 --> 43:38.000
+Tengo que borrar algo acá.
+
+43:38.000 --> 43:41.000
+Vamos a borrar esta parte de acá.
+
+43:47.000 --> 43:52.000
+A ver, n, s, era 6.
+
+43:54.000 --> 43:56.000
+Vamos a desarmar todo.
+
+43:56.000 --> 43:59.000
+N, 6, entonces.
+
+44:00.000 --> 44:05.000
+Yo tengo, la llamada, la función es impar,
+
+44:05.000 --> 44:09.000
+como siempre, como le hicimos recién, se hace la CNBS.
+
+44:09.000 --> 44:14.000
+Entonces, constante 1 para i igual 1 hasta n.
+
+44:17.000 --> 44:26.000
+Más la suma desde i igual 1 hasta n sobre 2 de algo que es constante 2,
+
+44:26.000 --> 44:32.000
+porque la mitad de las veces lo único que hace es multiplicar j.
+
+44:34.000 --> 44:35.000
+Bien.
+
+44:35.000 --> 44:41.000
+Ahora, la otra mitad de las veces, ¿qué hace?
+
+44:42.000 --> 44:44.000
+¿Hace esto que está acá?
+
+44:47.000 --> 44:50.000
+Este loop y este loop.
+
+44:54.000 --> 44:58.000
+O sea que yo, si es un loop, lo podría poner así.
+
+44:58.000 --> 45:02.000
+j igual a 1, ¿hasta dónde?
+
+45:10.000 --> 45:13.000
+O sea, fíjense que este i va a tomar valores consecutivos.
+
+45:13.000 --> 45:18.000
+N era 6, o sea, este i va a ir a 1, a 2 y a 3.
+
+45:19.000 --> 45:21.000
+Entonces, ¿cuándo es 1?
+
+45:23.000 --> 45:24.000
+Es la parte que borré.
+
+45:25.000 --> 45:27.000
+El loop iba de 1 a 2.
+
+45:29.000 --> 45:33.000
+Cuando es 2, el loop va de 1 a 4.
+
+45:34.000 --> 45:38.000
+Y cuando es 3, el loop va de 1 a 8.
+
+45:38.000 --> 45:49.000
+¿Qué relación hay entre cuando es 1, va hasta 2, cuando es 2, va hasta 4, cuando es 3, va hasta 8?
+
+46:08.000 --> 46:10.000
+A ver qué están escribiendo.
+
+46:13.000 --> 46:15.000
+Claro, son potencias de 2.
+
+46:16.000 --> 46:21.000
+Entonces, acá sería de 2 a la i.
+
+46:22.000 --> 46:24.000
+O sea, cuando es i, es 1.
+
+46:24.000 --> 46:30.000
+Hacemos un loop que vaya de 1 hasta 2 a la i, hasta 2 a la 1.
+
+46:30.000 --> 46:35.000
+Y acá en realidad es algo, le puedo poner un 1 o una constante, lo mismo.
+
+46:35.000 --> 46:39.000
+En realidad lo único que hace es sumar 1 a la variable p.
+
+46:40.000 --> 46:42.000
+Vamos a dejarlo acá con 1.
+
+46:42.000 --> 46:50.000
+Así es más fácil ahora hacer la cuenta porque ya este persillo es un poco complicado.
+
+46:50.000 --> 46:52.000
+¿Esto a qué es igual?
+
+46:52.000 --> 46:54.000
+¿Esto qué está acá?
+
+46:56.000 --> 47:00.000
+Vamos a empezar entonces ahora a resolver.
+
+47:00.000 --> 47:19.480
+Esto que está acá. Vamos a empezar entonces ahora a resolver.
+
+47:19.480 --> 47:34.160
+Esta suma toque interna, ¿qué es igual? La suma del JV al 1 hasta 2 a la i de 1.
+
+47:49.480 --> 48:17.640
+O sea, matemáticamente. O sea, esto que está acá, ¿lo ven? La suma del JV al 1 hasta 2 a la i de 1, ¿a qué es igual?
+
+48:20.480 --> 48:37.480
+La suma del JV al 1 hasta 2 a la i de 1.
+
+48:38.480 --> 48:51.480
+O sea, no importa lo que yo tenga acá. Si yo tengo que sumar desde 1 hasta cualquier cosa, el valor 1 me va a dar cualquier cosa que está arriba en el límite superior.
+
+48:52.480 --> 49:05.480
+Porque es 1 más 1 más 1 más 1, 2 a la i veces, entonces me va a dar 2 a la i. Bien. Entonces, si yo resuelvo esto, todo esto me queda.
+
+49:05.480 --> 49:24.480
+Acá me queda C1 por n. Acá me queda C2 por n sobre 2. Esto. Y acá me queda la suma desde igual 1 hasta n sobre 2 de 2 a la i.
+
+49:24.480 --> 49:46.480
+O sea, esto que tengo acá es lineal, esto que tengo acá es lineal, y esto. Esto lo vimos cuando vimos árboles. La serie geométrica en 2. ¿A qué es igual?
+
+49:46.480 --> 50:14.480
+La serie geométrica en la suma de 2 a la i para igual 0 hasta n era 2 a la n más 1 menos 1 sobre 1.
+
+50:15.480 --> 50:18.480
+Porque es una serie geométrica.
+
+50:22.480 --> 50:29.480
+Entonces, si yo quiero tratar de resolver esto, digo, bueno, esto sería.
+
+50:30.480 --> 50:35.480
+Esta empieza desde cero. Siempre las series geométricas empiezan desde cero.
+
+50:40.480 --> 50:47.480
+Entonces, esta sumatoria, en realidad acá, empieza desde 1.
+
+50:48.480 --> 50:56.480
+Entonces, si yo la quiero igualar a algo de este estilo, usando este límite superior, lo igualo y después le resto el 1.
+
+50:56.480 --> 51:11.480
+Porque acá es como si le estuviera sumando el 2 a la 0, que no lo tengo acá. Entonces sería 2 a la n sobre 2 más 1 menos 1 menos 1.
+
+51:17.480 --> 51:35.480
+¿Por qué? Porque en realidad esta sumatoria empieza desde 1. Y yo, si yo no le pusiera esto, yo acá estaría igualando algo que empieza desde cero.
+
+51:35.480 --> 51:42.480
+Pero el primer término, 2 a la 0, no lo tengo, que es 1. Entonces se agarra y se lo resto.
+
+51:43.480 --> 51:53.480
+Entonces, fíjense nomás, que acá me quedó algo lineal, acá me quedó algo lineal y acá me quedó algo exponencial en 2.
+
+51:54.480 --> 52:04.480
+Ahí está el tema de este algoritmo. O sea, si yo el algoritmo lo veo, lo miro así, pareciera hasta que fuera, no sé, cuadrático.
+
+52:04.480 --> 52:14.480
+Pues tengo un for, digo, bueno, tengo un for, para los impares hace j igual j por 2 y para los pares hace un loop de 1 hasta j.
+
+52:14.480 --> 52:26.480
+Pero como el j se va multiplicando por 2, ¿no? El for, s en k, se hace, aumenta exponencialmente.
+
+52:26.480 --> 52:28.480
+Aumenta exponencialmente.
+
+52:33.480 --> 52:43.480
+Entonces, por eso yo tengo que analizar un poco, que es lo que yo había hecho primero, analizar un poco el comportamiento del algoritmo.
+
+52:44.480 --> 52:52.480
+O sea, decir, bueno, ¿cuántas vueltas da? ¿Cuál es la lógica que tiene?
+
+52:52.480 --> 52:59.480
+Entonces empiezo par igual 1, hace tal cosa, par igual 2, hace tal cosa, par igual 3 y así.
+
+53:01.480 --> 53:08.480
+Entonces, este algoritmo me quedó de orden 2 a la n.
+
+53:11.480 --> 53:12.480
+Es exponencial.
+
+53:12.480 --> 53:19.480
+Bien, no sé si se perdieron mucho, no sé, no les puedo ver las caras, ¿no?
+
+53:21.480 --> 53:25.480
+Uno en la aula tiene un poco más de feedback.
+
+53:27.480 --> 53:33.480
+Yo por lo menos sí, sí te perdiste o sí entendiste, no sé, te perdiste.
+
+53:33.480 --> 53:38.480
+Igual este ejercicio se lo ponemos, pero para que analizarlos juntos, ¿no?
+
+53:38.480 --> 53:47.480
+Y son ejercicios medio, digamos, bastante finitos en el análisis, ¿se entiende?
+
+53:47.480 --> 53:55.480
+Después los que ustedes van a resolver en la práctica y lo que uno les va dando, son en general un poco más sencillos.
+
+53:55.480 --> 54:02.480
+Pero les damos esto, justamente, estos más complicados para que empiecen a razonar y a abrir un poco, o sea,
+
+54:02.480 --> 54:10.480
+abrir la cabeza y decir, bueno, ¿cómo tengo que encarar yo el planteo de la función de tiempo de ejecución?
+
+54:10.480 --> 54:16.480
+Hay algunos que son muy, muy triviales, que si yo tengo dos foras anidados de 1 a n,
+
+54:16.480 --> 54:24.480
+el cuerpo es constante y bueno, entonces hago la suma de igual 1 hasta n, la suma y lo resuelvo.
+
+54:24.480 --> 54:34.480
+Ahora, en otros casos, como en este, por ejemplo, ya ahí es más, digamos,
+
+54:34.480 --> 54:38.480
+hay que hacer otro razonamiento, por eso se los damos acá.
+
+54:38.480 --> 54:45.480
+Bien, a ver, ¿qué pasa con este ejercicio?
+
+54:45.480 --> 54:51.480
+A ver, mírenlo un cachito, yo voy a prender la luz, pues ya dentro de poco se nos va a ganar.
+
+54:51.480 --> 54:58.480
+Miren y piensen a ver qué, qué, qué es lo que vamos a hacer.
+
+54:58.480 --> 55:03.480
+A ver, mírenlo un cachito, yo voy a prender la luz, pues ya dentro de poco se nos va a ganar.
+
+55:03.480 --> 55:07.480
+Miren y piensen a ver qué, qué.
+
+55:28.480 --> 55:55.480
+Bueno, Rosana, sí, sí, no hay problema.
+
+55:58.480 --> 56:23.480
+No, no, no hay problema, sabemos que por ahí están complicados, sí, son pocos alumnos,
+
+56:23.480 --> 56:30.480
+eso es lo que nos llama la atención, que yo el otro día les decía cuando le di plaza a los chicos de la mañana
+
+56:30.480 --> 56:35.480
+que son muy pocos en general los que asisten además a la práctica,
+
+56:35.480 --> 56:43.480
+a la práctica ya sea presencial o que se conectan virtualmente a la práctica o que consultan por el foro.
+
+56:43.480 --> 56:48.480
+Recién esta semana el foro se empezó a mover un poco con consultas y eso,
+
+56:48.480 --> 56:55.480
+pero otros años era constante, constante las consultas por el foro también y todo, pero nos llama la atención eso.
+
+56:55.480 --> 57:09.480
+Por eso lo de la encuesta, vieron, o sea, ustedes se escribieron para rendir, claro, el examen, sí,
+
+57:09.480 --> 57:17.480
+vieron que además de, o sea, en realidad les pedimos que se anoten por un tema organizativo nuestro
+
+57:17.480 --> 57:24.480
+porque como el examen hay que imprimirlo y todo para tener un número aproximado también
+
+57:24.480 --> 57:32.480
+de cantidad de alumnos que van a rendir y además les preguntamos por qué no asisten,
+
+57:32.480 --> 57:40.480
+bueno, en las respuestas hay de todo, porque no tienen tiempo, porque decían que no tenían nada para consultar
+
+57:40.480 --> 57:50.480
+hasta, no sé, en las primeras prácticas, ahora yo creo que ahora sí están, me parece que ya tienen más para consultar.
+
+57:50.480 --> 58:03.480
+Pero bueno, nos llama la atención la poca asistencia en la práctica, dado que es una materia que no se puede dejar para el último momento,
+
+58:04.480 --> 58:12.480
+o sea, no es una materia que yo la dejo y en una semana la preparo y rindo el parcial, porque es como que hay que asimilar los algoritmos
+
+58:12.480 --> 58:25.480
+de a poco y con bastante y hacer varios para poder agarrarle la mano a los recorridos de árboles,
+
+58:25.480 --> 58:29.480
+después cuando veamos grafos, a los recorridos de grafos.
+
+58:29.480 --> 58:45.480
+Bien, entonces seguimos. A ver, primero, bueno, la primera pregunta dice con qué valor termina la variable I,
+
+58:45.480 --> 58:51.480
+después dice cuántas veces se ejecuta la sentencia 3, que es el incremento de la variable I,
+
+58:51.480 --> 59:00.480
+pero además este segmento de código tiene un comportamiento que es bastante particular,
+
+59:01.480 --> 59:05.480
+no sé si ustedes se dieron cuenta qué es lo que pasa,
+
+59:08.480 --> 59:19.480
+o sea, porque se comporta de una manera dependiendo de qué cosa, del N,
+
+59:21.480 --> 59:26.480
+se comporta o de una manera o de otra, dependiendo cuál es el valor de N,
+
+59:27.480 --> 59:30.480
+pero de dos maneras totalmente distintas se comporta.
+
+59:30.480 --> 59:44.480
+No, el segundo for no es cuadrático, el for es, tenés un, porque va hasta N cuadrado y el de adentro va hasta N,
+
+59:44.480 --> 59:53.480
+te queda N a la cuarta, el for, pero igual la pregunta 2 tampoco pregunta por ese for,
+
+59:53.480 --> 59:56.480
+pues está preguntando cuántas veces se ejecuta la sentencia 3,
+
+59:56.480 --> 01:00:02.480
+entonces la pregunta 2 es ¿cuántas veces se ejecuta la sentencia 3?
+
+01:00:02.480 --> 01:00:06.480
+Y la pregunta 3 es ¿cuántas veces se ejecuta la sentencia 3?
+
+01:00:07.480 --> 01:00:12.480
+Pero igual la pregunta 2 tampoco pregunta por ese for,
+
+01:00:12.480 --> 01:00:21.480
+pues está preguntando cuántas veces se ejecuta la sentencia 3, que es el incremento de la variable I.
+
+01:00:25.480 --> 01:00:28.480
+Bien, ¿con qué valor termina I?
+
+01:00:29.480 --> 01:00:39.480
+Dependiendo del N, o sea, en términos de N, eso es lo que les pregunto.
+
+01:00:39.480 --> 01:00:44.480
+En términos de N, ¿con qué valor termina I la variable I?
+
+01:00:59.480 --> 01:01:04.480
+N pregunta, yo le pregunto a ustedes N.
+
+01:01:12.480 --> 01:01:15.480
+¿Qué les parece? El I arranca en cero.
+
+01:01:15.480 --> 01:01:20.480
+No, ¿el mil? No sé, ¿dónde lo estás poniendo, mil por N?
+
+01:01:22.480 --> 01:01:26.480
+Otro dice mil. Buen, a ver.
+
+01:01:26.480 --> 01:01:30.480
+N es diez. Empezamos con valor siguito.
+
+01:01:33.480 --> 01:01:39.480
+N es diez. Entonces, entra y es menor que mil, sí.
+
+01:01:39.480 --> 01:01:42.480
+Entonces hace un for de mil.
+
+01:01:42.480 --> 01:01:45.480
+Entonces, entra y es menor que mil, sí.
+
+01:01:45.480 --> 01:01:49.480
+Entonces hace un for de mil y es menor que mil.
+
+01:01:49.480 --> 01:01:53.480
+Entonces, entra y es menor que mil, sí.
+
+01:01:53.480 --> 01:02:02.480
+Y es menor que mil, sí. Entonces hace un for desde for para K igual a cero, porque ya arrancó en cero,
+
+01:02:05.480 --> 01:02:09.480
+hasta N, que es diez.
+
+01:02:10.480 --> 01:02:14.480
+Entonces, cuando K vale cero,
+
+01:02:16.480 --> 01:02:19.480
+y vale uno,
+
+01:02:24.480 --> 01:02:28.480
+cuando K vale uno, y vale dos,
+
+01:02:28.480 --> 01:02:32.480
+cuando K vale dos, y vale tres,
+
+01:02:32.480 --> 01:02:37.480
+cuando K vale tres, y vale cuatro,
+
+01:02:37.480 --> 01:02:40.480
+cuatro, cinco,
+
+01:02:40.480 --> 01:02:44.480
+cuando K vale cinco,
+
+01:02:44.480 --> 01:02:47.480
+y vale seis,
+
+01:02:47.480 --> 01:02:52.480
+cuando K vale cinco, y vale seis,
+
+01:02:52.480 --> 01:02:57.480
+cuando K vale seis, y vale siete,
+
+01:02:57.480 --> 01:02:59.480
+cuando K
+
+01:03:01.480 --> 01:03:04.480
+vale siete, y vale ocho,
+
+01:03:06.480 --> 01:03:09.480
+ocho, nueve, ya lo he empezado.
+
+01:03:09.480 --> 01:03:13.480
+Cuando K vale nueve, y vale diez,
+
+01:03:13.480 --> 01:03:17.480
+cuando K vale diez, y vale once.
+
+01:03:23.480 --> 01:03:26.480
+Claro, el N es el N.
+
+01:03:26.480 --> 01:03:30.480
+Imagínense lo que llega por parámetro, por lo que sea.
+
+01:03:30.480 --> 01:03:33.480
+O sea, yo no estoy diciendo que el N sea mil.
+
+01:03:33.480 --> 01:03:36.480
+Ahí aparece la variable N.
+
+01:03:46.480 --> 01:03:50.480
+O sea, el algoritmo se comporta así. A mí me ha sido un N.
+
+01:03:53.480 --> 01:03:57.480
+O sea, hice un ejemplo para que ustedes sigan el for
+
+01:03:57.480 --> 01:03:59.480
+y para que vean qué valor devuelve.
+
+01:03:59.480 --> 01:04:03.480
+O sea que I termina, ¿con qué valor termina?
+
+01:04:03.480 --> 01:04:07.480
+Con N más uno siempre.
+
+01:04:08.480 --> 01:04:11.480
+Con N más uno.
+
+01:04:11.480 --> 01:04:15.480
+O sea, primero les pregunto, paso por partes, chicos.
+
+01:04:16.480 --> 01:04:19.480
+Dice, ¿con qué valor termina la variable I?
+
+01:04:19.480 --> 01:04:22.480
+Cuando me dice así, como el I está dentro de un loop,
+
+01:04:22.480 --> 01:04:26.480
+que el loop va hasta N, ¿no?
+
+01:04:26.480 --> 01:04:32.480
+Entonces, I termina con el valor N más uno.
+
+01:04:32.480 --> 01:04:36.480
+Yo lo tengo que dar en términos de N más uno.
+
+01:04:36.480 --> 01:04:39.480
+Y termina con el valor N más uno.
+
+01:04:39.480 --> 01:04:43.480
+Yo lo tengo que dar en términos de N, porque no puedo decir otra cosa.
+
+01:04:43.480 --> 01:04:47.480
+No puedo decir que termina en mil, si no está diciendo que termina en mil.
+
+01:04:47.480 --> 01:04:50.480
+Que sé yo cuál es el valor de N.
+
+01:04:53.480 --> 01:04:55.480
+Entonces, ¿qué pasa?
+
+01:04:55.480 --> 01:04:58.480
+O sea, ¿entienden?
+
+01:04:58.480 --> 01:05:03.480
+O sea, por eso hay que analizar, y este algoritmo es muy particular,
+
+01:05:03.480 --> 01:05:06.480
+por eso lo pusimos, ¿no?
+
+01:05:06.480 --> 01:05:09.480
+Porque, por el comportamiento que tiene.
+
+01:05:09.480 --> 01:05:10.480
+¿Qué pasa?
+
+01:05:10.480 --> 01:05:14.480
+En este caso, tomemos que N sea 10.
+
+01:05:14.480 --> 01:05:17.480
+O 20, o 30, o lo que sea.
+
+01:05:17.480 --> 01:05:21.480
+Siempre va a terminar con uno más del valor de N.
+
+01:05:21.480 --> 01:05:23.480
+En este caso terminó con 11.
+
+01:05:23.480 --> 01:05:28.480
+Entonces, después va arriba y dice, I, que es 11.
+
+01:05:28.480 --> 01:05:29.480
+¿Es menor que mil?
+
+01:05:29.480 --> 01:05:30.480
+Sí.
+
+01:05:30.480 --> 01:05:33.480
+Entonces entra al while.
+
+01:05:33.480 --> 01:05:42.480
+Cuando entra al while, quiere hacer un for desde I, que I ahora va de 11, hasta 10.
+
+01:05:42.480 --> 01:05:45.480
+Entonces ese for no lo hace más.
+
+01:05:45.480 --> 01:05:50.480
+Y vuelve al while y pregunta, I, ¿es menor que mil?
+
+01:05:50.480 --> 01:05:52.480
+Sí.
+
+01:05:52.480 --> 01:05:55.480
+Entonces entra al for, el for no lo hace.
+
+01:05:55.480 --> 01:05:58.480
+No se hace nunca ese for la segunda vez.
+
+01:05:59.480 --> 01:06:03.480
+Porque arranca de un 11 para hasta un 10.
+
+01:06:03.480 --> 01:06:04.480
+O sea, con el tope 10.
+
+01:06:04.480 --> 01:06:06.480
+Entonces dice, ¿11 menor igual que 10?
+
+01:06:06.480 --> 01:06:07.480
+No, no lo hace.
+
+01:06:07.480 --> 01:06:08.480
+Vuelve.
+
+01:06:08.480 --> 01:06:10.480
+Y se queda en un loop infinito.
+
+01:06:10.480 --> 01:06:11.480
+Chicos.
+
+01:06:18.480 --> 01:06:19.480
+¿Entienden?
+
+01:06:22.480 --> 01:06:24.480
+Ahora, ¿queda en un loop infinito?
+
+01:06:28.480 --> 01:06:33.480
+Para el valor 10, para el 20, ¿para cuál es el valor de quiebre?
+
+01:06:33.480 --> 01:06:37.480
+¿A partir de qué valor el algoritmo sigue?
+
+01:06:42.480 --> 01:06:44.480
+No, no, no, no.
+
+01:06:44.480 --> 01:06:45.480
+Antes.
+
+01:06:58.480 --> 01:07:01.480
+¿A partir de 999?
+
+01:07:01.480 --> 01:07:02.480
+¿Por qué?
+
+01:07:02.480 --> 01:07:05.480
+¿Por qué allí termina en uno más?
+
+01:07:06.480 --> 01:07:13.480
+Entonces, cuando n sea 999, I va a terminar en mil y sale.
+
+01:07:13.480 --> 01:07:15.480
+I es menor que mil, es menor que mil, no.
+
+01:07:15.480 --> 01:07:18.480
+Y ahí sale el while y sigue con el for de abajo.
+
+01:07:18.480 --> 01:07:24.480
+O sea que hasta 998, el algoritmo entra en loop.
+
+01:07:27.480 --> 01:07:30.480
+Ese es el valor, el límite.
+
+01:07:30.480 --> 01:07:34.480
+A partir de 999, el algoritmo sigue.
+
+01:07:39.480 --> 01:07:41.480
+¿Entienden?
+
+01:07:41.480 --> 01:07:45.480
+Entonces yo después podría, si no,
+
+01:07:45.480 --> 01:07:52.480
+poner todas esas aclaraciones que si el n es mayor que 998,
+
+01:07:52.480 --> 01:07:58.480
+entonces el tiempo del algoritmo, o sea, si no, si es menor, es infinito.
+
+01:07:58.480 --> 01:08:00.480
+Porque entra en un loop infinito.
+
+01:08:00.480 --> 01:08:04.480
+Así que el tiempo va a ser infinito.
+
+01:08:04.480 --> 01:08:10.480
+Ahora, si el n es mayor de 998,
+
+01:08:10.480 --> 01:08:14.480
+entonces yo podría plantear y calcular la función de tiempo de ejecución,
+
+01:08:14.480 --> 01:08:20.480
+bueno, de un algoritmo normal, digamos.
+
+01:08:24.480 --> 01:08:29.480
+Que en realidad ahí ese for va a ser desde 0 hasta n cuadrado
+
+01:08:29.480 --> 01:08:33.480
+y adentro va a ir desde 0 hasta p.
+
+01:08:33.480 --> 01:08:35.480
+Y tengo que resolver esas dos sumatorias.
+
+01:08:35.480 --> 01:08:41.480
+O sea, el tema de este ejercicio es que uno tiene que analizar todo de un algoritmo.
+
+01:08:41.480 --> 01:08:44.480
+O sea, cómo se comporta.
+
+01:08:44.480 --> 01:08:50.480
+Porque uno lo ve así y dice, sí, es menor que 1000, qué sé yo.
+
+01:08:50.480 --> 01:08:53.480
+O sea, ese cual es el valor,
+
+01:08:53.480 --> 01:08:56.480
+o sea, es menor que 1000, qué sé yo.
+
+01:08:56.480 --> 01:09:00.480
+O sea, es menor que 1000, qué sé yo.
+
+01:09:00.480 --> 01:09:03.480
+Y dice, sí, es menor que 1000, qué sé yo.
+
+01:09:03.480 --> 01:09:09.480
+O sea, ese cual parece que se hiciera, no sé, mil veces.
+
+01:09:09.480 --> 01:09:11.480
+No.
+
+01:09:11.480 --> 01:09:17.480
+Ese cual se va a hacer o se hace infinitas veces o se hace una sola vez.
+
+01:09:17.480 --> 01:09:19.480
+Depende del n.
+
+01:09:22.480 --> 01:09:24.480
+¿Entienden?
+
+01:09:24.480 --> 01:09:29.480
+O sea, son todos ejemplos muy particulares
+
+01:09:29.480 --> 01:09:31.480
+para que ustedes razonen.
+
+01:09:31.480 --> 01:09:34.480
+No le vamos a dar a cada uno que sea dos looks.
+
+01:09:34.480 --> 01:09:36.480
+Eso lo van a tener en la práctica para resolver.
+
+01:09:36.480 --> 01:09:43.480
+O sea, las cosas más simples ya, ya.
+
+01:09:43.480 --> 01:09:45.480
+Después la empiezan ustedes a entender.
+
+01:09:45.480 --> 01:09:51.480
+Pero entonces nosotros por eso les planteamos este tipo de ejercicios.
+
+01:09:52.480 --> 01:09:58.480
+Entonces, acá el punto de quiebre es decir, entonces yo, si ya mire dicen,
+
+01:09:58.480 --> 01:09:59.480
+¿cuál es el tiempo de esto?
+
+01:09:59.480 --> 01:10:02.480
+Entonces yo tengo que decir, bueno, depende.
+
+01:10:02.480 --> 01:10:03.480
+No.
+
+01:10:03.480 --> 01:10:05.480
+Depende del valor de n.
+
+01:10:05.480 --> 01:10:12.480
+Si el n es menor o igual que 998 entra en un look infinito el algoritmo.
+
+01:10:12.480 --> 01:10:18.480
+Ahora, sí, no, bueno, el tiempo es y se lo puedo calcular.
+
+01:10:20.480 --> 01:10:23.480
+Y acá, ¿cuántas veces se ejecuta la sentencia 3?
+
+01:10:23.480 --> 01:10:26.480
+Que la sentencia 3 es esta que está acá.
+
+01:10:29.480 --> 01:10:31.480
+Que es el incremento del i justamente.
+
+01:10:31.480 --> 01:10:33.480
+Es de orden n.
+
+01:10:33.480 --> 01:10:35.480
+N veces se ejecuta.
+
+01:10:43.480 --> 01:10:46.480
+O sea, porque pasa una sola vez por ahí.
+
+01:10:46.480 --> 01:10:49.480
+Y después depende de cómo dejó el valor.
+
+01:10:49.480 --> 01:10:54.480
+Entra en el look infinito del while y el forno se hace nunca más.
+
+01:10:54.480 --> 01:10:57.480
+O sale del while y sigue.
+
+01:10:58.480 --> 01:11:01.480
+Bien, acá terminamos.
+
+01:11:01.480 --> 01:11:10.480
+Bueno, arrancamos con la parte que sigue.
+
+01:11:21.480 --> 01:11:26.480
+Bien, ¿qué pasa con algoritmos, los algoritmos recursivos?
+
+01:11:28.480 --> 01:11:33.480
+Un algoritmo recursivo es un algoritmo que sí se llama sí mismo.
+
+01:11:33.480 --> 01:11:42.480
+Por ejemplo, el ejemplo más clásico es el ejemplo del factorial.
+
+01:11:42.480 --> 01:11:44.480
+Si n es 1, retorna 1.
+
+01:11:44.480 --> 01:11:48.480
+Y si no, retorna n por el factorial de n menos 1.
+
+01:11:48.480 --> 01:11:52.480
+En el caso de los algoritmos recursivos,
+
+01:11:52.480 --> 01:11:58.480
+en realidad lo que se plantea es una función de recurrencia que después hay que resolverla.
+
+01:11:58.480 --> 01:12:01.480
+Es decir, ¿qué es una función de recurrencia?
+
+01:12:01.480 --> 01:12:07.480
+Es decir, yo planteo la función de tiempo de ejecución en términos también de sí misma.
+
+01:12:07.480 --> 01:12:08.480
+¿Por qué?
+
+01:12:08.480 --> 01:12:13.480
+Porque yo miro acá y digo, bueno, ¿qué pasa en el caso base?
+
+01:12:13.480 --> 01:12:15.480
+¿Cuál es el caso principal?
+
+01:12:15.480 --> 01:12:17.480
+Que n es igual a 1.
+
+01:12:17.480 --> 01:12:20.480
+Entonces retorna 1.
+
+01:12:20.480 --> 01:12:23.480
+O sea, que lo que hace acá es constante.
+
+01:12:23.480 --> 01:12:25.480
+Por eso aparece esto acá.
+
+01:12:25.480 --> 01:12:30.480
+Que si n es igual a 1, es constante.
+
+01:12:30.480 --> 01:12:34.480
+O sea, sólo devuelve un valor.
+
+01:12:34.480 --> 01:12:40.480
+Ahora, si n es mayor que 1, hace todo el tiempo que tiene.
+
+01:12:41.480 --> 01:12:46.480
+Ahora, si n es mayor que 1, hace todo esto que está acá.
+
+01:12:46.480 --> 01:12:55.480
+O sea, hace preguntas si n es igual a 1 y si no, hace n por y acá está la llamada.
+
+01:12:55.480 --> 01:13:03.480
+O sea, ¿por qué uno pone el t de n menos 1?
+
+01:13:03.480 --> 01:13:05.480
+Porque en realidad se está llamando a sí mismo.
+
+01:13:05.480 --> 01:13:08.480
+¿Con qué parámetro se llama?
+
+01:13:08.480 --> 01:13:11.480
+¿Con n menos 1?
+
+01:13:11.480 --> 01:13:13.480
+Sí, el factorial.
+
+01:13:13.480 --> 01:13:16.480
+Como vamos a ver otros ejemplos.
+
+01:13:16.480 --> 01:13:26.480
+Si ya se llamara a sí mismo con n sobre 2, yo ahí tengo que poner t de n sobre 2.
+
+01:13:26.480 --> 01:13:30.480
+Entonces, yo tengo que plantear la función de recurrencia siempre así.
+
+01:13:30.480 --> 01:13:41.480
+Es decir, diciendo ¿cuánto vale la función en el caso base y cuánto vale en el caso recursivo?
+
+01:13:41.480 --> 01:13:43.480
+Que sería esto.
+
+01:13:43.480 --> 01:13:45.480
+Bien.
+
+01:13:45.480 --> 01:13:54.480
+Y a partir de ahí, yo lo que hago es desarrollar la recurrencia.
+
+01:13:55.480 --> 01:14:01.480
+Y yo en general se los hago para que...
+
+01:14:08.480 --> 01:14:13.480
+Para ir haciéndolo junto con ustedes paso por paso.
+
+01:14:13.480 --> 01:14:16.480
+A ver cómo está puesto acá.
+
+01:14:17.480 --> 01:14:23.480
+O sea, t de n menos 1 más una constante.
+
+01:14:23.480 --> 01:14:25.480
+Constante 2.
+
+01:14:25.480 --> 01:14:27.480
+O sea, lo mismo...
+
+01:14:27.480 --> 01:14:36.480
+O sea, en general muchas veces se pone adelante porque queda más ordenado después del desarrollo.
+
+01:14:36.480 --> 01:14:37.480
+Bien.
+
+01:14:37.480 --> 01:14:40.480
+Yo en realidad lo que tengo que llegar es una expresión de la función.
+
+01:14:40.480 --> 01:14:41.480
+Porque a mí qué me diga.
+
+01:14:41.480 --> 01:14:44.480
+Sí, la función de t de n es el t de n menos 1 más una constante.
+
+01:14:44.480 --> 01:14:46.480
+Bueno, pero...
+
+01:14:46.480 --> 01:14:48.480
+¿Y cuál es el orden?
+
+01:14:48.480 --> 01:14:52.480
+¿De qué función estamos hablando en ese algoritmo?
+
+01:14:52.480 --> 01:15:00.480
+¿Cuál es el tiempo concreto, el tiempo de ejecución o la expresión de la función de tiempo de ejecución?
+
+01:15:00.480 --> 01:15:04.480
+Entonces, lo que hago es reemplazar.
+
+01:15:06.480 --> 01:15:09.480
+Reemplazo esto.
+
+01:15:09.480 --> 01:15:13.480
+¿A qué es igual el t de n menos 1?
+
+01:15:14.480 --> 01:15:16.480
+Teniendo ahí la definición de la función.
+
+01:15:16.480 --> 01:15:19.480
+T de n es t de n menos 1 más c2.
+
+01:15:19.480 --> 01:15:23.480
+Entonces, t de n menos 1, ¿a qué es igual?
+
+01:15:23.480 --> 01:15:26.480
+T de n menos 1, ¿a qué es igual?
+
+01:15:35.480 --> 01:15:41.480
+Si yo tuviera que escribir siguiendo la misma lógica de la definición.
+
+01:15:41.480 --> 01:15:50.480
+T de n menos 1 sería igual a t de n menos 2 más constante 2.
+
+01:15:50.480 --> 01:15:53.480
+Y ahora más la constante 2.
+
+01:15:58.480 --> 01:16:01.480
+Más, no por.
+
+01:16:01.480 --> 01:16:02.480
+Más.
+
+01:16:02.480 --> 01:16:03.480
+Bien.
+
+01:16:03.480 --> 01:16:13.480
+O sea que yo podría resolver eso y digo que es t de n menos 2 más 2 c2.
+
+01:16:14.480 --> 01:16:16.480
+Uno, dos.
+
+01:16:16.480 --> 01:16:18.480
+T de n menos 2.
+
+01:16:18.480 --> 01:16:20.480
+T de n menos 2.
+
+01:16:20.480 --> 01:16:22.480
+T de n menos 2.
+
+01:16:22.480 --> 01:16:24.480
+T de n menos 2.
+
+01:16:24.480 --> 01:16:26.480
+T de n menos 2.
+
+01:16:26.480 --> 01:16:28.480
+T de n menos 2.
+
+01:16:28.480 --> 01:16:30.480
+Uno, dos.
+
+01:16:33.480 --> 01:16:36.480
+Bueno, sigo.
+
+01:16:37.480 --> 01:16:38.480
+Otra vez más.
+
+01:16:38.480 --> 01:16:41.480
+¿A qué es igual t de n menos 2?
+
+01:16:41.480 --> 01:16:43.480
+T de n menos 2.
+
+01:16:50.480 --> 01:16:59.480
+O sea, con la misma lógica sería t de n menos 3 más c2.
+
+01:16:59.480 --> 01:17:03.480
+Más lo que me queda, 2 c2.
+
+01:17:04.480 --> 01:17:13.480
+O sea que esto sería igual a t de n menos 3 más 3 c2.
+
+01:17:20.480 --> 01:17:21.480
+Bien.
+
+01:17:21.480 --> 01:17:23.480
+Yo acá puedo seguir.
+
+01:17:23.480 --> 01:17:25.480
+Puedo seguir indefinidamente.
+
+01:17:25.480 --> 01:17:27.480
+En realidad no termino más.
+
+01:17:27.480 --> 01:17:28.480
+Le voy restando.
+
+01:17:29.480 --> 01:17:33.480
+O sea, pero si yo ya me di cuenta más o menos.
+
+01:17:33.480 --> 01:17:38.480
+Yo digo, el próximo paso, ¿cómo me va a quedar si yo siguiera?
+
+01:17:41.480 --> 01:17:44.480
+Si yo acá siguiera igual t de n menos 3, ¿a qué es igual?
+
+01:17:44.480 --> 01:17:47.480
+A t de n menos 4 más.
+
+01:17:47.480 --> 01:17:50.480
+Y después me va a quedar 4 c2.
+
+01:17:50.480 --> 01:17:58.480
+Entonces, una vez que yo le agarré la, o sea, me di cuenta cómo se va desarrollando la función.
+
+01:17:58.480 --> 01:18:03.480
+Que hay algunas recurrencias que me doy cuenta más fácil y otras que me cuesta un poquito más.
+
+01:18:03.480 --> 01:18:09.480
+O sea, tengo que hacer más paso para darme cuenta de cómo se va desarrollando la función.
+
+01:18:09.480 --> 01:18:15.480
+O sea, tengo que hacer más paso para darme cuenta de cómo se va desarrollando la función.
+
+01:18:15.480 --> 01:18:16.480
+Me cuesta un poquito más.
+
+01:18:16.480 --> 01:18:22.480
+O sea, tengo que hacer más paso para darme cuenta de la lógica.
+
+01:18:22.480 --> 01:18:26.480
+Entonces yo digo, bueno, para un paso general y...
+
+01:18:31.480 --> 01:18:34.480
+La función t de n, ¿a qué va a ser igual?
+
+01:18:34.480 --> 01:18:37.480
+O sea, porque la primera vez...
+
+01:18:37.480 --> 01:18:39.480
+Vamos a usar otro color.
+
+01:18:39.480 --> 01:18:42.480
+La primera vez era así.
+
+01:18:42.480 --> 01:18:44.480
+Era así.
+
+01:18:44.480 --> 01:18:47.480
+La segunda vez era así.
+
+01:18:47.480 --> 01:18:50.480
+La tercera vez era así.
+
+01:18:53.480 --> 01:18:58.480
+En un paso general, genérico y...
+
+01:18:58.480 --> 01:19:01.480
+El t de n, ¿a qué va a ser igual?
+
+01:19:01.480 --> 01:19:04.480
+A t de n menos i, bien.
+
+01:19:04.480 --> 01:19:11.480
+A t de n menos i más i por c2.
+
+01:19:14.480 --> 01:19:15.480
+Bien.
+
+01:19:16.480 --> 01:19:17.480
+Bien.
+
+01:19:31.480 --> 01:19:38.480
+Entonces, una vez que yo logré llegar a esto...
+
+01:19:38.480 --> 01:19:40.480
+Yo, ¿qué tengo que hacer?
+
+01:19:40.480 --> 01:19:43.480
+O sea, porque en realidad, ¿cuándo va a parar esto?
+
+01:19:43.480 --> 01:19:48.480
+Que me lo está diciendo la función de recurrencia que estamos viendo ahí.
+
+01:19:48.480 --> 01:19:53.480
+O sea, ¿se va decrementando el n hasta cuándo?
+
+01:19:56.480 --> 01:19:58.480
+Hasta que el n sea igual a 1.
+
+01:19:58.480 --> 01:20:00.480
+Hasta que el n sea igual a 1.
+
+01:20:00.480 --> 01:20:04.480
+Entonces yo digo, bueno, ¿cuándo va a terminar?
+
+01:20:04.480 --> 01:20:08.480
+Va a terminar cuando el argumento sea igual a 1.
+
+01:20:08.480 --> 01:20:15.480
+O sea, se va decrementando, decrementando, t de n menos 1, menos 2, menos 3, menos 4, menos 5...
+
+01:20:15.480 --> 01:20:17.480
+Hasta n igual a 1.
+
+01:20:17.480 --> 01:20:20.480
+Entonces, ¿cuándo va a terminar?
+
+01:20:20.480 --> 01:20:25.480
+Cuando, voy a escribir en azul...
+
+01:20:25.480 --> 01:20:29.480
+Cuando n, no sé si se ve acá abajo...
+
+01:20:29.480 --> 01:20:36.480
+N menos i sea igual a 1, que es este argumento que está acá.
+
+01:20:40.480 --> 01:20:43.480
+O sea que yo acá, entonces, despejo...
+
+01:20:43.480 --> 01:20:44.480
+¿Esto para qué lo hago?
+
+01:20:44.480 --> 01:20:47.480
+Lo hago para despejar i.
+
+01:20:47.480 --> 01:20:52.480
+Porque yo no puedo dejar la función de tiempo de ejecución con el i.
+
+01:20:52.480 --> 01:20:54.480
+La función tiene que estar con n.
+
+01:20:54.480 --> 01:20:57.480
+Siempre es t de n.
+
+01:20:57.480 --> 01:20:58.480
+Tiene que estar en función de n.
+
+01:20:58.480 --> 01:21:01.480
+Entonces, i es igual a qué?
+
+01:21:01.480 --> 01:21:03.480
+A n menos 1.
+
+01:21:06.480 --> 01:21:12.480
+Entonces, una vez que yo saque que es igual i...
+
+01:21:12.480 --> 01:21:15.480
+Lo reemplazo acá.
+
+01:21:16.480 --> 01:21:19.480
+Entonces, vamos a borrar esto.
+
+01:21:33.480 --> 01:21:35.480
+Borrar esto.
+
+01:21:35.480 --> 01:21:41.480
+Y reemplazo el i acá, en esta fórmula.
+
+01:21:41.480 --> 01:21:43.480
+Entonces, me queda.
+
+01:21:46.480 --> 01:21:52.480
+Que t de n es t de qué?
+
+01:22:01.480 --> 01:22:03.480
+Ahí que me quedaría.
+
+01:22:03.480 --> 01:22:05.480
+O sea, yo qué hice?
+
+01:22:05.480 --> 01:22:07.480
+Expresamente.
+
+01:22:11.480 --> 01:22:14.480
+Igualé el argumento a qué?
+
+01:22:28.480 --> 01:22:31.480
+A ver qué están escribiendo.
+
+01:22:31.480 --> 01:22:33.480
+Sí, hay que reemplazar el i.
+
+01:22:33.480 --> 01:22:35.480
+Pero el t...
+
+01:22:35.480 --> 01:22:37.480
+¿De qué me va a quedar ahí?
+
+01:22:37.480 --> 01:22:38.480
+¿T de cuánto?
+
+01:22:38.480 --> 01:22:42.480
+Es una sola tecla que tienen que apretar.
+
+01:22:42.480 --> 01:22:44.480
+T de 1.
+
+01:22:45.480 --> 01:22:50.480
+Porque n menos n menos 1, t de 1.
+
+01:22:50.480 --> 01:22:53.480
+Por eso me dijeron que escribían y escribían y digo...
+
+01:22:53.480 --> 01:22:54.480
+Tiene que apretar el 1.
+
+01:22:54.480 --> 01:22:55.480
+Es t de 1.
+
+01:22:55.480 --> 01:22:58.480
+Porque yo forcea que esto es igual a 1.
+
+01:22:58.480 --> 01:23:01.480
+Que es el valor de la función en el caso base.
+
+01:23:01.480 --> 01:23:06.480
+O sea, si yo lo reemplazo, es n menos n menos 1, que es 1.
+
+01:23:08.480 --> 01:23:10.480
+T de 1 más...
+
+01:23:10.480 --> 01:23:14.480
+Ahora sí, i, que es n menos 1...
+
+01:23:14.480 --> 01:23:16.480
+Por c2.
+
+01:23:19.480 --> 01:23:21.480
+T de 1.
+
+01:23:22.480 --> 01:23:24.480
+T de 1 a qué es igual?
+
+01:23:24.480 --> 01:23:28.480
+Que lo tenemos ahí en la diapositiva, a c1.
+
+01:23:30.480 --> 01:23:33.480
+O sea que, entonces, el...
+
+01:23:38.480 --> 01:23:40.480
+T de n...
+
+01:23:43.480 --> 01:23:49.480
+Es c1 más n menos 1 por c2.
+
+01:23:50.480 --> 01:23:52.480
+O sea que es lineal.
+
+01:23:56.480 --> 01:24:00.480
+Todos los algoritmos que son recursivos...
+
+01:24:01.480 --> 01:24:05.480
+Se resuelven de la misma manera.
+
+01:24:05.480 --> 01:24:07.480
+De la misma manera.
+
+01:24:08.480 --> 01:24:10.480
+Es decir, ¿qué es?
+
+01:24:10.480 --> 01:24:15.480
+Plantear la función de recurrencia, como está ahí en la diapositiva,
+
+01:24:15.480 --> 01:24:20.480
+poniendo cuánto vale la función para el caso base y cuánto para el caso recursivo.
+
+01:24:21.480 --> 01:24:24.480
+Y después resolver la recurrencia.
+
+01:24:24.480 --> 01:24:27.480
+O sea, resolver esta parte de acá.
+
+01:24:31.480 --> 01:24:34.480
+¿Esa parte de ahí cómo la resuelvo?
+
+01:24:34.480 --> 01:24:36.480
+La resuelvo reemplazando.
+
+01:24:36.480 --> 01:24:39.480
+Ahí en ese caso me dice t de n menos 1.
+
+01:24:39.480 --> 01:24:40.480
+Bueno, reemplazo.
+
+01:24:40.480 --> 01:24:42.480
+Aquí es igual t de n menos 1.
+
+01:24:42.480 --> 01:24:44.480
+Esa t de n menos 1.
+
+01:24:44.480 --> 01:24:48.480
+Esa t de n menos 2 más constante 2.
+
+01:24:48.480 --> 01:24:51.480
+Y entonces voy haciendo las cuentas.
+
+01:24:52.480 --> 01:24:58.480
+Cuando yo más o menos me doy cuenta cómo se comporta, hice un paso, dos, tres, lo que necesite,
+
+01:24:58.480 --> 01:25:05.480
+digo, bueno, ¿cómo va a ser el valor de la función en un caso general y...?
+
+01:25:06.480 --> 01:25:08.480
+Entonces lo expreso.
+
+01:25:09.480 --> 01:25:19.480
+Y a partir de eso lo que hago es igualar el argumento al valor del argumento en el caso base.
+
+01:25:19.480 --> 01:25:24.480
+Que en general los casos bases son cuando n es igual a 0 o cuando n es igual a 1.
+
+01:25:25.480 --> 01:25:31.480
+Por ahí en alguna recurrencia van a encontrar para n menor o igual que 2, no sé.
+
+01:25:32.480 --> 01:25:35.480
+Y para n mayor que 2 hace otra cosa.
+
+01:25:35.480 --> 01:25:37.480
+Pero yo me fijo ahí.
+
+01:25:37.480 --> 01:25:41.480
+¿Cuál es el valor de n en el caso base?
+
+01:25:41.480 --> 01:25:48.480
+Entonces, igualo el argumento a ese valor para despejar i.
+
+01:25:51.480 --> 01:25:54.480
+Y después reemplazo i en la función.
+
+01:25:55.480 --> 01:25:56.480
+¿Se entiende?
+
+01:25:56.480 --> 01:25:57.480
+O sea, ¿por qué?
+
+01:25:57.480 --> 01:26:02.480
+Porque la función de recurrencia en realidad en algún momento va a terminar.
+
+01:26:02.480 --> 01:26:14.480
+O sea, termina cuando el argumento se va decrementando hasta que se llega al caso base.
+
+01:26:22.480 --> 01:26:24.480
+¿Les quedó esto más o menos claro?
+
+01:26:24.480 --> 01:26:30.480
+Esto es un poco más dinámico que lo que veíamos hace un ratito de los algoritmos iterativos.
+
+01:26:32.480 --> 01:26:50.480
+Bueno, acá está desarrollada esto que yo les hice en el pizarrón.
+
+01:26:50.480 --> 01:27:06.480
+O sea, el T n menos 1 más constante 2, el T n menos 1 que es igual al T n menos 2 más constante 2, el T n menos 2, el T n menos 3 más constante 3.
+
+01:27:06.480 --> 01:27:09.480
+Y lo va incluyendo todo acá después.
+
+01:27:09.480 --> 01:27:15.480
+T n menos 1, T n menos 2 más constante 2 más la otra constante 2.
+
+01:27:15.480 --> 01:27:18.480
+O sea que 2 constante 2.
+
+01:27:20.480 --> 01:27:21.480
+Y así.
+
+01:27:21.480 --> 01:27:29.480
+En el paso general i me queda T n menos i más i por constante 2.
+
+01:27:32.480 --> 01:27:43.480
+Entonces viene acá, despeja i y reemplaza la i acá.
+
+01:27:43.480 --> 01:27:49.480
+T de n menos n menos 1 que es T de 1 más n menos 1 por constante 2.
+
+01:27:50.480 --> 01:27:58.480
+Bien, ¿se entendió esto chicos?
+
+01:28:07.480 --> 01:28:10.480
+Bien, los que contestan.
+
+01:28:10.480 --> 01:28:23.480
+Bueno, veamos este ejemplo, lo vemos, lo planteamos y después por ahí lo resolvemos a la próxima clase porque ya deben estar como medio mareado de tantas cuentas.
+
+01:28:25.480 --> 01:28:34.480
+Dice, yo tengo que encontrar el máximo elemento en un arreglo de enteros.
+
+01:28:35.480 --> 01:28:39.480
+Tomando n posiciones a partir de la posición i.
+
+01:28:39.480 --> 01:28:51.480
+Es decir, que yo tengo que encontrar el máximo elemento que esté ubicado desde la posición i en esta porción del arreglo hasta la posición i más n menos 1.
+
+01:28:51.480 --> 01:28:54.480
+Con longitud n.
+
+01:28:54.480 --> 01:28:57.480
+Esta porción de longitud n.
+
+01:28:57.480 --> 01:29:05.480
+Es como si yo tuviera que buscar el máximo elemento en un arreglo de n, es lo mismo.
+
+01:29:06.480 --> 01:29:12.480
+Bien, ¿cómo resolverían ese problema?
+
+01:29:12.480 --> 01:29:30.480
+O sea, ¿cómo se les ocurre a ustedes resolver un problema muy sencillo, no?
+
+01:29:43.480 --> 01:29:47.480
+Todo lo que no diga en el enunciado no se puede suponer.
+
+01:29:58.480 --> 01:30:09.480
+Bien, entonces Ramiro dice recorrer el arreglo con un for, Julián dice entonces una búsqueda secuencial.
+
+01:30:13.480 --> 01:30:18.480
+Recorriendo todos los elementos tal cual. Es así.
+
+01:30:18.480 --> 01:30:25.480
+Me guardo en una variable, me voy guardando el máximo, comparo con el máximo, listo.
+
+01:30:25.480 --> 01:30:34.480
+Bien, esa solución que ustedes dieron, o sea que charlamos así, ¿de qué orden sería?
+
+01:30:35.480 --> 01:30:42.480
+Lineal, del tamaño n, que es la cantidad de elementos que yo tengo que recorrer.
+
+01:30:42.480 --> 01:30:47.480
+Punto, es así, no hay mucha vuelta para darle.
+
+01:30:47.480 --> 01:30:52.480
+Ahora, ¿qué pasa si yo les muestro esta otra solución?
+
+01:30:52.480 --> 01:30:58.480
+Que es una solución recursiva, ¿no?
+
+01:30:59.480 --> 01:31:10.480
+Que lo que hace es busca, o sea, la lógica de esta solución es busca el máximo en la mitad izquierda,
+
+01:31:10.480 --> 01:31:15.480
+busca el máximo de la mitad derecha recursivamente, ¿no?
+
+01:31:15.480 --> 01:31:17.480
+Compara y se queda con el mayor.
+
+01:31:17.480 --> 01:31:22.480
+Ahora, para hacer la búsqueda en la mitad de izquierda, vuelve a dividir otra vez por dos
+
+01:31:22.480 --> 01:31:25.480
+y hace la búsqueda en la mitad de izquierda.
+
+01:31:25.480 --> 01:31:29.480
+O sea, hace esto.
+
+01:31:29.480 --> 01:31:36.480
+Divide por dos, busca el máximo de acá y el máximo de acá y se queda con el mayor.
+
+01:31:36.480 --> 01:31:42.480
+Ahora, para encontrar el máximo de acá, lo que hace es dividir en dos, busca el máximo de acá,
+
+01:31:42.480 --> 01:31:44.480
+busca el máximo de acá y se queda con el mayor.
+
+01:31:44.480 --> 01:31:50.480
+Para resolver esto, hace esto, hace esto, acá hace esto, hace esto.
+
+01:31:50.480 --> 01:31:57.480
+Para encontrar el máximo, hace esto, hace esto, después divide.
+
+01:32:01.480 --> 01:32:09.480
+¿A ustedes qué les parece que esa solución, que es una solución recursiva, que tiene esa lógica?
+
+01:32:09.480 --> 01:32:19.480
+Porque lo que hace es, o sea, cuando achica el problema, achica la dimensión que está analizando en ese momento.
+
+01:32:19.480 --> 01:32:24.480
+O sea, que la longitud de la secuencia sería uno, entonces en ese caso retorna el elemento.
+
+01:32:24.480 --> 01:32:28.480
+Y si no, en M1 se queda con el máximo.
+
+01:32:28.480 --> 01:32:33.480
+O sea, el máximo, que es la misma función recursiva.
+
+01:32:35.480 --> 01:32:45.480
+Desde i hasta n sobre 2, en M2 el otro máximo, que es i más n sobre 2, con tamaño n sobre 2.
+
+01:32:45.480 --> 01:32:49.480
+Esto que está acá es el tamaño siempre, y acá es de donde empieza.
+
+01:32:49.480 --> 01:32:53.480
+Si M1 es menor que M2, retorna M2, si no, retorna M1.
+
+01:32:58.480 --> 01:33:01.480
+Julián dice, debería ser lineal.
+
+01:33:03.480 --> 01:33:05.480
+¿Por qué?
+
+01:33:06.480 --> 01:33:12.480
+Estas son cosas que son tan buenas para discutir presencialmente, porque se hace un poco más llevadero.
+
+01:33:15.480 --> 01:33:18.480
+Porque tiene que ver todos los elementos.
+
+01:33:19.480 --> 01:33:29.480
+Bien, a ver qué dice, a ver si alguien contesta otra cosa o interpreta otra cosa.
+
+01:33:46.480 --> 01:33:50.480
+Ahora está ordenado, si o si tiene que ver claro.
+
+01:33:50.480 --> 01:33:57.480
+O sea, el razonamiento que hace Julián que dice debería ser lineal, porque de la forma que sea.
+
+01:33:58.480 --> 01:34:06.480
+O sea, él está diciendo, vos inspeccionalo o consultalos en el orden en que quieras.
+
+01:34:06.480 --> 01:34:08.480
+Pero los tenés que consultar todos.
+
+01:34:09.480 --> 01:34:12.480
+Que en realidad es así.
+
+01:34:12.480 --> 01:34:17.480
+O sea, acá lo que hace es, busca el máximo de acá.
+
+01:34:17.480 --> 01:34:23.480
+Para buscar el máximo divide, busca el máximo, busca de una mitad, de la otra mitad, divide, de otra mitad.
+
+01:34:23.480 --> 01:34:30.480
+Pero en resumen, los termina inspeccionando todos los elementos porque los tiene que inspeccionar todos porque el arreglo está desordenado.
+
+01:34:31.480 --> 01:34:34.480
+O sea, obviamente que si estuviera ordenado el máximo es el último.
+
+01:34:34.480 --> 01:34:39.480
+O el primero si está ordenado en forma decreciente, no tiene ni que buscar nada.
+
+01:34:43.480 --> 01:34:55.480
+Entonces, lo que hace este algoritmo es buscarlo, o sea, consultarnos de otra manera, en otro orden.
+
+01:34:55.480 --> 01:34:59.480
+La solución que ustedes que ustedes dieron primero es hacer un form.
+
+01:35:00.480 --> 01:35:03.480
+Me fijo el primero, el segundo, el tercero, todo, todo.
+
+01:35:03.480 --> 01:35:09.480
+Este no, este agarra la una mitad y la desglosa, la desglosa obtiene un máximo, compara con otro máximo.
+
+01:35:09.480 --> 01:35:15.480
+Y después con el otro máximo de la otra mitad que me quedaba pendiente y así, y así, y así, y así.
+
+01:35:16.480 --> 01:35:20.480
+Pero a la larga le queda todo lineal.
+
+01:35:20.480 --> 01:35:22.480
+Y le tiene que quedar lineal.
+
+01:35:22.480 --> 01:35:30.480
+Entonces, en realidad yo digo, bueno, ese es el análisis lógico, intuitivo que uno hace.
+
+01:35:32.480 --> 01:35:39.480
+Por la naturaleza del problema, no, no queda otra que tenga que inspeccionar todos los elementos.
+
+01:35:40.480 --> 01:35:42.480
+Entonces va a tener que ser lineal.
+
+01:35:42.480 --> 01:35:47.480
+Entonces yo después que hago planteo la función de recurrencia que no la vamos a resolver ahora.
+
+01:35:47.480 --> 01:35:52.480
+Y cuando yo resuelva esta recurrencia me debería dar lineal.
+
+01:35:52.480 --> 01:35:55.480
+Si es que yo hice bien el razonamiento.
+
+01:35:55.480 --> 01:35:56.480
+¿Entiendes?
+
+01:35:56.480 --> 01:36:02.480
+Por eso yo muchas veces les digo, les digo que interpreten la lógica del algoritmo.
+
+01:36:02.480 --> 01:36:08.480
+Entonces, por ahí, a veces uno, intuitivo a la larga, a la larga, a la larga, a la larga,
+
+01:36:08.480 --> 01:36:11.480
+a la larga, a la larga, a la larga, a la larga.
+
+01:36:12.480 --> 01:36:20.480
+Entonces, por ahí, a veces uno, intuitivamente leer porque, qué sé yo, en esos iterativos que vimos,
+
+01:36:20.480 --> 01:36:26.480
+por ahí el que daba exponencial, no sé, intuitivamente, no sé si uno hubiese sacado que era exponencial.
+
+01:36:26.480 --> 01:36:29.480
+No tenía mucho la pinta de que lo fuera.
+
+01:36:31.480 --> 01:36:38.480
+Pero uno hace como un análisis primero del algoritmo, bueno, pero éste si hace esto y hace lo otro y hace esto, bueno.
+
+01:36:39.480 --> 01:36:43.480
+Deberías alinear. Bueno, planteemos la función.
+
+01:36:43.480 --> 01:36:52.480
+O sea, la función de recurrencia es la misma, o sea, se plantea con la misma lógica que vimos recién.
+
+01:36:52.480 --> 01:36:56.480
+O sea, ¿cuánto vale la función para el caso base?
+
+01:36:56.480 --> 01:36:59.480
+El caso base es que N se iguala 1.
+
+01:36:59.480 --> 01:37:01.480
+N se iguala 1.
+
+01:37:01.480 --> 01:37:05.480
+¿Cuánto vale? Vale una constante por uno que hace retornar el elemento.
+
+01:37:06.480 --> 01:37:10.480
+¿Qué pasa en el caso recursivo que N sea mayor que 1?
+
+01:37:10.480 --> 01:37:17.480
+Lo que hace, hace dos llamadas recursivas con tamaño N sobre 2.
+
+01:37:17.480 --> 01:37:25.480
+Y después todo esto es constante, comparar M1 con M2 y retornar un valor u o el otro.
+
+01:37:26.480 --> 01:37:32.480
+Entonces hace dos veces T de N sobre 2 más constante.
+
+01:37:33.480 --> 01:37:40.480
+Si ustedes después esto lo quieren hacer, o creo que además está resuelto, está resuelto, obviamente.
+
+01:37:42.480 --> 01:37:52.480
+Tengo que llegar, si mi intuición y mi razonamiento lógico que yo hice, no le erré, no me confundí.
+
+01:37:52.480 --> 01:37:56.480
+Tengo que llegar al mismo resultado.
+
+01:37:57.480 --> 01:38:04.480
+O sea, que algo lineal, si me da otra cosa, es porque o me equivoqué en el desarrollo de la función,
+
+01:38:04.480 --> 01:38:09.480
+o me equivoqué en el análisis previo intuitivo que hice.
+
+01:38:09.480 --> 01:38:11.480
+¿Se entiende?
+
+01:38:14.480 --> 01:38:19.480
+Bueno, una cosa, chicos, antes de terminar.
+
+01:38:19.480 --> 01:38:26.480
+Mañana va a haber consulta en el horario de la teoría.
+
+01:38:26.480 --> 01:38:32.480
+Así que traigan todas las dudas que tengan.
+
+01:38:32.480 --> 01:38:37.480
+Bueno, y el jueves hay consulta para el turno de la mañana.
+
+01:38:37.480 --> 01:38:43.480
+Que no serían ustedes, pero por si alguno va a la mañana y escucha también a la tarde.
+
+01:38:43.480 --> 01:38:45.480
+Creo que no, aquí lo han escuchado dos veces.
+
+01:38:46.480 --> 01:38:54.480
+Pero como esta clase queda grabada, igual por ahí la ve alguien que va a la mañana.
+
+01:38:54.480 --> 01:39:02.480
+Así que mañana y el jueves son clases de consulta de los temas teóricos.
+
+01:39:02.480 --> 01:39:10.480
+Así que traten de tener todas las dudas que puedan o que tengan.
+
+01:39:10.480 --> 01:39:14.480
+Así ya aprovechan las dos clases para el parcial.
+
+01:39:15.480 --> 01:39:16.480
+Gracias.
+

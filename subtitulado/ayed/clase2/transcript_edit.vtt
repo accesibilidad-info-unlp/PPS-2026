@@ -1,0 +1,4382 @@
+WEBVTT
+
+00:00.000 --> 00:07.200
+Bueno, chicos, la idea de, ahí puse la grabación,
+
+00:07.200 --> 00:10.040
+la idea de la clase de ahí, y entonces es repasar un poco
+
+00:10.040 --> 00:15.040
+herencia para después aplicar el concepto de herencia con las
+
+00:15.040 --> 00:17.160
+primeras estructuras de datos que vamos a ver acá.
+
+00:21.840 --> 00:23.600
+Empieza como lento.
+
+00:23.600 --> 00:24.400
+Ahí va.
+
+00:24.400 --> 00:26.320
+Bueno, acá hay un poco una definición de herencia,
+
+00:26.320 --> 00:28.400
+que este concepto, sí, yo sé que ustedes lo saben.
+
+00:30.360 --> 00:32.800
+Lo que nos permite a nosotros la herencia, como dice acá,
+
+00:32.800 --> 00:35.920
+es un poco expresar similitudes entre objetos que tienen
+
+00:35.920 --> 00:38.560
+características y comportamientos común.
+
+00:38.560 --> 00:42.080
+La herencia nos permite definir una clase con
+
+00:42.080 --> 00:46.920
+características, con atributos y comportamientos común para
+
+00:46.920 --> 00:49.880
+ciertas subclases, ¿sí?
+
+00:49.880 --> 00:54.480
+Cuando hay herencia, se dice que la subclase B hereda de la
+
+00:54.480 --> 00:58.040
+superclase A estado y comportamiento.
+
+00:58.040 --> 01:06.600
+Y lo que es UML, que es el Lenguaje de Modelado Universal,
+
+01:06.600 --> 01:09.720
+la herencia se representa con una flechita hacia arriba.
+
+01:09.720 --> 01:12.600
+En este caso estamos diciendo que la clase B es subclase de la
+
+01:12.600 --> 01:14.680
+clase A.
+
+01:14.680 --> 01:18.520
+¿Cuál es el principal beneficio de la herencia?
+
+01:18.520 --> 01:20.240
+Es reusabilidad de código.
+
+01:20.240 --> 01:23.600
+Porque cuando yo digo que la clase B es subclase de la clase A
+
+01:23.600 --> 01:27.880
+es como que los objetos de la clase B tienen una referencia
+
+01:28.280 --> 01:29.040
+el super, ¿no?
+
+01:29.040 --> 01:31.560
+Como una referencia al objeto de la clase A, o sea,
+
+01:31.560 --> 01:34.920
+que hereda todo el estado y comportamiento de A sin tener que
+
+01:34.920 --> 01:37.040
+volver a escribirlo en B.
+
+01:37.040 --> 01:40.080
+A diferencia de el paradigma que conocen,
+
+01:40.080 --> 01:43.640
+el otro es el procedural, que si uno quiere tomar algo de un
+
+01:43.640 --> 01:48.120
+procedimiento, lo que tenemos que hacer es copiar y pegar en
+
+01:48.120 --> 01:49.840
+otro archivo y modificarlo.
+
+01:49.840 --> 01:53.800
+Acá directamente, diciendo que la clase B es subclase de la clase A,
+
+01:53.800 --> 01:56.480
+ya tenemos todo ese estado y comportamiento en los
+
+01:56.480 --> 01:58.960
+objetos de la subclase o clase B.
+
+02:02.000 --> 02:06.720
+Bueno, para hacer o para ejemplificar,
+
+02:06.720 --> 02:08.720
+acá tenemos una jerarquía.
+
+02:08.720 --> 02:11.840
+Supongamos que tenemos objetos vehículos que tenemos que
+
+02:11.840 --> 02:15.200
+modelar de algún sitio web, por ejemplo,
+
+02:15.200 --> 02:17.960
+que venda usados o nuevos vehículos.
+
+02:17.960 --> 02:20.880
+Entonces, uno tiene que modelar las cosas que se venden.
+
+02:20.880 --> 02:25.040
+Ahí podríamos definir una clase vehículo con marca, modelo,
+
+02:25.040 --> 02:29.040
+precio y sus métodos de getters y setters y tendríamos como
+
+02:29.040 --> 02:32.920
+subclases los objetos o los vehículos que realmente se
+
+02:32.920 --> 02:33.800
+venden.
+
+02:33.800 --> 02:37.160
+Un vehículo es como un concepto un poco abstracto.
+
+02:37.160 --> 02:39.000
+Si uno dice, me compré un vehículo,
+
+02:39.000 --> 02:40.360
+no estamos diciendo nada.
+
+02:40.360 --> 02:43.600
+Si uno dice, me compré un auto o un camión o una camioneta,
+
+02:43.600 --> 02:46.040
+está dando un poco más de información.
+
+02:46.040 --> 02:50.080
+Entonces, auto, camión y camioneta son subclases de la
+
+02:50.080 --> 02:51.840
+clase vehículo.
+
+02:51.840 --> 02:57.000
+O sea, que heredan todo el estado y comportamiento del vehículo.
+
+02:57.000 --> 03:01.560
+Cuando uno hace herencia, uno puede empezar desde lo más
+
+03:01.560 --> 03:04.760
+general y especializar hacia abajo o uno puede decir,
+
+03:04.760 --> 03:07.520
+bueno, a ver, ¿cuáles son todas las cosas que yo vendo?
+
+03:07.520 --> 03:11.640
+Entonces, hago primero las subclases y después todo lo que
+
+03:11.640 --> 03:14.920
+está común a las subclases lo subo a una superclase.
+
+03:14.920 --> 03:18.560
+Esas son las dos maneras que uno lo puede hacer.
+
+03:18.560 --> 03:21.000
+Bueno, avanzando entonces con esto,
+
+03:21.000 --> 03:23.580
+tendríamos la clase vehículo que tiene todas las
+
+03:23.580 --> 03:26.160
+características de este comportamiento común.
+
+03:26.160 --> 03:28.320
+Utilizando la palabra clave `extends`,
+
+03:28.320 --> 03:31.040
+nosotros podemos crear las subclases.
+
+03:31.040 --> 03:35.080
+`Camioneta extends Vehiculo`, `Camion extends Vehiculo` y
+
+03:35.080 --> 03:38.200
+`Auto extends Vehiculo`.
+
+03:38.200 --> 03:42.080
+Bueno, para instanciar objetos de estas clases,
+
+03:42.080 --> 03:45.160
+ya lo vimos el otro día que nosotros usamos el operador `new`.
+
+03:45.160 --> 03:48.920
+Podemos decir que un auto es de tipo vehículo, `new Vehiculo()`.
+
+03:48.920 --> 03:51.260
+¿Qué métodos podemos invocar sobre `Vehiculo`?
+
+03:51.260 --> 03:55.360
+Bueno, todos los métodos definidos acá en `Vehiculo`.
+
+03:55.360 --> 03:58.640
+Cuando nosotros creamos un objeto de la subclase,
+
+03:58.640 --> 04:01.480
+`miCamion`, por ejemplo, de tipo `Camion`, `new Camion()`,
+
+04:01.480 --> 04:06.080
+¿qué métodos podemos invocar sobre esta variable `miCamion`?
+
+04:06.080 --> 04:08.560
+Bueno, podemos invocar todos los métodos heredados de la
+
+04:08.560 --> 04:12.480
+superclase más los métodos definidos en la subclase.
+
+04:12.480 --> 04:15.760
+Por ejemplo, si tenemos un camión que tiene un atributo
+
+04:15.800 --> 04:21.240
+`cargaMaxima` y si `tieneDobleCaja` y tenemos un método
+
+04:21.240 --> 04:23.780
+`isTieneDobleCaja()` que solamente es de camión,
+
+04:23.780 --> 04:27.320
+entonces podríamos invocarlo acá porque es una instancia de la
+
+04:27.320 --> 04:28.320
+clase`Camion`.
+
+04:28.320 --> 04:31.440
+Si querríamos invocar ese método en `miAuto`,
+
+04:31.440 --> 04:35.880
+fallaría porque a esa altura, o sea,
+
+04:35.880 --> 04:40.640
+el vehículo no conoce los métodos de las subclases.
+
+04:40.640 --> 04:41.140
+¿Sí?
+
+04:42.140 --> 04:46.500
+Bueno, hasta ahí, ¿no?
+
+04:46.500 --> 04:49.660
+Todo es, estamos bien.
+
+04:49.660 --> 04:53.660
+Una de las características más interesantes de la herencia es
+
+04:53.660 --> 04:56.860
+la sobrescritura, porque la sobrescritura nos permite
+
+04:56.860 --> 05:00.500
+especializar los objetos de las subclases, ¿sí?
+
+05:00.500 --> 05:04.500
+¿Cómo nosotros especializamos los objetos de tipo `Camion`?
+
+05:04.500 --> 05:07.860
+Bueno, de dos maneras, especializamos los objetos de
+
+05:07.860 --> 05:12.820
+tipo `Camion`, insertando nuevos métodos y atributos en `Camion`
+
+05:12.820 --> 05:16.060
+o sobrescribiendo los métodos del padre.
+
+05:16.060 --> 05:18.420
+Sobrescritura, el otro día vimos un poco,
+
+05:18.420 --> 05:21.900
+sobrescritura no, pero sobrescritura, ¿qué es?
+
+05:21.900 --> 05:25.900
+Es tener la misma firma, exactamente la misma firma,
+
+05:25.900 --> 05:29.420
+tipo de dato de retorno, nombre y tipo y cantidad de parámetros
+
+05:29.420 --> 05:33.900
+en la subclase igual al método definido en la superclase.
+
+05:33.900 --> 05:35.260
+Eso es sobrescribir.
+
+05:35.260 --> 05:38.660
+Se sobrescribe el método del padre.
+
+05:38.660 --> 05:43.060
+Entonces, esta es una manera de especializar los objetos de las
+
+05:43.060 --> 05:45.380
+subclases.
+
+05:45.380 --> 05:50.660
+Entonces, vamos a ver, tenemos en la clase `Vehiculo` un método
+
+05:50.660 --> 05:54.780
+detalles que lo que me devuelve es la característica de los
+
+05:54.780 --> 05:56.420
+objetos de tipo `Vehiculo`.
+
+05:56.420 --> 05:59.660
+Como en la clase `Vehiculo` tenemos marca y precio,
+
+05:59.660 --> 06:01.220
+en el método `detalles()`, por ejemplo,
+
+06:01.220 --> 06:03.660
+querríamos devolver esos datos.
+
+06:03.660 --> 06:05.980
+Entonces, el método `detalles()`, decimos que va a devolver un
+
+06:05.980 --> 06:10.940
+`String` y la sentencia `return` ¿qué hace? concatena 
+
+06:10.940 --> 06:14.900
+`"Vehículo marca: " + getMarca()`, porque tenemos acá marca y hay un getter,
+
+06:14.900 --> 06:18.860
+concatenado con, bueno, este `\n` lo que me hace es un
+
+06:18.860 --> 06:24.020
+Enter, un Enter, `+ "Precio: " + this.getPrecio();`.
+
+06:24.020 --> 06:27.980
+Fíjense que acá podemos decir `getMarca()` o `this.getMarca()`,
+
+06:27.980 --> 06:31.380
+es lo mismo, o también podríamos decir `this.marca`.
+
+06:31.540 --> 06:34.220
+Todas las maneras son válidas.
+
+06:34.220 --> 06:37.140
+Si yo digo `this.marca`, accedo directamente al atributo.
+
+06:37.140 --> 06:42.580
+Si yo digo `this.getMarca()`, accedo al método.
+
+06:42.580 --> 06:46.060
+Bueno, después tenemos en la subclase,
+
+06:46.060 --> 06:48.140
+camión que extiende vehículo.
+
+06:48.140 --> 06:51.620
+Queremos especializar un poco ese método porque además de
+
+06:51.620 --> 06:54.940
+devolver la marca y el precio, nosotros querríamos devolver la
+
+06:54.940 --> 06:57.620
+carga máxima del camión.
+
+06:57.620 --> 07:00.660
+En este caso, entonces, se dice que estamos sobrescribiendo el
+
+07:00.660 --> 07:03.660
+método del padre porque tenemos que el método también es
+
+07:03.660 --> 07:06.340
+público, devuelve un `String`, se llama `detalles()` y no tiene
+
+07:06.340 --> 07:07.300
+parámetro.
+
+07:07.300 --> 07:09.700
+O sea, que las firmas son exactamente iguales,
+
+07:09.700 --> 07:11.780
+estamos sobrescribiendo.
+
+07:11.780 --> 07:12.700
+¿Qué retornamos acá?
+
+07:12.700 --> 07:16.380
+Bueno, lo mismo, la marca, el precio y además le concatenamos
+
+07:16.380 --> 07:19.740
+la carga máxima.
+
+07:19.740 --> 07:22.540
+En este caso, podemos acceder a `getMarca()` y `getPrecio()` porque
+
+07:22.540 --> 07:26.740
+son métodos públicos, son getter y setter de la superclase.
+
+07:26.740 --> 07:29.540
+Así que podríamos acceder sin ningún problema.
+
+07:29.540 --> 07:33.420
+Bueno, acá vemos un ejemplo que crea un vehículo y crea un
+
+07:33.420 --> 07:35.100
+camión.
+
+07:35.100 --> 07:38.580
+En ambos casos, le setea la marca, el precio e invoca el
+
+07:38.580 --> 07:40.060
+método `detalles()`.
+
+07:40.060 --> 07:42.940
+Entonces, en este caso, `v.detalles()`, ¿qué hace?
+
+07:42.940 --> 07:44.980
+`v` es de tipo vehículo.
+
+07:44.980 --> 07:46.980
+Entonces, va a ir a ver, ¿existe detalles acá?
+
+07:46.980 --> 07:49.620
+Sí, entonces, ejecuta este método.
+
+07:49.620 --> 07:52.780
+En este caso, `c` es de tipo camión.
+
+07:52.780 --> 07:55.300
+Entonces, lo primero que hace, `c` es de tipo camión,
+
+07:55.300 --> 07:56.220
+viene a la clase `Camion`.
+
+07:56.220 --> 07:58.900
+¿Existe el método de `detalles()` en `Camion`?
+
+07:58.900 --> 08:00.300
+Sí, existe.
+
+08:00.300 --> 08:04.020
+Entonces, se invoca el método de `Camion`.
+
+08:04.020 --> 08:05.220
+¿Se entiende hasta acá?
+
+08:05.220 --> 08:08.100
+Están invocando métodos de diferentes clases porque lo
+
+08:08.100 --> 08:12.420
+primero que hace el intérprete es ir a buscar de qué tipo es
+
+08:12.420 --> 08:13.900
+esta variable, es de tipo `Camion`.
+
+08:13.900 --> 08:16.180
+Entonces, lo primero que hace es ir a buscar `Camion`.
+
+08:16.180 --> 08:17.980
+Si acá no la tenemos sobrescrita,
+
+08:17.980 --> 08:19.860
+ahí sí empieza a subir en la jerarquía.
+
+08:19.860 --> 08:20.620
+¿Está en `Vehículo`?
+
+08:20.620 --> 08:21.220
+No está en `Vehículo`.
+
+08:21.220 --> 08:22.780
+Entonces, está en `Object`?.
+
+08:22.780 --> 08:26.780
+Y así hasta llegar a la raíz que es `Object`.
+
+08:26.780 --> 08:28.540
+Bueno, hasta acá va todo bien, ¿no?
+
+08:31.180 --> 08:32.780
+¿Un micrófono o algún OK?
+
+08:38.460 --> 08:40.380
+Bueno, genial.
+
+08:40.380 --> 08:42.300
+Bueno, ahora bárbaro.
+
+08:42.300 --> 08:46.460
+Seguimos un poquitito para hacer esto.
+
+08:46.460 --> 08:51.180
+Bueno, una de las cosas antes de continuar es que nosotros
+
+08:51.180 --> 08:54.380
+decimos que la adherencia lo que nos permite es reusabilidad de
+
+08:54.380 --> 08:55.220
+código.
+
+08:55.220 --> 08:59.660
+Sin embargo, si miramos ahí, acá yo estaba como repitiendo el
+
+08:59.660 --> 09:01.180
+código de la superclase.
+
+09:01.180 --> 09:04.500
+Vehículo `marca` y `precio` `getMarca()` ya tengo un método en la
+
+09:04.500 --> 09:05.700
+superclase que lo hace.
+
+09:05.700 --> 09:08.220
+Entonces, ¿existe una manera de mejorar esto?
+
+09:08.220 --> 09:11.460
+Sí, ya existe dentro de los métodos de instancia.
+
+09:11.460 --> 09:14.740
+¿Se acuerdan que el otro día dijimos que siempre existe el `this`?
+
+09:14.740 --> 09:17.180
+El dis es una palabra clave que existe en todos los métodos de
+
+09:17.180 --> 09:18.140
+instancia.
+
+09:18.140 --> 09:20.420
+Bueno, en los métodos de instancia también existe el
+
+09:20.420 --> 09:21.220
+super.
+
+09:21.220 --> 09:22.220
+El super qué hace?
+
+09:22.220 --> 09:24.860
+Es una referencia a la superclase.
+
+09:24.860 --> 09:28.420
+Entonces, yo podría invocar este método de la superclase
+
+09:28.420 --> 09:32.460
+diciendo `super.detalles()`, viene, se ejecuta ese método y después
+
+09:32.460 --> 09:34.460
+yo continúo especializándolo.
+
+09:34.460 --> 09:39.060
+Entonces, el método quedaría así, `super.detalles()`,
+
+09:39.060 --> 09:43.900
+concatenado con un Enter, concatenado con `cargaMaxima()` y
+
+09:43.900 --> 09:46.820
+`getCargaMaxima()`.
+
+09:46.820 --> 09:50.300
+En este caso, entonces, viene acá, ejecuta este método,
+
+09:50.300 --> 09:52.780
+este método me devuelve un `String` y ese `String` que me
+
+09:52.780 --> 09:55.660
+devuelve lo concatenamos con lo específico de la clase
+
+09:55.660 --> 09:58.420
+`Camion`.
+
+09:58.420 --> 10:01.180
+A ver, acá estoy viendo notas compartidas.
+
+10:01.180 --> 10:01.660
+¿Hay algo?
+
+10:06.340 --> 10:11.740
+Ah, no sé, notas compartidas veo que hay algo, pero no sé qué.
+
+10:11.740 --> 10:14.900
+Bueno, no sé si alguien quería comentar algo.
+
+10:15.140 --> 10:26.260
+Sentí una advertencia y un mensajito, pero no sé qué es.
+
+10:26.260 --> 10:28.980
+Bueno, hasta acá, entonces, la palabra `super` seguramente
+
+10:28.980 --> 10:30.420
+también ya la saben.
+
+10:30.420 --> 10:33.340
+Bueno, y acá empezamos con algo que esto no sé si el año
+
+10:33.340 --> 10:39.180
+pasado lo vieron o no, que es el Upcasting y el Downcasting.
+
+10:39.180 --> 10:44.820
+El upcasting lo que significa es ver a una referencia de un
+
+10:45.300 --> 10:50.020
+objeto de la superclase como algo del tipo de la superclase.
+
+10:50.020 --> 10:52.140
+Eso se llama upcasting.
+
+10:52.140 --> 10:56.300
+Y el downcasting es al revés, es yo tengo una referencia a
+
+10:56.300 --> 11:01.060
+algo de la superclase y yo lo puedo ver como algo de la
+
+11:01.060 --> 11:01.580
+subclase.
+
+11:04.700 --> 11:09.780
+Estos procesos son utilizados cuando uno trabaja con `Object` o
+
+11:09.780 --> 11:14.340
+por ejemplo, o con uno, vamos a ver un ejemplito para verlo más
+
+11:14.340 --> 11:15.980
+claro.
+
+11:15.980 --> 11:16.780
+¿Qué es esto?
+
+11:16.780 --> 11:21.340
+Yo tengo, quedémonos con este pedacito de la jerarquía.
+
+11:21.340 --> 11:25.060
+Tenemos un `Camion`, es una subclase de `Vehiculo`, ¿sí?
+
+11:25.060 --> 11:27.900
+En ambos tenemos el método `detalles()`.
+
+11:27.900 --> 11:31.260
+Entonces nosotros decimos, `vc` es algo de tipo `Vehiculo`,
+
+11:31.260 --> 11:33.020
+`new Camion()`.
+
+11:33.020 --> 11:34.260
+¿Puedo hacer esto yo?
+
+11:34.260 --> 11:38.380
+¿Es válido que yo diga que en una variable de tipo `Vehiculo` yo
+
+11:38.420 --> 11:40.780
+guarde un objeto de tipo `Camion`?
+
+11:44.340 --> 11:45.820
+¿Qué les parece eso? ¿Es válido?
+
+11:45.820 --> 11:46.860
+¿Lo vieron en primero?
+
+11:55.540 --> 11:56.300
+Bien.
+
+11:56.300 --> 11:57.620
+No lo vieron, pero es válido.
+
+11:57.620 --> 11:58.260
+¿Por qué?
+
+11:58.260 --> 12:01.740
+Porque un camión, según la herencia, es un vehículo.
+
+12:01.740 --> 12:04.340
+La relación de herencia es "is a..." o "es un...".
+
+12:04.340 --> 12:05.900
+Un camión es un vehículo.
+
+12:05.900 --> 12:09.780
+Entonces, yo puedo guardar un camión en algo de tipo vehículo.
+
+12:09.780 --> 12:11.260
+Es válido.
+
+12:11.260 --> 12:12.940
+¿Pero qué pasa acá?
+
+12:12.940 --> 12:15.300
+Se estrecha la visibilidad de los métodos.
+
+12:15.300 --> 12:18.420
+Como la variable `vc` es de tipo `Vehiculo`,
+
+12:18.420 --> 12:23.460
+solamente voy a poder invocar sobre `vc` métodos definidos en
+
+12:23.460 --> 12:24.540
+`Vehiculo`.
+
+12:24.540 --> 12:27.900
+O sea, la variable `vc` es de tipo `Vehiculo` y lo que yo puedo
+
+12:27.900 --> 12:33.860
+invocar es la `interface` definida en la clase `Vehiculo`, ¿sí?
+
+12:33.860 --> 12:39.620
+Entonces, yo podría decir `vc.detalles()`, `vc.getMarca()`,
+
+12:39.620 --> 12:46.300
+`vc.getModelo()`, pero no podría decir acá `vc.setCargaMaxima()` o
+
+12:46.300 --> 12:47.700
+`vc.getCargaMaxima()`.
+
+12:47.700 --> 12:48.460
+¿Por qué no lo ve?
+
+12:48.460 --> 12:51.660
+Porque `vc.getCargaMaxima()` es algo definido en camión.
+
+12:51.660 --> 12:54.460
+Cuando nosotros guardamos un objeto `Camion` en `Vehiculo`,
+
+12:54.460 --> 12:58.700
+se hace un upcasting y se estrecha la visibilidad de los métodos.
+
+12:58.700 --> 12:59.500
+¿Sí?
+
+12:59.500 --> 13:02.820
+A ver, Joaquín me dice, en ese caso se borran los métodos de la
+
+13:02.820 --> 13:08.020
+subclase que no son común a la superclase.
+
+13:08.020 --> 13:11.460
+Vendría a ser como, sí, con la variable `vc`,
+
+13:11.460 --> 13:13.940
+ahora vamos a ir profundizando esto.
+
+13:13.940 --> 13:18.100
+Pero sí, con la variable `vc` es como que no puede invocar a los
+
+13:18.100 --> 13:21.460
+métodos de la subclase, no los ve más.
+
+13:21.460 --> 13:25.060
+"se borran" entre comillitas porque ahora vamos a ver.
+
+13:25.060 --> 13:28.780
+Pero sí, podemos decir que la variable de tipo `Vehiculo` solo
+
+13:28.780 --> 13:31.260
+ve estos métodos, ¿sí?
+
+13:31.260 --> 13:34.460
+Entonces, crea un `Camion` en `Vehiculo`,
+
+13:34.460 --> 13:36.500
+se hace un upcasting automáticamente.
+
+13:36.500 --> 13:38.940
+Yo no tengo que decirle nada, ya se hace ese upcasting
+
+13:38.940 --> 13:40.540
+automáticamente. ¿Por qué?
+
+13:40.540 --> 13:43.380
+Porque la upcasting es seguro.
+
+13:43.380 --> 13:48.260
+Porque un camión, o sea, sobre esta variable vamos a poder
+
+13:48.260 --> 13:51.580
+nosotros invocar todos los métodos de `Vehiculo`.
+
+13:51.580 --> 13:54.300
+Y un camión, el objeto es de tipo `Camion`,
+
+13:54.300 --> 13:56.780
+pero seguro que va a poder hacer todo lo que hace `Vehiculo` un
+
+13:56.780 --> 13:59.100
+`Camion` porque está heredando de ahí.
+
+13:59.100 --> 14:02.820
+Entonces, un `Camion` siempre va a poder hacer todo lo que hace
+
+14:02.820 --> 14:06.660
+un `Vehiculo` y más porque un `Camion` sabe hacer más cosas que
+
+14:06.660 --> 14:07.700
+un `Vehiculo`.
+
+14:07.700 --> 14:10.380
+Entonces, el upcasting es seguro.
+
+14:10.380 --> 14:13.940
+Nunca yo voy a poder, voy a invocar acá sobre `vc` un método
+
+14:13.940 --> 14:16.700
+de `Vehiculo` que el `Camion` no lo va a saber hacer porque lo está
+
+14:16.700 --> 14:18.900
+heredando, ¿sí?
+
+14:18.900 --> 14:20.180
+¿En qué caso serviría eso?
+
+14:20.180 --> 14:24.260
+Ahora vamos a ver, Marcelo va a ver que... vamos así
+
+14:24.260 --> 14:26.740
+por partes, cuando termino de última, si no les queda claro,
+
+14:26.740 --> 14:28.580
+repetimos, pero vamos a ir viendo.
+
+14:28.580 --> 14:29.260
+¿Para qué sirve?
+
+14:29.260 --> 14:31.620
+Hasta el momento no le vemos la utilidad,
+
+14:31.620 --> 14:34.180
+pero vamos a ver que es útil esto.
+
+14:34.180 --> 14:37.820
+Entonces, el upcasting, yo puedo desde una subclase verlo como la
+
+14:37.820 --> 14:39.300
+superclase, eso es seguro.
+
+14:39.300 --> 14:42.380
+Y acá, entonces, `setCargaMaxima()` no está para vehículo,
+
+14:42.380 --> 14:46.220
+no se puede invocar.
+
+14:46.220 --> 14:50.660
+Cuando yo digo `vc.detalles()`, si yo saco el `setCarga()`,
+
+14:50.660 --> 14:52.260
+esto va a compilar.
+
+14:52.260 --> 14:57.140
+Ahora, cuando yo digo `vc.detalles()` acá,
+
+14:57.180 --> 15:00.340
+¿qué `detalles()` creen que se ejecuta?
+
+15:00.340 --> 15:04.220
+¿El de `Camion` o el de `Vehiculo`?
+
+15:04.220 --> 15:08.460
+Acá está lo interesante de la sobrescritura de métodos.
+
+15:08.460 --> 15:12.300
+Y ustedes algo me dijeron que vieron polimorfismo,
+
+15:12.300 --> 15:14.500
+sí, uno sí, siempre se ejecuta.
+
+15:14.500 --> 15:18.580
+Cuando yo digo `vc.detalles()`, ¿qué `detalles()` se ejecuta?
+
+15:18.580 --> 15:20.300
+¿El de `Vehiculo`, el de `Camion`?
+
+15:20.300 --> 15:23.940
+A ver, ¿por qué Federico me decías que ninguno?
+
+15:23.940 --> 15:26.300
+¿Por qué se te pareció que ninguno?
+
+15:26.300 --> 15:30.300
+Bueno, vehículo, camión, me están diciendo por acá.
+
+15:30.300 --> 15:32.780
+A ver, no sé si querías decir, Federico,
+
+15:32.780 --> 15:34.740
+¿por qué se te ocurrió?
+
+15:34.740 --> 15:36.380
+Ah, bien, genial.
+
+15:36.380 --> 15:38.580
+No, no, sí, sí, está bien.
+
+15:38.580 --> 15:40.900
+Sacamos esa línea, pero o sea, bueno,
+
+15:40.900 --> 15:43.260
+hay de las dos cosas acá por lo que veo.
+
+15:43.260 --> 15:47.580
+Bueno, acá, cuando nosotros decimos `new Camion()`,
+
+15:47.580 --> 15:51.340
+lo que se está creando es un objeto de tipo `Camion`.
+
+15:51.340 --> 15:55.380
+Siempre el objeto recuerda de qué tipo es,
+
+15:55.380 --> 15:58.460
+porque si no, no podría existir el polimorfismo.
+
+15:58.460 --> 16:02.420
+Cuando yo digo `new Camion()`, el objeto que se crea es un `Camion`
+
+16:02.420 --> 16:06.500
+y él siempre va a recordar que es un objeto de tipo `Camion`.
+
+16:06.500 --> 16:11.300
+Al hacer un upcasting, se ve como algo de tipo `Vehiculo`.
+
+16:11.300 --> 16:14.580
+La variable `vc` es de tipo `Vehiculo` y yo puedo invocar
+
+16:14.580 --> 16:16.180
+solo estos métodos.
+
+16:16.180 --> 16:20.300
+Lo que se estrecha o achica es la visibilidad o la cantidad de
+
+16:20.300 --> 16:21.940
+métodos que yo tengo.
+
+16:21.940 --> 16:25.140
+Pero el objeto siempre recuerda de qué tipo es.
+
+16:25.140 --> 16:28.540
+Entonces, cuando acá decimos `vc.detalles()`,
+
+16:28.540 --> 16:30.780
+el objeto recuerda que es de tipo `Camion`.
+
+16:30.780 --> 16:33.940
+Entonces, primero va a ir a buscar el `detalle()` a la clase
+
+16:33.940 --> 16:35.100
+`Camion`.
+
+16:35.100 --> 16:38.820
+Si ahí está sobrescrita, usa o invoca la de camión.
+
+16:38.820 --> 16:41.900
+Y si no, empieza a subir en la jerarquía.
+
+16:41.900 --> 16:46.180
+Esto es lo interesante de este upcasting.
+
+16:46.180 --> 16:51.300
+Porque acá el objeto receptor en tiempo de ejecución sabe que es
+
+16:51.300 --> 16:54.540
+un `Camion` y va a buscar en ejecución,
+
+16:54.540 --> 16:56.700
+eso es lo que se llama binding dinámico,
+
+16:56.700 --> 16:59.300
+que ustedes vieron el año pasado el polimorfismo,
+
+16:59.300 --> 17:02.300
+el binding dinámico, se hace en ejecución.
+
+17:02.300 --> 17:07.420
+Y ese binding depende del tipo real del objeto receptor.
+
+17:07.420 --> 17:10.460
+El tipo real del objeto receptor que es un `Camion`.
+
+17:10.460 --> 17:12.420
+Por eso lo va a ir a buscar primero a `Camion`.
+
+17:12.420 --> 17:15.420
+Y acá empieza a tener sentido la herencia y la sobrescritura de
+
+17:15.420 --> 17:17.020
+métodos.
+
+17:17.020 --> 17:21.500
+O sea, que los únicos métodos que puede usar son usar el tipo
+
+17:21.500 --> 17:25.180
+`Camion` son los de los sobrescritos.
+
+17:25.180 --> 17:28.740
+No, si yo hago upcasting, si yo hago upcasting,
+
+17:28.740 --> 17:31.100
+lo única visibilidad que tengo, no,
+
+17:31.100 --> 17:34.340
+puedo usar todos los métodos de vehículos que tengo acá.
+
+17:34.340 --> 17:36.820
+Pero si yo sobrescribí, si yo sobrescribí,
+
+17:36.820 --> 17:38.820
+voy a venir a usar todos los de camión.
+
+17:38.820 --> 17:42.020
+Nunca como yo hice un upcasting, pero esto, bueno,
+
+17:42.020 --> 17:44.980
+vamos a ver cuándo es necesario o útil el upcasting.
+
+17:44.980 --> 17:49.460
+Como yo hice un upcasting, yo voy a disponer de todos esos
+
+17:49.460 --> 17:50.020
+métodos.
+
+17:50.060 --> 17:52.740
+Los únicos que no voy a ver, exacto, `cargaMaxima`.
+
+17:52.740 --> 17:55.860
+Porque, por ejemplo, `getCargaMaxima()` no lo puede usar.
+
+17:55.860 --> 17:57.900
+Exacto, Federico, ese no lo podría usar.
+
+17:57.900 --> 17:59.260
+Bien.
+
+17:59.260 --> 18:02.540
+No entiendo, ¿no habría un error si detalles quisiera retornar
+
+18:02.540 --> 18:04.620
+cosas propias de la clase `Camion`?
+
+18:04.620 --> 18:10.060
+No, porque el objeto recuerda que es un camión y va a retornar
+
+18:10.060 --> 18:11.340
+eso.
+
+18:11.340 --> 18:12.300
+Eso le da sentido.
+
+18:12.300 --> 18:16.620
+Ahora vamos a seguir las próximas diapos viendo esto.
+
+18:16.620 --> 18:19.340
+El objeto recuerda que es de tipo `Camion`, va,
+
+18:19.340 --> 18:21.380
+y tiene todas las instancias de tipo `Camion`.
+
+18:21.380 --> 18:25.260
+Lo que pasa es que el upcasting me estrecha estos métodos.
+
+18:25.260 --> 18:26.220
+¿Por qué?
+
+18:26.220 --> 18:31.740
+Supongo que yo tengo, voy a ver si puedo poner,
+
+18:31.740 --> 18:34.780
+ya voy a empezar a ver si puedo poner la pizarra,
+
+18:34.780 --> 18:37.380
+porque me siento con las manos atadas.
+
+18:37.380 --> 18:42.500
+A ver si pongo la..., les voy a hacer como un ejemplo, en la pizarra.
+
+18:42.500 --> 18:48.100
+A ver, es compartir, no.
+
+18:48.100 --> 18:51.300
+Es la, esta, acá.
+
+18:51.300 --> 18:54.780
+A ver, vamos a traer esto acá, que se vea eso.
+
+18:59.300 --> 19:01.180
+A ver si lo subo así un poco.
+
+19:04.500 --> 19:07.300
+Ahí, ahí creo que se ve bien la pizarra, ¿no?
+
+19:07.300 --> 19:10.660
+Ah, ahí, ahí la estaba subiendo y no veo, ahí.
+
+19:10.660 --> 19:13.660
+Bueno, ahí pueden maximizar la pizarra y ver la pizarra
+
+19:13.660 --> 19:15.060
+ustedes, ¿sí?
+
+19:15.060 --> 19:16.340
+Díganme si se ve bien.
+
+19:18.100 --> 19:27.660
+Bien, bueno, bueno, a ver.
+
+19:27.660 --> 19:30.980
+Suponganse que nosotros estábamos diciendo hoy que tenemos que
+
+19:30.980 --> 19:33.140
+hacer un sistema tipo para demotores.com,
+
+19:33.140 --> 19:36.700
+alguno de esos que vende autos, y tenemos esta jerarquía.
+
+19:36.700 --> 19:45.300
+Y tenemos un método que queremos imprimir, por ejemplo,
+
+19:45.300 --> 19:48.820
+toda la nómina de los autos que tenemos.
+
+19:48.820 --> 19:51.700
+Entonces, tenemos un método así, ¿no?
+
+19:51.700 --> 20:07.820
+Public, public, `public void imprimir(...)`,
+
+20:07.820 --> 20:11.100
+Yo quiero a este método mandarle que me vaya imprimiendo
+
+20:11.100 --> 20:13.420
+todos los vehículos.
+
+20:13.420 --> 20:20.500
+Entonces, yo pongo `(Vehiculo v)`, ¿sí?
+
+20:20.500 --> 20:24.740
+Tengo el método así y acá digo `v.imprimir()`,
+
+20:24.740 --> 20:29.220
+que es ese método que estamos viendo, ¿no?
+
+20:29.220 --> 20:32.020
+Entonces, tenemos un método `public void imprimir(Vehiculo v)`,
+
+20:32.020 --> 20:35.700
+y yo digo `v.imprimir()`, ¿sí?
+
+20:35.700 --> 20:38.900
+Bueno, ¿acá qué me puede venir?
+
+20:38.900 --> 20:41.420
+Un `Vehiculo` es raro que venga como parámetro porque
+
+20:41.420 --> 20:43.220
+`Vehiculo` es algo bastante abstracto.
+
+20:43.220 --> 20:47.340
+Pero sí puede ser que yo acá reciba una `Moto`.
+
+20:47.340 --> 20:49.740
+Puede ser que yo acá reciba un `Camion`,
+
+20:49.740 --> 20:52.100
+como estamos definiendo, ¿sí?
+
+20:52.100 --> 20:55.180
+Entonces, ¿qué pasa cuando yo recibo una `Moto` o un `Auto` o un
+
+20:55.180 --> 20:56.380
+`Camion`?
+
+20:56.380 --> 21:00.780
+Yo estoy mandando un objeto de la subclase, `Camion` y `Moto`,
+
+21:00.780 --> 21:03.660
+y en el parámetro lo recibo como un `Vehiculo`.
+
+21:03.660 --> 21:05.860
+Entonces, ¿qué se hace automáticamente?
+
+21:11.000 --> 21:13.000
+Fíjense acá, algo parecido a lo que está pasando acá.
+
+21:13.000 --> 21:15.620
+Decimos, `new Camion()` lo guardamos en algo de tipo vehículo.
+
+21:16.000 --> 21:17.220
+Se hace un upcasting.
+
+21:18.000 --> 21:19.000
+¿Sí?
+
+21:19.000 --> 21:20.100
+Bueno, acá lo mismo.
+
+21:20.100 --> 21:23.140
+Si yo a este método le puedo mandar para que imprima un
+
+21:23.140 --> 21:26.000
+`Camion` o una `Moto`, sí, porque una `Moto` y un `Camion` 
+
+21:26.000 --> 21:28.000
+es de tipo `Vehiculo`.
+
+21:28.000 --> 21:29.000
+Entonces, es válido.
+
+21:29.000 --> 21:34.000
+Cuando ese método recibe esos objetos, se hace un upcasting.
+
+21:34.000 --> 21:36.500
+Entonces, cuando yo acá digo `v.imprimir()`,
+
+21:38.000 --> 21:40.000
+¿qué `imprimir()` se hace?
+
+21:40.000 --> 21:43.000
+Si se haría siempre el `imprimir()` de `Vehiculo`,
+
+21:43.000 --> 21:46.000
+no tendría sentido la herencia y la sobrescritura.
+
+21:46.000 --> 21:49.420
+Acá lo interesante es que este objeto acá,
+
+21:50.420 --> 21:52.000
+recuerda de qué tipo es.
+
+21:52.000 --> 21:56.000
+Si yo mandé una `Moto`, va a ir a buscar el `imprimir()` a `Moto`.
+
+21:56.000 --> 22:01.000
+Si no está ahí, va y sube y ejecuta el `imprimir()` de `Vehiculo`.
+
+22:01.000 --> 22:04.300
+Pero como es una `Moto`, y está sobrescrito y ejecuta el
+
+22:04.300 --> 22:05.860
+`imprimir()` de `Moto`.
+
+22:05.860 --> 22:07.420
+viene un `Camion` lo mismo.
+
+22:07.420 --> 22:11.100
+El tipo real del objeto receptor es un `Camion`.
+
+22:11.100 --> 22:14.980
+Entonces, va a ir a imprimir el método sobrescrito en `Camion`.
+
+22:14.980 --> 22:16.300
+¿Sí?
+
+22:16.300 --> 22:18.780
+¿Cómo es este método?
+
+22:18.780 --> 22:21.980
+O sea, este método tiene distintas formas.
+
+22:21.980 --> 22:23.300
+Entonces, ¿cómo es este método?
+
+22:23.300 --> 22:24.740
+Es polimórfico.
+
+22:24.740 --> 22:26.820
+Esto es polimorfismo.
+
+22:26.860 --> 22:29.380
+Yo tengo en una jerarquía de clases,
+
+22:29.380 --> 22:32.380
+muchas veces sobrescrito el método `imprimir()`,
+
+22:32.380 --> 22:36.180
+que se va a ejecutar dependiendo del tipo real del objeto
+
+22:36.180 --> 22:37.140
+receptor.
+
+22:37.140 --> 22:41.140
+Acá se hace un binding o un engancho, un binding dinámico.
+
+22:41.140 --> 22:42.260
+¿Se dice dinámico por qué?
+
+22:42.260 --> 22:45.620
+Porque cuando se ejecuta el programa se sabe realmente el
+
+22:45.620 --> 22:47.500
+objeto, este receptor.
+
+22:47.500 --> 22:52.180
+Entonces, va a ir a buscar el verdadero método.
+
+22:52.180 --> 22:54.180
+Si yo no tendría esta posibilidad,
+
+22:54.220 --> 22:56.060
+yo tendría que tener un `imprimir()` para `Moto`,
+
+22:56.060 --> 22:58.620
+un `imprimir()` para `Camion`
+
+22:58.620 --> 23:01.780
+Y yo, si hago crecer esa jerarquía, tengo que crear otro método
+
+23:01.780 --> 23:02.820
+`imprimir()`.
+
+23:02.820 --> 23:06.980
+A mí esto ya me sirve para imprimir cualquier objeto de
+
+23:06.980 --> 23:09.620
+tipo `Vehiculo` y sus subclases.
+
+23:09.620 --> 23:11.100
+¿Se entiende?
+
+23:11.100 --> 23:13.780
+Acá el polimorfismo.
+
+23:13.780 --> 23:15.340
+Sí lo vieron el año pasado.
+
+23:15.340 --> 23:16.860
+¿Lo pueden asociar con eso?
+
+23:21.500 --> 23:25.820
+Esto después también tiene sentido con interfaces.
+
+23:25.820 --> 23:27.540
+Vamos a ver que cuando creamos interfaces,
+
+23:27.540 --> 23:32.300
+las interfaces también nos permiten potenciar o utilizar el
+
+23:32.300 --> 23:35.000
+polimorfismo de algo parecido a esta manera.
+
+23:35.000 --> 23:39.00
+Dice, ¿qué diferencia hay entre eso y qué `Vehiculo` tenga una
+
+23:39.000 --> 23:41.000
+clase abstracta?
+
+23:41.020 --> 23:44.940
+¿Sea una clase abstracta, Nicolás?
+
+23:44.940 --> 23:45.340
+No.
+
+23:45.340 --> 23:47.420
+Es una candidata a ser abstracta.
+
+23:47.740 --> 23:51.580
+Es muy probable que uno como diseñador quiera la clase
+
+23:51.580 --> 23:56.540
+`Vehiculo` sobre la abstracta para evitar que se creen
+
+23:56.540 --> 23:57.500
+instancias de ese objeto.
+
+23:57.500 --> 23:59.060
+Pero eso depende del diseño.
+
+23:59.060 --> 24:03:030
+Si yo digo, nunca quiero que se creen objetos `Vehiculo` porque
+
+24:03:030 --> 24:04.180
+es muy abstracto y a mí no me sirve,
+
+24:04.180 --> 24:07.100
+entonces la pones abstracta y listo.
+
+24:07.100 --> 24:10.700
+Y ponés concretas solo las clases que vos querés que se hagan `new`.
+
+24:13.780 --> 24:16.740
+Nicolás, yo te quiero preguntar, ¿y qué diferencia hay entre qué
+
+24:16.740 --> 24:22.060
+`Vehiculo` tenga una clase, el método abstracto, quise decir?
+
+24:22.060 --> 24:25.140
+Sí, también lo puedes poner como método abstracto.
+
+24:25.140 --> 24:27.740
+Sí, sí, sí, estaría bien.
+
+24:27.740 --> 24:29.460
+Podrían ser abstractos, no hay problema acá.
+
+24:29.460 --> 24:32.460
+Por ahí lo que les quiero mostrar es la sobrescritura.
+
+24:32.460 --> 24:35.980
+Puede que sea abstracto el de arriba y la clase abstracta.
+
+24:35.980 --> 24:38.940
+Pero como para que veas que tiene sentido la
+
+24:38.940 --> 24:41.460
+sobrescritura y por qué el upcasting.
+
+24:41.460 --> 24:43.220
+Y por qué el upcasting es seguro, ¿no?
+
+24:43.220 --> 24:46.100
+Como que acá también les quiero mostrar.
+
+24:46.100 --> 24:48.940
+El upcasting es seguro, yo no tengo que decir,
+
+24:48.940 --> 24:50.660
+¿puedo una `Moto`, guardarla en un vehículo?
+
+24:50.660 --> 24:52.140
+¿Puedo un `Camion`, guardarla en un vehículo?
+
+24:52.140 --> 24:53.620
+No, porque siempre lo puedo guardar.
+
+24:53.620 --> 24:55.580
+Por eso es que se hace automáticamente.
+
+24:55.580 --> 24:57.460
+Yo no le digo nada a Java acá, le digo,
+
+24:57.460 --> 24:59.460
+`new Camion()`, guardámelo en vehículo.
+
+24:59.460 --> 25:03.180
+O yo tengo un parámetro acá, `Vehiculo` y le mando una `Moto` y
+
+25:03.180 --> 25:05.460
+un `Camion`, eso funciona.
+
+25:05.460 --> 25:10.420
+Entonces, esto sería, volviendo a este dibujito, el upcasting.
+
+25:10.420 --> 25:11.340
+¿Se entiende el upcasting?
+
+25:11.340 --> 25:14.060
+El upcasting es seguro, no hay ningún problema,
+
+25:14.060 --> 25:16.820
+porque todas las subclases son del tipo de la superclase.
+
+25:16.820 --> 25:21.060
+Entonces, no tenemos problemas en guardarla.
+
+25:21.060 --> 25:27.500
+Ahora, el downcasting, que es para abajo, no es tan,
+
+25:27.500 --> 25:28.780
+ah, no tengo más ejemplo.
+
+25:28.780 --> 25:30.300
+Pensé que tenía un ejemplo acá.
+
+25:30.300 --> 25:31.860
+No, acá ya empiezo con esto.
+
+25:31.860 --> 25:32.500
+No.
+
+25:32.500 --> 25:35.060
+Ah, bueno, el downcasting, ahora se los explico en la pizarra
+
+25:35.060 --> 25:35.560
+entonces.
+
+25:36.000 --> 25:46.440
+Es diferente, porque supónganse que yo quiero decir, digo,
+
+25:46.440 --> 25:51.480
+por ejemplo, bueno, solamente, solamente para el caso de que
+
+25:51.480 --> 25:54.680
+acá me venga, porque acá también me puede venir un `Auto`,
+
+25:54.680 --> 25:55.400
+no sé.
+
+25:55.400 --> 25:58.280
+Solamente para el caso que a mí me venga un `Camion` como
+
+25:58.280 --> 26:02.280
+parámetro, yo quiero imprimir la `cargaMaxima`.
+
+26:02.280 --> 26:05.440
+Entonces, ahí es donde uso el downcasting.
+
+26:05.440 --> 26:07.080
+Para mostrarles el downcasting.
+
+26:07.080 --> 26:17.960
+Yo no puedo decir acá `v` punto, no, no puedo decir acá, por ejemplo,
+
+26:17.960 --> 26:33.440
+system, `System.out.print(v.getCargaMaxima());`, ¿sí?
+
+26:33.480 --> 26:37.520
+Bueno, ¿por qué no puedo decir `v.getCargaMaxima()`?
+
+26:37.520 --> 26:41.720
+Porque `v` es de tipo `Vehiculo` y `getCargaMaxima()` es de `Camion`.
+
+26:41.720 --> 26:46.440
+Entonces, esto no lo ve a ese método.
+
+26:46.440 --> 26:50.080
+Pero yo podría decir, por ejemplo, bueno,
+
+26:50.080 --> 26:57.000
+esta variable `v` yo la guardo en algo de tipo `Camion`.
+
+26:57.000 --> 27:00.480
+Yo digo, declaro una variable `Camion`, `c`,
+
+27:00.520 --> 27:05.200
+y la guardo en algo de tipo `Camion`, a `v`, ¿sí?
+
+27:05.200 --> 27:08.360
+Pero yo no puedo a `v` guardarla en algo de tipo `Camion`,
+
+27:08.360 --> 27:11.040
+porque `v` es un `Vehiculo`.
+
+27:11.040 --> 27:14.120
+Y no todos los `Vehiculo` son `Camion`, ¿se entiende?
+
+27:14.120 --> 27:16.680
+Puede ser que `v` sea una `Moto` o un `Auto`.
+
+27:16.680 --> 27:20.320
+Entonces, yo no puedo guardar una `Moto` o un `Auto` en un `Camion`.
+
+27:20.320 --> 27:22.040
+Entonces, ¿cómo tengo que hacer yo?
+
+27:22.040 --> 27:24.200
+Bueno, ahí es lo que se llama downcasting.
+
+27:24.200 --> 27:30.200
+Yo hago un casting así específico a `Camion`, ¿sí?
+
+27:30.200 --> 27:32.160
+Eso es lo que se llama downcasting.
+
+27:32.160 --> 27:35.120
+Yo digo, a la variable `v`, que es de tipo `Vehiculo`,
+
+27:35.120 --> 27:36.920
+yo en algún momento le mandé un `Camion`.
+
+27:36.920 --> 27:38.600
+Ese objeto recuerda que es un `Camion`.
+
+27:38.600 --> 27:40.680
+Entonces, yo hago un downcasting a `Camion`.
+
+27:40.680 --> 27:42.920
+Pero no todo `v` es un `Camion`.
+
+27:42.920 --> 27:45.560
+Entonces, para yo hacer el downcasting,
+
+27:45.560 --> 27:48.480
+tengo que saber si ese objeto es un `Camion`.
+
+27:48.480 --> 27:48.920
+¿Por qué?
+
+27:48.920 --> 27:50.680
+Porque el downcasting no es seguro.
+
+27:50.680 --> 27:54.200
+Yo no estoy segura que todos los `v` sean camiones para hacer
+
+27:54.200 --> 27:55.440
+esto.
+
+27:55.440 --> 27:58.360
+El upcasting es seguro, el downcasting no es seguro.
+
+27:58.360 --> 28:01.280
+Entonces, acá yo tendría que agregar,
+
+28:01.280 --> 28:09.960
+preguntar, decir, `if (v instanceof Camion)`,
+
+28:09.960 --> 28:14.200
+si es `instance of` `Camion`, entonces,
+
+28:14.200 --> 28:19.520
+en ese caso, yo sí la guardo en algo de tipo camión y ahí sí
+
+28:19.520 --> 28:24.920
+puedo imprimir la carga máxima.
+
+28:24.920 --> 28:27.000
+¿Se entiende?
+
+28:27.000 --> 28:32.440
+Entonces, el upcasting, el upcasting es seguro.
+
+28:32.440 --> 28:37.800
+Acá me vienen objetos de las subclases y yo lo recibo acá
+
+28:37.800 --> 28:39.160
+como algo de la superclase.
+
+28:39.160 --> 28:42.120
+El upcasting es seguro porque todos esos objetos son de ese
+
+28:42.120 --> 28:42.640
+tipo.
+
+28:42.640 --> 28:46.480
+Ahora, si yo quiero un objeto de la superclase,
+
+28:46.480 --> 28:50.280
+verlo como algo de la subclase, tengo que estar seguro que ese
+
+28:50.280 --> 28:52.320
+objeto es de ese tipo.
+
+28:52.320 --> 28:54.680
+Y ahí es donde entra a jugar acá esto,
+
+28:54.720 --> 28:57.640
+que este es el downcasting.
+
+28:57.640 --> 29:02.800
+Este es el downcasting y este es el upcasting.
+
+29:06.760 --> 29:09.600
+Upcasting y Downcasting.
+
+29:09.600 --> 29:13.720
+Bueno, esto del `instanceof` no es algo que se use con
+
+29:13.720 --> 29:19.680
+frecuencia porque, en realidad, 
+
+29:19.680 --> 29:20.480
+no está bueno en la Programación orientada a objetos
+
+29:20.480 --> 29:25.000
+andar preguntando al objeto ¿y vos de qué clase sos?.
+
+29:25.000 --> 29:28.320
+Está bueno directamente que eso sea automático.
+
+29:28.320 --> 29:32.160
+Pero hay ciertas situaciones en donde es necesario y ahora
+
+29:32.160 --> 29:35.080
+vamos a ver con la sobrescritura de algunos métodos que eso a
+
+29:35.080 --> 29:37.600
+veces es necesario.
+
+29:37.600 --> 29:40.040
+Bueno, voy a leer a ver un poquito ahí lo que me están
+
+29:40.040 --> 29:41.840
+diciendo.
+
+29:41.840 --> 29:45.600
+Entonces, ¿el vehículo lo guarda en un objeto camión?
+
+29:45.600 --> 29:46.240
+Claro.
+
+29:46.320 --> 29:51.800
+El objeto, cuando uno hace un `new`, es de ese objeto el tipo.
+
+29:51.800 --> 29:54.480
+Es de ese tipo el objeto, no es de ese objeto el tipo.
+
+29:54.480 --> 29:56.440
+Es de ese tipo el objeto.
+
+29:56.440 --> 29:59.280
+Yo hago con `new Camion()`, aunque lo guarde ahí, es `Camion`.
+
+29:59.280 --> 30:01.720
+Siempre va a recordar que es un `Camion` y va a mantener su
+
+30:01.720 --> 30:03.960
+estado y su comportamiento.
+
+30:03.960 --> 30:07.160
+Pero al yo guardarlo en una variable de tipo `Vehiculo`,
+
+30:07.160 --> 30:09.160
+se hace ese upcasting.
+
+30:09.160 --> 30:12.160
+Se estrecha la visibilidad de los métodos.
+
+30:12.160 --> 30:14.160
+Y eso es lo que me permite en mi trabajar con el
+
+30:14.160 --> 30:17.560
+polimorfismo.
+
+30:17.560 --> 30:19.560
+Bueno, alguna preguntita más de esto.
+
+30:19.560 --> 30:23.920
+Vamos a seguir ahora un poquito, pero se entiende ahí en la
+
+30:23.920 --> 30:24.280
+pizarra.
+
+30:24.280 --> 30:26.000
+¿Alcanzan a ver bien si la agrandan?
+
+30:34.920 --> 30:37.240
+Estoy esperando que están escribiendo.
+
+30:37.240 --> 30:39.760
+Si quieren, el micrófono también lo pueden agarrar, chicos.
+
+30:42.160 --> 30:42.660
+Bueno.
+
+30:48.240 --> 30:49.560
+Se ve y se entendió.
+
+30:49.560 --> 30:51.520
+Bueno, genial.
+
+30:51.520 --> 30:54.720
+Para algo sirvió la pandemia.
+
+30:54.720 --> 30:55.800
+Bueno, seguimos.
+
+30:59.600 --> 31:01.360
+Bueno.
+
+31:01.360 --> 31:09.120
+Ustedes saben que la raíz de todos los objetos es `Object`.
+
+31:09.120 --> 31:16.280
+Bueno, en esa clase hay algunos métodos escritos de manera muy
+
+31:16.280 --> 31:24.960
+genérica, que son heredados por todas las clases.
+
+31:24.960 --> 31:29.160
+¿Se acuerdan de algún método que esté en la clase object?
+
+31:29.160 --> 31:32.440
+Por ahí ya ahora, sin mirar la diapo.
+
+31:32.440 --> 31:34.200
+Que lo hayan ustedes usado.
+
+31:34.200 --> 31:39.600
+El `toString()`, muy bien.
+
+31:39.600 --> 31:41.120
+Uno es el `toString()`.
+
+31:41.120 --> 31:45.320
+Este método lo implementa la clase `Object`.
+
+31:45.320 --> 31:48.320
+`toString()` y no tiene parámetros.
+
+31:48.320 --> 31:50.280
+Muy bien. ¿Cuál otro?
+
+31:50.280 --> 31:51.120
+El `equals()`.
+
+31:51.120 --> 31:51.640
+Muy bien.
+
+31:51.640 --> 31:54.160
+Que el `equals(...)`, fíjense cómo es la firma.
+
+31:54.160 --> 32:00.040
+Equals reciba algo de tipo `equals(Object o)`, ¿sí?
+
+32:00.040 --> 32:01.280
+¿Alguien más?
+
+32:01.280 --> 32:03.880
+`toString()`, `equals(Object o)`, son los que están ahí.
+
+32:03.880 --> 32:05.920
+Después tiene otros como, por ejemplo, el `clone()`.
+
+32:09.280 --> 32:10.680
+Son 10, 11 métodos.
+
+32:10.680 --> 32:13.960
+Pero, bueno, cuando uno crea una subclase,
+
+32:13.960 --> 32:17.320
+se suelen sobreescribir estos dos métodos.
+
+32:17.320 --> 32:19.720
+¿Por qué se suelen sobreescribir estos dos métodos?
+
+32:19.720 --> 32:22.720
+Porque la clase `Object`, a esa altura,
+
+32:22.720 --> 32:24.880
+no nos puede dar demasiada información.
+
+32:24.880 --> 32:28.000
+Porque no sabe nada de quiénes van a ser las subclases y qué
+
+32:28.000 --> 32:28.640
+información puede.
+
+32:28.640 --> 32:29.960
+No tiene acceso.
+
+32:29.960 --> 32:32.880
+Por lo que veíamos recién, este objeto conoce lo de él,
+
+32:32.880 --> 32:35.320
+pero no conoce lo de la subclase.
+
+32:35.320 --> 32:37.800
+Entonces, cuando uno crea una nueva clase,
+
+32:37.800 --> 32:41.160
+se suelen sobreescribir para que estos métodos nos den
+
+32:41.160 --> 32:44.040
+información útil de la subclase.
+
+32:44.040 --> 32:47.200
+Bueno, acá el otro que les dice es que cuando uno crea una
+
+32:47.200 --> 32:50.440
+clase, si no pone `extends`, directamente extiende de
+
+32:50.440 --> 32:51.000
+`Object`.
+
+32:51.000 --> 32:53.000
+En ese caso, como no pusimos el `extends`,
+
+32:53.000 --> 32:56.200
+estamos seguros que `Vehiculo` extiende desde acá.
+
+32:57.200 --> 32:57.700
+Bueno.
+
+33:01.080 --> 33:07.400
+Entonces, el método `equals(...)` lo que hace es me compara los
+
+33:07.400 --> 33:09.520
+contenidos de dos objetos.
+
+33:09.520 --> 33:14.400
+La versión, lo que pasa, que la versión original no tiene
+
+33:14.400 --> 33:16.880
+demasiado para comparar.
+
+33:16.880 --> 33:22.720
+Entonces, lo que me devuelve este método es `true` si las
+
+33:22.720 --> 33:25.240
+referencias a los objetos son iguales.
+
+33:25.240 --> 33:28.280
+Si las dos referencias son iguales,
+
+33:28.280 --> 33:31.840
+se apunta al mismo objeto en memoria, ahí me devuelve true.
+
+33:31.840 --> 33:37.200
+O sea, que sería lo mismo que el operador igual igual `==`.
+
+33:37.200 --> 33:42.240
+Y después, el método `toString()`, lo que me retorna es un
+
+33:42.240 --> 33:48.480
+`String` que tiene el nombre de la clase, arroba y una dirección
+
+33:48.480 --> 33:51.760
+de memoria al objeto, que tampoco me sirve demasiado.
+
+33:51.760 --> 33:54.600
+Ninguno de esos dos me sirven demasiado.
+
+33:54.640 --> 33:56.440
+Acá hay un ejemplo que dice, por ejemplo,
+
+33:56.440 --> 34:00.440
+creamos una clase fecha que tiene día, mes y año.
+
+34:00.440 --> 34:03.960
+Y creamos dos instancias, `fecha1` y `fecha2`.
+
+34:03.960 --> 34:06.720
+`f1` y `f2` apuntan a esos objetos.
+
+34:06.720 --> 34:10.760
+¿Por qué tengo esta barra que no la puedo sacar de acá?
+
+34:13.880 --> 34:15.600
+Me molesta, no me deja verlo.
+
+34:18.120 --> 34:18.620
+Bueno.
+
+34:21.120 --> 34:22.920
+Esos dos objetos son exactamente igual,
+
+34:22.920 --> 34:27.920
+porque fíjense que va a tener día 1, mes 1 y año 2007.
+
+34:27.920 --> 34:30.360
+O sea, que esos objetos son idénticos.
+
+34:30.360 --> 34:35.680
+Sin embargo, si nosotros decimos `f1.equals(f2)` nos da `false`.
+
+34:35.680 --> 34:36.040
+¿Por qué?
+
+34:36.040 --> 34:39.080
+Porque el equals heredado de `Object` me dice,
+
+34:39.080 --> 34:40.920
+las direcciones de memoria son iguales, no.
+
+34:40.920 --> 34:42.920
+Entonces, da `false`.
+
+34:42.920 --> 34:45.640
+`f1 == f2`, `false`.
+
+34:45.640 --> 34:46.880
+Por eso me da así el equals.
+
+34:46.880 --> 34:50.760
+Y `f1.toString()`, fecha, arroba y una dirección.
+
+34:50.800 --> 34:55.480
+Entonces, como vemos, estos métodos heredados de `Object` no
+
+34:55.480 --> 34:59.640
+nos dan ninguna funcionalidad, por lo que se suelen sobrescribir.
+
+35:02.760 --> 35:04.680
+Bueno, entonces.
+
+35:04.680 --> 35:07.400
+Acá tenemos la clase fecha, que es bien sencilla,
+
+35:07.400 --> 35:10.280
+para que nosotros podamos ver cómo se sobrescriben.
+
+35:10.280 --> 35:13.000
+No sé si lo llegaron a sobrescribir el año pasado
+
+35:13.000 --> 35:13.560
+ustedes.
+
+35:13.560 --> 35:14.060
+No.
+
+35:14.060 --> 35:21.560
+Bueno.
+
+35:21.560 --> 35:26.680
+Entonces, vamos a ver acá.
+
+35:26.680 --> 35:31.480
+Suponganse que queremos hacer de la clase fecha esa el método
+
+35:31.480 --> 35:33.600
+`equals(...)` y `toString()`.
+
+35:33.600 --> 35:38.000
+Entonces, los métodos `equals(...)` son casi todos y casi en todas las
+
+35:38.000 --> 35:39.000
+clases muy parecidos.
+
+35:39.000 --> 35:42.840
+Por eso es que uno lo vea una vez y son parecidos.
+
+35:43.000 --> 35:52.560
+Supongamos que nosotros tenemos como dice ahí, `Fecha f1, f2`.
+
+35:52.800 --> 36:04.000
+Después tenemos, `f2 = `, `Fecha f1, f2, f3`, vamos a poner. Después decimos
+
+36:04.540 --> 36:20.020
+`f2 = new Fecha()`, `f3 = new Fecha()` y vamos a tener `Auto a = new Auto()`,
+
+36:20.020 --> 36:29.620
+Bueno, para nosotros empezar a hacer el método `equals(...)`, tenemos la firma `public`,
+
+36:29.620 --> 36:41.380
+el `public boolean equals(...)` y para sobreescribir el método del padre yo
+
+36:41.380 --> 36:48.620
+tengo que poner un `Object o`, porque así es la firma del método equals, recibo un `Object`,
+
+36:48.620 --> 36:59.460
+`public boolean equals(Object o)`. Bueno, cuando yo voy a comparar, yo tengo la clase fecha y yo
+
+36:59.460 --> 37:09.060
+quiero comparar dos fechas, entonces, ¿cómo digo? yo digo `if f1`, vamos a poner `f2`, vamos a poner
+
+37:09.060 --> 37:24.900
+esta `f1` y `f2`, yo digo `if f1`, `f1` que es una `Fecha`, `f1.equals(f3)` por ejemplo,
+
+37:24.900 --> 37:35.140
+bueno, hago algo así, `if(f1.equals(f3))`, bueno, ¿qué pasa acá? ¿cómo es `f3`?
+
+37:39.020 --> 37:47.940
+Fíjense, ¿cómo es `f3`? Yo acá declararé `f1`, `f2`, `f3` de tipo `Fecha`, pero ¿qué tiene `f3`? ¿a qué apunta?
+
+37:47.940 --> 37:59.340
+A `null`, porque yo acargué `f1` y `f2`, o sea, si yo comparo `f1` con `f3`, ahí yo ya sé que eso me
+
+37:59.340 --> 38:04.660
+tiene que devolver falso, porque no tengo nada todavía en esa fecha, entonces, ese me devuelve
+
+38:04.660 --> 38:13.180
+falso, si yo acá pongo, por ejemplo, `f1` que es una `Fecha` `equals(...)` y le pongo `a` de `Auto`, o sea,
+
+38:13.180 --> 38:20.540
+es una instancia de otro tipo, o sea que ahí también ya eso es falso, entonces, lo primero
+
+38:20.540 --> 38:25.300
+que yo tengo que chequear cuando empiezo a implementar el `equals(...)` es eso, yo lo que tengo
+
+38:25.300 --> 38:37.420
+que preguntar es `if` este `o` que viene acá es distinto de `null`, eso es una de las cosas que
+
+38:37.420 --> 38:45.380
+tengo que preguntar, y es distinto de `null`, y además, ¿es una instancia de `Fecha`? Entonces
+
+38:45.380 --> 38:53.980
+hago y, ese `o`, ¿es `instanceof Fecha`? Que ahí lo vimos que me dice si es un objeto de `Fecha`,
+
+38:55.660 --> 39:02.980
+entonces, si `if (o != null) && (o instanceof Fecha)`, ahí me interesa, si no ahí ya no hago
+
+39:02.980 --> 39:09.820
+nada, si no, no entro a este if y ya retorno el falso, dice ahí en el programa, digo `result` es
+
+39:09.820 --> 39:15.300
+igual a falso, si o es distinto de `null` y es una instancia de `Fecha`, solo ahí me interesa, si a
+
+39:15.300 --> 39:20.620
+mí me, yo tengo que comparar fecha con otra cosa, o es nulo, ya retorno el resultado que es falso.
+
+39:22.540 --> 39:28.540
+Y yo acá ¿por qué pregunto `instanceof Fecha`? Porque yo acá, ahora supónganse que ahora sí mando
+
+39:28.540 --> 39:38.300
+`f1` y `f2`, `f1` y `f2`, y ahí sí esos objetos, o sea, esto es una `Fecha` y estos son objetos de tipo `Fecha`,
+
+39:39.620 --> 39:44.380
+y esos son objetos de tipo `Fecha`, entonces ahí sí puedo hacer la comparación, `f1` y `f2`,
+
+39:44.380 --> 39:51.100
+pero ¿qué pasa? Yo acá, este es el parámetro del `equals(...)`, yo estoy mandando una `Fecha`, pero ¿cómo
+
+39:51.100 --> 39:58.660
+lo recibo acá? Yo estoy mandando una `Fecha` ahí cuando estoy comparando, pero ¿qué recibo?
+
+39:59.580 --> 40:00.780
+¿Cuando lo recibo qué es?
+
+40:06.300 --> 40:11.060
+Un objeto, algo genérico, exactamente, ¿qué se hizo ahí?
+
+40:12.380 --> 40:19.180
+Mandé una fecha pero me hizo un upcasting, exactamente, exactamente, entonces, como es
+
+40:20.140 --> 40:25.140
+un `Object`, ¿le puedo decir qué día, qué mes y qué año para compararse las dos fechas son iguales?
+
+40:25.980 --> 40:33.180
+¿Le podría decir a lo qué día, qué mes y qué año? No, exactamente, tenemos que recuperar su tipo,
+
+40:33.180 --> 40:39.500
+exactamente, yo sé que acá en este caso le mandé una fecha, entonces como recibo un `Object` se me
+
+40:39.500 --> 40:45.140
+hizo upcasting, entonces ahí, yo lo que tengo que hacer, yo como yo sé que es una instancia de fecha,
+
+40:45.140 --> 40:53.900
+bueno, entonces ahora digo `Fecha x` es igual a eso, que vino por parámetro, lo casteo, le hago un
+
+40:53.900 --> 41:03.100
+downcasting a fecha, le hago un downcasting a fecha y ahora ya está, ahora ya tengo este x que
+
+41:03.100 --> 41:08.620
+es el objeto con el que tengo que comparar y después tengo el `this`, ¿quién es el `this`? Este,
+
+41:08.620 --> 41:13.460
+porque yo tengo `f1`, va a ser el `this`, y cual es `f2`, este es el que viene como parámetro, entonces
+
+41:13.460 --> 41:21.060
+tengo el `this` que es `f1` y ya tengo el `x`, `o` es `f2` que es el que viene como parámetro, entonces ahora sí,
+
+41:21.060 --> 41:35.900
+ya pregunto, si, ahora ya pregunto, if `this.dia == x.día` y
+
+41:35.900 --> 41:40.700
+`this.mes == x.mes` y `this.año == x.año`, entonces ahí en resultado pongo `true`,
+
+41:43.460 --> 41:52.340
+y devuelvo eso. Fíjense que el método `equals(...)` es casi igual para todas las clases, porque uno
+
+41:52.340 --> 41:58.180
+siempre tiene que hacer lo mismo, recibo como se me hace un upcasting a `Object`, lo primero que
+
+41:58.180 --> 42:02.220
+tengo que ver es que no se `null`, que sea de la clase para la cual estoy sobrescribiendo el `equals(...)`,
+
+42:02.220 --> 42:08.820
+lo casteo y después comparo lo que quiera, por ejemplo, si yo quisiera hacer el `equals(...)` de `Vehiculo`,
+
+42:08.820 --> 42:13.460
+tendría que ser lo mismo, diría acá si o es `instanceof Vehiculo`, que lo casteo a `Vehiculo` y
+
+42:13.460 --> 42:24.260
+después pregunto si `f.patente == this.patente` y si `f.titular == this.titular` y todo
+
+42:24.260 --> 42:28.820
+lo que yo quiera comparar para determinar que dos vehículos sean iguales, y es lo mismo y retorno
+
+42:28.820 --> 42:40.620
+true o false. Entonces, en este caso, si nosotros después decimos `f1.equals(f2)`, ahora sí nos va a
+
+42:40.620 --> 42:48.980
+dar true, porque ya sobrescribimos el método y se fija contenido, no referencias de objetos.
+
+42:48.980 --> 42:54.580
+Y después está el `toString()`, que es mucho más sencillo, que nosotros lo que tenemos que hacer es
+
+42:54.580 --> 43:00.660
+devolver un string que muestre información del objeto actual, entonces devolvemos `this.getDia()`
+
+43:00.660 --> 43:06.380
+concatenada con rayita, con `this.getMes()`, concatenada con rayita, con `this.getAño()` y nos muestra
+
+43:06.380 --> 43:14.500
+esto en vez de esa información que nos mostraba hoy. En vez de mostrarnos esto y el `equals(...)` nos daba
+
+43:14.500 --> 43:22.380
+falso, una vez que sobrescribimos el `equals(...)` y el `toString()`, ya nos da `true` y nos da un `String` que
+
+43:22.380 --> 43:28.340
+nos muestra datos del objeto. Bueno, a ver, estoy esperando ahí que están algunos escribiendo para
+
+43:28.340 --> 43:35.060
+leer. ¿Puede hacer algo similar para métodos de comparación de ciertos valores en particular,
+
+43:35.060 --> 43:40.260
+como por ejemplo comparar contraseñas con L en lugar de todo el objeto?
+
+43:40.260 --> 43:51.260
+Sí, o sea, vos querés comparar los contraseñas, decís de, por ejemplo,
+
+43:53.140 --> 43:58.300
+lo que pasa es que si vos tenés la clase `Contraseña`, haces el `equals(...)` en `Contraseña` y listo,
+
+43:58.300 --> 44:03.860
+yo después decís si una `contraseña.equals(otraContraseña)`. Las contraseñas, igual,
+
+44:03.860 --> 44:08.420
+cuando me dijiste contraseña pensé en algún algoritmo de encriptado y eso,
+
+44:08.420 --> 44:15.540
+que por ahí tendrías que desencriptar y compararlas si son iguales. Pero sí,
+
+44:15.540 --> 44:23.180
+esto lo que te compara es contenidos de objetos y queda a criterio del programador que el `equals(...)`
+
+44:23.180 --> 44:28.380
+funciona o no, porque si yo acá por ejemplo comparo que el mes y el año sean iguales,
+
+44:28.380 --> 44:32.380
+pero no comparé el día, me puede dar que dos días son iguales y está mal. O sea,
+
+44:32.380 --> 44:39.340
+la lógica siempre la tiene que poner el programador. Ahí estoy esperando,
+
+44:39.340 --> 44:46.020
+Nicolás dice: No, no, digo, un valor. Puede ser comparar nombre o algo así o comparar día?
+
+44:49.700 --> 44:56.620
+Ah, que vos le pongas un método a la clase. Sí, lo que pasa que después vos tenés que,
+
+44:56.620 --> 45:00.980
+vos me decís, esto en vez de que se llame `equals(...)`, que se llame `compararFechas()`.
+
+45:03.380 --> 45:08.380
+O me estás diciendo un atributo. Y lo que pasa, si vos le ponés `compararFechas()`,
+
+45:08.380 --> 45:13.740
+sí, te van a dar bien. Pero el equals es un método dedicado de `Object` y se usa muchísimo
+
+45:13.740 --> 45:19.460
+y lo usan algoritmos de Java y todo. O sea, el equals tiene una connotación también semántica.
+
+45:19.460 --> 45:26.020
+Si yo digo que un objeto es `equals(...)` a otro, significa que sus contenidos son idénticos.
+
+45:26.020 --> 45:36.900
+No sé si te esté entendiendo el problema. La lógica la podés usar en cualquier lado de
+
+45:36.900 --> 45:48.340
+esa. De hecho, hay clases. Si yo, por ejemplo, digo, las clases wrapper, se acuerdan que vimos el otro día
+
+45:49.340 --> 46:02.180
+tienen sobrescrito el `equals(...)`. Entonces, si digo, por ejemplo, `Integer y1 = 10` y digo `Integer y2 = 10`
+
+46:02.180 --> 46:12.740
+si nosotros vemos estos objetos `y1`, `y2`, se acuerdan que son objetos diferentes. Si yo tengo dos `Integer`
+
+46:13.620 --> 46:27.700
+`y1` `y2`. Sin embargo, si yo digo `if y1.equals(y2)`, esto me da `true`. ¿Por qué me da `true`? Porque la
+
+46:27.700 --> 46:35.060
+clase íntiger sobreescribió el método `equals(...)`. Entonces compara los contenidos. Esto me da `true`.
+
+46:35.060 --> 46:42.820
+Lo mismo, los `String`. Vieron la clase `String`? También sobreescribió el `equals(...)`.
+
+46:46.420 --> 46:51.100
+En el método `equals(...)` usas `o`. ¿Qué hace eso?
+
+46:55.580 --> 47:03.020
+¿`o` es el objetito distinto de `null`? Ahí lo que pregunto es si `o`, que es el objeto `o`,
+
+47:03.020 --> 47:14.820
+es distinto de `null`. Si no es nulo. El signo, este es el símbolo. Por ahí está medio pegado esto.
+
+47:14.820 --> 47:19.980
+Si el objeto, el parámetro, es distinto de null. Tenés igual `==` y distinto `!=`.
+
+47:23.980 --> 47:28.660
+Entonces, ahí por eso pronto sí o el `Object o` es el que viene acá como parámetro, el azul,
+
+47:28.660 --> 47:36.700
+`o` es distinto de null. Y `o` es instancia de `Fecha`. Este `&`, hay dos `&` en Java. Este que es 
+
+47:36.700 --> 47:43.860
+el simple `&` este `&&` que es el doble circuito se llama, que lo que hace es si esto me da falso, ya no sigue comparando.
+
+47:45.060 --> 47:49.860
+Por eso siempre que siempre se usa este, porque ya si esto te da falso, esto te va a dar todo falso.
+
+47:49.860 --> 47:55.980
+El circuito corto se llama. Una vez que encontré un falso, ya lo corto y sale.
+
+47:57.220 --> 48:02.020
+Bueno, se entiende entonces la idea de por qué sobreescribir el `equals(...)` si el todo `toString()`.
+
+48:07.700 --> 48:13.700
+Si quieren usar micrófono, chicos, se puede. ¿Por qué cuántos somos? 91. Estamos bastante
+
+48:13.700 --> 48:21.180
+completo. Acá es el turno, porque éramos 117. Si quieren usar micrófono, estamos bien.
+
+48:26.260 --> 48:29.300
+Cuando entramos, entramos solo para escuchar la mayoría.
+
+48:32.260 --> 48:38.900
+Y que no quieren hablar, me decís, ah, que cuando entras. Ah, pero creo que podés eso después
+
+48:38.900 --> 48:46.220
+cambiarlo. Si vos tocás el microfonito de abajo, no tengo un micrófono.
+
+48:53.460 --> 48:57.700
+Claro, lo que pueden hacer es entrar con micrófono. Bueno, no sé si va a haber más virtuales y después
+
+48:57.700 --> 49:01.940
+silenciarse. Así después pueden hablar cuando quieran. Claro, acá veo, por ejemplo, Azul <continuar>
+
+49:01.940 --> 49:06.180
+entró con micrófono. Solo Azul. Bueno, Azul, tenés que hablar vos.
+
+49:06.180 --> 49:17.100
+[Estudiante] Bueno, hola. Hola. Así no me siento tan sola acá. A ver qué dice Azul. Azul habla por todo. Dice,
+
+49:17.100 --> 49:21.260
+tocás en el auricular de abajo y seleccionás el micrófono. Sí, yo creo que se puede. Yo ahora
+
+49:21.260 --> 49:26.660
+como entré, no tengo el icono. Para que alguien me preguntó algo en el medio, tipo dato acá.
+
+49:26.660 --> 49:36.340
+Para ser más genérico en el if sería o instance of tipo dato. Claro, sí, sí, o instance of tipo
+
+49:36.340 --> 49:43.140
+dato. También hay un get class. Y se puede usar o instance of fecha y también se puede usar o
+
+49:43.140 --> 49:51.500
+punto get class. Creo que es o punto get class también se puede usar. Get class es igual a fecha,
+
+49:51.500 --> 49:59.580
+algo así. Pero sí, ahí lo que estás preguntando, si el objeto se casteó, se hizo up casting acá,
+
+49:59.580 --> 50:04.900
+pero fue creado como una fecha. Y ahí entonces tenés la posibilidad de hacer down casting acá.
+
+50:08.700 --> 50:18.260
+Bueno, estamos, chicos. Entonces, ¿entendió esto bien? ¿Te quedó claro, Joaquín?
+
+50:18.260 --> 50:24.580
+Como yo acá lo recibí, a pesar de que yo mandé una fecha en el equals acá abajo,
+
+50:24.580 --> 50:28.940
+mandé una fecha, se hizo up casting, por eso yo antes de hacer el down casting que no es seguro,
+
+50:28.940 --> 50:34.540
+tengo que preguntar si hay fecha. Lo mismo que hicimos en la pizarra con vehículo, no con camión.
+
+50:36.300 --> 50:43.020
+Bueno, sí, esto es un adiapo como para reforzarle abstractas, pero justamente hoy lo vimos un poco,
+
+50:43.020 --> 50:48.380
+que no todas las clases tienen que ser concretas y de hecho ya acá alguno, no me acuerdo quién fue,
+
+50:48.380 --> 50:53.940
+que dijo si la clase vehículo podía ser abstracta y sí, era una candidata a ser abstracta porque
+
+50:53.940 --> 51:00.700
+este, como hay veces que es bastante genérica, uno no quiere crear instancia de ahí, entonces la
+
+51:00.700 --> 51:07.460
+declara como abstracta. Lo que nos permite crear una clase abstracta es que no se habilita la
+
+51:07.460 --> 51:13.340
+creación de objetos. En este caso es otro, a ver, Federico, mano levantada.
+
+51:14.540 --> 51:21.980
+Hola, profe, ¿se me escucha? Sí, perfecto, buen hijo. Hay algún caso que creo que muy pocas veces o
+
+51:21.980 --> 51:30.780
+nunca vimos que la clase padre, una clase padre de la que un hijo hereda no sea abstracta. ¿Hay algún
+
+51:30.780 --> 51:40.780
+ejemplo, digamos? A ver, un hijo no abstracto, pero el padre, a ver, ¿cómo sería? Un padre que no
+
+51:40.780 --> 51:49.740
+sea abstracto. ¿De los ejemplos que venimos viendo? Un ejemplo nuevo, digo, porque creo que si todos
+
+51:49.740 --> 51:58.620
+los que vimos eran abstractos los padres. Ah, que no sea abstracto al revés. Claro, que no sea
+
+51:58.620 --> 52:10.700
+abstracto. Y suponete, vehículo ahí podría ser abstracto, pero lo que pasa que cuando, en general,
+
+52:10.700 --> 52:19.660
+cuando vos vas a armar una jerarquía, las que son concretas son las hojas. Entonces, por eso es raro, vos
+
+52:19.660 --> 52:27.860
+podrías, pero no sé si tiene sentido, suponete instrumento musical. Yo podría tener una
+
+52:27.860 --> 52:35.500
+subclase instrumento musical, instrumento musical. Después podría tener subclases acá que sean,
+
+52:35.500 --> 52:42.260
+no sé, instrumentos de viento, instrumento de cuerda, instrumentos de percusión.
+
+52:44.300 --> 52:54.740
+Después de viento yo tendría, no sé, saxo y flauta, de cuerda, guitarra. Claro, o sea, son muy pocos
+
+52:54.740 --> 53:00.580
+los casos en los que un padre no sea abstracto. Acá un compañero puso, por ejemplo, personas y
+
+53:00.580 --> 53:06.180
+empleados. Que puedo ser persona o puedo ser empleado. Y ahí sí creo que persona puede ser
+
+53:06.180 --> 53:13.460
+no abstracto, pero son muy pocos los casos. Y lo que pasa es que si yo tengo personas, depende para
+
+53:13.460 --> 53:22.180
+el dominio, porque si yo tengo persona, pero yo en persona tengo docente y alumno, esa persona,
+
+53:22.180 --> 53:26.860
+no sé si es concreta, porque yo digo, ¿qué es esa persona?, ¿ni una persona? Sí, me puede dar un
+
+53:26.860 --> 53:33.460
+DNI, un nombre, un apellido, pero por ahí no tengo información específica del estudiante, sus notas
+
+53:33.460 --> 53:41.340
+y demás, si es un estudiante. Entonces, ni esa persona, no sé si no es abstracta también, si
+
+53:41.340 --> 53:48.940
+tiene sus clases, alumnos, docentes y no docentes. Dale, listo, gracias. Sí, se entiende. Depende
+
+53:48.940 --> 53:57.020
+mucho del diseño. Ahora, si a mí en mi modelo, hay veces que a mí me interesa, no sé, tener la
+
+53:57.020 --> 54:02.660
+persona como concreta, a pesar de que tiene su clase, lo hago. Es más diseño que otra cosa eso.
+
+54:02.660 --> 54:08.540
+Y que depende del dominio de la aplicación. Si yo voy a necesitar crear distancias o no, las tengo
+
+54:08.540 --> 54:17.900
+que directamente editar. Dale. Acá hay un ejemplo que figura geométrica, que por ejemplo, supongo
+
+54:17.900 --> 54:22.180
+que es una figura geométrica que nosotros la queremos usar para dibujar en la pantalla,
+
+54:22.180 --> 54:29.660
+figuras geométricas. Entonces, yo podría decir que quiero dibujar triángulos, rectángulos, que
+
+54:29.660 --> 54:35.740
+podría, no sé, tener círculos. Entonces, todas esas figuras que tienen en común. Tienen en común,
+
+54:35.740 --> 54:44.300
+que tienen, no sé, un X y un Y a partir de donde se empiezan a dibujar o tienen un color. Entonces,
+
+54:44.300 --> 54:49.140
+todos esos datos, yo en la clase abstracta los podría tener un color, un X y a partir de donde
+
+54:49.140 --> 54:54.620
+se dibujan. Incluso podría tener métodos concretos. Por ejemplo, decir mover. ¿El mover qué es?
+
+54:54.620 --> 55:01.180
+Significa cambiarle el X y el Y y volver a dibujar. Entonces, si yo le cambio solamente el X y el Y,
+
+55:01.180 --> 55:08.660
+yo lo podría implementar acá. No tengo que esperar a hacerlo en las subclases. Ahora, si yo quiero
+
+55:08.660 --> 55:14.140
+saber el área de esa figura geométrica, imposible hacerlo acá porque no sé qué figura es. Si quiero
+
+55:14.140 --> 55:20.220
+dibujarla, imposible acá. Si quiero setearle un color, por ahí sí, porque le seteo un color y la mando
+
+55:20.220 --> 55:27.340
+a dibujar, aunque el dibujar sea abstracto. Entonces, esta es una candidata a hacer una clase abstracta.
+
+55:27.340 --> 55:34.940
+Esto creo que ya también lo vieron, se le pone abstracto adelante de la clase y los métodos que
+
+55:34.940 --> 55:40.660
+son abstractos, le pongo también la palabra abstract acá adelante y no va al cuerpo vacío acá, sino
+
+55:40.660 --> 55:47.300
+que va punto y coma. No tiene cuerpo. A veces también, si no se ponen abstractas y le ponen
+
+55:47.300 --> 55:53.020
+abrir y cerrar, si usted en vez del punto y coma le ponen así, esto significa que tiene cuerpo,
+
+55:53.020 --> 56:02.660
+está vacío. Pero el caso de abstractos es que no tiene cuerpo. Bueno, y después acá está un poco
+
+56:02.660 --> 56:06.900
+la definición de clases abstractas. Hoy tenemos bastante la clase larga, esto por ahí lo paso un
+
+56:06.900 --> 56:13.620
+poco rápido, pero la idea es eso, definir un concepto abstracto con el objetivo de que las
+
+56:13.620 --> 56:23.020
+subclases lo especialicen o lo implementen. Acá está el método abstracto así, con punto y coma y
+
+56:23.020 --> 56:28.780
+después como síntesis, qué decimos, si dentro de una clase se declara un método abstracto, sí o sí,
+
+56:28.780 --> 56:35.660
+ya la clase tiene que ser abstracta, pero puede tener un montón de métodos concretos. Una clase
+
+56:35.660 --> 56:39.020
+puede tener sus métodos abstractos, todos concretos, bueno, también, pero yo le pongo
+
+56:39.020 --> 56:44.820
+abstracto y la clase es abstracta, entonces lo que me evita es que sea un new de esa clase,
+
+56:44.820 --> 56:52.060
+a partir de esa clase. Y después acá hay como un ejemplito, la idea de la fibra geométrica es
+
+56:52.060 --> 56:57.260
+que se creen subclases, círculos, rectángulos, que extiendan de la abstracta y que le den
+
+56:57.260 --> 57:05.660
+comportamiento al método getaria y dibujar. ¿Se acuerdan esta anotación que es o para qué es el
+
+57:05.660 --> 57:26.620
+override? ¿Sobreescribe el método? Sobreescribe claro.
+
+57:27.380 --> 57:33.260
+Para implementar el método, claro. Si yo le saco este override, ¿sigue funcionando esto? Sí,
+
+57:33.260 --> 57:38.340
+sigue funcionando, pero no le estamos dando ninguna información al compilador de que estamos
+
+57:38.340 --> 57:42.900
+sobrescribiendo un método del padre. ¿Por qué es importante poner el override? Porque supongan
+
+57:42.900 --> 57:53.820
+ser que yo acá pongo public, voy, dibuja. En vez de dibujar, yo pongo dibuja. Si yo le pongo el
+
+57:53.820 --> 57:58.540
+override, el compilador me está diciendo, ojo, que estás queriendo sobreescribir el método del
+
+57:58.540 --> 58:03.740
+padre. Y no existe este método del padre. Si yo acá le pongo dibuja, me va a decir, no existe este
+
+58:03.740 --> 58:11.340
+método en la superclase. Entonces, es un chequeo para que el compilador chequee. Para nosotros,
+
+58:11.340 --> 58:16.420
+saber que estamos sobrescribiendo realmente un método del padre. Si yo pongo override,
+
+58:16.420 --> 58:22.180
+el compilador va a chequear que toda esta firma exista en la clase de fibra geométrica. Si no,
+
+58:22.580 --> 58:28.700
+me da un error de compilación. O sea, las anotaciones es un concepto más avanzado de Java,
+
+58:28.700 --> 58:33.180
+pero hay anotaciones de compilación o anotaciones de runtime. En este caso,
+
+58:33.180 --> 58:38.740
+son anotaciones de compilación. Le estoy diciendo al compilador, mira que estoy sobrescribiendo el
+
+58:38.740 --> 58:47.340
+método del padre. Si yo me equivoco, me avisa. Override va siempre en la superclase, ¿no? En la
+
+58:47.340 --> 58:52.500
+subclase. El override va en la subclase. Círculo, porque yo le estoy diciendo,
+
+58:52.500 --> 58:59.020
+estoy sobrescribiendo un método de la figura geométrica. Sí, de la figura geométrica o de
+
+58:59.020 --> 59:12.060
+alguna de la superclase. O del padre de figura geométrica. Bueno, este entonces era un repasito
+
+59:12.060 --> 59:19.940
+que quería darles de herencia a Clases Fractos. Y repasamos un poquitito polimorfismo, de paso.
+
+59:19.940 --> 59:25.340
+Bueno, si no quieren hacer ninguna, o si tienen alguna duda de esto,
+
+59:25.340 --> 59:29.980
+si no, hacemos un recreíto de 5 minutos y ya empezamos con la segunda parte.
+
+59:36.380 --> 59:37.180
+Estamos bien.
+
+59:37.180 --> 59:47.420
+Bueno, todo claro. Bueno, genial. Corto entonces un poquito.
+
+59:51.900 --> 01:00:00.500
+Bueno, acá estamos de vuelta. Si están todos, se arreglaron el mate. Arrancamos con esta parte.
+
+01:00:00.500 --> 01:00:12.020
+Bueno, en esta segunda parte ya vamos a ver las primeras estructuras de datos.
+
+01:00:12.020 --> 01:00:19.540
+Listas, pilas y colas. Decimos que son tipos de datos abstractos porque se definen en términos
+
+01:00:19.540 --> 01:00:24.060
+de sus operaciones, ¿no? Y después hay implementaciones de esas operaciones.
+
+01:00:25.060 --> 01:00:31.780
+Vamos a ver cómo implementar pilas y colas usando listas, pero para eso vamos a ver también un
+
+01:00:31.780 --> 01:00:36.660
+poco lo que es el framework de colecciones de Java, en particular el link del lice ArrayList.
+
+01:00:36.660 --> 01:00:42.940
+Al usar esto, el link del lice ArrayList, aparecen los tipos genéricos y finalmente
+
+01:00:42.940 --> 01:00:51.220
+veremos algo sintético de iteradores. Bueno, acá un poco dice eso, ¿no? Que un tipo de
+
+01:00:51.220 --> 01:00:57.020
+dato abstracto se define en términos de operaciones y las restricciones que tienen
+
+01:00:58.020 --> 01:01:03.580
+para implementar alguna estructura de datos. Nosotros acá en la materia, cuando hablamos
+
+01:01:03.580 --> 01:01:09.460
+de un TDA o un tipo de datos abstractos, son las clases o conjuntos de clases o interfaces
+
+01:01:09.460 --> 01:01:14.780
+o clases abstractas para las cuales luego se hace una implementación. Por ejemplo,
+
+01:01:14.780 --> 01:01:20.140
+como podemos decir, una lista es una clase abstracta que tiene un montón de operaciones,
+
+01:01:20.140 --> 01:01:24.580
+como agregar al principio, al final y todas las operaciones de listas y después hay dos clases
+
+01:01:24.580 --> 01:01:30.460
+concretas que implementan o extienden esa clase abstracta para darle comportamiento. En ese sentido,
+
+01:01:30.460 --> 01:01:36.220
+decimos el TDA sería la lista y después hay dos implementaciones concretas de ese TDA,
+
+01:01:36.220 --> 01:01:45.260
+listas implementadas con arreglos y listas con nodos enlazados, por ejemplo. Bueno.
+
+01:01:45.260 --> 01:01:54.460
+Se escucha bien, chicos, ¿no? Siento un silencio. No se pusieron algunos más en algún micrófono,
+
+01:01:54.460 --> 01:02:00.700
+solamente vos Azul, así que vos me contestas. Ah, y Federico, ¿se escucha bien? Bueno,
+
+01:02:00.700 --> 01:02:12.420
+porque se siente un silencio total. No sé. Bueno, la lista, bueno, es una de las estructuras de datos
+
+01:02:12.420 --> 01:02:17.980
+que ustedes vieron desde primer año, es una secuencia lineal de elementos que pueden manipularse
+
+01:02:17.980 --> 01:02:24.060
+libremente, es decir, uno puede agregar o eliminar elementos en cualquier lugar de la lista. Por
+
+01:02:24.060 --> 01:02:29.740
+ejemplo, si tenemos esta lista, yo podría venir y sacar la copa que está acá en la posición,
+
+01:02:29.740 --> 01:02:35.540
+si esta es 0-1 en la posición 2, insertar una al final, insertar una al principio. En realidad,
+
+01:02:35.540 --> 01:02:42.140
+las listas están preparadas para poder manipularlas libremente, recorrerlas desde el principio al
+
+01:02:42.140 --> 01:02:48.060
+próximo, al próximo, al próximo hasta el final y también las doblemente enlazadas nos permiten
+
+01:02:48.060 --> 01:02:54.700
+ir desde el último hacia adelante. Las listas pueden tener métodos diferentes. Ustedes puede
+
+01:02:54.700 --> 01:03:01.300
+ser que les dieron otros métodos en la lista que implementaron en Pascal, pero básicamente es lo
+
+01:03:01.300 --> 01:03:06.980
+mismo, ¿no? Es agregar un elemento, agregar un elemento en una posición particular, obtener el
+
+01:03:06.980 --> 01:03:13.180
+elemento de una posición particular, index of me devuelve el índice donde está la primera
+
+01:03:13.180 --> 01:03:18.860
+ocurrencia de un elemento E. Ah, tal vez falta index of, falta entre paréntesis L.E., ahí me
+
+01:03:18.860 --> 01:03:26.300
+he contado un error. Remove, eliminar el elemento de una posición, un elemento particular, le
+
+01:03:26.300 --> 01:03:32.420
+pasamos el objeto, que me devuelva true, false, existe o no y el tamaño. En general, todas las
+
+01:03:32.420 --> 01:03:42.500
+estructuras de datos tienen un size y tiene también si es empty o no, está vacío o no. Después esto
+
+01:03:42.500 --> 01:03:49.900
+sería la lista. Después tenemos la pila o también que nosotros le llamamos stack y que el otro día
+
+01:03:49.900 --> 01:03:55.140
+estuvimos trabajando con la stack cuando veíamos que se van creando, por ejemplo, diferentes
+
+01:03:55.140 --> 01:03:59.540
+variables, nombres de variables cuando se ejecutan los métodos en programación orientada a objetos.
+
+01:03:59.540 --> 01:04:07.380
+Bueno, ahí veíamos una pila que a medida que se ejecutaba un método, la pila es como que se
+
+01:04:07.380 --> 01:04:11.860
+iban apilando arriba las variables, terminaban métodos y se desapilaban las últimas apiladas.
+
+01:04:11.860 --> 01:04:17.620
+Bueno, entonces una pila es una secuencia lineal de objetos también, lineal, porque uno siempre va
+
+01:04:17.620 --> 01:04:27.780
+al lado del otro, que se actualiza solamente en un extremo que se llama tope. La pila también se dice
+
+01:04:27.780 --> 01:04:33.900
+que tiene una política LIFO, que es last in, first out, es decir, el último que entró es el
+
+01:04:33.900 --> 01:04:40.260
+primero en salir. Acá hay una pila de platos y se ve claramente si yo tengo que apilar otro
+
+01:04:40.260 --> 01:04:44.980
+plato, lo pongo arriba, arriba y si desapilo, desapilo lo último. Bueno, excepto que uno
+
+01:04:44.980 --> 01:04:51.740
+quiera hacerlo particularmente, pero eso es bastante ejemplificador de lo que es una pila.
+
+01:04:51.740 --> 01:04:58.860
+En la pila, cuando la implementemos, el TDA que le damos es esto, o sea, ¿cómo define una pila? Yo,
+
+01:04:58.860 --> 01:05:04.220
+bueno, el push, inserto un elemento en el tope de la pila, no tengo una manera de hacer un push en
+
+01:05:04.220 --> 01:05:10.140
+un elemento particular, es un push de este elemento, siempre va al tope de la pila. El pop,
+
+01:05:10.140 --> 01:05:14.860
+no puedo decir eliminar o get, como decimos en la lista, el de la posición 3 en la 4, no, es pop,
+
+01:05:14.860 --> 01:05:20.740
+elimino elemento del tope de la pila, el último plato que apilece, el que voy a devolver, porque
+
+01:05:20.740 --> 01:05:27.300
+esta es como, esta es el TDA, las restricciones que yo tengo en esta estructura de datos, o sea,
+
+01:05:27.300 --> 01:05:33.060
+en la lista puedo hacer cualquier cosa, en la pila no, en la pila el push viene acá y el pop
+
+01:05:33.060 --> 01:05:40.540
+saca lo último. Y SEMPTY me dice si la pila está vacía, tope me devuelve el último elemento pero
+
+01:05:40.540 --> 01:05:47.260
+no lo desapila, solamente me dice quién está arriba de todo. Y SAIS me retorna el elemento,
+
+01:05:47.260 --> 01:05:56.580
+un entero que me da la cantidad de elementos de la pila o stack. Y después tenemos la Q. Q es una
+
+01:05:56.580 --> 01:06:02.780
+cola, es una secuencia lineal también de elementos, por eso la pila y la cola, al igual que la lista,
+
+01:06:02.780 --> 01:06:12.380
+son secuencias, uno está al lado del otro. En este caso la secuencia se le denomina frente al que
+
+01:06:12.380 --> 01:06:19.540
+está por ser atendido, e IRRABO es el último elemento de la cola. Esta es una cola como uno
+
+01:06:19.540 --> 01:06:24.780
+va al supermercado y empieza a hacer cola para ser atendido por el cajero. El primero que llega es el
+
+01:06:24.780 --> 01:06:33.740
+primero atendido y el último es el último atendido. Los operaciones del TDA son en Q para
+
+01:06:33.740 --> 01:06:40.380
+encolar un elemento, siempre se encola ahí, iría atrás de este. De Q sería esta mujer atendida
+
+01:06:40.380 --> 01:06:47.260
+ella primero. GED es esta mujer que me dice quién va a ser atendido pero no lo elimina de la cola.
+
+01:06:47.260 --> 01:06:56.120
+Y SEMPTI SAIS es como todas las estructuras, está vacío y el tamaño. Estas estructuras no las
+
+01:06:56.120 --> 01:07:04.020
+dábamos pero como estuvimos viendo que ustedes no las vieron, hicimos esta teoría nueva. Para
+
+01:07:04.020 --> 01:07:12.500
+aplicar la herencia a esto pensamos nosotros en tener una super clase secuencia que es una clase
+
+01:07:12.500 --> 01:07:17.300
+abstracta que tiene SAIS y SEMPTI. Todas las estructuras de datos me devuelven el tamaño,
+
+01:07:17.300 --> 01:07:23.660
+la cantidad de elementos que tiene y me devuelve true-false si estaba así o no. Secuencia es una
+
+01:07:23.660 --> 01:07:32.140
+clase abstracta porque new-secuencia no me dice nada y entonces es una abstracta. Q es una clase
+
+01:07:32.620 --> 01:07:38.940
+concreta. Acá tenemos otro ejemplo, mira no me acuerdo quién me había preguntado,
+
+01:07:41.620 --> 01:07:48.260
+Federico creo. Acá tenemos una clase. La Q podría ser una clase concreta porque tiene un
+
+01:07:48.260 --> 01:07:57.420
+comportamiento común a las colas FIFO, sería first in first out. Entonces yo podría crear
+
+01:07:57.420 --> 01:08:03.220
+una cola y tengo todas las operaciones de cola perfectamente para manejar una cola. Pero después
+
+01:08:03.220 --> 01:08:09.220
+nosotros deseamos hacer la práctica para que practiquen un poquito herencia, que hagan dos
+
+01:08:09.220 --> 01:08:13.620
+colas nuevas. Esta se la damos nosotros implementar y estas colas tienen que hacer ustedes, que es una
+
+01:08:13.620 --> 01:08:22.380
+cola circular y una cola con doble, le llamamos double-ended Q como que tiene dos finales.
+
+01:08:22.580 --> 01:08:28.460
+Suponganse que queremos en esta cola decir bueno, esto se debe atender, ella llegó primero, se atiende
+
+01:08:28.460 --> 01:08:34.980
+ella, ella segundo, se atiende ella. Pero viene una persona con urgencia de ser atendida y entonces
+
+01:08:34.980 --> 01:08:42.180
+queremos encolarla al principio. Ese es un tipo especial de cola. O supongamos que esta en vez
+
+01:08:42.180 --> 01:08:47.100
+de ser así son jugadores de fútbol que están esperando por ir a patear un penal. Patean el penal
+
+01:08:47.100 --> 01:08:53.020
+y vuelven atrás. Patean el penal y vuelven. Entonces esa es una cola circular, es decir,
+
+01:08:53.020 --> 01:08:59.920
+es atendida o sale, patea el penal pero vuelve acá atrás para seguir jugando. Entonces eso
+
+01:08:59.920 --> 01:09:07.340
+le hacemos implementar dos tipos de colas más. La circular y la doble como con dos finales. No solo
+
+01:09:07.340 --> 01:09:13.900
+atrás sino que lo puedo por adelante también insertar un nuevo elemento. ¿Qué hace TD? Ah,
+
+01:09:13.900 --> 01:09:20.860
+bueno, eso es. Hoy vamos a ver también tipos de datos genéricos. Ahora lo que te digo es que,
+
+01:09:20.860 --> 01:09:27.980
+por ejemplo, en la cola yo voy a guardar elementos de tipo T. Pero no sé cuál va a ser. Cuando yo
+
+01:09:27.980 --> 01:09:34.700
+creo la estructura de datos, cuando defino o implemento la Q, yo digo en esta cola voy a
+
+01:09:34.700 --> 01:09:40.140
+guardar elementos de tipo T. Pero no sé si voy a guardar colas de vehículos, colas de personas,
+
+01:09:40.140 --> 01:09:46.780
+colas de animales. En el momento que yo creo una instancia de Q, ahí le voy a decir, bueno,
+
+01:09:46.780 --> 01:09:52.580
+en esta cola yo voy a guardar animales. Ahora después lo vamos a ver en detalle.
+
+01:09:53.660 --> 01:10:00.540
+Por el momento vamos a analizar esta herencia. Decidimos secuencia, cola y pila. Pusimos así.
+
+01:10:00.540 --> 01:10:07.140
+Dice, ¿podríamos implementar una lista? ¿En qué lugar se les parece? Yo acá no tengo list. Yo
+
+01:10:07.140 --> 01:10:13.060
+tengo cola y pila. ¿Dónde yo podría poner una list? ¿Qué les parece?
+
+01:10:17.340 --> 01:10:20.460
+¿Podría hacer list una subclass de secuencia?
+
+01:10:20.460 --> 01:10:41.020
+Sí, podría ser. Yo podría hacer que acá tener otra clase list, que sea subclass también de
+
+01:10:41.020 --> 01:10:50.180
+secuencia. ¿Qué les parece? Yo podría decir que list, tener a la lista,
+
+01:10:50.180 --> 01:10:56.540
+primero, y después que cola y pila sean subclasses de lista. ¿Qué les parece?
+
+01:10:59.180 --> 01:11:14.140
+O sea, tener lista. Yo podría decir acá, lista. Y decir acá tengo para rayista. Decir que esta
+
+01:11:14.140 --> 01:11:20.500
+es su clase de esta y esta, su clase, ahí. Otra de esta, a ver cómo es ahí. Tener la
+
+01:11:20.500 --> 01:11:31.700
+lista acá y ahí. Y esta que sea su clase de secuencia, suponganme. Bueno, ¿qué pasa ahí?
+
+01:11:31.700 --> 01:11:38.020
+La lista tiene un montón de operaciones, como recién vimos, como insertar en la posición 3,
+
+01:11:38.180 --> 01:11:46.620
+borrar el del elemento x, borrar el que está en el último lugar. ¿Qué les parece? ¿Les parece que
+
+01:11:46.620 --> 01:11:54.340
+una pila y una cola es subclass de lista? Pensándolo así. ¿Cómo hago yo? Yo digo,
+
+01:11:54.340 --> 01:12:00.700
+stack es subclass de lista y yo pongo quiero que la lista o la pila tenga solo estos métodos. Me
+
+01:12:00.700 --> 01:12:07.460
+va a heredar en un stack, en una pila, todos esos elementos. Me va a decir que yo creo un stack y
+
+01:12:07.460 --> 01:12:14.660
+voy a poder borrar de cualquier lugar. Es como que pierde la esencia de la pila y la cola. ¿Qué
+
+01:12:14.660 --> 01:12:22.860
+tendría que hacer yo? Claro, tendría que sobrescribir. Por ejemplo, en la stack tendría que sobrescribir
+
+01:12:22.860 --> 01:12:29.020
+el método heredado. Dame el elemento de la posición 3 para que no haga nada. Dame el elemento. O sea,
+
+01:12:29.020 --> 01:12:33.060
+tendría que sobrescribir un montón de métodos para que no hagan nada y me quedarían todos los
+
+01:12:33.060 --> 01:12:39.300
+métodos ahí públicos porque la lista los tiene públicos y alguien que crea un stack los podría
+
+01:12:39.300 --> 01:12:47.260
+correr y no hacen nada. Entonces, como que, o sea, en este caso pareciera que no es una relación de
+
+01:12:47.260 --> 01:12:53.940
+herencia entre listas y pila y cola. Pareciera que un stack no es una lista a pesar de que es
+
+01:12:53.940 --> 01:13:01.780
+una secuencia y que una cola no es una lista a pesar de que es una secuencia. Pero podríamos
+
+01:13:01.780 --> 01:13:11.340
+pensar, acá como lo pensamos, es que una queue tenga una lista adentro para guardar sus datos y
+
+01:13:11.340 --> 01:13:16.580
+después estos métodos usan lo que pueden de lista. Pero la lista está encapsulada como una
+
+01:13:16.580 --> 01:13:23.940
+propiedad interna a la cola. Y en este caso la stack lo mismo. Tiene adentro una lista y usamos
+
+01:13:23.940 --> 01:13:29.540
+las operaciones de esa lista para guardar nuestros datos en la stack. Pero no es una
+
+01:13:29.540 --> 01:13:37.620
+herencia, no es una relación de es un, sino que es una relación de composición. Es tiene un. Acá
+
+01:13:37.620 --> 01:13:44.100
+una stack tiene una lista adentro y una cola tiene una lista adentro. Esta es una relación
+
+01:13:44.100 --> 01:13:52.580
+de composición, no de herencia. En Java tenemos el es un y el tiene un. Esas son dos relaciones
+
+01:13:52.580 --> 01:14:00.820
+entre clases. Bueno, entonces a ver si vamos. Entonces si nos queda así, acá tenemos el diagrama
+
+01:14:00.820 --> 01:14:07.940
+un poquito más grande, nos queda que una stack y una cola, una cola van a usar una lista para
+
+01:14:07.940 --> 01:14:14.820
+guardar sus datos. Años anteriores nosotros les hacíamos implementar las listas a ustedes. Pero
+
+01:14:14.820 --> 01:14:20.460
+bueno, con el objetivo de acelerar un poco las cosas y además que se hace familiarizar con el
+
+01:14:20.460 --> 01:14:25.460
+framework de colecciones de Java, que si bien vamos a usar acá nada más que las listas, ya
+
+01:14:25.460 --> 01:14:30.260
+tienen una idea de cómo funciona, cómo funcionan los tipos genéricos y les va a ayudar a ustedes
+
+01:14:30.260 --> 01:14:36.420
+si alguna vez tienen que trabajar en un ambiente real. Ustedes no van a usar todas las estructuras
+
+01:14:36.420 --> 01:14:41.500
+de datos que nosotros implementemos en esta materia. No van a usar el árbol que implementemos acá,
+
+01:14:41.500 --> 01:14:49.220
+ni el grajo que implementemos acá, ni la heap, sino que van a usar todas las estructuras de datos que
+
+01:14:49.220 --> 01:14:54.620
+ya probé la pieza de Java. Porque están probadas, son eficientes, están testeadas,
+
+01:14:54.620 --> 01:15:01.260
+salen nuevas versiones. Pero sí, es objetivo de esta materia que ustedes interpreten los
+
+01:15:01.260 --> 01:15:10.380
+distintos tipos de datos que hay. Así que acá vamos a usar la java.util.arraylist. Que es arraylist,
+
+01:15:10.380 --> 01:15:18.100
+es una clase que ya viene en este paquete java.util y que está libre y lista para usar. Podrían
+
+01:15:18.100 --> 01:15:21.460
+usar la arraylist o la linked list. Yo les voy a decir las diferencias entre las dos,
+
+01:15:21.460 --> 01:15:26.980
+pero cualquiera de las dos las podrían usar. Y esa ya tiene implementadas, ya son clases que
+
+01:15:26.980 --> 01:15:31.940
+implementan una interfaz list, o que ustedes vean como que extiende una clase abstracta,
+
+01:15:31.940 --> 01:15:38.060
+algo parecido, pero son interfaces. Y acá tenemos ya todas las operaciones. Ya existe el size,
+
+01:15:38.060 --> 01:15:44.140
+el isEmpty, el indexOf, el get. Todos esos métodos de listas ya los tenemos listos. Entonces vamos a
+
+01:15:44.140 --> 01:15:51.140
+usar la lista de la API de Java. Bueno, cuando yo le digo el framework de colecciones o la API de
+
+01:15:51.140 --> 01:15:57.420
+Java, ¿qué es? Es un conjunto de clases que ya vienen con la plataforma, con el JDK. Cuando
+
+01:15:57.420 --> 01:16:04.780
+ustedes se descargaron el JDK, ya vienen todas estas clases implementadas. Estas clases están
+
+01:16:04.780 --> 01:16:12.260
+adentro del paquete java.util. Y ahí adentro de ese paquete encontramos interfaces, que son los
+
+01:16:12.260 --> 01:16:17.100
+tipos de datos abstractos, los PDA, que me dice, bueno, una lista tiene que proveer el funcionamiento
+
+01:16:17.100 --> 01:16:24.940
+de dame el primero, dame el último, insertame todo eso, get, los que vimos. O lo mismo de queue,
+
+01:16:24.940 --> 01:16:31.220
+los mismos, el push, el pop, eso se llama, las interfaces definen eso. Después hay un montón de
+
+01:16:31.220 --> 01:16:36.780
+clases que implementan esas interfaces y esas son las que nosotros vamos a instanciar para usar. Y
+
+01:16:36.780 --> 01:16:41.820
+además dentro de este framework de colecciones hay un montón de algoritmos que realizan operaciones
+
+01:16:41.820 --> 01:16:48.860
+como de ordenamiento, de búsqueda, que está todo preparado para que uno las importe y las use.
+
+01:16:49.940 --> 01:16:57.020
+Dentro de esta java.util, que yo les digo que hay un montón de clases, esas clases utilizan
+
+01:16:57.020 --> 01:17:03.300
+distintas tecnologías de almacenamiento. Por ejemplo, ArrayList utiliza un arreglo para
+
+01:17:03.300 --> 01:17:09.660
+guardar sus datos. El LinkedList utiliza lista enlazada para guardar sus datos. Después hay
+
+01:17:09.660 --> 01:17:17.540
+HashMap, HashSet, que utilizan tablas de hash para guardar sus datos. Los hash son tuplas de
+
+01:17:17.540 --> 01:17:23.580
+datos. Es decir, yo guardo un dato que tiene una clave y un valor. Entonces esos son tuplas. Y
+
+01:17:23.580 --> 01:17:29.980
+después hay árboles, está el Triset, el Trimap, distintas estructuras. Todo esto que yo les digo,
+
+01:17:29.980 --> 01:17:37.900
+hay TrilinketSet, hay combinaciones de ellas. Bueno, todo el framework de colecciones utiliza
+
+01:17:37.900 --> 01:17:47.580
+alguna de estas tecnologías para guardar sus datos. Dentro de las tecnologías de almacenamiento
+
+01:17:47.580 --> 01:17:56.940
+teníamos tablas de hash, arreglos, pero de tamaño variable, árboles y listas enlazadas. Y después
+
+01:17:56.940 --> 01:18:03.740
+los Tab son un conjunto de interfaces que es parecido a clases abstractas. Entonces yo digo,
+
+01:18:03.740 --> 01:18:10.020
+modelo una lista, modelo una cola, modelo un map o modelo un set, que es un conjunto sin repetido.
+
+01:18:10.020 --> 01:18:16.740
+Entonces tenemos distintos lugares o tecnologías de almacenamiento, distintos tabs. Y después acá
+
+01:18:16.740 --> 01:18:21.940
+adentro, estas son las clases concretas que vienen en el app y que podemos usar. Por ejemplo,
+
+01:18:21.940 --> 01:18:28.260
+una clase ArrayList es una clase concreta que implementa la interfase list, tiene un
+
+01:18:28.260 --> 01:18:33.540
+comportamiento de list, pero usa un arreglo de tamaño variable para guardar sus datos. Una
+
+01:18:33.540 --> 01:18:40.300
+LinkerList es una clase concreta que implementa la interfase list, pero que utiliza una lista
+
+01:18:40.300 --> 01:18:46.020
+enlazada para guardar sus datos. Uso distintas tecnologías de almacenamiento y implemento el
+
+01:18:46.020 --> 01:18:54.820
+mismo tab, entonces tengo distintos objetos implementados. Lo mismo con las queue. No sé,
+
+01:18:54.820 --> 01:19:04.460
+estas LinkerQueue que utiliza una lista enlazada y son de bloqueo, de prioridades, es ahí diferente.
+
+01:19:08.460 --> 01:19:14.500
+Si nosotros entramos a ver cómo están implementadas, ustedes las podrían ver,
+
+01:19:14.500 --> 01:19:20.900
+van a ver que la clase LinkerList implementa list, que es el tab, es una interfase en realidad,
+
+01:19:20.900 --> 01:19:27.380
+y que ArrayList implementa list. O sea, que ambas tienen exactamente el mismo comportamiento,
+
+01:19:27.380 --> 01:19:34.220
+porque lo implementan de list, que la interfase vendría a ser como que list es la clase abstracta
+
+01:19:34.220 --> 01:19:38.980
+y estas son dos clases concretas que lo implementan. Entonces, las dos tienen exactamente el mismo
+
+01:19:38.980 --> 01:19:45.100
+comportamiento, pero lo hacen la lógica de diferente manera. Una usa un arreglo y la
+
+01:19:45.100 --> 01:19:52.580
+otra usa una lista enlazada. Acá por ahí se entiende un poco también mejor cómo el
+
+01:19:52.580 --> 01:19:58.220
+abcasting tiene sentido acá, porque yo puedo decir que LinkerList y ArrayList son de tipo list,
+
+01:19:58.220 --> 01:20:03.380
+porque implementan una interfase o lo mismo extienden de una abstracta, entonces son de
+
+01:20:03.380 --> 01:20:08.900
+tipo list. Entonces, yo puedo, en un método, recibir algo de tipo list, que yo sé que es una
+
+01:20:08.900 --> 01:20:13.740
+lista, uso sus métodos que son idénticos, pero puedo pasarlo o una LinkerList o le puedo
+
+01:20:13.740 --> 01:20:22.860
+hacer una ArrayList. Esto después lo vamos a ir viendo. Bueno, para los que les interesa ver
+
+01:20:22.860 --> 01:20:31.060
+esto, ustedes cuando están en Eclipse o en cualquier idea que trabajen, siempre hay una
+
+01:20:31.060 --> 01:20:35.940
+manera de poner un botón derecho por ahí que dice OpenDeclaration y les da cómo está implementado
+
+01:20:35.940 --> 01:20:46.620
+esa clase y ahí pueden ver cómo está implementada la clase y todo, cómo la hizo Java, digamos,
+
+01:20:46.620 --> 01:20:55.500
+para los que les interesa. Bueno, entonces, ¿cómo se usan estas clases? Bueno, como cualquier clase,
+
+01:20:55.500 --> 01:21:02.380
+New LinkerList y lo guardo en algo de tipo list, por ejemplo acá, porque list, supongo que la
+
+01:21:02.380 --> 01:21:06.940
+clase abstracta, también lo podría guardar en algo de tipo LinkerList. Es lo mismo, puedo decir
+
+01:21:06.940 --> 01:21:13.900
+list acá o LinkerList. Cuando yo lo guardo como algo de tipo list, ¿qué me ayuda a mí? Cuando yo
+
+01:21:13.900 --> 01:21:20.060
+lo guardo como algo de tipo list, esta lista de vinos es de tipo list. Entonces, se hace un
+
+01:21:20.060 --> 01:21:25.180
+AppCast en automático. Entonces, ¿acá qué me va a dejar usar? Me va a dejar usar solo los métodos
+
+01:21:25.180 --> 01:21:30.700
+definidos en list. Entonces, si yo acá le cambio y digo new ArrayList, esto va a seguir funcionando,
+
+01:21:30.700 --> 01:21:38.540
+porque ambas implementaron list. Acá yo ya sé que usé todo lo de list. Es un poco para poder
+
+01:21:38.540 --> 01:21:45.020
+intercambiar los tipos de objetos, pero por el momento, nada, decimos New LinkerList, lo podría
+
+01:21:45.020 --> 01:21:50.860
+haber guardado en algo de LinkerList y acá le hago add, add, add y guardo cuatro elementos en mi
+
+01:21:50.860 --> 01:21:57.100
+lista. Fíjense que el primer elemento es algo de tipo vino, otro un new vino, después guardo un
+
+01:21:57.100 --> 01:22:03.280
+Integer y acá guardé, está entre comillitas, un string. Significa que en esta LinkerList me
+
+01:22:03.280 --> 01:22:10.100
+permitió guardar objetos de diferentes tipos. Pero si me permitió guardar diferentes tipos,
+
+01:22:10.100 --> 01:22:15.260
+¿qué tipos de objetos tengo guardado en esta lista? Son de tipo object. Son todos de tipo
+
+01:22:15.260 --> 01:22:20.900
+object, porque como guardo cualquier cosa y yo no le dije nada a esta LinkerList sobre qué
+
+01:22:20.900 --> 01:22:28.140
+tipo de datos guardar, me guarda todo como object. Ahora, cuando yo guardo un objeto de tipo vino,
+
+01:22:28.140 --> 01:22:33.140
+¿qué me hace cuando lo guarda dentro de la lista? ¿Cómo lo ve? ¿De qué tipo?
+
+01:22:38.420 --> 01:22:45.060
+Entonces, el add tres lo que guarda es el wrapper Integer, claro, exactamente, acá es New Integer
+
+01:22:45.060 --> 01:22:51.700
+y lo guarda, sí. Pero yo guardé dos vinos, un Integer y un string. Pero la lista es de
+
+01:22:51.700 --> 01:22:57.220
+object. ¿Cuándo la guardo en esa bolsa? ¿Qué les parece? ¿De qué tipo? ¿Qué se hace ahí automáticamente?
+
+01:23:00.580 --> 01:23:07.020
+Una casting, exactamente. Los ve todo como objetos. Entonces, acá yo hago un while,
+
+01:23:07.020 --> 01:23:13.060
+digo while. La lista esta de vinos no esté vacío, porque acá está el no, no esté vacío, ¿qué hago?
+
+01:23:13.460 --> 01:23:18.340
+A la lista de vinos digo, ¿qué cero? Dame el primer elemento, o sea, me va a dar un objeto vino.
+
+01:23:18.340 --> 01:23:26.180
+Agociste en OutfitLine, catando más, vino actual. Vino actual me da un vino, acá cuando yo concaté
+
+01:23:26.180 --> 01:23:32.260
+en un string con un objeto, le hace el tuestring a esto. Entonces, el tuestring de la clase vino
+
+01:23:32.260 --> 01:23:39.140
+me devuelve, por ejemplo, claro oscuro, la bodega. Después, la segunda vez, no, y acá hace lista
+
+01:23:39.140 --> 01:23:45.180
+vinos remove cero. Entonces, ¿qué estoy usando acá? Creo una linked list. Hago un add, agrego
+
+01:23:45.180 --> 01:23:51.340
+cuatro veces, pregunto si está vacío, son dos métodos del linked list. Hago un get y después elimino
+
+01:23:51.340 --> 01:23:57.380
+el primer elemento. Cuando un get de cero, ya me va a dar el segundo elemento, otro vino, me imprime
+
+01:23:57.380 --> 01:24:06.420
+el vino, lo elimino. Vengo otra vez, get de cero me va a dar el Integer. Catando, me de un 3 acá,
+
+01:24:06.420 --> 01:24:11.980
+¿por qué? Porque le hice un tuestring a ese objeto, es un object, le hace un tuestring. Siempre que hay
+
+01:24:11.980 --> 01:24:16.340
+concatenación y viene un objeto acá, le hace el tuestring acá. Es lo mismo que yo ponga acá punto
+
+01:24:16.340 --> 01:24:21.860
+tuestring, es lo mismo. Me devuelve el tuestring de la clase Integer, me devuelve su primitivo de
+
+01:24:21.860 --> 01:24:28.740
+adentro, un 3. Y el último es un string, concateno string con string, me pone todo el string. ¿Sí?
+
+01:24:29.380 --> 01:24:34.260
+¿Entiende hasta ahí? ¿Esta linked list sí la usaron el año pasado?
+
+01:24:36.580 --> 01:24:43.220
+No, no la usaron. Ah, ok. Bueno, es una clase que la estamos usando. Fíjense que yo acá, como la
+
+01:24:43.220 --> 01:24:50.820
+variable la declaré list, los métodos que estoy usando son los de list, add, isEmpty, get, remove,
+
+01:24:50.820 --> 01:24:56.700
+son los que me permite list. Si yo acá le pongo new ArrayList, esto va a funcionar porque list,
+
+01:24:56.980 --> 01:25:04.380
+ArrayList también implementó list y va a respetar estos métodos. Dice, o sea, la linked list acomoda
+
+01:25:04.380 --> 01:25:11.700
+el primero automáticamente. ¿La lista? Add. Supongan ser que tengo la lista vacía. Yo hago
+
+01:25:11.700 --> 01:25:18.500
+add de esta copa, me pone esa. Después digo add, add. Add la pone siempre al final, el add.
+
+01:25:27.540 --> 01:25:28.820
+A ver si lo tengo acá.
+
+01:25:30.500 --> 01:25:35.660
+En Java creo que es así también. Agrega el elemento. Ah, no, sí, en la última posición. Acá está,
+
+01:25:35.660 --> 01:25:39.660
+¿ven? El add de la list agrega un elemento a la última posición.
+
+01:25:42.900 --> 01:25:50.620
+Recién el objeto 1 lo ves list. Ah, queda marcado el colco, vamos a ver. ¿Dónde estoy?
+
+01:25:50.620 --> 01:26:00.100
+O sea, la linked list acomoda el puntero automáticamente. Sí, sí, está vacía,
+
+01:26:00.100 --> 01:26:05.420
+cuando vos haces new linked list está vacía. Y al hacer add, te hace todo solo. Te pone este,
+
+01:26:05.420 --> 01:26:11.380
+este, este, este automáticamente. No tenés que hacer nada. Recién en objetos 1 ves lo de list
+
+01:26:11.380 --> 01:26:16.740
+trofe. Ah, ok. Objetos 1 se corsan en el segundo semestre. Está bien.
+
+01:26:18.740 --> 01:26:28.060
+No, no hay que hacer el código. Por eso decidimos hacer esto. Sí. Bueno, ahora fíjense acá abajo,
+
+01:26:28.060 --> 01:26:33.940
+vamos a pensar un poco lo que pasa. Dice, system, podría agregar en el print line,
+
+01:26:33.940 --> 01:26:40.300
+o sea, en esta línea de acá. A ver si tengo acá esta rayita, acá. Visto que está acá dentro.
+
+01:26:41.580 --> 01:26:46.500
+Ahí dice. ¿Podría agregar en el print line la invocación a algún método de vino?
+
+01:26:48.100 --> 01:26:52.500
+¿Qué les parece? ¿Puede decir esto, en vez de así como está ahí? ¿Puede decir
+
+01:26:52.500 --> 01:27:02.580
+system out catando vino get cosecha? La variable vino.
+
+01:27:02.580 --> 01:27:10.980
+Vino actual, ¿ves? Vino actual es de tipo object, porque vos haces,
+
+01:27:10.980 --> 01:27:19.100
+a la lista le dices get 0 te devuelve un object. La variable vino actual ¿de dónde viene? ¿Ves?
+
+01:27:19.100 --> 01:27:24.500
+Acá está. Vino actual. Es cada vellada a la lista le digo dame tu primero. Siempre digo dame el
+
+01:27:24.500 --> 01:27:28.660
+primer elemento que empieza en 0 la lista. Dame el primero, después lo remuevo. Dame el primero,
+
+01:27:28.660 --> 01:27:38.300
+después lo remuevo. Ahí dice error. No, no tienen que mirar esto. No me hacen trampa. ¿Por qué? ¿Por
+
+01:27:38.300 --> 01:27:43.260
+qué es un object? ¿Qué pasó cuando todos los objetos estos que tenía un tipo los metimos a
+
+01:27:43.260 --> 01:27:49.900
+esta bolsa de object? Perdimos el tipo. Claro, perdimos el tipo. Entonces, object. ¿Sabe get
+
+01:27:49.900 --> 01:27:55.780
+cosecha? Ya de object es la raíz de todos los objetos. ¿Saben que es de get cosecha? No sabe
+
+01:27:55.780 --> 01:28:03.220
+nada. Entonces es error. Y si yo digo vino actual, lo casteo, get cosecha. Bueno, la primera vez me
+
+01:28:03.220 --> 01:28:08.580
+va a funcionar bien. La segunda vez me va a funcionar bien. Pero cuando acá me devuelva el tercer lugar,
+
+01:28:08.580 --> 01:28:12.580
+¿qué va a pasar cuando yo a un intíguer le diga que se castea vino?
+
+01:28:12.580 --> 01:28:25.340
+¿Explota todo? Claro, era como hoy decir que yo, como era que decíamos, un vehículo moto lo
+
+01:28:25.340 --> 01:28:31.220
+queríamos castear a otra cosa, a una camión. No se puede. Explota todo porque nada que ver.
+
+01:28:31.220 --> 01:28:41.420
+Fíjense, acá es más evidente. Entonces, si yo la linked list la uso como si fuera una clase así que
+
+01:28:41.420 --> 01:28:47.500
+trabaja todo con object, tengo que andar haciendo los castings, los downcastings, pero además tengo
+
+01:28:47.500 --> 01:28:54.580
+que usar instance of. Si es un vino, lo casteo a vino para pedirle la cosecha. Eso no está muy
+
+01:28:54.580 --> 01:29:00.900
+bueno en la programación o en esta objeto. Pero tenemos la suerte de que las listas trabajan con
+
+01:29:00.900 --> 01:29:07.400
+lo que se denominan tipos genéricos. Vamos a ver. Ahora repaso un poco lo mismo. Acá es lo que les
+
+01:29:07.400 --> 01:29:13.000
+decía, ¿no? Como están de object, son de object, si a esto lo vimos, hay que castear. Y al castear
+
+01:29:13.000 --> 01:29:24.440
+acá está hecho bien. Si yo le digo get de 0, lo casteo a vino, ok, pero get de 3, que es 0, 1, 2,
+
+01:29:24.440 --> 01:29:32.080
+3, que es un string, lo casteo a vino al string, me da error. Y si al get de 0 le hago tu upper case,
+
+01:29:33.040 --> 01:29:38.320
+si es un string le puedo hacer tu upper case a mayúsculas, pero si no, si es un vino, no. Así que
+
+01:29:38.320 --> 01:29:44.360
+bueno, ahí para que se entienda bien los problemas que tengo cuando yo trabajo con estructuras de
+
+01:29:44.360 --> 01:29:52.600
+datos genéricas. Cuando no le hacíamos implementar la lista, yo también les contaba esto. Si yo
+
+01:29:52.600 --> 01:29:56.800
+necesito implementar una lista, que ustedes lo han hecho, por ejemplo, en Pascal, a ver si alguno
+
+01:29:56.800 --> 01:30:02.600
+se acuerda y me dice. Ustedes implementaban una lista, ¿qué elementos podían guardar en esa lista?
+
+01:30:02.600 --> 01:30:14.960
+¿Cómo lo hacían? Una lista en Pascal la implementaron, ¿no? el año pasado con registros.
+
+01:30:18.440 --> 01:30:23.120
+Claro, entonces guardaban elementos, claro, está bien.
+
+01:30:26.800 --> 01:30:34.520
+Y era solo de ese tipo, claro. Y después le cambiaban los registros, perfecto. Bueno,
+
+01:30:34.520 --> 01:30:41.800
+acá en Java, si nosotros trabajamos todo con Object, teníamos ese problema que teníamos que
+
+01:30:41.800 --> 01:30:46.880
+ir preguntando qué objeto era y hacer el downcasting. Si nosotros no queríamos andar haciendo eso del
+
+01:30:46.880 --> 01:30:53.600
+downcasting y queríamos que en la lista solamente existieran elementos de un tipo, teníamos que
+
+01:30:53.600 --> 01:30:59.200
+crear una lista para enteros, una lista para alumnos, una lista para vehículos. Entonces
+
+01:30:59.200 --> 01:31:04.080
+eso no era práctico. Entonces, hace unos años salieron lo que se denomina tipo genérico.
+
+01:31:04.080 --> 01:31:12.080
+Tipo genérico lo van a ver expresado así como está acá, con un menos, una letra y un mayor.
+
+01:31:12.080 --> 01:31:18.600
+Esta letra es como una variable. Yo ahí podría decir lista de T, lista de E, que se suele usar
+
+01:31:18.600 --> 01:31:25.000
+T por tipo genérico o E por element, pero es indistinto, es una variable. Entonces,
+
+01:31:25.000 --> 01:31:29.480
+para poder resolver estos problemas salen entonces estos tipos genéricos. Nos permiten definir
+
+01:31:29.480 --> 01:31:36.280
+clases y métodos genéricos. Con OYEN hay una lista genérica, pero el compilador no puede hacer
+
+01:31:36.280 --> 01:31:42.480
+chequeos y hay que hacer casting, claro. Como si vos declaras algo de Object, el compilador no sabe
+
+01:31:42.480 --> 01:31:47.280
+nada y te deja meter cualquier cosa. Esa verdura que pusimos recién en Tigger con vinos y un stream.
+
+01:31:48.600 --> 01:31:52.560
+No puede hacer ningún chequeo. Y ahora vamos a ver que cuando trabajamos con tipos genéricos
+
+01:31:52.560 --> 01:31:59.240
+ese es el beneficio. Que uno tiene un chequeo en tiempo de compilación. Cuando yo compilo,
+
+01:31:59.240 --> 01:32:03.200
+cuando creo una clase y le digo qué tipo la guardaré, ya el compilador me dice, no,
+
+01:32:03.200 --> 01:32:09.680
+si tenés una lista de vinos tenés que guardar objetos de tipo vino o subclases de vino. No
+
+01:32:09.680 --> 01:32:16.560
+podés guardar un Integer, no podés guardar un stream. La clase genérica significa que los
+
+01:32:16.560 --> 01:32:21.440
+elementos de esa clase, dice acá, pueden generalizar con ese parámetro T para especificar
+
+01:32:21.440 --> 01:32:27.560
+que podemos crear instancias de cualquier tipo T. Cualquier tipo T. Los genéricos también proporcionan
+
+01:32:27.560 --> 01:32:33.560
+seguridad de tipo en ese sentido. Que el compilador ya va a chequear y nos va a avisar de los errores.
+
+01:32:33.560 --> 01:32:39.520
+Entonces, ¿cómo hacemos? Esta es la clase que teníamos recién donde la lista de vinos era
+
+01:32:39.520 --> 01:32:46.240
+new array list. Pero guardábamos en algo de tipo list, sin nada genérico. Y teníamos esos
+
+01:32:46.240 --> 01:32:54.760
+problemas. En el caso de que podamos trabajar con los tipos genéricos, que todo el frengor de
+
+01:32:54.760 --> 01:33:00.040
+colecciones trabaja con tipos genéricos, lo que le podemos decir cuando declaramos la variable es
+
+01:33:00.040 --> 01:33:06.480
+que lista de vinos es un list donde voy a guardar adentro elementos de tipo vino. O sea,
+
+01:33:06.480 --> 01:33:12.600
+si yo bien, cuando declaro la clase, la clase dice list de T, miren, vamos acá. Porque la
+
+01:33:12.600 --> 01:33:21.320
+list es esta que está acá. Esta. La list es de E o de T. O sea, cuando yo creo el punto Java,
+
+01:33:21.320 --> 01:33:28.600
+o sea, array list punto Java o list punto Java, ahí yo digo de cualquier tipo, ahí E. Agrega un
+
+01:33:28.600 --> 01:33:36.680
+elemento de tipo E. Agrega un elemento de tipo E en la posición tal. Dame o buscame el elemento
+
+01:33:36.680 --> 01:33:44.240
+de tipo E. Ahí trabajo yo cuando creo la clase, cuando la escribo con una variable de tipo E.
+
+01:33:44.240 --> 01:33:50.400
+Pero cuando yo instancio esa clase, ahí es donde yo le digo al compilador, bueno, ¿qué voy a guardar
+
+01:33:50.400 --> 01:33:57.400
+yo? Yo voy a guardar elementos de tipo vino. New array list. Créame un array list donde solamente
+
+01:33:57.600 --> 01:34:02.760
+me dejes guardar elementos de tipo vino o subclases de vino. Las subclases son de tipo vino.
+
+01:34:02.760 --> 01:34:09.640
+Entonces, hace unas versiones anteriores yo tenía que decir, la lista de vinos es un list de vino,
+
+01:34:09.640 --> 01:34:15.080
+new array list y yo también le tenía que volver a poner acá vino. Acá ya no hace falta. Lo que
+
+01:34:15.080 --> 01:34:22.360
+importa es que la variable sí diga de qué tipo son. Entonces, yo hago acá. Add un new vino, ok.
+
+01:34:22.640 --> 01:34:29.640
+Add new vino, ok. Add un new vino, ok. Si yo acá diría add integer 3, me falla en compilación
+
+01:34:29.640 --> 01:34:35.880
+ya directamente. Si agrego un string, me falla en compilación. O sea, yo tengo un fuerte chequeo.
+
+01:34:36.680 --> 01:34:42.160
+Después entonces digo, bueno, vino actual en nulo y hago un while mientras la lista no esté vacía.
+
+01:34:42.160 --> 01:34:49.000
+En vino, yo a la lista le digo get de 0. Yo acá no tengo que hacer un downcasting porque ¿qué me va
+
+01:34:49.000 --> 01:34:54.600
+a dar el get de 0? Me va a dar siempre un objeto de tipo vino porque no me dejó guardar otra cosa
+
+01:34:54.600 --> 01:35:00.280
+que no sea vino. Entonces, ya acá no tengo que castear. Yo ya sé que es un vino. Entonces,
+
+01:35:00.280 --> 01:35:10.280
+acá adentro en el while puedo hacer, no sé, catando, paso, paso 1, un paso, supongo que es
+
+01:35:10.280 --> 01:35:16.280
+una cata de vino. En el paso 0, ¿qué tengo? Vino actual, get nombre concatenado con la cosecha.
+
+01:35:16.440 --> 01:35:24.040
+Elimino el primer elemento. Agarro otra vez de la lista el 0, que es otro vino, en el paso 2,
+
+01:35:24.040 --> 01:35:34.520
+el vino tal de tal cosecha. Lo elimino. Vino 3 y así. Esta manera de remover es para usar métodos,
+
+01:35:34.520 --> 01:35:42.280
+pero yo podría hacer get de i también y ir devolviendo el 0, el 1, el 2, sin eliminarlo
+
+01:35:42.280 --> 01:35:46.960
+de la lista. Se entiende eso, ¿no? Es un ejemplo nada más. Lo que les quiero mostrar es lo de tipo
+
+01:35:46.960 --> 01:35:53.840
+de datos acá. Entonces, ¿se entiende el uso de los tipos genéricos? Los tipos genéricos es un tema
+
+01:35:53.840 --> 01:35:59.920
+que está bueno y después, bueno, por ahí vamos a profundizar un poquito, pero la idea hoy que
+
+01:35:59.920 --> 01:36:05.960
+entiendan cómo usar las estructuras que vienen con la API del link del lice ArrayList. Y uno se ve
+
+01:36:05.960 --> 01:36:12.960
+beneficiado si los usa con tipos genéricos. A partir de acá, estas son clases que vinieron con
+
+01:36:12.960 --> 01:36:18.160
+la API, pero la stack y la queue que las tienen que hacer ustedes son con tipos genéricos y los
+
+01:36:18.160 --> 01:36:22.960
+árboles y los grazos que implementemos más adelante también van a ser con tipos de datos genéricos.
+
+01:36:24.560 --> 01:36:31.800
+Bueno, hasta acá vamos bien. ¿Alguna duda de esto? Lo del código del while y del if,
+
+01:36:32.080 --> 01:36:37.160
+y que concaten, ¿esto lo entienden? Yo por ahí esto no me detengo porque entiendo que esto lo
+
+01:36:37.160 --> 01:36:43.680
+practicaron, pero no tengo problemas y hay algo que quieran saber de acá. Como hoy que me preguntaron
+
+01:36:43.680 --> 01:36:52.000
+en el not o not null que estaba acá, esto es no y se empieza lo manejan. El especificador del
+
+01:36:52.000 --> 01:36:58.920
+tipo genérico es T, ¿no? Claro, cuando uno escribe en la clase, en la clase vos pones una variable
+
+01:36:58.920 --> 01:37:04.720
+cualquiera, tipo T, tipo E, como quieras. ¿Ves? Acá por ejemplo list de E, podés poner list de T,
+
+01:37:04.720 --> 01:37:10.920
+es la variable porque es la que vas a usar después en los métodos. Ahora vamos a ver
+
+01:37:10.920 --> 01:37:17.520
+cuando vemos cola y lo voy a reforzar. Cualquier variable, pero cuando vos creas un objeto de este,
+
+01:37:17.520 --> 01:37:22.840
+el E se reemplaza por el tipo de dato que vos querés crear. Quiero crear una lista de objects,
+
+01:37:22.840 --> 01:37:31.480
+entonces yo hago new list de string, new list de autos, new list de personas.
+
+01:37:34.880 --> 01:37:37.200
+Ahora vamos a hacer los ejemplos de cola y pila.
+
+01:37:41.720 --> 01:37:50.040
+Entonces, bueno, todos entonces hoy coincidimos que la stack no nos convenía ponerla como subclase
+
+01:37:50.040 --> 01:37:56.680
+de lista, ¿no? Pero sí, yo les decía que por ahí una buena cosa no es una herencia. Acá tenemos
+
+01:37:56.680 --> 01:38:07.040
+stack, extend, sequence, o sea que stack is a sequence. Es una, las dos, no está el T acá.
+
+01:38:08.240 --> 01:38:18.600
+No sé cómo se pone, ¿cómo era esto? Este no lo uso mucho, no lo uso nunca. Bueno, acá no importa.
+
+01:38:18.600 --> 01:38:26.440
+Esta es una relación is-e. Esta es una relación is-e porque es extend, ¿no? Que es una herencia,
+
+01:38:26.440 --> 01:38:33.360
+es una relación is-e. Entonces, una stack es una secuencia. En cambio, esta que tenemos acá
+
+01:38:33.360 --> 01:38:47.600
+dentro, esta que tenemos acá dentro, ¿qué decimos? Esta es una relación tiene-un. O sea que
+
+01:38:49.200 --> 01:38:57.760
+en programación de objetos es has-e. Has-e, tiene-un. Una stack tiene adentro una referencia,
+
+01:38:57.760 --> 01:39:02.360
+una lista. ¿Para qué vamos a usar esta? Para guardar los datos de nuestra stack. Ya que tenemos
+
+01:39:02.360 --> 01:39:08.720
+una link de list que está implementada, testada, que es eficiente, vamos a guardar los datos de
+
+01:39:08.720 --> 01:39:18.240
+nuestra pila en una lista. Pero como es private, nadie va a poder acceder a esta y decirme dame
+
+01:39:18.240 --> 01:39:25.440
+de data, dame el elemento 3 de esta data, porque esta está encapsulada en nuestra stack. ¿Qué
+
+01:39:25.440 --> 01:39:30.320
+vamos a poder hacer con la stack? Vamos a poder usarla, hacer un new stack. ¿Y qué métodos vamos
+
+01:39:30.320 --> 01:39:39.240
+a poder usar con la stack? Push, pop, top, size y sendy y tu stream, que son los métodos del tipo
+
+01:39:39.240 --> 01:39:45.800
+de datos abstracto stack. ¿Te entiendes? Ay, perdón, me faltó el identificador después de Liz Vino.
+
+01:39:47.200 --> 01:39:56.600
+Me faltó el identificador después de Liz Vino. Ahí me perdí Federico. O sea que el tipo de
+
+01:39:56.600 --> 01:40:00.440
+datos, para que lo lea otra vez, voy a lo de Federico. O sea que el tipo de datos de una colección
+
+01:40:00.440 --> 01:40:08.000
+va a ser siempre el que especifice antes del igual. Sí, claro, el que especificas ahí. Si querés lo
+
+01:40:08.000 --> 01:40:14.360
+puedes reforzar en el new, pero no hace falta. Por ejemplo, Liz Vino, sí, te falta el nombre de la
+
+01:40:14.360 --> 01:40:23.960
+variable ahí. Liz Vino arreglo es igual a new Liz Vino. Sí, exacto. Así es el arreglo. Te faltó
+
+01:40:23.960 --> 01:40:29.880
+la variable del arreglo. Y sí, cuando haces el new, a mí queda claro también. Puedes decir new
+
+01:40:29.880 --> 01:40:36.800
+array de Vino otra vez. Lo puedes repetir. Es del tipo Liz Vino. Exacto. Me refiero al mensaje que
+
+01:40:36.800 --> 01:40:44.320
+mandé antes. Porque si queremos usar la lista de las stack, para eso usamos directamente una lista.
+
+01:40:44.320 --> 01:40:54.280
+A ver, Luciano, porque si quisiéramos usar la lista de las stack, esa que está ahí,
+
+01:40:54.280 --> 01:40:59.800
+usamos directamente. Claro, sí, sí, tal cual. Pero lo que yo estoy acá reforzando es que acá
+
+01:40:59.800 --> 01:41:06.760
+hacemos encapsulamiento de datos. Si yo extendería la lista, si yo extiendo la lista, o sea que mi
+
+01:41:06.760 --> 01:41:13.640
+stack es una lista, la stack va a tener toda esta funcionalidad más la de la lista. Y yo no quiero
+
+01:41:13.640 --> 01:41:18.960
+que en una stack me saquen un elemento del medio. No es una lista. Por eso yo la encapsulo acá
+
+01:41:18.960 --> 01:41:24.840
+adentro. Nadie la ve. Yo la uso internamente. Pero los métodos públicos, la API pública de stack
+
+01:41:24.840 --> 01:41:36.360
+son estos, los que están definidos acá. ¿Entiendes? Bueno, ¿vieron estos diagramas de clases ustedes
+
+01:41:36.360 --> 01:41:49.760
+el año pasado en los WMLE? No les explique. Ah, bueno. Bueno, después los reforzamos,
+
+01:41:49.760 --> 01:41:55.800
+pero la idea es que son clases. La flechita para arriba es la relación de herencia. Nosotros acá
+
+01:41:55.800 --> 01:42:00.960
+declaramos el nombre de la clase, los atributos. Este no tiene atributos secuencia, por eso están
+
+01:42:00.960 --> 01:42:06.800
+las rayitas de la pie en el medio y los métodos. Entonces acá tenemos la clase stack. Es de tipo
+
+01:42:06.800 --> 01:42:14.560
+T. Adentro tiene una variable de distancia privada de que es una lista de T y todos estos métodos
+
+01:42:14.560 --> 01:42:22.680
+públicos. Y acá vamos otra vez al tipo T. Cuando yo cree mi stack, le voy a decir new stack de
+
+01:42:22.680 --> 01:42:30.800
+vinos. Entonces, cuando yo acá tenga el dato este que es un list, en el constructor digo new
+
+01:42:30.800 --> 01:42:37.840
+array list de T, de vino. La lista va a tener elementos de tipo vino adentro. Cuando haga el
+
+01:42:37.840 --> 01:42:44.400
+push, el push va a ser, voy a recibir un tipo de datos vino y lo voy a poner en esa lista que es
+
+01:42:44.400 --> 01:42:50.600
+de tipo vino. O sea, todo lo que acá, cuando yo creo la estructura de datos, digo de tipo T,
+
+01:42:51.080 --> 01:42:58.800
+cuando yo haga un new stack, de esta stack, voy a hacer todo tipo T. Es decir, yo acá, no sé por qué
+
+01:42:58.800 --> 01:43:06.200
+me pone esa letra rara también, pero yo en algún momento voy a decir, voy a crear stack, stack de
+
+01:43:06.200 --> 01:43:18.240
+vino. Es la clase de vino. Entonces S, ¿a qué va a ser igual? Va a ser igual a new stack. Si quiero
+
+01:43:18.240 --> 01:43:24.200
+le pongo o no le pongo vino acá, no es necesario ya, pero le puedo poner igual vino. Es un refuerzo.
+
+01:43:26.360 --> 01:43:32.400
+Entonces, ¿qué estoy creando? Estoy creando una instancia de nuestra stack. Y esa stack,
+
+01:43:32.400 --> 01:43:38.120
+yo le digo que voy a guardar elemento de tipo vino. Entonces, este T es vino. Entonces,
+
+01:43:38.120 --> 01:43:45.120
+esta lista va a ser de una lista de vinos. Entonces, cuando yo haga push, supongamos que
+
+01:43:45.120 --> 01:43:51.560
+uso este método que está acá, que es público. ¿Cómo voy a decir? Yo voy a decir S.push. ¿Qué
+
+01:43:51.560 --> 01:44:04.000
+voy a hacer el push acá? De un new vino, por ejemplo, no, este ahí, de, bueno, no sé,
+
+01:44:04.000 --> 01:44:11.000
+catena, lo que quieran tomar, no sé, no acuerdo qué tenía, de tal precio, lo que sea. Bueno,
+
+01:44:11.000 --> 01:44:21.320
+ahí. ¿Se entiende cómo funcionan los tipos genéricos? Cuando yo creo el fuente Java,
+
+01:44:21.320 --> 01:44:28.000
+lo escribo una única vez. Única vez con una variable T genérica. Y después, cuando yo
+
+01:44:28.000 --> 01:44:32.240
+instancio, que es esto que tengo acá arriba, cuando yo creo esta stack que la instancio,
+
+01:44:32.240 --> 01:44:38.480
+ahí sí le digo qué tipos voy a guardar. Si yo acá hago un push de un Integer, esto no compila.
+
+01:44:38.480 --> 01:44:48.680
+Punto, push de un Integer, esto no me compila. O en realidad sería de un new Integer o puedo
+
+01:44:48.680 --> 01:44:59.320
+poner un 10 directamente. ¿Entiende? Vamos más o menos. Ahora analizamos un poco esta stack.
+
+01:44:59.320 --> 01:45:11.720
+Bien. Bueno, entonces, ¿cómo funciona la stack? Inserto un elemento, queda ahí. Inserto,
+
+01:45:11.720 --> 01:45:17.000
+hago otro push, va el uno que va abajo, otro push. Hago un pop, me saca este elemento,
+
+01:45:17.000 --> 01:45:24.200
+hago otro pop, me queda vacía. Esta sería como la secuencia de hacer push, push, pop, pop. Bueno,
+
+01:45:24.200 --> 01:45:31.160
+los elementos. Fíjense, este es el constructor que lo creo con new ArrayList. Podría acá también
+
+01:45:31.160 --> 01:45:37.480
+poner un new LinkedList, no hay ningún problema. Después acá, public boy push,
+
+01:45:37.480 --> 01:45:42.160
+pongo un dato. Entonces, ¿qué hago? El dato es una LinkedList. Entonces,
+
+01:45:42.160 --> 01:45:50.920
+yo ya uso el método implementado de la lista. Digo add, el dato size, que es en el 0, un dato,
+
+01:45:50.920 --> 01:46:00.440
+0. Inserto este. Después hago otro push. Lo mismo, digo push, add. El tamaño ya es 1. Entonces,
+
+01:46:00.440 --> 01:46:06.000
+inserto el dato. O sea, que este me quedó en la 0, este me quedó en la 1. Hago otro push,
+
+01:46:06.000 --> 01:46:12.960
+hago otro push. ¿Cuál es el size ahora? De este es 2. Entonces, inserto el dato en el 2,
+
+01:46:12.960 --> 01:46:19.360
+porque en el 0 y en el 1 ya hay 1. Entonces, hago un push en el 2, un add en el 2. ¿Se entiende?
+
+01:46:19.360 --> 01:46:26.480
+Estoy usando una lista para implementar la stack. Siempre como pongo en la 0, en la 0, en la 0. Y
+
+01:46:26.480 --> 01:46:32.560
+ahí me van quedando como en el head o en la cabeza de esta lista va a estar el primero que
+
+01:46:32.560 --> 01:46:39.720
+tengo que sacar, porque el último que pongo es el primero que sale. Se incrementa solo el size,
+
+01:46:39.720 --> 01:46:45.960
+todo. El fuego de colección es todo. Se incrementa el tamaño solo, te maneja todo solo,
+
+01:46:46.240 --> 01:46:59.640
+te leictera solo, después vamos a ver los iteradores. Bueno, estamos en la clase 1. Yo
+
+01:46:59.640 --> 01:47:05.800
+digo la hora a las 13 horas. No sé, están muy cansados o seguimos un ratito y la terminamos y
+
+01:47:05.800 --> 01:47:12.520
+de último el que se tiene que ir la ve después grabada. Seguimos y la terminamos. Nosotros vamos
+
+01:47:12.520 --> 01:47:16.840
+a implementar todo a partir de lista. Sí, todo a partir de lista. Vamos a la link que dice
+
+01:47:16.840 --> 01:47:21.000
+ArrayList de Java. O sea, no se implementan más las listas en algoritmo de estructura.
+
+01:47:27.200 --> 01:47:34.440
+Bueno, a ver, seguimos un poquito más y vemos. ¿Se entiende entonces cómo se usa la lista y
+
+01:47:34.440 --> 01:47:39.160
+cómo aprovechamos? Por ejemplo, el pop. El pop yo tengo que sacar el último que inserté. Entonces,
+
+01:47:39.160 --> 01:47:46.640
+que hago return data o data, que es la lista, punto remove, data.size, que me da, me da 2,
+
+01:47:46.640 --> 01:47:54.200
+pero yo el inicio empieza en 0, entonces 0, 1, tengo que devolver data.size menos 1 y devuelvo
+
+01:47:54.200 --> 01:48:01.240
+el último que está en la lista, el último insertado. ¿Entiende? Después el top, me lo devuelvo,
+
+01:48:01.240 --> 01:48:07.400
+pero no lo elimina. Este es un get, o sea, devuelve el último de la lista, pero no lo elimina y este
+
+01:48:07.400 --> 01:48:13.400
+el remove, pero como el remove de la lista de Java lo devuelve, también lo estamos devolviendo.
+
+01:48:13.400 --> 01:48:20.960
+Fíjense que tanto el pop como el push devuelve algo de tipo T. Los dos hacen return y los dos
+
+01:48:20.960 --> 01:48:27.880
+devuelven lo que está devolviendo. En este caso el remove y en este caso el get. ¿Te va entendiendo
+
+01:48:27.880 --> 01:48:35.400
+cómo está implementando la stack usando la lista? A ver lo que tiene el micrófono que es más rápido
+
+01:48:35.400 --> 01:48:43.800
+de contestar. ¿Te me fue azul? ¿Te me fue azul? Y se me fue, no me quedó nadie. Ah, no la veo,
+
+01:48:43.800 --> 01:48:51.280
+te muteaste, no te veía azul, porque yo veo la pelotita roja, pero ahora no te veo. Bueno, ¿te va entendiendo?
+
+01:48:55.120 --> 01:49:01.920
+Bueno, después tenemos el size, que reutilizamos el size de la lista, data.size, el isenty, decimos
+
+01:49:01.920 --> 01:49:07.840
+si data.size igual o igual a 0 me va a devolver true. Y por último el to screen, que es una
+
+01:49:07.840 --> 01:49:13.560
+implementación, sí, que vamos conteniendo los elementos, fíjense. Primero abrimos una llavecita
+
+01:49:13.560 --> 01:49:21.560
+así para que cuando nosotros, si yo acá por ejemplo le digo este entonces, no, este no lo hago,
+
+01:49:21.560 --> 01:49:23.800
+suponemos que acá tenemos otro vino.
+
+01:49:26.320 --> 01:49:41.440
+¿Me deja entrar acá? Sí, si yo hago system.out.s, bueno va como yo con out.print directamente,
+
+01:49:41.440 --> 01:49:48.440
+es lo mismo que hacer, siempre que nosotros hacemos print o print line, lo que hace el print line le
+
+01:49:48.440 --> 01:49:57.040
+hace to string al objeto, es lo mismo que decir .toString. Entonces, si no sobreescribimos el método
+
+01:49:57.040 --> 01:50:02.720
+toString, ¿qué toString se va a ejecutar? El de object, que no vamos a entender nada, por eso lo
+
+01:50:02.720 --> 01:50:09.320
+implementamos porque la idea es que nos devuelva. Por ejemplo, una cosa así con, bueno, acá el
+
+01:50:09.320 --> 01:50:18.680
+objeto vino, con el vino, el objeto vino uno, coma, el objeto vino dos, coma y así. Si la clase vino
+
+01:50:18.680 --> 01:50:23.920
+tiene implementado toString nos va a devolver esto también de una manera linda, ¿sí? Pero lo que
+
+01:50:23.920 --> 01:50:28.800
+estamos implementando acá es el método toString de stack, ¿te entiendes? Que estamos sobreescribiendo
+
+01:50:28.800 --> 01:50:34.880
+el de object. Entonces abrimos esta llavecita y después hacemos un forage, que es el que vimos
+
+01:50:34.880 --> 01:50:40.560
+el otro día, que nos itere todo el arreglo y en cada iteración cada elemento es de tipo T.
+
+01:50:40.560 --> 01:50:51.720
+Entonces, ¿qué hacemos? Concatenamos en un str, str más el D. Este for es esta nada más. Entonces
+
+01:50:51.720 --> 01:50:57.520
+vamos concatenando el D con una coma, el D con una coma, el D así, así recorremos toda la stack y nos
+
+01:50:57.520 --> 01:51:03.720
+va a quedar así. Cuando terminamos, pues no hay más elementos, hay que borrar este pedacito que
+
+01:51:03.720 --> 01:51:09.000
+nos quedó ahí de esa última coma allá arriba. Entonces le borramos esos dos últimos elementos
+
+01:51:09.000 --> 01:51:16.080
+y le ponemos al final este desierre que está ahí. Es el toString para que nos quede linda la stack.
+
+01:51:16.080 --> 01:51:24.960
+O sea, se puede imprimir la pila sin iterarlas. Claro, exactamente. Yo en un programa directamente
+
+01:51:24.960 --> 01:51:31.500
+creo la stack, la uso y le hago toString. Eso lo implementan ustedes. Todas las clases del
+
+01:51:31.500 --> 01:51:36.260
+framework de colecciones como ArrayList y LinkedList, ya si ustedes le hacen toString,
+
+01:51:36.260 --> 01:51:41.620
+se ve linda, ya están lindas así. Se ven con paréntesis, con corchetes dependiendo
+
+01:51:41.620 --> 01:51:49.580
+de la estructura y se ven todas así como secuencia. Bueno, seguimos un poquito. Bueno,
+
+01:51:49.580 --> 01:51:55.100
+en la práctica tiene un ejercicio un poquito más complicado que este, no mucho, pero bueno,
+
+01:51:55.100 --> 01:52:04.140
+¿para qué me podría servir una stack? Por ejemplo, si yo tengo que ver si una expresión de paréntesis
+
+01:52:04.140 --> 01:52:11.460
+está bien formada. Podría ser que yo tenga más que paréntesis, que tenga por ejemplo que sea,
+
+01:52:11.460 --> 01:52:22.020
+no sé, llave, esta llave, esta, esta, después así, otras llaves, no sé, que tenga corchetes,
+
+01:52:22.180 --> 01:52:28.980
+de todo, una más compleja que está en la práctica. Pero por simplicidad les muestro esta que supongo
+
+01:52:28.980 --> 01:52:34.940
+que solamente podemos usar paréntesis y yo le tengo que decir si está bien formada o mal formada.
+
+01:52:34.940 --> 01:52:42.180
+Entonces, yo podría utilizar la stack para hacer eso, porque la podría iterar o recorrer y si me
+
+01:52:42.180 --> 01:52:49.420
+viene un paréntesis de apertura, yo lo voy apilando. Fíjense este, el primero lo apilo,
+
+01:52:49.580 --> 01:52:55.980
+viene el segundo lo apilo, estoy hasta ahí. Viene el tercero, entonces yo qué hago, me fijo,
+
+01:52:55.980 --> 01:53:01.660
+me viene uno de cierre, tengo su pareja acá abierta, entonces desapilo esa, ya está,
+
+01:53:01.660 --> 01:53:08.180
+porque este con ese se hizo matching, me queda este. Viene el cuarto, tengo una apertura así,
+
+01:53:08.180 --> 01:53:11.740
+entonces lo desapilo, porque ya este con el que vino el cierre hizo matching,
+
+01:53:11.740 --> 01:53:17.460
+me quedó la pila vacía y ahí está bien formada. Es como para ver un uso de la pila, este es uno.
+
+01:53:18.300 --> 01:53:25.740
+Entonces, podría decir, stack es una stack de character, yo voy a guardar un carácter en
+
+01:53:25.740 --> 01:53:31.340
+cada uno, new stack de character. Entonces, después digo, for y igual cero, hasta expression,
+
+01:53:31.340 --> 01:53:38.180
+la expresión que viene acá como parámetro, que es este string, hasta length, menor estricto que
+
+01:53:38.180 --> 01:53:44.100
+length porque pienso en cero y me voy quedando uno a uno. A la expresión le digo char at y,
+
+01:53:44.100 --> 01:53:50.540
+me va a dar el carácter cero que es el primero de apertura y pregunto, si el carácter ese es de
+
+01:53:50.540 --> 01:53:57.580
+apertura, hago un push, es de apertura, tomo el segundo, vengo acá, es de apertura, si hago un
+
+01:53:57.580 --> 01:54:05.500
+push, es este que está acá. Bien, ahora lo sigo, tomo el tercero, es de apertura, no. Si la pila
+
+01:54:05.500 --> 01:54:13.700
+está vacía, o sea, vino uno de cierre y la pila ya está vacía, yo ya sé que está mal,
+
+01:54:14.260 --> 01:54:20.940
+porque si me vino uno de cierre y yo no tengo con quién hacer pareja porque acá está vacía,
+
+01:54:20.940 --> 01:54:27.300
+ya ahí directamente return fall. Y si no, si es de cierre, como es nuestro caso el 3, le hago un pop,
+
+01:54:27.300 --> 01:54:35.100
+lo apilo. No, perdón, si me viene de cierre, hago un pop de este. Porque yo acá, ¿qué pasa?
+
+01:54:35.100 --> 01:54:37.220
+Yo ya sé que si no es de cierre, ¿de qué es?
+
+01:54:41.580 --> 01:54:47.340
+Si no es de cierre, ¿de qué es? Es de apertura, exactamente. Ahora, en el parcial,
+
+01:54:47.340 --> 01:54:53.780
+en el parcial no, en la práctica, ustedes tienen que ver si cualquier estructura está bien formada,
+
+01:54:53.780 --> 01:55:00.460
+entonces ahí van a tener corchetes, paréntesis, llaves, de todo, entonces ahí se complica. Bueno,
+
+01:55:00.460 --> 01:55:05.740
+una vez que termino, que salgo del for, devuelvo la stack y sentí si está vacía,
+
+01:55:05.740 --> 01:55:12.340
+en este caso significa que está bien formada true, pero si yo la encontré vacía antes de terminar
+
+01:55:12.340 --> 01:55:21.420
+de analizar toda la secuencia, ahí devolví false. ¿Te entendió el uso de una stack y la implementación
+
+01:55:21.420 --> 01:55:33.980
+todo? No tienen dudas. Después lo pueden volver a ver esto, pero bueno, la idea es que si tienen
+
+01:55:33.980 --> 01:55:46.340
+dudas ahora me vayan preguntando. Así quedan, bueno, por acá. Bueno, acá está la cola,
+
+01:55:46.340 --> 01:55:53.700
+la queue, mirenla después, pero es del estilo, tenemos también una variable instancia de tipo
+
+01:55:53.700 --> 01:55:59.860
+list y bueno, va a ser uso de otras posiciones porque esta, cuando nosotros agregamos un en queue,
+
+01:55:59.860 --> 01:56:05.220
+va a agregar el dato y lo va a agregar en la última posición, cuando agregamos un en queue
+
+01:56:05.220 --> 01:56:12.060
+encolado. Acá va directamente, hace add, porque sabemos que el add lo agrega al final y el remove
+
+01:56:12.060 --> 01:56:17.180
+hace un remove del cero. Acuérdense que el remove que estamos usando acá, este remove se invoca
+
+01:56:17.180 --> 01:56:24.380
+sobre el data que es de tipo list y el remove que implementó Java en la API, además de eliminarlo
+
+01:56:24.380 --> 01:56:29.060
+lo devuelve, entonces aprovechamos que hacemos remove y lo estamos devolviendo acá en la de queue,
+
+01:56:29.060 --> 01:56:36.940
+es este T que estamos devolviendo ahí. Bueno, ya vamos terminando, quedan dos o tres diapos.
+
+01:56:36.940 --> 01:56:43.820
+Vamos a usar a partir de ahora en todas las estructuras de datos que ustedes necesiten listas,
+
+01:56:43.820 --> 01:56:51.340
+ArrayList o LinkedList. Pueden usar cualquiera de las dos, no vamos a evaluar eso. En general,
+
+01:56:51.340 --> 01:56:57.780
+acá como conclusión dice, las principales beneficios de ArrayList y LinkedList es que
+
+01:56:57.780 --> 01:57:04.580
+el LinkedList tiene orden 1 para operaciones de agregar y eliminar al principio y al final de
+
+01:57:04.580 --> 01:57:12.780
+la lista, porque yo tengo esta lista, si yo hago un add directamente, sin decir que, yo sé que
+
+01:57:12.780 --> 01:57:18.340
+inserto al final, es de orden 1 eso, porque yo tengo un puntero al principio y al final, entonces
+
+01:57:18.340 --> 01:57:23.060
+agregar un elemento de una lista es de orden 1, porque lo único que tengo que hacer es insertarlo
+
+01:57:23.060 --> 01:57:30.020
+ahí y poner los punteros. Si yo hago un get de 0 también es de orden 1, porque también tengo
+
+01:57:30.020 --> 01:57:36.780
+una referencia al primer elemento de la lista. En cambio, si yo hago un remove acá del primer
+
+01:57:36.780 --> 01:57:41.780
+elemento con el arreglo, tengo que hacer todo el corrimiento. Si yo elimino el ultimo, ahí no tengo
+
+01:57:41.780 --> 01:57:47.900
+corrimiento, pero bueno, no sé ahí, por ahí es de orden n, porque si yo elimino el primero,
+
+01:57:47.900 --> 01:57:54.580
+tengo que correr todos los n más 1. ¿Cuál es el beneficio de la ArrayList? Si yo hago un get,
+
+01:57:54.580 --> 01:57:58.660
+solamente tengo que hacer un get de un elemento que sé que está en una posición, es de orden
+
+01:57:58.660 --> 01:58:05.940
+1 ahí, get de 0, get de 3, eso es de orden 1. Salidos de esos son muy parecidas, porque todas
+
+01:58:05.940 --> 01:58:13.100
+las dos se crean automáticamente, se manejan sus tamaños, crecen y se achican dinámicamente,
+
+01:58:13.100 --> 01:58:18.780
+son eficientes, porque están implementadas en Java, están testeadas, tienen el mejor
+
+01:58:18.780 --> 01:58:24.700
+orden posible. Entonces, bueno, si ustedes acá usan una u otra, prácticamente no se les va a
+
+01:58:24.700 --> 01:58:31.140
+evaluar eso. La API de los dos es la misma, o sea, la API no, la interfaz pública de ambas es la
+
+01:58:31.140 --> 01:58:37.260
+misma, o sea que es lo mismo. Y lo que sí podríamos decir que la LinkedDisk es doblemente
+
+01:58:37.260 --> 01:58:43.140
+enlazada, tiene punteros a la anterior y al siguiente, con lo cual consume un poco más de
+
+01:58:43.140 --> 01:58:53.260
+memoria que ArrayList. Pero bueno, son prácticamente iguales y salvo esas diferencias, digamos,
+
+01:58:53.260 --> 01:58:58.540
+no se les va a evaluar ni se les va a bajar puntos si usan una u otra. También lo que se podría
+
+01:58:58.540 --> 01:59:04.020
+decir que si la lista de ustedes está en constante cambio, se insertan, se borran, se insertan, se
+
+01:59:04.020 --> 01:59:18.100
+emborran, por ahí es preferible no tener el tema de los corrimientos. Bueno, después, un tema
+
+01:59:18.100 --> 01:59:26.220
+importante cuando tienen que clonar listas es que no usen por ahí el clon que viene del API de Java,
+
+01:59:26.220 --> 01:59:32.700
+porque ahí clonea todo como object y después castea todo, no es de lo más eficiente. Hay
+
+01:59:32.700 --> 01:59:38.940
+distintos métodos para clonar listas. Principalmente cuando nosotros trabajemos después en los
+
+01:59:38.940 --> 01:59:46.180
+algoritmos y cuando ustedes están, por ejemplo, haciendo recursión y están en un árbol y van al
+
+01:59:46.180 --> 01:59:49.780
+hijo derecho, al hijo derecho, al hijo derecho y encuentran lo que quieren y armaron una lista,
+
+01:59:49.780 --> 01:59:58.860
+cuando vuelven de la recursión la lista se la va a ir desarmando automáticamente. Entonces ahí ustedes
+
+01:59:58.860 --> 02:00:03.500
+cuando encuentran un camino valio es probable, según lo que les piden, que tengan que clonar
+
+02:00:03.500 --> 02:00:10.300
+esa lista. Entonces, para clonarla hay otras dos mecanismos. Supongan ser que tenemos una lista así,
+
+02:00:10.300 --> 02:00:16.220
+películas, es un array de string, new array de string, a las películas hacemos un add de
+
+02:00:18.220 --> 02:00:24.940
+perfectos, anatomía de una caída y los que se quedan. Son tres películas en una array list.
+
+02:00:24.940 --> 02:00:31.580
+Si yo quiero clonar eso, voy a crear una nueva variable instancia, películas copiadas uno,
+
+02:00:31.580 --> 02:00:37.660
+que es una array list. New array list, o sea, se acuerdan que el otro día vimos al hacer un new,
+
+02:00:37.740 --> 02:00:43.940
+va a ser otra variable que apunta a otro objeto en la heap, pero le pasamos como parámetros esta
+
+02:00:43.940 --> 02:00:49.580
+lista que ya tenemos creado. Entonces ahora vamos a tener dos listas, ¿te entiendes o no?
+
+02:00:51.580 --> 02:01:03.340
+Vamos a tener una lista, una que apunta a una lista y otra que apunta ahí. Una lista es la original,
+
+02:01:03.340 --> 02:01:10.300
+esta vendría a ser películas y vamos a tener otra lista exactamente igual clonada que va a estar
+
+02:01:10.300 --> 02:01:17.380
+apuntada por esta otra película copiada a una. Esa es una manera, entonces new array list o new
+
+02:01:17.380 --> 02:01:24.120
+linked list de lo que yo quiera a strings y le paso la original. Y la otra manera es crear la
+
+02:01:24.120 --> 02:01:32.020
+vacía. Yo podría tener otra lista, es decir, la pongo vacía, entonces al principio me va a apuntar
+
+02:01:32.020 --> 02:01:43.700
+acá un null, ahí me va a apuntar un null, la tercera lista que tengo. Y después una vez que
+
+02:01:43.700 --> 02:01:49.100
+la creamos vacía decimos add all y le mandamos una collection y ahí agrega todos los elementos.
+
+02:01:49.100 --> 02:01:55.220
+Entonces ahí una vez que termine esto vamos a tener ya no el null contra el z, sino que vamos a
+
+02:01:55.220 --> 02:02:02.020
+tener también otra de estas listas, las tres idénticas. Pero son referencias diferentes,
+
+02:02:02.020 --> 02:02:06.380
+o sea, si yo después en la recursión se me va achicando esta pasando algo a la original,
+
+02:02:06.380 --> 02:02:16.340
+voy a tener respaldada la original. Bueno, y como última cosita, son dos diapos que quedan,
+
+02:02:16.340 --> 02:02:24.740
+la termino y cualquier cosa, el lunes próximo retomamos si le quedan dudas. Existen también
+
+02:02:24.740 --> 02:02:28.740
+dentro de la API de Java, que ustedes ya las pueden usar, que están listas para usar,
+
+02:02:28.740 --> 02:02:35.620
+iteradores. Los iteradores responden también a TDA, es decir, a un conjunto de métodos y
+
+02:02:35.620 --> 02:02:42.500
+hay diferentes implementaciones para ellos. Tenemos el TDA iterable, que es una interfaz iterable,
+
+02:02:43.140 --> 02:02:53.580
+y lo que me permite es iterar, devolver un iterador en realidad. O sea, son dos TDA distintos,
+
+02:02:53.580 --> 02:03:01.460
+fíjense, uno es TDA iterable y el otro es TDA iterador. Iterable tiene un método iterator,
+
+02:03:01.460 --> 02:03:08.420
+que yo le pido un iterator y me da un iterador de este tipo. Yo a una lista le puedo decir iterator
+
+02:03:08.420 --> 02:03:14.820
+y me da a devolver un objeto de tipo iterator, que es de acá abajo. Pero eso es porque la lista
+
+02:03:14.820 --> 02:03:22.900
+implementó la interfaz iterable. Todas las colecciones del framework de Java implementan
+
+02:03:22.900 --> 02:03:31.540
+la interfaz iterable. Es decir, que yo a cualquier tipo de lista, o a un árbol, o a un trimapa,
+
+02:03:31.540 --> 02:03:41.500
+o a una hash table, yo les puedo recuperar, pero sí todo lo que es hash set, triset, todos los
+
+02:03:41.500 --> 02:03:46.540
+árboles, las listas, a todos les puedo decir iterator, este método. Todos responden a eso.
+
+02:03:46.540 --> 02:03:52.940
+¿Qué me devuelve un iterador? Y un iterador es otro TDA. ¿Qué me permite hacer? Recorrer esa
+
+02:03:52.940 --> 02:03:59.060
+colección. Independientemente si es una lista o un árbol, siempre lo voy a recorrer igual,
+
+02:03:59.380 --> 02:04:06.060
+porque todos son de tipo iterador. ¿Y cómo le digo al árbol o a la lista? Le digo, ¿tenés más
+
+02:04:06.060 --> 02:04:10.940
+elementos? Bueno, dame el próximo. ¿Tenés más elementos? Dame el próximo. Esos dos métodos,
+
+02:04:10.940 --> 02:04:17.700
+hash next y next, responden a estos dos métodos, responden todos los iteradores. Independientemente
+
+02:04:17.700 --> 02:04:24.420
+de si yo se lo pido a una linked list, a una array list o a un triset. Porque cada clase lo
+
+02:04:24.420 --> 02:04:30.460
+implementó a su manera. O sea, linked list, cuando yo le digo next, ¿qué va a ser? Va a ir y va a
+
+02:04:30.460 --> 02:04:35.220
+ser, ¿cuál es el próximo puntero? Te devuelvo esto. En cambio, una array list va a ir al arreglo
+
+02:04:35.220 --> 02:04:39.940
+y va a ser índice a índice más uno y me da el próximo elemento. Pero a nosotros no nos importa,
+
+02:04:39.940 --> 02:04:45.700
+nosotros le pedimos un iterador y a ese iterador le decimos, ¿hay más elementos? Bueno, dame el
+
+02:04:45.700 --> 02:04:52.700
+próximo. Cuando a una lista le decimos iterator, su iterador va a estar apuntando ahí como a la nada,
+
+02:04:52.700 --> 02:04:58.820
+al primer es como que está en la posición menos uno casi. Cuando yo le digo, ¿hay más elementos?
+
+02:04:58.820 --> 02:05:04.420
+Se fija, sí, tengo un próximo elemento. Bueno, entonces next. Next lo que hace es me da este
+
+02:05:04.420 --> 02:05:09.980
+elemento y se posiciona para el próximo. ¿Hay más elementos? Sí, bueno, entonces me da el H y se
+
+02:05:09.980 --> 02:05:16.180
+posiciona ahí. ¿Hay más elementos? Me da el R, se posiciona el T. ¿Hay más elementos? Sí, me da el T y
+
+02:05:16.180 --> 02:05:22.300
+se posiciona acá apuntando al null. Entonces, cuando le diga has next y esté acá me va a decir,
+
+02:05:22.300 --> 02:05:29.580
+no, no hay más, salgo del guay. Este comportamiento es igual para todo, para todas las estructuras de
+
+02:05:29.580 --> 02:05:39.020
+datos que vienen con el framework de colecciones. De hecho, si ustedes quisieran iterar sobre alguna
+
+02:05:39.020 --> 02:05:47.140
+clase ustedes, la stack o la queue, no sé si, sí, se podría iterar, solamente iterarla. Ustedes
+
+02:05:47.140 --> 02:05:54.060
+podrían hacer que la stack implementa iterable y devolver un iterador que haga esto. Se los permite
+
+02:05:54.060 --> 02:06:00.020
+la pie dejada. Bueno, y acá tenemos el ejemplo y ahora sí les prometo que esta es la última diapo
+
+02:06:00.020 --> 02:06:07.620
+del día. Hay un ejemplo, vamos acá directamente, creamos una lista y miremos este ejemplo
+
+02:06:07.620 --> 02:06:13.660
+directamente. Decimos, lista, dame un iterador y yo lo guardo en algo de tipo iterator. Pero
+
+02:06:13.660 --> 02:06:19.180
+como yo ya sé que la lista es de enteros, lo guardo en un iterator de tipo integer. Entonces,
+
+02:06:19.180 --> 02:06:24.940
+cuando yo le diga has next, ¿qué me va a devolver este next? Me va a devolver un integer. Porque ya
+
+02:06:24.940 --> 02:06:30.580
+mi iterador, ya le dije que quiero que me devuelva elemento de tipo integer. Entonces,
+
+02:06:30.580 --> 02:06:35.860
+qué hago? Si, te da un preline, a esa integer le digo int value. En este caso acá arriba,
+
+02:06:35.860 --> 02:06:40.780
+fíjense que yo declaro iterador y al igual como hicimos al principio con la lista, no le
+
+02:06:40.780 --> 02:06:47.060
+pongo de qué tipo son. Entonces, ojo que en este caso, aunque la lista sea de tipo integers,
+
+02:06:47.060 --> 02:06:52.620
+el iterator, como la variable, yo acá no le digo que me devuelva de tipo integer,
+
+02:06:52.620 --> 02:06:57.620
+es un upcasting y me devuelve algo de tipo object. Entonces, si yo hago next,
+
+02:06:57.620 --> 02:07:02.260
+me va a devolver un object. Si yo quiero acceder a los métodos integers, lo tengo que castear.
+
+02:07:02.900 --> 02:07:08.540
+Así que, al igual que cuando ustedes crean una lista, que le dicen de qué tipo va a ser la lista,
+
+02:07:08.540 --> 02:07:14.340
+cuando creen un iterador, acuérdense de decirles también de qué tipo va a ser el iterador.
+
+02:07:15.740 --> 02:07:21.700
+Integro cualquiera de sus clases, bueno. Así que esto es lo que tienen que usar. Y acá abajo está
+
+02:07:21.700 --> 02:07:27.420
+lo mismo con el for each. Como la lista es iterable, yo también podría decirle,
+
+02:07:27.620 --> 02:07:34.260
+una manera de iterar la lista es con el iterador. Otra manera de iterar la lista es con el for each.
+
+02:07:34.260 --> 02:07:42.020
+También lo pueden iterar así e imprimir. Bueno, además de iterator, el list iterator. El list
+
+02:07:42.020 --> 02:07:47.580
+iterator me permite posicionarme en el último elemento de la lista y no solamente hacer next,
+
+02:07:47.580 --> 02:07:52.980
+sino hacer previous, recorrer la parada delante para atrás. Pero bueno, para el día de hoy creo
+
+02:07:52.980 --> 02:08:00.820
+que ya fueron varias cositas. Un poco repasamos la herencia, vimos upcasting, downcasting. Bueno,
+
+02:08:00.820 --> 02:08:07.100
+esto de la API de Java. Y esto ya les va a permitir hacer, además del tutorial de clips que tienen
+
+02:08:07.100 --> 02:08:14.340
+subido, hacer toda la práctica 1. Porque con lo de pasaje de parámetros que vimos la semana pasada,
+
+02:08:14.340 --> 02:08:22.780
+más esto, ya pueden hacer toda la práctica 2 o 1. No sé cómo lo pusieron. El for each también
+
+02:08:22.780 --> 02:08:27.700
+permite iterar todas las estructuras. Sí, las estructuras del framework de Java, sí, te permite
+
+02:08:27.700 --> 02:08:34.340
+iterar todo. Porque las estructuras son de tipo iterable. Ya son de tipo iterable y entonces lo
+
+02:08:34.340 --> 02:08:39.980
+puedes hacer. Y está bueno, porque esta después internamente es como que le pide el iterador y
+
+02:08:39.980 --> 02:08:47.380
+hace el next. Pero vos lo haces desde acá. Y está bueno porque este next en cada lista, por ejemplo,
+
+02:08:47.380 --> 02:08:52.220
+como recién le decía, el next en la lista enlazada, agarra el próximo nodo. El next en la
+
+02:08:52.220 --> 02:09:01.060
+lista con arreglos, le incrementa el índice, agarra el elemento del arreglo. El next en un
+
+02:09:01.060 --> 02:09:05.740
+árbol binario, bueno, hay que ver qué hace. Después, dije izquierdo, dijo derecho, dije izquierdo,
+
+02:09:05.740 --> 02:09:10.380
+dije izquierdo, dije izquierdo. No sé, cómo lo implementó Java. Y ustedes en sus estructuras
+
+02:09:10.380 --> 02:09:17.340
+también podrían tener estos comportamientos y se convertirían en estructuras estándares. Y
+
+02:09:17.340 --> 02:09:22.140
+la estructura que ustedes simplemente la pueden pasar también al forage. Se hacen eso. Pero bueno,
+
+02:09:22.140 --> 02:09:31.780
+lo van a entender mejor cuando veamos interfaces. Porque iterable son interfaces. Hoy creo que un
+
+02:09:31.780 --> 02:09:37.220
+poco se van con una idea, pero no sabrían todavía cómo implementarlo sin que no lo vieron en otro
+
+02:09:37.220 --> 02:09:42.180
+lado. La práctica 1 está subida. Creo que está en el tutorial. No, pero les podría decir a los
+
+02:09:42.180 --> 02:09:45.740
+chicos que lo suban, porque la verdad tienen todo el material. Les voy a decir que lo vayan
+
+02:09:45.740 --> 02:09:54.380
+subiendo para quienes quieran hablar. Bueno, chicos, por hoy estamos. Voy a cortar la grabación y
+
+02:09:54.380 --> 02:09:55.660
+cualquier cosa seguimos hablando.
+

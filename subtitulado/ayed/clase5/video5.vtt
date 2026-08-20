@@ -1,0 +1,3221 @@
+WEBVTT
+
+00:00.000 --> 00:15.080
+El otro día estábamos viendo árboles de expresión. Ya con Pepe la semana pasada que ya les dio toda la
+
+00:15.080 --> 00:23.400
+implementación de árboles binarios en Java y le dio también las conversiones de árboles de
+
+00:23.400 --> 00:32.640
+expresión implementadas en Java. O sea, para construir el árbol. Hoy vamos a hacer un poco,
+
+00:32.640 --> 00:41.320
+en realidad lo que les dio fue la expresión postfija y de la expresión prefija. Si quieren,
+
+00:41.320 --> 00:48.600
+hoy hacemos un repaso, o sea, yo en la semana pasada les llegué a dar hasta la expresión postfija.
+
+00:48.600 --> 01:00.920
+Si quieren, hacemos un repaso de la prefija y después le doy esta que es de cómo construir
+
+01:00.920 --> 01:15.560
+el árbol a partir de la infija. Entonces, para construir el árbol a partir de la prefija,
+
+01:15.920 --> 01:22.760
+todo esto ya lo vimos, que es a partir de la postfija que se usa una pila. O sea, recuerde
+
+01:22.760 --> 01:28.120
+que a partir de la postfija, de una expresión postfija, como lo primero que yo voy a empezar
+
+01:28.120 --> 01:38.140
+a encontrar son operandos, el árbol se va construyendo de abajo para arriba. Acá se
+
+01:38.140 --> 01:46.100
+ve bien en la animación, que cuando encuentra BD, después va a encontrar el POR. Entonces acá
+
+01:46.100 --> 01:57.700
+arma este árbol, o sea, crea el nodo con el POR, lo que hay en la pila lo engancha como hijo derecho,
+
+01:57.700 --> 02:06.780
+después desapila el otro elemento de la pila, lo pone como hijo izquierdo y apila la referencia
+
+02:06.780 --> 02:14.980
+ahora a este nodo. Entonces fíjense, si ustedes ven cómo es el árbol terminado, que el árbol
+
+02:14.980 --> 02:25.140
+se empieza en mar de abajo para arriba. Bueno, en la prefija en realidad es al revés, o sea,
+
+02:25.140 --> 02:35.660
+como la expresión viene en prefija, es decir, que van a aparecer, esta animación es bastante larga,
+
+02:35.980 --> 02:42.700
+como la expresión, en la expresión van a aparecer primero los operadores y después los operandos,
+
+02:42.700 --> 02:49.500
+entonces yo lo que primero voy a encontrar va a ser la raíz del árbol, se entiende, entonces por eso
+
+02:49.500 --> 02:58.060
+se empieza a armar de arriba para abajo. Y este algoritmo es un algoritmo que es recursivo,
+
+02:58.060 --> 03:07.940
+que lo que hace es, si el carácter que estoy analizando es un operador, lo que hace es crear
+
+03:07.940 --> 03:22.020
+un nodo, no, raíz, crear un nodo de raíz, por ejemplo, vamos a ver este árbol, o sea,
+
+03:22.020 --> 03:37.500
+crea un nodo de raíz, o sea, va a crear el nodo de raíz y llama recursivamente con el subárbol
+
+03:37.500 --> 03:46.940
+izquierdo y la expresión sin el primer carácter, que es lo que dice acá, y la expresión sin el
+
+03:46.940 --> 03:55.260
+primer carácter. Eso es lo que quiere decir, que en realidad va avanzando, o sea, yo por ejemplo
+
+03:55.260 --> 04:08.060
+iba a tener A, B, entonces decir que llama con el subárbol izquierdo y la expresión sin el primer
+
+04:08.060 --> 04:14.300
+carácter es porque está llamando a partir de acá, ¿se entiende? Esperen que voy a enfocar bien el
+
+04:14.300 --> 04:27.260
+pizarrón. Entonces, si ya ahí encuentro el por, entonces, ¿qué hace? Bueno, ahí está incompleta,
+
+04:27.260 --> 04:36.220
+¿no? Vuelve a crear el nodo con el operador y llama con el subárbol izquierdo con la expresión
+
+04:36.220 --> 04:42.700
+sin el primer carácter, o sea, entonces como que va avanzando. Cuando encuentra un operando, ahí crea
+
+04:42.700 --> 04:57.980
+la hoja, ¿se entiende? Después crea, después sigue, llama. Entonces, en realidad ¿qué hace? Termina,
+
+04:57.980 --> 05:05.500
+crea la hoja y termina. Entonces, esto, esta llamada se había quedado interrumpida acá,
+
+05:05.500 --> 05:19.660
+o sea, se había quedado interrumpida acá en realidad, en este lugar. Entonces, ahora llama con la referencia
+
+05:19.660 --> 05:31.740
+al hijo derecho y otra vez la expresión sin el primer carácter, ¿no? Entonces, acá pone B y después sigue, bueno, falta todo el, o sea,
+
+05:31.900 --> 05:37.660
+¿entendieron cómo es la lógica de la construcción desde una prefija?
+
+05:40.700 --> 05:41.420
+Bien.
+
+05:46.700 --> 05:55.980
+Bueno, ¿cómo se hace ahora para armar el árbol a partir de una infija? A partir de una infija, en realidad,
+
+05:56.620 --> 06:07.260
+no es una forma directa, o sea, por lo menos la forma que le damos a nosotros es una forma indirecta, es decir,
+
+06:07.260 --> 06:21.180
+es pasar la expresión infija a postfija y después sí construir el árbol. Entonces sería esto, es decir,
+
+06:21.180 --> 06:29.580
+pasar la expresión de infija a postfija, que ahora vamos a ver cómo, que para eso se usó una pila, ¿no?
+
+06:29.580 --> 06:36.860
+Y después se construye el árbol. Hoy en el algoritmo tenemos la semana pasada que usó una pila.
+
+06:38.620 --> 06:41.820
+Ahí que estamos repasando recién hablé al comienzo.
+
+06:42.780 --> 06:55.900
+Bien. Entonces, ¿cómo se hace para construir una expresión infija a postfija? En realidad,
+
+06:55.900 --> 07:02.860
+esto es una aplicación de, esto es una aplicación de pila directamente.
+
+07:03.580 --> 07:23.980
+Entonces, si yo tengo, por ejemplo, creo que acá yo me había, me había escrito del año pasado, acá.
+
+07:24.060 --> 07:26.060
+Si yo tengo esta expresión, por ejemplo,
+
+07:26.060 --> 07:44.940
+Esta expresión es una expresión infija, ¿no?
+
+07:45.820 --> 08:00.140
+En realidad, o sea, si yo tengo que pasarla a postfija para a partir de ahí construir el árbol,
+
+08:00.140 --> 08:09.620
+porque es como que así intuitivamente yo no puedo construir, o sea, no sé bien cuál puede ser la
+
+08:09.620 --> 08:17.500
+raíz del árbol a partir de esta expresión. Entonces, ¿cómo se pasa una expresión infija a postfija?
+
+08:17.500 --> 08:25.940
+En realidad, la estrategia es esa que está ahí, ¿no? Que es muy sencilla. Dice, si es un operando,
+
+08:25.940 --> 08:33.220
+se coloca directamente en la salida. Es decir, va recorriendo la expresión. A ver, voy a buscar
+
+08:33.220 --> 08:44.580
+unos libras de otro color. Si es una expresión, si es un operando, perdón, se coloca directamente
+
+08:44.580 --> 08:57.500
+en la salida. O sea que la mando a la salida. Si es un operador, ¿qué hace? En este caso,
+
+08:57.500 --> 09:08.460
+como la pila está vacía, yo el operador lo voy a apilar directamente. Pero lo que hace, si no, es comparar
+
+09:10.460 --> 09:19.260
+el operador que estoy analizando con el tope de la pila. Si el operador tiene mayor prioridad de tope,
+
+09:20.020 --> 09:30.740
+entonces se apila. La prioridad de las operaciones que ya la saben, por ejemplo, el por y la división
+
+09:30.740 --> 09:41.340
+tiene más prioridad que el más y el menos. La potencia tiene más prioridad que el por y la división.
+
+09:41.420 --> 09:57.220
+O sea, en realidad, ¿por qué yo tuve en este caso que encerrar esto entre paréntesis?
+
+09:59.660 --> 10:04.540
+Porque si acá no hubiese puesto paréntesis, esto se hubiese resuelto de otra manera.
+
+10:05.540 --> 10:19.540
+Claro. Entonces, en este caso, la primera vez yo apilo el operador. Si la pila está vacía. Bueno,
+
+10:19.540 --> 10:30.860
+sigo. ¿Es un operando o va a la salida? Sigo. ¿Es un operador? El operador que estoy analizando,
+
+10:30.860 --> 10:41.340
+¿cómo es con respecto al tope de la pila? Tiene mayor prioridad del por. Entonces, lo apilo.
+
+10:43.980 --> 10:52.060
+¿Qué pasa con los paréntesis? Sigo. Cuando encuentro un paréntesis, que sería esto que está acá,
+
+10:52.060 --> 11:05.620
+la parte C, cuando encuentro un paréntesis de altura, lo que hago es apilarlo y sigo.
+
+11:07.580 --> 11:15.020
+O sea, los paréntesis después no van a ir a la salida porque las expresiones en formato prefija
+
+11:15.020 --> 11:23.100
+o posfija no requieren paréntesis. Pero sí, en realidad, me van a servir a mí como para
+
+11:23.100 --> 11:32.860
+justamente encerrar eso. O sea, lo que está encerrado considerarlo como un bloque. Entonces,
+
+11:32.860 --> 11:43.100
+sigo. Acá encuentro un operando, entonces va a la salida. Ahora encuentro un operador. Encontrar
+
+11:43.100 --> 11:49.100
+un paréntesis es como encontrar la pila vacía. Entonces, la apilo.
+
+11:50.940 --> 12:01.500
+Cuando encuentro, por acá, ahora el D. Cuando encuentro el paréntesis D cierre,
+
+12:01.500 --> 12:08.940
+lo que hago es desapilar todo lo que hay en la pila hasta el paréntesis de altura,
+
+12:08.940 --> 12:16.740
+incluido el paréntesis de apertura. Entonces, desapilo el menos y lo mando a la salida. Desapilo
+
+12:16.740 --> 12:31.020
+el paréntesis de apertura. Pero no va el resultado. Bien, entonces, pues sigo. Encuentro el menos.
+
+12:31.020 --> 12:46.980
+Entonces, ahora comparo el menos con el tope de la pila. El tope es por. ¿Cuál es la prioridad de cada uno?
+
+12:46.980 --> 12:58.940
+Entraría acá, dice, operador con menor o igual prioridad que el tope, se desapila el elemento
+
+12:58.940 --> 13:09.860
+colocándolo en la salida. O sea, que esto entonces lo mando a la salida y se vuelve a comparar con el
+
+13:09.860 --> 13:17.620
+tope de la pila. Vuelvo a comparar el menos con el más. Vuelve a pasar por acá. Operador con menor o
+
+13:17.620 --> 13:30.340
+igual prioridad, porque el menos tiene igual. Entonces, desapilo y vuelvo a comparar. En este
+
+13:30.340 --> 13:41.060
+caso se me vació la pila. Bueno, apilo el menos. Después, vengo acá, encuentro un operando, va a la
+
+13:41.060 --> 13:51.860
+salida y como acá se me terminó la expresión. Entonces, cuando se me terminó la expresión, salvo todo lo que me quedó en la pila.
+
+13:51.860 --> 14:04.420
+En este caso es un solo operador que es el menos. ¿Se entendió la lógica? O sea, en realidad esta es una aplicación de pilas.
+
+14:04.420 --> 14:24.420
+Esto antes, antes se daban en primer año cuando se daban pilas y colas, una de las aplicaciones era convertir una expresión en fija, en posija, o lo que también se llama sensión de sonar con la conversa.
+
+14:24.420 --> 14:44.420
+Si buscamos sobre el tema. Entonces, una vez que yo tengo la expresión en posija, ahí sí puedo usar el algoritmo que vimos el otro día que repasamos.
+
+14:44.420 --> 14:52.420
+Entonces, como parecer, no cierre el tema porque ahora arrancamos con árboles generales.
+
+14:53.420 --> 15:02.420
+Que yo hacía a los chicos de ingeniería. Yo tengo, para armar el árbol.
+
+15:06.420 --> 15:19.420
+Para armar el árbol, yo tengo primero, de la pos fija, uso el algoritmo que utiliza una pila.
+
+15:23.420 --> 15:32.420
+Para armarlo desde la pre fija, uso el algoritmo que es recursivo.
+
+15:35.420 --> 15:46.420
+Y para construirlo desde la infija, en realidad lo que tengo que hacer es pasar la pos fija.
+
+15:52.420 --> 16:00.420
+Y luego usar el algoritmo 1.
+
+16:23.420 --> 16:27.420
+Fíjese esa expresitación que está ahí.
+
+16:33.420 --> 16:36.420
+Esa expresitación que dice.
+
+16:36.420 --> 16:40.420
+Y da la siguiente impresión pos fija.
+
+16:40.420 --> 16:44.420
+Dibuje su correspondiente árbol de presión.
+
+16:48.420 --> 16:50.420
+¿Cómo lo haría?
+
+16:52.420 --> 16:56.420
+El primer ítem de ejercicio 1.
+
+16:56.420 --> 17:08.420
+Acá en la pizarra se tiene un poco el resumen, no de todo.
+
+17:21.420 --> 17:24.420
+O sea, ¿qué usarían?
+
+17:26.420 --> 17:30.420
+Para resolver el primer ítem de ejercicio 1.
+
+17:33.420 --> 17:39.420
+O sea, si yo tengo estos tres mecanismos, ¿cuáles usarían?
+
+17:39.420 --> 17:42.420
+Ya que están numerados.
+
+17:43.420 --> 17:50.420
+O sea, si yo tengo estos tres mecanismos, ¿cuáles usarían?
+
+17:50.420 --> 17:53.420
+Ya que están numerados.
+
+17:58.420 --> 18:00.420
+El 1.
+
+18:00.420 --> 18:02.420
+O sea, sería este.
+
+18:02.420 --> 18:03.420
+Bien.
+
+18:03.420 --> 18:06.420
+Después, el segundo ítem te dice.
+
+18:06.420 --> 18:15.420
+Convierta la expresión, esa que está ahí, que es una expresión infija, en una expresión pre-fija.
+
+18:18.420 --> 18:32.420
+O sea, convierta la expresión, esa que está ahí, que es infija, a, a, b, más e, por, de, de, más e, más, es, por, de, se yo, que es una expresión pre-fija.
+
+18:33.420 --> 18:36.420
+¿Cómo lo resolverías?
+
+19:03.420 --> 19:20.420
+Primero con fija y luego del árbol a pre-fija.
+
+19:20.420 --> 19:25.420
+Claro, es decir, ¿cómo yo tengo la infija?
+
+19:25.420 --> 19:28.420
+¿La infija?
+
+19:28.420 --> 19:36.420
+Lo que yo tengo que, para pasarla a pre-fija, tengo que armar el árbol y recorrerlo en pre-orden.
+
+19:36.420 --> 19:52.420
+Entonces, en realidad la infija la tengo que pasar a pre-fija, usar el algoritmo 1 para construir el árbol y después recorrer el árbol en pre-orden.
+
+19:52.420 --> 19:59.420
+Si yo llevo el árbol de la expresión, tengo todos los formatos de la expresión.
+
+19:59.420 --> 20:11.420
+¿Se entiende? Porque yo recorro, lo recorro, con los distintos órdenes, digamos, algoritmos de orden, pre-orden, pos-orden, in-orden.
+
+20:11.420 --> 20:17.420
+Entonces, tengo todas las, la expresión en todos los formatos.
+
+20:17.420 --> 20:32.420
+Entonces, fíjense, desde infija a pre-fija, no en directo, yo tengo que pasar por el árbol primero.
+
+20:33.420 --> 20:43.420
+Entonces, para pasar por el árbol, justo la infija, tengo que pasarla por fija, usar este algoritmo,
+
+20:43.420 --> 20:53.420
+construyo el árbol y lo recorro pre-orden, y ahí obtengo la expresión en formato pre-fija.
+
+20:53.420 --> 20:59.420
+Bien, ¿cómo sería ahora este de acá?
+
+20:59.420 --> 21:11.420
+Dada la siguiente expresión pre-fija, dibuje sub-correspondiente a lo binario de expresión.
+
+21:11.420 --> 21:15.420
+¿Cómo lo resolvería?
+
+21:15.420 --> 21:19.420
+Con el algoritmo locosivo, tal cual.
+
+21:19.420 --> 21:27.420
+Y después, convierta la expresión, esa que está ahí, que es infija, en una expresión pos-fija.
+
+21:27.420 --> 21:31.420
+¿Qué es esto de acá?
+
+21:31.420 --> 21:35.420
+Es usando la pila.
+
+21:35.420 --> 22:00.420
+Bien, bueno, ahora pasamos a otro tema, otro tema, que son árboles generales.
+
+22:00.420 --> 22:11.420
+Bien, bueno, vamos a ver que árboles generales, quizá digamos árboles binarios, árboles generales,
+
+22:11.420 --> 22:17.420
+es, o sea, los conceptos que se usan son los mismos, ¿no?
+
+22:17.420 --> 22:25.420
+El concepto de camino, de profundidad, de altura, del grado, del nodo.
+
+22:26.420 --> 22:37.420
+La diferencia de un árbol general con un árbol binario es que cada nodo puede tener cualquier número de hijos, ¿no?
+
+22:37.420 --> 22:42.420
+Entonces, ¿cómo se define un árbol general?
+
+22:42.420 --> 22:46.420
+Dice, un árbol general es una proyección de nodos, ¿no?
+
+22:46.420 --> 22:58.420
+O puede estar formado por un nodo distinguido de R, que se llama raíz, y un conjunto de árboles,
+
+22:58.420 --> 23:03.420
+o como nosotros a veces lo solemos llamar que subárboles, ¿no?
+
+23:03.420 --> 23:06.420
+El T1, T2, Tk.
+
+23:06.420 --> 23:12.420
+Con k mayor o igual que cero, o sea, eso quiere decir que puede ser que yo tenga la raíz sola.
+
+23:13.420 --> 23:22.420
+Donde la raíz de cada subárbol está conectada al árbol por medio de una raíz.
+
+23:22.420 --> 23:34.420
+Entonces tengo la raíz y tengo cualquier número de hijos que a su vez los hijos son árboles.
+
+23:34.420 --> 23:36.420
+Bien.
+
+23:37.420 --> 23:49.420
+La definición de grado de un nodo acá tiene un poco más de sentido que en el árbol binario.
+
+23:49.420 --> 23:56.420
+¿Por qué? Porque en realidad acá me está indicando el número de hijos que tiene ese nodo.
+
+23:58.420 --> 24:04.420
+Y el grado del árbol es el grado del nodo con mayor grado.
+
+24:04.420 --> 24:16.420
+Quiere decir que si yo tengo un nodo que tiene, no sé, 10 hijos y el resto de los nodos tiene 2 o 3 hijos,
+
+24:16.420 --> 24:20.420
+bueno, el grado del árbol va a ser 10, el máximo de todos.
+
+24:21.420 --> 24:22.420
+Bien.
+
+24:23.420 --> 24:28.420
+La altura es igual que en el árbol binario, ¿no?
+
+24:28.420 --> 24:33.420
+Es la longitud del camino más largo desde el nodo hasta una hoja.
+
+24:33.420 --> 24:36.420
+Y las hojas tienen altura cero.
+
+24:40.420 --> 24:46.420
+La altura de un árbol es la altura del nodo raíz.
+
+24:46.420 --> 24:53.420
+Es decir que si yo quiero calcularle la altura a un árbol, le calculo la altura al nodo raíz.
+
+24:54.420 --> 25:01.420
+Vamos a ir dibujando un árbol general para después ir viendo los recorridos.
+
+25:03.420 --> 25:04.420
+Bien.
+
+25:33.420 --> 25:34.420
+Bien.
+
+26:03.420 --> 26:19.420
+Bueno, no va a alcanzar tan grande el árbol, no me alcanza el lugar para escribirlo.
+
+26:19.420 --> 26:20.420
+Bien.
+
+26:20.420 --> 26:34.420
+Entonces, la altura de, por ejemplo, la altura del nodo de ¿cuál sería?
+
+26:34.420 --> 26:49.420
+Bien, porque es la longitud del camino más largo hasta una hoja, es decir, yo tengo que
+
+26:49.420 --> 26:54.420
+calcular esto, después calcular esto, después calcular esto, calcular todos los posibles
+
+26:54.420 --> 26:59.420
+caminos hasta una hoja, entonces me quedo con el más largo.
+
+27:00.420 --> 27:07.420
+¿Cuál es la profundidad, a ver si se acuerdan, ahora ahí está la expresión, la profundidad
+
+27:07.420 --> 27:15.420
+del nodo de raíz uno, es la longitud del único camino que hay desde la raíz hasta
+
+27:15.420 --> 27:16.420
+el nodo.
+
+27:16.420 --> 27:17.420
+Bien.
+
+27:17.420 --> 27:18.420
+Bien.
+
+27:18.420 --> 27:28.420
+Y la raíz tiene profundidad cero, porque siempre se considera que hay un camino de
+
+27:28.420 --> 27:30.420
+un nodo así mismo con longitud cero.
+
+27:30.420 --> 27:37.420
+Cero, o sea, hay un camino de D a D con longitud cero, es decir, que no tiene arista.
+
+27:37.420 --> 27:44.420
+Bueno, acá hay algunos ejemplos, por ejemplo, la profundidad, profundidad también a veces
+
+27:44.420 --> 27:49.420
+se lo van a encontrar con el nombre del nivel.
+
+27:49.420 --> 28:02.420
+El nodo tres es uno, el grado del nodo siete es tres, dice ¿cuál es la altura del nodo
+
+28:02.420 --> 28:04.420
+tres?
+
+28:04.420 --> 28:12.420
+La altura sería tres, la altura del nodo tres es tres.
+
+28:13.420 --> 28:17.420
+Después, ¿cuál es la profundidad del nodo doce?
+
+28:21.420 --> 28:24.420
+¿Cuál es el grado del árbol?
+
+28:27.420 --> 28:29.420
+¿El grado del árbol?
+
+28:29.420 --> 28:30.420
+Claro, cuatro.
+
+28:30.420 --> 28:44.420
+Porque es el grado en el nodo del basurado.
+
+28:44.420 --> 28:47.420
+¿Y cuál es la altura del árbol?
+
+28:50.420 --> 28:53.420
+Sería cuatro, también.
+
+28:59.420 --> 29:13.420
+Bien, entonces vamos a ver, ya que dibujé todo el árbol ahí, vamos a ver los recorridos.
+
+29:13.420 --> 29:16.420
+Ahora vemos lo de árbol binario.
+
+29:16.420 --> 29:19.420
+Para no borrar todo eso, lo de...
+
+29:19.420 --> 29:29.420
+¿Cómo son los recorridos?
+
+29:29.420 --> 29:32.420
+Ya que tengo todo el árbol ahí.
+
+29:32.420 --> 29:36.420
+Ahora volvemos con los otros conceptos.
+
+29:36.420 --> 29:41.420
+Con el concepto de árbol chile y no esa cosa.
+
+29:41.420 --> 29:44.420
+Los recorridos.
+
+29:44.420 --> 29:54.420
+Los recorridos de los árboles generales son los mismos que para árboles binarios.
+
+29:54.420 --> 30:01.420
+Es decir, tenemos el preorden y no orden posorden y recorrido por niveles.
+
+30:01.420 --> 30:04.420
+Yo uso una cola, que si te la tiro.
+
+30:04.420 --> 30:10.420
+El preorden, o sea, de dónde viene, volvemos a repetir lo mismo.
+
+30:10.420 --> 30:21.420
+El nombre de los recorridos es en qué momento se procesa la raíz del árbol.
+
+30:21.420 --> 30:33.420
+Entonces, el preorden se procesa primero la raíz y después los hijos.
+
+30:33.420 --> 30:37.420
+Y el no orden se procesa.
+
+30:37.420 --> 30:47.420
+El primer hijo, después la raíz y después todos los demás.
+
+30:47.420 --> 30:50.420
+El posorden se procesa.
+
+30:50.420 --> 30:55.420
+Los hijos, cuando yo digo los hijos, es los hijos recursivamente.
+
+30:55.420 --> 30:58.420
+Entonces, tengo que volver a hacer lo mismo.
+
+30:58.420 --> 31:06.420
+Y primero los hijos y por último la raíz.
+
+31:06.420 --> 31:15.420
+Y en el recorrido por niveles, se procesa, como su nombre indica, por nivel.
+
+31:18.420 --> 31:19.420
+Bien.
+
+31:19.420 --> 31:25.420
+Ya que tengo ahí el árbol dibujado para no borrarlo y no me queda más espacio en la pizarra.
+
+31:25.420 --> 31:27.420
+Si no, lo tengo que borrar y volver a dibujar.
+
+31:27.420 --> 31:29.420
+¿Cómo sería?
+
+31:29.420 --> 31:33.420
+Total, ustedes ya manejan bien el recorrido, ¿no?
+
+31:33.420 --> 31:35.420
+¿Cómo sería el preorden?
+
+31:38.420 --> 31:39.420
+Acá.
+
+31:39.420 --> 32:03.420
+Empiezo por, solo un chiquito, A, B, C.
+
+32:10.420 --> 32:12.420
+Y.
+
+32:27.420 --> 32:29.420
+Y se bien.
+
+32:30.420 --> 32:32.420
+C.
+
+32:32.420 --> 32:34.420
+C.
+
+32:38.420 --> 32:39.420
+Bien.
+
+32:39.420 --> 32:41.420
+H.
+
+32:41.420 --> 32:43.420
+I.
+
+32:43.420 --> 32:45.420
+J.
+
+32:45.420 --> 32:47.420
+Después, ¿qué vendría?
+
+32:49.420 --> 32:51.420
+T.
+
+32:52.420 --> 32:54.420
+K.
+
+32:55.420 --> 32:57.420
+L.
+
+32:59.420 --> 33:00.420
+K.
+
+33:00.420 --> 33:01.420
+L.
+
+33:02.420 --> 33:04.420
+N.
+
+33:05.420 --> 33:07.420
+N.
+
+33:10.420 --> 33:11.420
+N.
+
+33:11.420 --> 33:12.420
+O.
+
+33:12.420 --> 33:13.420
+P.
+
+33:13.420 --> 33:14.420
+O.
+
+33:14.420 --> 33:15.420
+P.
+
+33:15.420 --> 33:17.420
+M.
+
+33:17.420 --> 33:19.420
+V.
+
+33:19.420 --> 33:21.420
+Q.
+
+33:21.420 --> 33:22.420
+R.
+
+33:22.420 --> 33:24.420
+S.
+
+33:24.420 --> 33:26.420
+V.
+
+33:26.420 --> 33:28.420
+No, perdón.
+
+33:28.420 --> 33:30.420
+No sé ni lo que escribo.
+
+33:30.420 --> 33:32.420
+V.
+
+33:32.420 --> 33:33.420
+T.
+
+33:33.420 --> 33:35.420
+W.
+
+33:36.420 --> 33:37.420
+R.
+
+33:37.420 --> 33:38.420
+S.
+
+33:38.420 --> 33:39.420
+U.
+
+33:39.420 --> 33:40.420
+V.
+
+33:40.420 --> 33:41.420
+T.
+
+33:41.420 --> 33:42.420
+W.
+
+33:42.420 --> 33:43.420
+Bien.
+
+33:43.420 --> 33:45.420
+Por eso también lo puedo equivocar.
+
+33:45.420 --> 33:47.420
+Vamos a ver el in orden.
+
+33:47.420 --> 33:50.420
+En orden es el más confuso de todos.
+
+33:52.420 --> 33:54.420
+Un poco más abajo.
+
+33:54.420 --> 33:56.420
+Para separar esto.
+
+34:00.420 --> 34:01.420
+Y.
+
+34:01.420 --> 34:02.420
+T.
+
+34:02.420 --> 34:03.420
+O.
+
+34:03.420 --> 34:04.420
+P.
+
+34:04.420 --> 34:05.420
+O.
+
+34:05.420 --> 34:06.420
+P.
+
+34:06.420 --> 34:07.420
+O.
+
+34:07.420 --> 34:08.420
+P.
+
+34:08.420 --> 34:09.420
+O.
+
+34:09.420 --> 34:10.420
+O.
+
+34:10.420 --> 34:11.420
+O.
+
+34:11.420 --> 34:12.420
+O.
+
+34:12.420 --> 34:13.420
+O.
+
+34:13.420 --> 34:14.420
+O.
+
+34:14.420 --> 34:15.420
+O.
+
+34:15.420 --> 34:16.420
+O.
+
+34:16.420 --> 34:17.420
+O.
+
+34:17.420 --> 34:18.420
+O.
+
+34:18.420 --> 34:19.420
+O.
+
+34:19.420 --> 34:20.420
+O.
+
+34:20.420 --> 34:21.420
+O.
+
+34:21.420 --> 34:22.420
+O.
+
+34:23.420 --> 34:26.420
+El in orden.
+
+34:26.420 --> 34:27.420
+E.
+
+34:27.420 --> 34:29.420
+V.
+
+34:29.420 --> 34:30.420
+Q.
+
+34:31.420 --> 34:32.420
+En.
+
+34:34.420 --> 34:35.420
+D.
+
+34:35.420 --> 34:41.420
+U.
+
+34:41.420 --> 34:42.420
+O.
+
+34:42.420 --> 34:43.420
+O.
+
+34:43.420 --> 34:45.420
+D.
+
+34:46.420 --> 34:47.420
+C.
+
+34:47.420 --> 34:48.420
+O.
+
+34:48.420 --> 34:57.420
+Tengan en cuenta, yo lo dibujé así a propósito, para que ustedes lo vean y por ahí ver qué es lo que es.
+
+34:57.420 --> 35:02.420
+Tengan en cuenta que acá no hay hijo izquierdo, hijo derecho.
+
+35:06.420 --> 35:14.420
+O sea, es el primer hijo, el segundo, el tercero, el cuarto. ¿Entiende?
+
+35:15.420 --> 35:26.420
+Entonces, este F es el primer hijo de, aunque esté puesta a la lista para la derecha.
+
+35:26.420 --> 35:34.420
+Ahora, cuando después veamos las representaciones, o sea, en la representación no dice que es el hijo,
+
+35:34.420 --> 35:41.420
+no existe concepto de hijo derecho, ¿entiende? Tengo una lista de hijos.
+
+35:41.420 --> 35:49.420
+Entonces, este es el primer hijo de, por ende, tengo que procesar primero esto.
+
+35:49.420 --> 35:55.420
+Ahora, esto es recursivamente, entonces tengo que empezar por G.
+
+36:00.420 --> 36:05.420
+¿Entiende? G, F
+
+36:06.420 --> 36:17.420
+Y todos los restantes hijos, recursivamente. H, J, I
+
+36:22.420 --> 36:24.420
+Ahora sí, E
+
+36:24.420 --> 36:42.420
+Ahora después viene B, después viene A, porque se ha procesado todo el primer hijo de A.
+
+36:42.420 --> 36:53.420
+Y ahora sigo recursivamente con el siguiente hijo, que me vengo acá, me vengo acá, me vengo acá, me vengo acá.
+
+36:53.420 --> 37:17.420
+Entonces sería O, N, P, L, K, M, C
+
+37:17.420 --> 37:38.420
+Ahora me vengo acá, Q, D, R, T, Q, S, W, T
+
+37:47.420 --> 38:06.420
+¿Entiende cuál es el concepto? Es primer hijo, raíz, primer hijo, recursivo, porque también es un árbol.
+
+38:06.420 --> 38:11.420
+Entonces tengo que volver a hacer lo mismo. Raíz, restantes hijos.
+
+38:11.420 --> 38:26.420
+Bien, y el posorden, el posorden también va a estar más fácil, o sea el preorden y el preorden y el posorden son más fáciles.
+
+38:26.420 --> 38:35.420
+El que suele uno, hay veces hasta distraído, se puede llegar a confundir en un árbol muy grande, es con el inorden.
+
+38:36.420 --> 38:43.420
+Porque el posor de cómo sería en este caso.
+
+38:43.420 --> 38:51.420
+Yo tengo que procesar primero los hijos y por último la raíz.
+
+38:51.420 --> 39:17.420
+Entonces G, H, J, I, F, M, B, O, P, N, L, M, K, C
+
+39:17.420 --> 39:35.420
+Q, R, V, Q, S, W, T, D, A
+
+39:35.420 --> 39:42.420
+Ese sería el recorrido posor.
+
+39:42.420 --> 39:54.420
+Bien, y el recorrido por niveles, el recorrido por niveles es igual, es muy parecido al recorrido por niveles que de los árboles binarios.
+
+39:54.420 --> 40:04.420
+Incluso ustedes ya vieron hasta la investigación en Java, hoy si tenemos tiempo vamos a ver también algunas aplicaciones de recorrido por niveles en árboles binarios.
+
+40:04.420 --> 40:18.420
+Pero ustedes ya vieron que el recorrido básico y que lo que yo necesito en muchos casos para resolver un problema es poner las marcas de fin de nivel.
+
+40:18.420 --> 40:23.420
+Eso se lo vieron en Java.
+
+40:23.420 --> 40:33.420
+Bien, porque en algún momento yo tengo que poder identificar los nodos que están en un determinado nivel.
+
+40:33.420 --> 40:42.420
+Bien, entonces volveremos para atrás a esto.
+
+40:42.420 --> 40:55.420
+Bien, así ya borró esto y ya hicimos el repaso de los recorridos.
+
+40:55.420 --> 40:59.420
+Bien, fíjense entonces.
+
+40:59.420 --> 41:08.420
+La definición de árbol lleno, la definición de árbol lleno también es muy similar a la de árbol binario.
+
+41:08.420 --> 41:18.420
+O sea, un árbol es lleno cuando, bueno, una cosa acá que hay que tener en cuenta es el grado del árbol.
+
+41:18.420 --> 41:24.420
+Acá juega, además de la altura, juega el grado del árbol.
+
+41:24.420 --> 41:32.420
+O sea que en el árbol binario no lo teníamos en cuenta porque era justamente binario.
+
+41:32.420 --> 41:43.420
+Entonces dice un árbol, dado un árbol T de grado K y altura H, decimos que es lleno.
+
+41:43.420 --> 41:57.420
+Cada nodo interno tiene exactamente cadijos y las hojas están en un mismo nivel, que es en el nivel H.
+
+41:57.420 --> 42:01.420
+Volvemos, le vuelvo a hacer la misma.
+
+42:01.420 --> 42:04.420
+O sea, tenemos la definición de árbol binario.
+
+42:04.420 --> 42:11.420
+Supongamos que yo tengo este árbol.
+
+42:11.420 --> 42:24.420
+O sea, acá tengo altura 1 y grado 3.
+
+42:24.420 --> 42:36.420
+Ahora supongamos que yo tengo este otro árbol.
+
+42:36.420 --> 42:45.420
+Yo para no ocupar tanto el lugar, pues no me queda para...
+
+42:45.420 --> 42:53.420
+Yo tengo, o sea, este es un árbol lleno de altura 1 y grado 3.
+
+42:53.420 --> 43:02.420
+Este es un árbol lleno de altura 2 y grado 3.
+
+43:02.420 --> 43:14.420
+Si yo quiero dibujar el árbol de grado 3 y altura 3, que sea lleno, ¿cómo sería?
+
+43:14.420 --> 43:20.420
+Sería agregándole tres hijos a cada una de las hojas.
+
+43:20.420 --> 43:24.420
+O sea, Susan hizo que se la forma que tiene.
+
+43:24.420 --> 43:30.420
+Entonces le vuelvo a repetir lo mismo que le dije para árboles binarios.
+
+43:30.420 --> 43:45.420
+Es decir, hay para una determinada altura y para un determinado grado, hay un único árbol posible que sea lleno.
+
+43:45.420 --> 44:01.420
+Entonces, en ese caso, yo sé exactamente la cantidad de nodos que tiene un árbol general lleno de altura H y grado K.
+
+44:01.420 --> 44:14.420
+Entonces, en este caso, yo tengo, fíjense, tengo en el nivel 0, tengo un nodo.
+
+44:14.420 --> 44:20.420
+Acá, ¿cuántos nodos tengo?
+
+44:20.420 --> 44:23.420
+Tres, que sería K.
+
+44:23.420 --> 44:26.420
+Acá, ¿cuántos nodos tengo?
+
+44:26.420 --> 44:33.420
+Terminos de K. Ya hablemos ya en términos de K, si ya después...
+
+44:33.420 --> 44:37.420
+K al cuadrado.
+
+44:37.420 --> 44:49.420
+Si tuviera altura 3, ¿cuál sería la próxima cantidad de nodos que tendría?
+
+44:49.420 --> 44:53.420
+K al cubo.
+
+44:57.420 --> 45:04.420
+Bien, o sea que entonces esto sigue hasta K a la H.
+
+45:04.420 --> 45:25.420
+O sea que la cantidad de nodos que va a tener un árbol general lleno de grado K y altura H es la suma de K a la I para I igual 0 hasta H.
+
+45:25.420 --> 45:35.420
+Y esto es una serie geométrica de base K.
+
+45:35.420 --> 45:43.420
+Y esto es K a la H más 1 menos 1 sobre K menos 1.
+
+45:43.420 --> 45:51.420
+Esto es lo que se tiene que acordar para hacer todos los razonamientos de cantidad de nodos.
+
+45:51.420 --> 45:55.420
+Que en realidad esto mismo se da para el árbol binario.
+
+45:55.420 --> 46:01.420
+Lo que pasa es que para el árbol binario no está el denominador porque el denominador es 2 menos 1.
+
+46:01.420 --> 46:12.420
+Entonces para el árbol binario la cantidad de nodos de un árbol lleno de altura H era 2 a la H más 1 menos 1.
+
+46:12.420 --> 46:20.420
+Pero en realidad el árbol general, o sea el árbol binario es un tipo de árbol general donde hay grado 2.
+
+46:20.420 --> 46:22.420
+O sea es una artificialización.
+
+46:25.420 --> 46:39.420
+Bien, o sea que entonces la cantidad de nodos en un árbol general lleno de altura H y grado K es K a la H más 1 menos 1 sobre K menos 1.
+
+46:39.420 --> 46:41.420
+Eso está puesto acá.
+
+46:51.420 --> 46:56.420
+Y por acá creo que sigue un poco la explicación.
+
+47:02.420 --> 47:06.420
+Bien, es una serie de grado K.
+
+47:07.420 --> 47:13.420
+Bien, ahora veamos que... vamos a cambiar de color así.
+
+47:14.420 --> 47:18.420
+Bueno, veamos ahora esta definición.
+
+47:18.420 --> 47:24.420
+Árbol completo es igual que el árbol binario.
+
+47:25.420 --> 47:38.420
+Un árbol en general de grado tal de altura H decimos que completo si es lleno hasta la altura H menos 1.
+
+47:39.420 --> 47:44.420
+Y en el nivel H los nodos se completan de izquierda a derecha.
+
+47:46.420 --> 47:51.420
+O sea el último nivel se va completando de izquierda a derecha.
+
+47:52.420 --> 48:09.420
+Bien, entonces al igual que en los árboles binarios yo no sé exactamente, o sea como yo puedo tener varios, yo acá tengo un árbol completo de altura 3.
+
+48:10.420 --> 48:19.420
+En este caso sería un árbol completo de altura 3 y grado 3 también.
+
+48:20.420 --> 48:24.420
+Altura 3 y grado 3.
+
+48:25.420 --> 48:33.420
+Ahora si yo le agrego este nodo también es un árbol general completo de altura 3 y grado 3.
+
+48:33.420 --> 48:37.420
+Si yo le agrego otro nodo K y así.
+
+48:37.420 --> 48:48.420
+Entonces, por eso hacemos las mismas consideraciones que hicimos para árboles binarios.
+
+48:48.420 --> 49:00.420
+Es decir, yo lo que puedo saber de un árbol completo es la cantidad mínima y la cantidad máxima de nodos que puede tener.
+
+49:01.420 --> 49:17.420
+¿Cuál sería la cantidad máxima de nodos que puede tener un árbol completo de altura H y grado K?
+
+49:18.420 --> 49:21.420
+¿Cuál sería la cantidad máxima de nodos?
+
+49:30.420 --> 49:42.420
+Claro, o sea, la máxima sería que el árbol estuviera lleno.
+
+49:42.420 --> 49:47.420
+O sea, es lo mismo que para árboles binarios, que el árbol esté lleno.
+
+49:47.420 --> 49:55.420
+Entonces, si el árbol está lleno, la cantidad de nodos es esta que está acá, K a la H más 1 menos 1.
+
+49:56.420 --> 49:58.420
+Bien.
+
+49:58.420 --> 50:02.420
+Ahora, ¿cuál es la cantidad mínima de nodos?
+
+50:02.420 --> 50:07.420
+A ver, a ver si me contestan, es más difícil así virtual.
+
+50:07.420 --> 50:14.420
+Uno que empieza a darle unas clases presenciales ya tiene otra feedback.
+
+50:14.420 --> 50:24.420
+O sea, ¿cómo se imaginan ustedes la estructura, el dibujo del árbol de un árbol?
+
+50:24.420 --> 50:34.420
+El árbol completo de altura H y grado K que tenga la mínima cantidad de nodos y la mínima.
+
+50:34.420 --> 50:37.420
+¿Qué no le pasaría?
+
+50:45.420 --> 50:47.420
+¿Cuál sería la situación?
+
+50:47.420 --> 50:51.420
+Solo un nodo en el último nivel, claro.
+
+50:51.420 --> 50:54.420
+A la izquierda en el último, sí, en el último nivel.
+
+50:54.420 --> 50:57.420
+O sea, que sería este caso.
+
+50:57.420 --> 50:59.420
+Este sería el caso.
+
+51:01.420 --> 51:10.420
+Bien. Entonces, si yo le digo, bueno, ¿cuánto es? ¿Cuál es esa cantidad de nodos en términos de H y de K?
+
+51:10.420 --> 51:13.420
+No me cuenten.
+
+51:14.420 --> 51:21.420
+El árbol siempre a nivel anterior y sumado alguno, tal cual se dedica a tal cual.
+
+51:21.420 --> 51:28.420
+Entonces, vamos a hacer esa cuenta antes de mirar la dispositiva y verlo resuelto.
+
+51:28.420 --> 51:35.420
+Sería, ¿cómo sería entonces la cantidad de nodos hasta K?
+
+51:37.420 --> 51:39.420
+Hasta K.
+
+51:39.420 --> 51:41.420
+Y después le sumo uno.
+
+51:43.420 --> 51:48.420
+Hasta ahí sería usar esto que tengo acá.
+
+51:48.420 --> 51:58.420
+Pero en vez de poner H, poner H-1.
+
+51:58.420 --> 52:03.420
+Porque acaso tengo un árbol de altura H-1 que está lleno.
+
+52:07.420 --> 52:11.420
+Si alguno quiere prender el micrófono para hablar, no hay problema.
+
+52:12.420 --> 52:18.420
+Por ahí están escribiendo y no es lo mismo hacer un comentario así oral que es más rápido que es.
+
+52:20.420 --> 52:24.420
+Entonces, ¿cómo sería?
+
+52:24.420 --> 52:39.420
+Sería K a la H-1 más uno menos uno sobre K-1.
+
+52:43.420 --> 52:48.420
+O sea, esto sería la cantidad de nodos hasta K, hasta la línea roja.
+
+52:48.420 --> 52:51.420
+Hasta la línea roja.
+
+52:51.420 --> 52:52.420
+¿Por qué?
+
+52:52.420 --> 52:58.420
+Porque es un árbol lleno de grado K y altura H-1.
+
+52:58.420 --> 53:03.420
+Entonces yo, en el lugar donde dice H, le puse H-1.
+
+53:03.420 --> 53:08.420
+Y después le tengo que sumar uno porque seguro va a tener un nodo en el último nivel.
+
+53:11.420 --> 53:14.420
+Entonces le sumo uno.
+
+53:14.420 --> 53:18.420
+Entonces, acá me queda.
+
+53:18.420 --> 53:22.420
+Acá H-1 más uno se va.
+
+53:25.420 --> 53:39.420
+Entonces me queda K a la H-1 más uno sobre K-1.
+
+53:40.420 --> 53:49.420
+Menos uno más K-1 sobre K-1.
+
+53:49.420 --> 53:52.420
+Tengo que sacar como un denominador, ¿no?
+
+53:52.420 --> 53:55.420
+Me estoy sumando fracciones ahora.
+
+53:55.420 --> 53:58.420
+O sea que esto me queda.
+
+53:59.420 --> 54:09.420
+K a la H más K menos dos sobre K-1.
+
+54:13.420 --> 54:16.420
+Este sería el resultado.
+
+54:21.420 --> 54:24.420
+La cantidad mínima de nodos.
+
+54:24.420 --> 54:28.420
+Y eso debe estar acá en la depositiva.
+
+54:28.420 --> 54:38.420
+O sea, el número, fíjense, acá la cantidad de nodos varía entre esta situación y esta situación.
+
+54:38.420 --> 54:43.420
+Entonces si es lleno, ya vimos cuál es la forma.
+
+54:43.420 --> 54:54.420
+Y si no es lleno, va a ser, sí, va a estar a altura H-1 y por lo menos va a tener un nodo en el nivel H.
+
+54:54.420 --> 55:00.420
+Entonces esto que está acá es esto que yo cantidad.
+
+55:00.420 --> 55:02.420
+¿Entienden?
+
+55:02.420 --> 55:08.420
+O sea, en realidad es para no acordarse alguna de memoria, ¿no?
+
+55:08.420 --> 55:13.420
+Si es K a la H más K menos dos sobre K-1.
+
+55:14.420 --> 55:20.420
+Entonces yo sabiendo esta serie, ¿no?
+
+55:20.420 --> 55:23.420
+Ahí puedo hacer todas las deducciones.
+
+55:26.420 --> 55:28.420
+¿Se entiende?
+
+55:28.420 --> 55:30.420
+El resto, ¿entendió algo?
+
+55:30.420 --> 55:41.420
+O como no les veo las caras, no sé si están, si no están, si se fueron, quién queda, quién no queda.
+
+55:41.420 --> 55:43.420
+Bueno.
+
+55:44.420 --> 55:46.420
+Bien, ejemplos.
+
+55:46.420 --> 55:48.420
+¿En qué caso se usan los árboles generales?
+
+55:48.420 --> 55:50.420
+¿Se usan los árboles generales?
+
+55:50.420 --> 55:52.420
+¿Se usan los árboles generales?
+
+55:53.420 --> 55:55.420
+Bien, ejemplos.
+
+55:55.420 --> 55:57.420
+¿En qué casos se usan los árboles generales?
+
+55:57.420 --> 56:00.420
+Se usan en un montón de casos, ¿no?
+
+56:00.420 --> 56:07.420
+Por ejemplo, para especificar la organización de una empresa.
+
+56:07.420 --> 56:15.420
+Es decir, yo tengo que decir, bueno, en una empresa está el director, está el presidente o quien sea.
+
+56:15.420 --> 56:18.420
+Después están los, no sé, los gerentes generales.
+
+56:18.420 --> 56:28.420
+Después los gerentes de área, los sugerentes, los directores.
+
+56:28.420 --> 56:30.420
+Todo eso es un árbol general.
+
+56:32.420 --> 56:34.420
+Árboles genealógicos, ¿no?
+
+56:34.420 --> 56:40.420
+Es decir, árboles genealógicos de una persona hacia sus descendientes, ¿no?
+
+56:40.420 --> 56:46.420
+O sea, de la persona tiene tantos hijos, los hijos tienen tantos hijos y así, así.
+
+56:47.420 --> 56:54.420
+La autonomía que clasifica a los organismos se decide en biología, que se usa mucho, ¿no?
+
+56:54.420 --> 57:00.420
+O sea, la clasificación de los animales, yo tengo, no sé, los vertebrados.
+
+57:00.420 --> 57:04.420
+Dentro de los vertebrados tengo y todas las clasificaciones, ¿no?
+
+57:07.420 --> 57:09.420
+Bueno, eso son cosas.
+
+57:09.420 --> 57:13.420
+Todo lo que yo tengo que representar a través de una terapia, ¿no?
+
+57:14.420 --> 57:16.420
+Eso es un árbol general.
+
+57:16.420 --> 57:20.420
+Los sistemas de archivos, de organización de archivos de los sistemas operativos.
+
+57:20.420 --> 57:23.420
+Son todos árboles generales, en realidad.
+
+57:26.420 --> 57:28.420
+De todos los sistemas operativos.
+
+57:29.420 --> 57:33.420
+Bien, la organización de un libro, ¿no?
+
+57:33.420 --> 57:37.420
+En capítulos, secciones, subsecciones.
+
+57:37.420 --> 57:39.420
+Todo eso son árboles generales.
+
+57:40.420 --> 57:41.420
+Bien.
+
+57:42.420 --> 57:46.420
+Entonces, por ejemplo, el sistema de archivos.
+
+57:46.420 --> 57:48.420
+Bueno, ahí usamos el barra user.
+
+57:48.420 --> 57:50.420
+No sé si ustedes hablan o usan bolinos.
+
+57:50.420 --> 57:52.420
+Esto es muy típico de Inus, ¿no?
+
+57:53.420 --> 57:54.420
+La carpeta.
+
+57:54.420 --> 58:03.420
+O sea, uno en Windows empieza a hablar de carpeta, pero en realidad antes se hablaba de directorio, ¿no?
+
+58:04.420 --> 58:08.420
+Eso tengo, directorio barra user.
+
+58:08.420 --> 58:13.420
+Y dentro puedo tener, por ejemplo, un archivo.
+
+58:13.420 --> 58:20.420
+O puedo tener su directorio, sus carpetas que tengan a su vez otras subcarbetas.
+
+58:20.420 --> 58:22.420
+O que tengan archivos.
+
+58:22.420 --> 58:23.420
+Bien.
+
+58:32.420 --> 58:35.420
+En realidad, si volvemos para acá.
+
+58:36.420 --> 58:42.420
+Yo también tengo, por ejemplo, supongamos que este doc es un archivo que se llama, ¿no?
+
+58:42.420 --> 58:43.420
+Bien.
+
+58:43.420 --> 58:49.420
+Yo podría tener otro archivo que se llame doc.
+
+58:49.420 --> 58:51.420
+Que esté ubicado acá.
+
+59:03.420 --> 59:05.420
+O sea, con el mismo nombre.
+
+59:15.420 --> 59:16.420
+Sí.
+
+59:16.420 --> 59:17.420
+¿Y por qué?
+
+59:19.420 --> 59:24.420
+O sea, ¿por qué el sistema operativo lo encuentra uno y encuentra otro?
+
+59:41.420 --> 59:44.420
+Porque están en distintos niveles y rutas.
+
+59:44.420 --> 59:47.420
+Por el nivel en el que están.
+
+59:50.420 --> 59:54.420
+Si más que nivel, podría estar en el mismo nivel, ¿eh?
+
+59:57.420 --> 01:00:00.420
+O sea, dos archivos, el mismo nombre y el mismo nivel.
+
+01:00:02.420 --> 01:00:05.420
+Yo acá tengo un doc, pongo un doc acá y pongo un doc acá.
+
+01:00:06.420 --> 01:00:08.420
+Y está en el mismo nivel.
+
+01:00:12.420 --> 01:00:16.420
+Pero además de nivel, ahí me sonaron otras palabras.
+
+01:00:17.420 --> 01:00:20.420
+Julián mencionó otra palabra.
+
+01:00:20.420 --> 01:00:22.420
+Esa es la clave.
+
+01:00:23.420 --> 01:00:26.420
+Es la ruta o el camino.
+
+01:00:26.420 --> 01:00:30.420
+Es decir, ¿cómo identifica el sistema operativo un archivo?
+
+01:00:31.420 --> 01:00:39.420
+Ustedes habrán visto, si empezaron a ver algo del sistema operativo, lo que se llama pasmen.
+
+01:00:41.420 --> 01:00:42.420
+En inglés.
+
+01:00:42.420 --> 01:00:48.420
+En realidad, para el sistema operativo, el nombre del archivo es el nombre, es la ruta completa.
+
+01:00:48.420 --> 01:00:50.420
+El archivo desde la raíz.
+
+01:00:51.420 --> 01:00:59.420
+Por eso yo puedo tener archivos con el mismo nombre ubicados en el distinto lugar del árbol.
+
+01:00:59.420 --> 01:01:01.420
+Y para él es un árbol.
+
+01:01:02.420 --> 01:01:08.420
+Entonces, el doc que estuviera ubicado dentro de la carpeta sol sería
+
+01:01:08.420 --> 01:01:12.420
+barra user, barra bin, barra sol, barra doc.
+
+01:01:13.420 --> 01:01:14.420
+¿Qué es otra?
+
+01:01:14.420 --> 01:01:20.420
+Otra ruta distinta a barra user, barra tc, barra mail, barra doc.
+
+01:01:23.420 --> 01:01:26.420
+O sea, ¿por qué identificación?
+
+01:01:26.420 --> 01:01:27.420
+¿Por qué?
+
+01:01:27.420 --> 01:01:29.420
+O sea, ¿por qué identificación?
+
+01:01:29.420 --> 01:01:30.420
+¿Por qué?
+
+01:01:30.420 --> 01:01:33.420
+Porque el camino desde la raíz es único.
+
+01:01:35.420 --> 01:01:39.420
+Entonces, por eso el pasmen es único.
+
+01:01:40.420 --> 01:01:44.420
+Lo que no puedo tener es otro archivo doc acá.
+
+01:01:44.420 --> 01:01:45.420
+¿Por qué?
+
+01:01:45.420 --> 01:01:48.420
+Porque sería el mismo pasmen, barra user, barra doc.
+
+01:01:48.420 --> 01:01:49.420
+¿Cómo identifica?
+
+01:01:50.420 --> 01:01:55.420
+Ahí sí le tienes el archivo que ya existe un archivo con el mismo nombre.
+
+01:01:55.420 --> 01:01:56.420
+Bien.
+
+01:01:57.420 --> 01:02:02.420
+¿Cómo se representan los árboles generales?
+
+01:02:04.420 --> 01:02:14.420
+En los árboles binarios en realidad yo tenía el nodo con la referencia a los dos hijos.
+
+01:02:14.420 --> 01:02:16.420
+Hijo izquierdo y hijo derecho.
+
+01:02:18.420 --> 01:02:24.420
+Ahora, acá como yo puedo tener un mayor número de hijos,
+
+01:02:25.420 --> 01:02:30.420
+entonces las representaciones las más comunes son esas que aparecen ahí.
+
+01:02:30.420 --> 01:02:31.420
+¿Qué es?
+
+01:02:31.420 --> 01:02:38.420
+La lista de hijos, una en la lista de hijos y la otra en la de hijo más izquierdo y el mano derecho.
+
+01:02:39.420 --> 01:02:46.420
+O sea, hijo más izquierdo en cuanto que el que está más a la izquierda, no valga la redundancia, sería el primer hijo.
+
+01:02:47.420 --> 01:02:54.420
+Entonces, para nosotros sí se tiene la información que va a estar almacenada en el árbol.
+
+01:02:54.420 --> 01:03:03.420
+Para nosotros usar, si es un arbol geológico, tendrá los datos, no sé, del nombre de la persona, la fecha de nacimiento,
+
+01:03:03.420 --> 01:03:09.420
+que sea el lugar de nacimiento, todo lo que se quiera, o sea, la información propia del nodo.
+
+01:03:10.420 --> 01:03:17.420
+Y después ponemos referencia a los hijos de ese nodo.
+
+01:03:18.420 --> 01:03:28.420
+Entonces, la representación la más común, o sea, la más común en cuanto a que la más intuitiva es la de lista de hijos, la primera.
+
+01:03:29.420 --> 01:03:36.420
+Que esta representación se puede implementar con arreglos o con listas dinámicas.
+
+01:03:37.420 --> 01:03:38.420
+¿Por qué?
+
+01:03:38.420 --> 01:03:44.420
+O sea, y la representación con arreglos, es decir, fíjense en ese caso.
+
+01:03:44.420 --> 01:03:47.420
+Yo tengo ese árbol, ¿no?
+
+01:03:47.420 --> 01:03:53.420
+Ese árbol tiene grado 4, porque el mayor número de hijos que tiene un nodo es 4.
+
+01:03:53.420 --> 01:03:54.420
+Entonces, ¿qué tengo que hacer?
+
+01:03:54.420 --> 01:04:01.420
+Tengo que reservar un arreglo de tamaño 4 para todos los nodos.
+
+01:04:02.420 --> 01:04:03.420
+¿Entiendes?
+
+01:04:05.420 --> 01:04:10.420
+Por eso, lo que dice acá es que la desventaja es el espacio que ocupa.
+
+01:04:11.420 --> 01:04:14.420
+Suponemos que yo tengo que armar un árbol.
+
+01:04:14.420 --> 01:04:17.420
+Entonces, yo digo, bueno, pienso.
+
+01:04:17.420 --> 01:04:18.420
+¿Qué información tengo?
+
+01:04:18.420 --> 01:04:19.420
+Tengo que armar un árbol.
+
+01:04:19.420 --> 01:04:22.420
+Entonces, yo digo, bueno, pienso.
+
+01:04:22.420 --> 01:04:24.420
+¿Qué información va a tener?
+
+01:04:24.420 --> 01:04:27.420
+Bueno, piso un árbol geológico.
+
+01:04:27.420 --> 01:04:29.420
+Digo, bueno, ¿cuántos?
+
+01:04:29.420 --> 01:04:30.420
+No sé.
+
+01:04:30.420 --> 01:04:33.420
+¿Cuántos hijos puede tener una persona?
+
+01:04:33.420 --> 01:04:34.420
+Ese es su arbol.
+
+01:04:35.420 --> 01:04:40.420
+No sé, como que tenga 10 hijos, 12 hijos, no sé.
+
+01:04:41.420 --> 01:04:47.420
+Entonces, yo para cada nodo tengo que reservar un arreglo de ese tamaño.
+
+01:04:49.420 --> 01:04:51.420
+Claro, tal cual, Fabio.
+
+01:04:54.420 --> 01:04:58.420
+O sea, fíjese ahí en ese dibujo que, por ejemplo,
+
+01:04:58.420 --> 01:05:03.420
+el nodo P solo usa la primera posición del arreglo porque tiene su propio hijo.
+
+01:05:04.420 --> 01:05:11.420
+Bueno, el nodo 6, una hoja y tiene el espacio igual reservado.
+
+01:05:11.420 --> 01:05:14.420
+El nodo T usa dos posiciones.
+
+01:05:15.420 --> 01:05:19.420
+Entonces, imagínenselo en un árbol más grande esto.
+
+01:05:19.420 --> 01:05:22.420
+Por eso dice que ese desperdicia es fácil.
+
+01:05:23.420 --> 01:05:33.420
+Ahora, si yo implemento esta representación de lista de hijos con listas dinámicas,
+
+01:05:33.420 --> 01:05:46.420
+entonces ahí ya cada nodo en realidad lo que tiene es una referencia a la lista de todos sus hijos.
+
+01:05:49.420 --> 01:05:54.420
+Entonces, yo en realidad yo tendría el nodo, por ejemplo, nodo A.
+
+01:05:55.420 --> 01:06:01.420
+El nodo A tiene cuatro hijos, entonces la lista de hijos va a tener cuatro elementos.
+
+01:06:04.420 --> 01:06:08.420
+Esta hace referencia al B.
+
+01:06:09.420 --> 01:06:14.420
+El B va a tener un solo elemento que hace referencia al F.
+
+01:06:16.420 --> 01:06:18.420
+Y el F acaba de estar vacío.
+
+01:06:19.420 --> 01:06:25.420
+Entonces, cada nodo tiene la longitud de la lista B según los hijos que tenga.
+
+01:06:26.420 --> 01:06:32.420
+Entonces, esta es como la más práctica y la más eficiente de cuanto al espacio.
+
+01:06:41.420 --> 01:06:46.420
+¿Qué me tiene que preguntar el estadio con el acceso?
+
+01:06:47.420 --> 01:06:50.420
+Para mí el acceso estaba bien.
+
+01:06:55.420 --> 01:06:59.420
+Sí, sí, es secuencial. Sí, el acceso a los hijos es secuencial.
+
+01:07:04.420 --> 01:07:11.420
+O sea, porque en general los recorridos, los recorridos ¿qué hacen?
+
+01:07:11.420 --> 01:07:13.420
+Recorren la lista de hijos.
+
+01:07:15.420 --> 01:07:19.420
+O sea, si yo tengo que hacer un recorrido, ¿qué haces?
+
+01:07:19.420 --> 01:07:23.420
+Tomas la raíz, obtendés la lista de los hijos y vas recorriendo esa lista,
+
+01:07:23.420 --> 01:07:27.420
+te almacenas en un arreglo, en una lista dinámica, lo que sea,
+
+01:07:27.420 --> 01:07:31.420
+pero no es que vos vas al cuarto hijo.
+
+01:07:31.420 --> 01:07:33.420
+¿Qué es eso?
+
+01:07:34.420 --> 01:07:38.420
+O sea, porque acá en realidad no nos vale una orden tampoco.
+
+01:07:44.420 --> 01:07:47.420
+O sea, no sé si entendés la idea.
+
+01:07:53.420 --> 01:08:00.420
+Es decir, en realidad poné que vos decís, bueno, no sé si me está ocurriendo ahora,
+
+01:08:00.420 --> 01:08:04.420
+yo que estoy representando un árbol geológico.
+
+01:08:04.420 --> 01:08:08.420
+Entonces, yo tengo para una persona,
+
+01:08:08.420 --> 01:08:15.420
+dedico los hijos y los voy poniendo en orden cronológico de nacimiento.
+
+01:08:16.420 --> 01:08:22.420
+Entonces digo, bueno, yo quiero ir al tercer hijo.
+
+01:08:22.420 --> 01:08:27.420
+Bueno, sí, tenés que recorrer la lista secuencial, pero ¿cuánta esa lista de hijos?
+
+01:08:27.420 --> 01:08:32.420
+Tampoco imagínense que esa lista va a tener millones de datos o miles de datos.
+
+01:08:32.420 --> 01:08:35.420
+Los árboles no son tan...
+
+01:08:39.420 --> 01:08:41.420
+Claro, sí, sí, Federico, sí.
+
+01:08:42.420 --> 01:08:46.420
+Sí, sí, tiene referencia a la lista y esto,
+
+01:08:46.420 --> 01:08:50.420
+y en realidad esto es una lista como las que ustedes vienen implementando
+
+01:08:52.420 --> 01:08:57.420
+como las que ustedes vienen implementando en la primer práctica.
+
+01:08:57.420 --> 01:08:59.420
+Eso la van a usar.
+
+01:09:05.420 --> 01:09:06.420
+Claro.
+
+01:09:07.420 --> 01:09:12.420
+Después van a ver en Java viene toda la implementación de las clases y todo.
+
+01:09:13.420 --> 01:09:16.420
+La ruta para el nodo H.
+
+01:09:19.420 --> 01:09:21.420
+No, no, no, no.
+
+01:09:23.420 --> 01:09:28.420
+No, no, porque H es hijo de D.
+
+01:09:32.420 --> 01:09:34.420
+H es hijo de D.
+
+01:09:39.420 --> 01:09:45.420
+O sea, la ruta, no sé a qué le llaman ruta, pero no hay que hacer para encontrarlo.
+
+01:09:45.420 --> 01:09:47.420
+Dice, bueno, tengo a Java.
+
+01:09:48.420 --> 01:09:51.420
+Empiezo a recorrer la lista de sus hijos.
+
+01:09:51.420 --> 01:09:55.420
+Si vos haces un recorrido de orden, ¿no?
+
+01:09:56.420 --> 01:09:59.420
+Vos estabas buscando el H, por ejemplo.
+
+01:10:01.420 --> 01:10:04.420
+O sea, no sé cuál es tu duda, ¿no?
+
+01:10:04.420 --> 01:10:10.420
+Pues si vos estabas buscando el H, vos venís acá, vas a usarnos el preorden, por ejemplo.
+
+01:10:11.420 --> 01:10:13.420
+Entonces, venís acá, al A.
+
+01:10:13.420 --> 01:10:16.420
+Después, empiezas a recorrer la lista de los hijos de A.
+
+01:10:16.420 --> 01:10:18.420
+Entonces, empiezas por B.
+
+01:10:18.420 --> 01:10:21.420
+Después por B, haces recursivamente.
+
+01:10:21.420 --> 01:10:23.420
+Como no sabés dónde está H.
+
+01:10:24.420 --> 01:10:27.420
+Entonces, te venís acá, llegaste a una hoja, no la encontraste.
+
+01:10:27.420 --> 01:10:29.420
+Venís acá, venís al siguiente.
+
+01:10:29.420 --> 01:10:31.420
+Ahora estás en C.
+
+01:10:31.420 --> 01:10:33.420
+C es una hoja, no tiene hijos.
+
+01:10:34.420 --> 01:10:37.420
+Seguís con el siguiente hijo de A, el D.
+
+01:10:37.420 --> 01:10:39.420
+De D te venís a H.
+
+01:10:39.420 --> 01:10:41.420
+Este es una hoja, ya no la encontraste.
+
+01:10:41.420 --> 01:10:45.420
+De D te venís a H.
+
+01:10:45.420 --> 01:10:49.420
+Acá la encontraste, entonces la puta es A, D, H.
+
+01:10:51.420 --> 01:10:54.420
+O sea, no todo el camino que vos tuviste que hacer.
+
+01:10:58.420 --> 01:10:59.420
+¿Se entiende?
+
+01:10:59.420 --> 01:11:02.420
+O sea, ese es el recorrido de orden.
+
+01:11:02.420 --> 01:11:07.420
+El recorrido de orden, o sea, viene acá, después viene acá, después viene acá.
+
+01:11:07.420 --> 01:11:10.420
+O sea, ahí es lo que hicimos nosotros en el pizarrón.
+
+01:11:13.420 --> 01:11:16.420
+Entonces, vos buscas y vos buscas en profundidad.
+
+01:11:16.420 --> 01:11:20.420
+Llega, vuelve, sigue con el que sigue, vuelve.
+
+01:11:22.420 --> 01:11:24.420
+O sea, es lo mismo que si yo te...
+
+01:11:24.420 --> 01:11:27.420
+Que si habláramos de algo ordinario, no?
+
+01:11:27.420 --> 01:11:30.420
+Si vos pensís esto, no?
+
+01:11:31.420 --> 01:11:33.420
+Supone que vos tenés un algo ordinario.
+
+01:11:37.420 --> 01:11:50.420
+Entonces, como que vos me dijeras, bueno, entonces la ruta A, F es A, B, C, F, ¿no?
+
+01:11:54.420 --> 01:11:59.420
+O sea, la ruta es A, C, el camino es A, C, F.
+
+01:11:59.420 --> 01:12:01.420
+Bueno, ¿no recorriste?
+
+01:12:01.420 --> 01:12:04.420
+No, ¿no hiciste esto en un árbol binario?
+
+01:12:07.420 --> 01:12:10.420
+¿O sea, hay lo mismo?
+
+01:12:11.420 --> 01:12:15.420
+Claro, bueno, te confunde porque tenés que usar dos estructuras.
+
+01:12:15.420 --> 01:12:18.420
+Puedes tener ese árbol y tener la lista.
+
+01:12:18.420 --> 01:12:25.420
+Entonces, ahora, la llamada, ahora cuando veamos el pseudocódigo de los recorridos,
+
+01:12:25.420 --> 01:12:28.420
+y después lo van a ver en un poco más adelante,
+
+01:12:30.420 --> 01:12:33.420
+en realidad lo que se hace es que se recorre la lista.
+
+01:12:33.420 --> 01:12:37.420
+En realidad lo que se hace es que se recorre la lista.
+
+01:12:37.420 --> 01:12:42.420
+O sea, ya ahora no es que se llama más por el hijo izquierdo del hijo derecho.
+
+01:12:42.420 --> 01:12:45.420
+¿Entiendes? O sea, antes el pre-orden que era,
+
+01:12:45.420 --> 01:12:48.420
+imprimo el dato, si tiene hijo izquierdo, llamo con el hijo izquierdo,
+
+01:12:48.420 --> 01:12:51.420
+si tiene hijo derecho, llamo con el hijo derecho.
+
+01:12:51.420 --> 01:12:52.420
+Acá no, acá es.
+
+01:12:52.420 --> 01:12:56.420
+Imprimo el dato y empiezo a recorrer la lista de los hijos.
+
+01:12:56.420 --> 01:13:02.420
+Y llamo recursivamente con cada uno de los de los árboles,
+
+01:13:02.420 --> 01:13:07.420
+nodos o por lo que lo esame, que está dentro de esa lista.
+
+01:13:07.420 --> 01:13:11.420
+O sea, hay varias llamadas recursivas, llamadas donas.
+
+01:13:13.420 --> 01:13:17.420
+Igual se lo van a ver muy bien en después de dejar.
+
+01:13:19.420 --> 01:13:20.420
+Bien.
+
+01:13:21.420 --> 01:13:29.420
+La última representación es bastante común, aunque no es tan intuitiva,
+
+01:13:29.420 --> 01:13:33.420
+es la de hijo más izquierdo del hermano derecho.
+
+01:13:33.420 --> 01:13:40.420
+O sea, acá en cada nodo tiene solo dos punteros, pero te apunta.
+
+01:13:42.420 --> 01:13:46.420
+Uno apunta al hijo más izquierdo, es decir, al mismo hijo de todos,
+
+01:13:46.420 --> 01:13:49.420
+y el otro apunta a su hermano derecho.
+
+01:13:50.420 --> 01:13:55.420
+Entonces, si yo tengo que recorrer el árbol, en este caso,
+
+01:13:55.420 --> 01:14:01.420
+en este caso, por ejemplo, mi arbaí siempre tiene el hermano derecho en nulo.
+
+01:14:03.420 --> 01:14:09.420
+Ahora, explíquense que acá tiene, solo tiene una referencia a B.
+
+01:14:11.420 --> 01:14:17.420
+Y después B dice, bueno, B tiene una referencia a su hijo
+
+01:14:17.420 --> 01:14:19.420
+y a su hermano derecho.
+
+01:14:20.420 --> 01:14:26.420
+Es decir, que si yo tengo que recorrer la lista de los hijos de A,
+
+01:14:28.420 --> 01:14:32.420
+tengo que irme por el hijo más izquierdo y después hacer
+
+01:14:32.420 --> 01:14:38.420
+una iteración sobre los hermanos derechos de cada uno de esos.
+
+01:14:39.420 --> 01:14:42.420
+Hasta terminar, hasta que me de muro,
+
+01:14:43.420 --> 01:14:48.420
+hasta llegar, en este caso, a E, donde el hermano derecho es nulo.
+
+01:14:53.420 --> 01:14:58.420
+Es decir, esta es un poco más simple, en tanto y en cuanto se tiene,
+
+01:14:58.420 --> 01:15:03.420
+yo tengo solo dos punteros, no necesito una lista como la otra.
+
+01:15:03.420 --> 01:15:11.420
+Lo que pasa es que, al ver los algoritmos, uno ve que para recorrer
+
+01:15:11.420 --> 01:15:16.420
+un árbol, yo tomo el nodo y después digo, bueno, comienzo a la lista,
+
+01:15:16.420 --> 01:15:20.420
+mientras la lista no termina, tengo el hijo, o sea,
+
+01:15:20.420 --> 01:15:23.420
+tener los hijos lanzados en una lista es como más,
+
+01:15:23.420 --> 01:15:27.420
+le he creado lo mismo, a ver, es como más claro también.
+
+01:15:28.420 --> 01:15:30.420
+O sea, es más intuitivo.
+
+01:15:33.420 --> 01:15:36.420
+A ver, por acá que tenemos, bueno, esto ya lo vimos.
+
+01:15:37.420 --> 01:15:40.420
+Fíjese, acá tengo el reorden.
+
+01:15:40.420 --> 01:15:47.420
+El reorden que sería, en primer dato, obtengo la lista de hijos,
+
+01:15:47.420 --> 01:15:52.420
+que sería esa referencia a la lista, y después lo que manejo es una lista.
+
+01:15:52.420 --> 01:16:02.420
+Pero una lista donde cada uno va a ser un árbol o un nodo, no importa.
+
+01:16:02.420 --> 01:16:06.420
+Después van a ver cómo es la estructura del árbol en Java.
+
+01:16:06.420 --> 01:16:12.420
+Entonces, mientras la lista tenga datos, o sea, mientras,
+
+01:16:12.420 --> 01:16:15.420
+que en realidad es mientras no se llega al final de la lista,
+
+01:16:15.420 --> 01:16:22.420
+obtengo el hijo y llamo a castar el llamado recursivo.
+
+01:16:25.420 --> 01:16:29.420
+Fíjense que ahora hay más de dos llamados recursivos.
+
+01:16:33.420 --> 01:16:36.420
+Que se refiere al caso del árbol binario.
+
+01:16:40.420 --> 01:16:48.420
+Entonces, si yo quiero, por ejemplo, los sistemas operativos que hacen
+
+01:16:48.420 --> 01:16:54.420
+para imprimir el contenido de un directorio, de una carpeta,
+
+01:16:54.420 --> 01:16:57.420
+si usan algún sistema operativo con comando,
+
+01:16:57.420 --> 01:17:03.420
+lo que hace es un recorrido preorden del directorio que yo le estoy mandando.
+
+01:17:04.420 --> 01:17:08.420
+Porque entonces me dice, bueno, dentro de Java Usas tengo DOF,
+
+01:17:08.420 --> 01:17:10.420
+y acá termina.
+
+01:17:10.420 --> 01:17:16.420
+Después encuentro a BIM, y dentro de BIM tengo a CP, agref, azot,
+
+01:17:16.420 --> 01:17:18.420
+después tengo a lib, hace así.
+
+01:17:18.420 --> 01:17:25.420
+¿Cómo sería? Obtener la lista de hijos, recorrer la lista y imprimir el dado.
+
+01:17:25.420 --> 01:17:33.420
+Esto se usa para calcular el tamaño ocupado por los directorios,
+
+01:17:33.420 --> 01:17:39.420
+que implícitamente es un artículo,
+
+01:17:40.420 --> 01:17:45.420
+para calcular el tamaño ocupado por los directorios,
+
+01:17:45.420 --> 01:17:51.420
+implícitamente es un recorrido posorden.
+
+01:17:51.420 --> 01:17:57.420
+¿Por qué? Porque si yo digo, bueno, decirme el tamaño del directorio Malcolm.
+
+01:17:57.420 --> 01:18:01.420
+En realidad no lo puede calcular hasta no escribar las hojas.
+
+01:18:02.420 --> 01:18:11.420
+Y a partir de una hoja dice, bueno, ¿este cuánto ocupa?
+
+01:18:11.420 --> 01:18:14.420
+Se va a ver, 3K.
+
+01:18:14.420 --> 01:18:18.420
+Bien, sigo con el otro hijo, ¿este cuánto ocupa? 2K.
+
+01:18:18.420 --> 01:18:21.420
+Entonces hace 3 más 2, 5.
+
+01:18:21.420 --> 01:18:25.420
+Se termina la lista de este hijo, bueno, este ocupa 5.
+
+01:18:25.420 --> 01:18:30.420
+O sea, empieza a obtener los datos de abajo para arriba.
+
+01:18:30.420 --> 01:18:32.420
+A obtener la información.
+
+01:18:32.420 --> 01:18:37.420
+Recién sabe cuánto ocupa.
+
+01:18:37.420 --> 01:18:44.420
+Este es su árbol, después que recorrió todos los hijos de él.
+
+01:18:44.420 --> 01:18:47.420
+Y dice, este tiene tamaño 5.
+
+01:18:47.420 --> 01:18:53.420
+A este le tiene que sumar lo que ocupe este árbol, que es 2 meses.
+
+01:18:53.420 --> 01:18:58.420
+Es el árbol, ya se lo dimos.
+
+01:18:58.420 --> 01:19:00.420
+¿Entiende?
+
+01:19:00.420 --> 01:19:07.420
+Entonces por eso implícitamente es un recorrido posorden.
+
+01:19:07.420 --> 01:19:11.420
+Que es calcular el tamaño de un directorio.
+
+01:19:11.420 --> 01:19:15.420
+Así lo hacen los sistemas operativos.
+
+01:19:15.420 --> 01:19:24.420
+Bueno, y el recorrido por niveles es muy similar, como les decía, al recorrido anualbinario.
+
+01:19:24.420 --> 01:19:26.420
+No lo que usa es una cola.
+
+01:19:26.420 --> 01:19:28.420
+Encorra la nariz.
+
+01:19:28.420 --> 01:19:32.420
+Mientras la cola no se vacía, desencora el elemento.
+
+01:19:32.420 --> 01:19:37.420
+Lo imprime y después para cada hijo lo enborra.
+
+01:19:37.420 --> 01:19:41.420
+Es decir, siempre acá, en realidad.
+
+01:19:41.420 --> 01:19:45.420
+Y lo que tiene es siempre algo como un loop.
+
+01:19:45.420 --> 01:19:49.420
+No, guay, mientras la lista de hijos no se termine.
+
+01:19:49.420 --> 01:19:52.420
+O sea, hay varias llamadas.
+
+01:19:52.420 --> 01:19:55.420
+Bueno, en este caso se no son llamadas.
+
+01:19:55.420 --> 01:20:00.420
+Sino que tiene que encolar varios hijos porque no sabe cuántos hijos tiene.
+
+01:20:00.420 --> 01:20:03.420
+Entonces tiene que recorrer la lista de hijos.
+
+01:20:06.420 --> 01:20:08.420
+Bien.
+
+01:20:12.420 --> 01:20:14.420
+Bueno, vamos a hacer un ejercicio.
+
+01:20:14.420 --> 01:20:19.420
+Visitar el siguiente árbol y escriba el recorrido preorden y no orden posorden.
+
+01:20:20.420 --> 01:20:27.420
+Bueno, nosotros ya hicimos uno en el pizarrón un poco más complicado.
+
+01:20:27.420 --> 01:20:29.420
+Así que por eso lo digo.
+
+01:20:32.420 --> 01:20:35.420
+Y vamos a ver ahora...
+
+01:20:35.420 --> 01:20:42.420
+Vamos a ver algunos ejemplos de quince grados para el arbol liminario.
+
+01:20:42.420 --> 01:20:49.420
+Del recorrido por niveles poniendo marcas de fin de nivel.
+
+01:20:54.420 --> 01:20:59.420
+En realidad, si yo tuviera que resolver estos problemas,
+
+01:20:59.420 --> 01:21:02.420
+por ejemplo, ¿cuántos niveles tiene el árbol?
+
+01:21:02.420 --> 01:21:07.420
+O ¿cuántos nodos hay en cada nivel del árbol?
+
+01:21:07.420 --> 01:21:12.420
+O ¿cuántos nodos hay en el nivel K del árbol?
+
+01:21:15.420 --> 01:21:23.420
+Entonces, yo tengo el recorrido por niveles, en realidad,
+
+01:21:23.420 --> 01:21:27.420
+digamos, el código básico es este, ¿no?
+
+01:21:27.420 --> 01:21:32.420
+Que es usar una cola de vártices, encolo la raíz, mientras la cola no se vacíe,
+
+01:21:32.420 --> 01:21:38.420
+desencolo, imprimo y para cada hijo W de D, encolo W.
+
+01:21:39.420 --> 01:21:42.420
+Entonces, ¿cómo funcionaría? Funcionaría de esta manera.
+
+01:21:42.420 --> 01:21:46.420
+Lo primero que hago es encolo la raíz,
+
+01:21:46.420 --> 01:21:55.420
+después desencolo, lo imprimo, o sea, que va a la salida,
+
+01:21:55.420 --> 01:22:02.420
+y para cada uno de los hijos de A, en este caso, el neurálisis que desencolo es A,
+
+01:22:02.420 --> 01:22:06.420
+lo que hago es encolo la raíz,
+
+01:22:07.420 --> 01:22:14.420
+y para cada uno de los hijos de A, en este caso, el neurálisis que desencolo es A,
+
+01:22:14.420 --> 01:22:20.420
+lo que hago es encolo los hijos, o sea, encolo B, C y D.
+
+01:22:21.420 --> 01:22:24.420
+Ahora, ¿qué hace? Desencola B,
+
+01:22:24.420 --> 01:22:26.420
+desencola B,
+
+01:22:34.420 --> 01:22:36.420
+desencola B,
+
+01:22:37.420 --> 01:22:40.420
+lo manda a la salida,
+
+01:22:44.420 --> 01:22:49.420
+y ahora tiene que recorrer la lista de hijos de B.
+
+01:22:49.420 --> 01:22:54.420
+En este caso, no tiene hijos, entonces, acá le va a dar,
+
+01:22:54.420 --> 01:23:00.420
+o sea, igual va a terminar, porque es igual, en realidad es mientras no llega el federalista,
+
+01:23:00.420 --> 01:23:03.420
+entonces va a salir directamente.
+
+01:23:03.420 --> 01:23:07.420
+Después, desencola C,
+
+01:23:07.420 --> 01:23:14.420
+lo manda a la salida y encola los hijos de C, que son E y F,
+
+01:23:15.420 --> 01:23:19.420
+y así sucesivamente.
+
+01:23:19.420 --> 01:23:27.420
+Después, desencola D, lo manda a la salida y encola G, H, E, Y.
+
+01:23:30.420 --> 01:23:37.420
+Desencola E, que no tiene hijos, desencola S, que tiene a J y a K,
+
+01:23:38.420 --> 01:23:43.420
+después desencola,
+
+01:23:48.420 --> 01:23:52.420
+después va desencolando todos, son dos hogares.
+
+01:23:53.420 --> 01:23:58.420
+Entonces, en realidad el recorrido por nivel me devuelve eso, así.
+
+01:23:58.420 --> 01:24:02.420
+Entonces, como ustedes ya lo sabieron en árboles binarios,
+
+01:24:02.420 --> 01:24:05.420
+yo muchas veces necesito tener
+
+01:24:08.420 --> 01:24:13.420
+poder detectar dónde están los nodos en cada nivel,
+
+01:24:13.420 --> 01:24:17.420
+o cuáles son los nodos, mejor dicho, de cada nivel.
+
+01:24:17.420 --> 01:24:25.420
+Entonces, dice, en el recorrido por nivel no se le entiende a qué nivel pertenece cada nodo,
+
+01:24:25.420 --> 01:24:29.420
+entonces necesito llevar un control de los niveles,
+
+01:24:29.420 --> 01:24:34.420
+y entonces inserto una marca de acción de nivel, sería E.
+
+01:24:38.420 --> 01:24:45.420
+Entonces, yo encolo la raíz, e inmediatamente encolo una marca de acción de nivel,
+
+01:24:45.420 --> 01:24:50.420
+porque la raíz tiene un solo, o sea, hay un solo nodo en ese nivel,
+
+01:24:50.420 --> 01:24:53.420
+entonces ahí encolo una marca de acción de nivel.
+
+01:24:54.420 --> 01:24:59.420
+Después encolo los hijos, o sea, desencolo A,
+
+01:25:01.420 --> 01:25:04.420
+encolo la lista de los hijos y encolo los hijos.
+
+01:25:05.420 --> 01:25:08.420
+Cuando desencole la marca de fin de nivel,
+
+01:25:08.420 --> 01:25:12.420
+yo ahí voy a volver a encolar una marca de fin de nivel.
+
+01:25:14.420 --> 01:25:19.420
+Entonces, yo tengo que empezar a modificar el código base,
+
+01:25:19.420 --> 01:25:24.420
+y empezar a ver si el dato que yo desencole es una marca de fin de nivel,
+
+01:25:24.420 --> 01:25:28.420
+entonces encolo otra marca de fin de nivel.
+
+01:25:29.420 --> 01:25:34.420
+Pero qué pasa, yo acá tengo que detectar qué es lo que desencole,
+
+01:25:36.420 --> 01:25:41.420
+porque ya como piso a ver otras cosas en la cora,
+
+01:25:41.420 --> 01:25:44.420
+además de los datos completos del álbum,
+
+01:25:44.420 --> 01:25:52.420
+entonces tengo que ya empezar a preguntar qué es lo que desencole,
+
+01:25:52.420 --> 01:25:56.420
+entonces si el dato es una marca de fin de nivel,
+
+01:25:56.420 --> 01:25:59.420
+encolo otra marca de fin de nivel,
+
+01:25:59.420 --> 01:26:01.420
+y si no, imprimo.
+
+01:26:03.420 --> 01:26:06.420
+Imprimo y recorro la lista de hijos.
+
+01:26:07.420 --> 01:26:12.420
+Ahora, ¿qué otro control falta hacer acá?
+
+01:26:14.420 --> 01:26:16.420
+Hasta acá vamos, bien.
+
+01:26:16.420 --> 01:26:20.420
+¿Qué otro control que ustedes ya vieron para los finales?
+
+01:26:22.420 --> 01:26:23.420
+Falta hacer.
+
+01:26:26.420 --> 01:26:29.420
+No sé cuántos quedan en la clase ya.
+
+01:26:33.420 --> 01:26:35.420
+Que la cola no esté vacía, tal cual,
+
+01:26:35.420 --> 01:26:38.420
+porque si no entra en un loop el algoritmo, o sea, pues sí.
+
+01:26:38.420 --> 01:26:41.420
+Si yo desencolo una marca de fin de nivel,
+
+01:26:41.420 --> 01:26:45.420
+entonces yo tengo que empezar a modificar la marca de fin de nivel,
+
+01:26:45.420 --> 01:26:48.420
+porque ya como piso a ver otras cosas en la cora,
+
+01:26:48.420 --> 01:26:51.420
+entonces encolo otra marca de fin de nivel,
+
+01:26:51.420 --> 01:26:55.420
+tal cual, porque si no entra en un loop el algoritmo, o sea, pues sí.
+
+01:26:55.420 --> 01:26:57.420
+Si yo desencolo una marca de fin de nivel,
+
+01:26:57.420 --> 01:27:00.420
+que es lo último que va a estar en la cola,
+
+01:27:00.420 --> 01:27:04.420
+y encolo y no hago ese chequeo de que la cola se me vació,
+
+01:27:04.420 --> 01:27:08.420
+vuelvo a encolar una marca de fin de nivel y ahí entra en un loop.
+
+01:27:12.420 --> 01:27:14.420
+Entonces,
+
+01:27:16.420 --> 01:27:18.420
+todo eso
+
+01:27:21.420 --> 01:27:23.420
+está acá.
+
+01:27:24.420 --> 01:27:27.420
+O sea, puede ser que yo desencole esto
+
+01:27:27.420 --> 01:27:29.420
+y vuelve a encolar una marca de fin de nivel.
+
+01:27:29.420 --> 01:27:33.420
+Entonces, yo tengo que ver,
+
+01:27:33.420 --> 01:27:36.420
+chequear que la cola no esté vacía.
+
+01:27:37.420 --> 01:27:41.420
+Entonces, en realidad, ¿cómo quedaría?
+
+01:27:41.420 --> 01:27:43.420
+Pregunto, si el dato
+
+01:27:45.420 --> 01:27:47.420
+es una marca de fin de nivel
+
+01:27:47.420 --> 01:27:49.420
+y la cola no está vacía,
+
+01:27:49.420 --> 01:27:51.420
+entonces encolo la marca de fin de nivel.
+
+01:27:51.420 --> 01:27:53.420
+Si no,
+
+01:27:53.420 --> 01:27:56.420
+pregunto si el dato no es una marca de fin de nivel,
+
+01:27:56.420 --> 01:27:58.420
+porque acá como hay dos condiciones,
+
+01:27:58.420 --> 01:28:01.420
+tengo que preguntar por cuál salí.
+
+01:28:02.420 --> 01:28:05.420
+Esta es una forma de hacerla.
+
+01:28:06.420 --> 01:28:09.420
+Otra forma de hacerlo, que creo que es como
+
+01:28:09.420 --> 01:28:12.420
+se lo dieron los chicos en Java,
+
+01:28:12.420 --> 01:28:14.420
+para algo albinarios,
+
+01:28:14.420 --> 01:28:16.420
+es preguntar primero si el dato
+
+01:28:16.420 --> 01:28:18.420
+no es una marca de fin de nivel,
+
+01:28:18.420 --> 01:28:20.420
+entonces imprimo
+
+01:28:20.420 --> 01:28:22.420
+y recorro la lista de hijos
+
+01:28:22.420 --> 01:28:24.420
+para encolarlos.
+
+01:28:24.420 --> 01:28:26.420
+Y si no,
+
+01:28:26.420 --> 01:28:28.420
+quiere decir que es una marca de fin de nivel,
+
+01:28:28.420 --> 01:28:30.420
+pregunto si la cola no está vacía.
+
+01:28:32.420 --> 01:28:34.420
+Bien, entonces,
+
+01:28:34.420 --> 01:28:36.420
+todo esto yo estoy preparando
+
+01:28:36.420 --> 01:28:38.420
+el algoritmo del devolvido por nivel
+
+01:28:38.420 --> 01:28:40.420
+para resolver
+
+01:28:40.420 --> 01:28:42.420
+los ejercicios plateados.
+
+01:28:48.420 --> 01:28:51.420
+Entonces, para el ejercicio 1,
+
+01:28:51.420 --> 01:28:53.420
+que me decía la cantidad de niveles
+
+01:28:53.420 --> 01:28:55.420
+que tiene el árbol,
+
+01:28:55.420 --> 01:28:58.420
+yo acá debería tener una variable,
+
+01:28:58.420 --> 01:29:00.420
+cantidad de niveles,
+
+01:29:00.420 --> 01:29:02.420
+el servicio de cero,
+
+01:29:02.420 --> 01:29:05.420
+y la marca de fin de nivel
+
+01:29:05.420 --> 01:29:07.420
+es lo que me...
+
+01:29:10.420 --> 01:29:12.420
+es lo que me marca
+
+01:29:12.420 --> 01:29:14.420
+que si terminó mi vez,
+
+01:29:14.420 --> 01:29:16.420
+entonces ahí incremento la cantidad de niveles
+
+01:29:16.420 --> 01:29:18.420
+y retorno...
+
+01:29:21.420 --> 01:29:23.420
+El ejercicio 2, que me decía
+
+01:29:23.420 --> 01:29:25.420
+cuántos...
+
+01:29:26.420 --> 01:29:28.420
+cuántos nodos
+
+01:29:28.420 --> 01:29:30.420
+hay en cada nivel,
+
+01:29:34.420 --> 01:29:36.420
+en realidad,
+
+01:29:36.420 --> 01:29:38.420
+yo
+
+01:29:38.420 --> 01:29:40.420
+defino...
+
+01:29:42.420 --> 01:29:44.420
+defino un arreglo
+
+01:29:44.420 --> 01:29:46.420
+para aquellos,
+
+01:29:46.420 --> 01:29:48.420
+o sea, yo acá lo que voy a tener aquí es un test,
+
+01:29:48.420 --> 01:29:50.420
+y después se ven
+
+01:29:50.420 --> 01:29:52.420
+a lenguaje como se implementa.
+
+01:29:52.420 --> 01:29:54.420
+Pero en realidad, esto lo que va a devolver
+
+01:29:54.420 --> 01:29:56.420
+va a ser un arreglo, porque
+
+01:29:56.420 --> 01:29:58.420
+me va a decir, en el nivel 0
+
+01:29:58.420 --> 01:30:00.420
+hay, bueno, siempre va a ir un nodo,
+
+01:30:00.420 --> 01:30:02.420
+en el nivel 1 hay tantos nodos,
+
+01:30:02.420 --> 01:30:04.420
+en el nivel 2 hay tantos nodos,
+
+01:30:04.420 --> 01:30:06.420
+en el nivel 3...
+
+01:30:08.420 --> 01:30:10.420
+Entonces,
+
+01:30:10.420 --> 01:30:12.420
+yo
+
+01:30:12.420 --> 01:30:14.420
+llevo en cualquier nivel
+
+01:30:14.420 --> 01:30:16.420
+hoy,
+
+01:30:16.420 --> 01:30:18.420
+cada vez que
+
+01:30:18.420 --> 01:30:20.420
+sale...
+
+01:30:20.420 --> 01:30:21.420
+que se
+
+01:30:21.420 --> 01:30:23.420
+desenvolve un dato,
+
+01:30:23.420 --> 01:30:25.420
+cuento la cantidad de
+
+01:30:27.420 --> 01:30:29.420
+nodos de ese nivel,
+
+01:30:30.420 --> 01:30:32.420
+y después, cada vez que yo incolo
+
+01:30:32.420 --> 01:30:34.420
+una marca de fin de nivel, incremento
+
+01:30:36.420 --> 01:30:38.420
+el número del nivel.
+
+01:30:38.420 --> 01:30:40.420
+Y lo que tengo que devolver
+
+01:30:40.420 --> 01:30:42.420
+en realidad es la cantidad de
+
+01:30:42.420 --> 01:30:44.420
+nodos.
+
+01:30:44.420 --> 01:30:46.420
+O sea,
+
+01:30:46.420 --> 01:30:48.420
+en realidad es el arreglo, todo el arreglo.
+
+01:30:50.420 --> 01:30:52.420
+O sea, todo esto, ¿para qué me sirve?
+
+01:30:52.420 --> 01:30:54.420
+Para decir, bueno, decirme
+
+01:30:54.420 --> 01:30:56.420
+qué es eso, en el hologramma de la empresa,
+
+01:30:56.420 --> 01:30:58.420
+no sé, ¿cuántos
+
+01:30:58.420 --> 01:31:00.420
+gerentes generales hay?
+
+01:31:02.420 --> 01:31:04.420
+Que sería ese, sería, por ejemplo,
+
+01:31:04.420 --> 01:31:06.420
+el caso del ejercicio 3.
+
+01:31:06.420 --> 01:31:08.420
+Si yo sé, el gerente general
+
+01:31:08.420 --> 01:31:10.420
+en presidente
+
+01:31:10.420 --> 01:31:12.420
+y después viene el gerente general,
+
+01:31:12.420 --> 01:31:14.420
+bueno, el caso sería 1.
+
+01:31:14.420 --> 01:31:16.420
+O sea, ¿cuántos nodos hay de nivel 1?
+
+01:31:18.420 --> 01:31:20.420
+Ahora, ¿cuántos
+
+01:31:20.420 --> 01:31:22.420
+gerentes comunes,
+
+01:31:22.420 --> 01:31:24.420
+o sea, gerentes solo al que sería el nivel 2?
+
+01:31:26.420 --> 01:31:28.420
+Entonces, yo tengo que contar la cantidad de nodos que hay
+
+01:31:28.420 --> 01:31:30.420
+en ese nivel.
+
+01:31:32.420 --> 01:31:34.420
+Entonces,
+
+01:31:34.420 --> 01:31:36.420
+para eso, en realidad,
+
+01:31:38.420 --> 01:31:40.420
+lo que hago
+
+01:31:40.420 --> 01:31:42.420
+es, voy llevando
+
+01:31:42.420 --> 01:31:44.420
+en cualquier nivel voy,
+
+01:31:44.420 --> 01:31:46.420
+la cantidad de nodos,
+
+01:31:46.420 --> 01:31:48.420
+¿no?
+
+01:31:48.420 --> 01:31:50.420
+Y acá pregunto, si el número
+
+01:31:50.420 --> 01:31:52.420
+de nivel es igual
+
+01:31:52.420 --> 01:31:54.420
+acá, que es el que estoy comparando,
+
+01:31:54.420 --> 01:31:56.420
+entonces cuento la cantidad
+
+01:31:56.420 --> 01:31:58.420
+de nodos de ese nivel.
+
+01:32:00.420 --> 01:32:02.420
+Entonces, en realidad,
+
+01:32:02.420 --> 01:32:04.420
+me quedaría así, ¿no?
+
+01:32:04.420 --> 01:32:06.420
+Si el número de nivel es igual acá, entonces,
+
+01:32:06.420 --> 01:32:08.420
+mientras el dato
+
+01:32:08.420 --> 01:32:10.420
+de B no es
+
+01:32:10.420 --> 01:32:12.420
+una marca final de nivel, entonces
+
+01:32:12.420 --> 01:32:14.420
+cuento
+
+01:32:14.420 --> 01:32:16.420
+y desenvuelvo.
+
+01:32:18.420 --> 01:32:20.420
+Fíjese que en este caso,
+
+01:32:22.420 --> 01:32:24.420
+casi ya terminamos,
+
+01:32:24.420 --> 01:32:26.420
+en este caso,
+
+01:32:30.420 --> 01:32:32.420
+después el recorrido sigue.
+
+01:32:32.420 --> 01:32:34.420
+O sea,
+
+01:32:34.420 --> 01:32:36.420
+me devuelve la cantidad de nodos
+
+01:32:36.420 --> 01:32:38.420
+del nivel indicado.
+
+01:32:38.420 --> 01:32:40.420
+Eso necesito.
+
+01:32:40.420 --> 01:32:42.420
+Ahora, el algoritmo sigue porque
+
+01:32:42.420 --> 01:32:44.420
+en este,
+
+01:32:44.420 --> 01:32:46.420
+particularmente en este
+
+01:32:46.420 --> 01:32:48.420
+experimentación, yo no lo corté,
+
+01:32:48.420 --> 01:32:50.420
+lo podría cortar.
+
+01:32:50.420 --> 01:32:52.420
+Yo digo, bueno,
+
+01:32:52.420 --> 01:32:54.420
+claro, depende es clave,
+
+01:32:54.420 --> 01:32:56.420
+se puede hacer un recorrido,
+
+01:32:56.420 --> 01:32:58.420
+porque en realidad,
+
+01:32:58.420 --> 01:33:00.420
+ahí ya todavía quedan
+
+01:33:00.420 --> 01:33:02.420
+cosas en volada,
+
+01:33:02.420 --> 01:33:04.420
+porque cuando yo
+
+01:33:04.420 --> 01:33:06.420
+cuento la cantidad de nodos
+
+01:33:06.420 --> 01:33:08.420
+de un nivel, yo ya
+
+01:33:08.420 --> 01:33:10.420
+empolé los cinco del primer
+
+01:33:10.420 --> 01:33:12.420
+nodo de ese nivel, ya lo mejoré.
+
+01:33:14.420 --> 01:33:16.420
+Entonces, tendría que poner algún corte,
+
+01:33:16.420 --> 01:33:18.420
+como dices,
+
+01:33:18.420 --> 01:33:20.420
+tipo un brek,
+
+01:33:20.420 --> 01:33:22.420
+no sé si me queda muy prolijo,
+
+01:33:22.420 --> 01:33:24.420
+pero bueno,
+
+01:33:24.420 --> 01:33:26.420
+corta el algoritmo.
+
+01:33:26.420 --> 01:33:28.420
+Si yo quiero que se corte,
+
+01:33:28.420 --> 01:33:30.420
+no sé si me queda muy prolijo.
+
+01:33:32.420 --> 01:33:34.420
+Claro, un boleano
+
+01:33:34.420 --> 01:33:36.420
+que englobe todo
+
+01:33:36.420 --> 01:33:38.420
+afuera,
+
+01:33:38.420 --> 01:33:40.420
+mientras esa variable
+
+01:33:40.420 --> 01:33:42.420
+sea la verdadera.
+
+01:33:42.420 --> 01:33:44.420
+Tal cual.
+
+01:33:48.420 --> 01:33:50.420
+Y bueno, así que,
+
+01:33:50.420 --> 01:33:52.420
+ya con esto, entonces,
+
+01:33:52.420 --> 01:33:54.420
+ya vimos
+
+01:33:54.420 --> 01:33:56.420
+todo lo que es árboles
+
+01:33:56.420 --> 01:33:58.420
+binarios.
+
+01:34:00.420 --> 01:34:02.420
+Mañana,
+
+01:34:02.420 --> 01:34:04.420
+o sea, porque ustedes
+
+01:34:04.420 --> 01:34:06.420
+en realidad en la práctica van por
+
+01:34:06.420 --> 01:34:08.420
+árboles binarios.
+
+01:34:10.420 --> 01:34:12.420
+O no, todavía no sale,
+
+01:34:12.420 --> 01:34:14.420
+creo que la semana que viene sale
+
+01:34:14.420 --> 01:34:16.420
+la práctica de árboles binarios.
+
+01:34:16.420 --> 01:34:18.420
+Así que todavía están
+
+01:34:18.420 --> 01:34:20.420
+implementando la lista.
+
+01:34:20.420 --> 01:34:22.420
+Claro.
+
+01:34:26.420 --> 01:34:28.420
+Entonces,
+
+01:34:28.420 --> 01:34:30.420
+mañana Pipe les va a dar
+
+01:34:30.420 --> 01:34:32.420
+un concepto que es interfaces,
+
+01:34:34.420 --> 01:34:36.420
+que es un concepto de Java
+
+01:34:36.420 --> 01:34:38.420
+que es muy interesante,
+
+01:34:38.420 --> 01:34:40.420
+que sirve,
+
+01:34:40.420 --> 01:34:42.420
+o sea, se usa, por ejemplo,
+
+01:34:42.420 --> 01:34:44.420
+para los árboles binarios de Google,
+
+01:34:44.420 --> 01:34:46.420
+que es lo que no había pasado,
+
+01:34:46.420 --> 01:34:48.420
+pero nosotros lo vemos ahora en este
+
+01:34:50.420 --> 01:34:52.420
+curso,
+
+01:34:52.420 --> 01:34:54.420
+porque ya lo vieron,
+
+01:34:54.420 --> 01:34:56.420
+y
+
+01:34:56.420 --> 01:34:58.420
+sí también lo vamos a usar
+
+01:34:58.420 --> 01:35:00.420
+en colas de prioridades. O sea,
+
+01:35:00.420 --> 01:35:02.420
+toda estructura que necesite
+
+01:35:02.420 --> 01:35:04.420
+un orden
+
+01:35:04.420 --> 01:35:06.420
+entre los datos
+
+01:35:06.420 --> 01:35:08.420
+necesita, para implementar
+
+01:35:08.420 --> 01:35:10.420
+Java, necesita hacer,
+
+01:35:10.420 --> 01:35:12.420
+necesita poder compararse.
+
+01:35:12.420 --> 01:35:14.420
+Entonces,
+
+01:35:14.420 --> 01:35:16.420
+para eso tienen que ser
+
+01:35:16.420 --> 01:35:18.420
+de lo que se dice de tipo
+
+01:35:18.420 --> 01:35:20.420
+comparable, y comparable es una interfaz.
+
+01:35:20.420 --> 01:35:22.420
+Entonces, le van a explicar eso, que es bastante
+
+01:35:22.420 --> 01:35:24.420
+interesante el concepto en Java.
+
+01:35:24.420 --> 01:35:26.420
+Para no
+
+01:35:26.420 --> 01:35:28.420
+darles ahora
+
+01:35:28.420 --> 01:35:30.420
+la implementación de
+
+01:35:30.420 --> 01:35:32.420
+árboles generales,
+
+01:35:32.420 --> 01:35:34.420
+que todavía en la práctica no la van a
+
+01:35:34.420 --> 01:35:36.420
+usar.
+
+01:35:36.420 --> 01:35:38.420
+O sea, cuando se retome la
+
+01:35:38.420 --> 01:35:40.420
+implementación de árboles generales
+
+01:35:40.420 --> 01:35:42.420
+en Java, por ahí van a pasar
+
+01:35:42.420 --> 01:35:44.420
+algunas clases,
+
+01:35:44.420 --> 01:35:46.420
+después nosotros la semana que viene arrancamos
+
+01:35:46.420 --> 01:35:48.420
+con las prioridades, pero lo hicimos
+
+01:35:48.420 --> 01:35:50.420
+especialmente
+
+01:35:50.420 --> 01:35:52.420
+así,
+
+01:35:52.420 --> 01:35:54.420
+para que la
+
+01:35:54.420 --> 01:35:56.420
+implementación les quede
+
+01:35:56.420 --> 01:35:58.420
+más
+
+01:35:58.420 --> 01:36:00.420
+cercano, porque nosotros
+
+01:36:00.420 --> 01:36:02.420
+vamos un poco más adelantados
+
+01:36:02.420 --> 01:36:04.420
+de la
+
+01:36:04.420 --> 01:36:06.420
+práctica, para que
+
+01:36:06.420 --> 01:36:08.420
+la implementación les quede más cercano
+
+01:36:08.420 --> 01:36:10.420
+cuando sale la práctica de
+
+01:36:10.420 --> 01:36:12.420
+árboles generales.
+
+01:36:12.420 --> 01:36:14.420
+Del próximo
+
+01:36:14.420 --> 01:36:16.420
+tema, que vamos a empezar a ver, que es
+
+01:36:16.420 --> 01:36:18.420
+un tema muy
+
+01:36:18.420 --> 01:36:20.420
+útil, acá es muy sencillo,
+
+01:36:20.420 --> 01:36:22.420
+mejoran prioridades
+
+01:36:22.420 --> 01:36:24.420
+de esa nueva práctica.
+
+01:36:26.420 --> 01:36:28.420
+Así que
+
+01:36:28.420 --> 01:36:30.420
+igual se les va a dar
+
+01:36:30.420 --> 01:36:32.420
+cómo se implementa en Java la estructura
+
+01:36:32.420 --> 01:36:34.420
+y todo, pero es una estructura
+
+01:36:34.420 --> 01:36:36.420
+muy sencilla, pero es muy útil.
+
+01:36:36.420 --> 01:36:38.420
+Por eso
+
+01:36:38.420 --> 01:36:40.420
+se las vamos, porque se usan
+
+01:36:40.420 --> 01:36:42.420
+varias
+
+01:36:42.420 --> 01:36:44.420
+para implementar varios algoritmos,
+
+01:36:44.420 --> 01:36:46.420
+algún algoritmo de Java,
+
+01:36:46.420 --> 01:36:48.420
+y eso se usa con las prioridades. Y además
+
+01:36:48.420 --> 01:36:50.420
+es una estructura bastante
+
+01:36:50.420 --> 01:36:52.420
+usada.
+
+01:36:54.420 --> 01:36:56.420
+Así que, por eso mañana
+
+01:36:56.420 --> 01:36:58.420
+Pepe
+
+01:36:58.420 --> 01:37:00.420
+no va así con esto,
+
+01:37:00.420 --> 01:37:02.420
+con las prioridades generales,
+
+01:37:02.420 --> 01:37:04.420
+la parte de interfaces
+
+01:37:04.420 --> 01:37:06.420
+y el uso de
+
+01:37:06.420 --> 01:37:08.420
+árboles binarios de algún plan.
+
+01:37:08.420 --> 01:37:10.420
+Así que
+
+01:37:10.420 --> 01:37:12.420
+quería hacer esa
+
+01:37:12.420 --> 01:37:14.420
+aclaración para que mañana
+
+01:37:14.420 --> 01:37:16.420
+nos encuentren con un tema
+
+01:37:16.420 --> 01:37:18.420
+que por ahí le va a
+
+01:37:18.420 --> 01:37:20.420
+parecer como que queda
+
+01:37:20.420 --> 01:37:22.420
+que no está enganchado
+
+01:37:22.420 --> 01:37:24.420
+con lo que se venía
+
+01:37:24.420 --> 01:37:26.420
+dando.
+
+01:37:26.420 --> 01:37:28.420
+Bien.
+
+01:37:28.420 --> 01:37:30.420
+Bueno, entonces con esto
+
+01:37:30.420 --> 01:37:32.420
+terminamos un ratito antes.
+
+01:37:32.420 --> 01:37:34.420
+Gracias.
+
