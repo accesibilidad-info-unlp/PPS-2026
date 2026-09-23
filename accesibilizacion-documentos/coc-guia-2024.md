@@ -158,6 +158,8 @@ Los grandes ejes de la evolución.
 
 Podemos ver gráficamente cuáles han sido los grandes ejes de la impresionante evolución de las computadoras:
 
+![](/imagenes/capi1_evolución_computadores.png)
+
 Descripción de la imagen: En la parte inferior aparece un eje horizontal que representa el tiempo, comenzando en 1940 a la izquierda y terminando en “Presente” a la derecha. Desde una línea vertical ubicada a la izquierda (que marca el punto de partida en 1940), salen varias líneas diagonales con flechas que indican tendencias a lo largo del tiempo. Cuatro líneas ascienden en diagonal hacia la derecha, mostrando aumentos. Cada una está rotulada con las siguientes palabras: Velocidad, Confiabilidad, Eficiencia, Facilidad de uso.
 Estas flechas ascendentes indican que, desde 1940 hasta el presente, esos aspectos han aumentado.
 Debajo de ellas, hay dos líneas diagonales que descienden hacia la derecha, también con flechas. Están rotuladas como: Costo, Tamaño. Estas flechas descendentes indican que, con el paso del tiempo, el costo y el tamaño de las computadoras han disminuido. Fin de descripción, vuelta al texto.
@@ -201,6 +203,7 @@ Podrá también, ser necesario interactuar con el mundo exterior, tanto para obt
 
 Teniendo en cuenta lo anteriormente expresado, podemos esquematizarla de la siguiente manera:
 
+![Esquema de bus de comunicaciones, memoria, UCP, entrada/salida y periféricos. La descripción se encuentra a continuación](/imagenes/capi1_Componentes_y_funcionamiento_básico_de_una_computadora_esquema.png)
 
 Descripción de la imagen: En la parte superior aparece una flecha horizontal de doble punta, que va de izquierda a derecha, con el rótulo “Bus de comunicaciones”. Esta flecha indica el canal que conecta todos los componentes entre sí.
 Debajo del bus hay tres bloques rectangulares principales, alineados horizontalmente:
@@ -227,7 +230,7 @@ Periférico de Entrada (Pe), conectado mediante una flecha que apunta hacia la U
 Periférico de Salida (Ps), conectado mediante una flecha que sale desde la Unidad de Salida hacia el exterior.
 Las flechas indican el sentido del flujo de información: los periféricos de entrada envían datos al sistema y los periféricos de salida reciben los resultados.
 
-En el gráfico se ha dividido conceptualmente la memoria Principal M en dos partes: memoria de instrucciones M, donde residen las órdenes que la computadora debe interpretar y ejecutar, y memoria de datos Md donde se almacena la información con la cual la computadora realizará los procesos (cálculos, decisiones, actualizaciones) que sean necesarios para la resolución del problema.
+En el gráfico se ha dividido conceptualmente la memoria Principal M en dos partes: memoria de instrucciones M, donde residen las órdenes que la computadora debe interpretar y ejecutar, y memoria de datos Md donde se almacena la información con la cual la computadora realizará los procesos (cálculos, decisiones, actualizaciones) que sean necesarios para la resolución del problema.//
 
 El bloque rotulado como Entrada/Salida representa los dispositivos que permiten la comunicación con el mundo real. Por ejemplo, el controlador de video que vincula el procesador central de la computadora con la pantalla o el circuito controlador de multimedia que permite tener salida por un parlante o entrada por un micrófono.
 
