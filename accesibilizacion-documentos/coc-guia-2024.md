@@ -2,7 +2,7 @@ Curso de Ingreso 2024
 Conceptos de Organización de Computadoras
 
 Contenido
-# CAPÍTULO 1 - LA COMPUTADORA 6
+# CAPÍTULO 1 - LA COMPUTADORA 
 ##  PARTE 1 - CONCEPTOS BÁSICOS DE UNA COMPUTADORA 6
  ##  La computadora en la vida diaria 6
 ##  La "idea" de la computadora 6
