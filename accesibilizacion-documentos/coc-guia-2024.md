@@ -3,75 +3,75 @@ Conceptos de Organización de Computadoras
 
 Contenido
 # CAPÍTULO 1 - LA COMPUTADORA 6
-##PARTE 1 - CONCEPTOS BÁSICOS DE UNA COMPUTADORA 6
- ##La computadora en la vida diaria 6
-##La "idea" de la computadora 6
-## De la calculadora a la computadora... La gran diferencia 7
- ##UNA PRIMERA DEFINICIÓN 7
- ##UN POCO DE HISTORIA 8
-##¿QUÉ ES LA INFORMÁTICA? 10
- ##Aplicaciones de la informática 11
-## Componentes y funcionamiento básico de una computadora 11
-##CONCEPTOS DE COMUNICACIONES Y REDES 14
-##NOCIONES BÁSICAS DE COMUNICACIONES 14
-##Conceptos elementales de redes 15
-##Redes LAN y WAN 16
-##Internet: Una red de redes 17
-##Tendencias y Conclusiones 19
-##CONCEPTOS DE SISTEMAS OPERATIVOS 20
-##LA NECESIDAD DEL "SOFTWARE" 20
+##  PARTE 1 - CONCEPTOS BÁSICOS DE UNA COMPUTADORA 6
+ ##  La computadora en la vida diaria 6
+##  La "idea" de la computadora 6
+##  De la calculadora a la computadora... La gran diferencia 7
+ ## UNA PRIMERA DEFINICIÓN 7
+ ## UN POCO DE HISTORIA 8
+## ¿QUÉ ES LA INFORMÁTICA? 10
+ ## Aplicaciones de la informática 11
+##  Componentes y funcionamiento básico de una computadora 11
+## CONCEPTOS DE COMUNICACIONES Y REDES 14
+## NOCIONES BÁSICAS DE COMUNICACIONES 14
+## Conceptos elementales de redes 15
+## Redes LAN y WAN 16
+## Internet: Una red de redes 17
+## Tendencias y Conclusiones 19
+## CONCEPTOS DE SISTEMAS OPERATIVOS 20
+## LA NECESIDAD DEL "SOFTWARE" 20
 
-#PARTE 2 - LA COMPUTADORA HACIA ADENTRO 27
-##INTRODUCCIÓN 27
-##LA UNIDAD CENTRAL DE PROCESAMIENTO 28
-##LA MEMORIA 30
-##BUSES Y ENTRADA/SALIDA 33
-##FUNCIONAMIENTO. EL CICLO DE INSTRUCCIÓN. 34
+# PARTE 2 - LA COMPUTADORA HACIA ADENTRO 27
+## INTRODUCCIÓN 27
+## LA UNIDAD CENTRAL DE PROCESAMIENTO 28
+## LA MEMORIA 30
+## BUSES Y ENTRADA/SALIDA 33
+## FUNCIONAMIENTO. EL CICLO DE INSTRUCCIÓN. 34
 
-#CAPÍTULO 2 -REPRESENTACIÓN NUMÉRICA. 38
-##Representación interna de datos 38
-##Códigos Alfanuméricos 38
-##Representaciones Numéricas 38
-##Teorema Fundamental de la Numeración 39
-##Sistemas Decimal, Binario y Hexadecimal 40
-##Conversiones entre los sistemas de numeración 41
-##Representación de números enteros 43
+# CAPÍTULO 2 -REPRESENTACIÓN NUMÉRICA. 38
+## Representación interna de datos 38
+## Códigos Alfanuméricos 38
+## Representaciones Numéricas 38
+## Teorema Fundamental de la Numeración 39
+## Sistemas Decimal, Binario y Hexadecimal 40
+## Conversiones entre los sistemas de numeración 41
+## Representación de números enteros 43
 
-#CAPÍTULO 3 - LÓGICA DIGITAL. 50
-##LOS CIRCUITOS LÓGICOS 50
-##ALGEBRA DE BOOLE. OPERACIONES LÓGICAS Y TEOREMAS 51
-##TEOREMAS 52
-##PUERTAS LÓGICAS 54
-##CIRCUITOS COMBINACIONALES 55
+# CAPÍTULO 3 - LÓGICA DIGITAL. 50
+## LOS CIRCUITOS LÓGICOS 50
+## ALGEBRA DE BOOLE. OPERACIONES LÓGICAS Y TEOREMAS 51
+## TEOREMAS 52
+## PUERTAS LÓGICAS 54
+## CIRCUITOS COMBINACIONALES 55
 
-#CAPÍTULO 4 – PERIFÉRICOS 62
-##Conexión de periféricos al computador 63
-##Características generales de los periféricos 64
-##Clasificación de los periféricos 65
-##PERIFÉRICOS DE ENTRADA DE DATOS 66
-##Otros dispositivos 67
-##PERIFÉRICOS DE SALIDA DE DATOS 72
-##Impresoras 74
-##Descripción de distintos tipos de impresoras 76
-##Parámetros que caracterizan a una impresora 79
-##Otros dispositivos de salida 80
-##Periféricos de almacenamiento de datos 81
-##PERIFÉRICOS DE E/S O MIXTOS 90
+# CAPÍTULO 4 – PERIFÉRICOS 62
+## Conexión de periféricos al computador 63
+## Características generales de los periféricos 64
+## Clasificación de los periféricos 65
+## PERIFÉRICOS DE ENTRADA DE DATOS 66
+## Otros dispositivos 67
+## PERIFÉRICOS DE SALIDA DE DATOS 72
+## Impresoras 74
+## Descripción de distintos tipos de impresoras 76
+## Parámetros que caracterizan a una impresora 79
+## Otros dispositivos de salida 80
+## Periféricos de almacenamiento de datos 81
+## PERIFÉRICOS DE E/S O MIXTOS 90
 
 Página 6.
-#CAPÍTULO 1 LA COMPUTADORA
-## PARTE 1 CONCEPTOS BÁSICOS DE UNA COMPUTADORA 
+# CAPÍTULO 1 LA COMPUTADORA
+##  PARTE 1 CONCEPTOS BÁSICOS DE UNA COMPUTADORA 
 "La computadora es, por mucho, la más extraordinaria de las vestimentas electrónicas creadas por el hombre, ya que es una extensión de nuestro sistema nervioso central. Junto a ella, la rueda no es más que un juguete...".
 Marshall McLuhan.
 
-##La computadora en la vida diaria.
+## La computadora en la vida diaria.
 En la vida moderna las computadoras constituyen un componente esencial y, aunque no lo notemos, están en todas partes y son determinantes en nuestro modo de vida. Aún más, muchas veces nos damos cuenta de esto cuando dejan de funcionar.
 
 Pensemos por un momento en qué cosas está presente alguna forma de computadora: reloj despertador digital, radio, TV, reproductor de CD, agenda electrónica, cafetera automática, horno a microondas, encendido electrónico del auto, portón eléctrico de la cochera, teléfono celular, cajero automático, lector de tarjeta de ingreso al trabajo, ascensores automáticos, controles de seguridad del edificio, lavarropas automático, cámaras fotográficas, máquinas de juegos, expendedoras de comestibles, control de los semáforos, centrales telefónicas, aviones, aeropuertos, ¡casi todo!
 
 Es difícil imaginarse un día en el cual no utilicemos alguno de estos elementos. ¿Qué pasaría si todos ellos dejaran de funcionar simultáneamente? Nuestra vida está relacionada con las computadoras, tanto por su operación como por su falta de funcionamiento. Y lo más sorprendente es que se hayan infiltrado tanto en la vida diaria en un tiempo tan corto.
 
-#La "idea" de la computadora.
+## La "idea" de la computadora.
 En 1823, el excéntrico genio matemático inglés Charles Babbage, profesor en Cambridge, comenzó a trabajar sobre la idea de un dispositivo mecánico para efectuar sumas repetidas. Esta idea se enriqueció al conocer que Jacquard, fabricante de tejidos francés, había ideado un telar que permitía reproducir automáticamente patrones de tejidos leyendo la información codificada en patrones de agujeros perforados. Babbage se embarcó entonces en el ambicioso proyecto de crear una máquina analítica, que pretendía evolucionar el telar programable en una máquina capaz de realizar cualquier cálculo que se le programara mediante tarjetas perforadas, con una precisión de 20 dígitos.
 
 A esta idea adhirió Ada Lovelace, hija del poeta Lord Byron y con aptitudes matemáticas. Publicó un artículo sobre la máquina analítica que incluía el primer programa para computadora. Se asoció a Babbage aportando mayores alcances a su idea y corrigiendo errores de su trabajo.
@@ -81,7 +81,7 @@ Página 7.
 
 Pero la tecnología de la época no bastaba para hacer realidad la máquina. El mundo aún no estaba listo para las computadoras, y no lo estaría por cien años más.
 
-##De la calculadora a la computadora... La gran diferencia.
+## De la calculadora a la computadora... La gran diferencia.
 Si bien las computadoras nos acompañan desde mitad de siglo pasado, sus raíces van mucho más allá de la máquina analítica concebida por Babbage y son producto de siglos de meditación y esfuerzo intelectual.
 
 Durante años el esfuerzo tecnológico estuvo en calcular: ábacos, calculadores mecánicos, circuitos electromecánicos, circuitos electrónicos. El objetivo era obtener la mayor velocidad posible para alguna combinación de las operaciones matemáticas básicas.
@@ -91,7 +91,7 @@ Aún las primitivas computadoras y las primeras aplicaciones industriales fueron
 El salto conceptual de las "máquinas de calcular" a la computadora fue comprender que el cálculo era sólo uno de los elementos de interés para la computación. Aún más, representaba tal vez la línea tecnológica más "fácil".
 ¡El verdadero desarrollo estaba en poder generalizar la utilización de “la máquina” para cualquier aplicación que se pudiera “programar” ... tal como lo había escrito Ada Lovelace 120 años antes!
 
-##UNA PRIMERA DEFINICIÓN
+## UNA PRIMERA DEFINICIÓN
 Una Computadora es una máquina digital y sincrónica, con cierta capacidad de cálculo numérico y lógico, controlada por un programa almacenado y con posibilidad de comunicación con el mundo exterior.
 
 ¿Qué significa esto?
@@ -112,7 +112,7 @@ Esta versatilidad está dada en que la máquina sea controlada por un programa, 
 
 Con el advenimiento de la computadora, gran parte de la tecnología pasó del mundo analógico al digital.
 
-##UN POCO DE HISTORIA
+## UN POCO DE HISTORIA
 "Considera el pasado y conocerás el futuro" Proverbio Chino.
 
 La evolución en la tecnología electrónica en los últimos 60 años tuvo un impacto notable en la ciencia informática.
@@ -162,7 +162,7 @@ Descripción de la imagen: En la parte inferior aparece un eje horizontal que re
 Estas flechas ascendentes indican que, desde 1940 hasta el presente, esos aspectos han aumentado.
 Debajo de ellas, hay dos líneas diagonales que descienden hacia la derecha, también con flechas. Están rotuladas como: Costo, Tamaño. Estas flechas descendentes indican que, con el paso del tiempo, el costo y el tamaño de las computadoras han disminuido. Fin de descripción, vuelta al texto.
 
-##¿QUÉ ES LA INFORMÁTICA?
+## ¿QUÉ ES LA INFORMÁTICA?
 La informática nace de la idea de ayudar al hombre en aquellos trabajos rutinarios y repetitivos, generalmente de cálculo y gestión, donde es frecuente la repetición de tareas. La idea es que una máquina puede realizarlos mejor, aunque siempre bajo la supervisión del hombre.
 
 El término Informática se creó en Francia en 1962 bajo la denominación Informatique, y procede de la contracción de las palabras Information automatique. Posteriormente fue reconocido por el resto de los países, siendo adoptado por España en 1968 bajo el nombre de Informática, que como puede deducirse fácilmente, viene de la contracción de las palabras Información automática. En los países anglosajones se conoce con el nombre de ComputerScience.
@@ -177,7 +177,7 @@ La resolución de problemas utilizando las herramientas informáticas puede tene
 
 Los temas propios de la ciencia Informática abarcan aspectos tales como la arquitectura física y lógica de las computadoras, las metodologías de análisis y diseño de sistemas de software, los lenguajes de programación, los sistemas operativos, la inteligencia artificial, los sistemas de tiempo real, el diseño y aplicación de bases de datos, etc.
 
-##Aplicaciones de la informática.
+## Aplicaciones de la informática.
 "El grado de inteligencia que atribuimos al comportamiento de algo está determinado tanto por nuestra propia capacidad y comprensión como por las propiedades del objeto que analizamos". Alan Turing.
 
 El universo de las aplicaciones informáticas es esencialmente multidisciplinario.
@@ -187,7 +187,7 @@ En esta tarea están involucradas personas de distintas disciplinas: matemático
 
 Por otro lado, se encuentran los usuarios de las aplicaciones, que van desde especialistas que utilizan una determinada herramienta (economistas, docentes, músicos, médicos, arquitectos, etc.) hasta entusiastas que navegan por Internet o juegan con un simulador de vuelo.
 
-##Componentes y funcionamiento básico de una computadora.
+## Componentes y funcionamiento básico de una computadora.
 Recordemos la definición que dimos de computadora: Una Computadora es una máquina digital y sincrónica, con cierta capacidad de cálculo numérico y lógico, controlada por un programa almacenado, y con posibilidad de comunicación con el mundo exterior.
 
 La mayoría de las computadoras actuales de propósito general presentan una estructura interna basada en la arquitectura definida por John von Neumann.
@@ -255,7 +255,7 @@ Página 14.
 #CONCEPTOS DE COMUNICACIONES Y REDES.
 "Poco después de mi entrada la yegua se levantó de su estera, se acercó a mí, observó atentamente mi cara y manos, y luego hizo un gesto de desagrado. A continuación, se volvió hacia el caballo y escuché que entre ellos repetían a menudo la palabra yahoo, cuyo significado entonces no entendía, aunque fuera la primera que aprendí a pronunciar. Más pronto estaría mejor informado para mi eterna vergüenza." Los Viajes de Gulliver, Cap XIX: El país de los Houyhnhnms.
 
-##NOCIONES BÁSICAS DE COMUNICACIONES.
+## NOCIONES BÁSICAS DE COMUNICACIONES.
 En los principios del siglo XIX, los tiempos de las comunicaciones eran directamente proporcionales a los tiempos del movimiento humano. Una noticia de Europa podía tardar meses en llegar a las colonias sudamericanas; un hecho trascendental como la declaración de la independencia en Tucumán en 1816 viajó "en diligencia" para ser conocido en Buenos Aires varios días después; la imagen del general mirando desde un cerro la evolución de una gran batalla y enviando y recibiendo mensajeros a caballo desde el frente de batalla sólo se mejoraba levemente con el empleo de palomas mensajeras...
 
 En 1844 Morse inventó el telégrafo y en 1876 Bell el teléfono. Con ellos nació el concepto de telecomunicaciones, es decir comunicación a distancia en forma prácticamente inmediata.
@@ -286,7 +286,7 @@ Un primer empleo de esta comunicación remota entre computadoras fueron (y son) 
 Debe quedarnos claro que de nada nos servirían ambas computadoras si no tenemos un sistema eficiente de comunicaciones.
 
 Página 16.
-##Conceptos elementales de redes.
+## Conceptos elementales de redes.
 Conceptualmente una red responde a un esquema general como el de la figura siguiente:
 
 Las computadoras locales (clientes) pueden ser muy diferentes y disponer de recursos propios.
@@ -300,7 +300,7 @@ Compartir datos y programas, permitiendo incrementar la productividad en los sis
 Incrementar la eficiencia en los trabajos de grupo al permitir una fluida comunicación entre miembros de la organización ubicados en diferentes puntos.
 
 Página 17.
-##Redes LAN y WAN
+## Redes LAN y WAN
 Una red local (LAN: Local Area Network) es una red en la cual las computadoras se encuentran cercanas físicamente, generalmente en un mismo edificio. La comunicación inter-computadoras puede ser por cable, fibra o inalámbrica (en este caso una pequeña radio que hace de receptor- transmisor se incorpora en cada computadora).
 
 Típicamente (como se muestra en la figura) una red local puede conectarse a través de un conjunto de líneas de comunicación común denominado bus, pero pueden utilizarse diferentes topologías de comunicación.
@@ -321,7 +321,7 @@ En el lado izquierdo y derecho se ven varias computadoras de escritorio, impreso
 
 Nuevamente el esquema de comunicaciones puede ser realizado en parte a través de buses y también con otras configuraciones como las denominadas en estrella o punto a punto.
 
-## Internet: Una red de redes.
+##  Internet: Una red de redes.
 Internet no es más que una red WAN, en la que un conjunto de instituciones han acordado conectar sus propias redes, enlazando organizaciones educativas, administrativas y empresas privadas.
 
 Las raíces de Internet fueron las comunicaciones que establecieron en EEUU un conjunto de Universidades e Instituciones Académicas, y de ese modo fue creciendo y desarrollándose en todo el mundo.
@@ -362,7 +362,7 @@ En una videoconferencia tenemos el equivalente a una clase tradicional, con una 
 
 La necesidad de trasmitir imágenes y voz en tiempo real hace que los recursos de comunicaciones involucrados en una videoconferencia sean importantes. A su vez, armar un aula virtual para N alumnos significa al menos tener N computadoras (o puestos enlazados con un servidor en el aula) que puedan conectarse con la computadora remota del conferencista... y todas ellas con cámara y micrófono.
 
-##Tendencias y Conclusiones
+## Tendencias y Conclusiones
 Es notable el impacto de Internet y los servicios de red en la vida diaria. Actualmente hay aspectos cotidianos triviales en los que nos estamos acostumbrando a utilizar la "red de redes". Por ejemplo, buscar datos sobre un determinado producto, leer un diario (local o internacional), consultar una enciclopedia, conocer los programas de estudio de una Universidad, comprar un libro, etc…
 
 Es importante tener en cuenta que, en el mundo, el área de mayor crecimiento es el complejo electrónica-informática-comunicaciones y en particular la mayor oferta laboral mundial está asociada con el empleo de tecnología de sistemas distribuidos. Esto hace prioritaria la formación tecnológica de los alumnos de carreras de Ingeniería e Informática, cuyo ámbito de trabajo más probable es una organización con un sistema distribuido de cómputo, con todas las áreas de la empresa vinculadas por Internet y con necesidad de desarrollar productos orientados a ambientes de procesamiento distribuido.
@@ -371,7 +371,7 @@ Página 20.
 #CONCEPTOS DE SISTEMAS OPERATIVOS
 "A primera vista parecía un procesador de palabras Wang..., tenía un teclado Wang y un revestimiento Wang. Solamente cuando Richard Hagstrom le miró por segunda vez vio que el revestimiento había sido abierto (y no con cuidado, además; le pareció como si el trabajo se hubiera hecho con una sierra casera) para encajar en él un tubo catódico IBM ligeramente más grueso. Los discos de archivo que habían llegado con ese extraño bastardo no eran nada flexibles; eran tan duros como los disparos que Richard había oído de niño. -Por el amor de Dios, ¿qué es esto? -preguntó Lina, cuando él y Mr. Nordhofflo trasladaron penosamente hasta sudespacho." Stephen King, El Ordenador de los dioses.
 
-## LA NECESIDAD DEL "SOFTWARE"
+##  LA NECESIDAD DEL "SOFTWARE"
 Hemos visto que la Informática es la ciencia que estudia el análisis y resolución de problemas utilizando computadoras.
 
 También se ha mencionado que el mundo real es naturalmente complejo y los problemas a resolver con herramientas informáticas pueden ser muy variados.
@@ -709,11 +709,11 @@ Claramente, esto es un gran desperdicio del uso del procesador. Con las interrup
 
 Página 38.
 # CAPÍTULO 2 REPRESENTACIÓN NUMÉRICA.
-## Representación interna de datos.
+##  Representación interna de datos.
 Los datos e informaciones que se manejan internamente en un sistema informático se pueden representar, según sus características, de la siguiente forma: 
 
 
-## Códigos Alfanuméricos
+##  Códigos Alfanuméricos
 Una computadora puede trabajar internamente con un conjunto de caracteres que nos permitirán manejar datos, informaciones, instrucciones, órdenes de control, etc. Este conjunto de caracteres podemos subdividirlo en los siguientes grupos: caracteres alfabéticos, letras mayúsculas (A..Z sin la Ñ),
 letras minúsculas (a..z sin la ñ), cifras decimales: los números 0, 1, ..., 9, caracteres especiales, caracteres como el .,; : * etc, órdenes de control. Equivalen a las teclas enter, tabulación, ese, etc.
 
@@ -730,7 +730,7 @@ Con el nacimiento de los lenguajes de programación de alto nivel comenzaron a u
 
 Hoy los códigos utilizados son los de 8 bits, de los cuales los más conocidos son el ASCII extendido que agrega un bit a la representación ASCII extendiendo la cantidad de símbolos disponibles a 256 y el EBCDIC (Extended Binary Coded Decimal Interchage Code).
 
-## Representaciones Numéricas
+##  Representaciones Numéricas
 “…¿ Cuántos camellos hay?. Para responder a esta pregunta hay que emplear el número.
 ¿Serán cuarenta? ¿Serán cien?
 Para llegar al resultado el beduino precisa poner en práctica cierta actividad. El beduino necesita contar.
@@ -744,7 +744,7 @@ Un sistema de numeración se caracteriza fundamentalmente por su base, que es el
 
 Los sistemas de numeración actuales son sistemas posicionales, en los que el valor relativo que representa cada símbolo o cifra de una determinada cantidad depende de su valor absoluto y de la posición relativa que ocupa dicha cifra con respecto a la coma fraccionaria.
 
-## Teorema Fundamental de la Numeración.
+##  Teorema Fundamental de la Numeración.
 Se trata de un teorema que relaciona una cantidad expresada en cualquier sistema de numeración posicional con la misma cantidad expresada en el sistema decimal. Supongamos una cantidad expresada en un sistema cuya base es B y representamos por xi cada uno de los dígitos que contiene dicha cantidad, donde el subíndice i indica la posición del dígito con respecto a la coma fraccionaria, la posición se numera en forma creciente hacia la izquierda y decreciente hacia la derecha de la coma (posición 0), en ambos casos de a 1.
 
 El Teorema Fundamental de la Numeración dice que el valor decimal de una cantidad expresada en otro sistema de numeración, está dado por la fórmula:
@@ -753,7 +753,7 @@ Página 40.
 
 donde el número en base B es ... x4 x3x2x1x0x-1 x-2…, o sea
 N°=⋯+x4B4+x3B3+x2B2+x1B1+x0B0+x-1B-1+x-2B-2+⋯
-## Sistemas Decimal, Binario y Hexadecimal.
+##  Sistemas Decimal, Binario y Hexadecimal.
 El sistema que ha usado el hombre para contar desde hace bastante tiempo es el denominado sistema decimal, adoptado por contar con los diez dedos de la mano. El sistema decimal es uno de los denominados posicionales, que utiliza un conjunto de 10 símbolos, xi  {0,...9}. Un valor determinado o cantidad, que se denomina número decimal, se puede expresar por la fórmula del Teorema anterior, donde la Base es 10.
 
 Ejemplo. ¿Cuál es la interpretación de la representación de la cantidad 3,1416?
@@ -807,7 +807,7 @@ El valor mínimo representable se obtiene cuando los n dígitos del número son 
 
 El valor máximo representable se obtiene cuando los n dígitos del número son iguales al símbolo de mayor valor del sistema, por ejemplo con 4 dígitos, los máximos serán 11112, 999910 o FFFF16
 
-## Conversiones entre los sistemas de numeración.
+##  Conversiones entre los sistemas de numeración.
 Se denomina conversión entre números representados en distintos sistemas de numeración a la transformación de una determinada cantidad expresada en uno de dichos sistemas de numeración, a su representación equivalente en el otro sistema.
 
 Conversión decimal-binario
@@ -886,7 +886,7 @@ Convertir el número binario 1100101001000,1011011 a hexadecimal. 1948,BG
 Conversión de cualquier base a decimal.
 Para ello se utiliza el teorema fundamental de la numeración y se convierte el número de la base que se disponga, a la base decimal (como se explica en página 50).
 
-## Representación de números enteros.
+##  Representación de números enteros.
 Las computadoras utilizan cuatro métodos para la representación interna de números enteros (positivos y negativos); éstos son los siguientes:
 Módulo y signo.
 Complemento a 1
@@ -1053,7 +1053,7 @@ Por cuestiones de índole técnica, los circuitos electrónicos que conforman un
 
 En los circuitos electrónicos suele representarse la presencia de tensión (electricidad) en un punto de un circuito por medio de un 1, en tanto que 0 representa la ausencia de dicha tensión.
 
-## LOS CIRCUITOS LÓGICOS.
+##  LOS CIRCUITOS LÓGICOS.
 La electrónica digital está fundamentada en la base matemática formada por el álgebra de Boole (George Boole, matemático inglés, 1815-1864). Este método de análisis considera que todos los elementos poseen únicamente dos estados (biestables) o dos valores, verdadero o falso (1 ó 0) que son opuestos entre sí, no permitiéndose nunca la adopción de estados intermedios. Estudiando las distintas asociaciones entre ellos se obtienen las leyes generales sobre los procesos lógicos.
 
 Fue Claude Shannon (matemático e ingeniero norteamericano, 1916-2001) quien aplicó estas técnicas de estudio a los circuitos compuestos de elementos que solo pueden adoptar dos estados estables posibles, apareciendo entonces los llamados circuitos lógicos.
@@ -1068,7 +1068,7 @@ Conjunto particular. Reunión de elementos pertenecientes al conjunto universal,
 Conjunto vacío. Aquel que no posee ningún elemento. Se representa por 0.
 Conjunto complementario de otro conjunto A (también denominado conjunto negado o inverso). Está constituido por todos los elementos del conjunto universal que no pertenecen al conjunto A.
 
-## ÁLGEBRA DE BOOLE. OPERACIONES LÓGICAS Y TEOREMAS.
+##  ÁLGEBRA DE BOOLE. OPERACIONES LÓGICAS Y TEOREMAS.
 Se definen básicamente tres tipos de operaciones sobre las variables del álgebra de Boole o variables booleanas que son: La complementación lógica, la suma lógica y el producto lógico.
 
 La complementación lógica.
@@ -1122,7 +1122,7 @@ Fin de tabla.
 
 En ella podemos apreciar que el resultado de esta operación (producto lógico) es 1 lógico si y solo si la variable A y la variable B son ambas 1.
 
-## TEOREMAS.
+##  TEOREMAS.
 
 Conocidas ya las tres operaciones elementales del álgebra de Boole, enunciaremos a continuación de la forma más concisa posible, sus teoremas fundamentales:
 
@@ -1168,7 +1168,7 @@ Analizadas las variables booleanas y sus operaciones, pasamos a definir una func
 
 Además podemos asegurar que toda función booleana es también una variable booleana (Teorema 1).
 
-## PUERTAS LÓGICAS.
+##  PUERTAS LÓGICAS.
 Existe un convenio gráfico para representar dispositivos (electrónicos, hidráulicos, mecánicos, etc.) que lleven a cabo funciones booleanas elementales y que, en función de la combinación o combinaciones diseñadas, se obtendrán funciones más complejas. Las puertas lógicas son dispositivos electrónicos que desarrollan las funciones booleanas y son básicamente: Puertas OR, AND, NOT, NOR, NAND, OR Exclusiva y NOR Exclusiva.
 
 Las puertas OR.
@@ -1296,7 +1296,7 @@ Para cada valor de columna A, le corresponde un valor de la columna B y, un valo
 1=1=1
 Fin de tabla.
 
-## CIRCUITOS COMBINACIONALES.
+##  CIRCUITOS COMBINACIONALES.
 Un circuito combinacional es un conjunto de puertas lógicas interconectadas, cuya salida, en un momento dado, es función solamente de los valores de las entradas en ese instante. Como sucede con una puerta como las vistas anteriormente, la aparición de un valor en las entradas viene seguido casi inmediatamente por la aparición de un valor en la salida, con un retardo propio de la puerta.
 
 En general, un circuito combinacional consiste de n entradas binarias y m salidas binarias. Como una puerta, un circuito combinacional puede definirse de tres formas:
@@ -1335,7 +1335,7 @@ Ejemplos:
 Los disquetes son soporte de información, mientras que la unidad lectora o disquetera, es unidad periférica.
 El papel de impresora es soporte de información y la impresora unidad periférica.
 
-##Conexión de periféricos al computador
+## Conexión de periféricos al computador
 Las unidades funcionales del computador (memoria, UCP, Entrada/Salida), así como éstas con los periféricos, se comunican por conjuntos o grupos de hilos denominados canales o buses de comunicación.
 Es necesario tener en cuenta el número de líneas de información simultánea (cantidad de bits) que "viajan" por los buses de comunicación.
 
@@ -1363,7 +1363,7 @@ Establecer normas generales para la comunicación entre cualquier clase de perif
 
 Es interesante notar que estas placas de interfaz tienen muchas veces su propio procesador, su propia memoria y su programa de control ("driver") que les permite manejar una variedad de periféricos similares con prestaciones adaptables a lo que quiere el usuario (por ejemplo una placa controladora de video puede servir para muy variados monitores).
 
-##Características generales de los periféricos.
+## Características generales de los periféricos.
 Cada periférico suele estar formado por dos partes claramente diferenciadas en cuanto a su misión y funcionamiento: una parte mecánica y otra electrónica.
 La parte mecánica está formada básicamente por dispositivos electromecánicos (conmutadores manuales, motores, electroimanes, etc) controlados por los elementos electrónicos.
 
@@ -1398,7 +1398,7 @@ Transportabilidad: Decimos que un soporte de información es transportable si es
 
 Ergonomía: Un periférico se dice que es ergonómico cuando su diseño físico externo se adapta al usuario, obteniéndose una buena integración hombre-máquina y una adecuada eficiencia en su utilización haciéndose cómodo su uso al hombre. Los equipos que llevan la homologación alemana GS son ergonómicos, esta homologación no sólo se aplica a los computadores, sino a cualquier producto, como por ejemplo ollas a presión y cochecitos de bebe.
 
-##Clasificación de los periféricos.
+## Clasificación de los periféricos.
 
 Los periféricos se pueden dividir en las siguientes categorías:
 
@@ -1425,7 +1425,7 @@ Locales: Se encuentran cerca del computador.
 
 Remotos: Si debido a su situación lejana la conexión hay que realizarla a través de líneas especiales de transmisión.
 
-##PERIFÉRICOS DE ENTRADA DE DATOS
+## PERIFÉRICOS DE ENTRADA DE DATOS
 En la "prehistoria" de la computación el usuario podía tener que cargar directamente los bits en la memoria del procesador!!! Esto significaba manejar manualmente llaves externas que se ponían en ON u OFF para indicar "1" o "0".
 
 Ahora disponemos de muchas herramientas para indicar que datos queremos introducir en la computadora. A continuación describiremos algunos:
@@ -1668,7 +1668,7 @@ Los caracteres se forman partiendo de estructuras en módulos, cada uno de los c
 
 El visualizador es el elemento de salida típico de las calculadoras de bolsillo y de los relojes digitales.
 
-##Impresoras.
+## Impresoras.
 Las impresoras son periféricos que escriben la información de salida sobre papel. Su comportamiento inicialmente era muy similar al de las máquinas de escribir, pero hoy día son mucho más sofisticadas, pareciéndose algunas en su funcionamiento a máquinas fotocopiadoras conectadas en línea con el computador.
 
 Las impresoras son, junto a las pantallas, los dispositivos más utilizados para poder ver en forma directamente inteligible para el hombre los resultados de un programa de computadora.
@@ -1711,7 +1711,7 @@ En estas impresoras se imprimen simultáneamente todos o varios de los caractere
 Impresoras de páginas.
 Aquí se incluyen un grupo de impresoras que actúan de forma muy similar a las máquinas fotocopiadoras. Se caracterizan por contener un tambor rotativo donde se forma con tinta o polvillo especial (toner) la imagen de la página a imprimir. Esta imagen, por contacto y un proceso de fijación se transfiere al papel.
 
-##Descripción de distintos tipos de impresoras.
+## Descripción de distintos tipos de impresoras.
 
 Impresoras de rueda.
 
@@ -1792,7 +1792,7 @@ La impresión se realiza mediante radiación láser, dirigida sobre el tambor cu
 
 Página 75.
 
-##Parámetros que caracterizan a una impresora.
+## Parámetros que caracterizan a una impresora.
 
 Velocidad de escritura. Normalmente la velocidad de impresión se expresa en las siguientes unidades:
 Impresoras de caracteres: Caracteres por segundo (cps).
@@ -1813,7 +1813,7 @@ Resolución. Una gran parte de impresoras forman los caracteres por unión de pu
 
 Página 76.
 
-##Otros dispositivos de salida.
+## Otros dispositivos de salida.
 
 Plotter o Trazador de gráficos.
 
@@ -1853,7 +1853,7 @@ Pensemos por ejemplo en una estación de monitoreo de pacientes con problemas de
 
 En el ámbito industrial podemos tener numerosos ejemplos de este tipo, donde la computadora (a veces llamada "robot") automáticamente registra datos de entrada de periféricos muy variables y produce señales de salida sobre otros componentes electromecánicos para producir acciones en tiempo real (por ejemplo, armar o pintar un automóvil en una línea de montaje).
 
-##Periféricos de almacenamiento de datos.
+## Periféricos de almacenamiento de datos.
 
 Una característica que distingue un soporte de almacenamiento de los soportes de entrada o los de salida (aparte de la posibilidad de realizar operaciones de entrada/salida indistintamente) es que en el soporte de almacenamiento los datos son legibles sólo por la máquina, pero no lo son directamente por el hombre.
 
@@ -2104,7 +2104,7 @@ La versión más completa, el DVD-18, puede almacenar hasta 17 GB de informació
 
 Técnicamente, el DVD, sustituye al láser infrarrojo por uno de mayor capacidad que es el láser rojo, cuya longitud de onda es más corta (fino), lo que ofrece un mayor espacio de almacenaje y contará con una mayor capacidad para evitar los errores por el tiempo, ya que cuenta con una tecnología que evitará hasta seis veces más el error con que cuenta un CD.
 
-##PERIFÉRICOS DE E/S O MIXTOS.
+## PERIFÉRICOS DE E/S O MIXTOS.
 
 De hecho alguno de los periféricos que hemos mencionado como "de entrada" o "de salida" pueden serlo de ambas clases al mismo tiempo. Por ejemplo hay impresoras que permiten usarse como scanners; hay monitores sobre los que se puede escribir con una pluma, etc.
 
