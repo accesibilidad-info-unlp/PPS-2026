@@ -28,35 +28,35 @@ Contenido
 ## BUSES Y ENTRADA/SALIDA 
 ## FUNCIONAMIENTO. EL CICLO DE INSTRUCCIÓN. 
 
-# CAPÍTULO 2 -REPRESENTACIÓN NUMÉRICA. 38
-## Representación interna de datos 38
-## Códigos Alfanuméricos 38
-## Representaciones Numéricas 38
-## Teorema Fundamental de la Numeración 39
-## Sistemas Decimal, Binario y Hexadecimal 40
-## Conversiones entre los sistemas de numeración 41
-## Representación de números enteros 43
+# CAPÍTULO 2 -REPRESENTACIÓN NUMÉRICA. 
+## Representación interna de datos 
+## Códigos Alfanuméricos 
+## Representaciones Numéricas 
+## Teorema Fundamental de la Numeración 
+## Sistemas Decimal, Binario y Hexadecimal 
+## Conversiones entre los sistemas de numeración 
+## Representación de números enteros 
 
-# CAPÍTULO 3 - LÓGICA DIGITAL. 50
-## LOS CIRCUITOS LÓGICOS 50
-## ALGEBRA DE BOOLE. OPERACIONES LÓGICAS Y TEOREMAS 51
-## TEOREMAS 52
-## PUERTAS LÓGICAS 54
-## CIRCUITOS COMBINACIONALES 55
+# CAPÍTULO 3 - LÓGICA DIGITAL. 
+## LOS CIRCUITOS LÓGICOS 
+## ALGEBRA DE BOOLE. OPERACIONES LÓGICAS Y TEOREMAS 
+## TEOREMAS 
+## PUERTAS LÓGICAS 
+## CIRCUITOS COMBINACIONALES 
 
-# CAPÍTULO 4 – PERIFÉRICOS 62
-## Conexión de periféricos al computador 63
-## Características generales de los periféricos 64
-## Clasificación de los periféricos 65
-## PERIFÉRICOS DE ENTRADA DE DATOS 66
-## Otros dispositivos 67
-## PERIFÉRICOS DE SALIDA DE DATOS 72
-## Impresoras 74
-## Descripción de distintos tipos de impresoras 76
-## Parámetros que caracterizan a una impresora 79
-## Otros dispositivos de salida 80
-## Periféricos de almacenamiento de datos 81
-## PERIFÉRICOS DE E/S O MIXTOS 90
+# CAPÍTULO 4 – PERIFÉRICOS 
+## Conexión de periféricos al computador 
+## Características generales de los periféricos 
+## Clasificación de los periféricos 
+## PERIFÉRICOS DE ENTRADA DE DATOS 
+## Otros dispositivos 
+## PERIFÉRICOS DE SALIDA DE DATOS 
+## Impresoras 
+## Descripción de distintos tipos de impresoras 
+## Parámetros que caracterizan a una impresora 
+## Otros dispositivos de salida 
+## Periféricos de almacenamiento de datos 
+## PERIFÉRICOS DE E/S O MIXTOS 
 
 Página 6.
 # CAPÍTULO 1 LA COMPUTADORA
