@@ -3,30 +3,30 @@ Conceptos de Organización de Computadoras
 
 Contenido
 # CAPÍTULO 1 - LA COMPUTADORA 
-##  PARTE 1 - CONCEPTOS BÁSICOS DE UNA COMPUTADORA 6
- ##  La computadora en la vida diaria 6
-##  La "idea" de la computadora 6
-##  De la calculadora a la computadora... La gran diferencia 7
- ## UNA PRIMERA DEFINICIÓN 7
- ## UN POCO DE HISTORIA 8
-## ¿QUÉ ES LA INFORMÁTICA? 10
- ## Aplicaciones de la informática 11
-##  Componentes y funcionamiento básico de una computadora 11
-## CONCEPTOS DE COMUNICACIONES Y REDES 14
-## NOCIONES BÁSICAS DE COMUNICACIONES 14
-## Conceptos elementales de redes 15
-## Redes LAN y WAN 16
-## Internet: Una red de redes 17
-## Tendencias y Conclusiones 19
-## CONCEPTOS DE SISTEMAS OPERATIVOS 20
-## LA NECESIDAD DEL "SOFTWARE" 20
+##  PARTE 1 - CONCEPTOS BÁSICOS DE UNA COMPUTADORA 
+ ##  La computadora en la vida diaria 
+##  La "idea" de la computadora 
+##  De la calculadora a la computadora... La gran diferencia 
+ ## UNA PRIMERA DEFINICIÓN 
+ ## UN POCO DE HISTORIA 
+## ¿QUÉ ES LA INFORMÁTICA? 
+ ## Aplicaciones de la informática 
+##  Componentes y funcionamiento básico de una computadora 
+## CONCEPTOS DE COMUNICACIONES Y REDES 
+## NOCIONES BÁSICAS DE COMUNICACIONES 
+## Conceptos elementales de redes 
+## Redes LAN y WAN 
+## Internet: Una red de redes 
+## Tendencias y Conclusiones 
+## CONCEPTOS DE SISTEMAS OPERATIVOS 
+## LA NECESIDAD DEL "SOFTWARE" 
 
-# PARTE 2 - LA COMPUTADORA HACIA ADENTRO 27
-## INTRODUCCIÓN 27
-## LA UNIDAD CENTRAL DE PROCESAMIENTO 28
-## LA MEMORIA 30
-## BUSES Y ENTRADA/SALIDA 33
-## FUNCIONAMIENTO. EL CICLO DE INSTRUCCIÓN. 34
+# PARTE 2 - LA COMPUTADORA HACIA ADENTRO 
+## INTRODUCCIÓN 
+## LA UNIDAD CENTRAL DE PROCESAMIENTO 
+## LA MEMORIA 
+## BUSES Y ENTRADA/SALIDA 
+## FUNCIONAMIENTO. EL CICLO DE INSTRUCCIÓN. 
 
 # CAPÍTULO 2 -REPRESENTACIÓN NUMÉRICA. 38
 ## Representación interna de datos 38
