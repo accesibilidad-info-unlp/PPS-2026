@@ -158,7 +158,7 @@ Los grandes ejes de la evolución.
 
 Podemos ver gráficamente cuáles han sido los grandes ejes de la impresionante evolución de las computadoras:
 
-![](/imagenes/capi1_evolución_computadores.png)
+![](/imagenes/capi1_evolucion_computadores.png)
 
 Descripción de la imagen: En la parte inferior aparece un eje horizontal que representa el tiempo, comenzando en 1940 a la izquierda y terminando en “Presente” a la derecha. Desde una línea vertical ubicada a la izquierda (que marca el punto de partida en 1940), salen varias líneas diagonales con flechas que indican tendencias a lo largo del tiempo. Cuatro líneas ascienden en diagonal hacia la derecha, mostrando aumentos. Cada una está rotulada con las siguientes palabras: Velocidad, Confiabilidad, Eficiencia, Facilidad de uso.
 Estas flechas ascendentes indican que, desde 1940 hasta el presente, esos aspectos han aumentado.
@@ -203,7 +203,7 @@ Podrá también, ser necesario interactuar con el mundo exterior, tanto para obt
 
 Teniendo en cuenta lo anteriormente expresado, podemos esquematizarla de la siguiente manera:
 
-![Esquema de bus de comunicaciones, memoria, UCP, entrada/salida y periféricos. La descripción se encuentra a continuación](/imagenes/capi1_Componentes_y_funcionamiento_básico_de_una_computadora_esquema.png)
+![Esquema de bus de comunicaciones, memoria, UCP, entrada/salida y periféricos. La descripción se encuentra a continuación](/imagenes/capi1_Componentes_y_funcionamiento_basico_de_una_computadora_esquema.png)
 
 Descripción de la imagen: En la parte superior aparece una flecha horizontal de doble punta, que va de izquierda a derecha, con el rótulo “Bus de comunicaciones”. Esta flecha indica el canal que conecta todos los componentes entre sí.
 Debajo del bus hay tres bloques rectangulares principales, alineados horizontalmente:
