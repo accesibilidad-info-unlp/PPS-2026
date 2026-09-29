@@ -58,7 +58,7 @@ Contenido
 ## Periféricos de almacenamiento de datos 
 ## PERIFÉRICOS DE E/S O MIXTOS 
 
-Página 6.
+     
 # CAPÍTULO 1 LA COMPUTADORA
 ##  PARTE 1 CONCEPTOS BÁSICOS DE UNA COMPUTADORA 
 "La computadora es, por mucho, la más extraordinaria de las vestimentas electrónicas creadas por el hombre, ya que es una extensión de nuestro sistema nervioso central. Junto a ella, la rueda no es más que un juguete...".
@@ -237,7 +237,7 @@ El bloque rotulado como Entrada/Salida representa los dispositivos que permiten 
 Las líneas de comunicación indicadas como bus de comunicaciones normalmente permiten el paso de tres grandes categorías de información: direcciones, datos y control. En el esquema simplificado se acepta que estas líneas permiten la comunicación interna y externa de datos, direcciones y señales de control.
 Por último, tradicionalmente la combinación de la unidad de control UC y la unidad de cálculo UAL se la llama unidad central de procesamiento UCP, que en las computadoras personales está representada por el microprocesador (ej. Pentium).
 
-Página 13.
+
 El funcionamiento de una Computadora descripta como en el modelo anterior, se puede sintetizar con el siguiente esquema: 
 Descripción de la imagen: En la parte superior aparece un óvalo con la palabra “Inicio”. Desde allí desciende una flecha vertical que conduce a un rectángulo con el texto “Buscar Instrucción”. Debajo de este, otra flecha vertical lleva a un segundo rectángulo que dice “Interpretar Instrucción”. Más abajo, una nueva flecha conduce a un tercer rectángulo con el texto “Ejecutar Instrucción”.
 
@@ -254,7 +254,7 @@ El software comprende los programas que se ejecutan sobre la computadora.
 Un bit (dígito binario o b/nary dígit) es la unidad de información más pequeña. Solo puede tener uno de dos valores: encendido o apagado (0 o 1, si o no, blanco o negro, etc.).
 La Unidad Central de Procesamiento (UCP) o en su acrónimo en inglés CPU, es la encargada de interpretar y llevar a cabo las instrucciones de los programas. Efectúa manipulaciones aritméticas y lógicas con los datos y se comunica con las demás partes del sistema de cómputo.
 
-Página 14.
+
 #CONCEPTOS DE COMUNICACIONES Y REDES.
 "Poco después de mi entrada la yegua se levantó de su estera, se acercó a mí, observó atentamente mi cara y manos, y luego hizo un gesto de desagrado. A continuación, se volvió hacia el caballo y escuché que entre ellos repetían a menudo la palabra yahoo, cuyo significado entonces no entendía, aunque fuera la primera que aprendí a pronunciar. Más pronto estaría mejor informado para mi eterna vergüenza." Los Viajes de Gulliver, Cap XIX: El país de los Houyhnhnms.
 
@@ -271,7 +271,7 @@ Esta evolución de la tecnología de comunicaciones es muy importante para nuest
 
 En principio debemos definir el medio de comunicación es decir sobre que soporte se trasmiten los bits (en principio sólo hablaremos de comunicaciones digitales) que llevan la información. Este medio puede ser un cable telefónico, un cable coaxil, una fibra óptica o el aire.
 
-Página 15.
+
 En general las transmisiones sobre cables requieren enviar señales eléctricas entre un transmisor y un receptor en los extremos del cable, y normalmente se trata de un medio de bajo costo y muy adecuado para distancias relativamente cortas. Por ejemplo, un cable telefónico permite manejar velocidades típicas de 100.000 bits por segundo y un cable coaxil de red puede tener 100 millones de bits por segundo.
 
 Pasar de los cables con señales eléctricas a la fibra óptica ha sido un salto tecnológico muy importante (aunque a un costo mayor). Sucede que la fibra óptica trasmite señales de luz, a una velocidad mucho mayor y con mucha menos posibilidad de interferencia que un cable convencional. Trabajar con comunicaciones en el orden de 1000 millones de bits por segundo, con alta inmunidad al ruido, es típico de la fibra óptica hoy (notar que todos los enlaces telefónicos importantes han reemplazado el cableado convencional por la fibra óptica).
@@ -288,7 +288,7 @@ Un primer empleo de esta comunicación remota entre computadoras fueron (y son) 
 
 Debe quedarnos claro que de nada nos servirían ambas computadoras si no tenemos un sistema eficiente de comunicaciones.
 
-Página 16.
+
 ## Conceptos elementales de redes.
 Conceptualmente una red responde a un esquema general como el de la figura siguiente:
 
@@ -302,7 +302,7 @@ Compartir hardware, reduciendo costos y convirtiendo a la red en sí misma en un
 Compartir datos y programas, permitiendo incrementar la productividad en los sistemas de software.
 Incrementar la eficiencia en los trabajos de grupo al permitir una fluida comunicación entre miembros de la organización ubicados en diferentes puntos.
 
-Página 17.
+
 ## Redes LAN y WAN
 Una red local (LAN: Local Area Network) es una red en la cual las computadoras se encuentran cercanas físicamente, generalmente en un mismo edificio. La comunicación inter-computadoras puede ser por cable, fibra o inalámbrica (en este caso una pequeña radio que hace de receptor- transmisor se incorpora en cada computadora).
 
@@ -329,7 +329,7 @@ Internet no es más que una red WAN, en la que un conjunto de instituciones han 
 
 Las raíces de Internet fueron las comunicaciones que establecieron en EEUU un conjunto de Universidades e Instituciones Académicas, y de ese modo fue creciendo y desarrollándose en todo el mundo.
 
-Página 18.
+
 El impacto de Internet en el ámbito científico pronto se extendió a las empresas y al comercio
 electrónico, ya que esencialmente es una posibilidad de tener una vinculación con cualquier tipo de computadora o dato en cualquier punto del planeta.
 
@@ -370,7 +370,7 @@ Es notable el impacto de Internet y los servicios de red en la vida diaria. Actu
 
 Es importante tener en cuenta que, en el mundo, el área de mayor crecimiento es el complejo electrónica-informática-comunicaciones y en particular la mayor oferta laboral mundial está asociada con el empleo de tecnología de sistemas distribuidos. Esto hace prioritaria la formación tecnológica de los alumnos de carreras de Ingeniería e Informática, cuyo ámbito de trabajo más probable es una organización con un sistema distribuido de cómputo, con todas las áreas de la empresa vinculadas por Internet y con necesidad de desarrollar productos orientados a ambientes de procesamiento distribuido.
 
-Página 20.
+
 #CONCEPTOS DE SISTEMAS OPERATIVOS
 "A primera vista parecía un procesador de palabras Wang..., tenía un teclado Wang y un revestimiento Wang. Solamente cuando Richard Hagstrom le miró por segunda vez vio que el revestimiento había sido abierto (y no con cuidado, además; le pareció como si el trabajo se hubiera hecho con una sierra casera) para encajar en él un tubo catódico IBM ligeramente más grueso. Los discos de archivo que habían llegado con ese extraño bastardo no eran nada flexibles; eran tan duros como los disparos que Richard había oído de niño. -Por el amor de Dios, ¿qué es esto? -preguntó Lina, cuando él y Mr. Nordhofflo trasladaron penosamente hasta sudespacho." Stephen King, El Ordenador de los dioses.
 
@@ -389,7 +389,7 @@ Uniendo ambos lados aparece una especie de “puente” formado por el SOFTWARE.
 
 En síntesis, la distancia entre los usuarios (que tienen los problemas del mundo real) y las computadoras (que los podrían ayudar a resolver) requiere un puente lógico y conceptual que está constituido por el software.
 
-Página 21.
+
 Precisamente, gran parte de la actividad profesional de un egresado de Informática es desarrollar Ingeniería de Software, que es el área de la Ciencia Informática que trata el análisis, diseño e implementación de sistemas de software.
 
 La producción de sistemas de software (que constituyen el puente útil entre el usuario y la computadora) es una actividad industrial que requiere métodos, herramientas y procedimientos que se estudian a lo largo de la carrera.
@@ -415,7 +415,7 @@ El primer nivel del sistema operativo es el que nos permite que al encender la m
 
 El segundo nivel del sistema operativo trata de ser "portable", es decir agregar funciones que sean útiles al usuario del sistema operativo sobre cualquier máquina. Por ejemplo, poder modificar la configuración de la máquina ante nuevo hardware, cambiar el modo de presentación de la información disponible en la computadora (por ejemplo, tener los archivos disponibles ordenados por fecha o por autor), o tener utilitarios para probar dispositivos tales como impresoras o parlantes, o tener un programa antivirus que proteja los programas del usuario. Estas funciones facilitan el trabajo del usuario y normalmente se "cargan" desde disco al ser solicitadas.
 
-Página 22.
+
 El tercer nivel del sistema operativo se refiere esencialmente a las funciones de administración de recursos de la o las máquinas que controla el usuario: administrar la memoria principal, los dispositivos de almacenamiento secundario, los accesos de diferentes usuarios a la máquina, el control de la ejecución de las aplicaciones, el control de la seguridad en los datos y en las comunicaciones son algunas de los objetivos de este tercer nivel. Todos los sistemas operativos tienen (más o menos desarrolladas) esta clase de funciones, que sirven para administrar los recursos y usuarios desde las máquinas más elementales a los sistemas de muchas computadoras en red con recursos y datos compartidos por numerosos usuarios.
 
 La tercera capa que hemos llamado utilitarios básicos se refieren a los programas (o sistemas) que nos acercan soluciones a problemas muy básicos del mundo real: procesadores de texto, planillas de cálculo, manejadores simples de bases de datos, ayudas para presentaciones gráficas, sistemas para tratamiento y mejoramiento de imágenes, sistemas de multimedia y sistemas de manejo de comunicaciones son ejemplos de estos utilitarios básicos. En general, estas aplicaciones de software (de enorme éxito) se construyen alrededor de metáforas visuales del mundo real, extendiendo de algún modo las habilidades naturales del usuario (por ejemplo, tener un procesador de textos con corrector ortográfico).
@@ -454,7 +454,7 @@ En algunos casos este control de usuarios, incluye control de tiempos de utiliza
 Control de la ejecución de programas.
 La ejecución efectiva de un programa (escrito en cualquier lenguaje de programación o aplicación) requiere una comunicación permanente con el sistema operativo para acceder a los recursos de la computadora, recursos que el sistema operativo controla y verifica. De este modo se puede detectar que una orden de impresión escrita en un programa es imposible de ejecutar porque la impresora no está encendida, o que un dato de un archivo no se puede recuperar porque falla el dispositivo periférico, o que la ejecución de un programa ha tardado más de un tiempo máximo determinado, etc.
 
-Página 24.
+
 También el sistema operativo monitorea el resultado de la ejecución para transmitir al usuario el mensaje adecuado resultante de la evolución de la ejecución.
 
 Control de concurrencia.
@@ -486,7 +486,7 @@ Las desventajas son que requieren un usuario calificado que estudie y conozca lo
 En los últimos años se han impuesto las interfaces gráficas que contienen imágenes
 representativas (por ejemplo, de los archivos o dispositivos o de los comandos), llamadas ¡conos que se pueden organizar en menúes que se abren y cierran (menúes descendentes) y que pueden expandirse en presentaciones dentro de múltiples ventanas en la pantalla. En todos los casos el dispositivo apuntador a las selecciones del usuario es fundamentalmente el mouse.
 
-Página 25.
+
 Ventajas de las interfaces gráficas tipo VIMA.
 VIMA (WIMP en inglés) significa Ventanas, Iconos, Menúes y Apuntadores, como interfaz de usuario tiene una serie de ventajas:
 Son intuitivas. El usuario no necesita estudiar un manual de comandos para comprender lo que la imagen le muestra en un menú.
@@ -500,12 +500,11 @@ La tendencia es a las interfaces naturales: poder hablar directamente a la compu
 
 Las aplicaciones de inteligencia artificial (en particular los agentes inteligentes) aplicados al manejo de la vinculación entre el sistema operativo y el usuario, tienden a facilitar el trabajo "interpretando" las elecciones más frecuentes del usuario y los "deseos" según el tipo de proceso a realizar. Un ejemplo muy elemental de esta tendencia lo constituyen las ayudas interactivas de algunos productos bajo Windows (por ejemplo el asistente de presentaciones de Power Point).
 
-Página 26.
-PARTE 2.
-LA COMPUTADORA HACIA ADENTRO.
+
+## PARTE 2. LA COMPUTADORA HACIA ADENTRO.
 No hay inventos, solo descubrimientos. Thomas J. Watson, Sr.
 
-INTRODUCCIÓN.
+## INTRODUCCIÓN.
 Para comprender lo que realmente hay detrás de una computadora, es necesario dedicar mucho tiempo y esfuerzo al estudio de las ciencias de la computación y la ingeniería computacional. Daremos aquí una visión general de la estructura interna y el funcionamiento para introducir los principales conceptos.
 
 Como se expresó en el primer capítulo, un sistema de cómputo consta de un procesador, memoria, entrada/salida y las interconexiones entre estos componentes principales.
@@ -526,7 +525,7 @@ Los dispositivos de almacenamiento y la memoria sirven para almacenar informaci�
 La combinación de estos componentes constituye el hardware de un sistema de cómputo.
 Recordemos que en el mundo de las computadoras la información es digital. Una computadora no entiende palabras, números, imágenes, notas musicales, ni letras del alfabeto. Sólo pueden digerir información que ha sido dividida en bits, que es la unidad de información más pequeña. Puede parecer extraño pensar que los cajeros automáticos, las consolas de juegos de video, y las supercomputadoras son procesadores de bits. Pero, independientemente de lo que pueda aparentar para el usuario, el núcleo de una computadora digital es una colección de conmutadores de encendido-apagado diseñada para convertir información de una forma a otra. El usuario proporciona a la computadora patrones de bits (entrada) y ésta sigue las instrucciones para transformar esa entrada en otro patrón de bits (salida) y devolverlo al usuario.
 
-Página 28
+
 
 Virtualmente todos los diseños de computadoras contemporáneas están basados en los conceptos desarrollados por John Von Neumann en el "Institute for Advanced Studies" de la Universidad de Princeton. Tal diseño es conocido como la arquitectura von Neumann, y se basa en tres conceptos claves:
 los datos e instrucciones están almacenados en una única memoria de lectura-escritura constituida por celdas de igual tamaño,
@@ -549,7 +548,7 @@ Velocidad. Hay una enorme diferencia en la rapidez con la cual los procesadores 
 
 La velocidad está determinada también por la arquitectura del procesador, esto es, el diseño que establece de qué manera están colocados en el chip los componentes individuales de la UCP. De hecho, la arquitectura de todo el sistema de cómputo es parte importante de la ecuación de velocidad. Desde la perspectiva del usuario, el punto crucial es que "más rápido" casi siempre significa "mejor". En la mayoría de las aplicaciones como el procesamiento de texto, es mejor emplear una máquina más rápida, pero en las aplicaciones que usan muchos gráficos y cálculos es necesario utilizar máquinas más rápidas.
 
-Página 29.
+
 Como la velocidad es decisiva, los ingenieros y científicos de la computación constantemente desarrollan técnicas para acelerar la capacidad de la computadora para manipular y mover bits. Una alternativa muy usada consiste en colocar más de un procesador en la computadora, por ejemplo, para realizar determinadas operaciones como cálculos matemáticos o presentaciones gráficas.
 
 Por otro lado, la mayoría de las supercomputadoras tienen varios procesadores completos que pueden dividir los trabajos en porciones y trabajar con ellos en paralelo (procesamiento en paralelo).
@@ -571,7 +570,7 @@ La UAL es la parte de la computadora que ejecuta realmente las operaciones aritm
 
 Una UAL y todos los componentes en la computadora están basados en el uso de simples dispositivos electrónicos digitales que pueden almacenar dígitos binarios y realizar operaciones lógicas simples (operaciones booleanas).
 
-Página 30.
+
 La siguiente figura indica, en términos muy generales, cómo está conectada la UAL con el resto de la UCP:
 Descripción de figura: diagrama simple de la UAL (Unidad Aritmético-Lógica). En el centro aparece un rectángulo grande con la etiqueta “UAL”, que representa el componente encargado de realizar operaciones aritméticas y lógicas dentro del procesador.
 
@@ -581,7 +580,7 @@ Los datos son presentados a la UAL en registros, y los resultados de una operaci
 
 Debe mencionarse que la UAL también actualiza unas señales denominadas banderas o flags como resultado de una operación. Estas banderas o flags, que no son más que bits individuales o pertenecientes a un registro especial, cambiarán acorde al resultado. El estado o valor de estos bits (1 ó 0) podrán ser consultados por el programador por medio de instrucciones especiales; la importancia de estos bits reside en que de acuerdo a su valor podremos tomar decisiones.
 
-LA MEMORIA
+## LA MEMORIA
 Aguardó con impaciencia la respuesta de Riddle: Menos mal que registré mis memorias en algo mas duradero que la tinta. Siempre supe que habría gente que no querría que mi diario fuera leído "¿Qué quieres decir?", escribió Harry, echando, por los nervios, un borrón en la página. Quiero decir que este diario da fe de cosas horribles. Cosas que fueron ocultadas. Cosas que sucedieron en el Colegio Hogwarts de Magia y brujería.
 Harry Potter y la cámara secreta, Cap 13: El diario secretísimo.
 
@@ -593,7 +592,7 @@ La UCP está conectada con el resto de los componentes del sistema a través de 
 
 Se tiene entonces, un medio para identificar: el bus de direcciones, un medio para transportar el dato propiamente dicho: el bus de datos, y un medio para controlar el intercambio de información: el bus de control.
 
-Página 31.
+
 En este punto se puede preguntar ¿de dónde saca información la UCP para tomar las acciones adecuadas sobre el bus de control? ¿cuánto tiempo tardará la UCP en recibir o enviar valores por el bus de datos? La UCP saca información de la misma instrucción que debe ejecutar, así sabe por ejemplo, en que sentido deberían viajar los datos (lectura o escritura) y envía en consecuencia las señales adecuadas por el bus de control. La UCP deberá también conocer cuando enviar esas señales para trabajar en forma conjunta y ordenada. Se denomina tiempo de acceso al tiempo que tarda un elemento de memoria en cumplir efectivamente una orden de lectura o escritura.
 
 Trate ahora de responder las siguientes preguntas: dado un tamaño (medido en bits) del bus de direcciones ¿cuántas celdas de memoria se pueden identificar?, o para una determinada cantidad de celdas de memoria ¿cuál debe ser el tamaño medido en bits del bus de direcciones?
@@ -611,7 +610,6 @@ Nota: el denominado 'tamaño del bus de direcciones', determina cuántos bits ti
 En general para identificar N diferentes posiciones de memoria (cajitas) se necesitará que n (el número de bits del bus de direcciones) sea tal que se cumpla
 N ≤2n
 
-Página 32.
 Ejemplo 1. ¿Cuántos bits deberán tener las direcciones para identificar 250 posiciones de memoria diferentes?
 
 N= 250≤2n → si n = 8, 28= 256 y se cumple la desigualdad. Respuesta: 8 bits.
@@ -634,12 +632,12 @@ A la izquierda de cada fila aparece una etiqueta de dirección. La fila superior
 
 La dirección 02 identifica ahora a un valor almacenado en 2 cajitas 'pegadas' DATO1 y DATO2. O sea tenemos las 4 cajitas pero no las "distinguimos" como antes (con 4 direcciones distintas), sólo puedo leer o escribir de a 2 cajitas a la vez. Esto implica que la mínima unidad direccionable es una caja con el doble de la capacidad de las cajitas anteriores, por lo tanto necesito menos bits en el bus de direcciones (un bit en este caso), pero el bus de datos debe tener el doble de bits que el caso anterior.
 
-RAM y ROM.
+## RAM y ROM.
 La RAM (random access memory: memoria de acceso aleatorio) es el tipo más común de almacenamiento primario o memoria de la computadora. Los chips RAM contienen circuitos que sirven para almacenar temporalmente instrucciones de programas y datos. Un chip de RAM está dividido en posiciones o celdas de igual tamaño, identificadas por una dirección única, de manera que el procesador puede distinguirlas y ordenar que se guarde o recupere información de ella.
 
 La información almacenada en la RAM no es más que un patrón de corriente eléctrica que fluye por circuitos microscópicos en chips de silicio. Esto significa que si se interrumpe la energía eléctrica, por cualquier razón, la computadora olvida inmediatamente todo lo que estaba recordando en la RAM. Técnicamente, la RAM es una memoria volátil, ya que la información que contiene no se conserva de manera permanente.
 
-Página 33.
+
 
 Esto representaría un problema muy grave si la computadora no tuviera otro tipo de memoria donde guardar de manera permanente la información importante. Esta memoria no volátil se denomina ROM (read-only memory: memoria sólo de lectura) porque la computadora puede leer información de ella, pero no escribir nueva información. Todas las computadoras modernas cuentan con dispositivos de ROM que contienen las instrucciones de arranque y otra información crítica. La información en la ROM se graba permanentemente cuando nace la computadora, de modo que siempre está disponible cuando ésta opera, pero no puede cambiarse a menos que se reemplace el chip de ROM.
 
@@ -663,10 +661,10 @@ mayor capacidad, mayor tiempo de acceso.
 
 Para obtener las mejores prestaciones, el diseñador deberá elegir y combinar diferentes subsistemas de memoria para poder balancear las partes costosas y rápidas con las económicas y lentas.
 
-BUSES Y ENTRADA/SALIDA.
+## BUSES Y ENTRADA/SALIDA.
 En una computadora de escritorio corriente, la UCP y los chips de memoria se fijan en una placa de circuitos (placa madre o motherboard) junto con otras componentes clave. La información viaja entre las componentes a través de grupos de cables llamados buses. Por lo general, los buses tienen 8, 16 o 32 cables; dado que por cada cable puede fluir un bit a la vez, un bus con 16 cables se denomina bus de 16 bits, ya que puede transmitir 16 bits de información al mismo tiempo (por distintos caminos); transmite el doble de información que un bus de 8 bits. De la misma manera en que una autopista con varios carriles permite que grandes cantidades de vehículos se muevan con mayor rapidez que un camino de un solo carril, los buses más anchos pueden transmitir información con más rapidez que los angostos. Las computadoras más nuevas y potentes cuentan con buses más anchos, para que puedan transferir la información con mayor rapidez.
 
-Página 34.
+
 Además de la UCP y un conjunto de módulos de memoria, el tercer elemento clave de un sistema de cómputo es un conjunto de módulos de entrada y/o salida (E/S). Cada módulo realiza la interfase con el bus del sistema y controla uno o más dispositivos periféricos. Un módulo de E/S no es simplemente un grupo de conectores mecánicos que enlazan un dispositivo con el bus del sistema, sino que contiene alguna "inteligencia", es decir, contiene lógica para realizar las funciones de comunicación.
 
 Un módulo de E/S es la entidad responsable de controlar uno o más dispositivos externos y de intercambiar datos entre estos dispositivos y la memoria principal y/o los registros de la UCP. Luego, el módulo de E/S debe tener una interfaz interna a la computadora (la UCP y la memoria principal) y una interfaz externa a la computadora (el dispositivo externo).
@@ -679,8 +677,8 @@ En el lado izquierdo se observa un conector largo y oscuro identificado como Bus
 
 En el lado derecho de la placa se destaca un gran zócalo cuadrado señalado como Slot UCP, donde se instala el procesador. Debajo de este se encuentran varios conectores largos y paralelos marcados como Slot RAM, destinados a los módulos de memoria principal. En la parte inferior derecha se observan dos conectores horizontales identificados como Bus IDE, utilizados para conectar discos duros y unidades ópticas. En conjunto, la imagen permite ubicar visualmente los principales buses y componentes de una placa madre y comprender cómo se organizan físicamente dentro del computador. Fin de descripción, vuelta al texto.
 
-Página 35.
-FUNCIONAMIENTO. EL CICLO DE INSTRUCCIÓN.
+
+## FUNCIONAMIENTO. EL CICLO DE INSTRUCCIÓN.
 La función básica realizada por una computadora es la ejecución de programas. El programa a ser ejecutado consiste de una secuencia de instrucciones almacenadas en la memoria. La UCP realiza el trabajo real ejecutando las instrucciones especificadas en el programa.
 
 Para entender mejor el funcionamiento y la manera en la cual interactúan las principales componentes para ejecutar un programa, necesitamos mirar en más detalle el proceso de ejecución. El punto de vista más simple es considerar el procesamiento de una instrucción como consistente de dos pasos: la UCP lee (búsqueda) las instrucciones desde la memoria una a la vez, y las completa (ejecución). La corrida de un programa consiste en la repetición de los pasos de búsqueda y ejecución.
@@ -702,7 +700,7 @@ Por supuesto, la ejecución de una instrucción puede involucrar una combinació
 El ciclo de ejecución para una instrucción particular puede contener más de una referencia a
 memoria. Además, en lugar de referencias a memoria, una instrucción puede especificar una operación de E/S.
 
-Página 36.
+
 Interrupciones
 Virtualmente todas las computadoras proveen un mecanismo por el cual otros módulos (E/S, memoria) pueden interrumpir el procesamiento normal de la UCP. Estas interrupciones tienen implicancias sobre el ciclo de instrucción y la estructura de interconexión.
 
@@ -710,7 +708,7 @@ Las interrupciones se proveen principalmente como una manera de mejorar la efici
 
 Claramente, esto es un gran desperdicio del uso del procesador. Con las interrupciones, el procesador puede ejecutar otras instrucciones mientras la operación de E/S progresa, con la consiguiente ganancia en el uso del procesador.
 
-Página 38.
+
 # CAPÍTULO 2 REPRESENTACIÓN NUMÉRICA.
 ##  Representación interna de datos.
 Los datos e informaciones que se manejan internamente en un sistema informático se pueden representar, según sus características, de la siguiente forma: 
@@ -726,7 +724,7 @@ Cada computadora tiene su código de caracteres definidos por el fabricante, si 
 
 Los primeros códigos utilizados fueron de 6 bits, que permitían la representación de 26 caracteres distintos (64 caracteres), que generalmente se corresponden a: 26 letras mayúsculas, 10 cifras numéricas, 28 caracteres denominados especiales.
 
-Página 39.
+
 Un ejemplo de código de 6 bits es el código FIELDATA.
 
 Con el nacimiento de los lenguajes de programación de alto nivel comenzaron a utilizarse códigos de 7 bits que permiten la representación de los mismos caracteres que los códigos de 6 bits añadiendo las letras minúsculas y caracteres cuyo significado son órdenes de control entre periféricos. Un ejemplo muy utilizado de este tipo de códigos es el ASCII (American Standard Code for Information Interchange) de 7 bits.
@@ -792,7 +790,7 @@ En la última fila aparece el resultado, que es el número binario 111010. Fin d
 
 En la resta binaria hay que tener en cuenta que al realizar las restas parciales entre dos dígitos de idénticas posiciones, uno del minuendo y otro del sustraendo, si el segundo excede al primero, se sustrae una unidad del dígito de más a la izquierda en el minuendo -pedir prestado-. Si el dígito siguiente de la izquierda es 0, se busca en los sucesivos teniendo en cuenta que su valor se multiplica por dos a cada desplazamiento sucesivo a derecha.
 
-Página 41.
+
 Ejemplo. Restar los números binarios 111100 y 101010
 Descripción de imagen: muestra una resta presentada de forma similar a una operación escrita a mano.
 En la parte superior, sobre los números, aparece la indicación “10”, que representa un préstamo (o acarreo inverso) utilizado durante la resta. Uno de los dígitos del número superior está resaltado para indicar de dónde se toma ese préstamo.
@@ -881,7 +879,7 @@ F=1111
 
 La Tabla 1 puede ser utilizada para convertir un número hexadecimal a binario. En ésta conversión cada dígito hexadecimal se reemplaza por los cuatro dígitos binarios correspondientes. En la conversión de binario a hexadecimal se realiza un proceso inverso. Se agrupan los dígitos binarios de a 4 a partir de la coma decimal hacia la izquierda y hacia la derecha, sustituyendo cada cuarteto por su correspondiente dígito hexadecimal.
 
-Página 43.
+
 Ejemplo. Convertir el número hexadecimal 7BA3,BC a binario. 0111101110100011,10111100
 
 Convertir el número binario 1100101001000,1011011 a hexadecimal. 1948,BG
@@ -911,7 +909,7 @@ Para el caso de n = 8 bits, el rango de representación va desde -127 a 127.
 
 La ventaja que presenta este sistema frente a otros es la de poseer rango simétrico (igual cantidad de números positivos que negativos), mientras que su mayor inconveniente es el de poseer dos representaciones para el número 0. El cual se representa tanto con un signo positivo (0) como con uno negativo (1) y el resto de los bits en 0.
 
-Página 44.
+
 Representaciones con signo avanzadas.
 Complemento a 1.
 
@@ -977,7 +975,7 @@ En la última fila se muestra el resultado de la suma binaria, que es:
 
 y teniendo en cuenta que el acarreo del bit más significativa se desprecia, el resultado de 8 bits obtenido 000001112 interpretado como valor en Ca2 representa el valor +710 que es correcto.
 
-Página 46.
+
 
 Ejemplo 2. Sumar los números decimales 110 y 30 representados en complemento a 2 utilizando n = 8 bits es:
 El resultado de 8 bits obtenido 100011002 interpretado como valor en Ca2 es negativo y representa el número -116iOque es erróneo.
@@ -1005,7 +1003,7 @@ En la última línea aparece el resultado de la suma, que es el número binario:
 
 A la derecha de la operación realizada se muestra el estado de las banderas. La bandera N está en 1 indicando que el resultado fue negativo, ésto lo vemos porque el resiltado empieza con 1, como corresponde a números negativos en complemento a 2. La bandera Z es 0, porque el resultado no fue cero. La bandera C es cero pues no hay 'acarreo' en el resultado. La bandera de overflow (V) está en 1 indicando una condición de desborde en números con signo. ¿Cómo se llega a esta conclusión?. Afortunadamente no es tan difícil, si se observa la suma, se verá que los operandos empiezan con 0, ó sea son positivos, por tanto el resultado de la suma no puede dar un valor negativo (por comenzar con 1). Sólo puede haber desborde en una suma si los dos números son del mismo signo.
 
-Página 47.
+
 Observando la bandera de overflow (V) podemos concluir que si la operación fué de números con signo el resultado es incorrecto (está mal), pero si la misma era de números sin signo el resultado es correcto pues la bandera de acarreo (C) está en cero.
 
 Analicemos la cuenta, si interpretamos como números con signo quisimos sumar 5 + 7 = -4 (valor erróneo). El resultado de la cuenta debería dar +12, pero este número no puede ser expresado con 4 bits, pues el positivo más grande que se puede expresar con esta cantidad de dígitos es el +7.
@@ -1044,7 +1042,7 @@ Analicemos las banderas, N = 1, indica resultado negativo, Z = 0, C = 1 indica e
 
 Con signo (Ca2) la cuenta es 5-7 = -2 resultado correcto (V = 0) y sin signo la cuenta es 5-7 = 14, incorrecto pues debería dar -2 (valor que no se puede expresar en números sin signo).
 
-Página 50.
+
 # CAPÍTULO 3 LÓGICA DIGITAL
 La lógica es el arte de la argumentación correcta y verdadera Organon, Aristóteles de Estagira.
 
@@ -1063,7 +1061,7 @@ Fue Claude Shannon (matemático e ingeniero norteamericano, 1916-2001) quien apl
 
 Puede decirse entonces que el álgebra de Boole es el sistema matemático empleado en el diseño de circuitos lógicos, que nos permite identificar mediante símbolos el objeto de un circuito lógico de modo que su estado sea equivalente a un circuito real.
 
-Página 51.
+
 Es interesante antes de abordar el estudio de las ecuaciones lógicas, comprender algunos conceptos básicos relativos a la teoría de conjuntos como pueden ser:
 Conjunto. Reunión de elementos caracterizados por poseer una propiedad común.
 Conjunto universal. También denominado conjunto unidad es el que incluye la totalidad de los elementos con una propiedad en común.
@@ -1106,7 +1104,7 @@ Fin de tabla.
 
 En ella podemos apreciar cómo el resultado de esta operación (suma lógica) es 1 lógico cuando la variable A o la variable B valen 1. Este resultado puede generalizarse para "n" variables de entrada.
 
-Página 52.
+
 El producto lógico.
 La operación producto entre dos conjuntos se representa mediante el símbolo *, y da como resultado un conjunto formado por elementos comunes a dichos conjuntos. Esta operación se denomina también intersección de conjuntos y el símbolo habitualmente utilizado es "˄". Por tanto tendremos que D = A * B representa un producto y se lee "D es igual a A por B", o también "D es igual a A y B." (Para mayor comodidad se acostumbra a escribir D=AB omitiendo el símbolo del producto lógico.
 La operación producto lógico se define mediante la siguiente tabla de verdad:
@@ -1158,7 +1156,7 @@ Teorema 8. Leyes de De Morgan.
 Descripción: barra horizontal encima de toda la expresión A + B = barra horizontal encima de toda la expresión A * B
 Descripción: barra horizontal encima de toda la expresión A * B = barra horizontal encima de toda la expresión A + B
 
-Página 53.
+
 (Las leyes de De Morgan pueden ser generalizadas a "n" variables.)
 
 A continuación se muestran algunas relaciones importantes que se deducen de las operaciones booleanas y de los teoremas anteriores:
@@ -1201,7 +1199,7 @@ En la punta del triángulo hay un pequeño círculo, que indica la negación o i
 
 Desde ese círculo sale una línea horizontal de salida, junto a la cual aparece A con una barra encima (Ā). Esto indica que la salida es la negación del valor de entrada. Fin de descripción, vuelta al texto.
 
-Página 54.
+
 Las puertas NOR.
 Realizan la función inversa de una operación suma lógica, es decir, es la equivalente a una puerta OR complementada. La función lógica será por tanto: f = barra horizontal encima de toda la expresión A + B (e igual barra horizontal encima de toda la expresión A * B por ley de De Morgan)
 
@@ -1226,7 +1224,7 @@ En la punta de la compuerta hay un pequeño círculo, que indica negación o inv
 Desde ese círculo sale una línea horizontal que representa la salida, y a la derecha indicando que la función lógica corresponde a la negación de la operación OR entre A y B.
 
 
-Página 55.
+
 Las puertas NAND.
 La función f es equivalente a una puerta AND complementada. Su símbolo lógico y su tabla de verdad se dan en la figura 5.
 
@@ -1275,7 +1273,7 @@ Para cada valor de columna A, le corresponde un valor de la columna B y, un valo
 1=1=0
 Fin de tabla.
 
-Página 56.
+
 Las puertas NOR EXCLUSIVAS (XNOR)
 Como su propio nombre indica, realizan la operación inversa de una OR Exclusiva, por lo que proporcionan a su salida la función lógica: f = barra encima de toda la ecuación A ⊕ B = barra doble encima de toda la ecuación AB + AB = AB + barra encima de AB
 
@@ -1332,7 +1330,7 @@ Hay que distinguir claramente entre periféricos de un computador y máquinas au
 
 Tampoco hay que confundir periférico con soporte de información. Por soporte de información se entiende aquellos medios físicos sobre los que va la información. Por unidades o dispositivos periféricos se entiende aquellos elementos encargados de transcribir la información al correspondiente soporte.
 
-Página 59.
+
 
 Ejemplos:
 Los disquetes son soporte de información, mientras que la unidad lectora o disquetera, es unidad periférica.
@@ -1358,7 +1356,7 @@ Sincronización: La velocidad operativa del computador central suele ser mucho m
 
 Selección de dispositivos: Las interfaces se encargan de identificar la dirección del periférico que debe intervenir en tráfico de datos. Todos los periféricos están conectados físicamente al bus del sistema, pero en una transmisión concreta, por lo general, solamente uno de ellos debe estar conectado lógicamente al bus de datos, para transmitir a través de él.
 
-Página 60.
+
 
 El concepto de los circuitos o placas de interfaz entre los periféricos y la CPU y memoria del computador tiene ventajas importantes:
 Independizar a los fabricantes de periféricos y placas controladoras de los fabricantes de procesadores y mainboards: basta con acordar como serán las señales sobre los canales de comunicación.
@@ -1389,7 +1387,7 @@ Densidad: Se refiere a la cantidad de datos (bits o caracteres) contenidos por u
 
 Reutilización: Un soporte de información se dice reutilizable cuando nos permite guardar nueva información sobre datos que ya resultan obsoletos. Con este problema se han enfrentado los fabricantes de discos ópticos (CD-ROM), los cuales hasta hace poco tiempo no han sido susceptibles de ser reutilizables.
 
-Página 61.
+
 
 Tipo de acceso: Característica vinculada al dispositivo lector/grabador. Se dice que un dispositivo es de acceso secuencial si para acceder a un dato determinado debemos acceder primero a todos los que le preceden físicamente (Ejemplo: las cintas magnéticas). Se dice, en cambio, que un dispositivo permite el acceso directo si podemos acceder a un dato sin necesidad de pasar por los datos que le preceden (Ejemplo: disco magnético).
 
@@ -1421,7 +1419,7 @@ No necesariamente las distintas unidades están físicamente individualizadas en
 
 Las unidades de memoria masiva también pueden considerarse como unidades de E/S mixtas. Por ejemplo, una unidad de cinta magnética, cuando lee información de una cinta, actúa como dispositivo de entrada y cuando escribe (o graba) información procedente de la computadora, actúa como unidad de salida.
 
-Página 62.
+
 
 Existe otra clasificación de los periféricos del computador según a qué distancia de éste se encuentren. Según esto encontraremos:
 Locales: Se encuentran cerca del computador.
@@ -1453,7 +1451,7 @@ En algunos teclados la transmisión no se efectúa pulsación a pulsación sino 
 
 Entre las posibles características técnicas a contemplar a la hora de evaluar la mejor o peor adaptabilidad de un teclado a nuestras necesidades, podemos citar el número de caracteres y símbolos básicos, sensibilidad a la pulsación, tipo de contactos de las teclas (membrana o mecánico), peso, tamaño, transportabilidad. Actualmente se comercializan teclados ergonómicos, con una disposición algo original, aunque se han difundido poco, y hay discusiones sobre si es cierta la ergonomía que propugnan.
 
-Página 63.
+
 
 Para aplicaciones industriales existen teclados totalmente sellados que soportan ambientes agresivos, como por ejemplo aire, agua y atmósferas de vapores.
 
@@ -1481,7 +1479,7 @@ Ejemplos de estos productos y documentos: talones o cheques bancarios, productos
 
 En la mayoría de los sistemas existe un conjunto de caracteres o patrones predefinidos.
 
-Página 64.
+
 
 Las lectoras, analizan los datos carácter a carácter y detectan si cada zona de identificación está impresa o no. A cada carácter, se le hace corresponder una secuencia ordenada de ceros y unos. El dispositivo de entrada compara esta secuencia con la de los patrones (que tienen grabados internamente).
 
@@ -1513,7 +1511,7 @@ Las bandas magnéticas se leen mediante dispositivos de lectura manual, similare
 
 La ventaja de este método es que la información es difícil de alterar una vez que se ha grabado en la banda, salvo que se le aplique un campo magnético de intensidad suficiente, en cuyo caso los datos almacenados se pierden.
 
-Página 65.
+
 
 Lector Óptico de Marcas.
 Los lectores ópticos de marcas son sistemas que aceptan información escrita a mano y la transforman en datos binarios inteligibles por el computador. El usuario se limita a marcar con su lápiz ciertas áreas preestablecidas del documento que representan posibles opciones o preguntas. Estos documentos pueden ser leídos posteriormente, a gran velocidad, por un computador con un lector óptico de marcas. Este detecta las zonas preestablecidas que están marcadas. Esta forma de introducir datos en la computadora es útil, por ejemplo, para corregir exámenes de tipo test, escrutar quinielas, valorar encuestas, etc.
@@ -1538,7 +1536,7 @@ El usuario pasa una lectora óptica de tipo lápiz o pistola por la etiqueta, in
 
 formar parte de una caja registradora que en realidad es un terminal interactivo denominado terminal punto de venta.
 
-Página 66.
+
 
 Los códigos de barras se están transformando en la forma estándar de representar la información en los productos de mercado en un formato accesible para las máquinas, particularmente en los centros comerciales.
 
@@ -1565,7 +1563,7 @@ Mando: Con el que el usuario debe recorrer el dibujo. Este suele tener forma de 
 
 Circuitos electrónicos: Controlan el funcionamiento de la unidad.
 
-Página 67.
+
 
 Los digitalizadores, junto con los trazadores de gráficos (plotters) y pantallas gráficas, son elementos fundamentales de los sistemas gráficos, que tienen en la actualidad importancia en diversas aplicaciones de la Informática.
 
@@ -1585,7 +1583,7 @@ Dependientes del usuario: En estos sistemas es necesario someter al dispositivo 
 
 Independientes del usuario: Estos sistemas están más difundidos, pero el vocabulario que reconocen suele ser muy limitado. Los parámetros de las palabras que identifican vienen ya memorizados al adquirir la unidad. Son utilizados, por ejemplo, para definir el movimiento de cierto tipo de robots. En este caso el operador da verbalmente órdenes elegidas de un repertorio muy limitado, como puede ser: para, anda, arriba, abajo… La unidad cuando capta un sonido comprueba si corresponde a uno de los del repertorio. En caso de identificación se transmite a la computadora central la información necesaria para la ejecución del programa que pone en marcha y controla la acción requerida.
 
-Página 68.
+
 
 Conversor A/D (Analógico/Digital).
 
@@ -1593,7 +1591,7 @@ Por último debemos mencionar los dispositivos que transforman datos analógicos
 
 En todos estos casos alguna forma de conversor analógico-digital tiene la capacidad de convertir los datos del mundo real en alguna representación binaria (por ejemplo, la intensidad de un sonido) de modo que la computadora posteriormente pueda procesar los números resultantes.
 
-PERIFÉRICOS DE SALIDA DE DATOS.
+## PERIFÉRICOS DE SALIDA DE DATOS.
 Una computadora puede hacer muchísimas cosas... pero ninguna de ellas tendría significado para nosotros (usuarios humanos) si no hubiera forma de "sacar" los resultados de la computadora.
 
 Los dispositivos de salida permiten a la computadora convertir sus patrones de bits internos de un modo que lo puedan comprender y aprovechar los usuarios externos.
@@ -1623,7 +1621,7 @@ Cuando se termina de recorrer toda la pantalla, el haz vuelve rápidamente desde
 
 La imagen de una pantalla de rayos catódicos (TRC) se forma al incidir un haz de electrones sobre la superficie interna de la pantalla que está recubierta de un material fosforescente, análogamente a como se forman las imágenes en un televisor.
 
-Página 69.
+
 
 Estas pantallas hacen desplazar el haz de electrones de izquierda a derecha y de arriba a abajo y, dependiendo de la intensidad con la que inciden los electrones en la pantalla así de brillante será cada punto de la imagen. La imagen, para ser visualizada durante un determinado tiempo debe ser repetida o refrescada periódicamente (al menos 25 veces por segundo). Estas pantallas se denominan pantallas de barrido.
 
@@ -1654,7 +1652,7 @@ CGA 640*200 puntos
 VGA 640*480 puntos
 SVGA 1024*768 puntos
 
-Página 70.
+
 
 Actualmente hay resoluciones superiores como por ejemplo XVGA 1280*1024.
 Supongamos poseer un monitor alfanumérico que puede mostrar 25 filas con 100 caracteres en cada una, ¿cuánta memoria de imagen se necesita?. Dado que podemos mostrar 25 x 100 caracteres si cada uno de ellos utiliza 7 bits la memoria debe poder contener 25 x 100 x 7 bits = 17500 bits < 2188 bytes. Si esos caracteres pudieran o no titilar, estar o no subrayado y estar o no resaltado se requiere almacenar 3 bits mas por cada carácter (1 bit para cada atributo) por lo que la memoria debe contener 25 x 100 x 10 bits = 25000 bits = 3125 bytes.
@@ -1680,7 +1678,7 @@ Como indicamos anteriormente para todos los periféricos, las impresoras tienen 
 
 Las impresoras tradicionalmente utilizaban papel continuo, en cuyos márgenes existen unos orificios. En este caso, el arrastre se efectúa por un tractor que dispone de unos dientes metálicos que encajan en los orificios laterales del papel. En la actualidad existen también impresoras que no necesitan papel continuo, efectuándose el arrastre por fricción o presión, como en el caso de las máquinas de escribir o en las fotocopiadoras convencionales.
 
-Página 71.
+
 
 Clasificación y tipos de impresoras.
 
@@ -1701,7 +1699,7 @@ Las impresoras sin impacto forman los caracteres sin necesidad de golpes mecáni
 Son impresoras sin impacto las térmicas, las de inyección de tinta y las impresoras láser.
 
 
-Página 72.
+
 
 Forma de imprimir los caracteres: En cuanto a este aspecto, las impresoras se pueden clasificar en: 
 Impresoras de caracteres.
@@ -1736,7 +1734,7 @@ Estas impresoras, también denominadas de matriz de puntos, son las más utiliza
 
 Los caracteres, por tanto, son punteados, siendo su calidad muy inferior a los caracteres continuos producidos por una impresora de margarita. No obstante, algunos modelos de impresoras matriciales, presentan la posibilidad de realizar escritos en semicalidad de impresión. Para ello, los caracteres se reescriben con los puntos ligeramente desplazados, solapándose los de la segunda impresión con los de la primera, dando una mayor apariencia de continuidad.
 
-Página 73.
+
 
 Impresoras de tambor.
 Dentro de estas impresoras, encontramos dos tipos: las de tambor compacto y las de tambor de ruedas. Ambos tipos son impresoras de líneas y de impacto.
@@ -1771,7 +1769,7 @@ El descubrimiento de esta tecnología fue fruto del azar. Al acercar accidentalm
 
 Actualmente hay varias tecnologías, aunque son muy pocos los fabricantes a nivel mundial que las producen, siendo la mayoría de ellas de un mismo fabricante con una marca puesta por el que las vende. Canon (que le proporciona las piezas a Hewlett Packard) y Olivetti son los más importantes dentro de este tipo.
 
-Página 74.
+
 
 El fundamento físico es similar al de las pantallas de vídeo. En lugar de transmitir un haz de electrones se emite un chorro de gotas de tinta ionizadas que en su recorrido es desviado por unos electrodos según la carga eléctrica de las gotas. El carácter se forma con la tinta que incide en el papel. Cuando no se debe escribir, las gotas de tinta se desvían hacia un depósito de retorno, si es de flujo continuo, mientras que las que son bajo demanda, todas las usadas con los PC's, la tinta sólo circula cuando se necesita. Los caracteres se forman según una matriz de puntos. Estas impresoras son bidireccionales y hay modelos que imprimen en distintos colores.
 
@@ -1793,7 +1791,7 @@ La cantidad de 'puntos por pulgada' de resolución y la cantidad de hojas por mi
 
 La impresión se realiza mediante radiación láser, dirigida sobre el tambor cuya superficie tiene propiedades electrostáticas (se trata de un material fotoconductor, tal que si la luz incide sobre su superficie la carga eléctrica de esa superficie cambia).
 
-Página 75.
+
 
 ## Parámetros que caracterizan a una impresora.
 
@@ -1814,7 +1812,7 @@ Color. Es la posibilidad de imprimir en colores. Usualmente los colores se forma
 
 Resolución. Una gran parte de impresoras forman los caracteres por unión de puntos. La resolución se suele expresar como número de puntos por unidad de superficie.
 
-Página 76.
+
 
 ## Otros dispositivos de salida.
 
@@ -1845,7 +1843,7 @@ Las unidades sintetizadoras de voz son dispositivos que dan los resultados de un
 
 La mayor parte de los dispositivos sintetizadores de voz tienen memorizados digitalmente cada uno de los fonemas o palabras que son capaces de emitir. Los datos que recibe un sintetizador procedentes del computador corresponden a la identificación de los fonemas o palabras a emitir. Una vez que se analiza el dato, se activa una rutina encargada de generar el sonido correspondiente.
 
-Página 77.
+
 Los sonidos resultan muy metálicos. Por lo general, estos sistemas incluyen programas que enriquecen las posibilidades de los mismos, como por ejemplo, generar frases o combinaciones de palabras, incluso hay sistemas que traducen cantidades.
 
 Conversor D/A.
@@ -1872,7 +1870,7 @@ Elevada capacidad de almacenamiento.
 No volátiles.
 Más económicos que la memoria principal (RAM).
 
-Página 78.
+
 
 Dentro de los dispositivos de almacenamiento secundario hay que tener en cuenta a la hora de su elección las siguientes características:
 Tiempo de acceso a los datos.
