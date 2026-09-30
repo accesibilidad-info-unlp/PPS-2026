@@ -76,7 +76,7 @@ En 1823, el excéntrico genio matemático inglés Charles Babbage, profesor en C
 
 A esta idea adhirió Ada Lovelace, hija del poeta Lord Byron y con aptitudes matemáticas. Publicó un artículo sobre la máquina analítica que incluía el primer programa para computadora. Se asoció a Babbage aportando mayores alcances a su idea y corrigiendo errores de su trabajo.
 
-Página 7.
+
 "La máquina analítica no es capaz de crear nada, sin embargo, puede hacer cualquier cosa que sepamos ordenarle" Ada Lovelace.
 
 Pero la tecnología de la época no bastaba para hacer realidad la máquina. El mundo aún no estaba listo para las computadoras, y no lo estaría por cien años más.
@@ -101,7 +101,7 @@ Además, se afirma que es sincrónica, es decir que realiza las operaciones coor
 
 Internamente posee una capacidad de cálculo numérico y lógico, en un subsistema denominado Unidad Aritmético-Lógica (UAL) ó en su acrónimo en idioma inglés ALU (Arithmetic & Logic Unit). Normalmente las operaciones que pueden realizarse en ella son muy simples (por ejemplo, suma, disyunción, conjunción o comparación).
 
-Página 8.
+
 El hecho que sea controlada por programa es quizás el punto más importante que diferencia a una computadora de una calculadora. Significa que internamente se tienen órdenes o instrucciones almacenadas, que la computadora podrá obtener, interpretar y ejecutar.
 
 Además, está comunicada con el mundo exterior. Esto significa que podrá realizar operaciones de ingreso o egreso de valores desde y hacia el mundo real, utilizando dispositivos periféricos (por ejemplo, el teclado o el mouse para entrada de información y pantalla como salida). Debe mencionarse que el mundo real es analógico y no digital.
@@ -123,7 +123,7 @@ El transistor, inventado en 1948, podía cumplir la misma función que un tubo d
 
 A mediados de los '60 las computadoras basadas en transistores fueron sustituidas por las máquinas más pequeñas y potentes de la tercera generación, construidas con base en los nuevos circuitos integrados (que empaquetaban cientos de transistores en un chip de silicio). Su éxito estuvo basado en la mayor confiabilidad, velocidad y eficiencia, y su menor tamaño y costo.
 
-Página 9.
+
 La invención del tubo de vacío, el transistor y el chip de silicio tuvieron un impacto notable en la sociedad, y por eso muchos historiadores señalan estos acontecimientos como fronteras generacionales. Pero ninguno de ellos tuvo un efecto más profundo que la invención en 1969 del primer microprocesador, que es una unidad de procesamiento completa empaquetada en un diminuto chip de silicio. Esto fue considerado el inicio de la cuarta generación, que trajo aparejados cambios en la capacidad y la disponibilidad de las máquinas en todo el planeta.
 
 Datos (y velocidad) de la evolución
@@ -152,7 +152,7 @@ Estos datos reflejan la diferencia en la velocidad de evolución de la informát
 
 El complejo electrónico-informático ha desplazado a la industria automotriz, a la industria pesada, a la industria militar y a la industria petrolera en la facturación mundial.
 
-Página 10.
+
 Los grandes ejes de la evolución.
 "La experiencia histórica muestra que los cambios tecnológicos transforman notablemente las relaciones políticas y sociales" John von Neumann.
 
@@ -174,7 +174,7 @@ Informática es la ciencia que estudia el tratamiento automático y racional de 
 Informática es la ciencia que estudia el análisis y resolución de problemas utilizando computadoras.
 La palabra ciencia se relaciona con una metodología fundamentada y racional para el estudio y resolución de los problemas.
 
-Página 11.
+
 La resolución de problemas utilizando las herramientas informáticas puede tener aplicaciones en áreas muy diferentes tales como biología, comercio, control industrial, administración, robótica, educación, arquitectura, diseño, etc.
 
 Los temas propios de la ciencia Informática abarcan aspectos tales como la arquitectura física y lógica de las computadoras, las metodologías de análisis y diseño de sistemas de software, los lenguajes de programación, los sistemas operativos, la inteligencia artificial, los sistemas de tiempo real, el diseño y aplicación de bases de datos, etc.
@@ -198,7 +198,7 @@ Esta estructura interna debe contener aquellos componentes que permitan realizar
 
 Dado que se utilizará un programa que controlará la sucesión de pasos a seguir, será necesario no solamente tener una unidad de cálculo sino también una unidad de memoria.
 
-Página 12.
+
 Podrá también, ser necesario interactuar con el mundo exterior, tanto para obtener datos como para entregar resultados, por lo que unidades que se encarguen de la entrada y la salida de valores podrán estar presentes.
 
 Teniendo en cuenta lo anteriormente expresado, podemos esquematizarla de la siguiente manera:
@@ -358,7 +358,7 @@ De todos modos, el sólo hecho de poder comunicarnos muy rápidamente a través 
 
 Teleconferencia en tiempo real significa que un conjunto de usuarios (por ejemplo, miembros de una misma empresa) se conectan computadora a computadora e intercambian opiniones sobre un determinado tema, construyendo una "reunión de directorio" o "reunión de trabajo" en el ámbito virtual que ofrece Internet. Nuevamente la comunicación puede permitir "verse" a los protagonistas e incluso "hablarse" convirtiendo lo hablado en mensaje electrónico.
 
-Página 19.
+
 Naturalmente una teleconferencia no es igual que una reunión efectiva de las personas involucradas, pero en el caso de organizaciones distribuidas con sedes lejanas, mejora notoriamente la velocidad y eficacia en la toma de decisiones.
 
 En una videoconferencia tenemos el equivalente a una clase tradicional, con una (o varias) aula/s virtuales remotas. Cada uno de los oyentes puede "ver" en tiempo real al conferencista y hacerle preguntas. A su vez el conferencista puede "ver" a quien le realiza preguntas y responderle.
@@ -430,7 +430,7 @@ En la sexta capa tenemos los sistemas de software de propósito general (tales c
 
 En la séptima capa tenemos los sistemas de software dedicados. En este caso se trata de desarrollar un producto "a medida" para una determinada organización, empresa o máquina. Por ejemplo, los controladores de un robot, de una máquina fotográfica o de un lavarropas; los sistemas de ayuda a la toma de decisiones de una empresa o de cálculo financiero de una organización; los sistemas expertos que ayudan al diagnóstico de enfermedades o a la detección de recursos naturales son ejemplos de sistemas dedicados. En estos casos el valor agregado del producto software es muy alto, y en general la solución es exclusiva o poco portable a otras organizaciones o productos.
 
-Página 23.
+
 Aún con todos estos recursos que hemos mencionado en las capas anteriores, nuestra octava capa, el usuario del mundo real sigue siendo un desafío muy complejo para la Informática. Muchas veces los problemas planteados no tienen (o no se encuentra) una solución eficiente utilizando computadoras y esto obliga a una permanente investigación y desarrollo de herramientas y productos de software.
 
 Una definición de sistema operativo.
@@ -750,7 +750,7 @@ Se trata de un teorema que relaciona una cantidad expresada en cualquier sistema
 
 El Teorema Fundamental de la Numeración dice que el valor decimal de una cantidad expresada en otro sistema de numeración, está dado por la fórmula:
 N°=i=mn(dígito)i(base)i
-Página 40.
+
 
 donde el número en base B es ... x4 x3x2x1x0x-1 x-2…, o sea
 N°=⋯+x4B4+x3B3+x2B2+x1B1+x0B0+x-1B-1+x-2B-2+⋯
@@ -833,7 +833,7 @@ Leyendo los restos, del último obtenido al primero de ellos, tenemos: 1111(2= 1
 
 Para convertir una fracción decimal a su equivalente binario se debe multiplicar dicha fracción por dos, obteniendo en la parte entera del resultado el primero de los dígitos binarios de la fracción que buscamos. A continuación, se repite el proceso con la parte fraccionaria del resultado anterior, obteniendo en la parte entera del nuevo resultado el segundo de los dígitos buscados. El proceso se repite hasta que desaparezca la parte fraccionaria de los resultados parciales (se haga 0) o hasta que tengamos los suficientes dígitos binarios.
 
-Página 42.
+
 Ejemplo. Se desea convertir la fracción 0,828125 a binario.
 
 Descripción de imagen: En la parte izquierda aparece una lista vertical de operaciones. Partiendo desde el número decimal 0,828125:
@@ -940,7 +940,7 @@ Para el caso de n = 8 bits, el rango de representación va desde -128 a 127.
 
 La principal ventaja es la de tener una única representación para el número 0, ya que el 0 positivo o negativo se representan igual.
 
-Página 45.
+
 Exceso a 2n-1.
 
 Este método de representación no utiliza la convención del bit mas significativo para identificar el signo, con lo cual todos los bits representan un número o valor. Este valor binario se corresponde con el número representado más el valor del exceso. En el caso propuesto de n bits, el exceso viene dado por 2n-1. El signo del número resulta de una operación aritmética.
@@ -1309,7 +1309,7 @@ Ecuaciones booleanas: Cada señal de salida se expresa como una función boolean
 
 Los circuitos combinacionales implementan las funciones esenciales de una computadora digital. Sin embargo, ellos no proporcionan memoria, que es un elemento también esencial para el funcionamiento. Para estos fines, se utilizan circuitos lógicos digitales mas complejos denominados circuitos secuenciales y que escapan al objetivo del presente curso.
 
-Página 58.
+
 
 CAPÍTULO 4 PERIFÉRICOS
 
@@ -1894,7 +1894,7 @@ Un disco magnético está constituido por una superficie metálica o plástica r
 
 Tanto en los discos rígidos como en los flexibles la información se graba en circunferencias concéntricas, no notándose visualmente las zonas grabadas. Cada una de las circunferencias concéntricas grabadas constituye una pista. Así mismo el disco se considera dividido en arcos ¡guales denominados sectores, de esta forma cada pista está compuesta de sectores. Los sectores de las pistas más exteriores son de mayor longitud que las interiores, ahora bien el número de bits grabados en cada sector es siempre el mismo, con lo que la densidad de grabación será mayor en las pistas interiores que en las exteriores. Los sectores comienzan con una cabecera de identificación, indicando su dirección completa. Un cilindro es un conjunto de pistas, una en cada disco, que son accesibles simultáneamente por el conjunto de cabezas.
 
-Página 79.
+
 
 La lectura y escritura en la superficie del disco se hace mediante una cabeza. Esta suele ser di tipo cerámico, aunque inicialmente eran metálicas. La cabeza, en las unidades de cabeza móviles, está insertada en un extremo de un brazo mecánico móvil, que se desplaza hacia e centro o hacia la parte externa del disco bajo el control de los circuitos electrónicos de periférico.
 
@@ -1917,7 +1917,7 @@ Los discos suelen tener una o varias referencias físicas (orificios y muescas) 
 Antes de utilizar un disco es necesario darle "formato" efectuando en él grabaciones específicas. Al dar formato o formatear un disco se definen por software las pistas, sectores y palabras; además se inicial iza un directorio para la información sobre el contenido del disco (como un
 índice de su contenido).
 
-Página 80.
+
 
 El formateo efectúa una sectorización que detecta y elimina para posteriores grabaciones, las zonas del disco deterioradas. El formateo incluye tablas con los nombres de los ficheros grabados en él, fecha y hora en que se crearon o actualizaron por última vez, espacio que ocupan y direcciones físicas donde se encuentran.
 
@@ -1950,7 +1950,7 @@ Disquetes. Los disquetes son pequeños discos cuyos platos son flexibles, ya que
 La superficie se encuentra protegida por una funda recubierta internamente de un material que facilita el deslizamiento rotacional del plato. En la funda hay una abertura radial que abarca a todas las pistas; a través de esta ventana las cabezas de la unidad de disquetes acceden a la información.
 También en el sobre y en el plato hay otro orificio que sirve para que la unidad por medios ópticos tenga una referencia de alineamiento para localizar pistas y sectores.
 
-Página 81.
+
 
 El centro está abierto con objeto de que el disquete ajuste en el eje de rotación de la unidad de lectura/grabación. En la parte superior del lateral derecho hay una muesca cuadrada, ésta indica que el disquete está preparado para poder grabar en él información, por no estar protegido contra escrituras.
 
@@ -1991,7 +1991,7 @@ Densidad máxima: Indica la densidad máxima de grabación en las pistas, es dec
 
 Código de grabación: Es el código usado para la grabación magnética de la información. Desde el punto de vista práctico interesa conocer si la grabación se efectúa en simple o doble densidad.
 
-Página 82.
+
 
 Cintas magnéticas.
 
@@ -2025,7 +2025,7 @@ Cintas tradicionales de columnas de vacío. Las columnas de vacío tienen como o
 
 Cintas tradicionales de brazos tensores. Son más sencillas ya que no necesitan columnas de vacío pero con ellas se obtiene menor velocidad.
 
-Página 83.
+
 
 Unidades de casette de audio. Se utilizan en microcomputadoras domésticas y pequeños sistemas informáticos. Lo usual es utilizar casettes de audio convencionales. El movimiento de la cinta se realiza con motores que actúan directamente sobre los carretes, no siendo tan rápidos ni precisos como las cintas tradicionales.
 
@@ -2053,7 +2053,7 @@ Gran compactación: Pueden almacenar entre 60 y 100 veces más datos que un disc
 
 Acceso directo: Similar al modo de acceso de los discos magnéticos. Cada bloque almacenado se identifica por un encabezado en el que se expresa minuto, segundo y sector.
 
-Página 84.
+
 
 Alta velocidad: El tiempo de acceso es muy similar al de los discos magnéticos y la velocidad de transferencia es mayor debido a la mayor densidad de grabación. Se establece como mínimo la transferencia de 75 sectores en un segundo, esto se denomina IX.
 
@@ -2075,7 +2075,7 @@ DVD, o Disco Versátil Digital, es el nombre propio del formato de disco óptico
 
 Nacido del acuerdo de dos consorcios de empresas que en principio presentaron sendos formatos incompatibles el DVD ofrece un amplio abanico de aplicaciones que se extienden en el sector audiovisual y en el informático, ya que su gran atractivo es su alta capacidad para almacenar información.
 
-Página 85.
+
 
 Un disco DVD tiene la misma apariencia que un CD 12 centímetros de diámetro y un espesor de 1,2 milímetros, pero puede contener toda la información de 25 CDs y ofrece imagen y sonido digital de calidad superior a la del tradicional disco compacto.
 
@@ -2097,7 +2097,7 @@ La introducción en el mercado de estas dos últimas aplicaciones provocó que p
 
 A diferencia del disco compacto convencional, el DVD puede almacenar información por ambas caras y en distintas capas. Ese es uno de los secretos de su gran memoria. Según el número de capas de que disponga, ofrece mayor o menor capacidad de almacenamiento de información.
 
-Página 86.
+
 
 Hay varias versiones. La más simple, DVD-5, dispone de simple cara y capa y es capaz de almacenar hasta 4,7 GB. Es decir, algo más de dos horas de imágenes de alta calidad y sonido codificado en cinco canales para disfrutar de tener el 'cine en casa'.
 
@@ -2131,7 +2131,7 @@ Entonces, para poder utilizar las líneas telefónicas (y en general cualquier l
 
 Este proceso se conoce como modulación-demodulación y es el que se realiza en el modem.
 
-Página 87.
+
 
 Un módem es un dispositivo que posee conversores A/D y D/A especialmente adecuados para conectar líneas telefónicas al computador. De este modo las señales provenientes de una línea telefónica (por ejemplo por una llamada) son interpretadas y "atendidas" por el módem, permitiendo que otra computadora trasmita información directamente a la nuestra.
 
