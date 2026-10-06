@@ -255,7 +255,7 @@ Un bit (dígito binario o b/nary dígit) es la unidad de información más peque
 La Unidad Central de Procesamiento (UCP) o en su acrónimo en inglés CPU, es la encargada de interpretar y llevar a cabo las instrucciones de los programas. Efectúa manipulaciones aritméticas y lógicas con los datos y se comunica con las demás partes del sistema de cómputo.
 
 
-#CONCEPTOS DE COMUNICACIONES Y REDES.
+# CONCEPTOS DE COMUNICACIONES Y REDES.
 "Poco después de mi entrada la yegua se levantó de su estera, se acercó a mí, observó atentamente mi cara y manos, y luego hizo un gesto de desagrado. A continuación, se volvió hacia el caballo y escuché que entre ellos repetían a menudo la palabra yahoo, cuyo significado entonces no entendía, aunque fuera la primera que aprendí a pronunciar. Más pronto estaría mejor informado para mi eterna vergüenza." Los Viajes de Gulliver, Cap XIX: El país de los Houyhnhnms.
 
 ## NOCIONES BÁSICAS DE COMUNICACIONES.
@@ -371,7 +371,7 @@ Es notable el impacto de Internet y los servicios de red en la vida diaria. Actu
 Es importante tener en cuenta que, en el mundo, el área de mayor crecimiento es el complejo electrónica-informática-comunicaciones y en particular la mayor oferta laboral mundial está asociada con el empleo de tecnología de sistemas distribuidos. Esto hace prioritaria la formación tecnológica de los alumnos de carreras de Ingeniería e Informática, cuyo ámbito de trabajo más probable es una organización con un sistema distribuido de cómputo, con todas las áreas de la empresa vinculadas por Internet y con necesidad de desarrollar productos orientados a ambientes de procesamiento distribuido.
 
 
-#CONCEPTOS DE SISTEMAS OPERATIVOS
+# CONCEPTOS DE SISTEMAS OPERATIVOS
 "A primera vista parecía un procesador de palabras Wang..., tenía un teclado Wang y un revestimiento Wang. Solamente cuando Richard Hagstrom le miró por segunda vez vio que el revestimiento había sido abierto (y no con cuidado, además; le pareció como si el trabajo se hubiera hecho con una sierra casera) para encajar en él un tubo catódico IBM ligeramente más grueso. Los discos de archivo que habían llegado con ese extraño bastardo no eran nada flexibles; eran tan duros como los disparos que Richard había oído de niño. -Por el amor de Dios, ¿qué es esto? -preguntó Lina, cuando él y Mr. Nordhofflo trasladaron penosamente hasta sudespacho." Stephen King, El Ordenador de los dioses.
 
 ##  LA NECESIDAD DEL "SOFTWARE"
