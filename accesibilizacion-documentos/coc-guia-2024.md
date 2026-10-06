@@ -28,7 +28,7 @@ Contenido
 ## BUSES Y ENTRADA/SALIDA 
 ## FUNCIONAMIENTO. EL CICLO DE INSTRUCCIÓN. 
 
-# CAPÍTULO 2 -REPRESENTACIÓN NUMÉRICA. 
+# CAPÍTULO 2- REPRESENTACIÓN NUMÉRICA. 
 ## Representación interna de datos 
 ## Códigos Alfanuméricos 
 ## Representaciones Numéricas 
@@ -269,14 +269,14 @@ Desde el punto de vista de la transmisión de información, la tecnología permi
 
 Esta evolución de la tecnología de comunicaciones es muy importante para nuestra vida y para nuestras posibilidades laborales: cualquier ámbito de trabajo informático hoy tiene comunicaciones, redes, computadoras remotas que se consultan y utilizan... y todo esto nos obliga a estudiar como un componente esencial de la disciplina informática, algunos aspectos de las comunicaciones.
 
-En principio debemos definir el medio de comunicación es decir sobre que soporte se trasmiten los bits (en principio sólo hablaremos de comunicaciones digitales) que llevan la información. Este medio puede ser un cable telefónico, un cable coaxil, una fibra óptica o el aire.
+En principio debemos definir el medio de comunicación es decir sobre que soporte se transmiten los bits (en principio sólo hablaremos de comunicaciones digitales) que llevan la información. Este medio puede ser un cable telefónico, un cable coaxil, una fibra óptica o el aire.
 
 
 En general las transmisiones sobre cables requieren enviar señales eléctricas entre un transmisor y un receptor en los extremos del cable, y normalmente se trata de un medio de bajo costo y muy adecuado para distancias relativamente cortas. Por ejemplo, un cable telefónico permite manejar velocidades típicas de 100.000 bits por segundo y un cable coaxil de red puede tener 100 millones de bits por segundo.
 
 Pasar de los cables con señales eléctricas a la fibra óptica ha sido un salto tecnológico muy importante (aunque a un costo mayor). Sucede que la fibra óptica trasmite señales de luz, a una velocidad mucho mayor y con mucha menos posibilidad de interferencia que un cable convencional. Trabajar con comunicaciones en el orden de 1000 millones de bits por segundo, con alta inmunidad al ruido, es típico de la fibra óptica hoy (notar que todos los enlaces telefónicos importantes han reemplazado el cableado convencional por la fibra óptica).
 
-La señal también se puede trasmitir por el aire. En este caso el transmisor y el receptor tienen otras características (más complejas) y de ese modo recibimos, por ejemplo, las señales de radio o de televisión por aire. También podemos tener estaciones repetidoras en tierra o en un satélite, de modo de comunicar puntos muy distantes que no serían alcanzables por una señal de radio directa. Las comunicaciones satelitales se imponen cuando la distancia crece.
+La señal también se puede transmitir por el aire. En este caso el transmisor y el receptor tienen otras características (más complejas) y de ese modo recibimos, por ejemplo, las señales de radio o de televisión por aire. También podemos tener estaciones repetidoras en tierra o en un satélite, de modo de comunicar puntos muy distantes que no serían alcanzables por una señal de radio directa. Las comunicaciones satelitales se imponen cuando la distancia crece.
 
 En este punto podemos preguntarnos ¿Qué sentido puede tener comunicar computadoras? La respuesta resulta inmediata: poder comunicarlas significa poder utilizar sus recursos a distancia.
 
@@ -308,7 +308,7 @@ Una red local (LAN: Local Area Network) es una red en la cual las computadoras s
 
 Típicamente (como se muestra en la figura) una red local puede conectarse a través de un conjunto de líneas de comunicación común denominado bus, pero pueden utilizarse diferentes topologías de comunicación.
 
-Descripición de imagen Red LAN: ubicado en la parte superior izquierda. Sobre un fondo claro aparece un conjunto de equipos informáticos conectados entre sí mediante líneas que representan el cableado de red.
+Descripción de imagen Red LAN: ubicado en la parte superior izquierda. Sobre un fondo claro aparece un conjunto de equipos informáticos conectados entre sí mediante líneas que representan el cableado de red.
 
 En la parte superior se observan tres dispositivos: a la izquierda una impresora, y a su lado dos computadoras de escritorio con monitor, gabinete, teclado y mouse. Desde estos equipos descienden líneas verticales que se conectan a una línea horizontal central, formando una estructura similar a un ramal.
 
@@ -316,7 +316,7 @@ En la parte inferior se ven cuatro dispositivos adicionales conectados a esa mis
 
 Una red extendida (WAN: Wide Area Network) es una red en la cual las computadoras pueden estar a grandes distancias. Incluso puede estar formada por subredes locales. La comunicación inter-computadoras puede combinar las tecnologías mencionadas anteriormente, teniendo cable o fibra para las máquinas relativamente más cercanas y por ejemplo enlaces satelitales entre los puntos remotos.
 
-Descripición de imagen Red WAN: En el centro se observa un globo terráqueo, que simboliza la cobertura geográfica extensa de este tipo de red.
+Descripción de imagen Red WAN: En el centro se observa un globo terráqueo, que simboliza la cobertura geográfica extensa de este tipo de red.
 
 En la parte superior aparece un satélite identificado con la palabra “Satélite”, del cual parten líneas punteadas hacia dos torres etiquetadas como “Torre de microondas”. Estas torres actúan como medios de transmisión inalámbrica. Desde ellas descienden líneas que conectan con distintos conjuntos de equipos informáticos ubicados a ambos lados del globo.
 
@@ -363,7 +363,7 @@ Naturalmente una teleconferencia no es igual que una reunión efectiva de las pe
 
 En una videoconferencia tenemos el equivalente a una clase tradicional, con una (o varias) aula/s virtuales remotas. Cada uno de los oyentes puede "ver" en tiempo real al conferencista y hacerle preguntas. A su vez el conferencista puede "ver" a quien le realiza preguntas y responderle.
 
-La necesidad de trasmitir imágenes y voz en tiempo real hace que los recursos de comunicaciones involucrados en una videoconferencia sean importantes. A su vez, armar un aula virtual para N alumnos significa al menos tener N computadoras (o puestos enlazados con un servidor en el aula) que puedan conectarse con la computadora remota del conferencista... y todas ellas con cámara y micrófono.
+La necesidad de transmitir imágenes y voz en tiempo real hace que los recursos de comunicaciones involucrados en una videoconferencia sean importantes. A su vez, armar un aula virtual para N alumnos significa al menos tener N computadoras (o puestos enlazados con un servidor en el aula) que puedan conectarse con la computadora remota del conferencista... y todas ellas con cámara y micrófono.
 
 ## Tendencias y Conclusiones
 Es notable el impacto de Internet y los servicios de red en la vida diaria. Actualmente hay aspectos cotidianos triviales en los que nos estamos acostumbrando a utilizar la "red de redes". Por ejemplo, buscar datos sobre un determinado producto, leer un diario (local o internacional), consultar una enciclopedia, conocer los programas de estudio de una Universidad, comprar un libro, etc…
