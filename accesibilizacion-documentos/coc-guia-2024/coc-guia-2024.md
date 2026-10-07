@@ -158,7 +158,7 @@ Los grandes ejes de la evolución.
 
 Podemos ver gráficamente cuáles han sido los grandes ejes de la impresionante evolución de las computadoras:
 
-![Evolución de los computadores de 1940 a la fecha. La descripción detallada está a continuación.](./imagenes/imagen1.png)
+![Evolución de los computadores de 1940 a la fecha. La descripción está a continuación.](./imagenes/imagen1.png)
 
 Descripción de la imagen: En la parte inferior aparece un eje horizontal que representa el tiempo, comenzando en 1940 a la izquierda y terminando en “Presente” a la derecha. Desde una línea vertical ubicada a la izquierda (que marca el punto de partida en 1940), salen varias líneas diagonales con flechas que indican tendencias a lo largo del tiempo. Cuatro líneas ascienden en diagonal hacia la derecha, mostrando aumentos. Cada una está rotulada con las siguientes palabras: Velocidad, Confiabilidad, Eficiencia, Facilidad de uso.
 Estas flechas ascendentes indican que, desde 1940 hasta el presente, esos aspectos han aumentado.
@@ -203,7 +203,7 @@ Podrá también, ser necesario interactuar con el mundo exterior, tanto para obt
 
 Teniendo en cuenta lo anteriormente expresado, podemos esquematizarla de la siguiente manera:
 
-![Esquema de bus de comunicaciones, memoria, UCP, entrada/salida y periféricos. La descripción detallada se encuentra a continuación](./imagenes/imagen2.png)
+![Esquema de bus de comunicaciones, memoria, UCP, entrada/salida y periféricos. La descripción se encuentra a continuación](./imagenes/imagen2.png)
 
 Descripción de la imagen: En la parte superior aparece una flecha horizontal de doble punta, que va de izquierda a derecha, con el rótulo “Bus de comunicaciones”. Esta flecha indica el canal que conecta todos los componentes entre sí.
 Debajo del bus hay tres bloques rectangulares principales, alineados horizontalmente:
@@ -239,6 +239,9 @@ Por último, tradicionalmente la combinación de la unidad de control UC y la un
 
 
 El funcionamiento de una Computadora descripta como en el modelo anterior, se puede sintetizar con el siguiente esquema: 
+
+![. La descripción detallada está a continuación.](./imagenes/imagen3.png)
+
 Descripción de la imagen: En la parte superior aparece un óvalo con la palabra “Inicio”. Desde allí desciende una flecha vertical que conduce a un rectángulo con el texto “Buscar Instrucción”. Debajo de este, otra flecha vertical lleva a un segundo rectángulo que dice “Interpretar Instrucción”. Más abajo, una nueva flecha conduce a un tercer rectángulo con el texto “Ejecutar Instrucción”.
 
 Desde la parte inferior del rectángulo “Ejecutar Instrucción” sale una línea que se dirige hacia el lateral izquierdo y asciende hasta conectarse nuevamente con la etapa de “Buscar Instrucción”. Fin de descripción, vuelta al texto.
@@ -291,6 +294,7 @@ Debe quedarnos claro que de nada nos servirían ambas computadoras si no tenemos
 
 ## Conceptos elementales de redes.
 Conceptualmente una red responde a un esquema general como el de la figura siguiente:
+![.](./imagenes/imagen4.png)
 
 Las computadoras locales (clientes) pueden ser muy diferentes y disponer de recursos propios.
 El subsistema de comunicaciones puede estar soportado por los diferentes medios de comunicación que hemos mencionado y permite vincular punto a punto o globalmente las computadoras locales.
@@ -307,6 +311,7 @@ Incrementar la eficiencia en los trabajos de grupo al permitir una fluida comuni
 Una red local (LAN: Local Area Network) es una red en la cual las computadoras se encuentran cercanas físicamente, generalmente en un mismo edificio. La comunicación inter-computadoras puede ser por cable, fibra o inalámbrica (en este caso una pequeña radio que hace de receptor- transmisor se incorpora en cada computadora).
 
 Típicamente (como se muestra en la figura) una red local puede conectarse a través de un conjunto de líneas de comunicación común denominado bus, pero pueden utilizarse diferentes topologías de comunicación.
+![. La descripción detallada está a continuación.](./imagenes/imagen5.png)
 
 Descripción de imagen Red LAN: ubicado en la parte superior izquierda. Sobre un fondo claro aparece un conjunto de equipos informáticos conectados entre sí mediante líneas que representan el cableado de red.
 
@@ -315,6 +320,7 @@ En la parte superior se observan tres dispositivos: a la izquierda una impresora
 En la parte inferior se ven cuatro dispositivos adicionales conectados a esa misma línea horizontal: a la izquierda un equipo que parece un escáner o dispositivo periférico, y a la derecha tres computadoras de escritorio similares a las de la parte superior. Todas las máquinas están unidas por el mismo cable principal, lo que representa una red de área local en la que varios equipos comparten recursos y están interconectados dentro de un mismo espacio físico. Fin de descripción, vuelta al texto.
 
 Una red extendida (WAN: Wide Area Network) es una red en la cual las computadoras pueden estar a grandes distancias. Incluso puede estar formada por subredes locales. La comunicación inter-computadoras puede combinar las tecnologías mencionadas anteriormente, teniendo cable o fibra para las máquinas relativamente más cercanas y por ejemplo enlaces satelitales entre los puntos remotos.
+![. La descripción detallada está a continuación.](./imagenes/imagen6.png)
 
 Descripción de imagen Red WAN: En el centro se observa un globo terráqueo, que simboliza la cobertura geográfica extensa de este tipo de red.
 
@@ -382,6 +388,8 @@ También se ha mencionado que el mundo real es naturalmente complejo y los probl
 Hemos analizado el funcionamiento esencial de una Computadora como una máquina digital y sincrónica, con cierta capacidad de cálculo numérico y lógico, controlada por un programa almacenado, y con posibilidad de comunicación con el mundo exterior.
 
 Nuestras computadoras, como herramientas de resolución de problemas son muy pobres, si no disponemos de programas adecuados para utilizarlas.
+
+![. La descripción detallada está a continuación.](./imagenes/imagen7.png)
 
 Descripción de la imagen: esquemático y caricaturesco que representa la relación entre el usuario, el software y el hardware. En el lado izquierdo aparece una persona identificada como “USUARIO”, situada al borde de un precipicio. En el lado derecho se observa una figura que representa al “HARDWARE”, también ubicada al borde de otro precipicio opuesto. Entre ambos lados hay un espacio que simboliza la separación entre el usuario y los componentes físicos de la computadora.
 
@@ -532,7 +540,7 @@ los datos e instrucciones están almacenados en una única memoria de lectura-es
 los contenidos de las celdas de la memoria son identificables por posición, sin importar el tipo de los datos guardados en ese lugar,
 la ejecución ocurre de manera secuencial (a menos que se modifique explícitamente) de una instrucción a la siguiente.
 
-LA UNIDAD CENTRAL DE PROCESAMIENTO.
+# LA UNIDAD CENTRAL DE PROCESAMIENTO.
 ¿Cuánto es uno más uno más uno más uno más uno más uno más uno más uno más uno?
 No lo sé, dijo Alicia. Perdí la cuenta.
 No sabe sumar, dijo la reina Roja.
@@ -555,6 +563,8 @@ Por otro lado, la mayoría de las supercomputadoras tienen varios procesadores c
 
 La figura a la derecha, muestra una visión simplificada de la UCP, indicando la conexión con el resto del sistema vía el bus o canal de comunicación del sistema.
 
+![. La descripción detallada está a continuación.](./imagenes/imagen8.png)
+
 Descripción de figura de la derecha: Diagrama esquemático de la Unidad Central de Proceso (UCP) y su comunicación con el resto del sistema mediante los buses. A la izquierda se observa un rectángulo grande etiquetado como UCP, dentro del cual aparecen tres bloques internos: la UAL (Unidad Aritmético-Lógica), que realiza las operaciones matemáticas y lógicas; los Registros, que almacenan datos e instrucciones de forma temporal; y la Unidad de Control, que coordina y dirige la ejecución de las instrucciones.
 
 Desde el lado derecho de la UCP salen varias flechas que conectan con tres conjuntos de líneas verticales. Estos conjuntos representan el Bus del Sistema, que se divide en tres partes: el Bus de Control, el Bus de Datos y el Bus de Direcciones. Las flechas indican el intercambio de información entre la UCP y los demás componentes del sistema. El bus de control transmite señales de control, el bus de datos transporta la información que se procesa y el bus de direcciones indica las posiciones de memoria o dispositivos involucrados en cada operación. Fin de descripción vuelta al texto.
@@ -570,8 +580,8 @@ La UAL es la parte de la computadora que ejecuta realmente las operaciones aritm
 
 Una UAL y todos los componentes en la computadora están basados en el uso de simples dispositivos electrónicos digitales que pueden almacenar dígitos binarios y realizar operaciones lógicas simples (operaciones booleanas).
 
-
 La siguiente figura indica, en términos muy generales, cómo está conectada la UAL con el resto de la UCP:
+<para corregir: diagrama>
 Descripción de figura: diagrama simple de la UAL (Unidad Aritmético-Lógica). En el centro aparece un rectángulo grande con la etiqueta “UAL”, que representa el componente encargado de realizar operaciones aritméticas y lógicas dentro del procesador.
 
 Desde el lado izquierdo del rectángulo llegan dos flechas: una proveniente de la Unidad de Control, que indica las señales que controlan qué operación debe realizar la UAL, y otra desde los Registros, que suministran los datos de entrada. En el lado derecho del rectángulo salen dos flechas: una hacia los Registros, donde se almacenan los resultados de las operaciones, y otra hacia los Flags. Fin de descripción, vuelta al texto.
@@ -597,14 +607,16 @@ En este punto se puede preguntar ¿de dónde saca información la UCP para tomar
 
 Trate ahora de responder las siguientes preguntas: dado un tamaño (medido en bits) del bus de direcciones ¿cuántas celdas de memoria se pueden identificar?, o para una determinada cantidad de celdas de memoria ¿cuál debe ser el tamaño medido en bits del bus de direcciones?
 
-Modelo de memoria
+## Modelo de memoria
 Suponga un modelo de memoria que está formado por "cajitas" que pueden guardar información. Dentro de esa cajita se escribirá el dato a almacenar (DATO) y la identificaremos con una etiqueta llamada DIRECCION.
 
 Tenga en cuenta que una dirección es un número que identifica un lugar, en este caso una cajita. El número es un valor binario que deberá ser expresado como combinación de unos y ceros. Cada dirección deberá ser única, a fin de que, cuando la UCP quiera trabajar con una cajita, lo haga con una a la vez.
+<para corregir: diagrama>
 
 Si se tienen solamente 2 cajitas, con una dirección de un solo bit se podrá identificar cada una de ellas, sin posibilidad de error. Por ejemplo tendremos:
+<para corregir: diagrama>
 Si tengo 4 cajitas se necesitarán direcciones con 2 bits para poder identificar cada una de ellas. Notar que utilizamos el subíndice 2 en las direcciones para identificarlas como números binarios.
-
+<para corregir: diagrama>
 Nota: el denominado 'tamaño del bus de direcciones', determina cuántos bits tienen las direcciones que identifican cada "cajita". La denominada 'cajita' es una celda de memoria identificada con una dirección de memoria.
 
 En general para identificar N diferentes posiciones de memoria (cajitas) se necesitará que n (el número de bits del bus de direcciones) sea tal que se cumpla
@@ -620,7 +632,7 @@ Dirección mas grande = 111111112= ¿valor en decimal?
 
 En el próximo capítulo se tratará el tema de conversión de números, aunque una calculadora puede ayudar a realizar los mismos.
 
-Unidad mínima direccionable.
+## Unidad mínima direccionable.
 En los ejemplos del apartado anterior identificamos cada posición de memoria (celda o cajita) con un número binario llamado dirección. La cantidad de bits almacenados en ella (y que llamamos DATO) se conoce como "unidad mínima direccionable". Si la cajita puede contener 8 bits (llamado byte) de información decimos que la unidad mínima direccionable es el byte.
 
 Entonces podemos decir que, el byte llamado DATO1 se encuentra en la dirección 002, el byte DATO2 en la dirección 012, etc.. La cantidad 'byte' es típica, histórica y ampliamente utilizada para describir el tamaño del contenido de las 'cajitas', aunque la realidad nos presenta otras cosas.
@@ -671,6 +683,8 @@ Un módulo de E/S es la entidad responsable de controlar uno o más dispositivos
 
 Algunos módulos están conectados a ranuras de expansión en la caja de la computadora, que permiten personalizar las máquinas insertando placas de circuitos de propósito especial en ellas. Otros módulos están conectados a puertos externos, esto es, puntos de conexión en la parte exterior del chasis de la computadora. Ambas formas de expansión simplifican la adición de dispositivos externos o periféricos para que la UCP pueda comunicarse con el mundo exterior y almacenar información que se usará después.
 
+![. La descripción detallada está a continuación.](./imagenes/imagen9.png)
+
 Descripción de la imagen: Muestra una placa madre real vista desde arriba, con varias partes importantes señaladas mediante recuadros y flechas rojas para indicar la ubicación de distintos buses y componentes.
 
 En el lado izquierdo se observa un conector largo y oscuro identificado como Bus ISA, que corresponde a una tecnología más antigua. Cerca de la parte inferior izquierda aparece un chip pequeño marcado como ROM, donde se almacena el firmware del sistema. En la zona central superior se ven varios conectores largos y claros alineados verticalmente, señalados como Bus PCI, utilizados para tarjetas de expansión. A su lado aparece un conector más corto identificado como Bus AGP, destinado principalmente a tarjetas gráficas.
@@ -711,13 +725,26 @@ Claramente, esto es un gran desperdicio del uso del procesador. Con las interrup
 
 # CAPÍTULO 2 REPRESENTACIÓN NUMÉRICA.
 ##  Representación interna de datos.
-Los datos e informaciones que se manejan internamente en un sistema informático se pueden representar, según sus características, de la siguiente forma:
+Los datos e informaciones que se manejan internamente en un sistema informático se pueden representar, según sus características, de la siguiente forma: 
 
 <para corregir: diagrama>
 
 ##  Códigos Alfanuméricos
-Una computadora puede trabajar internamente con un conjunto de caracteres que nos permitirán manejar datos, informaciones, instrucciones, órdenes de control, etc. Este conjunto de caracteres podemos subdividirlo en los siguientes grupos: caracteres alfabéticos, letras mayúsculas (A..Z sin la Ñ),
-letras minúsculas (a..z sin la ñ), cifras decimales: los números 0, 1, ..., 9, caracteres especiales, caracteres como el .,; : * etc, órdenes de control. Equivalen a las teclas enter, tabulación, ese, etc.
+Una computadora puede trabajar internamente con un conjunto de caracteres que nos permitirán manejar datos, informaciones, instrucciones, órdenes de control, etc. Este conjunto de caracteres podemos subdividirlo en los siguientes grupos:
+
+-caracteres alfabéticos
+
+-letras mayúsculas (A..Z sin la Ñ)
+
+-letras minúsculas (a..z sin la ñ)
+
+-cifras decimales: los números 0, 1, ..., 9
+
+-caracteres especiales
+
+-caracteres como el .,; : * etc
+
+-órdenes de control. Equivalen a las teclas enter, tabulación, ese, etc.
 
 En general cada carácter se maneja internamente en una computadora por medio de un conjunto de 8 bits mediante un sistema de codificación binario que denominaremos código de caracteres.
 
@@ -750,15 +777,22 @@ Los sistemas de numeración actuales son sistemas posicionales, en los que el va
 Se trata de un teorema que relaciona una cantidad expresada en cualquier sistema de numeración posicional con la misma cantidad expresada en el sistema decimal. Supongamos una cantidad expresada en un sistema cuya base es B y representamos por xi cada uno de los dígitos que contiene dicha cantidad, donde el subíndice i indica la posición del dígito con respecto a la coma fraccionaria, la posición se numera en forma creciente hacia la izquierda y decreciente hacia la derecha de la coma (posición 0), en ambos casos de a 1.
 
 El Teorema Fundamental de la Numeración dice que el valor decimal de una cantidad expresada en otro sistema de numeración, está dado por la fórmula:
+<para corregir: diagrama>
 N°=i=mn(dígito)i(base)i
 
 
-donde el número en base B es ... x4 x3x2x1x0x-1 x-2…, o sea
+donde el número en base B es ... x4 
+x3x2x1x0x-1 x-2…, o sea
+<para corregir: diagrama>
+
 N°=⋯+x4B4+x3B3+x2B2+x1B1+x0B0+x-1B-1+x-2B-2+⋯
+<para corregir: diagrama>
+
 ##  Sistemas Decimal, Binario y Hexadecimal.
 El sistema que ha usado el hombre para contar desde hace bastante tiempo es el denominado sistema decimal, adoptado por contar con los diez dedos de la mano. El sistema decimal es uno de los denominados posicionales, que utiliza un conjunto de 10 símbolos, xi  {0,...9}. Un valor determinado o cantidad, que se denomina número decimal, se puede expresar por la fórmula del Teorema anterior, donde la Base es 10.
 
 Ejemplo. ¿Cuál es la interpretación de la representación de la cantidad 3,1416?
+<para corregir: diagrama>
 3,1416(10=3×100+1×10-1+4×10-2+1×10-3+6×10-4
 
 El sistema binario es el sistema de numeración que utiliza internamente el hardware de las computadoras actuales. La base o número de símbolos que utiliza el sistema binario es 2, siendo los símbolos 0 y 1, los utilizados para la representación de cantidades.
@@ -766,19 +800,24 @@ El sistema binario es el sistema de numeración que utiliza internamente el hard
 Ejemplo. ¿Qué número decimal representa el número binario 1001,1?
 
 Utilizando el Teorema Fundamental de la Numeración:
+<para corregir: diagrama>
 1001,1(2=1×23+0×22+0×21+1×20+1×2-1=8+00+1+0.5=9.5(10
 
 Al igual que los anteriores, el sistema hexadecimal es un sistema posicional pero que utiliza dieciséis símbolos para la representación de cantidades. Estos símbolos son los siguientes:
+<para corregir: diagrama>
 0123456789ABCDEF
 donde las letras A, B, C, D, E, F equivalen a 10, 11, 12, 13, 14 y 15 del sistema decimal respectivamente.
 Ejemplo. ¿Qué número decimal representa el número hexadecimal 2CA?
+<para corregir: diagrama>
 2CA(16 = 2×162+C×161+A×160=512+192+10=714(10
 
-Operaciones de Suma y Resta Binaria.
+### Operaciones de Suma y Resta Binaria.
 
 Las operaciones aritméticas son similares a las del sistema decimal, con la diferencia que se manejan sólo los dígitos 0 y 1. Al realizar la suma parcial de dos dígitos, si el resultado excede el valor del máximo dígito (el 1) se debe pasar el sobrante (denominado acarreo) a la suma parcial siguiente hacia la izquierda.
-
 Ejemplo. Sumaremos los números binarios 100100 y 10110
+
+![. La descripción detallada está a continuación.](./imagenes/imagen10.png)
+
 
 Descripción de imagen: Muestra una suma en sistema binario, explicada de manera visual.
 
@@ -802,7 +841,7 @@ En la segunda fila aparece un signo menos, seguido del número 101010.
 Debajo de estos números hay una línea horizontal, que separa la operación del resultado.
 En la última fila aparece el resultado de la resta, que es el número binario 010010.Fin de descripción, vuelta al texto.
 
-Rango de representación. Valores mínimo y máximo.
+### Rango de representación. Valores mínimo y máximo.
 Se denomina rango de representación en un sistema determinado al conjunto de números representables con el mismo. Un sistema de base b y números de n dígitos tiene un rango igual a bn.
 
 El valor mínimo representable se obtiene cuando los n dígitos del número son ¡guales al símbolo de menor valor del sistema, por ejemplo con 4 dígitos, 0000 coincide como mínimo en base 2, 10 o 16.
@@ -812,9 +851,11 @@ El valor máximo representable se obtiene cuando los n dígitos del número son 
 ##  Conversiones entre los sistemas de numeración.
 Se denomina conversión entre números representados en distintos sistemas de numeración a la transformación de una determinada cantidad expresada en uno de dichos sistemas de numeración, a su representación equivalente en el otro sistema.
 
-Conversión decimal-binario
+### Conversión decimal-binario
 El método de conversión de un número decimal a un número binario consiste en efectuar, sobre la parte entera del número decimal, divisiones sucesivas de los cocientes por el número 2, hasta que el cociente tome el valor 0. La unión de todos los restos obtenidos, escritos en orden inverso, nos proporciona ahora el número decimal inicial expresado en sistema binario.
 Ejemplo. Convertir el número decimal 15 a binario.
+
+![. La descripción detallada está a continuación.](./imagenes/imagen11.png)
 
 Descripción de imagen: En la parte superior aparece el número 15, seguido de una división entre 2.
 Debajo se muestra el resultado 7, nuevamente dividido entre 2.
@@ -836,6 +877,7 @@ Para convertir una fracción decimal a su equivalente binario se debe multiplica
 
 
 Ejemplo. Se desea convertir la fracción 0,828125 a binario.
+![. La descripción detallada está a continuación.](./imagenes/imagen12.png)
 
 Descripción de imagen: En la parte izquierda aparece una lista vertical de operaciones. Partiendo desde el número decimal 0,828125:
 
@@ -853,8 +895,9 @@ En la parte inferior derecha de la imagen aparece el resultado final escrito exp
 
 Un número decimal que posee parte entera y parte fraccionaria (ej. 4,625) puede convertirse a su representación binaria utilizando los 2 mecanismos anteriores, uno para la parte a la izquierda de la coma (410= 1002) y el otro para la parte a la derecha de la misma (,62510= ,1012). El resultado completo es 4,62510= 100,1012. El video "Conversión de decimal a binario" describe como la conversión del decimal 791,812510nos proporciona el binario 1100010111,11012.
 
-Conversión hexadecimal-binario y binario-hexadecimal.
+### Conversión hexadecimal-binario y binario-hexadecimal.
 Cada dígito hexadecimal tiene una representación binaria con cuatro dígitos según indica la siguiente Tabla. (Tabla 1).
+<para corregir: diagrama>
 
 Inicio de Tabla 1.
 Primera columna: Dígito hexadecimal.
@@ -882,9 +925,9 @@ La Tabla 1 puede ser utilizada para convertir un número hexadecimal a binario. 
 
 
 Ejemplo. Convertir el número hexadecimal 7BA3,BC a binario. 0111101110100011,10111100
-
+<para corregir: diagrama>
 Convertir el número binario 1100101001000,1011011 a hexadecimal. 1948,BG
-
+<para corregir: diagrama>
 Conversión de cualquier base a decimal.
 Para ello se utiliza el teorema fundamental de la numeración y se convierte el número de la base que se disponga, a la base decimal (como se explica en página 50).
 
@@ -894,25 +937,27 @@ Módulo y signo.
 Complemento a 1
 Complemento a 2
 Exceso a 2n-1
+<para corregir: diagrama>
 
 Estas representaciones de números utilizan el sistema binario y se considera que tenemos un número limitado de bits para cada dato numérico. Este número de bits disponibles lo representamos por n. También se pueden representar mediante estos métodos números reales, como veremos más adelante.
 
-Módulo y signo (Binario Con Signo).
+### Módulo y signo (Binario Con Signo).
 En este sistema de representación, también llamado binario con signo, el bit que está situado más a la izquierda representa el signo, y su valor será 0 para el signo + y 1 para el signo -. El resto de bits (n-1) representan el módulo del número. Suponemos en principio que los números no poseen parte decimal, por lo que la coma se supone implícita a la derecha.
-
+<para corregir: diagrama>
 Por ejemplo, supongamos que disponemos de 8 bits, y queremos representar los números 10 y -10. Veamos cuales son sus representaciones.
 
 0(+)0001010 representa al número 10,y 1(-)0001010 representa al número -10.
 
 Para módulo y signo, si se disponen de n bits en total, el rango de representación es:
 -2n-1-1<=X<=2n-1-1
+<para corregir: diagrama>
 Para el caso de n = 8 bits, el rango de representación va desde -127 a 127.
 
 La ventaja que presenta este sistema frente a otros es la de poseer rango simétrico (igual cantidad de números positivos que negativos), mientras que su mayor inconveniente es el de poseer dos representaciones para el número 0. El cual se representa tanto con un signo positivo (0) como con uno negativo (1) y el resto de los bits en 0.
 
 
-Representaciones con signo avanzadas.
-Complemento a 1.
+### Representaciones con signo avanzadas.
+### Complemento a 1.
 
 Este sistema de representación utiliza el bit de más a la izquierda para el signo, correspondiendo el 0 para el signo + y el 1 para el signo -. Para los números positivos, los n-1 bits de la derecha representan el módulo (igual que en el sistema anterior). El negativo de un número se obtiene complementando todos sus dígitos (cambiando ceros por uno y viceversa) incluido el signo.
 
