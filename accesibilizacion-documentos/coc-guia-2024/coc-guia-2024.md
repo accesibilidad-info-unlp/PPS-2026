@@ -711,8 +711,9 @@ Claramente, esto es un gran desperdicio del uso del procesador. Con las interrup
 
 # CAPÍTULO 2 REPRESENTACIÓN NUMÉRICA.
 ##  Representación interna de datos.
-Los datos e informaciones que se manejan internamente en un sistema informático se pueden representar, según sus características, de la siguiente forma: 
+Los datos e informaciones que se manejan internamente en un sistema informático se pueden representar, según sus características, de la siguiente forma:
 
+<para corregir: diagrama>
 
 ##  Códigos Alfanuméricos
 Una computadora puede trabajar internamente con un conjunto de caracteres que nos permitirán manejar datos, informaciones, instrucciones, órdenes de control, etc. Este conjunto de caracteres podemos subdividirlo en los siguientes grupos: caracteres alfabéticos, letras mayúsculas (A..Z sin la Ñ),
