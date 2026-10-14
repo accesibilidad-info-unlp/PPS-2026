@@ -1118,7 +1118,7 @@ Conjunto complementario de otro conjunto A (también denominado conjunto negado 
 ##  ÁLGEBRA DE BOOLE. OPERACIONES LÓGICAS Y TEOREMAS.
 Se definen básicamente tres tipos de operaciones sobre las variables del álgebra de Boole o variables booleanas que son: La complementación lógica, la suma lógica y el producto lógico.
 
-La complementación lógica.
+### La complementación lógica
 Sea una variable booleana A, que por el hecho de serlo solamente podrá poseer dos estados. Si en un instante determinado posee el estado lógico 1, diremos que su estado inverso o complementado será el 0. Si por el contrario la variable A posee el estado lógico 0, su complemento será el 1. El complemento de una variable A se representa simbólicamente por: Ā (con una barra encima de la variable). Otra forma de indicación puede utilizar el símbolo ⌐ adelante de la variable (⌐A).
 
 La tabla de verdad de los estados lógicos correspondientes a una variable y a su complementaria o inversa es la siguiente:
@@ -1132,7 +1132,7 @@ Para cada valor de columna A, le corresponde un valor de la columna Ā.
 1=0
 Fin de tabla.
 
-La suma lógica.
+### La suma lógica
 La operación lógica suma entre dos o más conjuntos (o variables booleanas) se representa mediante el signo "+". Por tanto si tenemos C = A + B, leeremos "el conjunto C es la suma de los conjuntos A y B". Sin embargo suele leerse "C es igual a A o B". Esta operación se denomina también reunión de conjuntos y puede representarse con el símbolo "˅".
 
 La función suma lógica se define mediante la siguiente tabla de verdad:
@@ -1151,7 +1151,7 @@ Fin de tabla.
 En ella podemos apreciar cómo el resultado de esta operación (suma lógica) es 1 lógico cuando la variable A o la variable B valen 1. Este resultado puede generalizarse para "n" variables de entrada.
 
 
-El producto lógico.
+### El producto lógico
 La operación producto entre dos conjuntos se representa mediante el símbolo *, y da como resultado un conjunto formado por elementos comunes a dichos conjuntos. Esta operación se denomina también intersección de conjuntos y el símbolo habitualmente utilizado es "˄". Por tanto tendremos que D = A * B representa un producto y se lee "D es igual a A por B", o también "D es igual a A y B." (Para mayor comodidad se acostumbra a escribir D=AB omitiendo el símbolo del producto lógico.
 La operación producto lógico se define mediante la siguiente tabla de verdad:
 
@@ -1218,7 +1218,7 @@ Además podemos asegurar que toda función booleana es también una variable boo
 ##  PUERTAS LÓGICAS.
 Existe un convenio gráfico para representar dispositivos (electrónicos, hidráulicos, mecánicos, etc.) que lleven a cabo funciones booleanas elementales y que, en función de la combinación o combinaciones diseñadas, se obtendrán funciones más complejas. Las puertas lógicas son dispositivos electrónicos que desarrollan las funciones booleanas y son básicamente: Puertas OR, AND, NOT, NOR, NAND, OR Exclusiva y NOR Exclusiva.
 
-Las puertas OR.
+### Las puertas OR
 Desarrollan la suma booleana. Su símbolo gráfico está representado en la figura 1 donde podemos apreciar que se trata de una puerta OR de dos entradas y que a su salida nos proporciona la suma lógica de ambas. Su tabla de la verdad corresponde evidentemente a la suma booleana.
 
 Descripción de figura 1: A la izquierda aparecen dos líneas horizontales de entrada, etiquetadas como A y B. Estas líneas ingresan a una figura con forma curva característica de la compuerta OR: el lado izquierdo es cóncavo y el lado derecho termina en punta.
@@ -1227,7 +1227,7 @@ De la parte derecha de la figura sale una única línea horizontal que represent
 
 Si deseamos tener una puerta OR con tres ó más entradas sólo tendremos que agregar una línea de entrada por cada entrada añadida y la salida nos dará la suma lógica de todas las variables de entrada.
 
-Las puertas AND.
+### Las puertas AND
 Corresponden al producto booleano de las variables de entrada, proporcionándonos el resultado en su línea de salida. Su símbolo lógico puede verse en la figura 2.
 
 Descripción de figura 2: A la izquierda aparecen dos líneas de entrada, etiquetadas como A y B. Estas líneas ingresan a una figura con forma característica de la compuerta AND: el lado izquierdo es recto y vertical, mientras que el lado derecho es curvo, formando una especie de semicírculo.
@@ -1236,7 +1236,7 @@ Desde el lado derecho de la compuerta sale una única línea horizontal, que rep
 
 Como podemos apreciar, se trata de una puerta AND de dos entradas, si deseamos tener una puerta AND con tres ó más entradas sólo tendremos una línea de entrada por cada entrada añadida y la salida nos dará el producto lógico de todas las variables de entrada.
 
-Las puertas NOT.
+### Las puertas NOT
 Realizan la función complementación o inversión booleana. A estas puertas se las denomina generalmente inversores. Su representación simbólica es la mostrada en la figura 3, aunque en realidad, la inversión propiamente dicha se representa únicamente por el círculo final del símbolo mostrado, siendo la parte triangular la representación de un amplificador de señal (buffer) que no invierte ni complementa la entrada.
 
 Descripción de figura 3: A la izquierda aparece una línea de entrada etiquetada con la letra A. Esta línea entra en una figura con forma de triángulo apuntando hacia la derecha.
@@ -1246,7 +1246,7 @@ En la punta del triángulo hay un pequeño círculo, que indica la negación o i
 Desde ese círculo sale una línea horizontal de salida, junto a la cual aparece A con una barra encima (Ā). Esto indica que la salida es la negación del valor de entrada. Fin de descripción, vuelta al texto.
 
 
-Las puertas NOR.
+### Las puertas NOR
 Realizan la función inversa de una operación suma lógica, es decir, es la equivalente a una puerta OR complementada. La función lógica será por tanto: f = barra horizontal encima de toda la expresión A + B (e igual barra horizontal encima de toda la expresión A * B por ley de De Morgan)
 
 En la figura 4 podemos ver su representación simbólica y su tabla de verdad, en la que podemos apreciar cómo la salida es 1 lógico solo si las variables de entrada son ambas 0 lógicos.
@@ -1271,7 +1271,7 @@ Desde ese círculo sale una línea horizontal que representa la salida, y a la d
 
 
 
-Las puertas NAND.
+### Las puertas NAND
 La función f es equivalente a una puerta AND complementada. Su símbolo lógico y su tabla de verdad se dan en la figura 5.
 
 f=barra encima de A*B (e igual a barra encima de A + B por De Morgan)
@@ -1296,7 +1296,7 @@ Desde ese círculo sale una línea horizontal que representa la salida, y a la d
 
 Vemos aquí que la salida de esta puerta será 1 lógico siempre que al menos una de sus entradas sea 0 lógico.
 
-Las puertas OR EXCLUSIVAS (EOR o XOR)
+### Las puertas OR EXCLUSIVAS (EOR o XOR)
 Son puertas que a su salida nos proporcionan la función lógica:
 f = barra encima de toda la ecuación AB + AB = A ⊕ B
 
@@ -1320,7 +1320,7 @@ Para cada valor de columna A, le corresponde un valor de la columna B y, un valo
 Fin de tabla.
 
 
-Las puertas NOR EXCLUSIVAS (XNOR)
+### Las puertas NOR EXCLUSIVAS (XNOR)
 Como su propio nombre indica, realizan la operación inversa de una OR Exclusiva, por lo que proporcionan a su salida la función lógica: f = barra encima de toda la ecuación A ⊕ B = barra doble encima de toda la ecuación AB + AB = AB + barra encima de AB
 
 En la figura 7 podemos ver su tabla de verdad y su símbolo lógico. La salida adopta el valor lógico 1 solamente cuando ambas variables son 0 ó 1 al mismo tiempo.
@@ -1343,7 +1343,7 @@ Para cada valor de columna A, le corresponde un valor de la columna B y, un valo
 1=1=1
 Fin de tabla.
 
-##  CIRCUITOS COMBINACIONALES.
+##  CIRCUITOS COMBINACIONALES
 Un circuito combinacional es un conjunto de puertas lógicas interconectadas, cuya salida, en un momento dado, es función solamente de los valores de las entradas en ese instante. Como sucede con una puerta como las vistas anteriormente, la aparición de un valor en las entradas viene seguido casi inmediatamente por la aparición de un valor en la salida, con un retardo propio de la puerta.
 
 En general, un circuito combinacional consiste de n entradas binarias y m salidas binarias. Como una puerta, un circuito combinacional puede definirse de tres formas:
@@ -1357,7 +1357,7 @@ Los circuitos combinacionales implementan las funciones esenciales de una comput
 
 
 
-CAPÍTULO 4 PERIFÉRICOS
+# CAPÍTULO 4 PERIFÉRICOS
 
 Se denominan periféricos tanto a las unidades o dispositivos a través de los cuales el computador se comunica con el mundo exterior, como a los sistemas que almacenan o archivan la información, sirviendo de memoria auxiliar de la memoria principal.
 
@@ -1445,7 +1445,7 @@ Transportabilidad: Decimos que un soporte de información es transportable si es
 
 Ergonomía: Un periférico se dice que es ergonómico cuando su diseño físico externo se adapta al usuario, obteniéndose una buena integración hombre-máquina y una adecuada eficiencia en su utilización haciéndose cómodo su uso al hombre. Los equipos que llevan la homologación alemana GS son ergonómicos, esta homologación no sólo se aplica a los computadores, sino a cualquier producto, como por ejemplo ollas a presión y cochecitos de bebe.
 
-## Clasificación de los periféricos.
+## Clasificación de los periféricos
 
 Los periféricos se pueden dividir en las siguientes categorías:
 
@@ -1477,7 +1477,7 @@ En la "prehistoria" de la computación el usuario podía tener que cargar direct
 
 Ahora disponemos de muchas herramientas para indicar que datos queremos introducir en la computadora. A continuación describiremos algunos:
 
-Teclado
+### Teclado
 Los teclados son similares a los de una máquina de escribir, correspondiendo cada tecla a uno o varios caracteres, funciones u órdenes. Para seleccionar uno de los caracteres de una tecla puede ser necesario pulsar simultáneamente dos o más teclas, una de ellas la correspondiente al carácter.
 
 Al pulsar una tecla se cierra un conmutador que hay en el interior del teclado, esto hace que unos circuitos codificadores generen el código de E/S correspondiente al carácter seleccionado, apareciendo éste en la pantalla si no es un carácter de control.
