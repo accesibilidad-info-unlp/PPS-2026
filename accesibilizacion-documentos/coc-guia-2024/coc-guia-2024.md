@@ -91,25 +91,26 @@ El salto conceptual de las "máquinas de calcular" a la computadora fue comprend
 ¡El verdadero desarrollo estaba en poder generalizar la utilización de “la máquina” para cualquier aplicación que se pudiera “programar” ... tal como lo había escrito Ada Lovelace 120 años antes!
 
 ## UNA PRIMERA DEFINICIÓN
-Una Computadora es una máquina digital y sincrónica, con cierta capacidad de cálculo numérico y lógico, controlada por un programa almacenado y con posibilidad de comunicación con el mundo exterior.
+> Una Computadora es una máquina digital y sincrónica, con cierta capacidad de cálculo numérico y lógico, controlada por un programa almacenado y con posibilidad de comunicación con el mundo exterior.
 
 ¿Qué significa esto?
-Es digital porque dentro de la computadora las señales eléctricas que se manejan y la información que se procesa se representa en forma discreta, por medio de dos valores (0 y 1).
 
-Además, se afirma que es sincrónica, es decir que realiza las operaciones coordinada por un reloj central que envía señales de sincronismo a todos los elementos que componen la computadora. Esto significa que todas las operaciones internas se realizan en instantes de tiempo predefinidos y coordinados con el reloj.
+- Es digital porque dentro de la computadora las señales eléctricas que se manejan y la información que se procesa se representa en forma discreta, por medio de dos valores (0 y 1).
 
-Internamente posee una capacidad de cálculo numérico y lógico, en un subsistema denominado Unidad Aritmético-Lógica (UAL) ó en su acrónimo en idioma inglés ALU (Arithmetic & Logic Unit). Normalmente las operaciones que pueden realizarse en ella son muy simples (por ejemplo, suma, disyunción, conjunción o comparación).
+- Además, se afirma que es sincrónica, es decir que realiza las operaciones coordinada por un reloj central que envía señales de sincronismo a todos los elementos que componen la computadora. Esto significa que todas las operaciones internas se realizan en instantes de tiempo predefinidos y coordinados con el reloj.
+
+- Internamente posee una capacidad de cálculo numérico y lógico, en un subsistema denominado Unidad Aritmético-Lógica (UAL) ó en su acrónimo en idioma inglés ALU (Arithmetic & Logic Unit). Normalmente las operaciones que pueden realizarse en ella son muy simples (por ejemplo, suma, disyunción, conjunción o comparación).
 
 
-El hecho que sea controlada por programa es quizás el punto más importante que diferencia a una computadora de una calculadora. Significa que internamente se tienen órdenes o instrucciones almacenadas, que la computadora podrá obtener, interpretar y ejecutar.
+- El hecho que sea controlada por programa es quizás el punto más importante que diferencia a una computadora de una calculadora. Significa que internamente se tienen órdenes o instrucciones almacenadas, que la computadora podrá obtener, interpretar y ejecutar.
 
-Además, está comunicada con el mundo exterior. Esto significa que podrá realizar operaciones de ingreso o egreso de valores desde y hacia el mundo real, utilizando dispositivos periféricos (por ejemplo, el teclado o el mouse para entrada de información y pantalla como salida). Debe mencionarse que el mundo real es analógico y no digital.
+- Además, está comunicada con el mundo exterior. Esto significa que podrá realizar operaciones de ingreso o egreso de valores desde y hacia el mundo real, utilizando dispositivos periféricos (por ejemplo, el teclado o el mouse para entrada de información y pantalla como salida). Debe mencionarse que el mundo real es analógico y no digital.
 
 La computadora es una máquina que cambia información de una forma a otra: recibe información (entrada), la transforma y proporciona información (salida). Esta información puede presentarse de muchas formas, lo que convierte a la computadora en una máquina sumamente versátil, que es capaz desde liquidar impuestos hasta guiar el recorrido de una nave espacial. En cada caso las entradas y salidas son totalmente distintas, y en esto radica lo sorprendente de poder usar una computadora para ambas actividades.
 
 Esta versatilidad está dada en que la máquina sea controlada por un programa, que establece las instrucciones que le indican a las partes físicas qué deben hacer para transformar los datos de entrada en la salida requerida. El programa controla todo el proceso, del principio al fin: podemos modificar su funcionamiento con solo cambiar el programa.
 
-Con el advenimiento de la computadora, gran parte de la tecnología pasó del mundo analógico al digital.
+**Con el advenimiento de la computadora, gran parte de la tecnología pasó del mundo analógico al digital.**
 
 ## UN POCO DE HISTORIA
 "Considera el pasado y conocerás el futuro" Proverbio Chino.
@@ -136,17 +137,17 @@ La invención del tubo de vacío, el transistor y el chip de silicio tuvieron un
 
 **1940 a 1950:** Aparecen las primeras computadoras. Con programa fijo y programa variable. En 1945 John von Neumann propone almacenar programas en forma de datos. Surge el transistor y con él la electrónica moderna.
 
-1950 a 1960: Computadoras transistorizadas. Banca computarizada. Circuitos integrados. Láser. En 1959 la Unión Soviética lanza el Sputnik.
+**1950 a 1960** : Computadoras transistorizadas. Banca computarizada. Circuitos integrados. Láser. En 1959 la Unión Soviética lanza el Sputnik.
 
-1960 a 1970: Sistemas operativos de tiempo compartido. El software como producto industrial. Lenguajes de programación. La primera red de computadoras. En 1969 el hombre llega a la Luna.
+**1960 a 1970** : Sistemas operativos de tiempo compartido. El software como producto industrial. Lenguajes de programación. La primera red de computadoras. En 1969 el hombre llega a la Luna.
 
-1970 a 1980: Aparecen los microprocesadores. Microcomputadoras. Computadoras Personales. Robots industriales controlados por computadora. Supercomputadoras. Primeros juegos para computadoras personales. Planilla de Cálculo. Interfaz gráfica. Apple. En 1979 nace el PacMan.
+**1970 a 1980** : Aparecen los microprocesadores. Microcomputadoras. Computadoras Personales. Robots industriales controlados por computadora. Supercomputadoras. Primeros juegos para computadoras personales. Planilla de Cálculo. Interfaz gráfica. Apple. En 1979 nace el PacMan.
 
-1980 a 1990: IBM presenta la primera computadora personal (PC). Surgen publicaciones electrónicas. Nace Internet. Aparecen las primeras computadoras masivamente paralelas. Aparecen los virus y los hackers.
+**1980 a 1990** : IBM presenta la primera computadora personal (PC). Surgen publicaciones electrónicas. Nace Internet. Aparecen las primeras computadoras masivamente paralelas. Aparecen los virus y los hackers.
 
-1990 a 2000: En 1990 Microsoft introduce Windows 3.0. Aparecen otros elementos como la interfaz hablada, multimedia, robots móviles, realidad virtual, videoconferencia, visión por computadora, etc.
+**1990 a 2000**: En 1990 Microsoft introduce Windows 3.0. Aparecen otros elementos como la interfaz hablada, multimedia, robots móviles, realidad virtual, videoconferencia, visión por computadora, etc.
 
-2000 en adelante: Adquiere fuerte impulso la Inteligencia Artificial. La realidad virtual cada vez es más real. La interfaz hombre-máquina sigue evolucionando Las comunicaciones por Internet dan origen a nuevos mecanismos como el comercio electrónico.
+**2000 en adelante** : Adquiere fuerte impulso la Inteligencia Artificial. La realidad virtual cada vez es más real. La interfaz hombre-máquina sigue evolucionando Las comunicaciones por Internet dan origen a nuevos mecanismos como el comercio electrónico.
 
 Estos datos reflejan la diferencia en la velocidad de evolución de la informática con respecto a cualquiera de las otras industrias. Notar que el avance desde el primer libro impreso a la imprenta tomó 6 siglos, mientras que desde los tubos de vacío al primer microprocesador sólo pasaron una veintena de años...
 
@@ -176,7 +177,7 @@ La informática se puede definir de diversas formas si bien todas ellas giran en
 
 - La palabra ciencia se relaciona con una metodología fundamentada y racional para el estudio y resolución de los problemas.
 
-La resolución de problemas utilizando las herramientas informáticas puede tener aplicaciones en áreas muy diferentes tales como biología, comercio, control industrial, administración, robótica, educación, arquitectura, diseño, etc.
+- La resolución de problemas utilizando las herramientas informáticas puede tener aplicaciones en áreas muy diferentes tales como biología, comercio, control industrial, administración, robótica, educación, arquitectura, diseño, etc.
 
 Los temas propios de la ciencia Informática abarcan aspectos tales como la arquitectura física y lógica de las computadoras, las metodologías de análisis y diseño de sistemas de software, los lenguajes de programación, los sistemas operativos, la inteligencia artificial, los sistemas de tiempo real, el diseño y aplicación de bases de datos, etc.
 
@@ -196,7 +197,7 @@ Por otro lado, se encuentran los usuarios de las aplicaciones, que van desde esp
 
 Recordemos la definición que dimos de computadora: 
 
-> Una Computadora es una máquina digital y sincrónica, con cierta capacidad de cálculo numérico y lógico, controlada por un programa almacenado, y con posibilidad de comunicación con el mundo exterior.
+> Una **Computadora**  es una máquina digital y sincrónica, con cierta capacidad de cálculo numérico y lógico, controlada por un programa almacenado, y con posibilidad de comunicación con el mundo exterior.
 
 La mayoría de las computadoras actuales de propósito general presentan una estructura interna basada en la arquitectura definida por John von Neumann.
 
@@ -253,9 +254,9 @@ Descripción de la imagen: En la parte superior aparece un óvalo con la palabra
 Desde la parte inferior del rectángulo “Ejecutar Instrucción” sale una línea que se dirige hacia el lateral izquierdo y asciende hasta conectarse nuevamente con la etapa de “Buscar Instrucción”. Fin de descripción, vuelta al texto.
 
 Esto representa una secuencia infinita de pasos:
-Buscar la próxima instrucción a ejecutar en la memoria de instrucciones Mi
-Interpretar qué hacer en la Unidad de Control (UC).
-Ejecutar las operaciones interpretadas por UC, utilizando la UAL de ser necesario. Estas operaciones pueden comprender lectura/escritura de la memoria de datos Md o entrada/salida por los periféricos Pe o Ps.
+- Buscar la próxima instrucción a ejecutar en la memoria de instrucciones Mi
+- Interpretar qué hacer en la Unidad de Control (UC).
+- Ejecutar las operaciones interpretadas por UC, utilizando la UAL de ser necesario. Estas operaciones pueden comprender lectura/escritura de la memoria de datos Md o entrada/salida por los periféricos Pe o Ps.
 
 En capítulos posteriores trataremos más en detalle sobre la estructura interna y el funcionamiento de las computadoras. Para finalizar, damos algunos conceptos:
 El hardware se refiere a las componentes físicas de la computadora.
@@ -270,24 +271,24 @@ La Unidad Central de Procesamiento (UCP) o en su acrónimo en inglés CPU, es la
 ## NOCIONES BÁSICAS DE COMUNICACIONES.
 En los principios del siglo XIX, los tiempos de las comunicaciones eran directamente proporcionales a los tiempos del movimiento humano. Una noticia de Europa podía tardar meses en llegar a las colonias sudamericanas; un hecho trascendental como la declaración de la independencia en Tucumán en 1816 viajó "en diligencia" para ser conocido en Buenos Aires varios días después; la imagen del general mirando desde un cerro la evolución de una gran batalla y enviando y recibiendo mensajeros a caballo desde el frente de batalla sólo se mejoraba levemente con el empleo de palomas mensajeras...
 
-En 1844 Morse inventó el telégrafo y en 1876 Bell el teléfono. Con ellos nació el concepto de telecomunicaciones, es decir comunicación a distancia en forma prácticamente inmediata.
+- En 1844 Morse inventó el telégrafo y en 1876 Bell el teléfono. Con ellos nació el concepto de **telecomunicaciones** , es decir comunicación a distancia en forma prácticamente inmediata.
 
-La evolución de la tecnología de las comunicaciones en los siguientes 100 años y hasta nuestros días, combinada con el desarrollo explosivo de la electrónica y la informática, pasaron a ser el eje fundamental del mundo de hoy.
+- La evolución de la tecnología de las comunicaciones en los siguientes 100 años y hasta nuestros días, combinada con el desarrollo explosivo de la electrónica y la informática, pasaron a ser el **eje fundamental del mundo de hoy.** 
 
-Desde el punto de vista de la transmisión de información, la tecnología permite hoy que la distancia física prácticamente no exista I: Podemos ubicarnos virtualmente en otro lugar del mundo, observar un museo de Europa, leer un texto que se está escribiendo en Estados Unidos, recibir el mismo diario que un ciudadano de Rusia o tener 1000 millones de personas pendientes del partido inaugural de un mundial de fútbol... que se juega en China (y sería lo mismo si se jugara en la Luna).
+- Desde el punto de vista de la transmisión de información, la tecnología permite hoy que **la distancia física prácticamente no exista I** : Podemos ubicarnos virtualmente en otro lugar del mundo, observar un museo de Europa, leer un texto que se está escribiendo en Estados Unidos, recibir el mismo diario que un ciudadano de Rusia o tener 1000 millones de personas pendientes del partido inaugural de un mundial de fútbol... que se juega en China (y sería lo mismo si se jugara en la Luna).
 
 Esta evolución de la tecnología de comunicaciones es muy importante para nuestra vida y para nuestras posibilidades laborales: cualquier ámbito de trabajo informático hoy tiene comunicaciones, redes, computadoras remotas que se consultan y utilizan... y todo esto nos obliga a estudiar como un componente esencial de la disciplina informática, algunos aspectos de las comunicaciones.
 
-En principio debemos definir el medio de comunicación es decir sobre que soporte se transmiten los bits (en principio sólo hablaremos de comunicaciones digitales) que llevan la información. Este medio puede ser un cable telefónico, un cable coaxil, una fibra óptica o el aire.
+- En principio debemos definir el medio de comunicación es decir sobre que soporte se transmiten los bits (en principio sólo hablaremos de comunicaciones digitales) que llevan la información. Este medio puede ser un cable telefónico, un cable coaxil, una fibra óptica o el aire.
 
 
-En general las transmisiones sobre cables requieren enviar señales eléctricas entre un transmisor y un receptor en los extremos del cable, y normalmente se trata de un medio de bajo costo y muy adecuado para distancias relativamente cortas. Por ejemplo, un cable telefónico permite manejar velocidades típicas de 100.000 bits por segundo y un cable coaxil de red puede tener 100 millones de bits por segundo.
+- En general las transmisiones sobre cables requieren enviar señales eléctricas entre un transmisor y un receptor en los extremos del cable, y normalmente se trata de un medio de bajo costo y muy adecuado para distancias relativamente cortas. Por ejemplo, un cable telefónico permite manejar velocidades típicas de 100.000 bits por segundo y un cable coaxil de red puede tener 100 millones de bits por segundo.
 
-Pasar de los cables con señales eléctricas a la fibra óptica ha sido un salto tecnológico muy importante (aunque a un costo mayor). Sucede que la fibra óptica trasmite señales de luz, a una velocidad mucho mayor y con mucha menos posibilidad de interferencia que un cable convencional. Trabajar con comunicaciones en el orden de 1000 millones de bits por segundo, con alta inmunidad al ruido, es típico de la fibra óptica hoy (notar que todos los enlaces telefónicos importantes han reemplazado el cableado convencional por la fibra óptica).
+- Pasar de los cables con señales eléctricas a la fibra óptica ha sido un salto tecnológico muy importante (aunque a un costo mayor). Sucede que la fibra óptica trasmite señales de luz, a una velocidad mucho mayor y con mucha menos posibilidad de interferencia que un cable convencional. Trabajar con comunicaciones en el orden de 1000 millones de bits por segundo, con alta inmunidad al ruido, es típico de la fibra óptica hoy (notar que todos los enlaces telefónicos importantes han reemplazado el cableado convencional por la fibra óptica).
 
-La señal también se puede transmitir por el aire. En este caso el transmisor y el receptor tienen otras características (más complejas) y de ese modo recibimos, por ejemplo, las señales de radio o de televisión por aire. También podemos tener estaciones repetidoras en tierra o en un satélite, de modo de comunicar puntos muy distantes que no serían alcanzables por una señal de radio directa. Las comunicaciones satelitales se imponen cuando la distancia crece.
+- La señal también se puede transmitir por el aire. En este caso el transmisor y el receptor tienen otras características (más complejas) y de ese modo recibimos, por ejemplo, las señales de radio o de televisión por aire. También podemos tener estaciones repetidoras en tierra o en un satélite, de modo de comunicar puntos muy distantes que no serían alcanzables por una señal de radio directa. Las comunicaciones satelitales se imponen cuando la distancia crece.
 
-En este punto podemos preguntarnos ¿Qué sentido puede tener comunicar computadoras? La respuesta resulta inmediata: poder comunicarlas significa poder utilizar sus recursos a distancia.
+En este punto podemos preguntarnos **¿Qué sentido puede tener comunicar computadoras?** La respuesta resulta inmediata: poder comunicarlas significa poder utilizar sus recursos a distancia.
 
 De repente la computadora que está en la mejor Universidad de Estados Unidos es "alcanzable" y utilizable desde nuestra modesta PC del Laboratorio de Microcómputo de la Facultad. Al mismo tiempo los "usuarios" distantes pueden comunicarse, cooperar y compartir recursos y trabajo, empleando sus computadoras conectadas.
 
