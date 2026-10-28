@@ -58,7 +58,6 @@ Contenido
 ## Periféricos de almacenamiento de datos 
 ## PERIFÉRICOS DE E/S O MIXTOS 
 
-     
 # CAPÍTULO 1 LA COMPUTADORA
 ##  PARTE 1 CONCEPTOS BÁSICOS DE UNA COMPUTADORA 
 "La computadora es, por mucho, la más extraordinaria de las vestimentas electrónicas creadas por el hombre, ya que es una extensión de nuestro sistema nervioso central. Junto a ella, la rueda no es más que un juguete...".
@@ -126,15 +125,16 @@ A mediados de los '60 las computadoras basadas en transistores fueron sustituida
 
 La invención del tubo de vacío, el transistor y el chip de silicio tuvieron un impacto notable en la sociedad, y por eso muchos historiadores señalan estos acontecimientos como fronteras generacionales. Pero ninguno de ellos tuvo un efecto más profundo que la invención en 1969 del primer microprocesador, que es una unidad de procesamiento completa empaquetada en un diminuto chip de silicio. Esto fue considerado el inicio de la cuarta generación, que trajo aparejados cambios en la capacidad y la disponibilidad de las máquinas en todo el planeta.
 
-Datos (y velocidad) de la evolución
-En el siglo IX un texto budista es el primer libro impreso conocido.
-En el siglo XV aparece la imprenta de Gutenberg.
-En el siglo XVIII aparece la revolución industrial.
-A principios del siglo XX la producción industrial automatizada.
-En el siglo XIX la radio.
-En el siglo XX la TV y el cine.
+### Datos (y velocidad) de la evolución
 
-1940 a 1950: Aparecen las primeras computadoras. Con programa fijo y programa variable. En 1945 John von Neumann propone almacenar programas en forma de datos. Surge el transistor y con él la electrónica moderna.
+- En el siglo IX un texto budista es el primer libro impreso conocido.
+- En el siglo XV aparece la imprenta de Gutenberg.
+- En el siglo XVIII aparece la revolución industrial.
+- A principios del siglo XX la producción industrial automatizada.
+- En el siglo XIX la radio.
+- En el siglo XX la TV y el cine.
+
+**1940 a 1950:** Aparecen las primeras computadoras. Con programa fijo y programa variable. En 1945 John von Neumann propone almacenar programas en forma de datos. Surge el transistor y con él la electrónica moderna.
 
 1950 a 1960: Computadoras transistorizadas. Banca computarizada. Circuitos integrados. Láser. En 1959 la Unión Soviética lanza el Sputnik.
 
