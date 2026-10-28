@@ -910,8 +910,11 @@ Primera columna: Dígito hexadecimal.
 Segunda columna: Dígito binario.
 Para cada valor de columna Dígito hexadecimal, le corresponde un valor de la columna Dígito binario.
 
-0=0000
-1=0001
+<para completar>
+| Dígito hexadecimal | Dígito binario |
+| --- | --- |
+| 0 | 0000 |
+| 1 | 0001 |
 2=0010
 3=0011
 4=0100
