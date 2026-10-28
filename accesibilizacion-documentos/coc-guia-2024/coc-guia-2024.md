@@ -915,7 +915,7 @@ Para cada valor de columna Dígito hexadecimal, le corresponde un valor de la co
 | --- | --- |
 | 0 | 0000 |
 | 1 | 0001 |
-2=0010
+| 2  | 0010 |
 3=0011
 4=0100
 5=0101
