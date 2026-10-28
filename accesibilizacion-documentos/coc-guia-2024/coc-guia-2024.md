@@ -91,26 +91,25 @@ El salto conceptual de las "máquinas de calcular" a la computadora fue comprend
 ¡El verdadero desarrollo estaba en poder generalizar la utilización de “la máquina” para cualquier aplicación que se pudiera “programar” ... tal como lo había escrito Ada Lovelace 120 años antes!
 
 ## UNA PRIMERA DEFINICIÓN
-> Una Computadora es una máquina digital y sincrónica, con cierta capacidad de cálculo numérico y lógico, controlada por un programa almacenado y con posibilidad de comunicación con el mundo exterior.
+Una Computadora es una máquina digital y sincrónica, con cierta capacidad de cálculo numérico y lógico, controlada por un programa almacenado y con posibilidad de comunicación con el mundo exterior.
 
 ¿Qué significa esto?
+Es digital porque dentro de la computadora las señales eléctricas que se manejan y la información que se procesa se representa en forma discreta, por medio de dos valores (0 y 1).
 
-- Es digital porque dentro de la computadora las señales eléctricas que se manejan y la información que se procesa se representa en forma discreta, por medio de dos valores (0 y 1).
+Además, se afirma que es sincrónica, es decir que realiza las operaciones coordinada por un reloj central que envía señales de sincronismo a todos los elementos que componen la computadora. Esto significa que todas las operaciones internas se realizan en instantes de tiempo predefinidos y coordinados con el reloj.
 
-- Además, se afirma que es sincrónica, es decir que realiza las operaciones coordinada por un reloj central que envía señales de sincronismo a todos los elementos que componen la computadora. Esto significa que todas las operaciones internas se realizan en instantes de tiempo predefinidos y coordinados con el reloj.
-
-- Internamente posee una capacidad de cálculo numérico y lógico, en un subsistema denominado Unidad Aritmético-Lógica (UAL) ó en su acrónimo en idioma inglés ALU (Arithmetic & Logic Unit). Normalmente las operaciones que pueden realizarse en ella son muy simples (por ejemplo, suma, disyunción, conjunción o comparación).
+Internamente posee una capacidad de cálculo numérico y lógico, en un subsistema denominado Unidad Aritmético-Lógica (UAL) ó en su acrónimo en idioma inglés ALU (Arithmetic & Logic Unit). Normalmente las operaciones que pueden realizarse en ella son muy simples (por ejemplo, suma, disyunción, conjunción o comparación).
 
 
-- El hecho que sea controlada por programa es quizás el punto más importante que diferencia a una computadora de una calculadora. Significa que internamente se tienen órdenes o instrucciones almacenadas, que la computadora podrá obtener, interpretar y ejecutar.
+El hecho que sea controlada por programa es quizás el punto más importante que diferencia a una computadora de una calculadora. Significa que internamente se tienen órdenes o instrucciones almacenadas, que la computadora podrá obtener, interpretar y ejecutar.
 
-- Además, está comunicada con el mundo exterior. Esto significa que podrá realizar operaciones de ingreso o egreso de valores desde y hacia el mundo real, utilizando dispositivos periféricos (por ejemplo, el teclado o el mouse para entrada de información y pantalla como salida). Debe mencionarse que el mundo real es analógico y no digital.
+Además, está comunicada con el mundo exterior. Esto significa que podrá realizar operaciones de ingreso o egreso de valores desde y hacia el mundo real, utilizando dispositivos periféricos (por ejemplo, el teclado o el mouse para entrada de información y pantalla como salida). Debe mencionarse que el mundo real es analógico y no digital.
 
 La computadora es una máquina que cambia información de una forma a otra: recibe información (entrada), la transforma y proporciona información (salida). Esta información puede presentarse de muchas formas, lo que convierte a la computadora en una máquina sumamente versátil, que es capaz desde liquidar impuestos hasta guiar el recorrido de una nave espacial. En cada caso las entradas y salidas son totalmente distintas, y en esto radica lo sorprendente de poder usar una computadora para ambas actividades.
 
 Esta versatilidad está dada en que la máquina sea controlada por un programa, que establece las instrucciones que le indican a las partes físicas qué deben hacer para transformar los datos de entrada en la salida requerida. El programa controla todo el proceso, del principio al fin: podemos modificar su funcionamiento con solo cambiar el programa.
 
-**Con el advenimiento de la computadora, gran parte de la tecnología pasó del mundo analógico al digital.**
+Con el advenimiento de la computadora, gran parte de la tecnología pasó del mundo analógico al digital.
 
 ## UN POCO DE HISTORIA
 "Considera el pasado y conocerás el futuro" Proverbio Chino.
@@ -137,17 +136,17 @@ La invención del tubo de vacío, el transistor y el chip de silicio tuvieron un
 
 **1940 a 1950:** Aparecen las primeras computadoras. Con programa fijo y programa variable. En 1945 John von Neumann propone almacenar programas en forma de datos. Surge el transistor y con él la electrónica moderna.
 
-**1950 a 1960** : Computadoras transistorizadas. Banca computarizada. Circuitos integrados. Láser. En 1959 la Unión Soviética lanza el Sputnik.
+**1950 a 1960**: Computadoras transistorizadas. Banca computarizada. Circuitos integrados. Láser. En 1959 la Unión Soviética lanza el Sputnik.
 
-**1960 a 1970** : Sistemas operativos de tiempo compartido. El software como producto industrial. Lenguajes de programación. La primera red de computadoras. En 1969 el hombre llega a la Luna.
+1960 a 1970: Sistemas operativos de tiempo compartido. El software como producto industrial. Lenguajes de programación. La primera red de computadoras. En 1969 el hombre llega a la Luna.
 
-**1970 a 1980** : Aparecen los microprocesadores. Microcomputadoras. Computadoras Personales. Robots industriales controlados por computadora. Supercomputadoras. Primeros juegos para computadoras personales. Planilla de Cálculo. Interfaz gráfica. Apple. En 1979 nace el PacMan.
+1970 a 1980: Aparecen los microprocesadores. Microcomputadoras. Computadoras Personales. Robots industriales controlados por computadora. Supercomputadoras. Primeros juegos para computadoras personales. Planilla de Cálculo. Interfaz gráfica. Apple. En 1979 nace el PacMan.
 
-**1980 a 1990** : IBM presenta la primera computadora personal (PC). Surgen publicaciones electrónicas. Nace Internet. Aparecen las primeras computadoras masivamente paralelas. Aparecen los virus y los hackers.
+1980 a 1990: IBM presenta la primera computadora personal (PC). Surgen publicaciones electrónicas. Nace Internet. Aparecen las primeras computadoras masivamente paralelas. Aparecen los virus y los hackers.
 
-**1990 a 2000**: En 1990 Microsoft introduce Windows 3.0. Aparecen otros elementos como la interfaz hablada, multimedia, robots móviles, realidad virtual, videoconferencia, visión por computadora, etc.
+1990 a 2000: En 1990 Microsoft introduce Windows 3.0. Aparecen otros elementos como la interfaz hablada, multimedia, robots móviles, realidad virtual, videoconferencia, visión por computadora, etc.
 
-**2000 en adelante** : Adquiere fuerte impulso la Inteligencia Artificial. La realidad virtual cada vez es más real. La interfaz hombre-máquina sigue evolucionando Las comunicaciones por Internet dan origen a nuevos mecanismos como el comercio electrónico.
+2000 en adelante: Adquiere fuerte impulso la Inteligencia Artificial. La realidad virtual cada vez es más real. La interfaz hombre-máquina sigue evolucionando Las comunicaciones por Internet dan origen a nuevos mecanismos como el comercio electrónico.
 
 Estos datos reflejan la diferencia en la velocidad de evolución de la informática con respecto a cualquiera de las otras industrias. Notar que el avance desde el primer libro impreso a la imprenta tomó 6 siglos, mientras que desde los tubos de vacío al primer microprocesador sólo pasaron una veintena de años...
 
@@ -177,7 +176,7 @@ La informática se puede definir de diversas formas si bien todas ellas giran en
 
 - La palabra ciencia se relaciona con una metodología fundamentada y racional para el estudio y resolución de los problemas.
 
-- La resolución de problemas utilizando las herramientas informáticas puede tener aplicaciones en áreas muy diferentes tales como biología, comercio, control industrial, administración, robótica, educación, arquitectura, diseño, etc.
+La resolución de problemas utilizando las herramientas informáticas puede tener aplicaciones en áreas muy diferentes tales como biología, comercio, control industrial, administración, robótica, educación, arquitectura, diseño, etc.
 
 Los temas propios de la ciencia Informática abarcan aspectos tales como la arquitectura física y lógica de las computadoras, las metodologías de análisis y diseño de sistemas de software, los lenguajes de programación, los sistemas operativos, la inteligencia artificial, los sistemas de tiempo real, el diseño y aplicación de bases de datos, etc.
 
@@ -197,7 +196,7 @@ Por otro lado, se encuentran los usuarios de las aplicaciones, que van desde esp
 
 Recordemos la definición que dimos de computadora: 
 
-> Una **Computadora**  es una máquina digital y sincrónica, con cierta capacidad de cálculo numérico y lógico, controlada por un programa almacenado, y con posibilidad de comunicación con el mundo exterior.
+> Una Computadora es una máquina digital y sincrónica, con cierta capacidad de cálculo numérico y lógico, controlada por un programa almacenado, y con posibilidad de comunicación con el mundo exterior.
 
 La mayoría de las computadoras actuales de propósito general presentan una estructura interna basada en la arquitectura definida por John von Neumann.
 
@@ -254,9 +253,9 @@ Descripción de la imagen: En la parte superior aparece un óvalo con la palabra
 Desde la parte inferior del rectángulo “Ejecutar Instrucción” sale una línea que se dirige hacia el lateral izquierdo y asciende hasta conectarse nuevamente con la etapa de “Buscar Instrucción”. Fin de descripción, vuelta al texto.
 
 Esto representa una secuencia infinita de pasos:
-- Buscar la próxima instrucción a ejecutar en la memoria de instrucciones Mi
-- Interpretar qué hacer en la Unidad de Control (UC).
-- Ejecutar las operaciones interpretadas por UC, utilizando la UAL de ser necesario. Estas operaciones pueden comprender lectura/escritura de la memoria de datos Md o entrada/salida por los periféricos Pe o Ps.
+Buscar la próxima instrucción a ejecutar en la memoria de instrucciones Mi
+Interpretar qué hacer en la Unidad de Control (UC).
+Ejecutar las operaciones interpretadas por UC, utilizando la UAL de ser necesario. Estas operaciones pueden comprender lectura/escritura de la memoria de datos Md o entrada/salida por los periféricos Pe o Ps.
 
 En capítulos posteriores trataremos más en detalle sobre la estructura interna y el funcionamiento de las computadoras. Para finalizar, damos algunos conceptos:
 El hardware se refiere a las componentes físicas de la computadora.
@@ -271,24 +270,24 @@ La Unidad Central de Procesamiento (UCP) o en su acrónimo en inglés CPU, es la
 ## NOCIONES BÁSICAS DE COMUNICACIONES.
 En los principios del siglo XIX, los tiempos de las comunicaciones eran directamente proporcionales a los tiempos del movimiento humano. Una noticia de Europa podía tardar meses en llegar a las colonias sudamericanas; un hecho trascendental como la declaración de la independencia en Tucumán en 1816 viajó "en diligencia" para ser conocido en Buenos Aires varios días después; la imagen del general mirando desde un cerro la evolución de una gran batalla y enviando y recibiendo mensajeros a caballo desde el frente de batalla sólo se mejoraba levemente con el empleo de palomas mensajeras...
 
-- En 1844 Morse inventó el telégrafo y en 1876 Bell el teléfono. Con ellos nació el concepto de **telecomunicaciones** , es decir comunicación a distancia en forma prácticamente inmediata.
+En 1844 Morse inventó el telégrafo y en 1876 Bell el teléfono. Con ellos nació el concepto de telecomunicaciones, es decir comunicación a distancia en forma prácticamente inmediata.
 
-- La evolución de la tecnología de las comunicaciones en los siguientes 100 años y hasta nuestros días, combinada con el desarrollo explosivo de la electrónica y la informática, pasaron a ser el **eje fundamental del mundo de hoy.** 
+La evolución de la tecnología de las comunicaciones en los siguientes 100 años y hasta nuestros días, combinada con el desarrollo explosivo de la electrónica y la informática, pasaron a ser el eje fundamental del mundo de hoy.
 
-- Desde el punto de vista de la transmisión de información, la tecnología permite hoy que **la distancia física prácticamente no exista I** : Podemos ubicarnos virtualmente en otro lugar del mundo, observar un museo de Europa, leer un texto que se está escribiendo en Estados Unidos, recibir el mismo diario que un ciudadano de Rusia o tener 1000 millones de personas pendientes del partido inaugural de un mundial de fútbol... que se juega en China (y sería lo mismo si se jugara en la Luna).
+Desde el punto de vista de la transmisión de información, la tecnología permite hoy que la distancia física prácticamente no exista I: Podemos ubicarnos virtualmente en otro lugar del mundo, observar un museo de Europa, leer un texto que se está escribiendo en Estados Unidos, recibir el mismo diario que un ciudadano de Rusia o tener 1000 millones de personas pendientes del partido inaugural de un mundial de fútbol... que se juega en China (y sería lo mismo si se jugara en la Luna).
 
 Esta evolución de la tecnología de comunicaciones es muy importante para nuestra vida y para nuestras posibilidades laborales: cualquier ámbito de trabajo informático hoy tiene comunicaciones, redes, computadoras remotas que se consultan y utilizan... y todo esto nos obliga a estudiar como un componente esencial de la disciplina informática, algunos aspectos de las comunicaciones.
 
-- En principio debemos definir el medio de comunicación es decir sobre que soporte se transmiten los bits (en principio sólo hablaremos de comunicaciones digitales) que llevan la información. Este medio puede ser un cable telefónico, un cable coaxil, una fibra óptica o el aire.
+En principio debemos definir el medio de comunicación es decir sobre que soporte se transmiten los bits (en principio sólo hablaremos de comunicaciones digitales) que llevan la información. Este medio puede ser un cable telefónico, un cable coaxil, una fibra óptica o el aire.
 
 
-- En general las transmisiones sobre cables requieren enviar señales eléctricas entre un transmisor y un receptor en los extremos del cable, y normalmente se trata de un medio de bajo costo y muy adecuado para distancias relativamente cortas. Por ejemplo, un cable telefónico permite manejar velocidades típicas de 100.000 bits por segundo y un cable coaxil de red puede tener 100 millones de bits por segundo.
+En general las transmisiones sobre cables requieren enviar señales eléctricas entre un transmisor y un receptor en los extremos del cable, y normalmente se trata de un medio de bajo costo y muy adecuado para distancias relativamente cortas. Por ejemplo, un cable telefónico permite manejar velocidades típicas de 100.000 bits por segundo y un cable coaxil de red puede tener 100 millones de bits por segundo.
 
-- Pasar de los cables con señales eléctricas a la fibra óptica ha sido un salto tecnológico muy importante (aunque a un costo mayor). Sucede que la fibra óptica trasmite señales de luz, a una velocidad mucho mayor y con mucha menos posibilidad de interferencia que un cable convencional. Trabajar con comunicaciones en el orden de 1000 millones de bits por segundo, con alta inmunidad al ruido, es típico de la fibra óptica hoy (notar que todos los enlaces telefónicos importantes han reemplazado el cableado convencional por la fibra óptica).
+Pasar de los cables con señales eléctricas a la fibra óptica ha sido un salto tecnológico muy importante (aunque a un costo mayor). Sucede que la fibra óptica trasmite señales de luz, a una velocidad mucho mayor y con mucha menos posibilidad de interferencia que un cable convencional. Trabajar con comunicaciones en el orden de 1000 millones de bits por segundo, con alta inmunidad al ruido, es típico de la fibra óptica hoy (notar que todos los enlaces telefónicos importantes han reemplazado el cableado convencional por la fibra óptica).
 
-- La señal también se puede transmitir por el aire. En este caso el transmisor y el receptor tienen otras características (más complejas) y de ese modo recibimos, por ejemplo, las señales de radio o de televisión por aire. También podemos tener estaciones repetidoras en tierra o en un satélite, de modo de comunicar puntos muy distantes que no serían alcanzables por una señal de radio directa. Las comunicaciones satelitales se imponen cuando la distancia crece.
+La señal también se puede transmitir por el aire. En este caso el transmisor y el receptor tienen otras características (más complejas) y de ese modo recibimos, por ejemplo, las señales de radio o de televisión por aire. También podemos tener estaciones repetidoras en tierra o en un satélite, de modo de comunicar puntos muy distantes que no serían alcanzables por una señal de radio directa. Las comunicaciones satelitales se imponen cuando la distancia crece.
 
-En este punto podemos preguntarnos **¿Qué sentido puede tener comunicar computadoras?** La respuesta resulta inmediata: poder comunicarlas significa poder utilizar sus recursos a distancia.
+En este punto podemos preguntarnos ¿Qué sentido puede tener comunicar computadoras? La respuesta resulta inmediata: poder comunicarlas significa poder utilizar sus recursos a distancia.
 
 De repente la computadora que está en la mejor Universidad de Estados Unidos es "alcanzable" y utilizable desde nuestra modesta PC del Laboratorio de Microcómputo de la Facultad. Al mismo tiempo los "usuarios" distantes pueden comunicarse, cooperar y compartir recursos y trabajo, empleando sus computadoras conectadas.
 
@@ -796,7 +795,7 @@ N°=⋯+x4B4+x3B3+x2B2+x1B1+x0B0+x-1B-1+x-2B-2+⋯
 <para corregir: diagrama>
 
 ##  Sistemas Decimal, Binario y Hexadecimal.
-El sistema que ha usado el hombre para contar desde hace bastante tiempo es el denominado sistema decimal, adoptado por contar con los diez dedos de la mano. El sistema decimal es uno de los denominados posicionales, que utiliza un conjunto de 10 símbolos, xi  {0,...9}. Un valor determinado o cantidad, que se denomina número decimal, se puede expresar por la fórmula del Teorema anterior, donde la Base es 10.
+El sistema que ha usado el hombre para contar desde hace bastante tiempo es el denominado **sistema decimal**, adoptado por contar con los diez dedos de la mano. El sistema decimal es uno de los denominados posicionales, que utiliza un conjunto de 10 símbolos, xi  {0,...9}. Un valor determinado o cantidad, que se denomina número decimal, se puede expresar por la fórmula del Teorema anterior, donde la Base es 10.
 
 Ejemplo. ¿Cuál es la interpretación de la representación de la cantidad 3,1416?
 <para corregir: diagrama>
@@ -916,7 +915,7 @@ Para cada valor de columna Dígito hexadecimal, le corresponde un valor de la co
 | --- | --- |
 | 0 | 0000 |
 | 1 | 0001 |
-| 2  | 0010 |
+2=0010
 3=0011
 4=0100
 5=0101
@@ -981,10 +980,10 @@ Para el caso de n = 8 bits, el rango de representación va desde -127 a 127.
 
 La ventaja que presenta este sistema frente a otros es la de poseer rango simétrico (igual cantidad de números positivos que negativos), mientras que su mayor inconveniente es el de poseer dos representaciones para el número 0. El cual se representa tanto con todos 0 come con todos los bits en uno.
 
-Complemento a 2.
+### Complemento a 2.
 Este sistema de representación utiliza el bit de más a la izquierda para el signo, correspondiendo el 0 para el signo + y el 1 para el signo -. Para los números positivos, los n -1 bits de la derecha representan el módulo (igual que en los dos sistemas anteriores). El negativo de un número se obtiene en dos pasos:
-Primer paso: se complementa el número en todos sus bits (cambiando ceros por une y viceversa), incluido el bit de signo, similar a complemento a 1.
-Segundo paso: al resultado obtenido en el paso anterior se le suma 1 (en binario), despreciando el acarreo del bit más significativo si existiera.
+-Primer paso: se complementa el número en todos sus bits (cambiando ceros por une y viceversa), incluido el bit de signo, similar a complemento a 1.
+-Segundo paso: al resultado obtenido en el paso anterior se le suma 1 (en binario), despreciando el acarreo del bit más significativo si existiera.
 
 Veamos la representación en complemento a 2 de los números 10 y-10 para el caso de n = 8 bits.
 
@@ -997,7 +996,7 @@ Para el caso de n = 8 bits, el rango de representación va desde -128 a 127.
 La principal ventaja es la de tener una única representación para el número 0, ya que el 0 positivo o negativo se representan igual.
 
 
-Exceso a 2n-1.
+### Exceso a 2n-1.
 
 Este método de representación no utiliza la convención del bit mas significativo para identificar el signo, con lo cual todos los bits representan un número o valor. Este valor binario se corresponde con el número representado más el valor del exceso. En el caso propuesto de n bits, el exceso viene dado por 2n-1. El signo del número resulta de una operación aritmética.
 
@@ -1010,7 +1009,7 @@ El rango de representación en exceso a 2n-1 es asimétrico y viene dado por:
 -2n-1≤X≤2n-1-1
 Resulta interesante observar que todo número representado en exceso a 2n 1 tiene la misma representación que un complemento a 2 con el bit que define el signo cambiado de valor. Puede inferirse entonces, que el bit mas significativo representaría el signo de valor opuesto (el 0 un valor y el 1 un valor'+'). 
 
-Suma en complemento a 2.
+### Suma en complemento a 2.
 
 En la aritmética de complemento a 2, dos números se suman de igual forma que en la suma binaria de página 51, con la única diferencia que se desprecia el acarreo del bit más significativo en el caso que el mismo exista.
 
@@ -1036,15 +1035,15 @@ y teniendo en cuenta que el acarreo del bit más significativa se desprecia, el 
 Ejemplo 2. Sumar los números decimales 110 y 30 representados en complemento a 2 utilizando n = 8 bits es:
 El resultado de 8 bits obtenido 100011002 interpretado como valor en Ca2 es negativo y representa el número -116iOque es erróneo.
 
-Flags.
+### Flags.
 En la UCP, existen bits llamados banderas o flags que luego de realizar una operación, cambiarán acorde al resultado de dicha operación. El estado de estos bits podrán ser consultados por el programador utilizando instrucciones especiales; la importancia de estos bits reside en que de acuerdo a su valor (1 ó 0), permitirán la toma de decisiones.
 Se presentan aquí 4 banderas, que son determinadas luego de realizar una operación de suma ó una resta y por eso las llamaremos banderas aritméticas. Otras operaciones pueden no afectarlas, como así también debemos mencionar que existen otras banderas que se modificarán en respuesta a otras operaciones.
 
 Estas banderas aritméticas son:
-Z (cero): esta bandera toma el valor 1 indicando que el resultado de la operación fue cero. Para cualquier otro resultado el valor de esta bandera es cero.
-N (negativo): esta bandera toma el valor del bit más significativo del resultado. Dicho de otra manera si la bandera vale 1 es porque el resultado es negativo, y 0 si el resultado es positivo.
-C (carry): esta bandera toma el valor 1 indicando que hay 'acarreo' en la suma ó 'borrow' en la resta. Cuando esta bandera toma el valor 1 indica una condición de fuera de rango en números sin signo.
-V (overflow): esta bandera vale 1, indicando una condición de desborde (fuera de rango) del resultado en números con signo (complemento a 2). Por condición de desborde se entiende que la cantidad de bits no alcanza para expresar el resultado.
+-**Z** (cero): esta bandera toma el valor 1 indicando que el resultado de la operación fue cero. Para cualquier otro resultado el valor de esta bandera es cero.
+-**N** (negativo): esta bandera toma el valor del bit más significativo del resultado. Dicho de otra manera si la bandera vale 1 es porque el resultado es negativo, y 0 si el resultado es positivo.
+-**C** (carry): esta bandera toma el valor 1 indicando que hay 'acarreo' en la suma ó 'borrow' en la resta. Cuando esta bandera toma el valor 1 indica una condición de fuera de rango en números sin signo.
+-**V** (overflow): esta bandera vale 1, indicando una condición de desborde (fuera de rango) del resultado en números con signo (complemento a 2). Por condición de desborde se entiende que la cantidad de bits no alcanza para expresar el resultado.
 
 Veamos algunos ejemplos, por simplicidad tomemos números de 4 bits:
 
@@ -1369,16 +1368,16 @@ Los circuitos combinacionales implementan las funciones esenciales de una comput
 
 # CAPÍTULO 4 PERIFÉRICOS
 
-Se denominan periféricos tanto a las unidades o dispositivos a través de los cuales el computador se comunica con el mundo exterior, como a los sistemas que almacenan o archivan la información, sirviendo de memoria auxiliar de la memoria principal.
+Se denominan **periféricos** tanto a las unidades o dispositivos a través de los cuales el computador se comunica con el mundo exterior, como a los sistemas que almacenan o archivan la información, sirviendo de memoria auxiliar de la memoria principal.
 
 La memoria masiva o auxiliar trata de suplir las deficiencias de la memoria principal. Estas son, su relativa baja capacidad y el hecho de que la información almacenada se borra al eliminar la alimentación de energía eléctrica (al desconectarla). En efecto, los dispositivos de memoria masiva auxiliar (hoy día principalmente discos y cintas magnéticas) son mucho más capaces (del orden de 10000 veces o más) que la memoria principal, y en ellos se puede grabar la información durante mucho tiempo.
 
 Según la definición de periférico dada anteriormente, éstos están constituidos por unidades de entrada, unidades de salida y unidades de memoria masiva auxiliar. Estas últimas unidades también pueden considerarse como unidades de E/S, ya que el computador central puede escribir (dar salidas) sobre ellas, y la información escrita puede ser leída, es decir, ser dada como entrada. Ahora bien, la información grabada en estos soportes no es directamente inteligible para el usuario de la computadora, esto es, no puede haber una intercomunicación directa usuario-computador como la que hay a través de un teclado/pantalla.
 
 El computador es una máquina que no tendría sentido si no se pudiera comunicar con el exterior, es decir, si careciera de periféricos. Por lo que debe disponer de:
-Unidad(es) de entrada, a través de la(s) cual(es) poderle dar los programas que queramos que ejecute y los datos correspondientes.
-Unidad(es) de salida, con la(s) que la computadora nos da los resultados de los programas.
-Unidades de Almacenamiento masivo o memoria auxiliar, que facilite su funcionamiento y utilización.
+-Unidad(es) de entrada, a través de la(s) cual(es) poderle dar los programas que queramos que ejecute y los datos correspondientes.
+-Unidad(es) de salida, con la(s) que la computadora nos da los resultados de los programas.
+-Unidades de Almacenamiento masivo o memoria auxiliar, que facilite su funcionamiento y utilización.
 
 Los dispositivos de E/S transforman la información externa en señales codificadas, permitiendo su transmisión, detección, interpretación, procesamiento y almacenamiento de forma automática. Los dispositivos de Entrada transforman la información externa (instrucciones o datos tecleados) según alguno de los códigos de entrada/salida (E/S). Así el computador recibe dicha información adecuadamente preparada (en binario). En un dispositivo de Salida se efectúa el proceso inverso: la información binaria que llega del computador se transforma de acuerdo con el código de E/S en caracteres escritos inteligibles por el usuario.
 
@@ -1389,8 +1388,8 @@ Tampoco hay que confundir periférico con soporte de información. Por soporte d
 
 
 Ejemplos:
-Los disquetes son soporte de información, mientras que la unidad lectora o disquetera, es unidad periférica.
-El papel de impresora es soporte de información y la impresora unidad periférica.
+-Los disquetes son soporte de información, mientras que la unidad lectora o disquetera, es unidad periférica.
+-El papel de impresora es soporte de información y la impresora unidad periférica.
 
 ## Conexión de periféricos al computador
 Las unidades funcionales del computador (memoria, UCP, Entrada/Salida), así como éstas con los periféricos, se comunican por conjuntos o grupos de hilos denominados canales o buses de comunicación.
@@ -1406,19 +1405,19 @@ Existe una gran diversidad de periféricos con distintas características eléct
 
 Más concretamente, las interfaces cubren básicamente los siguientes tres objetivos:
 
-Conversión de datos: Adaptan la representación de datos del bus del sistema a la representación de datos del periférico. Si el periférico, por ejemplo, es de tipo serie la interfase realiza la conversión de paralelo a serie (si es un dispositivo de salida) o de serie a paralelo (si es un dispositivo de entrada).
+-**Conversión de datos**: Adaptan la representación de datos del bus del sistema a la representación de datos del periférico. Si el periférico, por ejemplo, es de tipo serie la interfase realiza la conversión de paralelo a serie (si es un dispositivo de salida) o de serie a paralelo (si es un dispositivo de entrada).
 
-Sincronización: La velocidad operativa del computador central suele ser mucho mayor que la de los periféricos. La interfase regula el tráfico de información para que no se den problemas de desincronización o pérdidas de información. Los periféricos (o las interfaces) incluyen una memoria intermedia o "buffer", efectuándose el tráfico de datos entre el periférico y el bus a través de ella. La interfaz suele actuar con unas señales de control y estado que intercambia con la CPU indicando situaciones tales como que está preparada o lista para recibir o transmitir, que ha reconocido la llegada de unos datos, que desea ser atendida por la CPU, etc.
+-**Sincronización**: La velocidad operativa del computador central suele ser mucho mayor que la de los periféricos. La interfase regula el tráfico de información para que no se den problemas de desincronización o pérdidas de información. Los periféricos (o las interfaces) incluyen una memoria intermedia o "buffer", efectuándose el tráfico de datos entre el periférico y el bus a través de ella. La interfaz suele actuar con unas señales de control y estado que intercambia con la CPU indicando situaciones tales como que está preparada o lista para recibir o transmitir, que ha reconocido la llegada de unos datos, que desea ser atendida por la CPU, etc.
 
-Selección de dispositivos: Las interfaces se encargan de identificar la dirección del periférico que debe intervenir en tráfico de datos. Todos los periféricos están conectados físicamente al bus del sistema, pero en una transmisión concreta, por lo general, solamente uno de ellos debe estar conectado lógicamente al bus de datos, para transmitir a través de él.
+-**Selección de dispositivos**: Las interfaces se encargan de identificar la dirección del periférico que debe intervenir en tráfico de datos. Todos los periféricos están conectados físicamente al bus del sistema, pero en una transmisión concreta, por lo general, solamente uno de ellos debe estar conectado lógicamente al bus de datos, para transmitir a través de él.
 
 
 
 El concepto de los circuitos o placas de interfaz entre los periféricos y la CPU y memoria del computador tiene ventajas importantes:
-Independizar a los fabricantes de periféricos y placas controladoras de los fabricantes de procesadores y mainboards: basta con acordar como serán las señales sobre los canales de comunicación.
-Establecer normas generales para la comunicación entre cualquier clase de periférico y los procesadores (paralelo, serie RS232, IEEE 422, etc.) de modo que sean "conectables" a cualquier procesador.
+-Independizar a los fabricantes de periféricos y placas controladoras de los fabricantes de procesadores y mainboards: basta con acordar como serán las señales sobre los canales de comunicación.
+-Establecer normas generales para la comunicación entre cualquier clase de periférico y los procesadores (paralelo, serie RS232, IEEE 422, etc.) de modo que sean "conectables" a cualquier procesador.
 
-Es interesante notar que estas placas de interfaz tienen muchas veces su propio procesador, su propia memoria y su programa de control ("driver") que les permite manejar una variedad de periféricos similares con prestaciones adaptables a lo que quiere el usuario (por ejemplo una placa controladora de video puede servir para muy variados monitores).
+>Es interesante notar que estas placas de interfaz tienen muchas veces su propio procesador, su propia memoria y su programa de control ("driver") que les permite manejar una variedad de periféricos similares con prestaciones adaptables a lo que quiere el usuario (por ejemplo una placa controladora de video puede servir para muy variados monitores).
 
 ## Características generales de los periféricos.
 Cada periférico suele estar formado por dos partes claramente diferenciadas en cuanto a su misión y funcionamiento: una parte mecánica y otra electrónica.
@@ -1435,52 +1434,50 @@ Ciertos periféricos tienen la posibilidad de hacer en forma autónoma determina
 Cuando un periférico actúa sin intervención del computador central se dice que trabaja fuera de línea ("off line") y cuando actúa bajo el control de la computadora central se dice que funciona en línea ("on line").
 
 Además de éstas, otras características de los periféricos y de los soportes de información son:
-Fiabilidad: Es la probabilidad de que se produzca un error en la entrada/salida y depende de la naturaleza del soporte (hay soportes mucho menos fiables que otros), de las condiciones ambientales en que se conserva el soporte, o de las características de la unidad.
 
-Duración: Es la permanencia sin alteración de los datos a lo largo del tiempo. Algunos soportes van perdiendo la señal escrita a lo largo del tiempo y acaban perdiendo los datos por volverse obsoleto el soporte físico.
+- **Fiabilidad**: Es la probabilidad de que se produzca un error en la entrada/salida y depende de la naturaleza del soporte (hay soportes mucho menos fiables que otros), de las condiciones ambientales en que se conserva el soporte, o de las características de la unidad.
 
-Densidad: Se refiere a la cantidad de datos (bits o caracteres) contenidos por unidad de volumen, superficie o longitud ocupada.
+- **Duración**: Es la permanencia sin alteración de los datos a lo largo del tiempo. Algunos soportes van perdiendo la señal escrita a lo largo del tiempo y acaban perdiendo los datos por volverse obsoleto el soporte físico.
 
-Reutilización: Un soporte de información se dice reutilizable cuando nos permite guardar nueva información sobre datos que ya resultan obsoletos. Con este problema se han enfrentado los fabricantes de discos ópticos (CD-ROM), los cuales hasta hace poco tiempo no han sido susceptibles de ser reutilizables.
+- **Densidad**: Se refiere a la cantidad de datos (bits o caracteres) contenidos por unidad de volumen, superficie o longitud ocupada.
 
+- **Reutilización**: Un soporte de información se dice reutilizable cuando nos permite guardar nueva información sobre datos que ya resultan obsoletos. Con este problema se han enfrentado los fabricantes de discos ópticos (CD-ROM), los cuales hasta hace poco tiempo no han sido susceptibles de ser reutilizables.
 
+- **Tipo de acceso**: Característica vinculada al dispositivo lector/grabador. Se dice que un dispositivo es de acceso secuencial si para acceder a un dato determinado debemos acceder primero a todos los que le preceden físicamente (Ejemplo: las cintas magnéticas). Se dice, en cambio, que un dispositivo permite el acceso directo si podemos acceder a un dato sin necesidad de pasar por los datos que le preceden (Ejemplo: disco magnético).
 
-Tipo de acceso: Característica vinculada al dispositivo lector/grabador. Se dice que un dispositivo es de acceso secuencial si para acceder a un dato determinado debemos acceder primero a todos los que le preceden físicamente (Ejemplo: las cintas magnéticas). Se dice, en cambio, que un dispositivo permite el acceso directo si podemos acceder a un dato sin necesidad de pasar por los datos que le preceden (Ejemplo: disco magnético).
+- **Tiempo de acceso**: Es el tiempo promedio que necesita un dispositivo de almacenamiento secundario para leer/grabar un dato en su soporte de información.
 
-Tiempo de acceso: Es el tiempo promedio que necesita un dispositivo de almacenamiento secundario para leer/grabar un dato en su soporte de información.
+- **Velocidad de transferencia**: Refiriéndose a los dispositivos de almacenamiento secundario, es la cantidad de información que el dispositivo es capaz de leer/grabar por unidad de tiempo. Ejemplo: bits/s, caracteres/s.
 
-Velocidad de transferencia: Refiriéndose a los dispositivos de almacenamiento secundario, es la cantidad de información que el dispositivo es capaz de leer/grabar por unidad de tiempo. Ejemplo: bits/s, caracteres/s.
+- **Transportabilidad**: Decimos que un soporte de información es transportable si es susceptible de ser trasladado de una unidad periférica a otra. Ejemplo: el disquete puede ser utilizado en distintas disqueteras de su mismo formato. Por el contrario hay soportes de información fijos, que no pueden extraerse de la unidad correspondiente. (Ejemplo: disco rígido).
 
-Transportabilidad: Decimos que un soporte de información es transportable si es susceptible de ser trasladado de una unidad periférica a otra. Ejemplo: el disquete puede ser utilizado en distintas disqueteras de su mismo formato. Por el contrario hay soportes de información fijos, que no pueden extraerse de la unidad correspondiente. (Ejemplo: disco rígido).
-
-Ergonomía: Un periférico se dice que es ergonómico cuando su diseño físico externo se adapta al usuario, obteniéndose una buena integración hombre-máquina y una adecuada eficiencia en su utilización haciéndose cómodo su uso al hombre. Los equipos que llevan la homologación alemana GS son ergonómicos, esta homologación no sólo se aplica a los computadores, sino a cualquier producto, como por ejemplo ollas a presión y cochecitos de bebe.
+- **Ergonomía**: Un periférico se dice que es ergonómico cuando su diseño físico externo se adapta al usuario, obteniéndose una buena integración hombre-máquina y una adecuada eficiencia en su utilización haciéndose cómodo su uso al hombre. Los equipos que llevan la homologación alemana GS son ergonómicos, esta homologación no sólo se aplica a los computadores, sino a cualquier producto, como por ejemplo ollas a presión y cochecitos de bebe.
 
 ## Clasificación de los periféricos
 
 Los periféricos se pueden dividir en las siguientes categorías:
 
-Unidades de entrada.
+- **Unidades de entrada**.
 Por ejemplo: Teclado, Ratón, Lápiz óptico, "Scanner", etc..
 
-Unidades de salida.
+- **Unidades de salida**.
 Por ejemplo: Monitor, Impresora, "Plotter", etc.
 
-Unidades de almacenamiento masivo.
+- **Unidades de almacenamiento masivo**.
 Por ejemplo: Cinta magnética, Disco magnético, CD-ROM, DVD.
 
-Unidades de E/S mixtas.
+- **Unidades de E/S mixtas**.
 Por ejemplo: Terminal interactivo, Modem.
 
 No necesariamente las distintas unidades están físicamente individualizadas en módulos independientes, pudiendo, por ejemplo, estar montadas una unidad de entrada y una unidad de salida conjuntamente. Así un terminal interactivo suele estar constituido por un teclado (unidad de entrada) acoplado solidariamente a una pantalla (unidad de salida). A veces se dice que estas unidades son de tipo mixto. Incluso hay dispositivos de entrada que únicamente tienen sentido actuando conjuntamente con un dispositivo de salida (Ejemplo: lápiz óptico).
 
 Las unidades de memoria masiva también pueden considerarse como unidades de E/S mixtas. Por ejemplo, una unidad de cinta magnética, cuando lee información de una cinta, actúa como dispositivo de entrada y cuando escribe (o graba) información procedente de la computadora, actúa como unidad de salida.
 
-
-
 Existe otra clasificación de los periféricos del computador según a qué distancia de éste se encuentren. Según esto encontraremos:
-Locales: Se encuentran cerca del computador.
 
-Remotos: Si debido a su situación lejana la conexión hay que realizarla a través de líneas especiales de transmisión.
+- Locales: Se encuentran cerca del computador.
+
+- Remotos: Si debido a su situación lejana la conexión hay que realizarla a través de líneas especiales de transmisión.
 
 ## PERIFÉRICOS DE ENTRADA DE DATOS
 En la "prehistoria" de la computación el usuario podía tener que cargar directamente los bits en la memoria del procesador!!! Esto significaba manejar manualmente llaves externas que se ponían en ON u OFF para indicar "1" o "0".
@@ -1494,94 +1491,103 @@ Al pulsar una tecla se cierra un conmutador que hay en el interior del teclado, 
 
 Los teclados contienen los siguientes tipos de teclas:
 
-Teclado principal: Contiene los caracteres alfabéticos, numéricos y especiales, como en una máquina de escribir convencional con alguno adicional. Hay teclados que también incluyen aquí caracteres gráficos
+- **Teclado principal**: Contiene los caracteres alfabéticos, numéricos y especiales, como en una máquina de escribir convencional con alguno adicional. Hay teclados que también incluyen aquí caracteres gráficos
 
-Teclas de desplazamiento del cursor: Permiten desplazar el cursor a izquierda, derecha, arriba y abajo, borrar un carácter o parte de una línea.
+- **Teclas de desplazamiento del cursor**: Permiten desplazar el cursor a izquierda, derecha, arriba y abajo, borrar un carácter o parte de una línea.
 
-Teclado numérico: Es habitual en los teclados de computadora que las teclas correspondientes a los caracteres numéricos (cifras decimales), signos de operaciones básicas (+, -, ...) y punto decimal estén repetidas para facilitar al usuario la introducción de datos numéricos.
+- **Teclado numérico**: Es habitual en los teclados de computadora que las teclas correspondientes a los caracteres numéricos (cifras decimales), signos de operaciones básicas (+, -, ...) y punto decimal estén repetidas para facilitar al usuario la introducción de datos numéricos.
 
-Teclas de funciones: Son teclas cuyas funciones son definibles por el usuario o están predefinidas en un programa.
-Teclas de funciones locales: Controlan funciones propias del terminal, como impresión del contenido de imagen cuando el computador esta conectada a una impresora.
+- **Teclas de funciones**: Son teclas cuyas funciones son definibles por el usuario o están predefinidas en un programa.
+
+- **Teclas de funciones locales**: Controlan funciones propias del terminal, como impresión del contenido de imagen cuando el computador esta conectada a una impresora.
 
 En algunos teclados la transmisión no se efectúa pulsación a pulsación sino que se dispone de un buffer y la transmisión se efectúa a la vez para todo un conjunto de mensajes completos cuando el usuario pulsa una tecla especial destinada a activar dicha transmisión. Esta tecla recibe distintos nombres como Return, Enter, Transmit, Intro, Retorno de carro.
 
 Entre las posibles características técnicas a contemplar a la hora de evaluar la mejor o peor adaptabilidad de un teclado a nuestras necesidades, podemos citar el número de caracteres y símbolos básicos, sensibilidad a la pulsación, tipo de contactos de las teclas (membrana o mecánico), peso, tamaño, transportabilidad. Actualmente se comercializan teclados ergonómicos, con una disposición algo original, aunque se han difundido poco, y hay discusiones sobre si es cierta la ergonomía que propugnan.
 
-
-
 Para aplicaciones industriales existen teclados totalmente sellados que soportan ambientes agresivos, como por ejemplo aire, agua y atmósferas de vapores.
 
-Ratón o mouse.
+## *Ratón o mouse*.
 
 El ratón o mouse es un pequeño periférico que está constituido por una bola que puede girar libremente, y se acciona haciéndola rodar sobre una superficie plana.
 
 Un ratón es un dispositivo pensado para apuntar y luego realizar dos operaciones:
 
-Clic: es la operación que teniendo el ratón quieto permite elegir un objeto o una acción que previamente se ha apuntado en la pantalla.
+- **Clic**: es la operación que teniendo el ratón quieto permite elegir un objeto o una acción que previamente se ha apuntado en la pantalla.
 
-Arrastrar: el objeto seleccionado puede ser arrastrado (por ejemplo un pincel en una interfaz gráfica para pintar una zona de la pantalla) o utilizado para marcar una zona (por ejemplo una parte de un texto) para luego tomar una acción específica.
+- **Arrastrar**: el objeto seleccionado puede ser arrastrado (por ejemplo un pincel en una interfaz gráfica para pintar una zona de la pantalla) o utilizado para marcar una zona (por ejemplo una parte de un texto) para luego tomar una acción específica.
 
 En el momento de activar el mouse, se asocia su posición con la del cursor en la pantalla. Si desplazamos sobre una superficie el mouse, el cursor seguirá dichos movimientos. Es muy empleado en aplicaciones dirigidas por menús o entornos gráficos, como por ejemplo Windows ya que con un pulsador adicional en cualquier instante se pueden obtener en programa las coordenadas (x,y) donde se encuentra el cursor en la pantalla, seleccionando de esta forma una de las opciones de un menú.
 Un ratón o mouse tiene variantes tales como los trackballs de las computadoras portables, las palancas de los joysticks, las tabletas sensibles al tacto, e incluso la pantalla sensible al tacto. En todos los casos las acciones a realizar son las mismas que hemos indicado anteriormente (clic y arrastre) y siempre se aprovecha la visualización directa de la posición del objeto o menú a tratar en la pantalla.
-Otros dispositivos
 
-Lápiz óptico.
+## Otros dispositivos
+
+### Lápiz óptico.
 Físicamente tiene la forma de una pluma o lápiz grueso, de uno de cuyos extremos sale un cable para unirlo a un monitor. El lápiz contiene un pulsador, transmitiéndose información hacia el monitor sólo en el caso de estar presionado. Al activar el lápiz óptico frente a un punto de la pantalla se obtienen las coordenadas del lugar donde apuntaba el lápiz.
 
-Lector de marcas.
+### Lector de marcas.
 Hay ciertos documentos o productos que se utilizan en la vida ordinaria en gran cantidad y que pueden ser controlados por computadora, introduciendo con gran rapidez y sin error sus características sin necesidad de teclear el código o información que los identifica. Esto es así porque en su superficie llevan impresos caracteres, barras o marcas predefinidas, que pueden ser detectados por dispositivos especiales.
 
 Ejemplos de estos productos y documentos: talones o cheques bancarios, productos farmacéuticos, artículos de supermercados (que utilizan códigos de barras), quinielas, exámenes tipo test, etc.
 
 En la mayoría de los sistemas existe un conjunto de caracteres o patrones predefinidos.
 
-
-
 Las lectoras, analizan los datos carácter a carácter y detectan si cada zona de identificación está impresa o no. A cada carácter, se le hace corresponder una secuencia ordenada de ceros y unos. El dispositivo de entrada compara esta secuencia con la de los patrones (que tienen grabados internamente).
 
 Los lectores ópticos suelen contener una fuente de luz que ilumina intensamente el dato a leer, un sistema óptico de ampliación de imagen y los elementos necesarios para identificar el carácter.
 
 La presentación del documento frente a la unidad de detección óptica se hace siguiendo uno de los tres sistemas que indicamos a continuación:
-El primero consiste en que los documentos a leer se ubican en un depósito de alimentación y por un sistema de arrastre son llevados uno a uno frente al elemento de lectura.
-El segundo consiste en introducir y sacar manualmente los documentos de la unidad de detección.
-El tercero consiste en pasar el sistema detector (que tiene forma de lápiz o pistola) frente a la zona de la etiqueta o documento donde se encuentran los caracteres a leer.
 
-Lector de caracteres magnéticos.
+- El primero consiste en que los documentos a leer se ubican en un depósito de alimentación y por un sistema de arrastre son llevados uno a uno frente al elemento de lectura.
+
+- El segundo consiste en introducir y sacar manualmente los documentos de la unidad de detección.
+
+- El tercero consiste en pasar el sistema detector (que tiene forma de lápiz o pistola) frente a la zona de la etiqueta o documento donde se encuentran los caracteres a leer.
+
+### Lector de caracteres magnéticos.
 
 Los caracteres magnéticos se utilizan en los cheques bancarios, y en las etiquetas de algunos medicamentos en algunos países. En estos documentos se imprimen, de acuerdo con unos patrones, los caracteres que identifican el cheque o talón. La tinta utilizada es magnetizable (contiene óxido de hierro) y además es legible directamente por el hombre. La impresión se hace con una máquina auxiliar denominada inscriptora electrónica.
 
 Este dispositivo ofrece una serie de ventajas como:
-Permitir la captación directa de datos.
-Los documentos no necesitan cuidados especiales, se pueden doblar, escribir encima con tinta no magnética.
-Se consiguen velocidades de lectura muy apreciables.
-Los caracteres usados son legibles.
+
+- Permitir la captación directa de datos.
+
+- Los documentos no necesitan cuidados especiales, se pueden doblar, escribir encima con tinta no magnética.
+
+- Se consiguen velocidades de lectura muy apreciables.
+
+- Los caracteres usados son legibles.
 
 Los inconvenientes que presentan son:
-Alto costo.
-Impresión cara y específica.
 
-Lector de bandas magnéticas
+- Alto costo.
+
+- Impresión cara y específica.
+
+### Lector de bandas magnéticas
+
 Las bandas magnéticas se emplean en productos como tarjetas de crédito, tarjetas de la Seguridad Social, tarjetas de acceso a edificios y etiquetas de algunos productos. Contienen datos como números de cuenta, códigos de productos, precios, etc.
 
 Las bandas magnéticas se leen mediante dispositivos de lectura manual, similares a un lápiz, o por detectores situados en los dispositivos en los que se introducen las tarjetas, incluso disponibles en algunos teclados.
 
 La ventaja de este método es que la información es difícil de alterar una vez que se ha grabado en la banda, salvo que se le aplique un campo magnético de intensidad suficiente, en cuyo caso los datos almacenados se pierden.
 
+### Lector Óptico de Marcas.
 
-
-Lector Óptico de Marcas.
 Los lectores ópticos de marcas son sistemas que aceptan información escrita a mano y la transforman en datos binarios inteligibles por el computador. El usuario se limita a marcar con su lápiz ciertas áreas preestablecidas del documento que representan posibles opciones o preguntas. Estos documentos pueden ser leídos posteriormente, a gran velocidad, por un computador con un lector óptico de marcas. Este detecta las zonas preestablecidas que están marcadas. Esta forma de introducir datos en la computadora es útil, por ejemplo, para corregir exámenes de tipo test, escrutar quinielas, valorar encuestas, etc.
 
 Una variante sencilla de este sistema la constituye el método de reconocimiento de marcas. En este caso el dispositivo de lectura puede reconocer cuándo ciertas áreas se han ennegrecido con un lápiz u otro instrumento de escritura. Entre los documentos sometidos a esta forma de lectura se encuentran los cupones de las quinielas, los formularios para la lectura de los contadores de gas y luz, y los cuestionarios con respuesta de elección múltiple. Los métodos de OCR y de reconocimiento de marcas tienen la ventaja de que se pueden emplear para leer los datos directamente de los documentos originales, pero son lentos y sensibles a los errores, en comparación con otros métodos.
 
-Lector de caracteres manuscritos e impresos.
+### Lector de caracteres manuscritos e impresos.
+
 Los lectores ópticos de caracteres pueden detectar caracteres (alfabéticos y/o numéricos), o bien impresos o mecanografiados, o bien manuscritos. Los lectores de caracteres impresos suelen utilizar patrones normalizados.
 
 Los lectores de caracteres manuales son mucho más complejos, sirviendo frecuentemente sólo para detectar unos pocos caracteres. Usualmente en el manual del dispositivo se indica la caligrafía "preferida" por el dispositivo.
 
 El reconocimiento óptico de caracteres (OCR) está basado en el uso de un dispositivo de exploración óptica que puede reconocer la letra impresa. Muchos documentos comerciales, como las facturas de gas, luz o teléfono, disponen de una banda que figura en la parte inferior que se puede leer mediante un dispositivo de OCR. Los nuevos pasaportes de la Comunidad Europea disponen de una página de texto OCR en la que se incluyen todos los detalles del titular del pasaporte. Se emplea un tipo de impresión especial para facilitar su lectura (algunos dispositivos de OCR pueden leer tipos de imprenta comunes, y otros, como los empleados por las administraciones postales para los procesos de clasificación, pueden reconocer la letra manuscrita siempre que ésta sea suficientemente clara).
 
-Lector de barras impresas.
+### Lector de barras impresas.
+
 En la actualidad han adquirido un gran desarrollo los lectores de códigos de barras.
 
 En el momento de fabricar un producto se imprime en su envoltorio una etiqueta con información sobre el mismo según un código formado por un conjunto de barras separadas por zonas en blanco.
@@ -1592,15 +1598,13 @@ El usuario pasa una lectora óptica de tipo lápiz o pistola por la etiqueta, in
 
 formar parte de una caja registradora que en realidad es un terminal interactivo denominado terminal punto de venta.
 
-
-
 Los códigos de barras se están transformando en la forma estándar de representar la información en los productos de mercado en un formato accesible para las máquinas, particularmente en los centros comerciales.
 
 Un código de barras consiste en un conjunto de barras verticales pintadas en negro (o en un color oscuro) sobre un fondo blanco (o claro). Los caracteres se codifican empleando combinaciones de barras anchas y estrechas y siempre se incluyen caracteres de comprobación.
 
 Un lector de código de barras interpreta la secuencia de barras y produce el conjunto de caracteres equivalente. Los lectores de códigos de barras tienen la forma de un lápiz, pistola o bien son dispositivos mayores de carácter fijo, que disponen de una ventana sobre la que se pasa el producto cuyo código se quiere leer. En este último tipo la lectura se realiza mediante un haz láser. Los lectores de códigos de barras se incorporan generalmente a algún tipo de terminal, como en el caso de los más recientes tipos de cajas registradoras para supermercados. Las experiencias hasta la fecha indican que los códigos de barras constituyen un método de codificación bastante rápido y fiable.
 
-Pantalla sensible al tacto.
+### Pantalla sensible al tacto.
 
 Son pantallas que pueden detectar las coordenadas (x,y) de la zona de la propia pantalla donde se acerca algo (por ejemplo, con un dedo). Éste es un sistema muy sencillo para dar entradas o elegir opciones sin utilizar el teclado.
 
@@ -1608,40 +1612,38 @@ Se utiliza para la selección de opciones dentro del menú o como ayuda en el us
 
 Existen pantallas con toda su superficie sensible, y otras en las que sólo una parte de ella lo es.
 
-Digitalizador
+### Digitalizador
 Los digitalizadores o tabletas digitalizadoras o tabletas gráficas son unidades de entrada que permiten transferir directamente al computador gráficos, figuras, planos, mapas, o dibujos en general. Esto se hace pasando manualmente una pieza móvil por encima de la línea a digital izar y automáticamente se transfieren las coordenadas (x,y) de los distintos puntos que forman la imagen, unas detrás de otras. Es decir, con el digitalizador, partiendo de un dibujo se obtiene una representación digital de él, en el interior de la computadora.
 
 Todo digitalizador consta de tres elementos:
 
-Tabla: Donde se ubica el dibujo a digital izar (puede ser opaca o transparente).
+- Tabla: Donde se ubica el dibujo a digital izar (puede ser opaca o transparente).
 
-Mando: Con el que el usuario debe recorrer el dibujo. Este suele tener forma de lápiz o cursor, y está unido al resto del sistema por un cable flexible. En el último caso el cursor tiene una ventana cerrada con una lupa, en cuyo interior se encuentra embebida una retícula en forma de cruz para señalar o apuntar con precisión el punto a digitalizar. El mando puede disponer de uno o varios pulsadores para controlar la modalidad de funcionamiento, forma de transmisión y selección de opciones del programa que gestiona la digitalización.
+- Mando: Con el que el usuario debe recorrer el dibujo. Este suele tener forma de lápiz o cursor, y está unido al resto del sistema por un cable flexible. En el último caso el cursor tiene una ventana cerrada con una lupa, en cuyo interior se encuentra embebida una retícula en forma de cruz para señalar o apuntar con precisión el punto a digitalizar. El mando puede disponer de uno o varios pulsadores para controlar la modalidad de funcionamiento, forma de transmisión y selección de opciones del programa que gestiona la digitalización.
 
-Circuitos electrónicos: Controlan el funcionamiento de la unidad.
-
-
+-Circuitos electrónicos: Controlan el funcionamiento de la unidad.
 
 Los digitalizadores, junto con los trazadores de gráficos (plotters) y pantallas gráficas, son elementos fundamentales de los sistemas gráficos, que tienen en la actualidad importancia en diversas aplicaciones de la Informática.
 
-Scanner.
+### Scanner.
+
 Es un dispositivo que recuerda a una fotocopiadora y que se emplea para introducir imágenes en un computador. Las imágenes que se desee capturar deben estar correctamente iluminadas para evitar brillo y tonos no deseados. Son dispositivos de entrada de datos de propósito especial que se emplean conjuntamente con paquetes software para gráficos y pantallas de alta resolución. La mayor parte de los scanners capturan imágenes en color generando una determinada cantidad de bits por cada punto. La cantidad de espacio de almacenamiento que se necesita para una imagen depende de las dimensiones máximas de la imagen y de la resolución de captura del equipo; la resolución se describe en 'cantidad de puntos por pulgada' ('dot per inch' en inglés o con el acrónimo 'dpi') en el sentido horizontal (eje x) y en el vertical (ejey).
 
 Los programas que controlan el scanner suelen presentar la imagen capturada en la pantalla. Los colores no tienen porqué ser necesariamente los originales. Es posible capturar las imágenes en blanco y negro o transformar los colores mediante algún algoritmo interno o modificar y mejorar la imagen. Sin embargo, y en general, los colores que produce un scanner suelen ser los correctos.
 
-Reconocedores de voz.
+### Reconocedores de voz.
+
 Uno de los campos de investigación actual más relevantes relacionados con la Informática es el reconocimiento de la voz. Se pretende una comunicación directa del hombre con el computador, sin necesidad de transcribir la información a través de un teclado u otros soportes intermedios de información.
 
 Usualmente los dispositivos de reconocimiento de la voz o de la palabra tratan de identificar fonemas o palabras dentro de un repertorio o vocabulario muy limitado. Un fonema es un sonido simple o unidad del lenguaje hablado. Un sistema capaz de reconocer, supongamos, 7 palabras, lo que hace al detectar un sonido es extraer características o parámetros físicos inherentes a dicho sonido, y compararlos con los parámetros (previamente memorizados) de las 7 palabras que es capaz de reconocer. Si, como resultado de la comparación, se identifica como correspondiente a una de las 7 palabras, se transmite a la memoria intermedia del dispositivo el código binario identificador de la palabra. Si el sonido no se identifica, se indica esta circunstancia al usuario (iluminándose una luz, por ejemplo) para que el usuario vuelva a emitir el sonido.
 
 Existen dos tipos de unidades de reconocimiento de la voz:
 
-Dependientes del usuario: En estos sistemas es necesario someter al dispositivo a un período de aprendizaje o programación, al cabo del cual puede reconocer ciertas palabras del usuario. En el período de aprendizaje el sistema retiene o memoriza las características o peculiaridades de los sonidos emitidos por el locutor, y que luego tendrá que identificar.
+- **Dependientes del usuario**: En estos sistemas es necesario someter al dispositivo a un período de aprendizaje o programación, al cabo del cual puede reconocer ciertas palabras del usuario. En el período de aprendizaje el sistema retiene o memoriza las características o peculiaridades de los sonidos emitidos por el locutor, y que luego tendrá que identificar.
 
-Independientes del usuario: Estos sistemas están más difundidos, pero el vocabulario que reconocen suele ser muy limitado. Los parámetros de las palabras que identifican vienen ya memorizados al adquirir la unidad. Son utilizados, por ejemplo, para definir el movimiento de cierto tipo de robots. En este caso el operador da verbalmente órdenes elegidas de un repertorio muy limitado, como puede ser: para, anda, arriba, abajo… La unidad cuando capta un sonido comprueba si corresponde a uno de los del repertorio. En caso de identificación se transmite a la computadora central la información necesaria para la ejecución del programa que pone en marcha y controla la acción requerida.
+-**Independientes del usuario**: Estos sistemas están más difundidos, pero el vocabulario que reconocen suele ser muy limitado. Los parámetros de las palabras que identifican vienen ya memorizados al adquirir la unidad. Son utilizados, por ejemplo, para definir el movimiento de cierto tipo de robots. En este caso el operador da verbalmente órdenes elegidas de un repertorio muy limitado, como puede ser: para, anda, arriba, abajo… La unidad cuando capta un sonido comprueba si corresponde a uno de los del repertorio. En caso de identificación se transmite a la computadora central la información necesaria para la ejecución del programa que pone en marcha y controla la acción requerida.
 
-
-
-Conversor A/D (Analógico/Digital).
+### Conversor A/D (Analógico/Digital).
 
 Por último debemos mencionar los dispositivos que transforman datos analógicos del mundo real en datos digitales (por ejemplo un sensor de temperatura, un digitalizador de sonidos de una guitarra, un sensor de presión sanguínea, etc.).
 
@@ -1654,7 +1656,7 @@ Los dispositivos de salida permiten a la computadora convertir sus patrones de b
 
 En la "prehistoria" de la computación esta comunicación podía ser tan elemental como el parpadeo o el encendido y apagado de luces. Ahora disponemos de muchas herramientas para visualizar datos internos de la computadora de un modo "entendible". A continuación mencionaremos algunos:
 
-Monitor o Pantalla de Video.
+### Monitor o Pantalla de Video.
 
 El tipo más habitual de pantalla es la que vemos en los computadores de escritorio y en las terminales, basada en Tubos de Rayos Catódicos o TRC, pero cada vez se difunden más las basadas en otras tecnologías como las de cristal líquido, implantadas en los equipos portátiles.
 
@@ -1677,38 +1679,38 @@ Cuando se termina de recorrer toda la pantalla, el haz vuelve rápidamente desde
 
 La imagen de una pantalla de rayos catódicos (TRC) se forma al incidir un haz de electrones sobre la superficie interna de la pantalla que está recubierta de un material fosforescente, análogamente a como se forman las imágenes en un televisor.
 
-
-
 Estas pantallas hacen desplazar el haz de electrones de izquierda a derecha y de arriba a abajo y, dependiendo de la intensidad con la que inciden los electrones en la pantalla así de brillante será cada punto de la imagen. La imagen, para ser visualizada durante un determinado tiempo debe ser repetida o refrescada periódicamente (al menos 25 veces por segundo). Estas pantallas se denominan pantallas de barrido.
 
 Una imagen de pantalla no es continua sino que se forma por multitud de puntos de imagen (en inglés "pixel"). La pantalla está dividida en celdas, en cada una de las cuales puede ir un carácter. La celda está constituida por una matriz regular de puntos de imagen.
 
 Las pantallas se clasifican, según la capacidad o no de mostrar colores, en:
-Monitor monocromo: Los colores usuales en un monitor monocromático son el blanco y negro, ámbar o verde.
-Monitor color: El color de cada punto se obtiene con mezcla de los colores rojo, verde y azul, pudiéndose programar la intensidad de cada color básico.
+
+- Monitor monocromo: Los colores usuales en un monitor monocromático son el blanco y negro, ámbar o verde.
+- Monitor color: El color de cada punto se obtiene con mezcla de los colores rojo, verde y azul, pudiéndose programar la intensidad de cada color básico.
 
 Según su capacidad de representación se pueden clasificar en:
-Pantallas de caracteres: Sólo admiten caracteres.
-Pantallas gráficas: Permiten trazados de líneas y curvas continuas.
+
+- Pantallas de caracteres: Sólo admiten caracteres.
+- Pantallas gráficas: Permiten trazados de líneas y curvas continuas.
 
 En las pantallas de caracteres, se debe poseer una memoria de imagen (que es una memoria de tipo RAM) que almacena la información correspondiente a cada celda (compuesta por el código binario del carácter a mostrar y la información binaria de como mostrar ese carácter -los atributos-) y una memoria de sólo lectura (tipo ROM) donde se almacenan los patrones de los caracteres representados como una matriz de puntos. La memoria ROM se denomina "generador de caracteres".
 
 Con toda esta información almacenada el proceso a seguir es el siguiente:
-Se leen de la memoria de imagen los códigos de los caracteres que corresponden a cada posición de pantalla.
-Los códigos son enviados al generador de caracteres que proporciona la matriz de puntos correspondiente.
-Los atributos se aplican a cada carácter (matriz de puntos).
+
+- Se leen de la memoria de imagen los códigos de los caracteres que corresponden a cada posición de pantalla.
+- Los códigos son enviados al generador de caracteres que proporciona la matriz de puntos correspondiente.
+- Los atributos se aplican a cada carácter (matriz de puntos).
 
 En las pantallas gráficas el usuario tiene acceso al punto de imagen, pudiendo representar en ellas imágenes configuradas no sólo con las formas de caracteres incluidos en la ROM. En este caso, se requiere una memoria de imagen que pueda contener la información de cada punto de imagen (intensidad, color y otros posibles atributos), en vez de la correspondiente a cada celda. Los dibujos, a pesar de estar formados por puntos de imagen presentan una apariencia de líneas continuas. La calidad de la pantalla gráfica depende de la densidad de puntos de imagen.
 
 Los principales parámetros que caracterizan a una pantalla son:
-Tamaño: Se describen en función del tamaño de la diagonal principal, y se tiene la mala costumbre de darla en pulgadas. Las más habituales son las de 15" (381 mm), aunque existen las de 14" (356 mm) y se generalizan 17".
-Número de celdas o caracteres: Lo usual es una representación de 24 filas y 80 columnas de caracteres (24*80 caracteres).
-Resolución: Es el número de puntos de imagen en pantalla. Éste número no depende del tamaño de la pantalla. Usualmente se consideran básicamente tres tipos de resolución :
+
+- Tamaño: Se describen en función del tamaño de la diagonal principal, y se tiene la mala costumbre de darla en pulgadas. Las más habituales son las de 15" (381 mm), aunque existen las de 14" (356 mm) y se generalizan 17".
+- Número de celdas o caracteres: Lo usual es una representación de 24 filas y 80 columnas de caracteres (24*80 caracteres).
+- Resolución: Es el número de puntos de imagen en pantalla. Éste número no depende del tamaño de la pantalla. Usualmente se consideran básicamente tres tipos de resolución :
 CGA 640*200 puntos
 VGA 640*480 puntos
 SVGA 1024*768 puntos
-
-
 
 Actualmente hay resoluciones superiores como por ejemplo XVGA 1280*1024.
 Supongamos poseer un monitor alfanumérico que puede mostrar 25 filas con 100 caracteres en cada una, ¿cuánta memoria de imagen se necesita?. Dado que podemos mostrar 25 x 100 caracteres si cada uno de ellos utiliza 7 bits la memoria debe poder contener 25 x 100 x 7 bits = 17500 bits < 2188 bytes. Si esos caracteres pudieran o no titilar, estar o no subrayado y estar o no resaltado se requiere almacenar 3 bits mas por cada carácter (1 bit para cada atributo) por lo que la memoria debe contener 25 x 100 x 10 bits = 25000 bits = 3125 bytes.
@@ -1717,7 +1719,7 @@ Para un monitor gráfico tipo SVGA (equivalente a que cada carácter anterior ut
 
 En las pantallas de TRC se han de considerar normas de seguridad, dado que estos dispositivos emiten radiaciones de diversos tipos, una solución es poner filtros para la pantalla. Las pantallas de otras tecnologías como plasma y cristal líquido son mucho más seguras, pues la radiación que emiten es mínima.
 
-Visualizadores (o "displays").
+### Visualizadores (o "displays").
 
 Los visualizadores son pequeñas unidades de salida que permiten al usuario leer una instrucción, un dato o un mensaje.
 
@@ -1726,6 +1728,7 @@ Los caracteres se forman partiendo de estructuras en módulos, cada uno de los c
 El visualizador es el elemento de salida típico de las calculadoras de bolsillo y de los relojes digitales.
 
 ## Impresoras.
+
 Las impresoras son periféricos que escriben la información de salida sobre papel. Su comportamiento inicialmente era muy similar al de las máquinas de escribir, pero hoy día son mucho más sofisticadas, pareciéndose algunas en su funcionamiento a máquinas fotocopiadoras conectadas en línea con el computador.
 
 Las impresoras son, junto a las pantallas, los dispositivos más utilizados para poder ver en forma directamente inteligible para el hombre los resultados de un programa de computadora.
@@ -1734,17 +1737,15 @@ Como indicamos anteriormente para todos los periféricos, las impresoras tienen 
 
 Las impresoras tradicionalmente utilizaban papel continuo, en cuyos márgenes existen unos orificios. En este caso, el arrastre se efectúa por un tractor que dispone de unos dientes metálicos que encajan en los orificios laterales del papel. En la actualidad existen también impresoras que no necesitan papel continuo, efectuándose el arrastre por fricción o presión, como en el caso de las máquinas de escribir o en las fotocopiadoras convencionales.
 
-
-
-Clasificación y tipos de impresoras.
+## Clasificación y tipos de impresoras.
 
 Existen diversos criterios para clasificar las impresoras.
-Calidad de impresión: Tiene en cuenta la calidad de presentación y de contraste de los caracteres impresos. Las impresoras se clasifican, atendiendo a este aspecto en:
+**Calidad de impresión**: Tiene en cuenta la calidad de presentación y de contraste de los caracteres impresos. Las impresoras se clasifican, atendiendo a este aspecto en:
 Impresoras normales: Como las impresoras de línea, de rueda y térmicas.
 Impresoras de semicalidad. Como algunas impresoras matriciales.
 Impresoras de calidad: Como las impresoras margarita e impresoras láser.
 
-Fundamento del sistema de impresión: Hay impresoras que realizan la impresión por impacto de martillos o piezas móviles mecánicas, y otras sin impacto mecánico.
+**Fundamento del sistema de impresión**: Hay impresoras que realizan la impresión por impacto de martillos o piezas móviles mecánicas, y otras sin impacto mecánico.
 
 El fundamento de las impresoras por impacto es similar al de las máquinas de escribir.
 
@@ -1753,9 +1754,6 @@ Sobre la superficie de la línea a imprimir en el papel se desliza una cinta ent
 Las impresoras de impacto son muy ruidosas y tradicionalmente han sido las más utilizadas. Entre ellas se encuentran las impresoras de rueda, bola, margarita, matriciales, cilindro, cadena...
 Las impresoras sin impacto forman los caracteres sin necesidad de golpes mecánicos y utilizan otros principios físicos para transferir las imágenes al papel.
 Son impresoras sin impacto las térmicas, las de inyección de tinta y las impresoras láser.
-
-
-
 
 Forma de imprimir los caracteres: En cuanto a este aspecto, las impresoras se pueden clasificar en: 
 Impresoras de caracteres.
@@ -1789,8 +1787,6 @@ Impresoras matriciales o de agujas.
 Estas impresoras, también denominadas de matriz de puntos, son las más utilizadas con microcomputadores y pequeños sistemas informáticos. Los caracteres se forman por medio de una matriz de agujas. Las agujas golpean la cinta entintada, transfiriéndose al papel los puntos correspondientes a las agujas disparadas.
 
 Los caracteres, por tanto, son punteados, siendo su calidad muy inferior a los caracteres continuos producidos por una impresora de margarita. No obstante, algunos modelos de impresoras matriciales, presentan la posibilidad de realizar escritos en semicalidad de impresión. Para ello, los caracteres se reescriben con los puntos ligeramente desplazados, solapándose los de la segunda impresión con los de la primera, dando una mayor apariencia de continuidad.
-
-
 
 Impresoras de tambor.
 Dentro de estas impresoras, encontramos dos tipos: las de tambor compacto y las de tambor de ruedas. Ambos tipos son impresoras de líneas y de impacto.
@@ -2198,4 +2194,3 @@ Existen distintos sistemas de modulación de una señal analógica para que tran
 Baudios: es el número de veces de cambio de la señal por segundo en la línea de transmisión. Los módem envían datos como una serie de tonos a través de la línea telefónica. Los tonos se "encienden" (ON) o apagan (OFF) para indicar un 1 o un 0 digital. El baudio es el número de veces que esos tonos se ponen a ON o a OFF. Los modem modernos pueden enviar 4 o mas bits por baudio.
 
 Bits por segundo (bps): es el número efectivo de bits/seg que se transmiten en una línea por segundo. Un modem de 600 baudios puede transmitir a 1200, 2400 o, incluso a 19200 bps.
-
