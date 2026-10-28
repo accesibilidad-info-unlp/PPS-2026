@@ -150,7 +150,7 @@ La invención del tubo de vacío, el transistor y el chip de silicio tuvieron un
 
 Estos datos reflejan la diferencia en la velocidad de evolución de la informática con respecto a cualquiera de las otras industrias. Notar que el avance desde el primer libro impreso a la imprenta tomó 6 siglos, mientras que desde los tubos de vacío al primer microprocesador sólo pasaron una veintena de años...
 
-El complejo electrónico-informático ha desplazado a la industria automotriz, a la industria pesada, a la industria militar y a la industria petrolera en la facturación mundial.
+> El complejo electrónico-informático ha desplazado a la industria automotriz, a la industria pesada, a la industria militar y a la industria petrolera en la facturación mundial.
 
 
 Los grandes ejes de la evolución.
@@ -170,19 +170,22 @@ La informática nace de la idea de ayudar al hombre en aquellos trabajos rutinar
 El término Informática se creó en Francia en 1962 bajo la denominación Informatique, y procede de la contracción de las palabras Information automatique. Posteriormente fue reconocido por el resto de los países, siendo adoptado por España en 1968 bajo el nombre de Informática, que como puede deducirse fácilmente, viene de la contracción de las palabras Información automática. En los países anglosajones se conoce con el nombre de ComputerScience.
 
 La informática se puede definir de diversas formas si bien todas ellas giran en torno a la misma idea. Dos de las más difundidas son:
-Informática es la ciencia que estudia el tratamiento automático y racional de la información.
-Informática es la ciencia que estudia el análisis y resolución de problemas utilizando computadoras.
-La palabra ciencia se relaciona con una metodología fundamentada y racional para el estudio y resolución de los problemas.
 
+> Informática es la ciencia que estudia el tratamiento automático y racional de la información.
+> Informática es la ciencia que estudia el análisis y resolución de problemas utilizando computadoras.
+
+- La palabra ciencia se relaciona con una metodología fundamentada y racional para el estudio y resolución de los problemas.
 
 La resolución de problemas utilizando las herramientas informáticas puede tener aplicaciones en áreas muy diferentes tales como biología, comercio, control industrial, administración, robótica, educación, arquitectura, diseño, etc.
 
 Los temas propios de la ciencia Informática abarcan aspectos tales como la arquitectura física y lógica de las computadoras, las metodologías de análisis y diseño de sistemas de software, los lenguajes de programación, los sistemas operativos, la inteligencia artificial, los sistemas de tiempo real, el diseño y aplicación de bases de datos, etc.
 
 ## Aplicaciones de la informática.
-"El grado de inteligencia que atribuimos al comportamiento de algo está determinado tanto por nuestra propia capacidad y comprensión como por las propiedades del objeto que analizamos". Alan Turing.
 
-El universo de las aplicaciones informáticas es esencialmente multidisciplinario.
+> "El grado de inteligencia que atribuimos al comportamiento de algo está determinado tanto por nuestra propia capacidad y comprensión como por las propiedades del objeto que analizamos". Alan Turing.
+
+> El universo de las aplicaciones informáticas es esencialmente multidisciplinario.
+
 Las aplicaciones que pueden desarrollarse con una computadora van desde un sistema de gestión comercial, administrativo, hasta sistemas expertos que ayudan en la toma de decisiones, diseño asistido, controladores de vuelo automáticos, máquinas jugadoras de ajedrez, etc.
 
 En esta tarea están involucradas personas de distintas disciplinas: matemáticos, ingenieros e informáticos. Los matemáticos brindan las herramientas básicas para que tanto ingenieros como informáticos puedan desarrollar su labor.
@@ -190,7 +193,10 @@ En esta tarea están involucradas personas de distintas disciplinas: matemático
 Por otro lado, se encuentran los usuarios de las aplicaciones, que van desde especialistas que utilizan una determinada herramienta (economistas, docentes, músicos, médicos, arquitectos, etc.) hasta entusiastas que navegan por Internet o juegan con un simulador de vuelo.
 
 ## Componentes y funcionamiento básico de una computadora.
-Recordemos la definición que dimos de computadora: Una Computadora es una máquina digital y sincrónica, con cierta capacidad de cálculo numérico y lógico, controlada por un programa almacenado, y con posibilidad de comunicación con el mundo exterior.
+
+Recordemos la definición que dimos de computadora: 
+
+> Una Computadora es una máquina digital y sincrónica, con cierta capacidad de cálculo numérico y lógico, controlada por un programa almacenado, y con posibilidad de comunicación con el mundo exterior.
 
 La mayoría de las computadoras actuales de propósito general presentan una estructura interna basada en la arquitectura definida por John von Neumann.
 
