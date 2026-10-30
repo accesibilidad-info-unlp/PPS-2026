@@ -2194,5 +2194,3 @@ Existen distintos sistemas de modulación de una señal analógica para que tran
 Baudios: es el número de veces de cambio de la señal por segundo en la línea de transmisión. Los módem envían datos como una serie de tonos a través de la línea telefónica. Los tonos se "encienden" (ON) o apagan (OFF) para indicar un 1 o un 0 digital. El baudio es el número de veces que esos tonos se ponen a ON o a OFF. Los modem modernos pueden enviar 4 o mas bits por baudio.
 
 Bits por segundo (bps): es el número efectivo de bits/seg que se transmiten en una línea por segundo. Un modem de 600 baudios puede transmitir a 1200, 2400 o, incluso a 19200 bps.
-
-<test>
