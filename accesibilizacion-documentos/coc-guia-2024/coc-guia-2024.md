@@ -342,6 +342,25 @@ Conceptualmente una red responde a un esquema general como el de la figura sigui
 
 ![La descripción detallada está a continuación](./imagenes/imagen4.png)
 
+<details>
+  <summary>Descripción de la imagen</summary>
+
+  <p>En el centro aparece un círculo con el texto «SUBSISTEMA DE COMUNICACIONES», del cual salen varias líneas que lo conectan con diferentes equipos y dispositivos.</p>
+
+  <p>Conectadas a él están conectados:</p>
+
+  <ul>
+    <li>Tres computadoras identificadas como «Cliente».</li>
+    <li>Un «Servidor de archivos».</li>
+    <li>Un «Gran sistema (servidor)».</li>
+    <li>Un «Servidor de video».</li>
+    <li>Un «Servidor de acceso remoto».</li>
+    <li>Un «Cliente asistente personal digital», representado mediante un dispositivo portátil con pantalla y lápiz conectado a través del Servidor de acceso remoto.</li>
+  </ul>
+
+  <p>El esquema representa una arquitectura de comunicaciones en la que diferentes clientes, servidores y dispositivos pueden intercambiar información a través de un subsistema común.</p>
+</details>
+
 - Las computadoras locales (clientes) pueden ser muy diferentes y disponer de recursos propios.
 - El subsistema de comunicaciones puede estar soportado por los diferentes medios de comunicación que hemos mencionado y permite vincular punto a punto o globalmente las computadoras locales.
 - Pueden existir recursos dentro de la red que sean compartidos por todas o alguna de las computadoras, y también pueden existir recursos exclusivos de cada máquina local.
@@ -358,27 +377,38 @@ Una red local (LAN: Local Area Network) es una red en la cual las computadoras s
 
 Típicamente (como se muestra en la figura) una red local puede conectarse a través de un conjunto de líneas de comunicación común denominado bus, pero pueden utilizarse diferentes topologías de comunicación.
 
+<dl>
+<dt>Red LAN</dt>
+<dd>
+
 ![La descripción detallada está a continuación](./imagenes/imagen5.png)
 
-Descripción de imagen Red LAN: ubicado en la parte superior izquierda. Sobre un fondo claro aparece un conjunto de equipos informáticos conectados entre sí mediante líneas que representan el cableado de red.
-
-En la parte superior se observan tres dispositivos: a la izquierda una impresora, y a su lado dos computadoras de escritorio con monitor, gabinete, teclado y mouse. Desde estos equipos descienden líneas verticales que se conectan a una línea horizontal central, formando una estructura similar a un ramal.
-
-En la parte inferior se ven cuatro dispositivos adicionales conectados a esa misma línea horizontal: a la izquierda un equipo que parece un escáner o dispositivo periférico, y a la derecha tres computadoras de escritorio similares a las de la parte superior. Todas las máquinas están unidas por el mismo cable principal, lo que representa una red de área local en la que varios equipos comparten recursos y están interconectados dentro de un mismo espacio físico. Fin de descripción, vuelta al texto.
+<details>
+    <summary>Descripción de la imagen</summary>
+    <p>Ubicado en la parte superior izquierda. Sobre un fondo claro aparece un conjunto de equipos informáticos conectados entre sí mediante líneas que representan el cableado de red.</p>
+    <p>En la parte superior se observan tres dispositivos: a la izquierda una impresora, y a su lado dos computadoras de escritorio con monitor, gabinete, teclado y mouse. Desde estos equipos descienden líneas verticales que se conectan a una línea horizontal central, formando una estructura similar a un ramal.</p>
+    <p>En la parte inferior se ven cuatro dispositivos adicionales conectados a esa misma línea horizontal: a la izquierda un equipo que parece un escáner o dispositivo periférico, y a la derecha tres computadoras de escritorio similares a las de la parte superior. Todas las máquinas están unidas por el mismo cable principal, lo que representa una red de área local en la que varios equipos comparten recursos y están interconectados dentro de un mismo espacio físico. Fin de descripción, vuelta al texto.</p>  
+</details>
 
 Una red extendida (WAN: Wide Area Network) es una red en la cual las computadoras pueden estar a grandes distancias. Incluso puede estar formada por subredes locales. La comunicación inter-computadoras puede combinar las tecnologías mencionadas anteriormente, teniendo cable o fibra para las máquinas relativamente más cercanas y por ejemplo enlaces satelitales entre los puntos remotos.
+</dd>
+<dt>Red WAN</dt>
+<dd>
 
 ![La descripción detallada está a continuación](./imagenes/imagen6.png)
 
-Descripción de imagen Red WAN: En el centro se observa un globo terráqueo, que simboliza la cobertura geográfica extensa de este tipo de red.
-
-En la parte superior aparece un satélite identificado con la palabra “Satélite”, del cual parten líneas punteadas hacia dos torres etiquetadas como “Torre de microondas”. Estas torres actúan como medios de transmisión inalámbrica. Desde ellas descienden líneas que conectan con distintos conjuntos de equipos informáticos ubicados a ambos lados del globo.
-
-En el lado izquierdo y derecho se ven varias computadoras de escritorio, impresoras y otros dispositivos agrupados, representando redes locales (LAN). En la parte inferior derecha se lee “Red local (LAN)”. Las líneas punteadas indican que estas redes locales están interconectadas a través de medios de comunicación de larga distancia, como satélites y microondas. La imagen muestra, así como varias LAN pueden enlazarse entre sí mediante una WAN, permitiendo la comunicación entre equipos situados en regiones geográficamente distantes. Fin de descripción, vuelta al texto.
+<details>
+    <summary>Descripción de la imagen</summary>
+    <p>Red WAN: En el centro se observa un globo terráqueo, que simboliza la cobertura geográfica extensa de este tipo de red.</p>
+    <p>En la parte superior aparece un satélite identificado con la palabra “Satélite”, del cual parten líneas punteadas hacia dos torres etiquetadas como “Torre de microondas”. Estas torres actúan como medios de transmisión inalámbrica. Desde ellas descienden líneas que conectan con distintos conjuntos de equipos informáticos ubicados a ambos lados del globo.</p>
+    <p>En el lado izquierdo y derecho se ven varias computadoras de escritorio, impresoras y otros dispositivos agrupados, representando redes locales (LAN). En la parte inferior derecha se lee “Red local (LAN)”. Las líneas punteadas indican que estas redes locales están interconectadas a través de medios de comunicación de larga distancia, como satélites y microondas. La imagen muestra, así como varias LAN pueden enlazarse entre sí mediante una WAN, permitiendo la comunicación entre equipos situados en regiones geográficamente distantes. Fin de descripción, vuelta al texto.</p>
+</details>
 
 Nuevamente el esquema de comunicaciones puede ser realizado en parte a través de buses y también con otras configuraciones como las denominadas en estrella o punto a punto.
+</dd>
+</dl>
 
-##  Internet: Una red de redes
+## Internet: Una red de redes
 
 Internet no es más que una red WAN, en la que un conjunto de instituciones han acordado conectar sus propias redes, enlazando organizaciones educativas, administrativas y empresas privadas.
 
