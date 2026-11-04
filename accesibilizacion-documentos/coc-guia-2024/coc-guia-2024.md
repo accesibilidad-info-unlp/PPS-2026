@@ -64,8 +64,10 @@ Contenido
 
 ##  PARTE 1 CONCEPTOS BÁSICOS DE UNA COMPUTADORA 
 
-"La computadora es, por mucho, la más extraordinaria de las vestimentas electrónicas creadas por el hombre, ya que es una extensión de nuestro sistema nervioso central. Junto a ella, la rueda no es más que un juguete...".
-Marshall McLuhan.
+<figure>
+    <blockquote>"La computadora es, por mucho, la más extraordinaria de las vestimentas electrónicas creadas por el hombre, ya que es una extensión de nuestro sistema nervioso central. Junto a ella, la rueda no es más que un juguete...".</blockquote>
+    <figcaption>Marshall McLuhan</figcaption>
+</figure>
 
 ## La computadora en la vida diaria
 
@@ -81,8 +83,10 @@ En 1823, el excéntrico genio matemático inglés Charles Babbage, profesor en C
 
 A esta idea adhirió Ada Lovelace, hija del poeta Lord Byron y con aptitudes matemáticas. Publicó un artículo sobre la máquina analítica que incluía el primer programa para computadora. Se asoció a Babbage aportando mayores alcances a su idea y corrigiendo errores de su trabajo.
 
-
-"La máquina analítica no es capaz de crear nada, sin embargo, puede hacer cualquier cosa que sepamos ordenarle" Ada Lovelace.
+<figure>
+    <blockquote>"La máquina analítica no es capaz de crear nada, sin embargo, puede hacer cualquier cosa que sepamos ordenarle."</blockquote>
+    <figcaption>Ada Lovelace</figcaption>
+</figure>
 
 Pero la tecnología de la época no bastaba para hacer realidad la máquina. El mundo aún no estaba listo para las computadoras, y no lo estaría por cien años más.
 
@@ -94,22 +98,21 @@ Durante años el esfuerzo tecnológico estuvo en calcular: ábacos, calculadores
 
 Aún las primitivas computadoras y las primeras aplicaciones industriales fueron de cálculo fijo (aunque complejo) que debía hacerse a la mayor velocidad posible. Los componentes electrónicos más "famosos" eran las Unidades Aritméticas que realizaban cálculos simples a gran velocidad.
 
-El salto conceptual de las "máquinas de calcular" a la computadora fue comprender que el cálculo era sólo uno de los elementos de interés para la computación. Aún más, representaba tal vez la línea tecnológica más "fácil".
-¡El verdadero desarrollo estaba en poder generalizar la utilización de “la máquina” para cualquier aplicación que se pudiera “programar” ... tal como lo había escrito Ada Lovelace 120 años antes!
+*El salto conceptual de las "máquinas de calcular" a la computadora fue comprender que el cálculo era sólo uno de los elementos de interés para la computación. Aún más, representaba tal vez la línea tecnológica más "fácil".*
+
+*¡El verdadero desarrollo estaba en poder generalizar la utilización de “la máquina” para cualquier aplicación que se pudiera “programar”... tal como lo había escrito Ada Lovelace 120 años antes!*
 
 ## UNA PRIMERA DEFINICIÓN
 
 > Una Computadora es una máquina digital y sincrónica, con cierta capacidad de cálculo numérico y lógico, controlada por un programa almacenado y con posibilidad de comunicación con el mundo exterior.
 
 ¿Qué significa esto?
+
 Es digital porque dentro de la computadora las señales eléctricas que se manejan y la información que se procesa se representa en forma discreta, por medio de dos valores (0 y 1).
 
 - Además, se afirma que es sincrónica, es decir que realiza las operaciones coordinada por un reloj central que envía señales de sincronismo a todos los elementos que componen la computadora. Esto significa que todas las operaciones internas se realizan en instantes de tiempo predefinidos y coordinados con el reloj.
-
 - Internamente posee una capacidad de cálculo numérico y lógico, en un subsistema denominado Unidad Aritmético-Lógica (UAL) ó en su acrónimo en idioma inglés ALU (Arithmetic & Logic Unit). Normalmente las operaciones que pueden realizarse en ella son muy simples (por ejemplo, suma, disyunción, conjunción o comparación).
-
 - El hecho que sea controlada por programa es quizás el punto más importante que diferencia a una computadora de una calculadora. Significa que internamente se tienen órdenes o instrucciones almacenadas, que la computadora podrá obtener, interpretar y ejecutar.
-
 - Además, está comunicada con el mundo exterior. Esto significa que podrá realizar operaciones de ingreso o egreso de valores desde y hacia el mundo real, utilizando dispositivos periféricos (por ejemplo, el teclado o el mouse para entrada de información y pantalla como salida). Debe mencionarse que el mundo real es analógico y no digital.
 
 La *computadora es una máquina que cambia información de una forma a otra: recibe información (entrada), la transforma y proporciona información (salida).* Esta información puede presentarse de muchas formas, lo que convierte a la computadora en una máquina sumamente versátil, que es capaz desde liquidar impuestos hasta guiar el recorrido de una nave espacial. En cada caso las entradas y salidas son totalmente distintas, y en esto radica lo sorprendente de poder usar una computadora para ambas actividades.
@@ -120,7 +123,10 @@ Esta versatilidad está dada en que la máquina sea controlada por un programa, 
 
 ## UN POCO DE HISTORIA
 
-> "Considera el pasado y conocerás el futuro" Proverbio Chino.
+<figure>
+    <blockquote>"Considera el pasado y conocerás el futuro."</blockquote>
+    <figcaption>Proverbio Chino</figcaption>
+</figure>
 
 La evolución en la tecnología electrónica en los últimos 60 años tuvo un impacto notable en la ciencia informática.
 
@@ -161,15 +167,21 @@ Estos datos reflejan la diferencia en la velocidad de evolución de la informát
 
 ## Los grandes ejes de la evolución
 
-> "La experiencia histórica muestra que los cambios tecnológicos transforman notablemente las relaciones políticas y sociales" John von Neumann.
+<figure>
+    <blockquote>"La experiencia histórica muestra que los cambios tecnológicos transforman notablemente las relaciones políticas y sociales."</blockquote>
+    <figcaption>John von Neumann</figcaption>
+</figure>
 
 Podemos ver gráficamente cuáles han sido los grandes ejes de la impresionante evolución de las computadoras:
 
-![Evolución de los computadores de 1940 a la fecha. La descripción está a continuación.](./imagenes/imagen1.png)
+![La descripción detallada está a continuación](./imagenes/imagen1.png)
 
-Descripción de la imagen: En la parte inferior aparece un eje horizontal que representa el tiempo, comenzando en 1940 a la izquierda y terminando en “Presente” a la derecha. Desde una línea vertical ubicada a la izquierda (que marca el punto de partida en 1940), salen varias líneas diagonales con flechas que indican tendencias a lo largo del tiempo. Cuatro líneas ascienden en diagonal hacia la derecha, mostrando aumentos. Cada una está rotulada con las siguientes palabras: Velocidad, Confiabilidad, Eficiencia, Facilidad de uso.
-Estas flechas ascendentes indican que, desde 1940 hasta el presente, esos aspectos han aumentado.
-Debajo de ellas, hay dos líneas diagonales que descienden hacia la derecha, también con flechas. Están rotuladas como: Costo, Tamaño. Estas flechas descendentes indican que, con el paso del tiempo, el costo y el tamaño de las computadoras han disminuido. Fin de descripción, vuelta al texto.
+<details>
+    <summary>Descripción de la imagen</summary>
+    <p>En la parte inferior aparece un eje horizontal que representa el tiempo, comenzando en 1940 a la izquierda y terminando en “Presente” a la derecha. Desde una línea vertical ubicada a la izquierda (que marca el punto de partida en 1940), salen varias líneas diagonales con flechas que indican tendencias a lo largo del tiempo. Cuatro líneas ascienden en diagonal hacia la derecha, mostrando aumentos. Cada una está rotulada con las siguientes palabras: Velocidad, Confiabilidad, Eficiencia, Facilidad de uso.</p>
+    <p>Estas flechas ascendentes indican que, desde 1940 hasta el presente, esos aspectos han aumentado</p>
+    <p>Debajo de ellas, hay dos líneas diagonales que descienden hacia la derecha, también con flechas. Están rotuladas como: Costo, Tamaño. Estas flechas descendentes indican que, con el paso del tiempo, el costo y el tamaño de las computadoras han disminuido. Fin de descripción, vuelta al texto.</p>
+</details>
 
 ## ¿QUÉ ES LA INFORMÁTICA?
 
@@ -180,17 +192,20 @@ El término Informática se creó en Francia en 1962 bajo la denominación Infor
 La informática se puede definir de diversas formas si bien todas ellas giran en torno a la misma idea. Dos de las más difundidas son:
 
 > **Informática** es la ciencia que estudia el tratamiento automático y racional de la información.
+>
 > **Informática** es la ciencia que estudia el análisis y resolución de problemas utilizando computadoras.
 
 - La palabra *ciencia* se relaciona con una metodología fundamentada y racional para el estudio y resolución de los problemas.
-
 - La *resolución de problemas* utilizando las herramientas informáticas puede tener aplicaciones en áreas muy diferentes tales como biología, comercio, control industrial, administración, robótica, educación, arquitectura, diseño, etc.
 
 Los temas propios de la ciencia Informática abarcan aspectos tales como la arquitectura física y lógica de las computadoras, las metodologías de análisis y diseño de sistemas de software, los lenguajes de programación, los sistemas operativos, la inteligencia artificial, los sistemas de tiempo real, el diseño y aplicación de bases de datos, etc.
 
 ## Aplicaciones de la informática
 
-> "El grado de inteligencia que atribuimos al comportamiento de algo está determinado tanto por nuestra propia capacidad y comprensión como por las propiedades del objeto que analizamos". Alan Turing.
+<figure>
+    <blockquote>"El grado de inteligencia que atribuimos al comportamiento de algo está determinado tanto por nuestra propia capacidad y comprensión como por las propiedades del objeto que analizamos."</blockquote>
+    <figcaption>Alan Turing</figcaption>
+</figure>
 
 > El universo de las aplicaciones informáticas es esencialmente multidisciplinario.
 
@@ -217,32 +232,41 @@ Podrá también, ser necesario interactuar con el mundo exterior, tanto para obt
 
 Teniendo en cuenta lo anteriormente expresado, podemos esquematizarla de la siguiente manera:
 
-![Esquema de bus de comunicaciones, memoria, UCP, entrada/salida y periféricos. La descripción se encuentra a continuación](./imagenes/imagen2.png)
+![La descripción detallada está a continuación](./imagenes/imagen2.png)
 
-Descripción de la imagen: En la parte superior aparece una flecha horizontal de doble punta, que va de izquierda a derecha, con el rótulo “Bus de comunicaciones”. Esta flecha indica el canal que conecta todos los componentes entre sí.
-Debajo del bus hay tres bloques rectangulares principales, alineados horizontalmente:
-
-1. Bloque izquierdo: “Memoria Principal”
-Dentro de este rectángulo hay dos secciones internas:
-Memoria de Instrucciones (Mi)
-Memoria de Datos (Md)
-
-Este bloque representa el lugar donde se almacenan tanto las instrucciones del programa como los datos.
-
-2. Bloque central: “UCP” (Unidad Central de Proceso)
-Dentro de este rectángulo aparecen dos componentes:
-Unidad de Control
-Unidad Aritmética y Lógica
-La Unidad de Control coordina el funcionamiento del sistema, mientras que la Unidad Aritmética y Lógica realiza las operaciones matemáticas y lógicas.
-
-3. Bloque derecho: “Entrada/Salida”
-Dentro de este rectángulo hay dos partes:
-Unidad de Entrada
-Unidad de Salida
-A la derecha de este bloque aparecen dos rectángulos más pequeños, separados del bloque principal:
-Periférico de Entrada (Pe), conectado mediante una flecha que apunta hacia la Unidad de Entrada.
-Periférico de Salida (Ps), conectado mediante una flecha que sale desde la Unidad de Salida hacia el exterior.
-Las flechas indican el sentido del flujo de información: los periféricos de entrada envían datos al sistema y los periféricos de salida reciben los resultados.
+<details>
+    <summary>Descripción de la imagen</summary>
+    <p>En la parte superior aparece una flecha horizontal de doble punta, que va de izquierda a derecha, con el rótulo “Bus de comunicaciones”. Esta flecha indica el canal que conecta todos los componentes entre sí.</p>
+    <p>Debajo del bus hay tres bloques rectangulares principales, alineados horizontalmente:</p>
+    <p>1. Bloque izquierdo: “Memoria Principal”. Dentro de este rectángulo hay dos secciones internas:</p>
+    <ul>
+        <li>Memoria de Instrucciones (Mi)</li>
+        <li>Memoria de Datos (Md)</li>
+    </ul>
+    <p>Este bloque representa el lugar donde se almacenan tanto las instrucciones del programa como los datos.</p>
+    <p>2. Bloque central: “UCP” (Unidad Central de Proceso). Dentro de este rectángulo aparecen dos componentes:
+    </p>
+    <ul>
+        <li>Unidad de Control</li>
+        <li>Unidad Aritmética y Lógica</li>
+    </ul>
+    <p>La Unidad de Control coordina el funcionamiento del sistema, mientras que la Unidad Aritmética y Lógica realiza las operaciones matemáticas y lógicas.
+    </p>
+    <p>Bloque derecho: “Entrada/Salida”. Dentro de este rectángulo hay dos partes:
+    </p>
+    <ul>
+        <li>Unidad de Entrada</li>
+        <li>Unidad de Salida</li>
+    </ul>
+    <p>A la derecha de este bloque aparecen dos rectángulos más pequeños, separados del bloque principal:
+    </p>
+    <p>Periférico de Entrada (Pe), conectado mediante una flecha que apunta hacia la Unidad de Entrada.
+    </p>
+    <p>Periférico de Salida (Ps), conectado mediante una flecha que sale desde la Unidad de Salida hacia el exterior.
+    </p>
+    <p>Las flechas indican el sentido del flujo de información: los periféricos de entrada envían datos al sistema y los periféricos de salida reciben los resultados.
+    </p>
+</details>
 
 En el gráfico se ha dividido conceptualmente la memoria Principal M en dos partes: **memoria de instrucciones Mi**, donde residen las órdenes que la computadora debe interpretar y ejecutar, y **memoria de datos Md** donde se almacena la información con la cual la computadora realizará los procesos (cálculos, decisiones, actualizaciones) que sean necesarios para la resolución del problema.
 
@@ -256,9 +280,11 @@ El *funcionamiento* de una Computadora descripta como en el modelo anterior, se 
 
 ![La descripción detallada está a continuación](./imagenes/imagen3.png)
 
-Descripción de la imagen: En la parte superior aparece un óvalo con la palabra “Inicio”. Desde allí desciende una flecha vertical que conduce a un rectángulo con el texto “Buscar Instrucción”. Debajo de este, otra flecha vertical lleva a un segundo rectángulo que dice “Interpretar Instrucción”. Más abajo, una nueva flecha conduce a un tercer rectángulo con el texto “Ejecutar Instrucción”.
-
-Desde la parte inferior del rectángulo “Ejecutar Instrucción” sale una línea que se dirige hacia el lateral izquierdo y asciende hasta conectarse nuevamente con la etapa de “Buscar Instrucción”. Fin de descripción, vuelta al texto.
+<details>
+    <summary>Descripción de la imagen</summary>
+    <p>En la parte superior aparece un óvalo con la palabra “Inicio”. Desde allí desciende una flecha vertical que conduce a un rectángulo con el texto “Buscar Instrucción”. Debajo de este, otra flecha vertical lleva a un segundo rectángulo que dice “Interpretar Instrucción”. Más abajo, una nueva flecha conduce a un tercer rectángulo con el texto “Ejecutar Instrucción”.</p>
+    <p>Desde la parte inferior del rectángulo “Ejecutar Instrucción” sale una línea que se dirige hacia el lateral izquierdo y asciende hasta conectarse nuevamente con la etapa de “Buscar Instrucción”. Fin de descripción, vuelta al texto.</p>
+</details>
 
 Esto representa una secuencia infinita de pasos:
 - Buscar la próxima instrucción a ejecutar en la memoria de instrucciones **Mi**.
@@ -278,29 +304,27 @@ La *Unidad Central de Procesamiento* (UCP) o en su acrónimo en inglés CPU, es 
 
 # CONCEPTOS DE COMUNICACIONES Y REDES
 
-> "Poco después de mi entrada la yegua se levantó de su estera, se acercó a mí, observó atentamente mi cara y manos, y luego hizo un gesto de desagrado. A continuación, se volvió hacia el caballo y escuché que entre ellos repetían a menudo la palabra yahoo, cuyo significado entonces no entendía, aunque fuera la primera que aprendí a pronunciar. Más pronto estaría mejor informado para mi eterna vergüenza." Los Viajes de Gulliver, Cap XIX: El país de los Houyhnhnms.
+<figure>
+    <blockquote>"Poco después de mi entrada la yegua se levantó de su estera, se acercó a mí, observó atentamente mi cara y manos, y luego hizo un gesto de desagrado. A continuación, se volvió hacia el caballo y escuché que entre ellos repetían a menudo la palabra yahoo, cuyo significado entonces no entendía, aunque fuera la primera que aprendí a pronunciar. Más pronto estaría mejor informado para mi eterna vergüenza."</blockquote>
+    <figcaption>Los Viajes de Gulliver, Cap XIX: El país de los Houyhnhnms</figcaption>
+</figure>
 
 ## NOCIONES BÁSICAS DE COMUNICACIONES
 
 En los principios del siglo XIX, los tiempos de las comunicaciones eran directamente proporcionales a los tiempos del movimiento humano. Una noticia de Europa podía tardar meses en llegar a las colonias sudamericanas; un hecho trascendental como la declaración de la independencia en Tucumán en 1816 viajó "en diligencia" para ser conocido en Buenos Aires varios días después; la imagen del general mirando desde un cerro la evolución de una gran batalla y enviando y recibiendo mensajeros a caballo desde el frente de batalla sólo se mejoraba levemente con el empleo de palomas mensajeras...
 
-- En 1844 Morse inventó el telégrafo y en 1876 Bell el teléfono. Con ellos nació el concepto de telecomunicaciones, es decir comunicación a distancia en forma prácticamente inmediata.
-
-- La evolución de la tecnología de las comunicaciones en los siguientes 100 años y hasta nuestros días, combinada con el desarrollo explosivo de la electrónica y la informática, pasaron a ser el eje fundamental del mundo de hoy.
-
-- Desde el punto de vista de la transmisión de información, la tecnología permite hoy que la distancia física prácticamente no exista I: Podemos ubicarnos virtualmente en otro lugar del mundo, observar un museo de Europa, leer un texto que se está escribiendo en Estados Unidos, recibir el mismo diario que un ciudadano de Rusia o tener 1000 millones de personas pendientes del partido inaugural de un mundial de fútbol... que se juega en China (y sería lo mismo si se jugara en la Luna).
+- En 1844 Morse inventó el telégrafo y en 1876 Bell el teléfono. Con ellos nació el concepto de *telecomunicaciones*, es decir comunicación a distancia en forma prácticamente inmediata.
+- La evolución de la tecnología de las comunicaciones en los siguientes 100 años y hasta nuestros días, combinada con el desarrollo explosivo de la electrónica y la informática, pasaron a ser el *eje fundamental del mundo de hoy*.
+- Desde el punto de vista de la transmisión de información, la tecnología permite hoy que *la distancia física prácticamente no exista!*: Podemos ubicarnos virtualmente en otro lugar del mundo, observar un museo de Europa, leer un texto que se está escribiendo en Estados Unidos, recibir el mismo diario que un ciudadano de Rusia o tener 1000 millones de personas pendientes del partido inaugural de un mundial de fútbol... que se juega en China (y sería lo mismo si se jugara en la Luna).
 
 Esta evolución de la tecnología de comunicaciones es muy importante para nuestra vida y para nuestras posibilidades laborales: cualquier ámbito de trabajo informático hoy tiene comunicaciones, redes, computadoras remotas que se consultan y utilizan... y todo esto nos obliga a estudiar como un componente esencial de la disciplina informática, algunos aspectos de las comunicaciones.
 
 - En principio debemos definir el medio de comunicación es decir sobre que soporte se transmiten los bits (en principio sólo hablaremos de comunicaciones digitales) que llevan la información. Este medio puede ser un cable telefónico, un cable coaxil, una fibra óptica o el aire.
-
 - En general las transmisiones sobre cables requieren enviar señales eléctricas entre un transmisor y un receptor en los extremos del cable, y normalmente se trata de un medio de bajo costo y muy adecuado para distancias relativamente cortas. Por ejemplo, un cable telefónico permite manejar velocidades típicas de 100.000 bits por segundo y un cable coaxil de red puede tener 100 millones de bits por segundo.
-
 - Pasar de los cables con señales eléctricas a la fibra óptica ha sido un salto tecnológico muy importante (aunque a un costo mayor). Sucede que la fibra óptica trasmite señales de luz, a una velocidad mucho mayor y con mucha menos posibilidad de interferencia que un cable convencional. Trabajar con comunicaciones en el orden de 1000 millones de bits por segundo, con alta inmunidad al ruido, es típico de la fibra óptica hoy (notar que todos los enlaces telefónicos importantes han reemplazado el cableado convencional por la fibra óptica).
-
 - La señal también se puede transmitir por el aire. En este caso el transmisor y el receptor tienen otras características (más complejas) y de ese modo recibimos, por ejemplo, las señales de radio o de televisión por aire. También podemos tener estaciones repetidoras en tierra o en un satélite, de modo de comunicar puntos muy distantes que no serían alcanzables por una señal de radio directa. Las comunicaciones satelitales se imponen cuando la distancia crece.
 
-En este punto podemos preguntarnos ¿Qué sentido puede tener comunicar computadoras? La respuesta resulta inmediata: poder comunicarlas significa poder utilizar sus recursos a distancia.
+En este punto podemos preguntarnos **¿Qué sentido puede tener comunicar computadoras?** La respuesta resulta inmediata: poder comunicarlas significa poder utilizar sus recursos a distancia.
 
 De repente la computadora que está en la mejor Universidad de Estados Unidos es "alcanzable" y utilizable desde nuestra modesta PC del Laboratorio de Microcómputo de la Facultad. Al mismo tiempo los "usuarios" distantes pueden comunicarse, cooperar y compartir recursos y trabajo, empleando sus computadoras conectadas.
 
