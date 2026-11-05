@@ -63,7 +63,7 @@ Contenido
 
 # CAPÍTULO 1 LA COMPUTADORA
 
-##  PARTE 1 CONCEPTOS BÁSICOS DE UNA COMPUTADORA 
+##  PARTE 1 CONCEPTOS BÁSICOS DE UNA COMPUTADORA
 
 <figure>
     <blockquote>"La computadora es, por mucho, la más extraordinaria de las vestimentas electrónicas creadas por el hombre, ya que es una extensión de nuestro sistema nervioso central. Junto a ella, la rueda no es más que un juguete...".</blockquote>
@@ -338,8 +338,6 @@ Debe quedarnos claro que de nada nos servirían ambas computadoras si no tenemos
 ## Conceptos elementales de redes
 
 Conceptualmente una red responde a un esquema general como el de la figura siguiente:
-
-<para agregar: alt text>
 
 ![La descripción detallada está a continuación](./imagenes/imagen4.png)
 
