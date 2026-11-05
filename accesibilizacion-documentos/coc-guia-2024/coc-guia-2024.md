@@ -70,6 +70,8 @@ Contenido
     <figcaption>Marshall McLuhan</figcaption>
 </figure>
 
+test
+
 ## La computadora en la vida diaria
 
 En la vida moderna las computadoras constituyen un componente esencial y, aunque no lo notemos, están en todas partes y son determinantes en nuestro modo de vida. Aún más, muchas veces nos damos cuenta de esto cuando dejan de funcionar.
