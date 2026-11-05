@@ -68,9 +68,7 @@ Contenido
 <figure>
     <blockquote>"La computadora es, por mucho, la más extraordinaria de las vestimentas electrónicas creadas por el hombre, ya que es una extensión de nuestro sistema nervioso central. Junto a ella, la rueda no es más que un juguete...".</blockquote>
     <figcaption>Marshall McLuhan</figcaption>
-</figure>
-
-test
+</figure> 
 
 ## La computadora en la vida diaria
 
@@ -728,9 +726,14 @@ En general para identificar N diferentes posiciones de memoria (cajitas) se nece
 
 Ejemplo 1. ¿Cuántos bits deberán tener las direcciones para identificar 250 posiciones de memoria diferentes?
 
-<para agregar: alt>
+
 
 ![alt text](./imagenes/imagen8-6.png)
+
+<details>
+<summary>Descripción de la imagen</summary>
+<p>Se presenta el cálculo de la cantidad de bits necesarios para representar 250 elementos. Se plantea la desigualdad N = 250 ≤ 2ⁿ y se indica que, para n = 8, se obtiene 2⁸ = 256, por lo que se cumple la desigualdad. La respuesta es 8 bits.</p>
+</details> 
 
 Ejemplo 2. Escriba en binario la dirección más pequeña y la más grande para el bus de direcciones del ej. anterior. ¿Puede determinar su valor en decimal?
 
