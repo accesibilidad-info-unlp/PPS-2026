@@ -728,16 +728,26 @@ Ejemplo 1. ¿Cuántos bits deberán tener las direcciones para identificar 250 p
 
 
 
-![alt text](./imagenes/imagen8-6.png)
+![La descripción detallada está a continuación](./imagenes/imagen8-6.png)
 
 <details>
-<summary>Descripción de la imagen</summary>
+<summary>Descripción de la imagen (revisar)</summary>
 <p>Se presenta el cálculo de la cantidad de bits necesarios para representar 250 elementos. Se plantea la desigualdad N = 250 ≤ 2ⁿ y se indica que, para n = 8, se obtiene 2⁸ = 256, por lo que se cumple la desigualdad. La respuesta es 8 bits.</p>
 </details> 
 
 Ejemplo 2. Escriba en binario la dirección más pequeña y la más grande para el bus de direcciones del ej. anterior. ¿Puede determinar su valor en decimal?
 
-![alt text](./imagenes/imagen8-7.png)
+![La descripcion detallada está a continuacion](./imagenes/imagen8-7.png)
+
+<details>
+<summary>Descripción de la imagen (revisar)</summary>
+<p>Se presentan dos preguntas sobre la conversión de direcciones binarias a valores decimales. Se solicita determinar:</p>
+<ul>
+<li>La dirección más pequeña: 00000000₂.</li>
+<li>La dirección más grande: 11111111₂.</li>
+</ul>
+<p>En ambos casos, se debe calcular el valor equivalente en decimal.</p>
+</details>
 
 En el próximo capítulo se tratará el tema de conversión de números, aunque una calculadora puede ayudar a realizar los mismos.
 
