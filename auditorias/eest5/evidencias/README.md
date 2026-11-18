@@ -1,0 +1,1 @@
+guardar imágenes de evidencia para el informe de auditoría
