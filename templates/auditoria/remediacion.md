@@ -6,6 +6,7 @@
 - **URL del sitio:** < Dirección web >
 - **Responsables:** < Nombres >
 - **Fecha de implementación:** < DD/MM/AAAA >
+- **Informe de auditoría:** < Enlace al documento >
 - **Plan de remediación:** < Enlace al documento >
 - **Repositorio de GitHub:** < Enlace >
 
@@ -25,10 +26,10 @@ Registrar las soluciones desarrolladas para los problemas seleccionados en el pl
 
 ### < Nombre del hallazgo >
 
-- **Referencia:** < Enlace a la Issue de GitHub >
+- **Referencia al hallazgo:** < Enlace al hallazgo en el informe de auditoría >
+- **Referencia al Issue:** < Enlace a la Issue de GitHub >
 - **Solución implementada:** < Describir brevemente los cambios realizados >
 - **Pull Request:** < Enlace al Pull Request >
-- **Criterio(s) WCAG relacionado(s):** < Identificador y nombre >
 - **Estado:** < Implementado / Parcial / No implementado >
 
 Repetir esta estructura para cada solución abordada.
