@@ -95,7 +95,7 @@ Repetir esta estructura para cada hallazgo.
 
 Registrar los recursos utilizados para organizar las tareas de remediación.
 
-- **Repositorio de GitHub:** < Enlace >
+- **Repositorio de GitHub:** [Trabajo en proceso EEST5](https://github.com/accesibilidad-info-unlp/PPS-2026/tree/main/auditorias/eest5/trabajo_en_procesos)
 - **GitHub Projects:** < Enlace al tablero >
 
 Cada problema seleccionado deberá contar con una Issue que permita registrar y realizar el seguimiento de su resolución.
