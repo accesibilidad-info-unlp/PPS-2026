@@ -41,8 +41,6 @@ Registrar las soluciones para los problemas que se decidió abordar.
 ### < Nombre del hallazgo 1 >
 
 - **Solución propuesta:** <¿Qué cambios se proponen realizar?>
-- **Criterio(s) WCAG relacionado(s):** < Identificador y nombre >
-- **Decisión de implementación:** < Sí / No / Parcial >
 - **Justificación:** < Explicar la decisión. Si es parcial o no se implementará, indicar los motivos y los aspectos que quedarán pendientes. >
 
 Repetir esta estructura para cada hallazgo.
