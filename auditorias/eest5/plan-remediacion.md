@@ -78,9 +78,14 @@ Solución propuesta: Incorporar el atributo alt en las 12 imágenes detectadas. 
 
 ### Errores de contraste
 
-### Tablas con titulos vacios
+Corregir los colores del texto y del fondo para garantizar que exista un contraste suficiente y que los contenidos puedan leerse correctamente.
+Se deberán revisar los 31 errores de contraste detectados por las herramientas de evaluación. Para solucionarlos, se modificarán los estilos CSS del sitio, ajustando los colores de las letras y los fondos.Se utilizará como referencia el criterio WCAG 2.1, 1.4.3 (Contraste mínimo), que establece una relación de contraste de al menos 4.5:1 para textos normales y 3:1 para textos grandes.
+También se comprobará que los cambios mantengan una apariencia visual coherente con el diseño original del sitio y que los textos sean fáciles de leer para personas con baja visión o dificultades visuales.
 
-### < Nombre del hallazgo 1 >
+### Tablas con titulos vacios
+Revisar la estructura HTML del buscador y reemplazar las tablas utilizadas únicamente para organizar elementos visuales por contenedores semánticos adecuados, como div o form, utilizando CSS para controlar su distribución.El objetivo es evitar que los lectores de pantalla interpreten estos elementos como tablas de datos cuando en realidad se utilizan para organizar los controles del buscador.
+
+### < Nombre del hallazgo  >
 
 - **Solución propuesta:** <¿Qué cambios se proponen realizar?>
 
@@ -96,12 +101,4 @@ Registrar los recursos utilizados para organizar las tareas de remediación.
 Cada problema seleccionado deberá contar con una Issue que permita registrar y realizar el seguimiento de su resolución.
 
 Las tareas se organizarán mediante un tablero Kanban y se utilizarán etiquetas para identificar su severidad, tipo de problema y criterios WCAG relacionados.
-
-## 6. Observaciones finales
-
-Registrar decisiones importantes, problemas que no serán abordados durante esta iteración y otras consideraciones relevantes para la implementación.
-
-Los problemas que queden pendientes deberán conservarse documentados, indicando los motivos y las posibles soluciones para futuras iteraciones.
-
-Los cambios aprobados pasarán a la siguiente etapa: remediación.
 
